@@ -26,7 +26,7 @@ class Representative(models.Model):
     first_name = models.CharField(max_length=255, blank=True, null=True)
     last_name = models.CharField(max_length=255, blank=True, null=True)
     full_name = models.CharField(max_length=255)
-    gender = models.SmallIntergerField(choices=GENDER, default=N_A)
+    gender = models.SmallIntegerField(choices=GENDER, default=N_A)
     birth_place = models.CharField(max_length=255, blank=True, null=True)
     birth_date = models.DateField(blank=True, null=True)
     cv = models.TextField(blank=True, null=True)
@@ -58,7 +58,7 @@ class Address(Contact):
     street = models.CharField(max_length=255, blank=True, null=True)
     number = models.CharField(max_length=255, blank=True, null=True)
     postcode = models.CharField(max_length=255, blank=True, null=True)
-    floor = models.SmallIntergerField(blank=True, null=True)
+    floor = models.SmallIntegerField(blank=True, null=True)
     office_number = models.CharField(max_length=255, blank=True, null=True)
     kind = models.CharField(max_length=255, blank=True, null=True)
     location = models.CharField(max_length=255, blank=True, null=True)  # TODO Find standard for storage in charfield
