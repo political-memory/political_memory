@@ -1,3 +1,5 @@
+# -*- coding:utf-8 -*-
+
 from django.db import models
 
 
@@ -28,6 +30,9 @@ class Representative(models.Model):
     birth_place = models.CharField(max_length=255, blank=True, null=True)
     birth_date = models.DateField(blank=True, null=True)
     cv = models.TextField(blank=True, null=True)
+
+    class Meta:
+        abstract = True
 
 
 class Contact(models.Model):
