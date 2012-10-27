@@ -36,7 +36,7 @@ class Representative(models.Model):
 
 
 class Contact(models.Model):
-    representative = models.ForeignKey(Representative)
+    representative = models.ForeignKey("Representative")
 
     class Meta:
         abstract = True
