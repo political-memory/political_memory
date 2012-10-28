@@ -91,3 +91,5 @@ class Mandate(models.Model):
     end_date = models.DateField(blank=True, null=True)
     # Sometimes begin_date and end_date are not available
     active = models.NullBooleanField(default=False)
+
+    representative = models.ForeignKey("Representative")
