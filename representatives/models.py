@@ -31,12 +31,9 @@ class Representative(models.Model):
     birth_date = models.DateField(blank=True, null=True)
     cv = models.TextField(blank=True, null=True)
 
-    class Meta:
-        abstract = True
-
 
 class Contact(models.Model):
-    representative = models.ForeignKey("Representative")
+    representative = models.ForeignKey(Representative)
 
     class Meta:
         abstract = True
@@ -92,4 +89,4 @@ class Mandate(models.Model):
     # Sometimes begin_date and end_date are not available
     active = models.NullBooleanField(default=False)
 
-    representative = models.ForeignKey("Representative")
+    representative = models.ForeignKey(Representative)
