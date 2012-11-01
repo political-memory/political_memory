@@ -58,6 +58,7 @@ class Address(Contact):
     floor = models.CharField(max_length=255, blank=True, null=True)
     office_number = models.CharField(max_length=255, blank=True, null=True)
     kind = models.CharField(max_length=255, blank=True, null=True)
+    name = models.CharField(max_length=255, blank=True, null=True)
     location = models.CharField(max_length=255, blank=True, null=True)  # TODO Find standard for storage in charfield
 
 
