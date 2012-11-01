@@ -55,7 +55,7 @@ class Address(Contact):
     street = models.CharField(max_length=255, blank=True, null=True)
     number = models.CharField(max_length=255, blank=True, null=True)
     postcode = models.CharField(max_length=255, blank=True, null=True)
-    floor = models.SmallIntegerField(blank=True, null=True)
+    floor = models.CharField(max_length=255, blank=True, null=True)
     office_number = models.CharField(max_length=255, blank=True, null=True)
     kind = models.CharField(max_length=255, blank=True, null=True)
     location = models.CharField(max_length=255, blank=True, null=True)  # TODO Find standard for storage in charfield
