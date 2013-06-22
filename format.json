@@ -1,0 +1,65 @@
+[{
+    'id': '',
+    'personal': {
+        'first_name': '',
+        'last_name': '',
+        'full_name': '', // optinional
+        'gender': '', // optional
+        'birth_date': '',
+        'birth_place': '', // optinional
+        'cv': '', // optional
+    }
+    'contact': {
+        'emails': [{
+            'email': '',
+            'type: "",  // optional
+        }],
+        'websites': [{
+            'website': "",
+            'type': "", // optional
+        }],
+        'phones': [{
+            'phone': "",
+            'address': 'for example "the phone number of his office in the EP"',
+                                    // optional, type foreignkey
+            'type': 'fax, official, personnal etc ...', // optional
+        }],
+        'address': [{
+            'country: "",
+            'city: "",
+            'street: "",
+            'number: "",
+            'postcode: "",
+            'floor': "",         // optinional
+            'office_number': "", // optinional
+            'type': 'stuff like "his official office"',
+                                 //  optinional
+            'geo': {             //  optinional
+                 'lon': '',
+                 'lat': '',
+            },
+            'phones': [
+                "0039xxxx", // Foreign key to a phone instance from above
+                "0039xxxx",
+            ]
+        }],
+    },
+    'mandates': [{
+            // a dude is elected for this country,
+            // in this political group,
+            // for this party, for this region etc...
+            'name': '',
+            'type': 'group, committee, delegation ...',
+            'short_id': 'country code, committee/group abbreviation ...',
+                                 // optinional
+            'url_official': '', // optional
+            'constituency': "country, voting districts, party, etc",
+                                 // optional
+            'role': '',          // optional
+            // either we have membership date or only if it's the current one
+            'begin_date': '',    // optinional
+            'end_date': '',      // optinional
+            'current': false,    // optinional
+         }
+    ]
+}]
