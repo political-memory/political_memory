@@ -20,7 +20,7 @@
         }],
         "phones": [{
             "phone": "",
-            "address": "for example "the phone number of his office in the EP"",
+            "address": "for example \"the phone number of his office in the EP\"",
                                     // optional, type foreignkey
             "type": "fax, official, personnal etc ...", // optional
         }],
@@ -32,7 +32,7 @@
             "postcode: "",
             "floor": "",         // optinional
             "office_number": "", // optinional
-            "type": "stuff like "his official office"",
+            "type": "stuff like \"his official office\"",
                                  //  optinional
             "geo": {             //  optinional
                  "lon": "",
