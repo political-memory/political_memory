@@ -25,11 +25,11 @@
             "type": "fax, official, personnal etc ...", // optional
         }],
         "address": [{
-            "country: "",
-            "city: "",
-            "street: "",
-            "number: "",
-            "postcode: "",
+            "country": "",
+            "city": "",
+            "street": "",
+            "number": "",
+            "postcode": "",
             "floor": "",         // optinional
             "office_number": "", // optinional
             "type": "stuff like \"his official office\"",
