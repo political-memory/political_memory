@@ -56,7 +56,7 @@
             "constituency": "country, voting districts, party, etc",
                                  // optional
             "role": "",          // optional
-            // either we have membership date or only if it"s the current one
+            // either we have membership date or only if it's the current one
             "begin_date": "",    // optinional
             "end_date": "",      // optinional
             "current": false,    // optinional
