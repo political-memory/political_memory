@@ -19,7 +19,21 @@ class Command(BaseCommand):
             reps["contact"] = {}
             reps["contact"]["emails"] = [{"email": email.email, "type": email.kind} for email in representative.email_set.all()]
             reps["contact"]["websites"] = [{"website": website.url, "type": website.kind} for website in representative.website_set.all()]
-            reps["contact"]["phones"] = [{"phone": phone.number, "type": phone.kind, "address": phone.address_id} for phone in representative.phone_set.all()]
+            reps["contact"]["phones"] = [{"phone": phone.number, "type": phone.kind, "address": phone.address_id, "id": phone.id} for phone in representative.phone_set.all()]
+
+            reps["contact"]["address"] = [{
+               "id": address.id,
+               "country": {"name": address.country.name, "code": address.country.code},
+               "city": address.city,
+               "street": address.street,
+               "number": address.number,
+               "postcode": address.postcode,
+               "floor": address.floor,
+               "office_number": address.office_number,
+               "type": address.kind,
+               "geo": None,
+               "phones": [phone.id for phone in address.phone_set.all()],
+            } for address in representative.address_set.all()]
 
             result.append(reps)
 
