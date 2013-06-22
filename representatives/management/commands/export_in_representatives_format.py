@@ -16,6 +16,9 @@ class Command(BaseCommand):
             reps["personal"]["gender"] = gender_dict[representative.gender]
             reps["personal"]["birth_date"] = representative.birth_date.strftime("%F") if representative.birth_date else None
 
+            reps["contact"] = {}
+            reps["contact"]["emails"] = [{"email": email.email, "type": email.kind} for email in representative.email_set.all()]
+
             result.append(reps)
 
         print json.dumps(result, indent=4)
