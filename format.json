@@ -19,13 +19,18 @@
             "type": "", // optional
         }],
         "phones": [{
+            "id": "", // needed for address
             "phone": "",
             "address": "for example \"the phone number of his office in the EP\"",
                                     // optional, type foreignkey
             "type": "fax, official, personnal etc ...", // optional
         }],
         "address": [{
-            "country": "",
+            "id": "", // needed for phone
+            "country": {
+                "name": "",
+                "code": "",
+            },
             "city": "",
             "street": "",
             "number": "",
