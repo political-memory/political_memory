@@ -16,7 +16,7 @@ def export_a_representative(representative):
     reps["contact"]["phones"] = [{"phone": phone.number, "type": phone.kind, "address": phone.address_id, "id": phone.id} for phone in representative.phone_set.all()]
 
     reps["contact"]["address"] = [{
-                                  "id": address.id,
+       "id": address.id,
        "country": {"name": address.country.name, "code": address.country.code},
        "city": address.city,
        "street": address.street,
