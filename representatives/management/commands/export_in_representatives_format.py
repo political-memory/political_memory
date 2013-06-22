@@ -19,6 +19,7 @@ class Command(BaseCommand):
             reps["contact"] = {}
             reps["contact"]["emails"] = [{"email": email.email, "type": email.kind} for email in representative.email_set.all()]
             reps["contact"]["websites"] = [{"website": website.url, "type": website.kind} for website in representative.website_set.all()]
+            reps["contact"]["phones"] = [{"phone": phone.number, "type": phone.kind, "address": phone.address_id} for phone in representative.phone_set.all()]
 
             result.append(reps)
 
