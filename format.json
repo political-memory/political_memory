@@ -8,7 +8,7 @@
         "birth_date": "",
         "birth_place": "", // optinional
         "cv": "", // optional
-    }
+    },
     "contact": {
         "emails": [{
             "email": "",
