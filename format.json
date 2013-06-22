@@ -12,7 +12,7 @@
     "contact": {
         "emails": [{
             "email": "",
-            "type: "",  // optional
+            "type": "",  // optional
         }],
         "websites": [{
             "website": "",
