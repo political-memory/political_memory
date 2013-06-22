@@ -35,6 +35,18 @@ class Command(BaseCommand):
                "phones": [phone.id for phone in address.phone_set.all()],
             } for address in representative.address_set.all()]
 
+            reps["mandates"] = [{
+                "name": mandate.name,
+                "type": mandate.kind,
+                "short_id": mandate.short_id,
+                "url_official": mandate.url,
+                "constituency": mandate.constituency,
+                "role": mandate.role,
+                "begin_date": mandate.begin_date.strftime("%F") if mandate.begin_date else None,
+                "end_date": mandate.end_date.strftime("%F") if mandate.end_date else None,
+                "current": mandate.active,
+            } for mandate in representative.mandate_set.all()]
+
             result.append(reps)
 
         print json.dumps(result, indent=4)
