@@ -80,7 +80,6 @@ class Command(BaseCommand):
                         address=addresses[phone["id"]]
                     )
 
-                # clean mandates
                 representative.mandate_set.all().delete()
                 for mandate in reps["mandates"]:
                     representative.mandate_set.create(
