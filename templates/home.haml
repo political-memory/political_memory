@@ -1,0 +1,10 @@
+-extends "base.haml"
+-load coffeescript
+
+-block content
+  %p
+    %b
+      \\o/
+
+-block javascript
+  %script{type: "text/javascript", src: "{{ STATIC_URL }}{% coffeescript 'home.coffee' %}"}

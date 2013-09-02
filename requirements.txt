@@ -1,0 +1,8 @@
+django
+django-debug-toolbar
+django_pdb
+django_extensions
+werkzeug
+south
+https://github.com/jessemiller/HamlPy/tarball/master
+git+git://github.com/SlashRoot/django-coffeescript.git
