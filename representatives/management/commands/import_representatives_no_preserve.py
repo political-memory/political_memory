@@ -23,7 +23,13 @@ class Command(BaseCommand):
                 sys.stdout.write("%s/%s\r" % (a, end))
                 sys.stdout.flush()
                 remote_id = reps["id"]
-                representative = Representative.objects.get(remote_id=remote_id)
+                representative = Representative.objects.filter(remote_id=remote_id)
+                if representative:
+                    representative = representative[0]
+                else:
+                    representative = Representative()
+                    representative.remote_id = remote_id
+
                 representative.first_name = reps["personal"]["first_name"]
                 representative.last_name = reps["personal"]["last_name"]
                 representative.full_name = reps["personal"]["full_name"]
@@ -31,6 +37,8 @@ class Command(BaseCommand):
                 representative.birth_date = datetime.strptime(reps["personal"]["birth_date"], "%Y-%m-%d") if reps["personal"]["birth_date"] else None
                 representative.cv = reps["personal"]["cv"]
                 representative.gender = reverted_gender_dict[reps["personal"]["gender"]]
+
+                representative.save()
 
                 representative.email_set.all().delete()
                 for email in reps["contact"]["emails"]:
@@ -51,7 +59,7 @@ class Command(BaseCommand):
                 for address in reps["contact"]["address"]:
                     country = Country.objects.filter(code=address["country"]["code"])
                     if not country:
-                        Country.objects.create(
+                        country = Country.objects.create(
                             name=address["country"]["name"],
                             code=address["country"]["code"]
                         )
