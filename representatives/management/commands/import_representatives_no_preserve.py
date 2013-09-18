@@ -51,7 +51,7 @@ class Command(BaseCommand):
                 for address in reps["contact"]["address"]:
                     country = Country.objects.filter(code=address["country"]["code"])
                     if not country:
-                        Country.objects.create(
+                        country = Country.objects.create(
                             name=address["country"]["name"],
                             code=address["country"]["code"]
                         )
