@@ -98,6 +98,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'south',
     'representatives',
+    'representatives_votes',
 )
 
 if DEBUG:
