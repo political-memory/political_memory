@@ -1,9 +1,9 @@
-    git clone git@github.com:Psycojoker/django-parltrack-votes.git
-    git clone git@github.com:Psycojoker/django-representatives.git
-    git clone git@github.com:Psycojoker/yolopol.git
+    git clone git@github.com:political-memory/django-representatives-votes.git
+    git clone git@github.com:political-memory/django-representatives.git
+    git clone git@github.com:political-memory/political_memory.git
 
-    cd yolopol
-    ln -s ../django-parltrack-votes/parltrack_votes/ .
+    cd political_memory
+    ln -s ../django-representatives-votes/parltrack_votes/ .
     ln -s ../django-representatives/representatives/ .
 
     virtualenv ve
