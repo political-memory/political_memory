@@ -3,7 +3,7 @@
     git clone git@github.com:political-memory/political_memory.git
 
     cd political_memory
-    ln -s ../django-representatives-votes/parltrack_votes/ .
+    ln -s ../django-representatives-votes/representatives_votes/ .
     ln -s ../django-representatives/representatives/ .
 
     virtualenv ve
