@@ -7,6 +7,9 @@ class Country(models.Model):
     name = models.CharField(max_length=255)
     code = models.CharField(max_length=2)
 
+    def __unicode__(self):
+        return "%s - %s" % (self.name, self.code)
+
 
 class Representative(models.Model):
     """
