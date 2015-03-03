@@ -33,6 +33,7 @@ class Representative(models.Model):
     birth_place = models.CharField(max_length=255, blank=True, null=True)
     birth_date = models.DateField(blank=True, null=True)
     cv = models.TextField(blank=True, null=True)
+    photo = models.CharField(max_length=512, null=True)
 
 
 class Contact(models.Model):
