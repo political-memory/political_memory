@@ -1,7 +1,15 @@
 representatives
 
 *.sqlite3
+
+# SASS Cache
+.sass-cache
+
+CACHE/*
+
+# Emacs backup
 *~
+\#*\#
 
 # From https://github.com/github/gitignore/blob/master/Python.gitignore
 

@@ -1,0 +1,44 @@
+- load i18n
+
+#footer.row
+    %ul
+        %li
+            - blocktrans
+                Memopol is free software
+                <a href="https://gitorious.org/memopol2-0">released</a>
+                under the terms of the
+                <a href="http://www.gnu.org/licenses/agpl.html">GNU aGPLV3+</a>
+        %li
+            -# %a{href: "{% url about %}"}
+            -#     - trans "About"
+        %li
+            %a{href: "https://projets.lqdn.fr/projects/mempol"}
+                - trans "Bug tracking system"
+        %li
+            %a{href: "https://projets.lqdn.fr/projects/mempol/issues/new"}
+                - trans "Report a bug"
+    %ul
+        %li
+            -# %a{href: "{% url api_doc %}"}
+            -#     API
+        %li
+            -# %a{href: "{% url contact_form %}"}
+            -#     Contact
+        -# - if user.is_staff
+        -#     %li
+        -#         %a{href: "{% url admin:index %}"}
+        -#             - trans "Administration"
+        -#     %li
+        -#         %a{href: "{% url admin:comments_comment_changelist %}"}
+        -#             - trans "Comments moderation"
+        -#     %li
+        -#         %a{href: "{% url admin:logout %}"}
+        -#             - trans "Logout"
+        -#     -if user.is_anonymous
+        -#         %li
+        -#             %a{href: "{% url admin:index %}"}
+        -#                 - trans "Login"
+
+  %ul
+    %li
+      {% trans "Provided by" %} <a href="http://www.laquadrature.net/">La Quadrature du Net</a>

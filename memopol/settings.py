@@ -36,21 +36,16 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'compressor',
+    # ---
+    'core',
     'representatives',
-    'constance',
-    'constance.backends.database',
+    'memopol_representatives',
 )
 
 # App settings
 
-REPRESENTATIVES_COMPOTISTA_SERVER = "http://compotista.mm.staz.be"
-
-CONSTANCE_CONFIG = {
-    'COMPOTISTA_SERVER': ('http://compotista.mm.staz.be', 'Compotista server'),
-    'TOUTATIS_SERVER': ('blabla', 'Toutatis server')
-}
-
-CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
+REPRESENTATIVES_COMPOTISTA_SERVER = 'http://pi2.octopuce.fr:8081'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -95,3 +90,43 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# HAML Templates
+# https://github.com/jessemiller/hamlpy
+
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+    'hamlpy.template.loaders.HamlPyFilesystemLoader',
+    'hamlpy.template.loaders.HamlPyAppDirectoriesLoader',
+)
+
+"""
+TEMPLATE_LOADERS = (
+    ('django.template.loaders.cached.Loader', (
+        'hamlpy.template.loaders.HamlPyFilesystemLoader',
+        'hamlpy.template.loaders.HamlPyAppDirectoriesLoader',
+    )),
+)
+"""
+
+# Static files finders
+
+STATIC_URL = '/static/'
+COMPRESS_ROOT = 'static/'
+COMPRESS_ENABLED = True
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+)
+
+COMPRESS_PRECOMPILERS = (
+    # ('text/coffeescript', 'coffee --compile --stdio'),
+    ('text/less', 'lessc {infile} {outfile}'),
+    ('text/x-sass', 'sass {infile} {outfile}'),
+    ('text/x-scss', 'sass --scss {infile} {outfile}'),
+    # ('text/stylus', 'stylus < {infile} > {outfile}'),
+    # ('text/foobar', 'path.to.MyPrecompilerFilter'),
+)

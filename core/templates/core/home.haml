@@ -1,0 +1,20 @@
+- extends "base.html"
+
+- block content
+    .row
+        .large-8.columns
+            /- include "map-eu.html"
+            %h1 Hello
+        .large-4.columns
+            -# - include "core/blocks/last_news.html"
+            - include "core/blocks/what_is_memopol.html"
+    .row
+        .large-8.columns
+            / - include "core/blocks/last_votes.html"
+        .large-4.columns
+            - with mep=spotlight_mep
+            / - include "core/blocks/representative_preview.html"
+
+- block js_onload
+    %script{type: "text/javascript", src: "{{ STATIC_URL }}js/map.js"}
+    %script{type: "text/javascript", src: "{{ STATIC_URL }}js/d3.v3.min.js"}

@@ -1,0 +1,9 @@
+-load memopol2 memopol_tags
+
+.floor.list_item
+  .row.panel
+    %h4
+      -trans "Average scores of the search results"
+    .four.columns.flat.mobile-four
+      .panel.radius{class: "{{ average|scolorize }}"}
+        = average|floatformat:1

@@ -1,0 +1,56 @@
+.sprite-country_small-SK,
+.sprite-country_small-SI,
+.sprite-country_small-SE,
+.sprite-country_small-RO,
+.sprite-country_small-PT,
+.sprite-country_small-PL,
+.sprite-country_small-NL,
+.sprite-country_small-MT,
+.sprite-country_small-LV,
+.sprite-country_small-LU,
+.sprite-country_small-LT,
+.sprite-country_small-IT,
+.sprite-country_small-IE,
+.sprite-country_small-HU,
+.sprite-country_small-GR,
+.sprite-country_small-GB,
+.sprite-country_small-FR,
+.sprite-country_small-FI,
+.sprite-country_small-EU,
+.sprite-country_small-ES,
+.sprite-country_small-EE,
+.sprite-country_small-DK,
+.sprite-country_small-DE,
+.sprite-country_small-CZ,
+.sprite-country_small-CY,
+.sprite-country_small-BG,
+.sprite-country_small-BE,
+.sprite-country_small-AT{background-image:url('country_small.png');background-repeat:no-repeat}
+.sprite-country_small-SK{background-position:0px 0px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-SI{background-position:-16px 0px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-SE{background-position:0px -11px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-RO{background-position:-16px -11px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-PT{background-position:-32px 0px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-PL{background-position:-32px -11px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-NL{background-position:0px -22px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-MT{background-position:-16px -22px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-LV{background-position:-32px -22px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-LU{background-position:0px -33px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-LT{background-position:-16px -33px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-IT{background-position:-32px -33px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-IE{background-position:-48px 0px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-HU{background-position:-48px -11px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-GR{background-position:-48px -22px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-GB{background-position:-48px -33px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-FR{background-position:0px -44px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-FI{background-position:-16px -44px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-EU{background-position:-32px -44px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-ES{background-position:-48px -44px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-EE{background-position:-64px 0px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-DK{background-position:-64px -11px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-DE{background-position:-64px -22px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-CZ{background-position:-64px -33px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-CY{background-position:-64px -44px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-BG{background-position:0px -55px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-BE{background-position:-16px -55px;width:16px;height:11px;display:inline-block;}
+.sprite-country_small-AT{background-position:-32px -55px;width:16px;height:11px;display:inline-block;}

@@ -1,0 +1,13 @@
+- extends "base.html"
+
+- block content
+  .row
+    .large-8.columns
+      - for representative in memopolrepresentative_list
+        %p
+          = representative.full_name
+          = representative.email
+  
+    .large-4.columns
+      %p
+        hello
