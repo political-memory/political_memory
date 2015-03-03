@@ -9,5 +9,4 @@ class IndexView(generic.ListView):
     template_name = 'memopol_representatives/list.html'
 
     def get_queryset(self):
-        """Return the last five published questions."""
         return MemopolRepresentative.objects.all()

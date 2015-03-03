@@ -36,7 +36,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # ---
     'compressor',
+    'chronograph',
     # ---
     'core',
     'representatives',
@@ -94,6 +96,10 @@ STATIC_URL = '/static/'
 # HAML Templates
 # https://github.com/jessemiller/hamlpy
 
+TEMPLATE_DIRS = (
+    'core/templates',
+)
+
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
@@ -114,7 +120,7 @@ TEMPLATE_LOADERS = (
 
 STATIC_URL = '/static/'
 COMPRESS_ROOT = 'static/'
-COMPRESS_ENABLED = True
+
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
