@@ -1,0 +1,9 @@
+Django==1.7.5
+django-appconf==1.0.1
+django-compressor==1.4
+django-constance==1.0.1
+django-picklefield==0.3.1
+hamlpy==0.82.2
+Markdown==2.6
+Pygments==2.0.2
+six==1.9.0
