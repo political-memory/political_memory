@@ -1,4 +1,7 @@
+# Django apps
+
 representatives
+chronograph
 
 *.sqlite3
 
@@ -8,8 +11,6 @@ representatives
 CACHE/*
 
 # Emacs backup
-*~
-\#*\#
 
 # From https://github.com/github/gitignore/blob/master/Python.gitignore
 
