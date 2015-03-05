@@ -56,7 +56,8 @@ def import_representatives_from_format(data, verbose=False):
     reverted_gender_dict = {x[1]: x[0] for x in Representative.GENDER}
     a = 0
     end = len(data)
-    with transaction.commit_on_success():
+
+    with transaction.atomic():
         for reps in data:
             a += 1
             if verbose:

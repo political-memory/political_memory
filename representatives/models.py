@@ -8,7 +8,7 @@ class Country(models.Model):
     code = models.CharField(max_length=2)
 
     def __unicode__(self):
-        return "%s - %s" % (self.name, self.code)
+        return "%s [%s]" % (self.name, self.code)
 
 
 class Representative(models.Model):
@@ -34,6 +34,9 @@ class Representative(models.Model):
     birth_date = models.DateField(blank=True, null=True)
     cv = models.TextField(blank=True, null=True)
     photo = models.CharField(max_length=512, null=True)
+
+    def __unicode__(self):
+        return self.full_name
 
 
 class Contact(models.Model):
