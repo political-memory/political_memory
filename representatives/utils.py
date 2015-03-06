@@ -14,6 +14,7 @@ def export_a_representative(representative):
     reps["personal"] = {field: getattr(representative, field) for field in PERSONAL_FIELDS}
     reps["personal"]["gender"] = GENDER_DICT[representative.gender]
     reps["personal"]["birth_date"] = representative.birth_date.strftime("%F") if representative.birth_date else None
+    reps["personal"]["photo"] = representative.photo
 
     reps["contact"] = {}
     reps["contact"]["emails"] = [{"email": email.email, "type": email.kind} for email in representative.email_set.all()]
@@ -82,6 +83,7 @@ def import_representatives_from_format(data, verbose=False):
                 representative.birth_date = None
 
             representative.cv = reps["personal"]["cv"]
+            representative.photo = reps["personal"]["photo"]
             representative.gender = reverted_gender_dict[reps["personal"]["gender"]]
 
             representative.save()
