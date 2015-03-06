@@ -52,6 +52,7 @@ def export_a_representative(representative):
 def export_all_representatives():
     return [export_a_representative(representative) for representative in Representative.objects.all()]
 
+
 def import_representatives_from_format(data, verbose=False):
     reverted_gender_dict = {x[1]: x[0] for x in Representative.GENDER}
     a = 0
@@ -75,7 +76,11 @@ def import_representatives_from_format(data, verbose=False):
             representative.last_name = reps["personal"]["last_name"]
             representative.full_name = reps["personal"]["full_name"]
             representative.birth_place = reps["personal"]["birth_place"]
-            representative.birth_date = datetime.strptime(reps["personal"]["birth_date"], "%Y-%m-%d") if reps["personal"]["birth_date"] else None
+            if reps["personal"]["birth_date"]:
+                representative.birth_date = datetime.strptime(reps["personal"]["birth_date"], "%Y-%m-%d")
+            else:
+                representative.birth_date = None
+
             representative.cv = reps["personal"]["cv"]
             representative.gender = reverted_gender_dict[reps["personal"]["gender"]]
 
@@ -99,6 +104,7 @@ def import_representatives_from_format(data, verbose=False):
             representative.address_set.all().delete()
             for address in reps["contact"]["address"]:
                 country = Country.objects.filter(code=address["country"]["code"])
+
                 if not country:
                     country = Country.objects.create(
                         name=address["country"]["name"],
