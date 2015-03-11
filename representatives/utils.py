@@ -2,10 +2,12 @@ import sys
 
 from django.db import transaction
 from datetime import datetime
+from django.core.exceptions import ObjectDoesNotExist
 
-from representatives.models import Representative, Country
 
-PERSONAL_FIELDS = ("first_name", "last_name", "full_name", "birth_place", "cv")
+from representatives.models import Representative, Country, Group, Constituency, Mandate
+
+PERSONAL_FIELDS = ("first_name", "last_name", "full_name", "birth_place", "cv", "photo")
 GENDER_DICT = dict(Representative.GENDER)
 
 
@@ -14,12 +16,25 @@ def export_a_representative(representative):
     reps["personal"] = {field: getattr(representative, field) for field in PERSONAL_FIELDS}
     reps["personal"]["gender"] = GENDER_DICT[representative.gender]
     reps["personal"]["birth_date"] = representative.birth_date.strftime("%F") if representative.birth_date else None
-    reps["personal"]["photo"] = representative.photo
 
     reps["contact"] = {}
-    reps["contact"]["emails"] = [{"email": email.email, "type": email.kind} for email in representative.email_set.all()]
-    reps["contact"]["websites"] = [{"website": website.url, "type": website.kind} for website in representative.website_set.all()]
-    reps["contact"]["phones"] = [{"phone": phone.number, "type": phone.kind, "address": phone.address_id, "id": phone.id} for phone in representative.phone_set.all()]
+
+    reps["contact"]["emails"] = [{
+        "email": email.email,
+        "type": email.kind
+    } for email in representative.email_set.all()]
+
+    reps["contact"]["websites"] = [{
+        "website": website.url,
+        "type": website.kind
+    } for website in representative.website_set.all()]
+
+    reps["contact"]["phones"] = [{
+        "phone": phone.number,
+        "type": phone.kind, "address":
+        phone.address_id,
+        "id": phone.id
+    } for phone in representative.phone_set.all()]
 
     reps["contact"]["address"] = [{
        "id": address.id,
@@ -36,11 +51,11 @@ def export_a_representative(representative):
     } for address in representative.address_set.all()]
 
     reps["mandates"] = [{
-        "name": mandate.name,
-        "type": mandate.kind,
-        "short_id": mandate.short_id,
+        "name": mandate.group.name,
+        "type": mandate.group.kind,
+        "short_id": mandate.group.abbreviation,
         "url_official": mandate.url,
-        "constituency": mandate.constituency,
+        "constituency": mandate.constituency.name,
         "role": mandate.role,
         "begin_date": mandate.begin_date.strftime("%F") if mandate.begin_date else None,
         "end_date": mandate.end_date.strftime("%F") if mandate.end_date else None,
@@ -77,13 +92,14 @@ def import_representatives_from_format(data, verbose=False):
             representative.last_name = reps["personal"]["last_name"]
             representative.full_name = reps["personal"]["full_name"]
             representative.birth_place = reps["personal"]["birth_place"]
+            representative.cv = reps["personal"]["cv"]
+            representative.photo = reps["personal"]["photo"]
+
             if reps["personal"]["birth_date"]:
                 representative.birth_date = datetime.strptime(reps["personal"]["birth_date"], "%Y-%m-%d")
             else:
                 representative.birth_date = None
 
-            representative.cv = reps["personal"]["cv"]
-            representative.photo = reps["personal"]["photo"]
             representative.gender = reverted_gender_dict[reps["personal"]["gender"]]
 
             representative.save()
@@ -139,18 +155,53 @@ def import_representatives_from_format(data, verbose=False):
 
             representative.mandate_set.all().delete()
             for mandate in reps["mandates"]:
+                try:
+                    constituency = Constituency.objects.get(name=mandate['constituency'])
+                except ObjectDoesNotExist:
+                    constituency = Constituency(name=mandate['constituency'])
+                    constituency.save()
+
+                try:
+                    group = Group.objects.get(
+                        name=mandate['name'],
+                        abbreviation=mandate['short_id'],
+                        kind=mandate['type']
+                    )
+                except ObjectDoesNotExist:
+                    group = Group(
+                        name=mandate['name'],
+                        abbreviation=mandate['short_id'],
+                        kind=mandate['type']
+                    )
+                    group.save()
+
                 representative.mandate_set.create(
-                    name=mandate["name"],
-                    kind=mandate["type"],
-                    short_id=mandate["short_id"],
+                    group=group,
+                    constituency=constituency,
                     url=mandate["url_official"],
-                    constituency=mandate["constituency"],
                     role=mandate["role"],
                     begin_date=mandate["begin_date"],
                     end_date=mandate["end_date"],
                     active=mandate["current"],
                 )
 
+            # Create a country if not exist
+            country_mandate = representative.mandate_set.filter(
+                group__kind='country'
+            ).order_by('-begin_date')[0:1].get()
+
+            try:
+                country = Country.objects.get(
+                    name=country_mandate.group.name,
+                    code=country_mandate.group.abbreviation
+                )
+            except ObjectDoesNotExist:
+                country = Country(
+                    name=country_mandate.group.name,
+                    code=country_mandate.group.abbreviation
+                )
+                country.save()
+            representative.country = country
             representative.save()
 
     if verbose:

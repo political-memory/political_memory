@@ -12,16 +12,11 @@ class Country(models.Model):
 
 
 class Representative(models.Model):
-    """
-    FIXME
-    """
-    N_A = 0
-    F = 1
-    M = 2
+
     GENDER = (
-        (N_A, "N/A"),
-        (F, "F"),
-        (M, "M"),
+        (0, "N/A"),
+        (1, "F"),
+        (2, "M"),
     )
 
     slug = models.SlugField(max_length=100)
@@ -29,14 +24,19 @@ class Representative(models.Model):
     first_name = models.CharField(max_length=255, blank=True, null=True)
     last_name = models.CharField(max_length=255, blank=True, null=True)
     full_name = models.CharField(max_length=255)
-    gender = models.SmallIntegerField(choices=GENDER, default=N_A)
+    gender = models.SmallIntegerField(choices=GENDER, default=0)
     birth_place = models.CharField(max_length=255, blank=True, null=True)
     birth_date = models.DateField(blank=True, null=True)
     cv = models.TextField(blank=True, null=True)
     photo = models.CharField(max_length=512, null=True)
+    active = models.BooleanField(default=False)
+    country = models.ForeignKey(Country, null=True)
 
     def __unicode__(self):
         return self.full_name
+
+
+# Contact related models
 
 
 class Contact(models.Model):
@@ -75,17 +75,36 @@ class Phone(Contact):
     address = models.ForeignKey(Address)
 
 
-class Mandate(models.Model):
+# Mandate related models
+
+
+class Group(models.Model):
+    """
+        An entity represented by a representative through a mandate
+    """
     name = models.CharField(max_length=255)
+    abbreviation = models.CharField(max_length=10, blank=True, null=True)
     kind = models.CharField(max_length=255, blank=True, null=True)
-    short_id = models.CharField(max_length=25, blank=True, null=True)
-    url = models.URLField()
-    constituency = models.CharField(
-        max_length=255,
-        blank=True,
-        null=True,
-        help_text="Authority for which the mandate is realized. Eg.: a eurodeputies has a mandate at the European Parliament for a country"
-    )
+    active = models.BooleanField(default=False)
+
+    def __unicode__(self):
+        return unicode(self.name)
+
+
+class Constituency(models.Model):
+    """
+        An authority for which a representative has a mandate
+    """
+    name = models.CharField(max_length=255)
+
+    def __unicode__(self):
+        return self.name
+
+
+class Mandate(models.Model):
+    group = models.ForeignKey(Group, null=True)
+    constituency = models.ForeignKey(Constituency, null=True)
+    representative = models.ForeignKey(Representative)
     role = models.CharField(
         max_length=25,
         blank=True,
@@ -94,7 +113,5 @@ class Mandate(models.Model):
     )
     begin_date = models.DateField(blank=True, null=True)
     end_date = models.DateField(blank=True, null=True)
-    # Sometimes begin_date and end_date are not available
+    url = models.URLField()
     active = models.NullBooleanField(default=False)
-
-    representative = models.ForeignKey(Representative)
