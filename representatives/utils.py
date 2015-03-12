@@ -2,10 +2,8 @@ import sys
 
 from django.db import transaction
 from datetime import datetime
-from django.core.exceptions import ObjectDoesNotExist
 
-
-from representatives.models import Representative, Country, Group, Constituency, Mandate
+from representatives.models import Representative, Country, Group, Constituency
 
 PERSONAL_FIELDS = ("first_name", "last_name", "full_name", "birth_place", "cv", "photo")
 GENDER_DICT = dict(Representative.GENDER)
@@ -155,25 +153,12 @@ def import_representatives_from_format(data, verbose=False):
 
             representative.mandate_set.all().delete()
             for mandate in reps["mandates"]:
-                try:
-                    constituency = Constituency.objects.get(name=mandate['constituency'])
-                except ObjectDoesNotExist:
-                    constituency = Constituency(name=mandate['constituency'])
-                    constituency.save()
-
-                try:
-                    group = Group.objects.get(
-                        name=mandate['name'],
-                        abbreviation=mandate['short_id'],
-                        kind=mandate['type']
-                    )
-                except ObjectDoesNotExist:
-                    group = Group(
-                        name=mandate['name'],
-                        abbreviation=mandate['short_id'],
-                        kind=mandate['type']
-                    )
-                    group.save()
+                constituency, = Constituency.objects.get_or_create(name=mandate['constituency'])
+                group, created = Group.objects.get_or_create(
+                    name=mandate['name'],
+                    abbreviation=mandate['short_id'],
+                    kind=mandate['type']
+                )
 
                 representative.mandate_set.create(
                     group=group,
@@ -190,17 +175,11 @@ def import_representatives_from_format(data, verbose=False):
                 group__kind='country'
             ).order_by('-begin_date')[0:1].get()
 
-            try:
-                country = Country.objects.get(
-                    name=country_mandate.group.name,
-                    code=country_mandate.group.abbreviation
-                )
-            except ObjectDoesNotExist:
-                country = Country(
-                    name=country_mandate.group.name,
-                    code=country_mandate.group.abbreviation
-                )
-                country.save()
+            country, created = Country.objects.get_or_create(
+                name=country_mandate.group.name,
+                code=country_mandate.group.abbreviation
+            )
+
             representative.country = country
             representative.save()
 
