@@ -3,13 +3,10 @@
 - block content
   .row
     .large-8.columns
-      - for representative in memopolrepresentative_list
-        %p
-          = representative.full_name
-          - for email in representative.email_set.all
-            %p
-              = email.email
-
+      - for representative in representative_list
+        .row
+          - include 'memopol_representatives/representative_block.html'
+        
     .large-4.columns
       %p
         hello
