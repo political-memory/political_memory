@@ -153,7 +153,11 @@ def import_representatives_from_format(data, verbose=False):
 
             representative.mandate_set.all().delete()
             for mandate in reps["mandates"]:
-                constituency, = Constituency.objects.get_or_create(name=mandate['constituency'])
+
+                constituency, created = Constituency.objects.get_or_create(
+                    name=mandate['constituency']
+                )
+
                 group, created = Group.objects.get_or_create(
                     name=mandate['name'],
                     abbreviation=mandate['short_id'],
@@ -170,7 +174,9 @@ def import_representatives_from_format(data, verbose=False):
                     active=mandate["current"],
                 )
 
-            # Create a country if not exist
+            # Create a country if it does not exist
+            # The representative's country is the one associated
+            # with the last 'country' mandate
             country_mandate = representative.mandate_set.filter(
                 group__kind='country'
             ).order_by('-begin_date')[0:1].get()
