@@ -1,76 +1,23 @@
-{% load compress %}
 <!DOCTYPE html>
-
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<html class="no-js" lang="en"> <!--<![endif]-->
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="{{ STATIC_URL }}img/favicon.ico" />
-
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width" />
-
     {% block head %}{% endblock %}
     <title>{% block title %}Home{% endblock %} - The Political Memory of {{ organization_name }}</title>
-
-    <!-- Included CSS Files (Uncompressed) -->
-    <!--
-        <link rel="stylesheet" href="stylesheets/foundation.css">
-        -->
-    <!-- Included CSS Files (Compressed) -->
-    {% compress css %}
-        <link rel="stylesheet" href="{{ STATIC_URL }}libs/foundation/css/foundation.css">
-        <!-- <link rel="stylesheet" href="{{ STATIC_URL }}foundation/stylesheets/foundation.min.css"> -->
-        <!-- <link rel="stylesheet" href="{{ STATIC_URL }}dynamiq/css/dynamiq.css" /> -->
-        <link rel="stylesheet" href="{{ STATIC_URL }}img/sprites/country_small.css" />
-        <link rel="stylesheet" href="{{ STATIC_URL }}img/sprites/eu_group.css" />
-        <link rel="stylesheet" href="{{ STATIC_URL }}img/sprites/common.css" />
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/app.sass" type="text/x-sass" />
-        <!-- <link rel="stylesheet" href="{{ STATIC_URL }}css/app.css" /> -->
-    {% endcompress %}
-    <script src="{{ STATIC_URL }}libs/foundation/js/vendor/modernizr.js"></script>
-
-
-    <!-- IE Fix for HTML5 Tags -->
-    <!--[if lt IE 9]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
+    <link rel="stylesheet" href="{{ STATIC_URL }}/css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}/css/base.css" type="text/css" />
 </head>
 <body {% block bodyattrs %}{% endblock %}>
     {% include "core/blocks/header.html" %}
     <div class="row main">
-        <div class="large-12 columns">
+        <div class="large-12 main columns">
             {% block content %}
             {% endblock %}
         </div>
     </div>
     {% include "core/blocks/footer.html" %}
-
-
-    <!-- Included JS Files (Uncompressed) -->
-
-    {% compress js %}
-        {# Foundation scripts must be loaded at the end #}
-            <script src="{{ STATIC_URL }}libs/foundation/js/vendor/jquery.js"></script>
-            <script src="{{ STATIC_URL }}libs/foundation/js/foundation.js"></script>
-        {% block javascript %}
-        {% endblock javascript %}
-    {% endcompress %}
-
-    {% block modals %}
-        {# Modals must be out ot the main content (required by foundation) #}
-        {% include "core/blocks/modals.html" %}
-    {% endblock modals %}
-
-    {% block js_onload %}
-    <script type="text/javascript">
-        // $(document).foundationTopBar();
-        // $(document).foundationTabs();
-    </script>
-    {% endblock js_onload %}
   </body>
 </html>
