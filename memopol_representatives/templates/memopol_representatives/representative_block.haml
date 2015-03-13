@@ -1,10 +1,13 @@
-%p.small-2.columns
-  %img{'src':'={representative.photo}'}/
-%p.small-4.columns
-  = representative.full_name
-  [ ={representative.country.code} ]
+%td<
+  %a{'href': "{% url 'representatives.detail' ={representative.id} %}"} 
+    %img{'src':'={representative.photo}'}/
 
-%p.small-6.columns
+%td<
+  %a{'href': "{% url 'representatives.detail' ={representative.id} %}"} 
+    ={representative.full_name} [={representative.country.code}]
+
+%td<
   - for mandate in representative.mandate_set.all
-    ={mandate.group.name} - ={mandate.end_date} - ={mandate.active}
+    ={mandate.group.name}
     %br/a
+

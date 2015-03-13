@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a href="{% url 'representatives:index' %}">Back</a>
+
+<p style="float: left">
+  <img src="{{ representative.photo }}">
+</p>
+
+<h1>{{ representative.full_name }}</h1>
+
+<p>
+  {{ representative.country.name }} {{ representative.gender }} <br>
+  Born in {{ representative.birth_place }} the {{ representative.birth_date }} <br>  
+</p>
+
+<h2 style="clear: both">Mandates</h2>
+{% for mandate in representative.mandate_set.all %}
+<div class="mandate">
+  <h3>
+    {{ mandate.group.name }}
+    <small>
+      {{ mandate.role }}
+    </small>
+  </h3>
+  <p>
+    {{ mandate.begin_date }} to {{ mandate.end_date }} <br>
+    <strong>{{ mandate.group.kind }}</strong> : <em>{{ mandate.group.name }} ({{ mandate.group.abbreviation }})</em> <br>
+    Constituency : {{ mandate.constituency.name }} <br>
+  </p>
+</div>
+<hr>
+{% endfor %}
+
+{% endblock %}

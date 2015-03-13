@@ -1,12 +1,20 @@
 - extends "base.html"
 
 - block content
-  .row
-    .large-8.columns
-      - for representative in representative_list
-        .row
-          - include 'memopol_representatives/representative_block.html'
-        
-    .large-4.columns
-      %p
-        hello
+  - include 'memopol_representatives/search.html'
+
+  %table
+    - for representative in representatives
+      %tr
+        - include 'memopol_representatives/representative_block.html'
+
+  .pagination
+    %span.step-links
+      - if representatives.has_previous
+        %a{'href': '?={queries.urlencode}&page=={representatives.previous_page_number}'} previous
+
+      %span.current
+        Page ={representatives.number} of ={representatives.paginator.num_pages}
+
+      - if representatives.has_next
+        %a{'href': '?={queries.urlencode}&page=={representatives.next_page_number}'} next

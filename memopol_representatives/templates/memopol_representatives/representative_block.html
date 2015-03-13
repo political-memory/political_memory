@@ -1,0 +1,11 @@
+<td>
+  <a href="{% url 'representatives:view' representative.id %}">
+    <img src="{{ representative.photo }}" />
+  </a>
+</td>
+<td>
+  <a href="{% url 'representatives:view' representative.id %}">
+    {{ representative.full_name }}&nbsp;[{{ representative.country.code }}]
+  </a>
+</td>
+
