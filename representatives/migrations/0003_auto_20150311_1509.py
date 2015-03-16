@@ -58,7 +58,11 @@ class Migration(migrations.Migration):
             field=models.BooleanField(default=False),
             preserve_default=True,
         ),
-        migrations.AlterField(
+        migrations.RemoveField(
+            model_name='mandate',
+            name='constituency'
+        ),
+        migrations.AddField(
             model_name='mandate',
             name='constituency',
             field=models.ForeignKey(to='representatives.Constituency', null=True),
