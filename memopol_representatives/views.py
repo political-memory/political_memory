@@ -19,7 +19,45 @@ def index(request):
     else:
         representative_list = Representative.objects.all()
 
-    paginator = Paginator(representative_list, 5)
+    paginator = Paginator(representative_list, 50)
+
+    page = request.GET.get('page')
+    try:
+        representatives = paginator.page(page)
+    except PageNotAnInteger:
+        representatives = paginator.page(1)
+    except EmptyPage:
+        representatives = paginator.page(paginator.num_pages)
+
+    context['representatives'] = representatives
+    return render(
+        request,
+        'memopol_representatives/list.html',
+        context
+    )
+
+
+def committee(request, committee):
+    context = {}
+    if request.GET.get('search'):
+        search = request.GET.get('search')
+        representative_list = Representative.objects.filter(
+            mandate__group__kind='committee',
+            mandate__group__abbreviation=committee
+            ).filter(
+                Q(full_name__icontains=search)
+            )
+        queries_without_page = request.GET.copy()
+        if 'page' in queries_without_page:
+            del queries_without_page['page']
+        context['queries'] = queries_without_page
+    else:
+        representative_list = list(set(Representative.objects.filter(
+            mandate__group__kind='committee',
+            mandate__group__abbreviation=committee
+        ).all()))
+
+    paginator = Paginator(representative_list, 50)
 
     page = request.GET.get('page')
     try:
