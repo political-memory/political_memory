@@ -11,7 +11,7 @@
 <h1>{{ representative.full_name }}</h1>
 
 {% for mandate in representative.mandate_set.all %}
-{% if mandate.group.kind == "group" %}
+{% if mandate.group.kind == "group" and mandate.active %}
 <h3>{{ mandate.role }} of {{ mandate.group.name }}</h3>
 {% endif %}
 {% endfor %}
@@ -21,8 +21,11 @@
 
 <h2 style="clear: both">Committees</h2>
 {% for mandate in representative.mandate_set.all %}
-  {% if mandate.group.kind == "committee" %}
-    <p>{{ mandate.role }} of {{ mandate.group.name }} ({{ mandate.group.abbreviation }})
+  {% if mandate.group.kind == "committee" and mandate.active %}
+    <p>
+      {{ mandate.role }} of {{ mandate.group.name }} 
+      (<a href="{% url 'representatives:committee' mandate.group.abbreviation %}">{{ mandate.group.abbreviation }}</a>)
+    </p>
   {% endif %}
 {% endfor %}
 
