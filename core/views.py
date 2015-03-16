@@ -7,5 +7,5 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         return {
-            'organization_name': 'LQDN'
+            'organization_name': 'La Quadrature du Net'
         }
