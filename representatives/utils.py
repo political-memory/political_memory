@@ -153,9 +153,11 @@ def import_representatives_from_format(data, verbose=False):
 
             representative.mandate_set.all().delete()
             for mandate in reps["mandates"]:
+
                 constituency, created = Constituency.objects.get_or_create(
                     name=mandate['constituency']
                 )
+
                 group, created = Group.objects.get_or_create(
                     name=mandate['name'],
                     abbreviation=mandate['short_id'],
