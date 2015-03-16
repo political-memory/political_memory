@@ -32,6 +32,12 @@ class Representative(models.Model):
     active = models.BooleanField(default=False)
     country = models.ForeignKey(Country, null=True)
 
+    def active_mandates(self):
+        return self.mandate_set.filter(active=True)
+
+    def former_mandates(self):
+        return self.mandate_set.filter(active=False)
+
     def __unicode__(self):
         return self.full_name
 
