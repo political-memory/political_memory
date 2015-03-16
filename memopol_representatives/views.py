@@ -10,7 +10,8 @@ def index(request):
     if request.GET.get('search'):
         search = request.GET.get('search')
         representative_list = Representative.objects.filter(
-            Q(full_name__icontains=search)
+            Q(full_name__icontains=search) |
+            Q(country__name__icontains=search)
         )
         queries_without_page = request.GET.copy()
         if 'page' in queries_without_page:
@@ -19,7 +20,7 @@ def index(request):
     else:
         representative_list = Representative.objects.all()
 
-    paginator = Paginator(representative_list, 5)
+    paginator = Paginator(representative_list, 15)
 
     page = request.GET.get('page')
     try:
