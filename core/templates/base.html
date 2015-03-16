@@ -9,14 +9,14 @@
     <title>{% block title %}Home{% endblock %} - The Political Memory of {{ organization_name }}</title>
     <link rel="stylesheet" href="{{ STATIC_URL }}/css/reset.css" type="text/css" />
     <link rel="stylesheet" href="{{ STATIC_URL }}/css/base.css" type="text/css" />
-</head>
-<body {% block bodyattrs %}{% endblock %}>
+  </head>
+  <body {% block bodyattrs %}{% endblock %}>
     {% include "core/blocks/header.html" %}
     <div class="row main">
-        <div class="large-12 main columns">
-            {% block content %}
-            {% endblock %}
-        </div>
+      <div class="large-12 main columns">
+        {% block content %}
+        {% endblock %}
+      </div>
     </div>
     {% include "core/blocks/footer.html" %}
   </body>
