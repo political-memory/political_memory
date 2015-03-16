@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width" />
     {% block head %}{% endblock %}
     <title>{% block title %}Home{% endblock %} - The Political Memory of {{ organization_name }}</title>
-    <link rel="stylesheet" href="{{ STATIC_URL }}/css/reset.css" type="text/css" />
-    <link rel="stylesheet" href="{{ STATIC_URL }}/css/base.css" type="text/css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/base.css" type="text/css" />
   </head>
   <body {% block bodyattrs %}{% endblock %}>
     {% include "core/blocks/header.html" %}

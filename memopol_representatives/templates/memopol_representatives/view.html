@@ -10,10 +10,21 @@
 
 <h1>{{ representative.full_name }}</h1>
 
-<p>
-  {{ representative.country.name }} {{ representative.gender }} <br>
-  Born in {{ representative.birth_place }} the {{ representative.birth_date }} <br>  
-</p>
+{% for mandate in representative.mandate_set.all %}
+{% if mandate.group.kind == "group" %}
+<h3>{{ mandate.role }} of {{ mandate.group.name }}</h3>
+{% endif %}
+{% endfor %}
+
+<p>Born in {{ representative.birth_place }} the {{ representative.birth_date }} ({{ representative.get_gender_display }})</p>
+<p>{{ representative.country.name }}</p>
+
+<h2 style="clear: both">Committees</h2>
+{% for mandate in representative.mandate_set.all %}
+  {% if mandate.group.kind == "committee" %}
+    <p>{{ mandate.role }} of {{ mandate.group.name }} ({{ mandate.group.abbreviation }})
+  {% endif %}
+{% endfor %}
 
 <h2 style="clear: both">Mandates</h2>
 {% for mandate in representative.active_mandates %}

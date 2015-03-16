@@ -1,5 +1,6 @@
 # Django apps
 
+compotista_django-representatives
 representatives
 chronograph
 
@@ -24,6 +25,8 @@ __pycache__/
 # Distribution / packaging
 .Python
 env/
+venv/
+ve/
 build/
 var/
 
