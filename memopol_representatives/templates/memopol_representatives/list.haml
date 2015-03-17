@@ -3,6 +3,9 @@
 - block content
   - include 'memopol_representatives/search.html'
 
+  %p
+    Number of representatives: {{ representative_num  }}
+
   %table
     - for representative in representatives
       %tr

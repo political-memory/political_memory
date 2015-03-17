@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load by_mandate_url %}
 
 {% block content %}
 
@@ -9,25 +10,16 @@
 </p>
 
 <h1>{{ representative.full_name }}</h1>
-
-{% for mandate in representative.mandate_set.all %}
-{% if mandate.group.kind == "group" and mandate.active %}
-<h3>{{ mandate.role }} of {{ mandate.group.name }}</h3>
-{% endif %}
-{% endfor %}
+<p>
+  <strong>
+    <a href="{{ representative.current_group|by_mandate_url }}">
+      {{ representative.current_group.role }} of {{ representative.current_group.group.name }}
+    </a>
+  </strong>
+</p>
 
 <p>Born in {{ representative.birth_place }} the {{ representative.birth_date }} ({{ representative.get_gender_display }})</p>
 <p>{{ representative.country.name }}</p>
-
-<h2 style="clear: both">Committees</h2>
-{% for mandate in representative.mandate_set.all %}
-  {% if mandate.group.kind == "committee" and mandate.active %}
-    <p>
-      {{ mandate.role }} of {{ mandate.group.name }} 
-      (<a href="{% url 'representatives:committee' mandate.group.abbreviation %}">{{ mandate.group.abbreviation }}</a>)
-    </p>
-  {% endif %}
-{% endfor %}
 
 <h2 style="clear: both">Mandates</h2>
 {% for mandate in representative.active_mandates %}
@@ -40,7 +32,10 @@
   </h3>
   <p>
     {{ mandate.begin_date }} to {{ mandate.end_date }} <br>
-    <strong>{{ mandate.group.kind }}</strong> : <em>{{ mandate.group.name }} ({{ mandate.group.abbreviation }})</em> <br>
+    <a href="{{ mandate|by_mandate_url }}">
+      <strong>{{ mandate.group.kind }}</strong> : <em>{{ mandate.group.name }} ({{ mandate.group.abbreviation }})</em> 
+    </a>
+    <br>
     Constituency : {{ mandate.constituency.name }} <br>
   </p>
 </div>
