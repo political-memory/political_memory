@@ -38,6 +38,12 @@ class Representative(models.Model):
     def former_mandates(self):
         return self.mandate_set.filter(active=False)
 
+    def current_group(self):
+        return self.mandate_set.get(
+            active=True,
+            group__kind='group'
+        )
+
     def __unicode__(self):
         return self.full_name
 
