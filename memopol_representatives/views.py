@@ -14,19 +14,26 @@ def index(request):
     return _render_list(request, representative_list)
 
 
-def by_mandate(request, mandate_kind, mandate_abbr=None, mandate_name=None):
-    representative_list = Representative.objects.filter(
-        mandate__group__kind=mandate_kind,
-        mandate__active=True
-    )
+def by_mandate(request, mandate_kind, mandate_abbr=None, mandate_name=None, search=None):
     if mandate_abbr:
-        representative_list = representative_list.filter(
+        representative_list = Representative.objects.filter(
             mandate__group__abbreviation=mandate_abbr,
+            mandate__group__kind=mandate_kind,
             mandate__active=True
         )
-    if mandate_name:
-        representative_list = representative_list.filter(
+
+    elif mandate_name:
+        representative_list = Representative.objects.filter(
             Q(mandate__group__name__icontains=mandate_name),
+            mandate__group__kind=mandate_kind,
+            mandate__active=True
+        )
+
+    elif search:
+        representative_list = Representative.objects.filter(
+            Q(mandate__group__abbreviation__icontains=search) |
+            Q(mandate__group__name__icontains=search),
+            mandate__group__kind=mandate_kind,
             mandate__active=True
         )
 

@@ -9,11 +9,11 @@ def by_mandate_url(mandate):
     kwargs = {'mandate_kind': mandate.group.kind}
 
     if mandate.group.abbreviation:
-        kwargs['mandate_abbr'] = mandate.group.abbreviation
+        kwargs['search'] = mandate.group.abbreviation
     else:
-        kwargs['mandate_name'] = mandate.group.name
+        kwargs['search'] = mandate.group.name
 
     return reverse(
-        'representatives:listby',
+        'representatives:list',
         kwargs=kwargs
     )
