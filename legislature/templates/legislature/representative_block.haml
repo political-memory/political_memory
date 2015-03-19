@@ -1,0 +1,8 @@
+%td<
+  %a{'href': "{% url 'legislature:representative_view_by_name' representative.full_name %}"} 
+    %img{'src':'={representative.photo}'}/
+
+%td<
+  %a{'href': "{% url 'legislature:representative_view_by_name' representative.full_name %}"} 
+    ={representative.full_name} [={representative.country.code}]
+

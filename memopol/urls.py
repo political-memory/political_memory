@@ -6,7 +6,7 @@ import core.views
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'memopol.views.home', name='home'),
-    url(r'^representatives/', include('memopol_representatives.urls', namespace='representatives')),
     url(r'^$', core.views.HomeView.as_view(), name='index'),
+    url('', include('legislature.urls', namespace='legislature')),
     url(r'^admin/', include(admin.site.urls)),
 )

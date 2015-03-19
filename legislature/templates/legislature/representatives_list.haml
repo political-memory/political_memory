@@ -1,7 +1,7 @@
 - extends "base.html"
 
 - block content
-  - include 'memopol_representatives/search.html'
+  - include 'legislature/search.html'
 
   %p
     Number of representatives: {{ representative_num  }}
@@ -9,7 +9,7 @@
   %table
     - for representative in representatives
       %tr
-        - include 'memopol_representatives/representative_block.html'
+        - include 'legislature/representative_block.html'
 
   .pagination
     %span.step-links

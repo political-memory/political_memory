@@ -14,6 +14,6 @@ def by_mandate_url(mandate):
         kwargs['search'] = mandate.group.name
 
     return reverse(
-        'representatives:list',
+        'legislature:representatives_by_mandate',
         kwargs=kwargs
     )

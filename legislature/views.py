@@ -2,10 +2,10 @@ from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 
-from representatives.models import Representative
+from representatives.models import Representative, Group
 
 
-def index(request):
+def representatives_index(request):
     representative_list = _filter_by_search(
         request,
         Representative.objects.all()
@@ -14,7 +14,28 @@ def index(request):
     return _render_list(request, representative_list)
 
 
-def by_mandate(request, mandate_kind, mandate_abbr=None, mandate_name=None, search=None):
+def representative_by_name(request, name):
+    representative = get_object_or_404(
+        Representative, full_name=name)
+    return render(
+        request,
+        'legislature/representative_view.html',
+        {'representative': representative}
+    )
+
+
+def representative_view(request, num):
+    representative = get_object_or_404(Representative, pk=num)
+
+    return render(
+        request,
+        'legislature/representative_view.html',
+        {'representative': representative}
+    )
+
+
+def representatives_by_mandate(request, mandate_kind, mandate_abbr=None,
+                               mandate_name=None, search=None):
     if mandate_abbr:
         representative_list = Representative.objects.filter(
             mandate__group__abbreviation=mandate_abbr,
@@ -82,16 +103,18 @@ def _render_list(request, representative_list, num_by_page=50):
     context['representative_num'] = paginator.count
     return render(
         request,
-        'memopol_representatives/list.html',
+        'legislature/representatives_list.html',
         context
     )
 
 
-def view(request, num):
-    representative = get_object_or_404(Representative, pk=num)
+def group_by_kind(request, kind):
+    groups = Group.objects.filter(
+        kind=kind
+    )
 
     return render(
         request,
-        'memopol_representatives/view.html',
-        {'representative': representative}
+        'legislature/group_list.html',
+        {'groups': groups}
     )
