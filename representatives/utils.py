@@ -174,19 +174,6 @@ def import_representatives_from_format(data, verbose=False):
                     active=mandate["current"],
                 )
 
-            # Create a country if it does not exist
-            # The representative's country is the one associated
-            # with the last 'country' mandate
-            country_mandate = representative.mandate_set.filter(
-                group__kind='country'
-            ).order_by('-begin_date')[0:1].get()
-
-            country, created = Country.objects.get_or_create(
-                name=country_mandate.group.name,
-                code=country_mandate.group.abbreviation
-            )
-
-            representative.country = country
             representative.save()
 
     if verbose:

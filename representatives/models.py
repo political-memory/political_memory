@@ -29,28 +29,12 @@ class Representative(models.Model):
     birth_date = models.DateField(blank=True, null=True)
     cv = models.TextField(blank=True, null=True)
     photo = models.CharField(max_length=512, null=True)
-    active = models.BooleanField(default=False)
-    country = models.ForeignKey(Country, null=True)
-
-    def active_mandates(self):
-        return self.mandate_set.filter(active=True)
-
-    def former_mandates(self):
-        return self.mandate_set.filter(active=False)
-
-    def current_group(self):
-        return self.mandate_set.get(
-            active=True,
-            group__kind='group'
-        )
 
     def __unicode__(self):
         return self.full_name
 
 
 # Contact related models
-
-
 class Contact(models.Model):
     representative = models.ForeignKey(Representative)
 
