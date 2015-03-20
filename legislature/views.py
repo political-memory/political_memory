@@ -2,7 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 
-from representatives.models import Representative, Group
+from legislature.models import Representative
+from representatives.models import Group
 
 
 def representatives_index(request):
@@ -51,12 +52,20 @@ def representatives_by_mandate(request, mandate_kind, mandate_abbr=None,
         )
 
     elif search:
-        representative_list = Representative.objects.filter(
-            Q(mandate__group__abbreviation__icontains=search) |
-            Q(mandate__group__name__icontains=search),
-            mandate__group__kind=mandate_kind,
-            mandate__active=True
-        )
+        try:
+            Group.objects.get(abbreviation=search, kind=mandate_kind)
+            representative_list = Representative.objects.filter(
+                mandate__group__abbreviation=search,
+                mandate__group__kind=mandate_kind,
+                mandate__active=True
+            )
+        except Group.DoesNotExist:
+            representative_list = Representative.objects.filter(
+                Q(mandate__group__abbreviation__icontains=search) |
+                Q(mandate__group__name__icontains=search),
+                mandate__group__kind=mandate_kind,
+                mandate__active=True
+            )
 
     # Select distinct representatives and filter by search
     representative_list = list(set(
@@ -101,6 +110,7 @@ def _render_list(request, representative_list, num_by_page=50):
 
     context['representatives'] = representatives
     context['representative_num'] = paginator.count
+
     return render(
         request,
         'legislature/representatives_list.html',
