@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load by_mandate_url %}
+{% load by_group_url %}
 
 {% block content %}
 
@@ -10,8 +10,8 @@
 <h1>{{ representative.full_name }}</h1>
 <p>
   <strong>
-    <a href="{{ representative.current_group|by_mandate_url }}">
-      {{ representative.current_group.role }} of {{ representative.current_group.group.name }}
+    <a href="{{ representative.current_group_mandate|by_mandate_url }}">
+      {{ representative.current_group_mandate.role }} of {{ representative.current_group_mandate.mgroup.name }}
     </a>
   </strong>
 </p>

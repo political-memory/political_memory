@@ -1,0 +1,11 @@
+- extends 'base.html'
+- load by_mandate_url
+
+- block content
+  %ul
+    - for group in groups
+      %li
+        %a{'href': '{{ group | by_group_url }}'}
+          - if group.abbreviation
+            {{ group.abbreviation }} . 
+          {{ group.name }}

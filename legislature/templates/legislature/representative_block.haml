@@ -9,9 +9,9 @@
     ={representative.full_name}
 
 %td
-  %a{'href': "{% url 'legislature:representatives_by_mandate' mandate_kind='country' search=representative.country.code %}"}
+  %a{'href': "{% url 'legislature:representatives_by_group' group_kind='country' search=representative.country.code %}"}
     ={representative.country.name}
 
 %td
-  %a{'href': "{{ representative.current_group|by_mandate_url }}"}
-    ={representative.current_group.group.abbreviation}
+  %a{'href': "{{ representative.current_group_mandate|by_mandate_url }}"}
+    ={representative.current_group_mandate.mgroup.abbreviation}

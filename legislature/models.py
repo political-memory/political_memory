@@ -3,18 +3,18 @@ import representatives
 import datetime
 
 
-class Representative(representatives.models.Representative):
+class MRepresentative(representatives.models.Representative):
     active = models.BooleanField(default=False)
     country = models.ForeignKey(representatives.models.Country, null=True)
 
     def active_mandates(self):
-        return self.mandate_set.filter(active=True)
+        return self.mmandate_set.filter(active=True)
 
     def former_mandates(self):
-        return self.mandate_set.filter(active=False)
+        return self.mmandate_set.filter(active=False)
 
-    def current_group(self):
-        return self.mandate_set.get(
+    def current_group_mandate(self):
+        return self.mmandate_set.get(
             active=True,
             group__kind='group'
         )
@@ -22,10 +22,10 @@ class Representative(representatives.models.Representative):
     def update_active(self):
         # If a representative has at least one active manadate
         self.active = False
-        for mandate in self.mandate_set.all():
+        for mandate in self.mmandate_set.all():
             if mandate.active:
                 self.active = True
-                continue
+                break
 
         self.save()
 
@@ -33,7 +33,7 @@ class Representative(representatives.models.Representative):
         # Create a country if it does not exist
         # The representative's country is the one associated
         # with the last 'country' mandate
-        country_mandate = self.mandate_set.filter(
+        country_mandate = self.mmandate_set.filter(
             group__kind='country'
         ).order_by('-begin_date')[0:1].get()
 
@@ -45,7 +45,22 @@ class Representative(representatives.models.Representative):
         self.save()
 
 
-class Mandate(representatives.models.Mandate):
+class MGroup(representatives.models.Group):
+    active = models.BooleanField(default=False)
+
+    def update_active(self):
+        self.active = False
+        for mandate in self.mmandate_set.all():
+            if mandate.active:
+                self.active = True
+                break
+        self.save()
+
+
+class MMandate(representatives.models.Mandate):
+    active = models.BooleanField(default=False)
+    mgroup = models.ForeignKey(MGroup)
+    mrepresentative = models.ForeignKey(MRepresentative)
 
     def update_active(self):
         date = datetime.datetime.now().date()

@@ -2,14 +2,13 @@ from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 
-from legislature.models import Representative
-from representatives.models import Group
+from legislature.models import MRepresentative, MGroup
 
 
 def representatives_index(request):
     representative_list = _filter_by_search(
         request,
-        Representative.objects.all()
+        MRepresentative.objects.all()
     )
 
     return _render_list(request, representative_list)
@@ -17,7 +16,7 @@ def representatives_index(request):
 
 def representative_by_name(request, name):
     representative = get_object_or_404(
-        Representative, full_name=name)
+        MRepresentative, full_name=name)
     return render(
         request,
         'legislature/representative_view.html',
@@ -26,7 +25,7 @@ def representative_by_name(request, name):
 
 
 def representative_view(request, num):
-    representative = get_object_or_404(Representative, pk=num)
+    representative = get_object_or_404(MRepresentative, pk=num)
 
     return render(
         request,
@@ -35,36 +34,36 @@ def representative_view(request, num):
     )
 
 
-def representatives_by_mandate(request, mandate_kind, mandate_abbr=None,
-                               mandate_name=None, search=None):
-    if mandate_abbr:
-        representative_list = Representative.objects.filter(
-            mandate__group__abbreviation=mandate_abbr,
-            mandate__group__kind=mandate_kind,
-            mandate__active=True
+def representatives_by_group(request, group_kind, group_abbr=None,
+                             group_name=None, search=None):
+    if group_abbr:
+        representative_list = MRepresentative.objects.filter(
+            mmandate__mgroup__abbreviation=group_abbr,
+            mmandate__mgroup__kind=group_kind,
+            mmandate__active=True
         )
 
-    elif mandate_name:
-        representative_list = Representative.objects.filter(
-            Q(mandate__group__name__icontains=mandate_name),
-            mandate__group__kind=mandate_kind,
-            mandate__active=True
+    elif group_name:
+        representative_list = MRepresentative.objects.filter(
+            Q(mmandate__mgroup__name__icontains=group_name),
+            mmandate__mgroup__kind=group_kind,
+            mmandate__active=True
         )
 
     elif search:
         try:
-            Group.objects.get(abbreviation=search, kind=mandate_kind)
-            representative_list = Representative.objects.filter(
-                mandate__group__abbreviation=search,
-                mandate__group__kind=mandate_kind,
-                mandate__active=True
+            MGroup.objects.get(abbreviation=search, kind=group_kind)
+            representative_list = MRepresentative.objects.filter(
+                mmandate__mgroup__abbreviation=search,
+                mmandate__mgroup__kind=group_kind,
+                mmandate__active=True
             )
-        except Group.DoesNotExist:
-            representative_list = Representative.objects.filter(
-                Q(mandate__group__abbreviation__icontains=search) |
-                Q(mandate__group__name__icontains=search),
-                mandate__group__kind=mandate_kind,
-                mandate__active=True
+        except MGroup.DoesNotExist:
+            representative_list = MRepresentative.objects.filter(
+                Q(mmandate__mgroup__abbreviation__icontains=search) |
+                Q(mmandate__mgroup__name__icontains=search),
+                mmandate__mgroup__kind=group_kind,
+                mmandate__active=True
             )
 
     # Select distinct representatives and filter by search
@@ -89,7 +88,7 @@ def _filter_by_search(request, representative_list):
         return representative_list
 
 
-def _render_list(request, representative_list, num_by_page=50):
+def _render_list(request, representative_list, num_by_page=30):
     """
     Render a paginated list of representatives
     """
@@ -118,13 +117,14 @@ def _render_list(request, representative_list, num_by_page=50):
     )
 
 
-def group_by_kind(request, kind):
-    groups = Group.objects.filter(
-        kind=kind
+def groups_by_kind(request, kind):
+    groups = MGroup.objects.filter(
+        kind=kind,
+        active=True
     )
 
     return render(
         request,
-        'legislature/group_list.html',
+        'legislature/groups_list.html',
         {'groups': groups}
     )

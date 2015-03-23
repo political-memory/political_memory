@@ -2,3 +2,16 @@
   %li
     %a{href: "{% url 'legislature:representatives_index' %}"}
       Representatives
+  %li
+    %a{href: "{% url 'legislature:groups_by_kind' 'country' %}"}
+      Countries
+  %li
+    %a{href: "{% url 'legislature:groups_by_kind' 'group' %}"}
+      Parties
+  %li
+    %a{href: "{% url 'legislature:groups_by_kind' 'delegation' %}"}
+      Delegations
+  %li
+    %a{href: "{% url 'legislature:groups_by_kind' 'committee' %}"}
+      Committees
+      
