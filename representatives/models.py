@@ -81,7 +81,6 @@ class Group(models.Model):
     name = models.CharField(max_length=255)
     abbreviation = models.CharField(max_length=10, blank=True, null=True)
     kind = models.CharField(max_length=255, blank=True, null=True)
-    active = models.BooleanField(default=False)
 
     def __unicode__(self):
         return unicode(self.name)
@@ -110,4 +109,3 @@ class Mandate(models.Model):
     begin_date = models.DateField(blank=True, null=True)
     end_date = models.DateField(blank=True, null=True)
     url = models.URLField()
-    active = models.NullBooleanField(default=False)

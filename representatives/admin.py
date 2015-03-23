@@ -41,7 +41,7 @@ class RepresentativeAdmin(admin.ModelAdmin):
 
 
 class MandateAdmin(admin.ModelAdmin):
-    list_display = ('representative', 'group', 'role', 'constituency', 'begin_date', 'end_date', 'active')
+    list_display = ('representative', 'group', 'role', 'constituency', 'begin_date', 'end_date')
     search_fields = ('representative', 'group', 'constituency')
     # list_filter = ('role',)
 

@@ -171,7 +171,7 @@ def import_representatives_from_format(data, verbose=False):
                     role=mandate["role"],
                     begin_date=mandate["begin_date"],
                     end_date=mandate["end_date"],
-                    active=mandate["current"],
+                    # active=mandate["current"],
                 )
 
             representative.save()
