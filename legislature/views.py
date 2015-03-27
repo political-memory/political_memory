@@ -17,6 +17,7 @@ def representatives_index(request):
 def representative_by_name(request, name):
     representative = get_object_or_404(
         MRepresentative, full_name=name)
+    
     return render(
         request,
         'legislature/representative_view.html',
@@ -26,7 +27,6 @@ def representative_by_name(request, name):
 
 def representative_view(request, num):
     representative = get_object_or_404(MRepresentative, pk=num)
-
     return render(
         request,
         'legislature/representative_view.html',

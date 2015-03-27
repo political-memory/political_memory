@@ -29,11 +29,12 @@ class Command(BaseCommand):
 
                 # Group creation
                 try:
-                    mgroup = MGroup(group_ptr=mandate.group)
+                    mgroup = MGroup.objects.get(group_ptr=mandate.group)
                 except MGroup.DoesNotExist:
                     mgroup = MGroup(group_ptr=mandate.group)
                     mgroup.__dict__.update(mandate.group.__dict__)
                     mgroup.save()
+                #print(mgroup)
 
                 mmandate.mgroup = mgroup
                 mmandate.save()
@@ -47,4 +48,3 @@ class Command(BaseCommand):
         print('Groups')
         for i, mgroup in enumerate(MGroup.objects.all()):
             mgroup.update_active()
-            
