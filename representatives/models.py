@@ -1,4 +1,4 @@
-# -*- coding:utf-8 -*-
+# coding: utf-8
 
 from django.db import models
 
@@ -29,6 +29,8 @@ class Representative(models.Model):
     birth_date = models.DateField(blank=True, null=True)
     cv = models.TextField(blank=True, null=True)
     photo = models.CharField(max_length=512, null=True)
+    
+    active =  models.BooleanField(default=False)
 
     def __unicode__(self):
         return self.full_name
@@ -109,3 +111,4 @@ class Mandate(models.Model):
     begin_date = models.DateField(blank=True, null=True)
     end_date = models.DateField(blank=True, null=True)
     url = models.URLField()
+    
