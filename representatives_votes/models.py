@@ -1,43 +1,36 @@
-# -*- coding:Utf-8 -*-
+# coding: utf-8
+
 from django.db import models
-from parltrack_meps.models import MEP
+
+
+class Dossier(models.Model):
+    title = models.CharField(max_length=500)
+    reference = models.CharField(max_length=200)
+    text = models.TextField()
+    link = models.URLField()
+
 
 class Proposal(models.Model):
-    title = models.TextField(null=True)
-    code_name =  models.CharField(max_length=255, unique=True)
-    date = models.DateField(default=None, null=True, blank=True)
+    dossier = models.ForeignKey(Dossier)
 
+    title = models.CharField(max_length=500)
+    description = models.TextField()
 
-    def __unicode__(self):
-        return "%s [%s]" % (self.title if self.title else "no title", self.code_name)
-
-    class Meta:
-        ordering = ('-_date', )
-
-
-class ProposalPart(models.Model):
+    reference = models.CharField(max_length=200)
+    
     datetime = models.DateTimeField()
-    subject = models.CharField(max_length=255)
-    part = models.CharField(max_length=255)
-    description = models.CharField(max_length=511)
-    proposal = models.ForeignKey(Proposal)
-
-    def __unicode__(self):
-        return self.subject
-
-    class MetaClass:
-        ordering = ['datetime']
 
 
 class Vote(models.Model):
-    choice = models.CharField(max_length=15, choices=((u'for', u'for'), (u'against', u'against'), (u'abstention', u'abstention'), (u'absent', u'absent')))
-    name = models.CharField(max_length=127)
-    proposal_part = models.ForeignKey(ProposalPart)
-    mep = models.ForeignKey(MEP, null=True)
+    VOTECHOICES = (
+        ('abstain', 'abstain'),
+        ('for', 'for'),
+        ('against', 'against')
+    )
 
-    class Meta:
-        ordering = ["choice"]
-        unique_together = ("proposal_part", "mep")
+    proposal = models.ForeignKey(Proposal)
 
-    def __unicode__(self):
-        return '%s (%s)' % (self.name, self.choice)
+    representative_slug = models.CharField(max_length=200, blank=True, null=True)
+    representative_remote_id = models.CharField(max_length=200, blank=True, null=True)
+
+    position = models.CharField(max_length=10, choices=VOTECHOICES)
