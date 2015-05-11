@@ -12,13 +12,14 @@ class Dossier(models.Model):
 
 class Proposal(models.Model):
     dossier = models.ForeignKey(Dossier)
-
     title = models.CharField(max_length=500)
     description = models.TextField()
-
     reference = models.CharField(max_length=200)
-    
     datetime = models.DateTimeField()
+    
+    total_abstain = models.IntegerField()
+    total_against = models.IntegerField()
+    total_for = models.IntegerField()
 
 
 class Vote(models.Model):
