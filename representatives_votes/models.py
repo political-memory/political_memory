@@ -14,9 +14,9 @@ class Proposal(models.Model):
     dossier = models.ForeignKey(Dossier)
     title = models.CharField(max_length=500)
     description = models.TextField()
-    reference = models.CharField(max_length=200)
+    reference = models.CharField(max_length=200, null=True)
     datetime = models.DateTimeField()
-    
+    kind = models.CharField(max_length=200, null=True)
     total_abstain = models.IntegerField()
     total_against = models.IntegerField()
     total_for = models.IntegerField()
@@ -31,7 +31,8 @@ class Vote(models.Model):
 
     proposal = models.ForeignKey(Proposal)
 
-    representative_slug = models.CharField(max_length=200, blank=True, null=True)
+    # There are two representative fields for flexibility,
+    representative_name = models.CharField(max_length=200, blank=True, null=True)
     representative_remote_id = models.CharField(max_length=200, blank=True, null=True)
 
     position = models.CharField(max_length=10, choices=VOTECHOICES)

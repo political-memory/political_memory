@@ -1,11 +1,12 @@
 {
-    "Dossier": {
+    "dossier": {
         "title": "", // Dossier title, eg "2011/0167(NLE) EU/Australia, Canada, Japan, Korea, Mexico, Morocco, New Zealand, Singapore, Switzerland and United States Anti-Counterfeiting Trade Agreement (ACTA)"
         "reference": "", // Dossier reference, eg "2011/0167(NLE)"        
         "text": "", // Descriptipn
-        "Proposals": [{
+        "proposals": [{
             "title": "", // eg A7-0204/2012 - David Martin - Request for referral back to committee
-            "reference", "", // eg A7-0204/2012
+            "reference": "", // eg A7-0204/2012
+            "description": "",
             "kind": "", 
             "date": "", // timestamp
             "votes": [{
