@@ -11,7 +11,6 @@ def export_a_dossier(dossier):
     }}
 
     ret['proposals'] = [export_a_proposal(proposal) for proposal in dossier.proposal_set.all()]
-           
     return ret
 
 def export_a_proposal(proposal):

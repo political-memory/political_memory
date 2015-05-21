@@ -4,7 +4,7 @@ from django.db import models
 
 
 class Dossier(models.Model):
-    title = models.CharField(max_length=500)
+    title = models.CharField(max_length=1000)
     reference = models.CharField(max_length=200)
     text = models.TextField()
     link = models.URLField()
@@ -12,7 +12,7 @@ class Dossier(models.Model):
 
 class Proposal(models.Model):
     dossier = models.ForeignKey(Dossier)
-    title = models.CharField(max_length=500)
+    title = models.CharField(max_length=1000)
     description = models.TextField()
     reference = models.CharField(max_length=200, null=True)
     datetime = models.DateTimeField()
@@ -21,6 +21,13 @@ class Proposal(models.Model):
     total_against = models.IntegerField()
     total_for = models.IntegerField()
 
+    # Presentation for the api
+    def vote_api_list(self):
+        return [
+            {'position': vote.position,
+             'representative': vote.representative_remote_id}
+            for vote in self.vote_set.all()]
+        
 
 class Vote(models.Model):
     VOTECHOICES = (
