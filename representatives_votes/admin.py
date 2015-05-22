@@ -32,6 +32,7 @@ class NoneMatchingFilter(admin.SimpleListFilter):
 class VoteAdmin(admin.ModelAdmin):
     list_display = ('id', 'proposal_reference', 'position', 'representative_name', 'representative_remote_id')
     list_filter = (NoneMatchingFilter,)
+    
     def proposal_reference(self, obj):
         return obj.proposal.reference
 
