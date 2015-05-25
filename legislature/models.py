@@ -4,7 +4,7 @@ import datetime
 
 
 class MRepresentative(representatives.models.Representative):
-    active = models.BooleanField(default=False)
+    # active = models.BooleanField(default=False)
     country = models.ForeignKey(representatives.models.Country, null=True)
 
     def active_mandates(self):
