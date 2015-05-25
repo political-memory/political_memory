@@ -13,7 +13,7 @@ def export_a_representative(representative):
     reps = {"id": representative.remote_id}
     reps["personal"] = {field: getattr(representative, field) for field in PERSONAL_FIELDS}
     reps["personal"]["gender"] = GENDER_DICT[representative.gender]
-    reps["personal"]["birth_date"] = representative.birth_date.strftime("%F") if representative.birth_date else None
+    reps["personal"]["birth_date"] = representative.birth_date.isoformat().split('T')[0] if representative.birth_date else None
 
     reps["contact"] = {}
 
@@ -55,9 +55,9 @@ def export_a_representative(representative):
         "url_official": mandate.url,
         "constituency": mandate.constituency.name,
         "role": mandate.role,
-        "begin_date": mandate.begin_date.strftime("%F") if mandate.begin_date else None,
-        "end_date": mandate.end_date.strftime("%F") if mandate.end_date else None,
-        "current": mandate.active,
+        "begin_date": mandate.begin_date.isoformat().split('T')[0] if mandate.begin_date else None,
+        "end_date": mandate.end_date.isoformat().split('T')[0] if mandate.end_date else None,
+        # "current": mandate.active,
     } for mandate in representative.mandate_set.all()]
 
     return reps
@@ -65,6 +65,10 @@ def export_a_representative(representative):
 
 def export_all_representatives():
     return [export_a_representative(representative) for representative in Representative.objects.all()]
+
+
+def export_active_representatives():
+    return [export_a_representative(representative) for representative in Representative.objects.filter(active=True)]
 
 
 def import_representatives_from_format(data, verbose=False):
