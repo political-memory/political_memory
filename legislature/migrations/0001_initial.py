@@ -36,7 +36,6 @@ class Migration(migrations.Migration):
             name='MRepresentative',
             fields=[
                 ('representative_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='representatives.Representative')),
-                ('active', models.BooleanField(default=False)),
                 ('country', models.ForeignKey(to='representatives.Country', null=True)),
             ],
             options={

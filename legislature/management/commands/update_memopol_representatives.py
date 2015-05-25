@@ -33,15 +33,14 @@ class Command(BaseCommand):
                 except MGroup.DoesNotExist:
                     mgroup = MGroup(group_ptr=mandate.group)
                     mgroup.__dict__.update(mandate.group.__dict__)
-                    mgroup.save()
-                #print(mgroup)
+                    mgroup.save()                
 
                 mmandate.mgroup = mgroup
                 mmandate.save()
                 mmandate.update_active()
 
             mrepresentative.update_country()
-            mrepresentative.update_active()
+            # mrepresentative.update_active()
             mrepresentative.save()
             print("%s/%s\r" % (i, n)),
 
