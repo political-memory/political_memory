@@ -23,9 +23,10 @@ class Proposal(models.Model):
 
     # Presentation for the api
     def vote_api_list(self):
-        return [
-            {'position': vote.position,
-             'representative': vote.representative_remote_id}
+        return [{'position': vote.position,
+                 'representative_remote_id': vote.representative_remote_id,
+                 'representative_name': vote.representative_name
+             }
             for vote in self.vote_set.all()]
         
 
