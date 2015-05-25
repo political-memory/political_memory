@@ -1,31 +1,33 @@
-import models
+# coding: utf-8
+
 from django.contrib import admin
+from .models import Representative, Country, Mandate, Group, Constituency, Email, WebSite, Phone, Address
 
 
 class EmailInline(admin.TabularInline):
-    model = models.Email
+    model = Email
     extra = 0
 
 
 class WebsiteInline(admin.TabularInline):
-    model = models.WebSite
+    model = WebSite
     extra = 0
 
 
 class AdressInline(admin.StackedInline):
-    model = models.Address
+    model = Address
     extra = 0
 
 
 class PhoneInline(admin.TabularInline):
-    model = models.Phone
+    model = Phone
     extra = 0
 
 
 class MandateInline(admin.StackedInline):
-    model = models.Mandate
+    model = Mandate
     extra = 0
-
+    
 
 class RepresentativeAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'gender', 'birth_place')
@@ -46,11 +48,11 @@ class MandateAdmin(admin.ModelAdmin):
     # list_filter = ('role',)
 
 
-admin.site.register(models.Representative, RepresentativeAdmin)
+admin.site.register(Representative, RepresentativeAdmin)
 
-admin.site.register(models.Country)
+admin.site.register(Country)
 
-admin.site.register(models.Mandate, MandateAdmin)
+admin.site.register(Mandate, MandateAdmin)
 
-admin.site.register(models.Group)
-admin.site.register(models.Constituency)
+admin.site.register(Group)
+admin.site.register(Constituency)
