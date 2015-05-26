@@ -29,9 +29,13 @@ class Representative(models.Model):
     birth_date = models.DateField(blank=True, null=True)
     cv = models.TextField(blank=True, null=True)
     photo = models.CharField(max_length=512, null=True)
-    
+
     active =  models.BooleanField(default=False)
 
+    def gender_as_str(self):
+        genders = {0: 'N/A', 1: 'F', 2: 'M'}
+        return genders[self.gender]
+        
     def __unicode__(self):
         return self.full_name
 
