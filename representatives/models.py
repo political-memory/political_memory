@@ -1,3 +1,22 @@
+# This file is part of django-representatives.
+#
+# django-representatives is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as
+# published by the Free Software Foundation, either version 3 of
+# the License, or any later version.
+#
+# django-representatives is distributed in the hope that it will
+# be useful, but WITHOUT ANY WARRANTY; without even the implied
+# warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU General Affero Public
+# License along with Foobar.
+# If not, see <http://www.gnu.org/licenses/>.
+#
+# Copyright (C) 2013 Laurent Peuch <cortex@worlddomination.be>
+# Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
+
 # coding: utf-8
 
 from django.db import models
@@ -35,7 +54,7 @@ class Representative(models.Model):
     def gender_as_str(self):
         genders = {0: 'N/A', 1: 'F', 2: 'M'}
         return genders[self.gender]
-        
+
     def __unicode__(self):
         return self.full_name
 
@@ -115,4 +134,3 @@ class Mandate(models.Model):
     begin_date = models.DateField(blank=True, null=True)
     end_date = models.DateField(blank=True, null=True)
     url = models.URLField()
-    

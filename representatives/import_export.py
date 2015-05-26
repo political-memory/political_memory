@@ -1,11 +1,11 @@
-# This file is part of django-representives.
+# This file is part of django-representatives.
 #
-# compotista is free software: you can redistribute it and/or modify
+# django-representatives is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as
 # published by the Free Software Foundation, either version 3 of
 # the License, or any later version.
 #
-# compotista is distributed in the hope that it will
+# django-representatives is distributed in the hope that it will
 # be useful, but WITHOUT ANY WARRANTY; without even the implied
 # warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 # See the GNU Affero General Public License for more details.
@@ -87,8 +87,10 @@ def export_a_representative(representative):
 def export_all_representatives():
     return [export_a_representative(representative) for representative in Representative.objects.all()]
 
+
 def export_active_representatives():
     return [export_a_representative(representative) for representative in Representative.objects.filter(active=True)]
+
 
 def import_representatives_from_format(data, verbose=False):
     reverted_gender_dict = {x[1]: x[0] for x in Representative.GENDER}
