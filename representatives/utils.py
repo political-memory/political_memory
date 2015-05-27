@@ -13,7 +13,7 @@
 # See the GNU Affero General Public License for more details.
 #
 # You should have received a copy of the GNU General Affero Public
-# License along with Foobar.
+# License along with django-representatives.
 # If not, see <http://www.gnu.org/licenses/>.
 #
 # Copyright (C) 2013 Laurent Peuch <cortex@worlddomination.be>
