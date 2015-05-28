@@ -37,5 +37,6 @@ class Command(BaseCommand):
                                     'REPRESENTATIVES_COMPOTISTA_SERVER',
                                     'http://compotista.mm.staz.be')
         url = compotista_server + "/latest/"
+        print('Import representatives from %s' % url)
         stream = BytesIO(urlopen(url))
         import_representatives(JSONParser().parse(stream))
