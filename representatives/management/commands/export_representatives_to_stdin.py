@@ -19,10 +19,10 @@
 # Copyright (C) 2013 Laurent Peuch <cortex@worlddomination.be>
 # Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
 
-import json
 from django.core.management.base import BaseCommand
 from representatives.utils import export_all_representatives
+from rest_framework.renderers import JSONRenderer
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        print json.dumps(export_all_representatives(), indent=4)
+        print(JSONRenderer().render(export_all_representatives()))

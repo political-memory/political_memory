@@ -48,15 +48,14 @@ class Representative(models.Model):
     birth_date = models.DateField(blank=True, null=True)
     cv = models.TextField(blank=True, null=True)
     photo = models.CharField(max_length=512, null=True)
-
     active =  models.BooleanField(default=False)
-
-    def gender_as_str(self):
-        genders = {0: 'N/A', 1: 'F', 2: 'M'}
-        return genders[self.gender]
 
     def __unicode__(self):
         return self.full_name
+    
+    def gender_as_str(self):
+        genders = {0: 'N/A', 1: 'F', 2: 'M'}
+        return genders[self.gender]
 
 
 # Contact related models
@@ -70,7 +69,7 @@ class Contact(models.Model):
 class Email(Contact):
     email = models.EmailField()
     kind = models.CharField(max_length=255, blank=True, null=True)
-
+    
 
 class WebSite(Contact):
     url = models.URLField()
@@ -93,7 +92,7 @@ class Address(Contact):
 class Phone(Contact):
     number = models.CharField(max_length=255)
     kind = models.CharField(max_length=255, blank=True, null=True)
-    address = models.ForeignKey(Address)
+    address = models.ForeignKey(Address, null=True)
 
 
 # Mandate related models
@@ -133,4 +132,5 @@ class Mandate(models.Model):
     )
     begin_date = models.DateField(blank=True, null=True)
     end_date = models.DateField(blank=True, null=True)
-    url = models.URLField()
+    link = models.URLField()
+

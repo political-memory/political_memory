@@ -19,27 +19,23 @@
 # Copyright (C) 2013 Laurent Peuch <cortex@worlddomination.be>
 # Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
 
-import json
-from urllib2 import urlopen
+
 
 from django.core.management.base import BaseCommand
 from django.conf import settings
 
-from representatives.utils import import_representatives_from_format
+from urllib2 import urlopen
+from django.utils.six import BytesIO
+from rest_framework.parsers import JSONParser
+
+from representatives.utils import import_representatives
 
 
 class Command(BaseCommand):
-
     def handle(self, *args, **options):
-        if args and args[0] == 'q':
-            verbose = False
-        else:
-            verbose = True
-
         compotista_server = getattr(settings,
                                     'REPRESENTATIVES_COMPOTISTA_SERVER',
                                     'http://compotista.mm.staz.be')
         url = compotista_server + "/latest/"
-        import_representatives_from_format(
-            json.load(urlopen(url)),
-            verbose=verbose)
+        stream = BytesIO(urlopen(url))
+        import_representatives(JSONParser().parse(stream))
