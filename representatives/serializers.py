@@ -41,7 +41,7 @@ class WebsiteSerializer(serializers.ModelSerializer):
 class PhoneSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Phone
-        fields = ('id', 'number', 'kind')
+        fields = ('number', 'kind')
 
 class AddressSerializer(serializers.ModelSerializer):
     country = CountrySerializer()
@@ -92,6 +92,12 @@ class MandateHyperLinkedSerializer(MandateSerializer):
         fields = MandateSerializer.Meta.fields + ('url',)
 
 
+class RepresentativeMandateSerializer(MandateSerializer):
+    class Meta(MandateSerializer.Meta):
+        fields = [elem for elem in MandateSerializer.Meta.fields if elem != 'representative']
+
+
+
 class RepresentativeSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Representative
@@ -114,10 +120,10 @@ class RepresentativeHyperLinkedSerializer(RepresentativeSerializer):
     class Meta(RepresentativeSerializer.Meta):
         fields = RepresentativeSerializer.Meta.fields + ('url',)
 
-
+    
 class RepresentativeDetailSerializer(RepresentativeSerializer):
     contacts = ContactField()
-    mandates = MandateSerializer(many=True, source='mandate_set')
+    mandates = RepresentativeMandateSerializer(many=True, source='mandate_set')
     class Meta(RepresentativeSerializer.Meta):
         fields = RepresentativeSerializer.Meta.fields + (
             'cv',
