@@ -23,13 +23,19 @@ from representatives.models import Representative
 from representatives.serializers import RepresentativeDetailSerializer
 
 # Import a representative
-def import_a_representative(data):
+def import_a_representative(data, verbose=False):
     serializer = RepresentativeDetailSerializer(data=data)
-    serializer.is_valid()
-    return serializer.save()
+    if serializer.is_valid():
+        representative = serializer.save()
+        if verbose:
+            print(representative)
+        return representative
+    else:
+        print(data)
+        raise Exception(serializer.errors)
 
-def import_representatives(data):
-    return [import_a_representative(r_data) for r_data in data]
+def import_representatives(data, verbose=False):
+    return [import_a_representative(r_data, verbose) for r_data in data]
 
 # Export
 def export_a_representative(representative):

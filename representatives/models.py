@@ -72,7 +72,7 @@ class Email(Contact):
     
 
 class WebSite(Contact):
-    url = models.URLField()
+    url = models.CharField(max_length=2048, blank=True, null=True)
     kind = models.CharField(max_length=255, blank=True, null=True)
 
 
@@ -90,7 +90,7 @@ class Address(Contact):
 
 
 class Phone(Contact):
-    number = models.CharField(max_length=255)
+    number = models.CharField(max_length=255, blank=True, null=True)
     kind = models.CharField(max_length=255, blank=True, null=True)
     address = models.ForeignKey(Address, null=True)
 

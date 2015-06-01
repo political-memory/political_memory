@@ -34,9 +34,9 @@ from representatives.utils import import_representatives
 class Command(BaseCommand):
     def handle(self, *args, **options):
         compotista_server = getattr(settings,
-                                    'REPRESENTATIVES_COMPOTISTA_SERVER',
+                                    'COMPOTISTA_SERVER',
                                     'http://compotista.mm.staz.be')
-        url = compotista_server + "/latest/"
+        url = compotista_server + 'export/latest/'
         print('Import representatives from %s' % url)
-        stream = BytesIO(urlopen(url))
-        import_representatives(JSONParser().parse(stream))
+        stream = BytesIO(urlopen(url).read())
+        import_representatives(JSONParser().parse(stream), True)
