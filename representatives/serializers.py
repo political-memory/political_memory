@@ -22,6 +22,8 @@ import representatives.models as models
 from rest_framework import serializers
 
 from django.db import transaction
+from django.db import connection
+
 
 class CountrySerializer(serializers.ModelSerializer):
     class Meta:
@@ -142,7 +144,8 @@ class RepresentativeDetailSerializer(RepresentativeSerializer):
 
 
     # Nested creation is not implemented yet in DRF, it sucks
-    # We made an intensive use of get_or_create to avoid recreating objects
+    # We made an intensive use of get_or_create to avoid recreating representatives
+    # The idea here is to truncate all models except representatives and recreate them
     # every import
     # TODO : fix this code when it will be implemented
     @transaction.atomic
@@ -154,15 +157,24 @@ class RepresentativeDetailSerializer(RepresentativeSerializer):
         self._create_contacts(contacts_data, representative)
         return representative
 
+    def _truncate_model(self, model):
+        cursor = connection.cursor()
+        cursor.execute('TRUNCATE TABLE "{0}"'.format(model._meta.db_table))
+        
     def _create_contacts(self, contacts_data, representative):
+
+        self._truncate_model(models.Email)
         for contact_data in contacts_data['emails']:
             contact_data['representative'] = representative
-            contact, _ = models.Email.objects.get_or_create(**contact_data)
+            contact = models.Email.objects.create(**contact_data)
 
+        self._truncate_model(models.WebSite)
         for contact_data in contacts_data['websites']:
             contact_data['representative'] = representative
-            contact, _ = models.WebSite.objects.get_or_create(**contact_data)
+            contact = models.WebSite.objects.create(**contact_data)
 
+        self._truncate_model(models.Address)
+        self._truncate_model(models.Phone)
         for contact_data in contacts_data['address']:
             country, _ = models.Country.objects.get_or_create(
                 **contact_data.pop('country')
@@ -170,15 +182,18 @@ class RepresentativeDetailSerializer(RepresentativeSerializer):
             phone_set = contact_data.pop('phones')
             contact_data['representative'] = representative
             contact_data['country'] = country
-            contact, _ = models.Address.objects.get_or_create(**contact_data)
+            contact = models.Address.objects.create(**contact_data)
 
             for phone_data in phone_set:
                 phone_data['representative'] = representative
                 phone_data['address'] = contact
-                phone, _ = models.Phone.objects.get_or_create(**phone_data)            
+                models.Phone.objects.create(**phone_data)            
 
 
     def _create_mandates(self, mandates_data, representative):
+        self._truncate_model(models.Mandate)
+        self._truncate_model(models.Constituency)
+        self._truncate_model(models.Group)
         for mandate_data in mandates_data:
             constituency, _ = models.Constituency.objects.get_or_create(
                 **mandate_data.pop('constituency')
@@ -189,4 +204,4 @@ class RepresentativeDetailSerializer(RepresentativeSerializer):
             mandate_data['representative'] = representative
             mandate_data['constituency'] = constituency
             mandate_data['group'] = group
-            mandate, _ = models.Mandate.objects.get_or_create(**mandate_data)
+            models.Mandate.objects.create(**mandate_data)
