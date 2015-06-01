@@ -38,14 +38,23 @@ class WebsiteSerializer(serializers.ModelSerializer):
         model = models.WebSite
         fields = ('url', 'kind')
 
+    def validate_url(self, value):
+        '''
+        Don’t validate url, because it could break import of not proper formed url
+        '''
+        return value 
+
 class PhoneSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Phone
         fields = ('number', 'kind')
 
+    def validate_phone(self, value):
+        return value
+
 class AddressSerializer(serializers.ModelSerializer):
     country = CountrySerializer()
-    phones = PhoneSerializer(many=True, source='phone_set')
+    phones = PhoneSerializer(many=True)
     class Meta:
         model = models.Address
         fields = ('country', 'city', 'street', 'number', 'postcode', 'floor', 'office_number', 'kind', 'phones')
@@ -123,53 +132,51 @@ class RepresentativeHyperLinkedSerializer(RepresentativeSerializer):
     
 class RepresentativeDetailSerializer(RepresentativeSerializer):
     contacts = ContactField()
-    mandates = RepresentativeMandateSerializer(many=True, source='mandate_set')
+    mandates = RepresentativeMandateSerializer(many=True)
     class Meta(RepresentativeSerializer.Meta):
         fields = RepresentativeSerializer.Meta.fields + (
             'cv',
             'contacts',
             'mandates'
         )
-        
+
+
     # Nested creation is not implemented yet in DRF, it sucks
+    # We made an intensive use of get_or_create to avoid recreating objects
+    # every import
     # TODO : fix this code when it will be implemented
     @transaction.atomic
     def create(self, validated_data):
         contacts_data = validated_data.pop('contacts')
-        mandates_data = validated_data.pop('mandate_set')
-        representative = models.Representative.objects.create(**validated_data)
-        
+        mandates_data = validated_data.pop('mandates')
+        representative, _ = models.Representative.objects.get_or_create(**validated_data)
         self._create_mandates(mandates_data, representative)
         self._create_contacts(contacts_data, representative)
         return representative
-    
+
     def _create_contacts(self, contacts_data, representative):
         for contact_data in contacts_data['emails']:
-            contact = models.Email(**contact_data)
-            contact.representative = representative
-            contact.save()
+            contact_data['representative'] = representative
+            contact, _ = models.Email.objects.get_or_create(**contact_data)
 
         for contact_data in contacts_data['websites']:
-            contact = models.WebSite(**contact_data)
-            contact.representative = representative
-            contact.save()
+            contact_data['representative'] = representative
+            contact, _ = models.WebSite.objects.get_or_create(**contact_data)
 
         for contact_data in contacts_data['address']:
             country, _ = models.Country.objects.get_or_create(
                 **contact_data.pop('country')
             )
-            phone_set = contact_data.pop('phone_set')
-            contact = models.Address(**contact_data)
-            contact.country = country
-            contact.representative = representative
-            contact.save()
+            phone_set = contact_data.pop('phones')
+            contact_data['representative'] = representative
+            contact_data['country'] = country
+            contact, _ = models.Address.objects.get_or_create(**contact_data)
 
             for phone_data in phone_set:
-                phone = models.Phone(**phone_data)
-                phone.address = contact
-                phone.representative = representative
-                phone.save()
-            
+                phone_data['representative'] = representative
+                phone_data['address'] = contact
+                phone, _ = models.Phone.objects.get_or_create(**phone_data)            
+
 
     def _create_mandates(self, mandates_data, representative):
         for mandate_data in mandates_data:
@@ -179,8 +186,7 @@ class RepresentativeDetailSerializer(RepresentativeSerializer):
             group, _ = models.Group.objects.get_or_create(
                 **mandate_data.pop('group')
             )
-            mandate = models.Mandate(**mandate_data)
-            mandate.representative = representative
-            mandate.constituency = constituency
-            mandate.group = group
-            mandate.save()
+            mandate_data['representative'] = representative
+            mandate_data['constituency'] = constituency
+            mandate_data['group'] = group
+            mandate, _ = models.Mandate.objects.get_or_create(**mandate_data)

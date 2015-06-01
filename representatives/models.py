@@ -92,7 +92,7 @@ class Address(Contact):
 class Phone(Contact):
     number = models.CharField(max_length=255)
     kind = models.CharField(max_length=255, blank=True, null=True)
-    address = models.ForeignKey(Address, null=True)
+    address = models.ForeignKey(Address, null=True, related_name='phones')
 
 
 # Mandate related models
@@ -123,7 +123,7 @@ class Constituency(models.Model):
 class Mandate(models.Model):
     group = models.ForeignKey(Group, null=True)
     constituency = models.ForeignKey(Constituency, null=True)
-    representative = models.ForeignKey(Representative)
+    representative = models.ForeignKey(Representative, related_name='mandates')
     role = models.CharField(
         max_length=25,
         blank=True,

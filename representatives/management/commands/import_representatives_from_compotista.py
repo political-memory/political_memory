@@ -19,24 +19,23 @@
 # Copyright (C) 2013 Laurent Peuch <cortex@worlddomination.be>
 # Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
 
-
-
 from django.core.management.base import BaseCommand
 from django.conf import settings
 
 from urllib2 import urlopen
-from django.utils.six import BytesIO
-from rest_framework.parsers import JSONParser
+import ijson
 
-from representatives.utils import import_representatives
+from representatives.utils import import_a_representative
 
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
         compotista_server = getattr(settings,
-                                    'REPRESENTATIVES_COMPOTISTA_SERVER',
+                                    'COMPOTISTA_SERVER',
                                     'http://compotista.mm.staz.be')
-        url = compotista_server + "/latest/"
+        url = compotista_server + '/export/latest/'
         print('Import representatives from %s' % url)
-        stream = BytesIO(urlopen(url))
-        import_representatives(JSONParser().parse(stream))
+        resource = urlopen(url)
+        
+        for representative in ijson.items(resource, 'item'):
+            import_a_representative(representative)

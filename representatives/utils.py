@@ -25,8 +25,11 @@ from representatives.serializers import RepresentativeDetailSerializer
 # Import a representative
 def import_a_representative(data):
     serializer = RepresentativeDetailSerializer(data=data)
-    serializer.is_valid()
-    return serializer.save()
+    if serializer.is_valid():
+        representative = serializer.save()
+        print(representative)
+        return representative
+    print(serializer.errors)
 
 def import_representatives(data):
     return [import_a_representative(r_data) for r_data in data]
