@@ -19,6 +19,7 @@
 # Copyright (C) 2013 Laurent Peuch <cortex@worlddomination.be>
 # Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
 
+
 from representatives.models import Representative
 from representatives.serializers import RepresentativeDetailSerializer
 

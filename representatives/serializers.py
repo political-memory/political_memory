@@ -22,7 +22,6 @@ import representatives.models as models
 from rest_framework import serializers
 
 from django.db import transaction
-from django.db import connection
 
 
 class CountrySerializer(serializers.ModelSerializer):
@@ -108,7 +107,6 @@ class RepresentativeMandateSerializer(MandateSerializer):
         fields = [elem for elem in MandateSerializer.Meta.fields if elem != 'representative']
 
 
-
 class RepresentativeSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Representative
@@ -131,7 +129,7 @@ class RepresentativeHyperLinkedSerializer(RepresentativeSerializer):
     class Meta(RepresentativeSerializer.Meta):
         fields = RepresentativeSerializer.Meta.fields + ('url',)
 
-    
+
 class RepresentativeDetailSerializer(RepresentativeSerializer):
     contacts = ContactField()
     mandates = RepresentativeMandateSerializer(many=True)
@@ -152,29 +150,20 @@ class RepresentativeDetailSerializer(RepresentativeSerializer):
     def create(self, validated_data):
         contacts_data = validated_data.pop('contacts')
         mandates_data = validated_data.pop('mandates')
-        representative, _ = models.Representative.objects.get_or_create(**validated_data)
+        representative, _ = models.Representative.objects.create(**validated_data)
         self._create_mandates(mandates_data, representative)
         self._create_contacts(contacts_data, representative)
         return representative
 
-    def _truncate_model(self, model):
-        cursor = connection.cursor()
-        cursor.execute('TRUNCATE TABLE "{0}"'.format(model._meta.db_table))
-        
     def _create_contacts(self, contacts_data, representative):
-
-        self._truncate_model(models.Email)
         for contact_data in contacts_data['emails']:
             contact_data['representative'] = representative
             contact = models.Email.objects.create(**contact_data)
 
-        self._truncate_model(models.WebSite)
         for contact_data in contacts_data['websites']:
             contact_data['representative'] = representative
             contact = models.WebSite.objects.create(**contact_data)
 
-        self._truncate_model(models.Address)
-        self._truncate_model(models.Phone)
         for contact_data in contacts_data['address']:
             country, _ = models.Country.objects.get_or_create(
                 **contact_data.pop('country')
@@ -191,9 +180,6 @@ class RepresentativeDetailSerializer(RepresentativeSerializer):
 
 
     def _create_mandates(self, mandates_data, representative):
-        self._truncate_model(models.Mandate)
-        self._truncate_model(models.Constituency)
-        self._truncate_model(models.Group)
         for mandate_data in mandates_data:
             constituency, _ = models.Constituency.objects.get_or_create(
                 **mandate_data.pop('constituency')

@@ -25,8 +25,8 @@ from django.conf import settings
 from urllib2 import urlopen
 import ijson
 
+from representatives.models import Representative
 from representatives.utils import import_a_representative
-
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
@@ -36,6 +36,7 @@ class Command(BaseCommand):
 
         url = compotista_server + '/export/latest/'
         print('Import representatives from %s' % url)
-        resource = urlopen(url)        
+        resource = urlopen(url)
+        Representative.objects.all().delete()
         for representative in ijson.items(resource, 'item'):
             import_a_representative(representative)
