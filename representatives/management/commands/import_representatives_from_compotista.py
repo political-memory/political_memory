@@ -33,9 +33,9 @@ class Command(BaseCommand):
         compotista_server = getattr(settings,
                                     'COMPOTISTA_SERVER',
                                     'http://compotista.mm.staz.be')
+
         url = compotista_server + '/export/latest/'
         print('Import representatives from %s' % url)
-        resource = urlopen(url)
-        
+        resource = urlopen(url)        
         for representative in ijson.items(resource, 'item'):
             import_a_representative(representative)
