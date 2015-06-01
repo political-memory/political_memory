@@ -1,74 +1,42 @@
-from dateutil.parser import parse as date_parse
-from .models import Dossier, Proposal, Vote
-import datetime
-# Export
+# coding: utf-8
 
-def export_all_dossiers():
-    return [export_a_dossier(dossier) for dossier in Dossier.objects.all()]
+# This file is part of toutatis.
+#
+# toutatis is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as
+# published by the Free Software Foundation, either version 3 of
+# the License, or any later version.
+#
+# toutatis is distributed in the hope that it will
+# be useful, but WITHOUT ANY WARRANTY; without even the implied
+# warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU General Affero Public
+# License along with django-representatives.
+# If not, see <http://www.gnu.org/licenses/>.
+#
+# Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
 
-def export_a_dossier(dossier):
-    ret = {'dossier': {
-        'title': dossier.title,
-        'reference': dossier.reference,
-        'text': dossier.text
-    }}
+from representatives_votes.models import Dossier
+from representatives_votes.serializers import DossierDetailSerializer
 
-    ret['proposals'] = [export_a_proposal(proposal) for proposal in dossier.proposal_set.all()]
-    return ret
-
-def export_a_proposal(proposal):
-    ret = {
-        'title': proposal.title,
-        'reference': proposal.reference,
-        'description': proposal.description,
-        'datetime': proposal.datetime.isoformat(),
-        'kind': proposal.kind,
-        'total_abstain': proposal.total_abstain,
-        'total_against': proposal.total_against,
-        'total_for': proposal.total_for
-    }
-
-    ret['votes'] = [export_a_vote(vote) for vote in proposal.vote_set.all()]
-    return ret
-
-def export_a_vote(vote):
-    return {
-        'representative_name': vote.representative_name,
-        'representative_remote_id': vote.representative_remote_id,
-        'postion': vote.position
-    }
-
-# Import
-
-def import_a_dossier(dossier_data):
-    dossier, created = Dossier.objects.get_or_create(reference=dossier_data['reference'])
-
-    if created:
-        dossier_attr = ['title', 'text', 'link']
-        for attr in dossier_attr:
-            setattr(dossier, attr, dossier_data[attr])
-        dossier.save()
-
-    dossier.proposal_set.all().delete()
-    for proposal_data in dossier_data['proposals']:
-        import_a_proposal(proposal_data, dossier)
-        
-def import_a_proposal(proposal_data, dossier):
-    proposal = Proposal.objects.create(
-        dossier=dossier,
-        title=proposal_data['title'],
-        description=proposal_data['description'],
-        reference=proposal_data['reference'],
-        datetime=date_parse(proposal_data['datetime']),
-        kind=proposal_data['kind'],
-        total_abstain=proposal_data['total_abstain'],
-        total_against=proposal_data['total_against'],
-        total_for=proposal_data['total_for']        
-    )
+# Import a dossier
+def import_a_dossier(data):
+    serializer = DossierDetailSerializer(data=data)
+    print(serializer.is_valid())
+    print(serializer.save())
     
-    for vote_data in proposal_data['votes']:
-        import_a_vote(vote_data, proposal)
+def import_dossiers(data):
+    return [import_a_dossier(d_data) for d_data in data]
 
-def import_a_vote(vote_data, proposal):
-    vote_data['proposal'] = proposal
-    Vote.objects.create(**vote_data)
+# Export a dossier
+def export_a_dossier(dossier):
+    serialized = DossierDetailSerializer(dossier)
+    return serialized.data
+
+def export_dossiers(filters={}):
+    return [export_a_dossier(dossier) for dossier in Dossier.objects.filter(**filters)]
+
+def export_all_dossier():
+    return export_dossiers()
