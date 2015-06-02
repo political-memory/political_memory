@@ -24,8 +24,10 @@ from representatives_votes.serializers import DossierDetailSerializer
 # Import a dossier
 def import_a_dossier(data):
     serializer = DossierDetailSerializer(data=data)
-    print(serializer.is_valid())
-    print(serializer.save())
+    if serializer.is_valid():
+        serializer.save()
+    else:
+        print(serializer.errors)
     
 def import_dossiers(data):
     return [import_a_dossier(d_data) for d_data in data]

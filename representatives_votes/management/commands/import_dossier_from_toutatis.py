@@ -18,7 +18,6 @@
 #
 # Copyright (C) 2013 Laurent Peuch <cortex@worlddomination.be>
 # Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
-
 import json
 from urllib2 import urlopen
 
@@ -34,10 +33,10 @@ class Command(BaseCommand):
                                   'TOUTATIS_SERVER',
                                   'http://toutatis.mm.staz.be')
         search_url = toutatis_server + '/api/dossiers/?reference=%s' % reference
+        print('Import dossier from %s' % search_url)
         data = json.load(urlopen(search_url))
-        if len(data) != 1:
+        if data['count'] != 1:
             raise Exception('Search should return one and only one result')
-        detail_url = data[0]['url']
+        detail_url = data['results'][0]['url']
         data = json.load(urlopen(detail_url))
-
         import_a_dossier(data)

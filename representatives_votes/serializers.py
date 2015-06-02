@@ -22,15 +22,6 @@ import representatives_votes.models as models
 from rest_framework import serializers
 
 from django.db import transaction
-from django.db import connection
-from django.db.utils import OperationalError
-
-def truncate_model(model):
-    cursor = connection.cursor()
-    try:
-        cursor.execute('TRUNCATE TABLE "{0}"'.format(model._meta.db_table))
-    except OperationalError:
-        cursor.execute('DELETE FROM "{0}"'.format(model._meta.db_table))        
 
 
 class VoteSerializer(serializers.ModelSerializer):
@@ -147,13 +138,15 @@ class DossierDetailSerializer(DossierSerializer):
     def create(self, validated_data):
         proposals_data = validated_data.pop('proposals')
         dossier, _ = models.Dossier.objects.get_or_create(**validated_data)
-
+        
+        for proposal in models.Proposal.objects.filter(dossier=dossier).all():
+            proposal.votes.all().delete()
+            proposal.delete()
+        
         self._create_proposals(proposals_data, dossier)
         return dossier
 
     def _create_proposals(self, proposals_data, dossier):
-        truncate_model(models.Proposal)
-        truncate_model(models.Vote)
         for proposal_data in proposals_data:
             votes_data = proposal_data.pop('votes')
             proposal_data['dossier'] = dossier
