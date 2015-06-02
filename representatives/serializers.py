@@ -150,7 +150,7 @@ class RepresentativeDetailSerializer(RepresentativeSerializer):
     def create(self, validated_data):
         contacts_data = validated_data.pop('contacts')
         mandates_data = validated_data.pop('mandates')
-        representative, _ = models.Representative.objects.create(**validated_data)
+        representative = models.Representative.objects.create(**validated_data)
         self._create_mandates(mandates_data, representative)
         self._create_contacts(contacts_data, representative)
         return representative
