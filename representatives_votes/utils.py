@@ -23,6 +23,7 @@ from representatives_votes.serializers import DossierDetailSerializer
 
 # Import a dossier
 def import_a_dossier(data):
+
     serializer = DossierDetailSerializer(data=data)
     if serializer.is_valid():
         serializer.save()
