@@ -44,6 +44,7 @@ class ProposalSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Proposal
         fields = (
+            'id',
             'title',
             'description',
             'reference',
@@ -63,11 +64,25 @@ class ProposalHyperLinkedSerializer(ProposalSerializer):
         read_only = True,
         view_name = 'dossier-detail',
     )
+    
+    dossier_title = serializers.CharField(
+        read_only = True,
+        source = 'dossier.title'
+    )
 
+    dossier_reference = serializers.CharField(
+        read_only = True,
+        source = 'dossier.reference'
+    )
+    
     class Meta(ProposalSerializer.Meta):
-        fields = ('dossier', 'url',) + ProposalSerializer.Meta.fields
-
-
+        fields = ProposalSerializer.Meta.fields + (
+            'dossier',
+            'dossier_title',
+            'dossier_reference',
+            'url',
+        )
+        
 class ProposalDetailSerializer(ProposalSerializer):
     '''
     Proposal Serializer with votes detail (used in Dossier Detail)
@@ -85,7 +100,10 @@ class ProposalDetailHyperLinkedSerializer(ProposalDetailSerializer, ProposalHype
     Proposal Serializer combined Detail Serializer and Hyperlinked Serializer
     '''
     class Meta(ProposalSerializer.Meta):
-        fields = ('dossier',) + ProposalSerializer.Meta.fields + (
+        fields = ProposalSerializer.Meta.fields + (
+            'dossier',
+            'dossier_title',
+            'dossier_reference',
             'votes',
         )
 
@@ -97,6 +115,7 @@ class DossierSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Dossier
         fields = (
+            'id',
             'title',
             'reference',
             'text',
@@ -104,14 +123,28 @@ class DossierSerializer(serializers.ModelSerializer):
         )
 
 
-class DossierHyperLinkedSerializer(DossierSerializer):
+class DossierListSerializer(DossierSerializer):
     '''
-    Dossier Serializer with hyperlinks to proposals
+    Dossier Serializer with short description of proposals
+    '''
+    class ProposalSerializer(ProposalSerializer):
+        class Meta(ProposalSerializer.Meta):
+            fields = (
+                'id',
+                'url',
+            ) + ProposalSerializer.Meta.fields
+            
     '''
     proposals = serializers.HyperlinkedRelatedField(
         many=True,
         read_only=True,
         view_name='proposal-detail',
+    )
+    '''
+    
+    proposals = ProposalSerializer(
+        many = True,
+        read_only = True
     )
 
     class Meta(DossierSerializer.Meta):
@@ -125,8 +158,9 @@ class DossierDetailSerializer(DossierSerializer):
     '''
     Dossier Serializer with proposals details
     '''
+
     proposals = ProposalDetailSerializer(
-        many=True,
+        many = True,
     )
 
     class Meta(DossierSerializer.Meta):
