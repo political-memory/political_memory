@@ -39,7 +39,7 @@ class Representative(models.Model):
     )
 
     slug = models.SlugField(max_length=100)
-    remote_id = models.CharField(max_length=255, blank=True, null=True)
+    remote_id = models.CharField(max_length=255, blank=True, null=True, unique=True)
     first_name = models.CharField(max_length=255, blank=True, null=True)
     last_name = models.CharField(max_length=255, blank=True, null=True)
     full_name = models.CharField(max_length=255)
