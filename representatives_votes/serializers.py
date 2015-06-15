@@ -173,21 +173,13 @@ class DossierDetailSerializer(DossierSerializer):
         proposals_data = validated_data.pop('proposals')
         dossier, _ = models.Dossier.objects.get_or_create(**validated_data)
 
-        previous_proposals = set(dossier.proposals.all())
         for proposal_data in proposals_data:
             proposal, created = self._create_proposal(
                 proposal_data,
                 dossier
             )
-        if not created:
-            previous_proposals.remove(proposal)
-
-        # Delete proposals that don't belongs to that dossier anymore
-        for proposal in previous_proposals:
-            proposal.delete()
 
         return dossier
-
     
     def _create_proposal(self, proposal_data, dossier):
         votes_data = proposal_data.pop('votes')
@@ -197,3 +189,4 @@ class DossierDetailSerializer(DossierSerializer):
             for vote_data in votes_data:
                 vote_data['proposal'] = proposal
                 models.Vote.objects.create(**vote_data)
+        return (proposal, created)
