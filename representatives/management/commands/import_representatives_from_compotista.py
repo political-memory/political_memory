@@ -13,7 +13,7 @@
 # See the GNU Affero General Public License for more details.
 #
 # You should have received a copy of the GNU General Affero Public
-# License along with Foobar.
+# License along with compotista
 # If not, see <http://www.gnu.org/licenses/>.
 #
 # Copyright (C) 2013 Laurent Peuch <cortex@worlddomination.be>
@@ -45,7 +45,7 @@ class Command(BaseCommand):
         
         bar = pyprind.ProgBar(self.get_number_of_meps())
         resource = urlopen(url)
-        for i, representative in enumerate(ijson.items(resource, 'item')):
+        for i, representative in enumerate(ijson.items(resource, 'item')):            
             representative = import_a_representative(representative)
             representative_id = '{} - {}'.format(i, representative.full_name.encode('utf-8'))
             bar.update(item_id = representative_id)
