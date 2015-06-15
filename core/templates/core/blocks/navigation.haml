@@ -3,6 +3,8 @@
     %a{href: "{% url 'legislature:representatives_index' %}"}
       Representatives
   %li
+    %em By :
+  %li
     %a{href: "{% url 'legislature:groups_by_kind' 'country' %}"}
       Countries
   %li
@@ -15,3 +17,9 @@
     %a{href: "{% url 'legislature:groups_by_kind' 'committee' %}"}
       Committees
       
+%ul.nav-bar
+  %li
+    %a{href: "{% url 'votes:votes_index' %}"}
+      Votes
+  %li
+    %em By :
