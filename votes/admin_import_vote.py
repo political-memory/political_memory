@@ -111,7 +111,7 @@ def import_vote(request):
 
             
             call_command('import_proposal_from_toutatis', proposal_id, interactive=False)
-            call_command('update_memopol_votes', proposal['dossier_reference'], interactive=False)
+            # call_command('update_memopol_votes', proposal['dossier_reference'], interactive=False)
             return redirect('/admin/')
         form = SearchForm()
     context['form'] = form
