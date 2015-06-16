@@ -22,17 +22,17 @@ from django.db import models
 class Dossier(models.Model):
     title = models.CharField(max_length=1000)
     reference = models.CharField(max_length=200)
-    text = models.TextField(blank=True, null=True)
+    text = models.TextField(blank=True)
     link = models.URLField()
 
 
 class Proposal(models.Model):
     dossier = models.ForeignKey(Dossier, related_name='proposals')
     title = models.CharField(max_length=1000)
-    description = models.TextField(blank=True, null=True)
-    reference = models.CharField(max_length=200, null=True)
+    description = models.TextField(blank=True)
+    reference = models.CharField(max_length=200, blank=True)
     datetime = models.DateTimeField()
-    kind = models.CharField(max_length=200, null=True)
+    kind = models.CharField(max_length=200, blank=True)
     total_abstain = models.IntegerField()
     total_against = models.IntegerField()
     total_for = models.IntegerField()
@@ -56,7 +56,7 @@ class Vote(models.Model):
     proposal = models.ForeignKey(Proposal, related_name='votes')
 
     # There are two representative fields for flexibility,
-    representative_name = models.CharField(max_length=200, blank=True, null=True)
-    representative_remote_id = models.CharField(max_length=200, blank=True, null=True)
+    representative_name = models.CharField(max_length=200, blank=True)
+    representative_remote_id = models.CharField(max_length=200, blank=True)
 
     position = models.CharField(max_length=10, choices=VOTECHOICES)
