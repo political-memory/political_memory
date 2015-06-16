@@ -30,6 +30,16 @@ class Migration(migrations.Migration):
             bases=(models.Model,),
         ),
         migrations.CreateModel(
+            name='Constituency',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('name', models.CharField(max_length=255)),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
             name='Country',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
@@ -53,18 +63,27 @@ class Migration(migrations.Migration):
             bases=(models.Model,),
         ),
         migrations.CreateModel(
-            name='Mandate',
+            name='Group',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=255)),
+                ('abbreviation', models.CharField(max_length=10, null=True, blank=True)),
                 ('kind', models.CharField(max_length=255, null=True, blank=True)),
-                ('short_id', models.CharField(max_length=25, null=True, blank=True)),
-                ('url', models.URLField()),
-                ('constituency', models.CharField(help_text=b'Authority for which the mandate is realized. Eg.: a eurodeputies has a mandate at the European Parliament for a country', max_length=255, null=True, blank=True)),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='Mandate',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('role', models.CharField(help_text=b'Eg.: president of a political group at the European Parliament', max_length=25, null=True, blank=True)),
                 ('begin_date', models.DateField(null=True, blank=True)),
                 ('end_date', models.DateField(null=True, blank=True)),
-                ('active', models.NullBooleanField(default=False)),
+                ('link', models.URLField()),
+                ('constituency', models.ForeignKey(related_name='mandates', to='representatives.Constituency', null=True)),
+                ('group', models.ForeignKey(related_name='mandates', to='representatives.Group', null=True)),
             ],
             options={
             },
@@ -74,9 +93,9 @@ class Migration(migrations.Migration):
             name='Phone',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('number', models.CharField(max_length=255)),
+                ('number', models.CharField(max_length=255, null=True, blank=True)),
                 ('kind', models.CharField(max_length=255, null=True, blank=True)),
-                ('address', models.ForeignKey(to='representatives.Address')),
+                ('address', models.ForeignKey(related_name='phones', to='representatives.Address', null=True)),
             ],
             options={
                 'abstract': False,
@@ -88,7 +107,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('slug', models.SlugField(max_length=100)),
-                ('remote_id', models.CharField(max_length=255, null=True, blank=True)),
+                ('remote_id', models.CharField(unique=True, max_length=255)),
                 ('first_name', models.CharField(max_length=255, null=True, blank=True)),
                 ('last_name', models.CharField(max_length=255, null=True, blank=True)),
                 ('full_name', models.CharField(max_length=255)),
@@ -96,6 +115,8 @@ class Migration(migrations.Migration):
                 ('birth_place', models.CharField(max_length=255, null=True, blank=True)),
                 ('birth_date', models.DateField(null=True, blank=True)),
                 ('cv', models.TextField(null=True, blank=True)),
+                ('photo', models.CharField(max_length=512, null=True)),
+                ('active', models.BooleanField(default=False)),
             ],
             options={
             },
@@ -105,7 +126,7 @@ class Migration(migrations.Migration):
             name='WebSite',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('url', models.URLField()),
+                ('url', models.CharField(max_length=2048, null=True, blank=True)),
                 ('kind', models.CharField(max_length=255, null=True, blank=True)),
                 ('representative', models.ForeignKey(to='representatives.Representative')),
             ],
@@ -123,7 +144,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='mandate',
             name='representative',
-            field=models.ForeignKey(to='representatives.Representative'),
+            field=models.ForeignKey(related_name='mandates', to='representatives.Representative'),
             preserve_default=True,
         ),
         migrations.AddField(

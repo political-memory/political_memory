@@ -39,7 +39,7 @@ class Representative(models.Model):
     )
 
     slug = models.SlugField(max_length=100)
-    remote_id = models.CharField(max_length=255, blank=True, null=True, unique=True)
+    remote_id = models.CharField(max_length=255, unique=True)
     first_name = models.CharField(max_length=255, blank=True, null=True)
     last_name = models.CharField(max_length=255, blank=True, null=True)
     full_name = models.CharField(max_length=255)
@@ -121,8 +121,9 @@ class Constituency(models.Model):
 
 
 class Mandate(models.Model):
-    group = models.ForeignKey(Group, null=True)
-    constituency = models.ForeignKey(Constituency, null=True)
+
+    group = models.ForeignKey(Group, null=True, related_name='mandates')
+    constituency = models.ForeignKey(Constituency, null=True, related_name='mandates')
     representative = models.ForeignKey(Representative, related_name='mandates')
     role = models.CharField(
         max_length=25,
