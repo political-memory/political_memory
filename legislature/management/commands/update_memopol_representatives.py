@@ -1,49 +1,41 @@
-# import datetime
-from django.core.management.base import BaseCommand
-from representatives import models
-from legislature.models import MRepresentative, MMandate, MGroup
+from __future__ import absolute_import
 
 from django.db import transaction
+from django.core.management.base import BaseCommand
+
+import pyprind
+
+import representatives.models
+import legislature.models
 
 
 class Command(BaseCommand):
-
+    
     @transaction.atomic
     def handle(self, *args, **options):
-        # Representatives
-        print('Representatives')
-        n = models.Representative.objects.all().count()
-        for i, representative in enumerate(models.Representative.objects.all()):
-            mrepresentative = MRepresentative(representative_ptr=representative)
-            mrepresentative.__dict__.update(representative.__dict__)
-            mrepresentative.save()
-            print("%s/%s\r" % (i, n)),
-
-        print('Mandates')
-        for i, mrepresentative in enumerate(MRepresentative.objects.all()):
-            representative = mrepresentative.representative_ptr
-            for mandate in representative.mandate_set.all():
-                mmandate = MMandate(mandate_ptr=mandate)
-                mmandate.__dict__.update(mandate.__dict__)
-                mmandate.mrepresentative = mrepresentative
-
-                # Group creation
-                try:
-                    mgroup = MGroup.objects.get(group_ptr=mandate.group)
-                except MGroup.DoesNotExist:
-                    mgroup = MGroup(group_ptr=mandate.group)
-                    mgroup.__dict__.update(mandate.group.__dict__)
-                    mgroup.save()                
-
-                mmandate.mgroup = mgroup
-                mmandate.save()
-                mmandate.update_active()
-
-            mrepresentative.update_country()
-            # mrepresentative.update_active()
-            mrepresentative.save()
-            print("%s/%s\r" % (i, n)),
-
-        print('Groups')
-        for i, mgroup in enumerate(MGroup.objects.all()):
-            mgroup.update_active()
+        bar = pyprind.ProgBar(representatives.models.Representative.objects.all().count())
+        for i, representative in enumerate(representatives.models.Representative.objects.all()):
+            try:
+                memopol_representative = legislature.models.MemopolRepresentative.objects.get(
+                    representative_remote_id = representative.remote_id
+                )
+            except legislature.models.MemopolRepresentative.DoesNotExist:
+                memopol_representative = legislature.models.MemopolRepresentative(
+                    representative_remote_id = representative.remote_id
+                )
+            memopol_representative.representative_ptr_id = representative.pk
+            
+            memopol_representative.__dict__.update(representative.__dict__)
+            memopol_representative.save()
+            memopol_representative.update_country()
+            
+            bar.update()
+        
+        for i, group_item in enumerate(representatives.models.Group.objects.all()):
+            memopol_group, _ = legislature.models.MemopolGroup.objects.get_or_create(
+                group = group_item
+            )
+            memopol_group.__dict__.update(group_item.__dict__)
+            memopol_group.update_active()
+            memopol_group.save()
+        

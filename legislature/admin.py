@@ -1,7 +1,9 @@
+from __future__ import absolute_import
+
 from django.contrib import admin
 
-from representatives.models import Email, WebSite, Address, Phone, Country, Constituency
-from legislature.models import MMandate, MRepresentative, MGroup
+from representatives.models import Email, WebSite, Address, Phone, Country
+from .models import MemopolRepresentative
 
 
 class EmailInline(admin.TabularInline):
@@ -24,10 +26,15 @@ class PhoneInline(admin.TabularInline):
     extra = 0
 
 
-class RepresentativeAdmin(admin.ModelAdmin):
-    list_display = ('full_name', 'gender', 'birth_place')
+class CountryInline(admin.TabularInline):
+    model = Country
+    extra = 0
+    
+    
+class MemopolRepresentativeAdmin(admin.ModelAdmin):
+    list_display = ('full_name', 'country', 'score')
     search_fields = ('first_name', 'last_name', 'birth_place')
-    list_filter = ('gender', )
+    list_filter = ('gender', 'active')
     inlines = [
         PhoneInline,
         EmailInline,
@@ -35,18 +42,18 @@ class RepresentativeAdmin(admin.ModelAdmin):
         AdressInline,
     ]
 
-
-class MandateAdmin(admin.ModelAdmin):
-    list_display = ('representative', 'group', 'role', 'constituency', 'begin_date', 'end_date', 'active')
-    search_fields = ('representative', 'group', 'constituency')
+    
+# class MandateAdmin(admin.ModelAdmin):
+    # list_display = ('representative', 'group', 'role', 'constituency', 'begin_date', 'end_date', 'active')
+    # search_fields = ('representative', 'group', 'constituency')
     # list_filter = ('role',)
 
 
-admin.site.register(MRepresentative, RepresentativeAdmin)
-
+# admin.site.register(Representative, RepresentativeAdmin)
+admin.site.register(MemopolRepresentative, MemopolRepresentativeAdmin)
 # admin.site.register(Country)
 
-admin.site.register(MMandate, MandateAdmin)
+# admin.site.register(MemopolMandate, MandateAdmin)
 
-admin.site.register(MGroup)
+# admin.site.register(MemopolGroup)
 # admin.site.register(Constituency)

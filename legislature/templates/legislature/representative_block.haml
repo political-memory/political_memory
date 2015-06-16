@@ -1,4 +1,4 @@
-- load by_mandate_url
+- load by_group_url
 
 %td
   %a{'href': "{% url 'legislature:representative_view_by_name' representative.full_name %}"} 
@@ -13,5 +13,5 @@
     ={representative.country.name}
 
 %td
-  %a{'href': "{{ representative.current_group_mandate|by_mandate_url }}"}
-    ={representative.current_group_mandate.mgroup.abbreviation}
+  %a{'href': "{{ representative.current_group_mandate|by_group_url }}"}
+    ={representative.current_group_mandate.group.abbreviation}

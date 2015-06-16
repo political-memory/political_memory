@@ -15,7 +15,7 @@ urlpatterns = patterns(
         name='representative_view'
     ),
     url(
-        r'^representatives/(?P<group_kind>\w+)/(?P<search>.+)$',
+        r'^representatives/(?P<group_kind>\w+)/(?P<search>.+)/(?P<group_id>\d+)?$',
         views.representatives_by_group,
         name='representatives_by_group'
     ),

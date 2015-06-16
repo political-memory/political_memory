@@ -7,14 +7,14 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('representatives', '0007_auto_20150323_1017'),
+        ('representatives', '0001_initial'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='MGroup',
+            name='MemopolGroup',
             fields=[
-                ('group_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='representatives.Group')),
+                ('group', models.OneToOneField(parent_link=True, primary_key=True, serialize=False, to='representatives.Group')),
                 ('active', models.BooleanField(default=False)),
             ],
             options={
@@ -22,30 +22,15 @@ class Migration(migrations.Migration):
             bases=('representatives.group',),
         ),
         migrations.CreateModel(
-            name='MMandate',
-            fields=[
-                ('mandate_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='representatives.Mandate')),
-                ('active', models.BooleanField(default=False)),
-                ('mgroup', models.ForeignKey(to='legislature.MGroup')),
-            ],
-            options={
-            },
-            bases=('representatives.mandate',),
-        ),
-        migrations.CreateModel(
-            name='MRepresentative',
+            name='MemopolRepresentative',
             fields=[
                 ('representative_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='representatives.Representative')),
+                ('representative_remote_id', models.CharField(unique=True, max_length=255)),
+                ('score', models.IntegerField(default=0)),
                 ('country', models.ForeignKey(to='representatives.Country', null=True)),
             ],
             options={
             },
             bases=('representatives.representative',),
-        ),
-        migrations.AddField(
-            model_name='mmandate',
-            name='mrepresentative',
-            field=models.ForeignKey(to='legislature.MRepresentative'),
-            preserve_default=True,
         ),
     ]
