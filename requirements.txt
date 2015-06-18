@@ -3,7 +3,7 @@ Markdown==2.6
 Pygments==2.0.2
 argparse==1.2.1
 django-appconf==1.0.1
-django-chronograph==0.3.1
+-e hg+https://bitbucket.org/wnielson/django-chronograph#egg=django-chronograph
 django-compressor==1.4
 django-constance==1.0.1
 django-picklefield==0.3.1
@@ -13,3 +13,4 @@ pytz==2015.4
 six==1.9.0
 wsgiref==0.1.2
 django-adminplus
+requests
