@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import models, migrations
+import uuidfield.fields
 
 
 class Migration(migrations.Migration):
@@ -27,7 +28,6 @@ class Migration(migrations.Migration):
             options={
                 'abstract': False,
             },
-            bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='Constituency',
@@ -35,9 +35,6 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=255)),
             ],
-            options={
-            },
-            bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='Country',
@@ -46,21 +43,17 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=255)),
                 ('code', models.CharField(max_length=2)),
             ],
-            options={
-            },
-            bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='Email',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('email', models.EmailField(max_length=75)),
+                ('email', models.EmailField(max_length=254)),
                 ('kind', models.CharField(max_length=255, null=True, blank=True)),
             ],
             options={
                 'abstract': False,
             },
-            bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='Group',
@@ -70,9 +63,6 @@ class Migration(migrations.Migration):
                 ('abbreviation', models.CharField(max_length=10, null=True, blank=True)),
                 ('kind', models.CharField(max_length=255, null=True, blank=True)),
             ],
-            options={
-            },
-            bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='Mandate',
@@ -85,9 +75,6 @@ class Migration(migrations.Migration):
                 ('constituency', models.ForeignKey(related_name='mandates', to='representatives.Constituency', null=True)),
                 ('group', models.ForeignKey(related_name='mandates', to='representatives.Group', null=True)),
             ],
-            options={
-            },
-            bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='Phone',
@@ -100,12 +87,11 @@ class Migration(migrations.Migration):
             options={
                 'abstract': False,
             },
-            bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='Representative',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('id', uuidfield.fields.UUIDField(max_length=32, serialize=False, primary_key=True)),
                 ('slug', models.SlugField(max_length=100)),
                 ('remote_id', models.CharField(unique=True, max_length=255)),
                 ('first_name', models.CharField(max_length=255, null=True, blank=True)),
@@ -118,9 +104,6 @@ class Migration(migrations.Migration):
                 ('photo', models.CharField(max_length=512, null=True)),
                 ('active', models.BooleanField(default=False)),
             ],
-            options={
-            },
-            bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='WebSite',
@@ -133,36 +116,30 @@ class Migration(migrations.Migration):
             options={
                 'abstract': False,
             },
-            bases=(models.Model,),
         ),
         migrations.AddField(
             model_name='phone',
             name='representative',
             field=models.ForeignKey(to='representatives.Representative'),
-            preserve_default=True,
         ),
         migrations.AddField(
             model_name='mandate',
             name='representative',
             field=models.ForeignKey(related_name='mandates', to='representatives.Representative'),
-            preserve_default=True,
         ),
         migrations.AddField(
             model_name='email',
             name='representative',
             field=models.ForeignKey(to='representatives.Representative'),
-            preserve_default=True,
         ),
         migrations.AddField(
             model_name='address',
             name='country',
             field=models.ForeignKey(to='representatives.Country'),
-            preserve_default=True,
         ),
         migrations.AddField(
             model_name='address',
             name='representative',
             field=models.ForeignKey(to='representatives.Representative'),
-            preserve_default=True,
         ),
     ]

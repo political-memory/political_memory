@@ -19,40 +19,25 @@
 # Copyright (C) 2013 Laurent Peuch <cortex@worlddomination.be>
 # Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
 
-import json
-import ijson
-import pyprind
-
 from django.core.management.base import BaseCommand
-from django.conf import settings
 
-from urllib2 import urlopen
+from representatives.tasks import import_representatives_from_compotista
 
-from representatives.models import Representative
-from representatives.utils import import_a_representative
 
 class Command(BaseCommand):
+    """
+    Command to import representative from a compotista server first
+    command call should not be in parallel (group and counstituency
+    would be created in double or triple), next calls could be or not in
+    parallel
+    """
+
+    def add_arguments(self, parser):
+        parser.add_argument('--parallel', action='store_true', default=False)
+        parser.add_argument('--nocelery', action='store_true', default=False)
+        
     def handle(self, *args, **options):
-
-        Representative.objects.all().delete()
-
-        self.compotista_server = getattr(settings,
-                                    'COMPOTISTA_SERVER',
-                                    'http://compotista.mm.staz.be')
-        
-        url = self.compotista_server + '/export/latest/'
-        print('Import representatives from %s' % url)
-        
-        bar = pyprind.ProgBar(self.get_number_of_meps())
-        resource = urlopen(url)
-        for i, representative in enumerate(ijson.items(resource, 'item')):            
-            representative = import_a_representative(representative)
-            representative_id = '{} - {}'.format(i, representative.full_name.encode('utf-8'))
-            bar.update(item_id = representative_id)
-
-        print(bar)            
-
-
-    def get_number_of_meps(self):
-        response = urlopen(self.compotista_server + '/api/representatives/')
-        return int(json.load(response).get('count'))
+        if options['nocelery']:
+            import_representatives_from_compotista(options['parallel'])
+        else:
+            import_representatives_from_compotista.delay(options['parallel'])

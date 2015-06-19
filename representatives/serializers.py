@@ -18,10 +18,10 @@
 #
 # Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
 
+from django.db import transaction
+
 import representatives.models as models
 from rest_framework import serializers
-
-from django.db import transaction
 
 
 class CountrySerializer(serializers.ModelSerializer):
@@ -108,6 +108,7 @@ class RepresentativeMandateSerializer(MandateSerializer):
 
 
 class RepresentativeSerializer(serializers.ModelSerializer):
+    id = serializers.UUIDField(format='hex', read_only=True)
     class Meta:
         model = models.Representative
         fields = (
@@ -141,28 +142,34 @@ class RepresentativeDetailSerializer(RepresentativeSerializer):
         )
 
 
-    # Nested creation is not implemented yet in DRF, it sucks
-    # We made an intensive use of get_or_create to avoid recreating representatives
-    # The idea here is to truncate all models except representatives and recreate them
-    # every import
-    # TODO : fix this code when it will be implemented
     @transaction.atomic
     def create(self, validated_data):
+        """
+        Nested creation is not implemented yet in DRF, it sucks We made an
+        intensive use of get_or_create to avoid recreating
+        representatives The idea here is to truncate all models except
+        representatives and recreate them every import.
+        TODO : fix this code when it will be implemented
+        """
+
         contacts_data = validated_data.pop('contacts')
         mandates_data = validated_data.pop('mandates')
-        representative = models.Representative.objects.create(**validated_data)
+        representative = models.Representative.objects.update_or_create(
+            **validated_data
+        )
         self._create_mandates(mandates_data, representative)
         self._create_contacts(contacts_data, representative)
         return representative
 
+
     def _create_contacts(self, contacts_data, representative):
         for contact_data in contacts_data['emails']:
             contact_data['representative'] = representative
-            contact = models.Email.objects.create(**contact_data)
+            models.Email.objects.create(**contact_data)
 
         for contact_data in contacts_data['websites']:
             contact_data['representative'] = representative
-            contact = models.WebSite.objects.create(**contact_data)
+            models.WebSite.objects.create(**contact_data)
 
         for contact_data in contacts_data['address']:
             country, _ = models.Country.objects.get_or_create(
@@ -176,8 +183,7 @@ class RepresentativeDetailSerializer(RepresentativeSerializer):
             for phone_data in phone_set:
                 phone_data['representative'] = representative
                 phone_data['address'] = contact
-                models.Phone.objects.create(**phone_data)            
-
+                models.Phone.objects.create(**phone_data)
 
     def _create_mandates(self, mandates_data, representative):
         for mandate_data in mandates_data:

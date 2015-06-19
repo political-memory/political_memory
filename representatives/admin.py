@@ -49,7 +49,7 @@ class MandateInline(admin.StackedInline):
 
 
 class RepresentativeAdmin(admin.ModelAdmin):
-    list_display = ('full_name', 'gender', 'birth_place')
+    list_display = ('id', 'full_name', 'gender', 'birth_place')
     search_fields = ('first_name', 'last_name', 'birth_place')
     list_filter = ('gender', )
     inlines = [
@@ -62,7 +62,7 @@ class RepresentativeAdmin(admin.ModelAdmin):
 
 
 class MandateAdmin(admin.ModelAdmin):
-    list_display = ('representative', 'group', 'role', 'constituency', 'begin_date', 'end_date')
+    list_display = ('id', 'representative', 'group', 'role', 'constituency', 'begin_date', 'end_date')
     search_fields = ('representative', 'group', 'constituency')
 
 
