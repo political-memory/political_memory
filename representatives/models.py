@@ -26,7 +26,62 @@ from django.db import models
 from django.utils.functional import cached_property
 from django.utils.encoding import smart_str
 
-from memopol_utils.mixins import HashableModel, TimeStampedModel
+
+class TimeStampedModel(models.Model):
+    """
+    An abstract base class model that provides self-updating
+    ``created`` and ``modified`` fields.
+    """
+    
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        abstract = True
+
+
+class HashableModel(models.Model):
+    """
+    An abstract base class model that provides a fingerprint
+    field
+    """
+    
+    fingerprint = models.CharField(
+        max_length=40,
+        unique=True,
+    )
+
+    class Meta:
+        abstract = True
+
+    def calculate_hash(self):
+        fingerprint = hashlib.sha1()
+        for field_name in self.hashable_fields:
+            field = self._meta.get_field(field_name) 
+            if field.is_relation:
+                fingerprint.update(
+                    getattr(self, field_name).fingerprint
+                )
+            else:
+                fingerprint.update(
+                    smart_str(getattr(self, field_name))
+                )
+        self.fingerprint = fingerprint.hexdigest()
+        return self.fingerprint
+
+    def get_hash_str(self):
+        string = ''
+        for field_name in self.hashable_fields:
+            field = self._meta.get_field(field_name) 
+            if field.is_relation:
+                string += getattr(self, field_name).fingerprint
+            else:
+                string += smart_str(getattr(self, field_name))
+        return string
+
+    def save(self, *args, **kwargs):
+        self.calculate_hash()
+        super(HashableModel, self).save(*args, **kwargs)
 
 
 class Country(models.Model):

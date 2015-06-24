@@ -58,7 +58,7 @@ def import_a_representative(data, verbose=False):
 
 
 @shared_task
-def import_representatives_from_compotista(delay=False):
+def import_representatives_from_compotista(delay=False):    
     compotista_server = getattr(settings,
                                      'COMPOTISTA_SERVER',
                                      'http://compotista.mm.staz.be')
