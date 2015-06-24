@@ -22,13 +22,13 @@
 from __future__ import absolute_import
 
 from django.conf import settings
+from django.utils import timezone
 
 import ijson
 from celery import shared_task
 from urllib2 import urlopen
 
-
-from representatives.models import Representative
+from representatives.models import Representative, Group, Constituency, Mandate, Address, Phone, Email, WebSite
 from representatives.serializers import RepresentativeDetailSerializer
 
 
@@ -38,7 +38,18 @@ def import_a_representative(data, verbose=False):
     Import a representative from a serialized
     Python datatypes
     '''
-    serializer = RepresentativeDetailSerializer(data=data)
+
+    try:
+        representative = Representative.objects.get(
+            fingerprint=data['fingerprint']
+        )
+        serializer = RepresentativeDetailSerializer(
+            instance=representative,
+            data=data
+        )
+    except:
+        serializer = RepresentativeDetailSerializer(data=data)
+
     if serializer.is_valid():
         return serializer.save()
     else:
@@ -48,12 +59,10 @@ def import_a_representative(data, verbose=False):
 
 @shared_task
 def import_representatives_from_compotista(delay=False):
-    # Clean data before import
-    Representative.objects.all().delete()
-    
     compotista_server = getattr(settings,
                                      'COMPOTISTA_SERVER',
                                      'http://compotista.mm.staz.be')
+    import_start_datetime = timezone.now()
     url = compotista_server + '/export/latest/'
     res = urlopen(url)
     for representative in ijson.items(res, 'item'):
@@ -61,6 +70,10 @@ def import_representatives_from_compotista(delay=False):
             representative = import_a_representative.delay(representative)
         else:
             representative = import_a_representative(representative)
+        
+    for model in [Representative, Group, Constituency,
+                  Mandate, Address, Phone, Email, WebSite]:
+        model.objects.filter(updated__lt=import_start_datetime).delete()
 
 
 @shared_task
@@ -74,5 +87,10 @@ def export_a_representative(representative):
 
 
 @shared_task
-def export_representatives(filters={}):
-    return [export_a_representative.delay(representative) for representative in Representative.objects.filter(**filters)]
+def export_representatives(delay=False, **filters):
+    if delay:
+        return [export_a_representative.delay(representative)
+                for representative in Representative.objects.filter(**filters)]
+    else:
+        return [export_a_representative(representative)
+                for representative in Representative.objects.filter(**filters)]

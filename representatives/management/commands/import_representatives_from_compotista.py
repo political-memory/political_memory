@@ -34,10 +34,9 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument('--parallel', action='store_true', default=False)
-        parser.add_argument('--nocelery', action='store_true', default=False)
-        
+
     def handle(self, *args, **options):
-        if options['nocelery']:
+        if not options['parallel']:
             import_representatives_from_compotista(options['parallel'])
         else:
             import_representatives_from_compotista.delay(options['parallel'])
