@@ -29,10 +29,12 @@ class CountrySerializer(serializers.ModelSerializer):
         model = models.Country
         fields = ('name', 'code')
 
+
 class EmailSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Email
         fields = ('email', 'kind')
+
 
 class WebsiteSerializer(serializers.ModelSerializer):
     class Meta:
@@ -45,6 +47,7 @@ class WebsiteSerializer(serializers.ModelSerializer):
         '''
         return value 
 
+
 class PhoneSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Phone
@@ -53,12 +56,17 @@ class PhoneSerializer(serializers.ModelSerializer):
     def validate_phone(self, value):
         return value
 
+
 class AddressSerializer(serializers.ModelSerializer):
     country = CountrySerializer()
     phones = PhoneSerializer(many=True)
     class Meta:
         model = models.Address
-        fields = ('country', 'city', 'street', 'number', 'postcode', 'floor', 'office_number', 'kind', 'phones')
+        fields = ('country', 'city', 'street',
+                  'number', 'postcode', 'floor',
+                  'office_number', 'kind', 'phones',
+        )
+
 
 class ContactField(serializers.Serializer):
     emails = EmailSerializer(many=True)
@@ -80,7 +88,10 @@ class MandateSerializer(serializers.ModelSerializer):
     short_id = serializers.CharField(source='group.abbreviation', allow_null=True)
     kind = serializers.CharField(source='group.kind')
     constituency = serializers.CharField(source='constituency.name')
-    
+
+    # def validate_fingerprint(self, value):
+        # return value
+
     class Meta:
         model = models.Mandate
         fields = (
@@ -94,6 +105,7 @@ class MandateSerializer(serializers.ModelSerializer):
             'representative',
             'begin_date',
             'end_date',
+            'fingerprint',
         )
 
 
@@ -108,7 +120,6 @@ class RepresentativeMandateSerializer(MandateSerializer):
 
 
 class RepresentativeSerializer(serializers.ModelSerializer):
-    id = serializers.UUIDField(format='hex', read_only=True)
     class Meta:
         model = models.Representative
         fields = (
@@ -123,6 +134,7 @@ class RepresentativeSerializer(serializers.ModelSerializer):
             'birth_date',
             'photo',
             'active',
+            'fingerprint'
         )
 
 
@@ -154,22 +166,46 @@ class RepresentativeDetailSerializer(RepresentativeSerializer):
 
         contacts_data = validated_data.pop('contacts')
         mandates_data = validated_data.pop('mandates')
-        representative = models.Representative.objects.update_or_create(
+        representative = models.Representative.objects.create(
             **validated_data
         )
         self._create_mandates(mandates_data, representative)
         self._create_contacts(contacts_data, representative)
         return representative
 
+    def update(self, instance, validated_data):
+        contacts_data = validated_data.pop('contacts')
+        mandates_data = validated_data.pop('mandates')
+        
+        for attr, value in validated_data.iteritems(): 
+            setattr(instance, attr, value)
+        instance.save()
 
+        self._create_mandates(mandates_data, instance)
+        self._create_contacts(contacts_data, instance)
+        return instance
+
+    def touch_model(self, model, **data):
+        '''
+        This method create or look up a model with the given data 
+        it saves the given model if it exists, updating its 
+        updated field
+        '''        
+        instance, created = model.objects.get_or_create(**data)
+        
+        if not created:
+            instance.save()
+
+        return (instance, created)
+    
     def _create_contacts(self, contacts_data, representative):
         for contact_data in contacts_data['emails']:
             contact_data['representative'] = representative
-            models.Email.objects.create(**contact_data)
+            self.touch_model(model=models.Email, **contact_data)
 
         for contact_data in contacts_data['websites']:
             contact_data['representative'] = representative
-            models.WebSite.objects.create(**contact_data)
+            self.touch_model(model=models.WebSite, **contact_data)
 
         for contact_data in contacts_data['address']:
             country, _ = models.Country.objects.get_or_create(
@@ -178,22 +214,27 @@ class RepresentativeDetailSerializer(RepresentativeSerializer):
             phone_set = contact_data.pop('phones')
             contact_data['representative'] = representative
             contact_data['country'] = country
-            contact = models.Address.objects.create(**contact_data)
+            contact, _ = self.touch_model(model=models.Address, **contact_data)
 
             for phone_data in phone_set:
                 phone_data['representative'] = representative
                 phone_data['address'] = contact
-                models.Phone.objects.create(**phone_data)
+                self.touch_model(model=models.Phone, **phone_data)
 
     def _create_mandates(self, mandates_data, representative):
-        for mandate_data in mandates_data:
-            constituency, _ = models.Constituency.objects.get_or_create(
+        for mandate_data in mandates_data:            
+            # serializer = MandateSerializer(data=mandate_data)
+            constituency, _ = self.touch_model(model=models.Constituency,
                 **mandate_data.pop('constituency')
             )
-            group, _ = models.Group.objects.get_or_create(
+            group, _ = self.touch_model(model=models.Group,
                 **mandate_data.pop('group')
             )
             mandate_data['representative'] = representative
             mandate_data['constituency'] = constituency
             mandate_data['group'] = group
-            models.Mandate.objects.create(**mandate_data)
+
+            models.Mandate.objects.update_or_create(
+                fingerprint=mandate_data['fingerprint'],
+                defaults=mandate_data
+            )
