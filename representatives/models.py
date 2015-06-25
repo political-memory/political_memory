@@ -160,7 +160,7 @@ class Address(Contact):
     kind = models.CharField(max_length=255, blank=True, default='')
     name = models.CharField(max_length=255, blank=True, default='')
     location = models.CharField(max_length=255, blank=True, default='') 
-    
+
 
 class Phone(Contact):
     number = models.CharField(max_length=255, blank=True, default='')
