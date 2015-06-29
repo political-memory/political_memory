@@ -18,19 +18,25 @@
 #
 # Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
 
-
 from __future__ import absolute_import
+import logging
 
 from django.conf import settings
 from django.utils import timezone
 
 import ijson
+import redis
 from celery import shared_task
 from urllib2 import urlopen
 
 from representatives.models import Representative, Group, Constituency, Mandate, Address, Phone, Email, WebSite
 from representatives.serializers import RepresentativeDetailSerializer
 
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+steam_handler = logging.StreamHandler()
+steam_handler.setLevel(logging.DEBUG)
+logger.addHandler(steam_handler)
 
 @shared_task
 def import_a_representative(data, verbose=False):
@@ -38,39 +44,44 @@ def import_a_representative(data, verbose=False):
     Import a representative from a serialized
     Python datatypes
     '''
+    
+    # We use a lock to import only one representative at a time
+    # Avoid to deal with parallel aspect of importation
+    with redis.Redis().lock('import_a_representative'):
+        try:
+            representative = Representative.objects.get(
+                fingerprint=data['fingerprint']
+            )
+            serializer = RepresentativeDetailSerializer(
+                instance=representative,
+                data=data
+            )
+        except:
+            serializer = RepresentativeDetailSerializer(data=data)
 
-    try:
-        representative = Representative.objects.get(
-            fingerprint=data['fingerprint']
-        )
-        serializer = RepresentativeDetailSerializer(
-            instance=representative,
-            data=data
-        )
-    except:
-        serializer = RepresentativeDetailSerializer(data=data)
-
-    if serializer.is_valid():
-        return serializer.save()
-    else:
-        # print(data)
-        raise Exception(serializer.errors)
+        if serializer.is_valid():
+            return serializer.save()
+        else:
+            raise Exception(serializer.errors)
 
 
 @shared_task
-def import_representatives_from_compotista(delay=False):    
+def import_representatives_from_compotista(delay=False):
     compotista_server = getattr(settings,
                                      'COMPOTISTA_SERVER',
                                      'http://compotista.mm.staz.be')
     import_start_datetime = timezone.now()
     url = compotista_server + '/export/latest/'
     res = urlopen(url)
-    for representative in ijson.items(res, 'item'):
+
+    logger.info(u'Import representative from {}'.format(url))
+    for i, representative in enumerate(ijson.items(res, 'item')):
+        logger.info(u'{}. Import representative {}'.format(i, representative['full_name']))
         if delay:
             representative = import_a_representative.delay(representative)
         else:
             representative = import_a_representative(representative)
-        
+
     for model in [Representative, Group, Constituency,
                   Mandate, Address, Phone, Email, WebSite]:
         model.objects.filter(updated__lt=import_start_datetime).delete()

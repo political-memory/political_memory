@@ -45,7 +45,7 @@ class WebsiteSerializer(serializers.ModelSerializer):
         '''
         Don’t validate url, because it could break import of not proper formed url
         '''
-        return value 
+        return value
 
 
 class PhoneSerializer(serializers.ModelSerializer):
@@ -73,7 +73,7 @@ class ContactField(serializers.Serializer):
     phones = PhoneSerializer(many=True)
     websites = WebsiteSerializer(many=True)
     address = AddressSerializer(many=True)
-    
+
     def get_attribute(self, obj):
         return {
             'emails': obj.email_set.all(),
@@ -85,12 +85,9 @@ class ContactField(serializers.Serializer):
 
 class MandateSerializer(serializers.ModelSerializer):
     name = serializers.CharField(source='group.name')
-    short_id = serializers.CharField(source='group.abbreviation', allow_null=True)
+    short_id = serializers.CharField(source='group.abbreviation', allow_blank=True)
     kind = serializers.CharField(source='group.kind')
     constituency = serializers.CharField(source='constituency.name')
-
-    # def validate_fingerprint(self, value):
-        # return value
 
     class Meta:
         model = models.Mandate
@@ -116,6 +113,12 @@ class MandateHyperLinkedSerializer(MandateSerializer):
 
 class RepresentativeMandateSerializer(MandateSerializer):
     class Meta(MandateSerializer.Meta):
+        extra_kwargs = {
+            'fingerprint': {
+                'validators': [],
+            },
+        }
+
         fields = [elem for elem in MandateSerializer.Meta.fields if elem != 'representative']
 
 
@@ -146,13 +149,13 @@ class RepresentativeHyperLinkedSerializer(RepresentativeSerializer):
 class RepresentativeDetailSerializer(RepresentativeSerializer):
     contacts = ContactField()
     mandates = RepresentativeMandateSerializer(many=True)
+
     class Meta(RepresentativeSerializer.Meta):
         fields = RepresentativeSerializer.Meta.fields + (
             'cv',
             'contacts',
             'mandates'
         )
-
 
     @transaction.atomic
     def create(self, validated_data):
@@ -173,11 +176,12 @@ class RepresentativeDetailSerializer(RepresentativeSerializer):
         self._create_contacts(contacts_data, representative)
         return representative
 
+    @transaction.atomic
     def update(self, instance, validated_data):
         contacts_data = validated_data.pop('contacts')
         mandates_data = validated_data.pop('mandates')
-        
-        for attr, value in validated_data.iteritems(): 
+
+        for attr, value in validated_data.iteritems():
             setattr(instance, attr, value)
         instance.save()
 
@@ -187,17 +191,17 @@ class RepresentativeDetailSerializer(RepresentativeSerializer):
 
     def touch_model(self, model, **data):
         '''
-        This method create or look up a model with the given data 
-        it saves the given model if it exists, updating its 
+        This method create or look up a model with the given data
+        it saves the given model if it exists, updating its
         updated field
-        '''        
+        '''
         instance, created = model.objects.get_or_create(**data)
-        
+
         if not created:
             instance.save()
 
         return (instance, created)
-    
+
     def _create_contacts(self, contacts_data, representative):
         for contact_data in contacts_data['emails']:
             contact_data['representative'] = representative
@@ -222,7 +226,7 @@ class RepresentativeDetailSerializer(RepresentativeSerializer):
                 self.touch_model(model=models.Phone, **phone_data)
 
     def _create_mandates(self, mandates_data, representative):
-        for mandate_data in mandates_data:            
+        for mandate_data in mandates_data:
             # serializer = MandateSerializer(data=mandate_data)
             constituency, _ = self.touch_model(model=models.Constituency,
                 **mandate_data.pop('constituency')

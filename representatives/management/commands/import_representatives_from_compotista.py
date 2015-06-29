@@ -33,10 +33,10 @@ class Command(BaseCommand):
     """
 
     def add_arguments(self, parser):
-        parser.add_argument('--parallel', action='store_true', default=False)
+        parser.add_argument('--celery', action='store_true', default=False)
 
     def handle(self, *args, **options):
-        if not options['parallel']:
-            import_representatives_from_compotista(options['parallel'])
+        if options['celery']:
+            import_representatives_from_compotista.delay(delay=True)
         else:
-            import_representatives_from_compotista.delay(options['parallel'])
+            import_representatives_from_compotista(delay=False)
