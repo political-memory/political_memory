@@ -26,10 +26,7 @@ from representatives.tasks import import_representatives_from_compotista
 
 class Command(BaseCommand):
     """
-    Command to import representative from a compotista server first
-    command call should not be in parallel (group and counstituency
-    would be created in double or triple), next calls could be or not in
-    parallel
+    Command to import representative from a compotista server
     """
 
     def add_arguments(self, parser):

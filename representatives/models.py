@@ -24,7 +24,7 @@ from datetime import datetime
 
 from django.db import models
 from django.utils.functional import cached_property
-from django.utils.encoding import smart_str
+from django.utils.encoding import smart_str, smart_unicode
 
 
 class TimeStampedModel(models.Model):
@@ -124,7 +124,7 @@ class Representative(HashableModel, TimeStampedModel):
     hashable_fields = ['remote_id']
 
     def __unicode__(self):
-        return u'{} ({})'.format(self.full_name.decode('utf-8'), self.remote_id)
+        return u'{} ({})'.format(smart_unicode(self.full_name), self.remote_id)
 
     def gender_as_str(self):
         genders = {0: 'N/A', 1: 'F', 2: 'M'}

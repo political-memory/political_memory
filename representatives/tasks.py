@@ -33,16 +33,12 @@ from representatives.models import Representative, Group, Constituency, Mandate,
 from representatives.serializers import RepresentativeDetailSerializer
 
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
-steam_handler = logging.StreamHandler()
-steam_handler.setLevel(logging.DEBUG)
-logger.addHandler(steam_handler)
 
 @shared_task
 def import_a_representative(data, verbose=False):
     '''
     Import a representative from a serialized
-    Python datatypes
+    python datatypes
     '''
     
     # We use a lock to import only one representative at a time
@@ -67,9 +63,7 @@ def import_a_representative(data, verbose=False):
 
 @shared_task
 def import_representatives_from_compotista(delay=False):
-    compotista_server = getattr(settings,
-                                     'COMPOTISTA_SERVER',
-                                     'http://compotista.mm.staz.be')
+    compotista_server = settings.COMPOTISTA_SERVER
     import_start_datetime = timezone.now()
     url = compotista_server + '/export/latest/'
     res = urlopen(url)
