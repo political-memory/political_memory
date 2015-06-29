@@ -16,17 +16,27 @@
 # License along with django-representatives.
 # If not, see <http://www.gnu.org/licenses/>.
 
+import hashlib
+
 from django.db import models
+from django.utils.functional import cached_property
+from django.utils.encoding import smart_str
 
+from representatives.models import TimeStampedModel, HashableModel
 
-class Dossier(models.Model):
+class Dossier(HashableModel, TimeStampedModel):
     title = models.CharField(max_length=1000)
     reference = models.CharField(max_length=200)
     text = models.TextField(blank=True, default='')
     link = models.URLField()
 
+    hashable_fields = ['title', 'reference']
+    
+    def __unicode__(self):
+        return unicode(self.title)
 
-class Proposal(models.Model):
+
+class Proposal(HashableModel, TimeStampedModel):
     dossier = models.ForeignKey(Dossier, related_name='proposals')
     title = models.CharField(max_length=1000)
     description = models.TextField(blank=True, default='')
@@ -37,13 +47,9 @@ class Proposal(models.Model):
     total_against = models.IntegerField()
     total_for = models.IntegerField()
 
-    # Presentation for the api
-    def vote_api_list(self):
-        return [{'position': vote.position,
-                 'representative_remote_id': vote.representative_remote_id,
-                 'representative_name': vote.representative_name
-             }
-            for vote in self.vote_set.all()]
+    hashable_fields = ['dossier', 'title', 'reference', 'kind']
+    def __unicode__(self):
+        return unicode(self.title)
 
 
 class Vote(models.Model):

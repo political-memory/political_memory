@@ -45,6 +45,7 @@ class ProposalSerializer(serializers.ModelSerializer):
         model = models.Proposal
         fields = (
             'id',
+            'fingerprint',
             'title',
             'description',
             'reference',
@@ -116,6 +117,7 @@ class DossierSerializer(serializers.ModelSerializer):
         model = models.Dossier
         fields = (
             'id',
+            'fingerprint',
             'title',
             'reference',
             'text',
@@ -134,13 +136,6 @@ class DossierListSerializer(DossierSerializer):
                 'url',
             ) + ProposalSerializer.Meta.fields
             
-    '''
-    proposals = serializers.HyperlinkedRelatedField(
-        many=True,
-        read_only=True,
-        view_name='proposal-detail',
-    )
-    '''
     
     proposals = ProposalSerializer(
         many = True,

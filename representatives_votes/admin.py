@@ -5,13 +5,13 @@ from .models import Dossier, Proposal, Vote
 
 
 class DossierAdmin(admin.ModelAdmin):
-    list_display = ('reference', 'title', 'link')
-    search_fields = ('reference', 'title')
+    list_display = ('id', 'fingerprint', 'reference', 'title', 'link')
+    search_fields = ('reference', 'title', 'fingerprint')
 
 
 class ProposalAdmin(admin.ModelAdmin):
-    list_display = ('reference', 'dossier_reference', 'title', 'datetime', 'kind', 'total_abstain', 'total_against', 'total_for')
-    search_fields = ('reference', 'dossier__reference', 'title',)
+    list_display = ('id', 'fingerprint', 'reference', 'dossier_reference', 'title', 'datetime', 'kind', 'total_abstain', 'total_against', 'total_for')
+    search_fields = ('reference', 'dossier__reference', 'title', 'fingerprint')
     def dossier_reference(self, obj):
         return obj.dossier.reference
 
@@ -29,6 +29,7 @@ class NoneMatchingFilter(admin.SimpleListFilter):
         else:
             return queryset            
 
+
 class VoteAdmin(admin.ModelAdmin):
     list_display = ('id', 'proposal_reference', 'position', 'representative_name', 'representative_remote_id')
     list_filter = (NoneMatchingFilter,)
@@ -37,7 +38,5 @@ class VoteAdmin(admin.ModelAdmin):
         return obj.proposal.reference
 
 admin.site.register(Dossier, DossierAdmin)
-
 admin.site.register(Proposal, ProposalAdmin)
-
 admin.site.register(Vote, VoteAdmin)
