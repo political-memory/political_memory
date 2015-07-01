@@ -1,5 +1,5 @@
 *.sqlite3
-celery-beatschedule
+celerybeat-schedule
 
 # SASS Cache
 .sass-cache
