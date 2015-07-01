@@ -15,7 +15,6 @@ def representatives_index(request):
             active=True
         )
     )
-    
     return _render_list(request, representative_list)
 
 
