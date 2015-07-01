@@ -31,22 +31,11 @@ from representatives_votes.models import Vote
 from core.utils import create_child_instance_from_parent
 
 
-class MemopolRepresentative(models.Model):
-
-    # We should link a memopol representative to a representative based
-    # on the remote_id attribute
-    parent_identifier = 'remote_id'
-    child_parent_identifier = 'representative_remote_id'
+class MemopolRepresentative(Representative):
     
-    representative = models.OneToOneField(
-        Representative,
-        parent_link=True,
-        related_name='extra',
-        null=True,
-        on_delete=models.SET_NULL
-    )
+    # parent_identifier = 'fingerprint'
+    # representative_finger = models.CharField(max_length=255, unique=True)
     
-    representative_remote_id = models.CharField(max_length=255, unique=True)
     country = models.ForeignKey(Country, null=True)
     score = models.IntegerField(default=0)
     
@@ -117,7 +106,7 @@ class MemopolRepresentative(models.Model):
 
 @receiver(post_save, sender=Representative)
 def create_memopolrepresentative_from_representative(instance, **kwargs):
-    # create_child_instance_from_parent(MemopolRepresentative, instance)
+    create_child_instance_from_parent(MemopolRepresentative, instance)
     pass
 
 
