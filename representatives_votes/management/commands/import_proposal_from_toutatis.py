@@ -18,28 +18,22 @@
 #
 # Copyright (C) 2013 Laurent Peuch <cortex@worlddomination.be>
 # Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
-import json
-from urllib2 import urlopen
 
 from django.core.management.base import BaseCommand
-from django.conf import settings
-
-from representatives_votes.utils import import_a_dossier
+from representatives_votes.tasks import import_a_proposal_from_toutatis
 
 class Command(BaseCommand):
-    def handle(self, *args, **options):
-        proposal_id = args[0]
-
-        toutatis_server = getattr(settings,
-                                  'TOUTATIS_SERVER',
-                                  'http://toutatis.mm.staz.be')
-        proposal_url = '{}/api/proposals/{}'.format(toutatis_server, proposal_id)
-        print('Import proposal from {}'.format(proposal_url))
-        proposal_data = json.load(urlopen(proposal_url))
+    """
+    Command to import a dossier from a toutatis server
+    """
+    
+    def add_arguments(self, parser):
+        parser.add_argument('--celery', action='store_true', default=False)
+        parser.add_argument('fingerprint')
         
-        dossier_url = proposal_data['dossier']
-        dossier_data = json.load(urlopen(dossier_url))
-        # Replace dossier proposals by the one proposal we want
-        dossier_data['proposals'] = [proposal_data]
-
-        import_a_dossier(dossier_data)
+    def handle(self, *args, **options):
+        fingerprint = options['fingerprint']
+        if options['celery']:
+            import_a_proposal_from_toutatis.delay(fingerprint, delay=True)
+        else:
+            import_a_proposal_from_toutatis(fingerprint, delay=False)

@@ -16,11 +16,7 @@
 # License along with django-representatives.
 # If not, see <http://www.gnu.org/licenses/>.
 
-import hashlib
-
 from django.db import models
-from django.utils.functional import cached_property
-from django.utils.encoding import smart_str
 
 from representatives.models import TimeStampedModel, HashableModel
 
@@ -48,6 +44,7 @@ class Proposal(HashableModel, TimeStampedModel):
     total_for = models.IntegerField()
 
     hashable_fields = ['dossier', 'title', 'reference', 'kind']
+
     def __unicode__(self):
         return unicode(self.title)
 

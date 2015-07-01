@@ -29,10 +29,11 @@ class Command(BaseCommand):
     
     def add_arguments(self, parser):
         parser.add_argument('--celery', action='store_true', default=False)
+        parser.add_argument('fingerprint')
         
     def handle(self, *args, **options):
-        reference = args[0]
+        fingerprint = options['fingerprint']
         if options['celery']:
-            import_a_dossier_from_toutatis.delay(reference, delay=True)
+            import_a_dossier_from_toutatis.delay(fingerprint, delay=True)
         else:
-            import_a_dossier_from_toutatis(reference, delay=False)
+            import_a_dossier_from_toutatis(fingerprint, delay=False)

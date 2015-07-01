@@ -25,7 +25,7 @@ import json
 
 from django.conf import settings
 
-# import redis
+import redis
 from celery import shared_task
 from urllib2 import urlopen
 
@@ -33,36 +33,43 @@ from representatives_votes.models import Dossier
 from representatives_votes.serializers import DossierDetailSerializer
 
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
-steam_handler = logging.StreamHandler()
-steam_handler.setLevel(logging.DEBUG)
-logger.addHandler(steam_handler)
 
 @shared_task
 def import_a_dossier(data):
     '''
     Import a dossier from serialized
     '''
-    serializer = DossierDetailSerializer(data=data)
-    if serializer.is_valid():
-        serializer.save()
-    else:
-        print(serializer.errors)
+    with redis.Redis().lock('import_a_dossier'):
+        try:
+            dossier = Dossier.objects.get(
+                fingerprint=data['fingerprint']
+            )
+            serializer = DossierDetailSerializer(
+                instance=dossier,
+                data=data
+            )
+        except:
+            serializer = DossierDetailSerializer(data=data)
+
+        if serializer.is_valid():
+            return serializer.save()
+        else:
+            raise Exception(serializer.errors)           
 
 @shared_task
 def import_a_dossier_from_toutatis(fingerprint, delay=False):
     '''
     Import a complete dossier from a toutatis server
     '''
-
-    toutatis_server = getattr(settings,
-                              'TOUTATIS_SERVER',
-                              'http://toutatis.mm.staz.be')
+    toutatis_server = settings.TOUTATIS_SERVER
     search_url = '{server}/api/dossiers/?fingerprint={fingerprint}'.format({
         'server': toutatis_server,
         'fingerprint': fingerprint
     })
-    logger.info('Import dossier from {}'.format(search_url))
+    logger.info('Import dossier with fingerprint {} from {}'.format(
+        fingerprint,
+        search_url
+    ))
     data = json.load(urlopen(search_url))
     if data['count'] != 1:
         raise Exception('Search should return one and only one result')
@@ -78,12 +85,28 @@ def import_a_proposal_from_toutatis(fingerprint, delay=False):
     '''
     Import a partial dossier from a toutatis server
     '''
-    pass    
+    toutatis_server = settings.TOUTATIS_SERVER
+    search_url = '{server}/api/proposals/?fingerprint={fingerprint}'.format({
+        'server': toutatis_server,
+        'fingerprint': fingerprint
+    })
+    logger.info('Import proposal with fingerprint {} from {}'.format(
+        fingerprint,
+        search_url
+    ))
+    data = json.load(urlopen(search_url))
+    if data['count'] != 1:
+        raise Exception('Search should return one and only one result')
+    detail_url = data['results'][0]['url']
+    proposal_data = json.load(urlopen(detail_url))
+    dossier_url = proposal_data['dossier']
+    dossier_data = json.load(urlopen(dossier_url))
+    dossier_data['proposals'] = [proposal_data]
+    if delay:
+        import_a_dossier.delay(dossier_data)
+    else:
+        import_a_dossier(dossier_data)
 
-def import_dossiers(data):
-    return [import_a_dossier(d_data) for d_data in data]
-
-# Export a dossier
 def export_a_dossier(dossier):
     serialized = DossierDetailSerializer(dossier)
     return serialized.data
