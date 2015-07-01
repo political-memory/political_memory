@@ -1,7 +1,7 @@
 from django import template
 from django.core.urlresolvers import reverse
 
-from representatives.models import Mandate
+from representatives.models import Mandate, Group
 
 register = template.Library()
 
@@ -10,7 +10,10 @@ register = template.Library()
 def by_group_url(group):
     if isinstance(group, Mandate):
         group = group.group
-        
+
+    if not isinstance(group, Group):
+        return ''
+    
     kwargs = {'group_kind': group.kind}
 
     if group.abbreviation:

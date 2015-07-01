@@ -10,4 +10,4 @@ class Command(BaseCommand):
     @transaction.atomic
     def handle(self, *args, **options):
         for representative in MemopolRepresentative.objects.all():
-            representative.update_score()
+            representative.update_country()
