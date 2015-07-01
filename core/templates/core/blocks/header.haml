@@ -1,0 +1,16 @@
+/ -load memopol_tags cache
+- load i18n
+- load cache
+
+.row.large-12.head
+    #header
+        %a{href: "/"}
+            %img{src: "https://memopol.lqdn.fr/static/img/logo.png"}/
+        %h1
+            %a#header_banner{href: "/"}
+                -trans "Political Memory"
+        %p
+            =organization_name
+
+    -include "core/blocks/navigation.html"
+

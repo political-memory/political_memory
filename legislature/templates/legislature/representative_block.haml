@@ -1,0 +1,17 @@
+- load by_group_url
+
+%td
+  %a{'href': "{% url 'legislature:representative_view_by_name' representative.full_name %}"} 
+    %img{'src': '={representative.photo}', 'width': '80'}/
+
+%td
+  %a{'href': "{% url 'legislature:representative_view_by_name' representative.full_name %}"} 
+    ={representative.full_name}
+
+%td
+  %a{'href': "{% url 'legislature:representatives_by_group' group_kind='country' search=representative.country.code %}"}
+    ={representative.country.name}
+
+%td
+  %a{'href': "{{ representative.current_group_mandate|by_group_url }}"}
+    ={representative.current_group_mandate.group.abbreviation}

@@ -1,21 +1,45 @@
-*~
-build
-develop-eggs
-dist
-*.egg
-*.egg-info
-eggs
-.installed.cfg
-nosetests.xml
-pip-log.txt
-*.py[co]
-pylint.out
-.tox
-env
-settings_local.py
-*.swp
-*.swo
-*.index
+*.sqlite3
+celerybeat-schedule
+memopol/config.json
+
+# SASS Cache
+.sass-cache
+
+CACHE/*
+
+# Emacs backup
+
+# From https://github.com/github/gitignore/blob/master/Python.gitignore
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+venv/
 ve/
-db.sqlite
-COFFEESCRIPT_CACHE
+build/
+var/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Translations
+*.mo
+*.pot
+# Django stuff:
+*.log

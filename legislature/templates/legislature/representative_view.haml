@@ -1,0 +1,59 @@
+-# List representatives
+  
+- extends 'base.html'
+- load by_group_url
+
+- block content
+  %p{:style => "float: left"}
+    %img{:src => "{{ representative.photo }}"}/
+    
+  %h1= representative.full_name
+
+  %h2
+    SCORE : {{ representative.extra.score }}
+
+  %p
+    %strong
+      %a{:href => "{{ representative.current_group_mandate|by_group_url }}"}
+        {{ representative.current_group_mandate.role }} of
+        {{ representative.current_group_mandate.group.name }}
+
+  %p
+    Born in {{ representative.birth_place }} the
+    {{ representative.birth_date }} ({{ representative.get_gender_display }})
+
+  %p= representative.country.name
+
+  -# Mandates
+  
+  %h2{:style => "clear: both"} Mandates
+  
+  - for mandate in representative.active_mandates
+    .mandate
+      %h3
+        {{ mandate.group.name }}
+        %small= mandate.role
+      %p
+        {{ mandate.begin_date }} to {{ mandate.end_date }} <br>
+        %a{:href => "{{ mandate|by_group_url }}"}
+          %strong {{ mandate.group.kind }} :
+          %em {{ mandate.group.name }} ({{ mandate.group.abbreviation }}) <br>
+          Constituency : {{ mandate.constituency.name }} <br>
+  %hr/
+
+  -# Former mandates
+    
+  %h2{:style => "clear: both"} Former mandates
+  
+  - for mandate in representative.former_mandates
+    .mandate
+      %h3
+        {{ mandate.group.name }}
+        %small= mandate.role
+      %p
+        {{ mandate.begin_date }} to {{ mandate.end_date }} <br>
+        %a{:href => "{{ mandate|by_group_url }}"}
+          %strong {{ mandate.group.kind }} :
+          %em {{ mandate.group.name }} ({{ mandate.group.abbreviation }}) <br>
+          Constituency : {{ mandate.constituency.name }} <br>
+  %hr/

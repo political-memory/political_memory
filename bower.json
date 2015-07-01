@@ -1,0 +1,8 @@
+{
+  "name": "Memopol",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "foundation": "~5.5.1"
+  }
+}
