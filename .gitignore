@@ -1,5 +1,6 @@
 *.sqlite3
 celerybeat-schedule
+memopol/config.json
 
 # SASS Cache
 .sass-cache
