@@ -172,3 +172,43 @@ COMPRESS_PRECOMPILERS = (
     # ('text/stylus', 'stylus < {infile} > {outfile}'),
     # ('text/foobar', 'path.to.MyPrecompilerFilter'),
 )
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s[%(module)s]: %(message)s'
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': '/tmp/compotista-debug.log',
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+    },
+    'loggers': {
+        'memopol': {
+            'handlers': ['console'],
+            'level': 'DEBUG'
+        },
+        'representatives': {
+            'handlers': ['console'],
+            'level': 'DEBUG'
+        },
+        'representatives_votes': {
+            'handlers': ['console'],
+            'level': 'DEBUG'
+        }
+    },
+}
