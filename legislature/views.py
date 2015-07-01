@@ -132,8 +132,8 @@ def _render_list(request, representative_list, num_by_page=30):
 def groups_by_kind(request, kind):
     groups = Group.objects.filter(
         kind=kind,
-        memopolgroup__active=True
-    )
+        mandates__end_date__gte=datetime.now()
+    ).distinct().order_by('name')
 
     return render(
         request,

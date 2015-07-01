@@ -106,10 +106,9 @@ def import_vote(request):
     else:
         proposal_id = request.GET.get('import', None)
         if proposal_id:
-            api_url = '{}/api/proposals/{}'.format(toutatis_server, proposal_id)
-            proposal = requests.get(api_url).json()
+            # api_url = '{}/api/proposals/{}'.format(toutatis_server, proposal_id)
+            # proposal = requests.get(api_url).json()
 
-            
             call_command('import_proposal_from_toutatis', proposal_id, interactive=False)
             # call_command('update_memopol_votes', proposal['dossier_reference'], interactive=False)
             return redirect('/admin/')

@@ -9,6 +9,9 @@
     
   %h1= representative.full_name
 
+  %h2
+    SCORE : {{ representative.extra.score }}
+
   %p
     %strong
       %a{:href => "{{ representative.current_group_mandate|by_group_url }}"}

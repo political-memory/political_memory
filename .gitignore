@@ -1,9 +1,3 @@
-# Django apps
-
-compotista_django-representatives
-representatives
-chronograph
-
 *.sqlite3
 
 # SASS Cache

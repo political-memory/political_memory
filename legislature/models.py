@@ -22,11 +22,29 @@ from datetime import datetime
 
 from django.db import models
 from django.core.exceptions import ObjectDoesNotExist
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from django.utils.functional import cached_property
 
-from representatives.models import Representative, Group, Country
+from representatives.models import Representative, Mandate, Country
 from representatives_votes.models import Vote
+from core.utils import create_child_instance_from_parent
 
-class MemopolRepresentative(Representative):
+
+class MemopolRepresentative(models.Model):
+
+    # We should link a memopol representative to a representative based
+    # on the remote_id attribute
+    parent_identifier = 'remote_id'
+    child_parent_identifier = 'representative_remote_id'
+    
+    representative = models.OneToOneField(
+        Representative,
+        parent_link=True,
+        related_name='extra',
+        null=True,
+        on_delete=models.SET_NULL
+    )
     
     representative_remote_id = models.CharField(max_length=255, unique=True)
     country = models.ForeignKey(Country, null=True)
@@ -34,14 +52,23 @@ class MemopolRepresentative(Representative):
     
     def update_score(self):
         score = 0
-        for vote in self.representative.votes.all():
-            proposal = vote.m_proposal
-            if proposal.recommendation:
-                recommendation = proposal.recommendation
-                if vote.position != recommendation.recommendation:
-                    score -= recommendation.weight
-                else:
-                    score += recommendation.weight
+        for vote in self.votes.all():
+            proposal = vote.proposal
+            try:
+                if proposal.recommendation:
+                    recommendation = proposal.recommendation
+                    if ( vote.position != recommendation.recommendation
+                         and (
+                             vote.position == 'abstain' or
+                             recommendation.recommendation == 'abstain' )):
+                        score -= (recommendation.weight / 2)
+                    elif vote.position != recommendation.recommendation:
+                        score -= recommendation.weight
+                    else:
+                        score += recommendation.weight
+            except Exception:
+                pass
+
         self.score = score
         self.save()
 
@@ -66,11 +93,11 @@ class MemopolRepresentative(Representative):
             self.save()
 
 
-    # @property
-    # def votes(self):
-        # return Vote.objects.filter(
-            # representative_remote_id = self.remote_id
-        # )
+    @cached_property
+    def votes(self):
+        return Vote.objects.filter(
+            representative_remote_id = self.remote_id
+        )
 
     def active_mandates(self):
         return self.mandates.filter(
@@ -88,20 +115,19 @@ class MemopolRepresentative(Representative):
             group__kind='group'
         )
 
-class MemopolGroup(Group):
-    group = models.OneToOneField(
-        Group,
-        parent_link = True
-    )
-    
-    active = models.BooleanField(default=False)
+@receiver(post_save, sender=Representative)
+def create_memopolrepresentative_from_representative(instance, **kwargs):
+    # create_child_instance_from_parent(MemopolRepresentative, instance)
+    pass
 
-    def update_active(self):
-        self.active = False
-        for mandate in self.mandates.all():
-            if mandate.end_date > datetime.date(datetime.now()):
-                self.active = True
-                break
-        self.save()
 
+@receiver(post_save, sender=Mandate)
+def update_memopolrepresentative_country(instance, created, **kwargs):
+    return
+    if not created:
+        return
+
+    # Update representative country
+    if instance.group.kind == 'country' and instance.representative.extra.country == None:
+        instance.representative.extra.update_country()
 
