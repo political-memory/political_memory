@@ -168,7 +168,7 @@ class Phone(Contact):
     address = models.ForeignKey(Address, null=True, related_name='phones')
     
 
-class Group(TimeStampedModel):
+class Group(HashableModel, TimeStampedModel):
     """
     An entity represented by a representative through a mandate
     """
@@ -176,14 +176,8 @@ class Group(TimeStampedModel):
     abbreviation = models.CharField(max_length=10, blank=True, default='')
     kind = models.CharField(max_length=255, blank=True, default='')
 
-    @cached_property
-    def fingerprint(self):
-        fingerprint = hashlib.sha1()
-        fingerprint.update(smart_str(self.name))
-        fingerprint.update(smart_str(self.abbreviation))
-        fingerprint.update(smart_str(self.kind))
-        return fingerprint.hexdigest()
-        
+    hashable_fields = ['name', 'abbreviation', 'kind']
+
     @cached_property
     def active(self):
         return self.mandates.filter(end_date__gte=datetime.now()).exists()
@@ -192,17 +186,13 @@ class Group(TimeStampedModel):
         return unicode(self.name)
 
 
-class Constituency(TimeStampedModel):
+class Constituency(HashableModel, TimeStampedModel):
     """
     An authority for which a representative has a mandate
     """
     name = models.CharField(max_length=255)
 
-    @cached_property
-    def fingerprint(self):
-        fingerprint = hashlib.sha1()
-        fingerprint.update(smart_str(self.name))
-        return fingerprint.hexdigest()
+    hashable_fields = ['name']
 
     @cached_property
     def active(self):
