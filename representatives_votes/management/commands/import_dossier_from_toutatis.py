@@ -34,6 +34,6 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         fingerprint = options['fingerprint']
         if options['celery']:
-            import_a_dossier_from_toutatis.delay(fingerprint, delay=True)
+            import_a_dossier_from_toutatis.delay(fingerprint)
         else:
-            import_a_dossier_from_toutatis(fingerprint, delay=False)
+            import_a_dossier_from_toutatis(fingerprint)

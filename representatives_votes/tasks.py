@@ -29,43 +29,22 @@ import redis
 from celery import shared_task
 from urllib2 import urlopen
 
-from representatives_votes.models import Dossier
-from representatives_votes.serializers import DossierDetailSerializer
+from representatives_votes.models import Dossier, Proposal, Vote
+from representatives.tasks import import_a_model
+from representatives_votes.serializers import DossierSerializer, ProposalSerializer, VoteSerializer
 
 logger = logging.getLogger(__name__)
 
 @shared_task
-def import_a_dossier(data):
-    '''
-    Import a dossier from serialized
-    '''
-    with redis.Redis().lock('import_a_dossier'):
-        try:
-            dossier = Dossier.objects.get(
-                fingerprint=data['fingerprint']
-            )
-            serializer = DossierDetailSerializer(
-                instance=dossier,
-                data=data
-            )
-        except:
-            serializer = DossierDetailSerializer(data=data)
-
-        if serializer.is_valid():
-            return serializer.save()
-        else:
-            raise Exception(serializer.errors)           
-
-@shared_task
-def import_a_dossier_from_toutatis(fingerprint, delay=False):
+def import_a_dossier_from_toutatis(fingerprint):
     '''
     Import a complete dossier from a toutatis server
     '''
     toutatis_server = settings.TOUTATIS_SERVER
-    search_url = '{server}/api/dossiers/?fingerprint={fingerprint}'.format({
-        'server': toutatis_server,
-        'fingerprint': fingerprint
-    })
+    search_url = '{}/api/dossiers/?fingerprint={}'.format(
+        toutatis_server,
+        fingerprint
+    )
     logger.info('Import dossier with fingerprint {} from {}'.format(
         fingerprint,
         search_url
@@ -75,10 +54,10 @@ def import_a_dossier_from_toutatis(fingerprint, delay=False):
         raise Exception('Search should return one and only one result')
     detail_url = data['results'][0]['url']
     data = json.load(urlopen(detail_url))
-    if delay:
-        import_a_dossier.delay(data)
-    else:
-        import_a_dossier(data)
+    import_a_model(data, Dossier, DossierSerializer)
+    for proposal in data['proposals']:
+        logger.info('Import proposal {}'.format(proposal['title']))
+        import_a_model(proposal, Proposal, ProposalSerializer)
 
 @shared_task
 def import_a_proposal_from_toutatis(fingerprint, delay=False):

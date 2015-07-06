@@ -25,27 +25,39 @@ from django.db import transaction
 
 
 class VoteSerializer(serializers.ModelSerializer):
-    '''
-    Serializer for votes
-    '''
+    proposal = serializers.CharField(
+        source='proposal.fingerprint'
+    )
+    
     class Meta:
         model = models.Vote
         fields = (
+            'id',
+            'proposal',
             'representative_name',
             'representative_remote_id',
             'position'
         )
 
+    def to_internal_value(self, data):
+        data = super(VoteSerializer, self).to_internal_value(data)
+        data['proposal'] = models.Proposal.objects.get(
+            fingerprint=data['proposal']['fingerprint']
+        )
+        return data
+
 
 class ProposalSerializer(serializers.ModelSerializer):
-    '''
-    Base Proposal Serializer
-    '''
+    dossier = serializers.CharField(
+        source='dossier.fingerprint'
+    )
+    
     class Meta:
         model = models.Proposal
         fields = (
             'id',
             'fingerprint',
+            'dossier',
             'title',
             'description',
             'reference',
@@ -56,38 +68,38 @@ class ProposalSerializer(serializers.ModelSerializer):
             'total_for',
         )
 
-
-class ProposalHyperLinkedSerializer(ProposalSerializer):
-    '''
-    Proposal Serializer with hyperlink to dossier (used for listing)
-    '''
-    dossier = serializers.HyperlinkedRelatedField(
-        read_only = True,
-        view_name = 'dossier-detail',
-    )
-    
-    dossier_title = serializers.CharField(
-        read_only = True,
-        source = 'dossier.title'
-    )
-
-    dossier_reference = serializers.CharField(
-        read_only = True,
-        source = 'dossier.reference'
-    )
-    
-    class Meta(ProposalSerializer.Meta):
-        fields = ProposalSerializer.Meta.fields + (
-            'dossier',
-            'dossier_title',
-            'dossier_reference',
-            'url',
+    def to_internal_value(self, data):
+        validated_data = super(ProposalSerializer, self).to_internal_value(data)
+        validated_data['dossier'] = models.Dossier.objects.get(
+            fingerprint=validated_data['dossier']['fingerprint']
         )
+        validated_data['votes'] = data['votes']
+        return validated_data
+
+    def _create_votes(self, votes_data, proposal):
+        for vote in votes_data:
+            vote['proposal'] = proposal
+            models.Vote.objects.create(
+                **vote
+            )
         
+    def create(self, validated_data):
+        votes_data = validated_data.pop('votes')
+        proposal = models.Proposal.objects.create(
+            **validated_data
+        )
+        self._create_votes(votes_data, proposal)
+        return proposal
+
+    def update(self, instance, validated_data):
+        validated_data.pop('votes')
+        for attr, value in validated_data.iteritems():
+            setattr(instance, attr, value)
+        instance.save()
+        return instance
+
+
 class ProposalDetailSerializer(ProposalSerializer):
-    '''
-    Proposal Serializer with votes detail (used in Dossier Detail)
-    '''
     votes = VoteSerializer(many=True)
     
     class Meta(ProposalSerializer.Meta):
@@ -96,23 +108,7 @@ class ProposalDetailSerializer(ProposalSerializer):
         )
 
 
-class ProposalDetailHyperLinkedSerializer(ProposalDetailSerializer, ProposalHyperLinkedSerializer):
-    '''
-    Proposal Serializer combined Detail Serializer and Hyperlinked Serializer
-    '''
-    class Meta(ProposalSerializer.Meta):
-        fields = ProposalSerializer.Meta.fields + (
-            'dossier',
-            'dossier_title',
-            'dossier_reference',
-            'votes',
-        )
-
-
 class DossierSerializer(serializers.ModelSerializer):
-    '''
-    Base Dossier Serializer
-    '''
     class Meta:
         model = models.Dossier
         fields = (
@@ -122,30 +118,7 @@ class DossierSerializer(serializers.ModelSerializer):
             'reference',
             'text',
             'link',
-        )
-
-
-class DossierListSerializer(DossierSerializer):
-    '''
-    Dossier Serializer with short description of proposals
-    '''
-    class ProposalSerializer(ProposalSerializer):
-        class Meta(ProposalSerializer.Meta):
-            fields = (
-                'id',
-                'url',
-            ) + ProposalSerializer.Meta.fields
-            
-    
-    proposals = ProposalSerializer(
-        many = True,
-        read_only = True
-    )
-
-    class Meta(DossierSerializer.Meta):
-        fields = DossierSerializer.Meta.fields + (
             'url',
-            'proposals',
         )
 
 
@@ -162,26 +135,3 @@ class DossierDetailSerializer(DossierSerializer):
         fields = DossierSerializer.Meta.fields + (
             'proposals',
         )
-
-    @transaction.atomic
-    def create(self, validated_data):
-        proposals_data = validated_data.pop('proposals')
-        dossier, _ = models.Dossier.objects.get_or_create(**validated_data)
-
-        for proposal_data in proposals_data:
-            proposal, created = self._create_proposal(
-                proposal_data,
-                dossier
-            )
-
-        return dossier
-    
-    def _create_proposal(self, proposal_data, dossier):
-        votes_data = proposal_data.pop('votes')
-        proposal_data['dossier'] = dossier
-        proposal, created = models.Proposal.objects.get_or_create(**proposal_data)
-        if created:
-            for vote_data in votes_data:
-                vote_data['proposal'] = proposal
-                models.Vote.objects.create(**vote_data)
-        return (proposal, created)

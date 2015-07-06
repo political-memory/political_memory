@@ -43,7 +43,9 @@ class Proposal(HashableModel, TimeStampedModel):
     total_against = models.IntegerField()
     total_for = models.IntegerField()
 
-    hashable_fields = ['dossier', 'title', 'reference', 'kind']
+    hashable_fields = ['dossier', 'title', 'reference',
+                       'kind', 'total_abstain', 'total_against',
+                       'total_for']
 
     def __unicode__(self):
         return unicode(self.title)
