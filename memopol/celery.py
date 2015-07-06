@@ -22,17 +22,17 @@ from __future__ import absolute_import
 
 import os
 
+from django.conf import settings
+
 from celery import Celery
 
 # set the default Django settings module for the 'celery' program.
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'memopol.settings')
 
-from django.conf import settings
-
 app = Celery(
     'memopol',
-    broker='redis://localhost',
-    backend='redis://localhost'
+    broker='redis://localhost/{}'.format(settings.REDIS_DB),
+    backend='redis://localhost/{}'.format(settings.REDIS_DB)
 )
 
 # Using a string here means the worker will not have to

@@ -43,15 +43,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = get_param('secret_key')
 
-DEBUG = get_param('debug') 
+DEBUG = get_param('debug')
 TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = []
 
-
 COMPOTISTA_SERVER = get_param('compotista_server')
 TOUTATIS_SERVER = get_param('toutatis_server')
-
+REDIS_DB = get_param('redis_db')
 
 # Application definition
 
