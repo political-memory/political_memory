@@ -21,7 +21,7 @@
 
 from django.core.management.base import BaseCommand
 
-from representatives.tasks import import_representatives_from_compotista
+from representatives.tasks import sync_from_compotista
 
 
 class Command(BaseCommand):
@@ -34,6 +34,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         if options['celery']:
-            import_representatives_from_compotista.delay(delay=True)
+            sync_from_compotista.delay()
         else:
-            import_representatives_from_compotista(delay=False)
+            sync_from_compotista()
+

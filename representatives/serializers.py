@@ -42,9 +42,7 @@ class WebsiteSerializer(serializers.ModelSerializer):
         fields = ('url', 'kind')
 
     def validate_url(self, value):
-        '''
-        Don’t validate url, because it could break import of not proper formed url
-        '''
+        # Don’t validate url, because it could break import of not proper formed url
         return value
 
 
@@ -83,46 +81,82 @@ class ContactField(serializers.Serializer):
         }
 
 
+class ConstituencySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Constituency
+        fields = ('id', 'name', 'fingerprint')
+
+
+class GroupSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Group
+        fields = ('id', 'name', 'abbreviation', 'kind', 'fingerprint')
+
+
 class MandateSerializer(serializers.ModelSerializer):
-    name = serializers.CharField(source='group.name')
-    short_id = serializers.CharField(source='group.abbreviation', allow_blank=True)
-    kind = serializers.CharField(source='group.kind')
-    constituency = serializers.CharField(source='constituency.name')
+    
+    # name = serializers.CharField(source='group.name')
+    # short_id = serializers.CharField(source='group.abbreviation', allow_blank=True)
+    # kind = serializers.CharField(source='group.kind')
+    # constituency = serializers.CharField(source='constituency.name')
+
+    group = serializers.CharField(
+        source='group.fingerprint',
+    )
+    constituency = serializers.CharField(
+        source='constituency.fingerprint'        
+    )
+    representative = serializers.CharField(
+        source='representative.fingerprint'
+    )
 
     class Meta:
+        depth = 1
         model = models.Mandate
         fields = (
             'id',
-            'name',
-            'short_id',
-            'kind',
+            'representative',
+            'group',
             'constituency',
-            'representative',
             'role',
-            'representative',
+            'begin_date',
+            'end_date',
+            'fingerprint',
+        )
+
+    def to_internal_value(self, data):
+        data = super(MandateSerializer, self).to_internal_value(data)
+        data['group'] = models.Group.objects.get(
+            fingerprint=data['group']['fingerprint']
+        )
+        data['constituency'] = models.Constituency.objects.get(
+            fingerprint=data['constituency']['fingerprint']
+        )
+        data['representative'] = models.Representative.objects.get(
+            fingerprint=data['representative']['fingerprint']
+        )
+        return data
+
+
+class MandateDetailSerializer(MandateSerializer):
+    group = GroupSerializer()
+    constituency = ConstituencySerializer()
+
+    class Meta(MandateSerializer.Meta):
+        fields = (
+            'id',
+            'group',
+            'constituency',
+            'role',
             'begin_date',
             'end_date',
             'fingerprint',
         )
 
 
-class MandateHyperLinkedSerializer(MandateSerializer):
-    class Meta(MandateSerializer.Meta):
-        fields = MandateSerializer.Meta.fields + ('url',)
-
-
-class RepresentativeMandateSerializer(MandateSerializer):
-    class Meta(MandateSerializer.Meta):
-        extra_kwargs = {
-            'fingerprint': {
-                'validators': [],
-            },
-        }
-
-        fields = [elem for elem in MandateSerializer.Meta.fields if elem != 'representative']
-
-
 class RepresentativeSerializer(serializers.ModelSerializer):
+    contacts = ContactField()
+    
     class Meta:
         model = models.Representative
         fields = (
@@ -137,55 +171,28 @@ class RepresentativeSerializer(serializers.ModelSerializer):
             'birth_date',
             'photo',
             'active',
-            'fingerprint'
-        )
-
-
-class RepresentativeHyperLinkedSerializer(RepresentativeSerializer):
-    class Meta(RepresentativeSerializer.Meta):
-        fields = RepresentativeSerializer.Meta.fields + ('url',)
-
-
-class RepresentativeDetailSerializer(RepresentativeSerializer):
-    contacts = ContactField()
-    mandates = RepresentativeMandateSerializer(many=True)
-
-    class Meta(RepresentativeSerializer.Meta):
-        fields = RepresentativeSerializer.Meta.fields + (
             'cv',
             'contacts',
-            'mandates'
+            'fingerprint',
+            'url',
         )
+
 
     @transaction.atomic
     def create(self, validated_data):
-        """
-        Nested creation is not implemented yet in DRF, it sucks We made an
-        intensive use of get_or_create to avoid recreating
-        representatives The idea here is to truncate all models except
-        representatives and recreate them every import.
-        TODO : fix this code when it will be implemented
-        """
-
         contacts_data = validated_data.pop('contacts')
-        mandates_data = validated_data.pop('mandates')
         representative = models.Representative.objects.create(
             **validated_data
         )
-        self._create_mandates(mandates_data, representative)
         self._create_contacts(contacts_data, representative)
         return representative
 
     @transaction.atomic
     def update(self, instance, validated_data):
         contacts_data = validated_data.pop('contacts')
-        mandates_data = validated_data.pop('mandates')
-
         for attr, value in validated_data.iteritems():
             setattr(instance, attr, value)
         instance.save()
-
-        self._create_mandates(mandates_data, instance)
         self._create_contacts(contacts_data, instance)
         return instance
 
@@ -225,20 +232,12 @@ class RepresentativeDetailSerializer(RepresentativeSerializer):
                 phone_data['address'] = contact
                 self.touch_model(model=models.Phone, **phone_data)
 
-    def _create_mandates(self, mandates_data, representative):
-        for mandate_data in mandates_data:
-            # serializer = MandateSerializer(data=mandate_data)
-            constituency, _ = self.touch_model(model=models.Constituency,
-                **mandate_data.pop('constituency')
-            )
-            group, _ = self.touch_model(model=models.Group,
-                **mandate_data.pop('group')
-            )
-            mandate_data['representative'] = representative
-            mandate_data['constituency'] = constituency
-            mandate_data['group'] = group
 
-            models.Mandate.objects.update_or_create(
-                fingerprint=mandate_data['fingerprint'],
-                defaults=mandate_data
-            )
+class RepresentativeDetailSerializer(RepresentativeSerializer):
+    
+    mandates = MandateDetailSerializer(many=True)
+
+    class Meta(RepresentativeSerializer.Meta):
+        fields = RepresentativeSerializer.Meta.fields + (
+            'mandates',
+        )
