@@ -106,7 +106,8 @@ class MemopolRepresentative(Representative):
 
 @receiver(post_save, sender=Representative)
 def create_memopolrepresentative_from_representative(instance, **kwargs):
-    create_child_instance_from_parent(MemopolRepresentative, instance)
+    memopol_representative = create_child_instance_from_parent(MemopolRepresentative, instance)
+    memopol_representative.update_country()
 
 
 @receiver(post_save, sender=Mandate)
