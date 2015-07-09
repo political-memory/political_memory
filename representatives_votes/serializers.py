@@ -19,14 +19,20 @@
 # Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
 
 import representatives_votes.models as models
+from representatives.models import Representative
 from rest_framework import serializers
-
-from django.db import transaction
 
 
 class VoteSerializer(serializers.ModelSerializer):
+    """
+    Vote serializer
+    """
     proposal = serializers.CharField(
         source='proposal.fingerprint'
+    )
+    representative = serializers.CharField(
+        source='representative.fingerprint',
+        allow_null=True
     )
     
     class Meta:
@@ -34,8 +40,8 @@ class VoteSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'proposal',
+            'representative',
             'representative_name',
-            'representative_remote_id',
             'position'
         )
 
@@ -44,12 +50,29 @@ class VoteSerializer(serializers.ModelSerializer):
         data['proposal'] = models.Proposal.objects.get(
             fingerprint=data['proposal']['fingerprint']
         )
+        if data['representative']['fingerprint']:
+            data['representative'] = Representative.objects.get(
+                fingerprint=data['representative']['fingerprint']
+            )
+        else:
+            data['representative'] = None
+
         return data
 
 
 class ProposalSerializer(serializers.ModelSerializer):
     dossier = serializers.CharField(
         source='dossier.fingerprint'
+    )
+
+    dossier_title = serializers.CharField(
+        source='dossier.title',
+        read_only=True
+    )
+
+    dossier_reference = serializers.CharField(
+        source='dossier.reference',
+        read_only=True
     )
     
     class Meta:
@@ -58,6 +81,8 @@ class ProposalSerializer(serializers.ModelSerializer):
             'id',
             'fingerprint',
             'dossier',
+            'dossier_title',
+            'dossier_reference',
             'title',
             'description',
             'reference',
@@ -66,6 +91,7 @@ class ProposalSerializer(serializers.ModelSerializer):
             'total_abstain',
             'total_against',
             'total_for',
+            'url',
         )
 
     def to_internal_value(self, data):
@@ -75,14 +101,15 @@ class ProposalSerializer(serializers.ModelSerializer):
         )
         validated_data['votes'] = data['votes']
         return validated_data
-
+    
     def _create_votes(self, votes_data, proposal):
         for vote in votes_data:
-            vote['proposal'] = proposal
-            models.Vote.objects.create(
-                **vote
-            )
-        
+            serializer = VoteSerializer(data=vote)
+            if serializer.is_valid():
+                serializer.save()
+            else:
+                raise Exception(serializer.errors)
+            
     def create(self, validated_data):
         votes_data = validated_data.pop('votes')
         proposal = models.Proposal.objects.create(
@@ -100,6 +127,7 @@ class ProposalSerializer(serializers.ModelSerializer):
 
 
 class ProposalDetailSerializer(ProposalSerializer):
+    """ Proposal serializer that includes votes """
     votes = VoteSerializer(many=True)
     
     class Meta(ProposalSerializer.Meta):
@@ -109,6 +137,7 @@ class ProposalDetailSerializer(ProposalSerializer):
 
 
 class DossierSerializer(serializers.ModelSerializer):
+    """ Base dossier serializer """
     class Meta:
         model = models.Dossier
         fields = (
@@ -123,10 +152,10 @@ class DossierSerializer(serializers.ModelSerializer):
 
 
 class DossierDetailSerializer(DossierSerializer):
-    '''
-    Dossier Serializer with proposals details
-    '''
-
+    """ 
+    Dossier serializer that includes proposals
+    and votes 
+    """
     proposals = ProposalDetailSerializer(
         many = True,
     )

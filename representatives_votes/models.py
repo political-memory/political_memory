@@ -18,7 +18,8 @@
 
 from django.db import models
 
-from representatives.models import TimeStampedModel, HashableModel
+from representatives.models import TimeStampedModel, HashableModel, Representative
+
 
 class Dossier(HashableModel, TimeStampedModel):
     title = models.CharField(max_length=1000)
@@ -43,10 +44,25 @@ class Proposal(HashableModel, TimeStampedModel):
     total_against = models.IntegerField()
     total_for = models.IntegerField()
 
+    representatives = models.ManyToManyField(
+        Representative, through='Vote', related_name='proposals'
+    )
+    
     hashable_fields = ['dossier', 'title', 'reference',
                        'kind', 'total_abstain', 'total_against',
                        'total_for']
 
+    class Meta:
+        ordering = ['datetime']
+        
+        
+    @property
+    def status(self):
+        if self.total_for > self.total_against:
+            return 'adopted'
+        else:
+            return 'rejected'
+        
     def __unicode__(self):
         return unicode(self.title)
 
@@ -59,9 +75,12 @@ class Vote(models.Model):
     )
 
     proposal = models.ForeignKey(Proposal, related_name='votes')
-
-    # There are two representative fields for flexibility,
-    representative_name = models.CharField(max_length=200, blank=True, null=True)
-    representative_remote_id = models.CharField(max_length=200, blank=True, null=True)
+    
+    representative = models.ForeignKey(Representative, related_name='votes', null=True)
+    # Save representative name in case of we don't find the representative
+    representative_name = models.CharField(max_length=200, blank=True)
 
     position = models.CharField(max_length=10, choices=VOTECHOICES)
+
+    class Meta:
+        ordering = ['proposal__datetime']

@@ -17,21 +17,21 @@ class ProposalAdmin(admin.ModelAdmin):
 
 
 class NoneMatchingFilter(admin.SimpleListFilter):
-    title = 'Remote id'
-    parameter_name = 'representative_remote_id'
+    title = 'Representative'
+    parameter_name = 'representative'
 
     def lookups(self, request, model_admin):
         return [('None', 'Unknown')]
     
     def queryset(self, request, queryset):
         if self.value() == 'None':
-            return queryset.filter(representative_remote_id=None)
+            return queryset.filter(representative=None)
         else:
             return queryset            
 
 
 class VoteAdmin(admin.ModelAdmin):
-    list_display = ('id', 'proposal_reference', 'position', 'representative_name', 'representative_remote_id')
+    list_display = ('id', 'proposal_reference', 'position', 'representative', 'representative_name')
     list_filter = (NoneMatchingFilter,)
     
     def proposal_reference(self, obj):
