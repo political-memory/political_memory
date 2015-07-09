@@ -10,8 +10,7 @@
   %h1= representative.full_name
 
   %h2
-    SCORE : {{ representative.extra.score }}
-
+    SCORE : {{ representative.score }}
   %p
     %strong
       %a{:href => "{{ representative.current_group_mandate|by_group_url }}"}
@@ -25,8 +24,19 @@
   %p= representative.country.name
 
   -# Mandates
+  %div{:style => "clear: both"}
+
+  %h2 Votes
+
+  %ul
+    - for vote in representative.votes.all
+      %li
+        ={vote.proposal.recommendation.title} -
+        ={vote.position}
+        (recommendation: ={vote.proposal.recommendation.recommendation})
+      
   
-  %h2{:style => "clear: both"} Mandates
+  %h2 Mandates
   
   - for mandate in representative.active_mandates
     .mandate

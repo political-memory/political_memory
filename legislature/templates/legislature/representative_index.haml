@@ -1,0 +1,33 @@
+- extends 'base.html'
+
+- load by_group_url
+
+- block content
+
+  - include 'legislature/search.html'
+
+  %p
+    Number of representatives: {{ object_count  }}
+
+  %table
+    - for representative in object_list
+      %tr
+        %td
+          %a{'href': "{% url 'legislature:representative_detail' name=representative.slug %}"} 
+            %img{'src': '={representative.photo}', 'width': '80'}/
+
+        %td
+          %a{'href': "{% url 'legislature:representative_detail' name=representative.slug %}"} 
+            ={representative.full_name}
+
+        %td
+          %a{'href': "{% url 'legislature:representative_index' group_kind='country' group=representative.country.code %}"}
+            ={representative.country.name}
+
+        %td
+          %a{'href': "{{ representative.current_group_mandate|by_group_url }}"}
+            ={representative.current_group_mandate.group.abbreviation}
+        %td
+          ={representative.score}          
+
+  - include "core/blocks/pagination.html"

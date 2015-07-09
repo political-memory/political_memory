@@ -116,10 +116,10 @@ p {
 
 li {
     text-decoration: none;
-    list-style: outside none none;
+    list-style: inside;
 }
 
-.panel.callout {
+.panel. {
     background: none repeat scroll 0% 0% #5B8EDC;
     color: #FFF;
     border-color: #2284A1;

@@ -1,32 +1,37 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 
-from . import views
+from views import representative
+from views import group
 
-urlpatterns = patterns(
-    '',
+urlpatterns = [
+    # List of groups by group kind
     url(
-        r'^representatives/?$',
-        views.representatives_index,
-        name='representatives_index'
+        r'^groups/(?P<kind>\w+)?$',
+        group.index,
+        name='group_index'
     ),
+    # Representative detail by representative name
     url(
-        r'^representatives/view/(?P<num>\d+)$',
-        views.representative_view,
-        name='representative_view'
+        r'^(?P<name>[-\w]+)$',
+        representative.detail,
+        name='representative_detail'
     ),
+    # Representative detail by representative pk
     url(
-        r'^representatives/(?P<group_kind>\w+)/(?P<search>.+)/(?P<group_id>\d+)?$',
-        views.representatives_by_group,
-        name='representatives_by_group'
+        r'^(?P<pk>\d+)$',
+        representative.detail,
+        name='representative_detail'
     ),
+    # List of representatives by group kind and group name or pk
     url(
-        r'^representatives/(?P<name>.+)$',
-        views.representative_by_name,
-        name='representative_view_by_name'
+        r'^(?P<group_kind>\w+)/(?P<group>.+)$',
+        representative.index,
+        name='representative_index'
     ),
+    # List all representatives by default
     url(
-        r'^groups/(?P<kind>\w+)$',
-        views.groups_by_kind,
-        name='groups_by_kind'
-    )
-)
+        r'',
+        representative.index,
+        name='representative_index'
+    ),
+]

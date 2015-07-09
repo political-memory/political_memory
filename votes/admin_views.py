@@ -22,18 +22,22 @@ from __future__ import absolute_import
 from django.conf import settings
 from django.shortcuts import render, redirect
 from django import forms
-from django.core.management import call_command
 
 import requests
 
-from representatives_votes.models import Proposal
+from representatives_votes.tasks import import_a_proposal_from_toutatis
 from .forms import RecommendationForm
+from .tasks import update_representatives_score as task_urs
 
     
 class SearchForm(forms.Form):
     query = forms.CharField(label='Search', max_length=100)
+    
 
-
+def update_representatives_score(request):
+    task_urs.delay()
+    return redirect('/admin')
+    
 def import_vote_with_recommendation(request):
     context = {}
     toutatis_server = getattr(settings,
@@ -44,7 +48,7 @@ def import_vote_with_recommendation(request):
         form = SearchForm(request.POST) 
         if form.is_valid():
             query = form.cleaned_data['query']
-            context['api_url'] = '{}/api/proposals/?search={}&limit=1000'.format(
+            context['api_url'] = '{}/api/proposals/?search={}&limit=30'.format(
                 toutatis_server,
                 query
             )
@@ -54,37 +58,31 @@ def import_vote_with_recommendation(request):
         form = RecommendationForm(data=request.POST)
         if form.is_valid():
             # First import proposal
-            proposal_id = int(request.POST['proposal_id'])
-            api_url = '{}/api/proposals/{}'.format(toutatis_server, proposal_id)
-            proposal = requests.get(api_url).json()
+            proposal_fingerprint = request.POST['proposal_fingerprint']
             
-            call_command('import_proposal_from_toutatis', proposal_id, interactive=False)
-            # call_command('update_memopol_votes', proposal['dossier_reference'], interactive=False)
-
-            memopol_proposal = Proposal.objects.get(
-                title = proposal['title'],
-                datetime = proposal['datetime'],
-                kind = proposal['kind'],
-            )
+            proposal = import_a_proposal_from_toutatis(proposal_fingerprint)
             recommendation = form.save(commit=False)
-            recommendation.proposal = memopol_proposal
+            recommendation.proposal = proposal
             recommendation.save()
-
-            return redirect('/admin/votes/recommendation/')
+        return redirect('/admin/votes/recommendation/')
     else:
-        proposal_id = request.GET.get('import', None)
-        if proposal_id:
-            api_url = '{}/api/proposals/{}'.format(toutatis_server, proposal_id)
-            proposal = requests.get(api_url).json()
+        proposal_fingerprint = request.GET.get('import', None)
+        if proposal_fingerprint:
+            api_url = '{}/api/proposals/?fingerprint={}'.format(
+                toutatis_server,
+                proposal_fingerprint
+            )
+            proposal = requests.get(api_url).json()['results'][0]
 
             context['recommendation_proposal_title'] = proposal['title']
             context['recommendation_proposal_dossier_title'] = proposal['dossier_title']
-            context['recommendation_proposal_id'] = proposal_id
+            context['recommendation_proposal_fingerprint'] = proposal['fingerprint']
             context['recommendation_form'] = RecommendationForm()
         form = SearchForm()
         
     context['form'] = form
     return render(request, 'votes/admin/import.html', context)
+
 
 def import_vote(request):
     context = {}
@@ -104,13 +102,9 @@ def import_vote(request):
             r = requests.get(context['api_url'])
             context['results'] = r.json()
     else:
-        proposal_id = request.GET.get('import', None)
-        if proposal_id:
-            # api_url = '{}/api/proposals/{}'.format(toutatis_server, proposal_id)
-            # proposal = requests.get(api_url).json()
-
-            call_command('import_proposal_from_toutatis', proposal_id, interactive=False)
-            # call_command('update_memopol_votes', proposal['dossier_reference'], interactive=False)
+        proposal_fingerprint = request.GET.get('import', None)
+        if proposal_fingerprint:
+            import_a_proposal_from_toutatis(proposal_fingerprint)
             return redirect('/admin/')
         form = SearchForm()
     context['form'] = form

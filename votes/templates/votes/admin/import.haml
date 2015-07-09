@@ -31,14 +31,14 @@
           %td= result.title
           %td
             %strong
-              <a href="?import={{ result.id }}">
+              <a href="?import={{ result.fingerprint }}">
                  Import this vote
               </a>
 
   - if recommendation_form
     %form{:action => '', :method => 'post'}
       - csrf_token
-      %input{:type => 'hidden', :value => '={recommendation_proposal_id}', :name => 'proposal_id'}
+      %input{:type => 'hidden', :value => '={recommendation_proposal_fingerprint}', :name => 'proposal_fingerprint'}
       %table
         %tr
           %th Dossier

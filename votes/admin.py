@@ -22,12 +22,13 @@ from __future__ import absolute_import
 from django.contrib import admin
 from django.core.urlresolvers import reverse
 
-from .admin_views import import_vote_with_recommendation, import_vote
+from .admin_views import import_vote_with_recommendation, import_vote, update_representatives_score
 from .models import Recommendation, MemopolDossier
 
 
 admin.site.register_view('import_vote', view=import_vote)
 admin.site.register_view('import_vote_with_recommendation', view=import_vote_with_recommendation)
+admin.site.register_view('update_representatives_score', view=update_representatives_score)
 
 def link_to_edit(obj, field):
     try:
@@ -47,8 +48,11 @@ def link_to_edit(obj, field):
     
 class MemopolDossierAdmin(admin.ModelAdmin):
     
-    list_display = ('name', 'dossier')
+    list_display = ('name', 'dossier_ptr')
     search_fields = ('name',)
+    
+    fields = ('dossier_ptr', 'name')
+    readonly_fields = ('dossier_ptr',)
 
 
 class RecommendationsAdmin(admin.ModelAdmin):

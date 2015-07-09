@@ -1,0 +1,13 @@
+-# Pagination block display pagination for the `object_list`
+   `object_list` could be generated with core.view_utils.render_paginate_list
+   
+.pagination
+  %span.step-links
+    - if object_list.has_previous
+      %a{'href': '?={queries.urlencode}&page=={object_list.previous_page_number}'} previous
+
+  %span.current
+    Page ={object_list.number} of ={object_list.paginator.num_pages}
+    
+    - if object_list.has_next
+      %a{'href': '?={queries.urlencode}&page=={object_list.next_page_number}'} next

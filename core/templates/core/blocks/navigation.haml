@@ -1,25 +1,23 @@
 %ul.nav-bar
   %li
-    %a{href: "{% url 'legislature:representatives_index' %}"}
+    %a{href: "{% url 'legislature:representative_index' %}"}
       Representatives
   %li
     %em By :
   %li
-    %a{href: "{% url 'legislature:groups_by_kind' 'country' %}"}
+    %a{href: "{% url 'legislature:group_index' kind='country' %}"}
       Countries
   %li
-    %a{href: "{% url 'legislature:groups_by_kind' 'group' %}"}
+    %a{href: "{% url 'legislature:group_index' kind='group' %}"}
       Parties
   %li
-    %a{href: "{% url 'legislature:groups_by_kind' 'delegation' %}"}
+    %a{href: "{% url 'legislature:group_index' kind='delegation' %}"}
       Delegations
   %li
-    %a{href: "{% url 'legislature:groups_by_kind' 'committee' %}"}
+    %a{href: "{% url 'legislature:group_index' kind='committee' %}"}
       Committees
       
 %ul.nav-bar
   %li
-    %a{href: "{% url 'votes:votes_index' %}"}
+    %a{href: "{% url 'votes:dossier_index' %}"}
       Votes
-  %li
-    %em By :

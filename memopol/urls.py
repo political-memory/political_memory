@@ -31,7 +31,7 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'memopol.views.home', name='home'),
     url(r'^$', core.views.HomeView.as_view(), name='index'),
-    url('', include('legislature.urls', namespace='legislature')),
-    url('', include('votes.urls', namespace='votes')),
+    url(r'^legislature/', include('legislature.urls', namespace='legislature')),
+    url(r'^votes/', include('votes.urls', namespace='votes')),
     url(r'^admin/', include(admin.site.urls)),
 )

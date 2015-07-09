@@ -23,10 +23,10 @@ from django.utils.functional import cached_property
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+from representatives.models import Representative
 from representatives_votes.models import Vote, Proposal, Dossier
 from legislature.models import MemopolRepresentative
 from core.utils import create_child_instance_from_parent
-from .tasks import update_representatives_score_for_proposal
 
 
 class Recommendation(models.Model):
@@ -52,44 +52,21 @@ class Recommendation(models.Model):
     description = models.TextField(blank=True)
     weight = models.IntegerField(default=0)
 
-
-@receiver(post_save, sender=Recommendation)
-def update_score(instance, **kwargs):
-    update_representatives_score_for_proposal(instance.proposal)
+    class Meta:
+        ordering = ['proposal__datetime']
 
 
 class MemopolDossier(Dossier):
-    parent_identifier = 'reference'
-    child_parent_identifier = 'dossier_reference'
-
-    dossier = models.OneToOneField(
-        Dossier,
-        primary_key=True,
-        parent_link=True,
-        related_name='extra'
-    )
-
     dossier_reference = models.CharField(max_length=200)
     name = models.CharField(max_length=1000, blank=True, default='')
     description = models.TextField(blank=True, default='')
 
     def save(self, *args, **kwargs):
         if not self.name:
-            self.name = self.dossier.title
+            self.name = self.dossier_ptr.title
         return super(MemopolDossier, self).save(*args, **kwargs)
 
 
 @receiver(post_save, sender=Dossier)
 def create_memopolrepresentative_from_representative(instance, **kwargs):
     create_child_instance_from_parent(MemopolDossier, instance)
-
-
-class MemopolVote(Vote):
-    class Meta:
-        proxy = True
-
-    @cached_property
-    def representative(self):
-        return MemopolRepresentative.objects.get(
-            remote_id = self.representative_remote_id
-        )

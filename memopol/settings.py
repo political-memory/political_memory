@@ -75,6 +75,10 @@ INSTALLED_APPS = (
 )
 
 
+if DEBUG:
+    INSTALLED_APPS += tuple(get_param('dev_modules'))
+
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

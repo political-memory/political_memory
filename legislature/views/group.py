@@ -18,27 +18,29 @@
 #
 # Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
 
-from __future__ import absolute_import
+from datetime import datetime
 
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 
-from core.views_utils import render_paginate_list
-from .models import MemopolDossier
+from representatives.models import Group
 
-def dossier_index(request):
-    dossier_list = MemopolDossier.objects.all()
 
-    return render_paginate_list(
-        request,
-        dossier_list,
-        'votes/dossier_index.html'
+def index(request, kind=None):
+    groups = Group.objects.filter(
+        mandates__end_date__gte=datetime.now()
     )
-
-def dossier_detail(request, pk):
-    dossier = get_object_or_404(MemopolDossier, pk=pk)
     
+    if kind:
+        groups = groups.filter(
+            kind=kind        
+        )
+    
+
+    print(groups)
+
+    groups = groups.distinct().order_by('name')
     return render(
         request,
-        'votes/dossier_detail.html',
-        {'dossier': dossier}
+        'legislature/groups_list.html',
+        {'groups': groups}
     )

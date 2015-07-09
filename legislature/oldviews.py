@@ -1,5 +1,25 @@
+# coding: utf-8
+# This file is part of memopol.
+#
+# memopol is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as
+# published by the Free Software Foundation, either version 3 of
+# the License, or any later version.
+#
+# memopol is distributed in the hope that it will
+# be useful, but WITHOUT ANY WARRANTY; without even the implied
+# warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU General Affero Public
+# License along with django-representatives.
+# If not, see <http://www.gnu.org/licenses/>.
+#
+# Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
+
 from datetime import datetime
 
+from django.http import Http404
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
@@ -7,38 +27,25 @@ from django.db.models import Q
 from representatives.models import Group
 from legislature.models import MemopolRepresentative
 
-
-def representatives_index(request):
-    representative_list = _filter_by_search(
-        request,
-        MemopolRepresentative.objects.filter(
-            active=True
+def retrieve(request, pk=None, name=None):
+    if pk:
+        representative = get_object_or_404(
+            MemopolRepresentative,
+            id=pk
         )
-    )
-    return _render_list(request, representative_list)
-
-
-def representative_by_name(request, name):
-    representative = get_object_or_404(
-        MemopolRepresentative,
-        full_name=name
-    )
+    elif name:
+        representative = get_object_or_404(
+            MemopolRepresentative,
+            full_name=name
+        )
+    else:
+        return Http404()
     
     return render(
         request,
         'legislature/representative_view.html',
         {'representative': representative}
     )
-
-
-def representative_view(request, id):
-    representative = get_object_or_404(MemopolRepresentative, pk=id)
-    return render(
-        request,
-        'legislature/representative_view.html',
-        {'representative': representative}
-    )
-
 
 def representatives_by_group(request, group_kind, group_abbr=None,
                              group_name=None, search=None, group_id=None):

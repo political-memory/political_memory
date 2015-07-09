@@ -32,10 +32,6 @@ from core.utils import create_child_instance_from_parent
 
 
 class MemopolRepresentative(Representative):
-    
-    # parent_identifier = 'fingerprint'
-    # representative_finger = models.CharField(max_length=255, unique=True)
-    
     country = models.ForeignKey(Country, null=True)
     score = models.IntegerField(default=0)
     
@@ -81,13 +77,6 @@ class MemopolRepresentative(Representative):
             self.country = None
             self.save()
 
-
-    @cached_property
-    def votes(self):
-        return Vote.objects.filter(
-            representative_remote_id = self.remote_id
-        )
-
     def active_mandates(self):
         return self.mandates.filter(
             end_date__gte=datetime.now()
@@ -108,7 +97,7 @@ class MemopolRepresentative(Representative):
 def create_memopolrepresentative_from_representative(instance, **kwargs):
     memopol_representative = create_child_instance_from_parent(MemopolRepresentative, instance)
     memopol_representative.update_country()
-
+    memopol_representative.save()
 
 @receiver(post_save, sender=Mandate)
 def update_memopolrepresentative_country(instance, created, **kwargs):

@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='MemopolDossier',
             fields=[
-                ('dossier', models.OneToOneField(parent_link=True, related_name='extra', primary_key=True, serialize=False, to='representatives_votes.Dossier')),
+                ('dossier_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='representatives_votes.Dossier')),
                 ('dossier_reference', models.CharField(max_length=200)),
                 ('name', models.CharField(default=b'', max_length=1000, blank=True)),
                 ('description', models.TextField(default=b'', blank=True)),

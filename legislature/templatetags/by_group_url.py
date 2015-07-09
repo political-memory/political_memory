@@ -17,13 +17,13 @@ def by_group_url(group):
     kwargs = {'group_kind': group.kind}
 
     if group.abbreviation:
-        kwargs['search'] = group.abbreviation
+        kwargs['group'] = group.abbreviation
     else:
-        kwargs['search'] = group.name
+        kwargs['group'] = group.name
 
-    kwargs['group_id'] = group.id
+    # kwargs['group_id'] = group.id
     
     return reverse(
-        'legislature:representatives_by_group',
+        'legislature:representative_index',
         kwargs=kwargs
     )

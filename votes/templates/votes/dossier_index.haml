@@ -1,0 +1,17 @@
+- extends "base.html"
+
+- block content
+  %h1 Dossiers
+  -# %p
+    Number of dossier: {{ object_count }}
+
+  %table
+    - for vote in object_list
+      %tr
+        %td
+          %a{'href': "{% url 'votes:dossier_detail' pk=vote.id %}"}
+            {{ vote.name }}
+      -# %tr
+        -# - include '/representative_block.html'
+
+  - include "core/blocks/pagination.html"

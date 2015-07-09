@@ -23,7 +23,6 @@ from __future__ import absolute_import
 from celery import shared_task
 
 from legislature.models import MemopolRepresentative
-from django.db.models import get_model
 
 @shared_task
 def update_representatives_score():
@@ -32,13 +31,3 @@ def update_representatives_score():
     '''
     for representative in MemopolRepresentative.objects.all():
         representative.update_score()
-
-@shared_task
-def update_representatives_score_for_proposal(proposal):
-    '''
-    Update score for representatives that have votes for proposal
-    '''
-    MemopolVote = get_model('votes', 'MemopolVote')
-    for vote in MemopolVote.objects.filter(proposal_id = proposal.id):
-        # Extra is the MemopolRepresentative object
-        vote.representative.extra.update_score()
