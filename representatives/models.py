@@ -130,7 +130,9 @@ class Representative(HashableModel, TimeStampedModel):
         genders = {0: 'N/A', 1: 'F', 2: 'M'}
         return genders[self.gender]
 
-
+    class Meta:
+        ordering = ['last_name', 'first_name']
+        
 # Contact related models
 class Contact(TimeStampedModel):
     representative = models.ForeignKey(Representative)
