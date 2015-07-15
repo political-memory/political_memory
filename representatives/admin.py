@@ -60,7 +60,10 @@ class RepresentativeAdmin(admin.ModelAdmin):
         MandateInline
     ]
 
-
+class GroupAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'abbreviation', 'kind')
+    list_filter = ('kind',)
+    
 class MandateAdmin(admin.ModelAdmin):
     list_display = ('id', 'representative', 'group', 'role', 'constituency', 'begin_date', 'end_date')
     search_fields = ('representative', 'group', 'constituency')
@@ -69,5 +72,5 @@ class MandateAdmin(admin.ModelAdmin):
 admin.site.register(Representative, RepresentativeAdmin)
 admin.site.register(Country)
 admin.site.register(Mandate, MandateAdmin)
-admin.site.register(Group)
+admin.site.register(Group, GroupAdmin)
 admin.site.register(Constituency)

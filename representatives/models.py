@@ -204,7 +204,14 @@ class Constituency(HashableModel, TimeStampedModel):
         return unicode(self.name)
 
 
+class MandateManager(models.Manager):
+    def get_queryset(self):
+        return super(MandateManager, self).get_queryset().select_related('group', 'constituency')
+    
 class Mandate(HashableModel, TimeStampedModel):
+
+    objects = MandateManager()
+    
     group = models.ForeignKey(Group, null=True, related_name='mandates')
     constituency = models.ForeignKey(Constituency, null=True, related_name='mandates')
     representative = models.ForeignKey(Representative, related_name='mandates')
