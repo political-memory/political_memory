@@ -1,46 +1,22 @@
 *.sqlite3
 celerybeat-*
 core/static/libs/*
+
+# libs
+static/libs
+node_modules
+
+# compiled css
+static/stylesheets/*.min.css
+
+
+# settings 
 memopol/config.json
-
-# SASS Cache
-.sass-cache
-
-CACHE/*
-
-# Emacs backup
-
-# From https://github.com/github/gitignore/blob/master/Python.gitignore
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-env/
-venv/
-ve/
-build/
-var/
-
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.cache
-nosetests.xml
-coverage.xml
-
-# Translations
-*.mo
-*.pot
-# Django stuff:
-*.log

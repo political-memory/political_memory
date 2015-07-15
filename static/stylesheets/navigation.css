@@ -1,0 +1,11 @@
+.pagination-block {
+  margin-bottom: 10px;
+  color: #999;
+  font-size: 0.9em;
+}
+.pagination-block nav {
+  text-align: center;
+}
+.pagination-block .count {
+  text-align: left;
+}

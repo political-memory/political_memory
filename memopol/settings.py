@@ -163,9 +163,12 @@ COMPRESS_ROOT = 'static/'
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    # other finders..
+    # Compressor finder
     'compressor.finders.CompressorFinder',
 )
+
+# Use compressor even in debug
+COMPRESS_ENABLED = True
 
 COMPRESS_PRECOMPILERS = (
     # ('text/coffeescript', 'coffee --compile --stdio'),
