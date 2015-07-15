@@ -5,11 +5,20 @@
 - block content
 
   - include 'legislature/search.html'
-
-  %p
-    Number of representatives: {{ object_count  }}
-
-  %table
+  - include "core/blocks/pagination.html"
+  
+  %table.table
+    %tr
+      %th
+        Photo
+      %th
+        Name
+      %th
+        Country
+      %th
+        Group
+      %th
+        Score
     - for representative in object_list
       %tr
         %td
@@ -25,8 +34,8 @@
             ={representative.country.name}
 
         %td
-          %a{'href': "{{ representative.current_group_mandate|by_group_url }}"}
-            ={representative.current_group_mandate.group.abbreviation}
+          %a{'href': "{{ representative.main_mandate|by_group_url }}"}
+            ={representative.main_mandate.group.abbreviation}
         %td
           ={representative.score}          
 

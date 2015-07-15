@@ -34,7 +34,8 @@ from core.utils import create_child_instance_from_parent
 class MemopolRepresentative(Representative):
     country = models.ForeignKey(Country, null=True)
     score = models.IntegerField(default=0)
-    
+    main_mandate = models.ForeignKey(Mandate, null=True, default=True)
+
     def update_score(self):
         score = 0
         for vote in self.votes.all():
@@ -71,11 +72,24 @@ class MemopolRepresentative(Representative):
                 code=country_mandate.group.abbreviation
             )
             self.country = country
-            self.save()
-
         except ObjectDoesNotExist:
             self.country = None
-            self.save()
+        self.save()
+
+    def update_main_mandate(self):
+        try:
+            self.main_mandate = self.mandates.get(
+                end_date__gte=datetime.now(),
+                group__kind='group'
+            )
+        except Mandate.DoesNotExist:
+            self.main_mandate = None
+        self.save()
+
+    def update_all(self):
+        self.update_country()
+        self.update_score()
+        self.update_main_mandate()
 
     def active_mandates(self):
         return self.mandates.filter(
@@ -86,26 +100,15 @@ class MemopolRepresentative(Representative):
         return self.mandates.filter(
             end_date__lte=datetime.now()
         )
-    
-    def current_group_mandate(self):
-        return self.mandates.get(
-            end_date__gte=datetime.now(),
-            group__kind='group'
+
+    def votes_with_proposal(self):
+        return self.votes.select_related(
+            'proposal',
+            'proposal__recommendation'
         )
+
 
 @receiver(post_save, sender=Representative)
 def create_memopolrepresentative_from_representative(instance, **kwargs):
     memopol_representative = create_child_instance_from_parent(MemopolRepresentative, instance)
-    memopol_representative.update_country()
     memopol_representative.save()
-
-@receiver(post_save, sender=Mandate)
-def update_memopolrepresentative_country(instance, created, **kwargs):
-    return
-    if not created:
-        return
-
-    # Update representative country
-    if instance.group.kind == 'country' and instance.representative.extra.country == None:
-        instance.representative.extra.update_country()
-

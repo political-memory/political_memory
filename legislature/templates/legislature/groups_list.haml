@@ -4,10 +4,12 @@
 - load by_group_url
 
 - block content
-  %ul
+  %table.table
     - for group in groups
-      %li
-        %a{'href': '{{ group | by_group_url }}'}
-          - if group.abbreviation
-            {{ group.abbreviation }} . 
-          {{ group.name }}
+      %tr
+        %td
+          %a{'href': '{{ group | by_group_url }}'}w
+            - if group.abbreviation
+              ={group.abbreviation}
+        %td
+          %a{'href': '{{ group | by_group_url }}'}= group.name

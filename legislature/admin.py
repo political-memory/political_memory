@@ -29,10 +29,10 @@ class PhoneInline(admin.TabularInline):
 class CountryInline(admin.TabularInline):
     model = Country
     extra = 0
-    
-    
+
+
 class MemopolRepresentativeAdmin(admin.ModelAdmin):
-    list_display = ('full_name', 'country', 'score')
+    list_display = ('full_name', 'country', 'score', 'main_mandate')
     search_fields = ('first_name', 'last_name', 'birth_place')
     list_filter = ('gender', 'active')
     inlines = [
@@ -42,7 +42,8 @@ class MemopolRepresentativeAdmin(admin.ModelAdmin):
         AdressInline,
     ]
 
-    
+
+
 # class MandateAdmin(admin.ModelAdmin):
     # list_display = ('representative', 'group', 'role', 'constituency', 'begin_date', 'end_date', 'active')
     # search_fields = ('representative', 'group', 'constituency')

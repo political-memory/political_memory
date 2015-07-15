@@ -21,16 +21,21 @@
 from __future__ import absolute_import
 from datetime import datetime
 
+from django.shortcuts import render
 from django.db.models import Q
-from django.shortcuts import render, get_object_or_404
 from django.http import Http404
 
 from ..models import MemopolRepresentative
 from core.utils import render_paginate_list
 
+
 def index(request, group_kind=None, group=None):
     # Fetch active representatives
-    representative_list = MemopolRepresentative.objects.filter(
+    representative_list = MemopolRepresentative.objects.select_related(
+        'country',
+        'main_mandate',
+        'main_mandate__group',
+    ).filter(
         active=True
     )
     # Filter the list by group if group information is provided
@@ -48,7 +53,7 @@ def index(request, group_kind=None, group=None):
                 mandates__group__kind=group_kind,
                 mandates__end_date__gte=datetime.now()
             )
-            
+
     # Filter the list by search
     representative_list = _filter_by_search(
         request,
@@ -59,23 +64,28 @@ def index(request, group_kind=None, group=None):
     return render_paginate_list(
         request,
         representative_list,
-        'legislature/representative_index.html'
+        'legislature/representative_list.html'
     )
 
 def detail(request, pk=None, name=None):
-    if pk:
-        representative = get_object_or_404(
-            MemopolRepresentative,
-            id=pk
+    try:
+        query_set = MemopolRepresentative.objects.select_related(
+            'country',
+            'main_mandate'
         )
-    elif name:
-        representative = get_object_or_404(
-            MemopolRepresentative,
-            slug=name
-        )
-    else:
+        if pk:
+            representative = query_set.get(
+                id=pk
+            )
+        elif name:
+            representative = query_set.get(
+                slug=name
+            )
+        else:
+            return Http404()
+    except MemopolRepresentative.DoesNotExist:
         return Http404()
-    
+
     return render(
         request,
         'legislature/representative_detail.html',

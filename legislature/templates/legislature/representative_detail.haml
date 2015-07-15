@@ -4,66 +4,51 @@
 - load by_group_url
 
 - block content
-  %p{:style => "float: left"}
-    %img{:src => "{{ representative.photo }}"}/
+  .representative
+    .row
+      .col-md-8
+        %h1.name
+          ={representative.full_name}
+
+        %h2.score
+          SCORE : {{ representative.score }}
+
+        %p.group
+          %strong
+            %a{:href => "{{ representative.main_mandate|by_group_url }}"}
+              {{ representative.main_mandate.role }} of
+              {{ representative.main_mandate.group.name }}
+
+        %p.personal
+          Born in {{ representative.birth_place }} the
+          {{ representative.birth_date }} ({{ representative.get_gender_display }})
+
+        %p.country= representative.country.name
+      .col-md-4
+        %p.photo
+          %img{:src => "{{ representative.photo }}"}/
+      
     
-  %h1= representative.full_name
-
-  %h2
-    SCORE : {{ representative.score }}
-  %p
-    %strong
-      %a{:href => "{{ representative.current_group_mandate|by_group_url }}"}
-        {{ representative.current_group_mandate.role }} of
-        {{ representative.current_group_mandate.group.name }}
-
-  %p
-    Born in {{ representative.birth_place }} the
-    {{ representative.birth_date }} ({{ representative.get_gender_display }})
-
-  %p= representative.country.name
-
-  -# Mandates
-  %div{:style => "clear: both"}
-
-  %h2 Votes
-
-  %ul
-    - for vote in representative.votes.all
-      %li
-        ={vote.proposal.recommendation.title} -
-        ={vote.position}
-        (recommendation: ={vote.proposal.recommendation.recommendation})
+    %h2 Votes
+    
+    %table.table.votes
+      - for vote in representative.votes_with_proposal.all
+        %tr
+          %td= vote.proposal.recommendation.title
+          %td= vote.position
+          %td= vote.proposal.recommendation.recommendation
+          %td= vote.proposal.recommendation.weight
       
   
-  %h2 Mandates
-  
-  - for mandate in representative.active_mandates
-    .mandate
-      %h3
-        {{ mandate.group.name }}
-        %small= mandate.role
-      %p
-        {{ mandate.begin_date }} to {{ mandate.end_date }} <br>
-        %a{:href => "{{ mandate|by_group_url }}"}
-          %strong {{ mandate.group.kind }} :
-          %em {{ mandate.group.name }} ({{ mandate.group.abbreviation }}) <br>
-          Constituency : {{ mandate.constituency.name }} <br>
-  %hr/
+    %h2 Mandates
 
-  -# Former mandates
-    
-  %h2{:style => "clear: both"} Former mandates
-  
-  - for mandate in representative.former_mandates
-    .mandate
-      %h3
-        {{ mandate.group.name }}
-        %small= mandate.role
-      %p
-        {{ mandate.begin_date }} to {{ mandate.end_date }} <br>
-        %a{:href => "{{ mandate|by_group_url }}"}
-          %strong {{ mandate.group.kind }} :
-          %em {{ mandate.group.name }} ({{ mandate.group.abbreviation }}) <br>
-          Constituency : {{ mandate.constituency.name }} <br>
-  %hr/
+    %table.table.mandates
+      - for mandate in representative.active_mandates
+        %tr.mandate
+          %td= mandate.role
+          %td
+            %a{:href => "{{ mandate|by_group_url }}"}
+              {{ mandate.group.name }} ({{ mandate.group.abbreviation }})
+          %td= mandate.begin_date
+          %td= mandate.end_date
+          %td= mandate.constituency.name
