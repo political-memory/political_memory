@@ -1,5 +1,4 @@
 # coding: utf-8
-
 # This file is part of memopol.
 #
 # memopol is free software: you can redistribute it and/or modify
@@ -18,29 +17,5 @@
 #
 # Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
 
-from __future__ import absolute_import
-
-from django.shortcuts import render, get_object_or_404
-
-from core.utils import render_paginate_list
-from .models import MemopolDossier
-
-
-def dossier_index(request):
-    dossier_list = MemopolDossier.objects.all()
-
-    return render_paginate_list(
-        request,
-        dossier_list,
-        'votes/dossier_index.html'
-    )
-
-
-def dossier_detail(request, pk):
-    dossier = get_object_or_404(MemopolDossier, pk=pk)
-
-    return render(
-        request,
-        'votes/dossier_detail.html',
-        {'dossier': dossier}
-    )
+from create_child_instance_from_parent import create_child_instance_from_parent
+from render_paginate_list import render_paginate_list

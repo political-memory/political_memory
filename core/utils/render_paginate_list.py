@@ -20,16 +20,20 @@
 
 from __future__ import absolute_import
 
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from .digg_paginator import DiggPaginator
 from django.shortcuts import render
 
 
-def render_paginate_list(request, object_list, template_name, num_by_page=30):
+def render_paginate_list(request, object_list, template_name):
     """
     Render a paginated list of representatives
     """
-    paginator = Paginator(object_list, num_by_page)
-    page = request.GET.get('page')
+    pagination_limits = (10, 20, 50, 100)
+    num_by_page = request.GET.get('limit', 30)
+    paginator = DiggPaginator(object_list, num_by_page, body=5)
+    # paginator = Paginator(object_list, num_by_page)
+    page = request.GET.get('page', 1)
     try:
         objects = paginator.page(page)
     except PageNotAnInteger:
@@ -43,8 +47,9 @@ def render_paginate_list(request, object_list, template_name, num_by_page=30):
         del queries_without_page['page']
     context['queries'] = queries_without_page
     context['object_list'] = objects
-    context['object_count'] = paginator.count
-
+    context['paginator'] = paginator
+    context['pagination_limits'] = pagination_limits
+    
     return render(
         request,
         template_name,

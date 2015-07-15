@@ -28,7 +28,7 @@ from representatives_votes.models import Vote, Proposal, Dossier
 from legislature.models import MemopolRepresentative
 from core.utils import create_child_instance_from_parent
 
-
+    
 class Recommendation(models.Model):
     SCORE_TABLE = {
         ('abstain', 'abstain'): 1,

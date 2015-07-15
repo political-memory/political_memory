@@ -26,7 +26,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import Http404
 
 from ..models import MemopolRepresentative
-from core.views_utils import render_paginate_list
+from core.utils import render_paginate_list
 
 def index(request, group_kind=None, group=None):
     # Fetch active representatives

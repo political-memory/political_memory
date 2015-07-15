@@ -1,13 +1,45 @@
 -# Pagination block display pagination for the `object_list`
    `object_list` could be generated with core.view_utils.render_paginate_list
-   
-.pagination
-  %span.step-links
-    - if object_list.has_previous
-      %a{'href': '?={queries.urlencode}&page=={object_list.previous_page_number}'} previous
 
-  %span.current
-    Page ={object_list.number} of ={object_list.paginator.num_pages}
-    
-    - if object_list.has_next
-      %a{'href': '?={queries.urlencode}&page=={object_list.next_page_number}'} next
+.pagination-block
+
+  %nav
+    %ul.pagination.pagination-sm
+      - if object_list.has_previous
+        %li
+          %a{'href': '?={queries.urlencode}&page=={object_list.previous_page_number}',
+             'aria-label': 'Previous'}
+            <i aria-hidden="true" class="fa fa-chevron-left"></i>
+
+      - for page_num in object_list.page_range
+        - if not page_num
+          %li.disabled
+            %a{'href': ''}
+              …
+        - elif page_num == object_list.number
+          %li.active
+            %a{'href': ''}
+              {{ page_num }}
+        - else
+          %li
+            %a{'href': '?={queries.urlencode}&page=={page_num}'}
+              {{ page_num }}
+
+      - if object_list.has_next
+        %li
+          %a{'href': '?={queries.urlencode}&page=={object_list.next_page_number}',
+             'aria-label': 'Next'}
+            <i aria-hidden="true" class="fa fa-chevron-right"></i>
+
+  %div.count
+    Number of results : {{ paginator.count }}
+    %br
+    Number of displayed results :
+    {{ paginator.per_page }}
+    (
+    - for limit in pagination_limits
+      %a{'href': '?limit={{ limit }}'}
+        {{ limit }}
+      - if not forloop.last
+        \/
+    )

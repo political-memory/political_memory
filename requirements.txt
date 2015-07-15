@@ -10,3 +10,4 @@ wsgiref
 django-adminplus
 requests
 django-celery
+django-constance

@@ -16,6 +16,7 @@ import django
 # Normally you should not import ANYTHING from Django directly
 # into your settings, but ImproperlyConfigured is an exception.
 from django.core.exceptions import ImproperlyConfigured
+from django.conf import settings
 
 # BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 config_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config.json')
@@ -51,7 +52,7 @@ ALLOWED_HOSTS = []
 COMPOTISTA_SERVER = get_param('compotista_server')
 TOUTATIS_SERVER = get_param('toutatis_server')
 REDIS_DB = get_param('redis_db')
-
+ORGANIZATION_NAME = get_param('organization')
 # Application definition
 
 INSTALLED_APPS = (
@@ -62,10 +63,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # ---
+    # 3rd party app
     'compressor',
-    # 'chronograph',
     'adminplus',
+    'constance',
     # ---
     'core',
     'representatives',
@@ -74,9 +75,11 @@ INSTALLED_APPS = (
     'votes',
 )
 
-
 if DEBUG:
-    INSTALLED_APPS += tuple(get_param('dev_modules'))
+    INSTALLED_APPS += (
+        'debug_toolbar',
+        'django_extensions'
+    )
 
 
 MIDDLEWARE_CLASSES = (
@@ -144,6 +147,10 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.app_directories.Loader',
     'hamlpy.template.loaders.HamlPyFilesystemLoader',
     'hamlpy.template.loaders.HamlPyAppDirectoriesLoader',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = settings.TEMPLATE_CONTEXT_PROCESSORS + (
+    'constance.context_processors.config',
 )
 
 """
@@ -217,4 +224,17 @@ LOGGING = {
             'level': 'DEBUG'
         }
     },
+}
+
+CONSTANCE_BACKEND = 'constance.backends.redisd.RedisBackend'
+CONSTANCE_REDIS_CONNECTION = {
+    'host': 'localhost',
+    'port': 6379,
+    'db': 0,
+}
+
+CONSTANCE_CONFIG = {
+    'USE_COUNTRY': (True, 'Use country for representative'),
+    'MAIN_GROUP_KIND': ('group', 'Main group kind'),
+    'ORGANIZATION_NAME': ('La Quadrature du Net', 'Organization name')
 }

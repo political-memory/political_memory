@@ -1,6 +1,7 @@
 *.sqlite3
 celerybeat-*
 core/static/libs/*
+deploy
 
 # libs
 static/libs
