@@ -3,5 +3,8 @@
   "version": "3.0.0",
   "dependencies": {
     "bootstrap": "~3.3.5"
+  },
+  "devDependencies": {
+    "fontawesome": "~4.3.0"
   }
 }
