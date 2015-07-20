@@ -1,13 +1,13 @@
 # coding: utf-8
 
-# This file is part of memopol.
+# This file is part of mempol.
 #
-# memopol is free software: you can redistribute it and/or modify
+# mempol is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as
 # published by the Free Software Foundation, either version 3 of
 # the License, or any later version.
 #
-# memopol is distributed in the hope that it will
+# mempol is distributed in the hope that it will
 # be useful, but WITHOUT ANY WARRANTY; without even the implied
 # warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 # See the GNU Affero General Public License for more details.
@@ -17,17 +17,13 @@
 # If not, see <http://www.gnu.org/licenses/>.
 #
 # Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
-
 from __future__ import absolute_import
 
-from celery import shared_task
+from django.shortcuts import redirect
 
-from legislature.models import MemopolRepresentative
+from .tasks import representatives_update_all as rpr_update_task
 
-@shared_task
-def update_representatives_score():
-    '''
-    Update score for all representatives
-    '''
-    for representative in MemopolRepresentative.objects.all():
-        representative.update_score()
+
+def representatives_update_all(request):
+    rpr_update_task.delay()
+    return redirect('/admin')

@@ -27,25 +27,20 @@ import requests
 
 from representatives_votes.tasks import import_a_proposal_from_toutatis
 from .forms import RecommendationForm
-from .tasks import update_representatives_score as task_urs
 
-    
+
 class SearchForm(forms.Form):
     query = forms.CharField(label='Search', max_length=100)
-    
 
-def update_representatives_score(request):
-    task_urs.delay()
-    return redirect('/admin')
-    
+
 def import_vote_with_recommendation(request):
     context = {}
     toutatis_server = getattr(settings,
                               'TOUTATIS_SERVER',
                               'http://toutatis.mm.staz.be')
-    
+
     if request.method == 'POST' and 'search' in request.POST:
-        form = SearchForm(request.POST) 
+        form = SearchForm(request.POST)
         if form.is_valid():
             query = form.cleaned_data['query']
             context['api_url'] = '{}/api/proposals/?search={}&limit=30'.format(
@@ -59,7 +54,7 @@ def import_vote_with_recommendation(request):
         if form.is_valid():
             # First import proposal
             proposal_fingerprint = request.POST['proposal_fingerprint']
-            
+
             proposal = import_a_proposal_from_toutatis(proposal_fingerprint)
             recommendation = form.save(commit=False)
             recommendation.proposal = proposal
@@ -79,7 +74,7 @@ def import_vote_with_recommendation(request):
             context['recommendation_proposal_fingerprint'] = proposal['fingerprint']
             context['recommendation_form'] = RecommendationForm()
         form = SearchForm()
-        
+
     context['form'] = form
     return render(request, 'votes/admin/import.html', context)
 
@@ -89,10 +84,10 @@ def import_vote(request):
     toutatis_server = getattr(settings,
                               'TOUTATIS_SERVER',
                               'http://toutatis.mm.staz.be')
-    
+
     if request.method == 'POST' and 'search' in request.POST:
         print(request.POST)
-        form = SearchForm(request.POST) 
+        form = SearchForm(request.POST)
         if form.is_valid():
             query = form.cleaned_data['query']
             context['api_url'] = '{}/api/proposals/?search={}&limit=1000'.format(
