@@ -27,6 +27,7 @@ from django.http import Http404
 
 from ..models import MemopolRepresentative
 from core.utils import render_paginate_list
+from positions.forms import PositionForm
 
 
 def index(request, group_kind=None, group=None):
@@ -86,10 +87,14 @@ def detail(request, pk=None, name=None):
     except MemopolRepresentative.DoesNotExist:
         return Http404()
 
+    position_form = PositionForm()
     return render(
         request,
         'legislature/representative_detail.html',
-        {'representative': representative}
+        {
+            'representative': representative,
+            'position_form': position_form
+        }
     )
 
 
@@ -105,4 +110,3 @@ def _filter_by_search(request, representative_list):
         )
     else:
         return representative_list
-

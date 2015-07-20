@@ -1,5 +1,4 @@
 # coding: utf-8
-
 # This file is part of memopol.
 #
 # memopol is free software: you can redistribute it and/or modify
@@ -18,21 +17,20 @@
 #
 # Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
 
-from django.conf.urls import patterns, include, url
-from django.contrib import admin
-from adminplus.sites import AdminSitePlus
+from django.conf.urls import url
 
-import core.views
+from views import PositionCreate, PositionDetail
 
-admin.site = AdminSitePlus()
-admin.autodiscover()
-
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'memopol.views.home', name='home'),
-    url(r'^$', core.views.HomeView.as_view(), name='index'),
-    url(r'^legislature/', include('legislature.urls', namespace='legislature')),
-    url(r'^votes/', include('votes.urls', namespace='votes')),
-    url(r'^positions/', include('positions.urls', namespace='positions')),
-    url(r'^admin/', include(admin.site.urls)),
-)
+urlpatterns = [
+    # Create a Position
+    url(
+        r'^create',
+        PositionCreate.as_view(),
+        name='position-create'
+    ),
+    url(
+        r'^(?P<pk>\d+)/$',
+        PositionDetail.as_view(),
+        name='position-detail'
+    )
+]

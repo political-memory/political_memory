@@ -1,0 +1,34 @@
+- load by_group_url
+
+.representative
+
+  %h1.name
+      ={representative.full_name}
+
+  .row
+    .col-md-4
+      %p.photo
+        %img{:src => "{{ representative.photo }}"}/
+
+    .col-md-8
+      %table.table.table-condensed.detail-view
+        %tr.score
+          %th Score
+          %td
+            %span.label.label-success
+              %a{:href => '#votes'}
+                = representative.score
+        %tr
+          %th Country
+          %td= representative.country.name
+        %tr
+          %th Party
+          %td
+            %a{:href => "{{ representative.main_mandate|by_group_url }}"}
+              {{ representative.main_mandate.role }} of
+              {{ representative.main_mandate.group.name }}
+        %tr
+          %th Biography
+          %td
+            Born in {{ representative.birth_place }} the
+            {{ representative.birth_date }} ({{ representative.get_gender_display }})

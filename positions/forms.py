@@ -18,21 +18,29 @@
 #
 # Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
 
-from django.conf.urls import patterns, include, url
-from django.contrib import admin
-from adminplus.sites import AdminSitePlus
+from django import forms
 
-import core.views
+from datetimewidget.widgets import DateWidget
 
-admin.site = AdminSitePlus()
-admin.autodiscover()
+from votes.models import MemopolDossier
+from .models import Position
 
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'memopol.views.home', name='home'),
-    url(r'^$', core.views.HomeView.as_view(), name='index'),
-    url(r'^legislature/', include('legislature.urls', namespace='legislature')),
-    url(r'^votes/', include('votes.urls', namespace='votes')),
-    url(r'^positions/', include('positions.urls', namespace='positions')),
-    url(r'^admin/', include(admin.site.urls)),
-)
+class PositionForm(forms.ModelForm):
+    class Meta:
+        model = Position
+        fields = ['dossier', 'datetime', 'text', 'link']
+        widgets = {
+            #Use localization and bootstrap 3
+            'datetime': DateWidget(
+                attrs={
+                    'id':'yourdatetimeid'
+                },
+                usel10n = True,
+                bootstrap_version=3,
+            )
+        }
+
+    dossier = forms.ModelChoiceField(
+        queryset=MemopolDossier.objects.all(),
+        required=False
+    )

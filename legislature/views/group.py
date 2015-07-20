@@ -29,14 +29,11 @@ def index(request, kind=None):
     groups = Group.objects.filter(
         mandates__end_date__gte=datetime.now()
     )
-    
+
     if kind:
         groups = groups.filter(
-            kind=kind        
+            kind=kind
         )
-    
-
-    print(groups)
 
     groups = groups.distinct().order_by('name')
     return render(

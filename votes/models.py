@@ -28,7 +28,7 @@ from representatives_votes.models import Vote, Proposal, Dossier
 from legislature.models import MemopolRepresentative
 from core.utils import create_child_instance_from_parent
 
-    
+
 class Recommendation(models.Model):
     SCORE_TABLE = {
         ('abstain', 'abstain'): 1,
@@ -66,6 +66,8 @@ class MemopolDossier(Dossier):
             self.name = self.dossier_ptr.title
         return super(MemopolDossier, self).save(*args, **kwargs)
 
+    def __unicode__(self):
+        return self.name
 
 @receiver(post_save, sender=Dossier)
 def create_memopolrepresentative_from_representative(instance, **kwargs):

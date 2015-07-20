@@ -1,54 +1,72 @@
 -# List representatives
-  
+
 - extends 'base.html'
+
+- load humanize
 - load by_group_url
+- load bootstrap3
+
+- block head
+  {{ position_form.media }}
 
 - block content
-  .representative
-    .row
-      .col-md-8
-        %h1.name
-          ={representative.full_name}
+  - include 'legislature/blocks/representative_header.html' with representative=representative
+  %h2#votes Votes
 
-        %h2.score
-          SCORE : {{ representative.score }}
+  %table.table.table-condensed.votes
+    %tr
+      %th Title
+      %th Position
+      %th Recommendation
+      %th Score
 
-        %p.group
-          %strong
-            %a{:href => "{{ representative.main_mandate|by_group_url }}"}
-              {{ representative.main_mandate.role }} of
-              {{ representative.main_mandate.group.name }}
+    - for vote in representative.votes_with_proposal.all
+      %tr
+        %td= vote.proposal.recommendation.title
+        %td= vote.position
+        %td= vote.proposal.recommendation.recommendation
+        %td= vote.proposal.recommendation.weight
 
-        %p.personal
-          Born in {{ representative.birth_place }} the
-          {{ representative.birth_date }} ({{ representative.get_gender_display }})
 
-        %p.country= representative.country.name
-      .col-md-4
-        %p.photo
-          %img{:src => "{{ representative.photo }}"}/
-      
-    
-    %h2 Votes
-    
-    %table.table.votes
-      - for vote in representative.votes_with_proposal.all
-        %tr
-          %td= vote.proposal.recommendation.title
-          %td= vote.position
-          %td= vote.proposal.recommendation.recommendation
-          %td= vote.proposal.recommendation.weight
-      
-  
-    %h2 Mandates
+  %h2 Mandates
 
-    %table.table.mandates
-      - for mandate in representative.active_mandates
-        %tr.mandate
-          %td= mandate.role
+  %table.table.table-condensed.mandates
+    - for mandate in representative.active_mandates
+      %tr.mandate
+        %td= mandate.role
+        %td
+          %a{:href => "{{ mandate|by_group_url }}"}
+            {{ mandate.group.name }} ({{ mandate.group.abbreviation }})
+        %td= mandate.begin_date
+        %td= mandate.end_date
+        %td= mandate.constituency.name
+
+  .positions
+    %h2 Public positions
+
+    %table.table.table-condensed
+      - for position in representative.positions.published.all
+        %tr.position
+          %td= position.datetime|naturalday:"d/m/Y"
           %td
-            %a{:href => "{{ mandate|by_group_url }}"}
-              {{ mandate.group.name }} ({{ mandate.group.abbreviation }})
-          %td= mandate.begin_date
-          %td= mandate.end_date
-          %td= mandate.constituency.name
+            %a{:href => '{% url "positions:position-detail" position.pk %}'}
+              =position.text|truncatewords:8
+          %td
+            = position.dossier
+          %td
+            %a{:href => '{{position.link}}'}
+              = position.link
+
+    %form{:action => '{% url "positions:position-create" %}',
+          :method => 'post'}
+      - csrf_token
+      %input{:type => 'hidden',
+             :name => 'representative',
+             :value => '{{ representative.id }}'}
+
+      - bootstrap_form position_form
+
+      - buttons
+        %button{'type': 'submit', 'class': 'btn btn-primary'}
+          {% bootstrap_icon "star" %} Submit
+      - endbuttons

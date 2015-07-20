@@ -1,0 +1,18 @@
+- extends 'base.html'
+
+- load humanize
+
+- block content
+  - include 'legislature/blocks/representative_header.html' with representative=object.representative
+  .quote
+
+    %p.quote-header
+      The {{object.datetime|naturalday:"d/m/Y"}}, {{object.representative.full_name}} declared :
+
+    .long-quote
+      = object.text|linebreaks
+
+    %p
+      Source :
+      %a{:href => '{{object.link}}'}
+        = object.link

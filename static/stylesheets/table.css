@@ -1,0 +1,4 @@
+.detail-view td,
+.detail-view th {
+  border-top: 0;
+}

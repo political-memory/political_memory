@@ -24,7 +24,6 @@ config_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config.j
 with open(config_file) as f:
     config = json.loads(f.read())
 
-
 def get_param(setting, config=config, default=None):
     """Get the secret variable or return explicit exception."""
     try:
@@ -53,27 +52,32 @@ COMPOTISTA_SERVER = get_param('compotista_server')
 TOUTATIS_SERVER = get_param('toutatis_server')
 REDIS_DB = get_param('redis_db')
 ORGANIZATION_NAME = get_param('organization')
+
 # Application definition
 
 INSTALLED_APPS = (
     # 'django.contrib.admin',
-    'django.contrib.admin.apps.SimpleAdminConfig',  # Instead of contrib.admin to use Django-Admin-Plus
+    # Instead of contrib.admin to use Django-Admin-Plus
+    'django.contrib.admin.apps.SimpleAdminConfig',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     # 3rd party app
     'compressor',
     'adminplus',
     'constance',
+    'bootstrap3',
+    'datetimewidget',
     # ---
     'core',
     'representatives',
     'representatives_votes',
     'legislature',
     'votes',
-    # 'positions'
+    'positions'
 )
 
 if DEBUG:
@@ -84,7 +88,7 @@ if DEBUG:
 if get_param('local'):
     INSTALLED_APPS += (
         'debug_toolbar',
-    )        
+    )
 
 
 MIDDLEWARE_CLASSES = (
@@ -180,7 +184,7 @@ STATICFILES_FINDERS = (
 )
 
 # Use compressor even in debug
-COMPRESS_ENABLED = True
+COMPRESS_ENABLED = False
 
 COMPRESS_PRECOMPILERS = (
     # ('text/coffeescript', 'coffee --compile --stdio'),
@@ -241,5 +245,6 @@ CONSTANCE_REDIS_CONNECTION = {
 CONSTANCE_CONFIG = {
     'USE_COUNTRY': (True, 'Use country for representative'),
     'MAIN_GROUP_KIND': ('group', 'Main group kind'),
-    'ORGANIZATION_NAME': ('La Quadrature du Net', 'Organization name')
+    'ORGANIZATION_NAME': ('La Quadrature du Net', 'Organization name'),
+    'POSITION_PUBLISHED': (False, 'Default position published status')
 }

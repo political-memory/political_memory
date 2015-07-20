@@ -27,12 +27,12 @@ urlpatterns = [
     url(
         r'^(?P<pk>\d+)$',
         views.dossier_detail,
-        name='dossier_detail'
+        name='dossier-detail'
     ),
     # List all dossiers by default
     url(
         r'',
         views.dossier_index,
-        name='dossier_index'
+        name='dossier-index'
     ),
 ]

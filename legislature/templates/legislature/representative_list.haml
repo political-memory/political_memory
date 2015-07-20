@@ -6,7 +6,7 @@
 
   - include 'legislature/search.html'
   - include "core/blocks/pagination.html"
-  
+
   %table.table
     %tr
       %th
@@ -22,21 +22,21 @@
     - for representative in object_list
       %tr
         %td
-          %a{'href': "{% url 'legislature:representative_detail' name=representative.slug %}"} 
+          %a{'href': "{% url 'legislature:representative-detail' name=representative.slug %}"}
             %img{'src': '={representative.photo}', 'width': '80'}/
 
         %td
-          %a{'href': "{% url 'legislature:representative_detail' name=representative.slug %}"} 
+          %a{'href': "{% url 'legislature:representative-detail' name=representative.slug %}"}
             ={representative.full_name}
 
         %td
-          %a{'href': "{% url 'legislature:representative_index' group_kind='country' group=representative.country.code %}"}
+          %a{'href': "{% url 'legislature:representative-index' group_kind='country' group=representative.country.code %}"}
             ={representative.country.name}
 
         %td
           %a{'href': "{{ representative.main_mandate|by_group_url }}"}
             ={representative.main_mandate.group.abbreviation}
         %td
-          ={representative.score}          
+          ={representative.score}
 
   - include "core/blocks/pagination.html"

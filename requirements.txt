@@ -12,3 +12,4 @@ requests
 django-celery
 django-denorm
 django-constance
+django-bootstrap3

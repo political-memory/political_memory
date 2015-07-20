@@ -13,7 +13,7 @@ var gzip_options = {
     }
 };
 
-var less_src = 'static/less/*.less';
+var less_src = ['static/less/base.less', 'static/less/libs.less'];
 
 /* Compile Our Sass */
 gulp.task('less', function() {
@@ -31,7 +31,7 @@ gulp.task('less', function() {
 /* Watch Files For Changes */
 gulp.task('watch', function() {
     livereload.listen();
-    gulp.watch(less_src, ['less']);
+    gulp.watch('static/less/*.less', ['less']);
 
     /* Trigger a live reload on any Django template changes */
     gulp.watch('**/templates/*').on('change', livereload.changed);

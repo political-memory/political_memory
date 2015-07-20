@@ -1,0 +1,29 @@
+@quote-size: 1em;
+
+.quote {
+    width: 70%;
+    margin: auto;
+
+    font-family: 'Linux Libertine', serif;
+    font-size: 1.5em;
+}
+
+.quote-header {
+    font-style: italic;
+}
+
+.long-quote {
+
+    p:first-child:before {
+        content: '« ';
+        font-style: italic;
+        font-size: @quote-size;
+    }
+
+    p:last-child:after {
+        content: ' »';
+        font-style: italic;
+        font-size: @quote-size;
+        text-align: right;
+    }
+}

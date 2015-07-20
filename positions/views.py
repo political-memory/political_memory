@@ -1,5 +1,4 @@
 # coding: utf-8
-
 # This file is part of memopol.
 #
 # memopol is free software: you can redistribute it and/or modify
@@ -18,21 +17,25 @@
 #
 # Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
 
-from django.conf.urls import patterns, include, url
-from django.contrib import admin
-from adminplus.sites import AdminSitePlus
+from django.views.generic import CreateView
+from django.views.generic.detail import DetailView
 
-import core.views
+from django.core.urlresolvers import reverse
 
-admin.site = AdminSitePlus()
-admin.autodiscover()
+from .models import Position
+from .forms import PositionForm
 
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'memopol.views.home', name='home'),
-    url(r'^$', core.views.HomeView.as_view(), name='index'),
-    url(r'^legislature/', include('legislature.urls', namespace='legislature')),
-    url(r'^votes/', include('votes.urls', namespace='votes')),
-    url(r'^positions/', include('positions.urls', namespace='positions')),
-    url(r'^admin/', include(admin.site.urls)),
-)
+class PositionCreate(CreateView):
+    """Create a position"""
+    model = Position
+    fields = PositionForm.Meta.fields + ['representative']
+
+    def get_success_url(self):
+        return reverse('legislature:representative-detail',
+                       kwargs={'name': self.object.representative.slug})
+
+
+class PositionDetail(DetailView):
+    """Display a position"""
+    model = Position
+    queryset = Position.objects.filter(published=True)

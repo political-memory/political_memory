@@ -13,7 +13,7 @@ def by_group_url(group):
 
     if not isinstance(group, Group):
         return ''
-    
+
     kwargs = {'group_kind': group.kind}
 
     if group.abbreviation:
@@ -22,8 +22,8 @@ def by_group_url(group):
         kwargs['group'] = group.name
 
     # kwargs['group_id'] = group.id
-    
+
     return reverse(
-        'legislature:representative_index',
+        'legislature:representative-index',
         kwargs=kwargs
     )
