@@ -1,6 +1,6 @@
 - extends 'base.html'
 
-- load by_group_url
+- load representatives_extras
 
 - block content
 
@@ -27,16 +27,16 @@
 
         %td
           %a{'href': "{% url 'legislature:representative-detail' name=representative.slug %}"}
-            ={representative.full_name}
+            = representative.full_name
 
         %td
           %a{'href': "{% url 'legislature:representative-index' group_kind='country' group=representative.country.code %}"}
-            ={representative.country.name}
+            = representative.country|country_flag
 
         %td
           %a{'href': "{{ representative.main_mandate|by_group_url }}"}
-            ={representative.main_mandate.group.abbreviation}
+            = representative.main_mandate.group.abbreviation
         %td
-          ={representative.score}
+          = representative.score|score_label
 
   - include "core/blocks/pagination.html"

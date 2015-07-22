@@ -2,7 +2,8 @@
   "name": "Memopol",
   "version": "3.0.0",
   "dependencies": {
-    "bootstrap": "~3.3.5"
+    "bootstrap": "~3.3.5",
+    "flag-icon-css": "~0.7.1"
   },
   "devDependencies": {
     "fontawesome": "~4.3.0"

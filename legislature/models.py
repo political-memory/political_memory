@@ -24,10 +24,10 @@ from django.db import models
 from django.core.exceptions import ObjectDoesNotExist
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from django.utils.functional import cached_property
+# from django.utils.functional import cached_property
 
 from representatives.models import Representative, Mandate, Country
-from representatives_votes.models import Vote
+from votes.models import MemopolVote
 from core.utils import create_child_instance_from_parent
 
 
@@ -39,21 +39,7 @@ class MemopolRepresentative(Representative):
     def update_score(self):
         score = 0
         for vote in self.votes.all():
-            proposal = vote.proposal
-            try:
-                if proposal.recommendation:
-                    recommendation = proposal.recommendation
-                    if ( vote.position != recommendation.recommendation
-                         and (
-                             vote.position == 'abstain' or
-                             recommendation.recommendation == 'abstain' )):
-                        score -= (recommendation.weight / 2)
-                    elif vote.position != recommendation.recommendation:
-                        score -= recommendation.weight
-                    else:
-                        score += recommendation.weight
-            except Exception:
-                pass
+            score += vote.absolute_score
 
         self.score = score
         self.save()
@@ -102,10 +88,10 @@ class MemopolRepresentative(Representative):
         )
 
     def votes_with_proposal(self):
-        return self.votes.select_related(
+        return MemopolVote.objects.select_related(
             'proposal',
             'proposal__recommendation'
-        )
+        ).filter(representative=self)
 
 
 @receiver(post_save, sender=Representative)

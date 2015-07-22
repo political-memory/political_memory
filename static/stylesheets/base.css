@@ -79,7 +79,10 @@ table.detail-view th {
   text-align: right;
 }
 table.detail-view th:after {
-  content: ' :';
+  content: ' :';
+}
+.icon-cell {
+  text-align: center;
 }
 .representative h1 {
   text-align: center;
@@ -99,6 +102,15 @@ table.detail-view th:after {
 .positions form {
   width: 50%;
   margin: auto;
+}
+.vote_negative {
+  color: red;
+}
+.vote_positive {
+  color: green;
+}
+.vote_abstain {
+  color: #333;
 }
 .quote {
   width: 70%;
@@ -123,7 +135,8 @@ table.detail-view th:after {
 body {
   background: #E5E5E5;
 }
-.container {
+.container,
+.container-fluid {
   background: white;
 }
 .main-container {

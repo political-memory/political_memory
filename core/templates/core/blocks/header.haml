@@ -3,7 +3,7 @@
 - load cache
 - load staticfiles
 
-#header.container
+#header.container-fluid
   %a{href: "/", id: 'logo'}
     %img{src: '{% static "images/logo.png" %}'}
   %h1
@@ -12,6 +12,5 @@
   %p.organization
     =config.ORGANIZATION_NAME
 
-#nav.container
+#nav.container-fluid
   -include "core/blocks/navigation.html"
-

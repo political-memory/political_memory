@@ -3,29 +3,38 @@
 - extends 'base.html'
 
 - load humanize
-- load by_group_url
+- load representatives_extras
 - load bootstrap3
 
 - block head
   {{ position_form.media }}
 
 - block content
-  - include 'legislature/blocks/representative_header.html' with representative=representative
-  %h2#votes Votes
+  .row
+    .col-md-6
+      - include 'legislature/blocks/representative_block.html' with representative=representative
+    .col-md-6
+      %h2#votes Votes
 
-  %table.table.table-condensed.votes
-    %tr
-      %th Title
-      %th Position
-      %th Recommendation
-      %th Score
+      %table.table.table-condensed.votes
+        %tr
+          %th Title
+          %th.icon-cell
+            Memopol recommendation
+          %th.icon-cell
+            Representative vote
+          %th.icon-cell
+            Score
 
-    - for vote in representative.votes_with_proposal.all
-      %tr
-        %td= vote.proposal.recommendation.title
-        %td= vote.position
-        %td= vote.proposal.recommendation.recommendation
-        %td= vote.proposal.recommendation.weight
+        - for vote in representative.votes_with_proposal.all
+          %tr
+            %td= vote.proposal.recommendation.title
+            %td.icon-cell
+              = vote.proposal.recommendation.recommendation|position_icon
+            %td.icon-cell
+              = vote.position|position_icon
+            %td.icon-cell
+              = vote.absolute_score|score_label
 
 
   %h2 Mandates

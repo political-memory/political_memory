@@ -23,9 +23,9 @@ from django.utils.functional import cached_property
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
-from representatives.models import Representative
+# from representatives.models import Representative
 from representatives_votes.models import Vote, Proposal, Dossier
-from legislature.models import MemopolRepresentative
+# from legislature.models import MemopolRepresentative
 from core.utils import create_child_instance_from_parent
 
 
@@ -72,3 +72,23 @@ class MemopolDossier(Dossier):
 @receiver(post_save, sender=Dossier)
 def create_memopolrepresentative_from_representative(instance, **kwargs):
     create_child_instance_from_parent(MemopolDossier, instance)
+
+
+class MemopolVote(Vote):
+    class Meta:
+        proxy = True
+
+    @cached_property
+    def absolute_score(self):
+        if self.proposal.recommendation:
+            recommendation = self.proposal.recommendation
+            weight = recommendation.weight
+            if (self.position == 'abstain' or
+                recommendation.recommendation == 'abstain'):
+                weight = weight / 2
+            if self.position == recommendation.recommendation:
+                return weight
+            else:
+                return -weight
+        else:
+            return 0
