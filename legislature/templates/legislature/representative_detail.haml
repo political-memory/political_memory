@@ -46,8 +46,8 @@
         %td
           %a{:href => "{{ mandate|by_group_url }}"}
             {{ mandate.group.name }} ({{ mandate.group.abbreviation }})
-        %td= mandate.begin_date
-        %td= mandate.end_date
+        %td= mandate.begin_date|mandate_date:'d/m/Y'
+        %td= mandate.end_date|mandate_date:'d/m/Y'
         %td= mandate.constituency.name
 
   .positions
@@ -56,7 +56,7 @@
     %table.table.table-condensed
       - for position in representative.positions.published.all
         %tr.position
-          %td= position.datetime|naturalday:"d/m/Y"
+          %td= position.datetime|naturalday:'d/m/Y'
           %td
             %a{:href => '{% url "positions:position-detail" position.pk %}'}
               =position.text|truncatewords:8

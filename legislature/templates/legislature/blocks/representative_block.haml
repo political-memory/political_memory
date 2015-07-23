@@ -1,4 +1,5 @@
 - load representatives_extras
+- load humanize
 
 .representative
 
@@ -30,4 +31,5 @@
           %th Biography
           %td
             Born in {{ representative.birth_place }} the
-            {{ representative.birth_date }} ({{ representative.get_gender_display }})
+            {{ representative.birth_date|naturalday:'d/m/Y' }}
+            ({{ representative.get_gender_display }})
