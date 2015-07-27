@@ -22,9 +22,9 @@ from django.db import models
 from django.template.defaultfilters import truncatewords
 
 from constance import config
+from taggit.managers import TaggableManager
 
 from legislature.models import MemopolRepresentative
-from votes.models import MemopolDossier
 
 
 class PositionManager(models.Manager):
@@ -39,11 +39,11 @@ class PositionManager(models.Manager):
 
 class Position(models.Model):
     representative = models.ForeignKey(MemopolRepresentative, related_name='positions')
-    dossier = models.ForeignKey(MemopolDossier, null=True, blank=True)
     datetime = models.DateField()
     text = models.TextField()
     link = models.URLField()
     published = models.BooleanField(default=False)
+    tags = TaggableManager()
 
     # Adds our custom manager
     objects = PositionManager()

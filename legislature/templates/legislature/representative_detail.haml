@@ -61,7 +61,9 @@
             %a{:href => '{% url "positions:position-detail" position.pk %}'}
               =position.text|truncatewords:8
           %td
-            = position.dossier
+            - for tag in position.tags.all
+              %span.label.label-default
+                = tag
           %td
             %a{:href => '{{position.link}}'}
               = position.link

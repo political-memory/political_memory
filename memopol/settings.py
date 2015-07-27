@@ -65,12 +65,14 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-    # 3rd party app
+    # 3rd party apps
     'compressor',
     'adminplus',
     'constance',
     'bootstrap3',
     'datetimewidget',
+    'django_filters',
+    'taggit',
     # ---
     'core',
     'representatives',

@@ -41,7 +41,7 @@ unpublish_positions.short_description = 'Unpublish selected positions'
 
 
 class PositionAdmin(admin.ModelAdmin):
-    list_display = ('representative', 'short_text', 'dossier', 'datetime', 'link', 'published')
+    list_display = ('representative', 'short_text', 'datetime', 'link', 'published')
     list_display_links = ('short_text',)
     list_editable = ('published',)
     list_filter = ('published',)

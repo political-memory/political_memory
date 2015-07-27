@@ -16,11 +16,13 @@
 # If not, see <http://www.gnu.org/licenses/>.
 #
 # Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
+from __future__ import absolute_import
 
 from django.conf.urls import url
 
-from views import representative
-from views import group
+from .views import representative
+from .views import group
+
 
 urlpatterns = [
     # List of groups by group kind

@@ -35,3 +35,30 @@
 .vote_abstain {
     color: #333;
 }
+
+.representative_grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .representative_item {
+        width: 300px;
+        margin: 2px;
+        padding: 10px;
+        // border: 1px solid black;
+        background: #f5f5f5;
+
+        .photo {
+            float: left;
+        }
+
+        .name {
+            font-weight: bold;
+        }
+
+        ul {
+            list-style-type: none;
+            text-indent: 10px;
+        }
+    }
+}

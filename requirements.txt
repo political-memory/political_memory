@@ -13,3 +13,5 @@ django-celery
 django-denorm
 django-constance
 django-bootstrap3
+django-filters
+django-taggit

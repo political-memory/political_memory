@@ -22,13 +22,12 @@ from django import forms
 
 from datetimewidget.widgets import DateWidget
 
-from votes.models import MemopolDossier
 from .models import Position
 
 class PositionForm(forms.ModelForm):
     class Meta:
         model = Position
-        fields = ['dossier', 'datetime', 'text', 'link']
+        fields = ['tags', 'datetime', 'text', 'link']
         widgets = {
             #Use localization and bootstrap 3
             'datetime': DateWidget(
@@ -39,8 +38,3 @@ class PositionForm(forms.ModelForm):
                 bootstrap_version=3,
             )
         }
-
-    dossier = forms.ModelChoiceField(
-        queryset=MemopolDossier.objects.all(),
-        required=False
-    )
