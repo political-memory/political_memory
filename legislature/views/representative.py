@@ -26,11 +26,13 @@ from django.db.models import Q
 from django.http import Http404
 
 from ..models import MemopolRepresentative
+from ..filters import RepresentativeFilter
 from core.utils import render_paginate_list
 from positions.forms import PositionForm
 
 
 def index(request, group_kind=None, group=None):
+
     # Fetch active representatives
     representative_list = MemopolRepresentative.objects.select_related(
         'country',
@@ -39,6 +41,7 @@ def index(request, group_kind=None, group=None):
     ).filter(
         active=True
     )
+
     # Filter the list by group if group information is provided
     if group_kind:
         if group.isnumeric():
@@ -61,11 +64,20 @@ def index(request, group_kind=None, group=None):
         representative_list
     ).order_by('-score', 'last_name')
 
+    # Grid or list
+    if request.GET.get('display') in ('grid', 'list'):
+        request.session['display'] = request.GET.get('display')
+    if not 'display' in  request.session:
+        request.session['display'] = 'grid'
+
+    # representative_list = RepresentativeFilter(request.GET, queryset=representative_list)
     # Render the paginated template
     return render_paginate_list(
         request,
         representative_list,
-        'legislature/representative_list.html'
+        'legislature/representative_{}.html'.format(
+            request.session['display']
+        )
     )
 
 def detail(request, pk=None, name=None):
