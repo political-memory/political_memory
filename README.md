@@ -2,6 +2,8 @@
 
     cd political_memory
 
+    cp memopol/config.json.sample memopol/config.json
+
     virtualenv ve
     source ve/bin/activate
 
