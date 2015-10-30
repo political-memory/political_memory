@@ -12,6 +12,9 @@ setup(
     include_package_data=True,
     license='GPLv3',
     keywords='django government parliament votes',
+    install_requires=[
+        'django-representatives',
+    ],
     classifiers=[
         'Development Status :: 1 - Alpha/Planning',
         'Environment :: Web Environment',

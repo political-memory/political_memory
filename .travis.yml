@@ -1,0 +1,10 @@
+sudo: false
+language: python
+python:
+  - "2.7"
+install:
+  - pip install django
+  - pip install -e git+https://github.com/political-memory/django-representatives.git#egg=representatives
+  - pip install -e .
+script:
+  - test_project/manage.py migrate
