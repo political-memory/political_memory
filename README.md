@@ -20,9 +20,8 @@
     # Install node modules
     npm install
 
-    # Build static files, this will watch for
-    # updates and update static files
-    node_modules/gulp/bin/gulp.js
+    # Build static files
+    node_modules/gulp/bin/gulp.js less
 
     # In another terminal (don't forget to activate the venv)
     ./manage.py runserver
