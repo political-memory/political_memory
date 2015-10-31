@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/political-memory/political_memory.svg?branch=master)](https://travis-ci.org/political-memory/political_memory)
+
     git clone git@github.com:political-memory/political_memory.git
 
     cd political_memory
