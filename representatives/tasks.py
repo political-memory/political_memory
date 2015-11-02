@@ -35,6 +35,8 @@ logger = logging.getLogger(__name__)
 
 
 def import_a_model(data, model, serializer, skip_old=False):
+    logging.info('Importing data: %s', data)
+
     try:
         instance = model.objects.get(
             fingerprint=data['fingerprint']
