@@ -1,16 +1,29 @@
 sudo: false
+env:
+  matrix:
+  - DEBUG=True
 language: python
 python:
-  - "2.7"
+- '2.7'
 install:
-  - pip install django
-  - pip install -U pip
-  - pip install -r requirements.txt
-  - cp memopol/config.json.sample memopol/config.json
+- pip install django
+- pip install -r requirements.txt
 before_script:
-  - npm install -g bower
-  - bower install
-  - npm install
+- npm install -g bower
+- bower install
+- npm install
 script:
-  - ./manage.py migrate
-  - node_modules/gulp/bin/gulp.js less
+- ./manage.py migrate
+- node_modules/gulp/bin/gulp.js less
+deploy:
+- provider: openshift
+  user: jamespic@gmail.com
+  password:
+    secure: W7hQDKAtmpOfwLjBuss6NEKqPSrRhsbgH8a8eV+/Oo6HZxMi1mbNFSi+6WRNSs3Cil0ZZV+awoqC61jIzV4oTwEYcy5bv9NWNSY1QO34DECMS5sY00wA0zKhkdsdTr9Pc3TLRp1cw6x2KNCF356FKZojFTRbjtfJ79rqBc5k5ww=
+  app: dev
+  domain: memopol
+  skip_cleanup: true
+  deployment_branch: pr
+  on:
+    repo: political-memory/political_memory
+    branch: pr

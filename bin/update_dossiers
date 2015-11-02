@@ -1,0 +1,6 @@
+#!/bin/bash
+set -ex
+
+source ${OPENSHIFT_REPO_DIR}bin/lib.sh
+
+pipe_download_to_command ep_dossiers.json.xz parltrack_import_dossiers

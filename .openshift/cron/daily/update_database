@@ -1,0 +1,8 @@
+#!/bin/bash
+set -x
+
+cmd=$1
+
+cd $OPENSHIFT_REPO_DIR
+export CLEAN=1
+nohup bin/update_all > $OPENSHIFT_LOG_DIR/update_all.log 2>&1 &

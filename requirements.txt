@@ -16,8 +16,8 @@ django-bootstrap3
 django-filter
 django-taggit
 django-datetime-widget
--e git+https://github.com/political-memory/django-representatives.git#egg=django-representatives
--e git+https://github.com/political-memory/django-representatives-votes.git#egg=rdjango-epresentatives-votes
+-e git+https://github.com/political-memory/django-representatives.git@parltrack#egg=django-representatives
+-e git+https://github.com/political-memory/django-representatives-votes.git@parltrack#egg=django-representatives-votes
 django-extensions
 django-debug-toolbar
 redis

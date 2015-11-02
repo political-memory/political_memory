@@ -1,7 +1,6 @@
 *.sqlite3
 celerybeat-*
 core/static/libs/*
-deploy
 
 # libs
 static/libs
@@ -21,3 +20,6 @@ __pycache__/
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
+.dpl
+db.sqlite
+log/
