@@ -19,34 +19,39 @@
 # Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
 
 from django.db import transaction
+from rest_framework import serializers
 
 import representatives.models as models
-from rest_framework import serializers
 
 
 class CountrySerializer(serializers.ModelSerializer):
+
     class Meta:
         model = models.Country
         fields = ('name', 'code')
 
 
 class EmailSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = models.Email
         fields = ('email', 'kind')
 
 
 class WebsiteSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = models.WebSite
         fields = ('url', 'kind')
 
     def validate_url(self, value):
-        # Don’t validate url, because it could break import of not proper formed url
+        # Don’t validate url, because it could break import of not proper
+        # formed url
         return value
 
 
 class PhoneSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = models.Phone
         fields = ('number', 'kind')
@@ -58,12 +63,13 @@ class PhoneSerializer(serializers.ModelSerializer):
 class AddressSerializer(serializers.ModelSerializer):
     country = CountrySerializer()
     phones = PhoneSerializer(many=True)
+
     class Meta:
         model = models.Address
         fields = ('country', 'city', 'street',
                   'number', 'postcode', 'floor',
                   'office_number', 'kind', 'phones',
-        )
+                  )
 
 
 class ContactField(serializers.Serializer):
@@ -82,21 +88,24 @@ class ContactField(serializers.Serializer):
 
 
 class ConstituencySerializer(serializers.ModelSerializer):
+
     class Meta:
         model = models.Constituency
         fields = ('id', 'name', 'fingerprint')
 
 
 class GroupSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = models.Group
         fields = ('id', 'name', 'abbreviation', 'kind', 'fingerprint')
 
 
 class MandateSerializer(serializers.ModelSerializer):
-    
+
     # name = serializers.CharField(source='group.name')
-    # short_id = serializers.CharField(source='group.abbreviation', allow_blank=True)
+    # short_id = serializers.CharField(
+    #     source='group.abbreviation', allow_blank=True)
     # kind = serializers.CharField(source='group.kind')
     # constituency = serializers.CharField(source='constituency.name')
 
@@ -104,7 +113,7 @@ class MandateSerializer(serializers.ModelSerializer):
         source='group.fingerprint',
     )
     constituency = serializers.CharField(
-        source='constituency.fingerprint'        
+        source='constituency.fingerprint'
     )
     representative = serializers.CharField(
         source='representative.fingerprint'
@@ -156,7 +165,7 @@ class MandateDetailSerializer(MandateSerializer):
 
 class RepresentativeSerializer(serializers.ModelSerializer):
     contacts = ContactField()
-    
+
     class Meta:
         model = models.Representative
         fields = (
@@ -176,7 +185,6 @@ class RepresentativeSerializer(serializers.ModelSerializer):
             'fingerprint',
             'url',
         )
-
 
     @transaction.atomic
     def create(self, validated_data):
@@ -234,7 +242,7 @@ class RepresentativeSerializer(serializers.ModelSerializer):
 
 
 class RepresentativeDetailSerializer(RepresentativeSerializer):
-    
+
     mandates = MandateDetailSerializer(many=True)
 
     class Meta(RepresentativeSerializer.Meta):

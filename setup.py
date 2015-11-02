@@ -1,9 +1,8 @@
-from setuptools import setup, find_packages
-
+from setuptools import find_packages, setup
 
 setup(
     name='django-representatives',
-    version='0.0.1',
+    version='0.0.6',
     description='Base app for government representative',
     author='Laurent Peuch, Olivier Le Thanh Duong, Yohan Boniface, Arnaud Fabre',
     author_email='webmaster@memopol.org',
@@ -14,18 +13,18 @@ setup(
     keywords='django government parliament',
     install_requires=[
         'ijson',
-        'pyprind',
-        'django-uuidfield',
     ],
     extras_require={
         'celery': 'celery',
         'api': 'djangorestframework',
     },
-    tests_require=[
-        'django',
-    ],
+    entry_points={
+        'console_scripts': [
+            'parltrack_import_representatives = representatives.contrib.parltrack.import_representatives:main',
+        ]
+    },
     classifiers=[
-        'Development Status :: 1 - Alpha/Planning',
+        'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
         'Framework :: Django',
         'Intended Audience :: Developers',

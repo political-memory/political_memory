@@ -1,9 +1,19 @@
 sudo: false
 language: python
+env:
+- DJANGO="django>1.8,<1.9" DJANGO_SETTINGS_MODULE=representatives.tests.settings
 python:
-  - "2.7"
+- "2.7"
+before_install:
+- pip install codecov
 install:
-  - pip install django
-  - pip install -e .
+- pip install $DJANGO pep8 flake8 pytest-django pytest-cov codecov
+- pip install -e .
 script:
-  - test_project/manage.py migrate
+- pep8 representatives/ --exclude migrations --ignore E128
+- flake8 representatives/ --exclude migrations --ignore E128
+- django-admin migrate
+- cat representatives/contrib/parltrack/tests/representatives_fixture.json | parltrack_import_representatives
+- py.test
+after_success:
+- codecov

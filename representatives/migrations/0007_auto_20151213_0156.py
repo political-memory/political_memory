@@ -7,12 +7,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('representatives', '0003_auto_20150702_1827'),
+        ('representatives', '0006_auto_20151213_0139'),
     ]
 
     operations = [
-        migrations.AlterModelOptions(
-            name='representative',
-            options={'ordering': ['last_name', 'first_name']},
+        migrations.AlterField(
+            model_name='country',
+            name='code',
+            field=models.CharField(unique=True, max_length=2),
         ),
     ]

@@ -20,7 +20,9 @@
 # Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
 
 from django.contrib import admin
-from .models import Representative, Country, Mandate, Group, Constituency, Email, WebSite, Phone, Address
+
+from .models import (Address, Constituency, Country, Email, Group, Mandate,
+                     Phone, Representative, WebSite)
 
 
 class EmailInline(admin.TabularInline):
@@ -60,12 +62,21 @@ class RepresentativeAdmin(admin.ModelAdmin):
         MandateInline
     ]
 
+
 class GroupAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'abbreviation', 'kind')
     list_filter = ('kind',)
-    
+
+
 class MandateAdmin(admin.ModelAdmin):
-    list_display = ('id', 'representative', 'group', 'role', 'constituency', 'begin_date', 'end_date')
+    list_display = (
+        'id',
+        'representative',
+        'group',
+        'role',
+        'constituency',
+        'begin_date',
+        'end_date')
     search_fields = ('representative', 'group', 'constituency')
 
 

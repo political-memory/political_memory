@@ -1,0 +1,3 @@
+[run]
+omit = representatives_votes/tests/*
+omit = representatives_votes/migrations/*

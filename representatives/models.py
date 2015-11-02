@@ -23,8 +23,8 @@ import hashlib
 from datetime import datetime
 
 from django.db import models
-from django.utils.functional import cached_property
 from django.utils.encoding import smart_str, smart_unicode
+from django.utils.functional import cached_property
 
 
 class TimeStampedModel(models.Model):
@@ -32,10 +32,10 @@ class TimeStampedModel(models.Model):
     An abstract base class model that provides self-updating
     ``created`` and ``modified`` fields.
     """
-    
+
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    
+
     class Meta:
         abstract = True
 
@@ -45,7 +45,7 @@ class HashableModel(models.Model):
     An abstract base class model that provides a fingerprint
     field
     """
-    
+
     fingerprint = models.CharField(
         max_length=40,
         unique=True,
@@ -57,7 +57,7 @@ class HashableModel(models.Model):
     def calculate_hash(self):
         fingerprint = hashlib.sha1()
         for field_name in self.hashable_fields:
-            field = self._meta.get_field(field_name) 
+            field = self._meta.get_field(field_name)
             if field.is_relation:
                 fingerprint.update(
                     getattr(self, field_name).fingerprint
@@ -72,7 +72,7 @@ class HashableModel(models.Model):
     def get_hash_str(self):
         string = ''
         for field_name in self.hashable_fields:
-            field = self._meta.get_field(field_name) 
+            field = self._meta.get_field(field_name)
             if field.is_relation:
                 string += getattr(self, field_name).fingerprint
             else:
@@ -86,7 +86,7 @@ class HashableModel(models.Model):
 
 class Country(models.Model):
     name = models.CharField(max_length=255)
-    code = models.CharField(max_length=2)
+    code = models.CharField(max_length=2, unique=True)
 
     @property
     def fingerprint(self):
@@ -119,8 +119,8 @@ class Representative(HashableModel, TimeStampedModel):
     birth_date = models.DateField(blank=True, null=True)
     cv = models.TextField(blank=True, default='')
     photo = models.CharField(max_length=512, null=True)
-    active =  models.BooleanField(default=False)
-    
+    active = models.BooleanField(default=False)
+
     hashable_fields = ['remote_id']
 
     def __unicode__(self):
@@ -132,8 +132,10 @@ class Representative(HashableModel, TimeStampedModel):
 
     class Meta:
         ordering = ['last_name', 'first_name']
-        
+
 # Contact related models
+
+
 class Contact(TimeStampedModel):
     representative = models.ForeignKey(Representative)
 
@@ -161,14 +163,14 @@ class Address(Contact):
     office_number = models.CharField(max_length=255, blank=True, default='')
     kind = models.CharField(max_length=255, blank=True, default='')
     name = models.CharField(max_length=255, blank=True, default='')
-    location = models.CharField(max_length=255, blank=True, default='') 
+    location = models.CharField(max_length=255, blank=True, default='')
 
 
 class Phone(Contact):
     number = models.CharField(max_length=255, blank=True, default='')
     kind = models.CharField(max_length=255, blank=True, default='')
     address = models.ForeignKey(Address, null=True, related_name='phones')
-    
+
 
 class Group(HashableModel, TimeStampedModel):
     """
@@ -205,21 +207,28 @@ class Constituency(HashableModel, TimeStampedModel):
 
 
 class MandateManager(models.Manager):
+
     def get_queryset(self):
-        return super(MandateManager, self).get_queryset().select_related('group', 'constituency')
-    
+        return super(
+            MandateManager,
+            self).get_queryset().select_related(
+            'group',
+            'constituency')
+
+
 class Mandate(HashableModel, TimeStampedModel):
 
     objects = MandateManager()
-    
+
     group = models.ForeignKey(Group, null=True, related_name='mandates')
-    constituency = models.ForeignKey(Constituency, null=True, related_name='mandates')
+    constituency = models.ForeignKey(
+        Constituency, null=True, related_name='mandates')
     representative = models.ForeignKey(Representative, related_name='mandates')
     role = models.CharField(
         max_length=25,
         blank=True,
         default='',
-        help_text="Eg.: president of a political group at the European Parliament"
+        help_text="Eg.: president of a political group"
     )
     begin_date = models.DateField(blank=True, null=True)
     end_date = models.DateField(blank=True, null=True)
@@ -233,9 +242,11 @@ class Mandate(HashableModel, TimeStampedModel):
         return self.end_date >= datetime.now().date()
 
     def __unicode__(self):
-        return u'Mandate : {representative},{role} {group} for {constituency}'.format(
+        t = u'Mandate : {representative},{role} {group} for {constituency}'
+        return t.format(
             representative=self.representative,
-            role=(u' {} of'.format(self.role) if self.role else u''),
+            role=(
+                u' {} of'.format(
+                    self.role) if self.role else u''),
             constituency=self.constituency,
-            group=self.group
-        )
+            group=self.group)

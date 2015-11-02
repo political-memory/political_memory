@@ -1,6 +1,0 @@
-django>=1.8,<1.9
-djangorestframework
-ijson
-pyprind
-celery
-django-uuidfield

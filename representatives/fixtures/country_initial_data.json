@@ -1,11 +1,4 @@
 [{
-  "pk": 12,
-  "model": "representatives.country",
-  "fields": {
-    "code": "IL",
-    "name": "Israel"
-  }
-}, {
   "pk": 1031,
   "model": "representatives.country",
   "fields": {
