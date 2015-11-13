@@ -34,7 +34,7 @@ from core.utils import create_child_instance_from_parent
 class MemopolRepresentative(Representative):
     country = models.ForeignKey(Country, null=True)
     score = models.IntegerField(default=0)
-    main_mandate = models.ForeignKey(Mandate, null=True, default=True)
+    main_mandate = models.ForeignKey(Mandate, null=True, default=None)
 
     def update_score(self):
         score = 0
