@@ -1,0 +1,67 @@
+[
+{
+    "fields": {
+        "updated": "2015-12-13T10:11:31.369Z",
+        "reference": "2012/2002(INI)",
+        "title": "Agenda for change: the future of EU development policy",
+        "text": "",
+        "created": "2015-12-13T10:11:31.369Z",
+        "link": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2012/2002(INI)",
+        "fingerprint": "9e2cccdc5f6d22afd008af8b5b55dc193c27c5d6"
+    },
+    "model": "representatives_votes.dossier",
+    "pk": 1
+},
+{
+    "fields": {
+        "updated": "2015-12-13T10:11:31.378Z",
+        "reference": "2015/2132(BUD)",
+        "title": "2016 general budget: all sections",
+        "text": "",
+        "created": "2015-12-13T10:11:31.378Z",
+        "link": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2015/2132(BUD)",
+        "fingerprint": "e6856e0880e701c1022f23d595cc37a9a1cdcca8"
+    },
+    "model": "representatives_votes.dossier",
+    "pk": 2
+},
+{
+    "fields": {
+        "updated": "2015-12-13T10:11:31.388Z",
+        "reference": "2013/2857(DEA)",
+        "title": "Scheme of control and enforcement applicable in the area covered by the Convention on future multilateral cooperation in the North-East Atlantic fisheries",
+        "text": "",
+        "created": "2015-12-13T10:11:31.388Z",
+        "link": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2013/2857(DEA)",
+        "fingerprint": "50745a1a6e47b8db097c55ef21a4f11fc1ef0d97"
+    },
+    "model": "representatives_votes.dossier",
+    "pk": 3
+},
+{
+    "fields": {
+        "updated": "2015-12-13T10:11:31.398Z",
+        "reference": "2015/2623(DEA)",
+        "title": "Scheme of control and enforcement applicable in the area covered by the Convention on future multilateral cooperation in the North-East Atlantic fisheries",
+        "text": "",
+        "created": "2015-12-13T10:11:31.398Z",
+        "link": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2015/2623(DEA)",
+        "fingerprint": "65fce7af2e020ff58849d1663f2c30ab0b1a35db"
+    },
+    "model": "representatives_votes.dossier",
+    "pk": 4
+},
+{
+    "fields": {
+        "updated": "2015-12-13T10:11:31.408Z",
+        "reference": "2009/0051(COD)",
+        "title": "Scheme of control and enforcement applicable in the area covered by the Convention on future multilateral cooperation in the North-East Atlantic fisheries",
+        "text": "",
+        "created": "2015-12-13T10:11:31.408Z",
+        "link": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2009/0051(COD)",
+        "fingerprint": "f2abba201c10df8a7cec1d734f91b7988eec8260"
+    },
+    "model": "representatives_votes.dossier",
+    "pk": 5
+}
+]

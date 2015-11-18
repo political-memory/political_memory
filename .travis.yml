@@ -1,10 +1,20 @@
 sudo: false
 language: python
+env:
+- DJANGO="django>1.8,<1.9" DJANGO_SETTINGS_MODULE=representatives_votes.tests.settings
 python:
-  - "2.7"
+- "2.7"
+before_install:
+- pip install codecov
 install:
-  - pip install django
-  - pip install -e git+https://github.com/political-memory/django-representatives.git#egg=representatives
-  - pip install -e .
+- pip install $DJANGO pep8 flake8 pytest-django pytest-cov codecov
+- pip install https://github.com/political-memory/django-representatives/archive/parltrack.tar.gz#egg=django-representatives
+- pip install -e .
 script:
-  - test_project/manage.py migrate
+- django-admin migrate
+- flake8 representatives_votes/ --exclude migrations --ignore E128
+- py.test
+- cat representatives_votes/contrib/parltrack/tests/dossiers_fixture.json | parltrack_import_dossiers
+- cat representatives_votes/contrib/parltrack/tests/votes_fixture.json | parltrack_import_votes
+after_success:
+- codecov

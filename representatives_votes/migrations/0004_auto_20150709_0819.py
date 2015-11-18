@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
@@ -13,15 +13,20 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterModelOptions(
             name='proposal',
-            options={'ordering': ['datetime']},
+            options={
+                'ordering': ['datetime']},
         ),
         migrations.AlterModelOptions(
             name='vote',
-            options={'ordering': ['proposal__datetime']},
+            options={
+                'ordering': ['proposal__datetime']},
         ),
         migrations.AlterField(
             model_name='proposal',
             name='representatives',
-            field=models.ManyToManyField(related_name='proposals', through='representatives_votes.Vote', to='representatives.Representative'),
+            field=models.ManyToManyField(
+                related_name='proposals',
+                through='representatives_votes.Vote',
+                to='representatives.Representative'),
         ),
     ]

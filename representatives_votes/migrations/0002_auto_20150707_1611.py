@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
@@ -19,17 +19,25 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='vote',
             name='representative',
-            field=models.ForeignKey(related_name='votes', to='representatives.Representative', null=True),
+            field=models.ForeignKey(
+                related_name='votes',
+                to='representatives.Representative',
+                null=True),
         ),
         migrations.AddField(
             model_name='vote',
             name='representative_fingerprint',
-            field=models.CharField(max_length=200, blank=True),
+            field=models.CharField(
+                max_length=200,
+                blank=True),
         ),
         migrations.AlterField(
             model_name='vote',
             name='representative_name',
-            field=models.CharField(default='', max_length=200, blank=True),
+            field=models.CharField(
+                default='',
+                max_length=200,
+                blank=True),
             preserve_default=False,
         ),
     ]

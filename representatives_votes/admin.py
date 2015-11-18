@@ -1,6 +1,7 @@
 # coding: utf-8
 
 from django.contrib import admin
+
 from .models import Dossier, Proposal, Vote
 
 
@@ -10,8 +11,19 @@ class DossierAdmin(admin.ModelAdmin):
 
 
 class ProposalAdmin(admin.ModelAdmin):
-    list_display = ('id', 'fingerprint', 'reference', 'dossier_reference', 'title', 'datetime', 'kind', 'total_abstain', 'total_against', 'total_for')
+    list_display = (
+        'id',
+        'fingerprint',
+        'reference',
+        'dossier_reference',
+        'title',
+        'datetime',
+        'kind',
+        'total_abstain',
+        'total_against',
+        'total_for')
     search_fields = ('reference', 'dossier__reference', 'title', 'fingerprint')
+
     def dossier_reference(self, obj):
         return obj.dossier.reference
 
@@ -22,18 +34,23 @@ class NoneMatchingFilter(admin.SimpleListFilter):
 
     def lookups(self, request, model_admin):
         return [('None', 'Unknown')]
-    
+
     def queryset(self, request, queryset):
         if self.value() == 'None':
             return queryset.filter(representative=None)
         else:
-            return queryset            
+            return queryset
 
 
 class VoteAdmin(admin.ModelAdmin):
-    list_display = ('id', 'proposal_reference', 'position', 'representative', 'representative_name')
+    list_display = (
+        'id',
+        'proposal_reference',
+        'position',
+        'representative',
+        'representative_name')
     list_filter = (NoneMatchingFilter,)
-    
+
     def proposal_reference(self, obj):
         return obj.proposal.reference
 

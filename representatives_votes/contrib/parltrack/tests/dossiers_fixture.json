@@ -1,0 +1,118 @@
+[
+    {
+        "meta": {
+            "source": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2012/2002(INI)",
+            "updated": "2012-10-25T02:02:36.882000"
+        },
+        "procedure": {
+            "dossier_of_the_committee": "DEVE/7/08564",
+            "legal_basis": [
+                "Rules of Procedure of the European Parliament EP 048"
+            ],
+            "reference": "2012/2002(INI)",
+            "stage_reached": "Procedure completed",
+            "subject": [
+                "6.30 Development cooperation"
+            ],
+            "subtype": "Initiative",
+            "title": "Agenda for change: the future of EU development policy",
+            "type": "INI - Own-initiative procedure"
+        }
+    },
+    {
+        "meta": {
+            "source": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2015/2132(BUD)&l=en",
+            "updated": "2015-11-18T02:23:18.933000"
+        },
+        "procedure": {
+            "dossier_of_the_committee": "BUDE/8/04900;BUDG/8/03789",
+            "reference": "2015/2132(BUD)",
+            "stage_reached": "Budgetary conciliation committee convened",
+            "subject": [
+                "8.70.56 2016 budget"
+            ],
+            "subtype": "Budget",
+            "title": "2016 general budget: all sections",
+            "type": "BUD - Budgetary procedure"
+        }
+    },
+    {
+        "meta": {
+            "source": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2013/2857(DEA)&l=en",
+            "updated": "2014-12-06T03:56:21.811000"
+        },
+        "procedure": {
+            "dossier_of_the_committee": "PECH/7/14126",
+            "geographical_area": [
+                "Atlantic Ocean area"
+            ],
+            "reference": "2013/2857(DEA)",
+            "stage_reached": "Awaiting Council decision on delegated act",
+            "subject": [
+                "3.15.01 Fish stocks, conservation of fishery resources",
+                "3.15.07 Fisheries inspectorate, surveillance of fishing vessels and areas",
+                "3.15.15 Fisheries agreements and cooperation"
+            ],
+            "subtype": "Examination of delegated act",
+            "summary": [
+                "Supplementing"
+            ],
+            "title": "Scheme of control and enforcement applicable in the area covered by the Convention on future multilateral cooperation in the North-East Atlantic fisheries",
+            "type": "DEA - Delegated acts procedure"
+        }
+    },
+    {
+        "meta": {
+            "source": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2015/2623(DEA)&l=en",
+            "updated": "2015-07-22T00:46:11.603000"
+        },
+        "procedure": {
+            "dossier_of_the_committee": "PECH/8/03020",
+            "reference": "2015/2623(DEA)",
+            "stage_reached": "Awaiting Council decision on delegated act",
+            "subject": [
+                "3.15.01 Fish stocks, conservation of fishery resources",
+                "3.15.07 Fisheries inspectorate, surveillance of fishing vessels and areas",
+                "3.15.15 Fisheries agreements and cooperation"
+            ],
+            "subtype": "Examination of delegated act",
+            "summary": [
+                "Supplementing"
+            ],
+            "title": "Scheme of control and enforcement applicable in the area covered by the Convention on future multilateral cooperation in the North-East Atlantic fisheries",
+            "type": "DEA - Delegated acts procedure"
+        }
+    },
+    {
+        "meta": {
+            "source": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2009/0051(COD)&l=en",
+            "updated": "2015-11-04T17:01:33.812000"
+        },
+        "procedure": {
+            "Modified legal basis": "Rules of Procedure of the European Parliament EP 150",
+            "dossier_of_the_committee": "PECH/7/00288",
+            "final": {
+                "title": "Regulation 2010/1236",
+                "url": "http://eur-lex.europa.eu/smartapi/cgi/sga_doc?smartapi!celexplus!prod!CELEXnumdoc&lg=EN&numdoc=32010R1236"
+            },
+            "instrument": "Regulation",
+            "legal_basis": [
+                "Treaty on the Functioning of the EU TFEU 043-p2"
+            ],
+            "reference": "2009/0051(COD)",
+            "stage_reached": "Procedure completed",
+            "subject": [
+                "3.15.01 Fish stocks, conservation of fishery resources",
+                "3.15.07 Fisheries inspectorate, surveillance of fishing vessels and areas",
+                "3.15.15 Fisheries agreements and cooperation"
+            ],
+            "subtype": "Legislation",
+            "summary": [
+                "Amended by",
+                "Repealing Regulation (EC) No 2791/1999"
+            ],
+            "title": "Scheme of control and enforcement applicable in the area covered by the Convention on future multilateral cooperation in the North-East Atlantic fisheries",
+            "type": "COD - Ordinary legislative procedure (ex-codecision procedure)"
+        }
+    }
+]

@@ -1,0 +1,68 @@
+[
+{
+    "fields": {
+        "updated": "2015-12-13T01:10:09.683Z",
+        "reference": "2012/2002(INI)",
+        "title": "Agenda for change: the future of EU development policy",
+        "text": "",
+        "created": "2015-12-13T01:10:09.683Z",
+        "link": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2012/2002(INI)",
+        "fingerprint": "9e2cccdc5f6d22afd008af8b5b55dc193c27c5d6"
+    },
+    "model": "representatives_votes.dossier",
+    "pk": 64
+},
+{
+    "fields": {
+        "updated": "2015-12-13T01:10:09.698Z",
+        "reference": "2015/2132(BUD)",
+        "title": "2016 general budget: all sections",
+        "text": "",
+        "created": "2015-12-13T01:10:09.698Z",
+        "link": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2015/2132(BUD)",
+        "fingerprint": "e6856e0880e701c1022f23d595cc37a9a1cdcca8"
+    },
+    "model": "representatives_votes.dossier",
+    "pk": 65
+},
+{
+    "fields": {
+        "updated": "2015-12-12T23:06:32.305Z",
+        "last_name": "PIRKER",
+        "photo": "http://www.europarl.europa.eu/mepphoto/2307.jpg",
+        "created": "2015-12-12T22:56:14.401Z",
+        "gender": 2,
+        "remote_id": "2307",
+        "first_name": "Hubert",
+        "cv": "Transport and security spokesman, \u00d6VP Delegation, European Parliament;\nsecurity spokesman, \u00d6VP Delegation, European Parliament (2006-2009); security spokesman (coordinator), EPP Group (1999-2004); Deputy Head of \u00d6VP Delegation, European Parliament (1996-2004);",
+        "active": false,
+        "birth_place": "Gries",
+        "full_name": "Hubert PIRKER",
+        "fingerprint": "2a3c90346d40e9c540050534d832ceb3e0d25a49",
+        "birth_date": "1948-10-03",
+        "slug": "hubert-pirker"
+    },
+    "model": "representatives.representative",
+    "pk": 1
+},
+{
+    "fields": {
+        "updated": "2015-12-12T23:06:32.656Z",
+        "last_name": "LUDVIGSSON",
+        "photo": "http://www.europarl.europa.eu/mepphoto/96673.jpg",
+        "created": "2015-12-12T22:56:14.757Z",
+        "gender": 2,
+        "remote_id": "96673",
+        "first_name": "Olle",
+        "cv": "",
+        "active": true,
+        "birth_place": "H\u00e4ls\u00f6",
+        "full_name": "Olle LUDVIGSSON",
+        "fingerprint": "314d0f4c25af31bfa2a6b286838367994b902615",
+        "birth_date": "1948-10-28",
+        "slug": "olle-ludvigsson"
+    },
+    "model": "representatives.representative",
+    "pk": 2
+}
+]
