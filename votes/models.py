@@ -1,28 +1,11 @@
 # coding: utf-8
-
-# This file is part of memopol.
-#
-# memopol is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as
-# published by the Free Software Foundation, either version 3 of
-# the License, or any later version.
-#
-# memopol is distributed in the hope that it will
-# be useful, but WITHOUT ANY WARRANTY; without even the implied
-# warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-# See the GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU General Affero Public
-# License along with django-representatives.
-# If not, see <http://www.gnu.org/licenses/>.
-#
-# Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
-
 from django.db import models
 from django.utils.functional import cached_property
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+from representatives_votes.management.commands import (
+        parltrack_import_votes,)
 # from representatives.models import Representative
 from representatives_votes.models import Vote, Proposal, Dossier
 # from legislature.models import MemopolRepresentative
@@ -92,3 +75,17 @@ class MemopolVote(Vote):
                 return -weight
         else:
             return 0
+
+
+def vote_pre_import(sender, vote_data=None, **kwargs):
+    dossiers = getattr(sender, 'memopol_filters', None)
+
+    if dossiers is None:
+        sender.memopol_filters = dossiers = Dossier.objects.filter(
+            proposals__recommendation__in=
+                Recommendation.objects.all()
+        ).values_list('reference', flat=True)
+
+    if vote_data.get('epref', None) not in dossiers:
+        return False
+parltrack_import_votes.Command.vote_pre_import.connect(vote_pre_import)
