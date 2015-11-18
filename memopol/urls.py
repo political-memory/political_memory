@@ -34,5 +34,6 @@ urlpatterns = patterns('',
     url(r'^legislature/', include('legislature.urls', namespace='legislature')),
     url(r'^votes/', include('votes.urls', namespace='votes')),
     url(r'^positions/', include('positions.urls', namespace='positions')),
+    url(r'^autocomplete/', include('autocomplete_light.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
