@@ -78,6 +78,7 @@ INSTALLED_APPS = (
     'compressor',
     'adminplus',
     'constance',
+    'constance.backends.database',
     'bootstrap3',
     'datetimewidget',
     'django_filters',
@@ -281,20 +282,7 @@ if os.path.exists(RAVEN_FILE):
             'dsn': f.read().strip()
         }
 
-CONSTANCE_BACKEND = 'constance.backends.redisd.RedisBackend'
-CONSTANCE_REDIS_CONNECTION = {
-
-    'host': os.environ.get('OPENSHIFT_REDIS_HOST', 'localhost'),
-    'port': os.environ.get('OPENSHIFT_REDIS_PORT', 6379),
-    'password': os.environ.get('REDIS_PASSWORD', ''),
-    'db': 1,
-}
-CONSTANCE_REDIS_CONNECTION = 'redis://:%s@%s:%s/%s' % (
-    os.environ.get('REDIS_PASSWORD', ''),
-    os.environ.get('OPENSHIFT_REDIS_HOST', 'localhost'),
-    os.environ.get('OPENSHIFT_REDIS_PORT', 6379),
-    0,
-)
+CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
 
 CONSTANCE_CONFIG = {
     'USE_COUNTRY': (True, 'Use country for representative'),

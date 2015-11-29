@@ -35,12 +35,12 @@ To deploy the website, use a command like::
 
     $ rhc app-create \
         python-2.7 \
-        "http://cartreflect-claytondev.rhcloud.com/reflect?github=smarterclayton/openshift-redis-cart" \
         cron-1.4 \
         postgresql-9.2 \
         -a yourappname \
         -e OPENSHIFT_PYTHON_WSGI_APPLICATION=memopol/wsgi.py \
-        --from-code https://github.com/political-memory/political_memory.git
+        --from-code https://github.com/political-memory/political_memory.git \
+        --no-git
 
 This should create an app on openshift. Other commands would deploy it at once
 but in this tutorial we're going to see how to manage it partly manually for
