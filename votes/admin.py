@@ -5,11 +5,7 @@ from autocomplete_light import shortcuts as ac
 from django.contrib import admin
 from django.core.urlresolvers import reverse
 
-from .admin_views import import_vote_with_recommendation, import_vote
 from .models import Recommendation, MemopolDossier
-
-admin.site.register_view('import_vote', view=import_vote)
-admin.site.register_view('import_vote_with_recommendation', view=import_vote_with_recommendation)
 
 def link_to_edit(obj, field):
     try:

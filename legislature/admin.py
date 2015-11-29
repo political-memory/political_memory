@@ -23,11 +23,7 @@ from django.contrib import admin
 
 from representatives.models import Email, WebSite, Address, Phone, Country
 
-from .admin_views import representatives_update_all
 from .models import MemopolRepresentative
-
-
-admin.site.register_view('representatives_update_all', view=representatives_update_all)
 
 
 class EmailInline(admin.TabularInline):
