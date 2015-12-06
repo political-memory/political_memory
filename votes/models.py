@@ -63,18 +63,19 @@ class MemopolVote(Vote):
 
     @cached_property
     def absolute_score(self):
-        if self.proposal.recommendation:
-            recommendation = self.proposal.recommendation
-            weight = recommendation.weight
-            if (self.position == 'abstain' or
-                recommendation.recommendation == 'abstain'):
-                weight = weight / 2
-            if self.position == recommendation.recommendation:
-                return weight
-            else:
-                return -weight
-        else:
+        if not self.proposal.recommendation_id:
             return 0
+
+        recommendation = self.proposal.recommendation
+
+        weight = recommendation.weight
+        if (self.position == 'abstain' or
+                recommendation.recommendation == 'abstain'):
+            weight = weight / 2
+        if self.position == recommendation.recommendation:
+            return weight
+        else:
+            return -weight
 
 
 def vote_pre_import(sender, vote_data=None, **kwargs):
