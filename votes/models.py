@@ -63,10 +63,11 @@ class MemopolVote(Vote):
 
     @cached_property
     def absolute_score(self):
-        if not self.proposal.recommendation_id:
+        try:
+            recommendation = self.proposal.recommendation
+        except models.ObjectDoesNotExist:
+            # Recommendation was deleted
             return 0
-
-        recommendation = self.proposal.recommendation
 
         weight = recommendation.weight
         if (self.position == 'abstain' or
