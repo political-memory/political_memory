@@ -37,7 +37,7 @@ class RecommendationsAdmin(admin.ModelAdmin):
         return link_to_edit(self, 'proposal')
     link_to_proposal.allow_tags = True
 
-    list_display = ('id', 'title', link_to_proposal, 'recommendation','weight')
+    list_display = ('id', 'title', 'proposal', 'recommendation','weight')
     search_fields = ('title', 'recommendation', 'proposal')
     form = ac.modelform_factory(Recommendation, exclude=[])
 
