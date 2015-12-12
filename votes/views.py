@@ -20,9 +20,10 @@
 
 from __future__ import absolute_import
 
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404, render
 
 from core.utils import render_paginate_list
+
 from .models import MemopolDossier
 
 

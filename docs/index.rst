@@ -11,8 +11,11 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   development
+   usage
    deployment
+   administration
+   development
+   hacker
 
 Indices and tables
 ==================

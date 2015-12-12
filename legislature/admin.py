@@ -21,7 +21,7 @@ from __future__ import absolute_import
 
 from django.contrib import admin
 
-from representatives.models import Email, WebSite, Address, Phone, Country
+from representatives.models import Address, Country, Email, Phone, WebSite
 
 from .models import MemopolRepresentative
 
@@ -63,17 +63,4 @@ class MemopolRepresentativeAdmin(admin.ModelAdmin):
     ]
 
 
-# class MandateAdmin(admin.ModelAdmin):
-    # list_display = ('representative', 'group', 'role', 'constituency', 'begin_date', 'end_date', 'active')
-    # search_fields = ('representative', 'group', 'constituency')
-    # list_filter = ('role',)
-
-
-# admin.site.register(Representative, RepresentativeAdmin)
 admin.site.register(MemopolRepresentative, MemopolRepresentativeAdmin)
-# admin.site.register(Country)
-
-# admin.site.register(MemopolMandate, MandateAdmin)
-
-# admin.site.register(MemopolGroup)
-# admin.site.register(Constituency)

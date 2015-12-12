@@ -1,19 +1,21 @@
 sudo: false
 env:
-  matrix:
-  - DEBUG=True
+  - DJANGO_DEBUG=True DJANGO_SETTINGS_MODULE=memopol.settings
 language: python
 python:
 - '2.7'
 install:
-- pip install django
-- pip install -r requirements.txt
+- pip install -e .
+- pip install flake8 pep8
 before_script:
 - npm install -g bower
 - bower install
 - npm install
 script:
-- ./manage.py migrate
+- pep8 . --exclude '*/migrations,docs' --ignore E128
+- flake8 . --exclude '*/migrations,docs' --ignore E128
+- django-admin migrate
+- django-admin update_score
 - node_modules/gulp/bin/gulp.js less
 deploy:
 - provider: openshift

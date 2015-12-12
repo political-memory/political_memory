@@ -91,3 +91,5 @@ to be executed, either do it manually::
 
 OpenShift is fun, login with ssh and look around if you're curious, you'll be
 able to recreate your app without much effort if you break it anyway.
+
+Continue to :doc:`administration`.

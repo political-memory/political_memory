@@ -17,13 +17,13 @@
 #
 # Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
 
+from django.core.urlresolvers import reverse
 from django.views.generic import CreateView
 from django.views.generic.detail import DetailView
 
-from django.core.urlresolvers import reverse
-
-from .models import Position
 from .forms import PositionForm
+from .models import Position
+
 
 class PositionCreate(CreateView):
     """Create a position"""

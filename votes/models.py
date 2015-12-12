@@ -1,15 +1,13 @@
 # coding: utf-8
 from django.db import models
-from django.utils.functional import cached_property
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.utils.functional import cached_property
 
-from representatives_votes.management.commands import (
-        parltrack_import_votes,)
-# from representatives.models import Representative
-from representatives_votes.models import Vote, Proposal, Dossier
-# from legislature.models import MemopolRepresentative
 from core.utils import create_child_instance_from_parent
+from representatives_votes.contrib.parltrack.import_votes import \
+    vote_pre_import
+from representatives_votes.models import Dossier, Proposal, Vote
 
 
 class Recommendation(models.Model):
@@ -52,12 +50,14 @@ class MemopolDossier(Dossier):
     def __unicode__(self):
         return self.name
 
+
 @receiver(post_save, sender=Dossier)
 def create_memopolrepresentative_from_representative(instance, **kwargs):
     create_child_instance_from_parent(MemopolDossier, instance)
 
 
 class MemopolVote(Vote):
+
     class Meta:
         proxy = True
 
@@ -79,15 +79,14 @@ class MemopolVote(Vote):
             return -weight
 
 
-def vote_pre_import(sender, vote_data=None, **kwargs):
+def skip_votes(sender, vote_data=None, **kwargs):
     dossiers = getattr(sender, 'memopol_filters', None)
 
     if dossiers is None:
         sender.memopol_filters = dossiers = Dossier.objects.filter(
-            proposals__recommendation__in=
-                Recommendation.objects.all()
+            proposals__recommendation__in=Recommendation.objects.all()
         ).values_list('reference', flat=True)
 
     if vote_data.get('epref', None) not in dossiers:
         return False
-parltrack_import_votes.Command.vote_pre_import.connect(vote_pre_import)
+vote_pre_import.connect(skip_votes)

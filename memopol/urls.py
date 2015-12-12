@@ -18,20 +18,17 @@
 #
 # Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
 
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, patterns, url
 from django.contrib import admin
-from adminplus.sites import AdminSitePlus
 
 import core.views
 
-admin.site = AdminSitePlus()
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'memopol.views.home', name='home'),
     url(r'^$', core.views.HomeView.as_view(), name='index'),
-    url(r'^legislature/', include('legislature.urls', namespace='legislature')),
+    url(r'^legislature/', include('legislature.urls',
+        namespace='legislature')),
     url(r'^votes/', include('votes.urls', namespace='votes')),
     url(r'^positions/', include('positions.urls', namespace='positions')),
     url(r'^autocomplete/', include('autocomplete_light.urls')),

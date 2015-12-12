@@ -18,10 +18,9 @@
 #
 # Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
 
+from constance import config
 from django.db import models
 from django.template.defaultfilters import truncatewords
-
-from constance import config
 from taggit.managers import TaggableManager
 
 from legislature.models import MemopolRepresentative
@@ -38,7 +37,9 @@ class PositionManager(models.Manager):
 
 
 class Position(models.Model):
-    representative = models.ForeignKey(MemopolRepresentative, related_name='positions')
+    representative = models.ForeignKey(
+        MemopolRepresentative,
+        related_name='positions')
     datetime = models.DateField()
     text = models.TextField()
     link = models.URLField()
@@ -47,7 +48,6 @@ class Position(models.Model):
 
     # Adds our custom manager
     objects = PositionManager()
-
 
     def save(self, *args, **kwargs):
         """ Set published to default value and save the model"""

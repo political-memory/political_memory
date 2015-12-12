@@ -25,7 +25,7 @@ from .models import Recommendation
 
 
 class RecommendationForm(ModelForm):
+
     class Meta:
         model = Recommendation
         fields = ['recommendation', 'title', 'description', 'weight']
-    

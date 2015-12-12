@@ -18,7 +18,7 @@
 #
 # Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
 
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.shortcuts import render
 
 

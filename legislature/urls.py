@@ -20,9 +20,7 @@ from __future__ import absolute_import
 
 from django.conf.urls import url
 
-from .views import representative
-from .views import group
-
+from .views import group, representative
 
 urlpatterns = [
     # List of groups by group kind

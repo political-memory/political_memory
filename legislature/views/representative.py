@@ -19,16 +19,17 @@
 # Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
 
 from __future__ import absolute_import
+
 from datetime import datetime
 
-from django.shortcuts import render
 from django.db.models import Q
 from django.http import Http404
+from django.shortcuts import render
 
-from ..models import MemopolRepresentative
-from ..filters import RepresentativeFilter
 from core.utils import render_paginate_list
 from positions.forms import PositionForm
+
+from ..models import MemopolRepresentative
 
 
 def index(request, group_kind=None, group=None):
@@ -67,10 +68,9 @@ def index(request, group_kind=None, group=None):
     # Grid or list
     if request.GET.get('display') in ('grid', 'list'):
         request.session['display'] = request.GET.get('display')
-    if not 'display' in  request.session:
+    if 'display' not in request.session:
         request.session['display'] = 'grid'
 
-    # representative_list = RepresentativeFilter(request.GET, queryset=representative_list)
     # Render the paginated template
     return render_paginate_list(
         request,
@@ -79,6 +79,7 @@ def index(request, group_kind=None, group=None):
             request.session['display']
         )
     )
+
 
 def detail(request, pk=None, name=None):
     try:

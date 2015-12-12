@@ -26,6 +26,7 @@ from .models import MemopolRepresentative
 
 
 class RepresentativeFilter(django_filters.FilterSet):
+
     class Meta:
         model = MemopolRepresentative
         # fields = ['full_name', 'country', 'score']

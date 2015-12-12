@@ -67,18 +67,6 @@ Then, install the package for development::
       Running setup.py develop for political-memory
     Successfully installed django-1.9 django-coffeescript-0.7.2 django-debug-toolbar-1.4 django-extensions-1.5.9 django-pdb-0.4.2 hamlpy-0.82.2 ijson-2.2 markdown-2.6.5 political-memory pygments-2.0.2 python-dateutil-2.4.2 pytz-2015.7 six-1.10.0 south-1.0.2 sqlparse-0.1.18 werkzeug-0.11.2
 
-And install the requirements::
-
-    $ pip install -r requirements.txt
-    Collecting django<1.9,>=1.8 (from -r requirements.txt (line 1))
-
-    [output snipped for readability]
-
-     Using cached Django-1.8.7-py2.py3-none-any.whl
-      Running setup.py develop for django-representatives
-      Running setup.py develop for django-representatives-votes
-    Successfully installed amqp-1.4.8 anyjson-0.3.3 billiard-3.3.0.22 celery-3.1.19 django-1.8.7 django-adminplus-0.5 django-appconf-1.0.1 django-autocomplete-light-2.2.10 django-bootstrap3-6.2.2 django-celery-3.1.17 django-compressor-1.6 django-constance-1.1.1 django-datetime-widget-0.9.3 django-denorm-0.2.0 django-filter-0.11.0 django-picklefield-0.3.2 django-representatives django-representatives-votes django-taggit-0.17.5 django-uuidfield-0.5.0 djangorestframework-3.3.1 kombu-3.0.30 py-dateutil-2.2 pyprind-2.9.3 requests-2.8.1 slugify-0.0.1
-
 Install NodeJS dependencies
 ===========================
 
@@ -124,14 +112,14 @@ Build the static files with gulp::
           have gulp watching for changes and rebuilding static files
           automatically.
 
-Activate ``DEBUG``
-==================
+Activate ``DJANGO_DEBUG``
+=========================
 
-``DEBUG`` is disabled by default, the development server won't run properly by
-default thnen, to enable it export the ``DEBUG`` variable in the current
-shell::
+``DEBUG`` is disabled by default, the development server
+won't run properly by default thnen, to enable it export
+the ``DJANGO_DEBUG`` variable in the current shell::
 
-    $ export DEBUG=True
+    $ export DJANGO_DEBUG=True
 
 Database migrations
 ===================
@@ -178,3 +166,5 @@ Provision with data
 To provision it with data (takes a while)::
 
     $ bin/update_all
+
+Continue to :doc:`administration`.

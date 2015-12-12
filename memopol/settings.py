@@ -10,8 +10,10 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from socket import gethostname
 
 from django.conf import global_settings
+from django.utils.crypto import get_random_string
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -23,7 +25,11 @@ LOG_DIR = os.environ.get('OPENSHIFT_LOG_DIR', 'log')
 if not os.path.exists(LOG_DIR):
     os.makedirs(LOG_DIR)
 
-PUBLIC_DIR = os.path.join(os.environ.get('OPENSHIFT_REPO_DIR', ''), 'wsgi/static')
+PUBLIC_DIR = os.path.join(
+    os.environ.get(
+        'OPENSHIFT_REPO_DIR',
+        ''),
+    'wsgi/static')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
@@ -31,7 +37,6 @@ PUBLIC_DIR = os.path.join(os.environ.get('OPENSHIFT_REPO_DIR', ''), 'wsgi/static
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_FILE = os.path.join(DATA_DIR, 'secret.txt')
 
-from django.utils.crypto import get_random_string
 if not os.path.exists(SECRET_FILE):
     chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'
     with open(SECRET_FILE, 'w+') as f:
@@ -41,14 +46,13 @@ with open(SECRET_FILE, 'r') as f:
     SECRET_KEY = f.read()
 
 
-DEBUG = os.environ.get('DEBUG', False)
+DEBUG = os.environ.get('DJANGO_DEBUG', False)
 TEMPLATE_DEBUG = DEBUG
 LOG_LEVEL = os.environ.get('DJANGO_LOG_LEVEL', 'INFO')
 
 if SECRET_KEY == 'notsecret' and not DEBUG:
     raise Exception('Please export DJANGO_SECRET_KEY or DEBUG')
 
-from socket import gethostname
 ALLOWED_HOSTS = [
     gethostname(),
 ]
@@ -76,7 +80,6 @@ INSTALLED_APPS = (
     'django.contrib.humanize',
     # 3rd party apps
     'compressor',
-    'adminplus',
     'constance',
     'constance.backends.database',
     'bootstrap3',
@@ -90,13 +93,15 @@ INSTALLED_APPS = (
     'legislature',
     'votes',
     'positions',
-    'django_extensions',
 )
 
 if DEBUG:
-    INSTALLED_APPS += (
-        'debug_toolbar',
-    )
+    try:
+        import debug_toolbar  # noqa
+    except:
+        pass
+    else:
+        INSTALLED_APPS += ('debug_toolbar',)
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -124,7 +129,7 @@ DATABASES = {
         'HOST': os.environ.get('DJANGO_DATABASE_DEFAULT_HOST', ''),
         'PORT': os.environ.get('DJANGO_DATABASE_DEFAULT_PORT', ''),
         'ENGINE': os.environ.get('DJANGO_DATABASE_DEFAULT_ENGINE',
-            'django.db.backends.sqlite3'),
+                                 'django.db.backends.sqlite3'),
 
     }
 }
@@ -134,8 +139,10 @@ if 'OPENSHIFT_DATA_DIR' in os.environ:
 
 if 'OPENSHIFT_POSTGRESQL_DB_HOST' in os.environ:
     DATABASES['default']['NAME'] = os.environ['OPENSHIFT_APP_NAME']
-    DATABASES['default']['USER'] = os.environ['OPENSHIFT_POSTGRESQL_DB_USERNAME']
-    DATABASES['default']['PASSWORD'] = os.environ['OPENSHIFT_POSTGRESQL_DB_PASSWORD']
+    DATABASES['default']['USER'] = os.environ[
+        'OPENSHIFT_POSTGRESQL_DB_USERNAME']
+    DATABASES['default']['PASSWORD'] = os.environ[
+        'OPENSHIFT_POSTGRESQL_DB_PASSWORD']
     DATABASES['default']['HOST'] = os.environ['OPENSHIFT_POSTGRESQL_DB_HOST']
     DATABASES['default']['PORT'] = os.environ['OPENSHIFT_POSTGRESQL_DB_PORT']
     DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
@@ -224,9 +231,6 @@ LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'formatters': {
-        'verbose': {
-            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
-        },
         'simple': {
             'format': '%(levelname)s[%(module)s]: %(message)s'
         },

@@ -19,13 +19,14 @@
 
 from datetime import datetime
 
-from django.http import Http404
-from django.shortcuts import render, get_object_or_404
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.db.models import Q
+from django.http import Http404
+from django.shortcuts import get_object_or_404, render
 
-from representatives.models import Group
 from legislature.models import MemopolRepresentative
+from representatives.models import Group
+
 
 def retrieve(request, pk=None, name=None):
     if pk:
@@ -40,12 +41,13 @@ def retrieve(request, pk=None, name=None):
         )
     else:
         return Http404()
-    
+
     return render(
         request,
         'legislature/representative_view.html',
         {'representative': representative}
     )
+
 
 def representatives_by_group(request, group_kind, group_abbr=None,
                              group_name=None, search=None, group_id=None):
@@ -58,14 +60,14 @@ def representatives_by_group(request, group_kind, group_abbr=None,
         representative_list = MemopolRepresentative.objects.filter(
             mandates__group__abbreviation=group_abbr,
             mandates__group__kind=group_kind,
-            mandates__end_date__gte = datetime.now()
+            mandates__end_date__gte=datetime.now()
         )
 
     elif group_name:
         representative_list = MemopolRepresentative.objects.filter(
             Q(mandates__group__name__icontains=group_name),
             mandates__group__kind=group_kind,
-            mandates__end_date__gte = datetime.now()
+            mandates__end_date__gte=datetime.now()
         )
 
     elif search:
@@ -74,14 +76,14 @@ def representatives_by_group(request, group_kind, group_abbr=None,
             representative_list = MemopolRepresentative.objects.filter(
                 mandates__group__abbreviation=search,
                 mandates__group__kind=group_kind,
-                mandates__end_date__gte = datetime.now()
+                mandates__end_date__gte=datetime.now()
             )
         except Group.DoesNotExist:
             representative_list = MemopolRepresentative.objects.filter(
                 Q(mandates__group__abbreviation__icontains=search) |
                 Q(mandates__group__name__icontains=search),
                 mandates__group__kind=group_kind,
-                mandates__end_date__gte = datetime.now()
+                mandates__end_date__gte=datetime.now()
             )
 
     # Select distinct representatives and filter by search

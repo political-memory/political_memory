@@ -14,9 +14,11 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='MemopolRepresentative',
             fields=[
-                ('representative_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='representatives.Representative')),
+                ('representative_ptr', models.OneToOneField(parent_link=True, auto_created=True,
+                                                            primary_key=True, serialize=False, to='representatives.Representative')),
                 ('score', models.IntegerField(default=0)),
-                ('country', models.ForeignKey(to='representatives.Country', null=True)),
+                ('country', models.ForeignKey(
+                    to='representatives.Country', null=True)),
             ],
             options={
                 'abstract': False,

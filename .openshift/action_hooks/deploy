@@ -7,11 +7,7 @@ set -xe
 
 source ${OPENSHIFT_HOMEDIR}app-root/runtime/dependencies/python/virtenv/bin/activate
 
-cat ${OPENSHIFT_REPO_DIR}requirements.txt
-
 pip install -U pip
-
-pip install -r ${OPENSHIFT_REPO_DIR}requirements.txt
 
 # We don't have sentry yet
 # python ${OPENSHIFT_REPO_DIR}manage.py raven test

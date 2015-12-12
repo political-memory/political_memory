@@ -18,23 +18,24 @@
 #
 # Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
 
-from django import forms
-
 from datetimewidget.widgets import DateWidget
+from django import forms
 
 from .models import Position
 
+
 class PositionForm(forms.ModelForm):
+
     class Meta:
         model = Position
         fields = ['tags', 'datetime', 'text', 'link']
         widgets = {
-            #Use localization and bootstrap 3
+            # Use localization and bootstrap 3
             'datetime': DateWidget(
                 attrs={
-                    'id':'yourdatetimeid'
+                    'id': 'yourdatetimeid'
                 },
-                usel10n = True,
+                usel10n=True,
                 bootstrap_version=3,
             )
         }

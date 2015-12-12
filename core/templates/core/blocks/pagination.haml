@@ -1,33 +1,31 @@
--# Pagination block display pagination for the `object_list`
-   `object_list` could be generated with core.view_utils.render_paginate_list
-
 .pagination-block
 
   %nav
     %ul.pagination.pagination-sm
-      - if object_list.has_previous
+      - if page.has_previous
         %li
-          %a{'href': '?={queries.urlencode}&page=={object_list.previous_page_number}',
+          %a{'href': '?={queries.urlencode}&page=={page.previous_page_number}',
              'aria-label': 'Previous'}
             <i aria-hidden="true" class="fa fa-chevron-left"></i>
 
-      - for page_num in object_list.page_range
-        - if not page_num
+      - for p in page.pages
+        - if p
+          - if p == page.number
+            %li.active
+              %a{'href': ''}
+                {{ p }}
+          - else
+            %li
+              %a{'href': '?={queries.urlencode}&page=={p}'}
+                {{ p }}
+        - else
           %li.disabled
             %a{'href': ''}
               …
-        - elif page_num == object_list.number
-          %li.active
-            %a{'href': ''}
-              {{ page_num }}
-        - else
-          %li
-            %a{'href': '?={queries.urlencode}&page=={page_num}'}
-              {{ page_num }}
 
-      - if object_list.has_next
+      - if page.has_next
         %li
-          %a{'href': '?={queries.urlencode}&page=={object_list.next_page_number}',
+          %a{'href': '?={queries.urlencode}&page=={page.next_page_number}',
              'aria-label': 'Next'}
             <i aria-hidden="true" class="fa fa-chevron-right"></i>
 

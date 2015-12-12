@@ -21,16 +21,14 @@
 from datetime import datetime
 
 from django.db import models
-from django.core.exceptions import ObjectDoesNotExist
-from django.db.models.signals import post_save
-from django.dispatch import receiver
-# from django.utils.functional import cached_property
 
-from representatives.models import Representative, Mandate, Country
-from representatives.management.commands import (
-        parltrack_import_representatives,)
+from representatives.contrib.parltrack.import_representatives import \
+    representative_post_save
+from representatives.models import Country, Mandate, Representative
 from votes.models import MemopolVote
-from core.utils import create_child_instance_from_parent
+
+
+# from django.utils.functional import cached_property
 
 
 class MemopolRepresentative(Representative):
@@ -66,14 +64,14 @@ class MemopolRepresentative(Representative):
         ).filter(representative=self)
 
 
-def parltrack_representative_post_save(sender, representative, data, **kwargs):
+def mempol_representative(sender, representative, data, **kwargs):
     update = False
     try:
         memopol_representative = MemopolRepresentative.objects.get(
-                representative_ptr=representative)
+            representative_ptr=representative)
     except MemopolRepresentative.DoesNotExist:
         memopol_representative = MemopolRepresentative(
-                representative_ptr=representative)
+            representative_ptr=representative)
 
         # Please forgive the horror your are about to witness, but this is
         # really necessary. Django wants to update the parent model when we
@@ -82,14 +80,14 @@ def parltrack_representative_post_save(sender, representative, data, **kwargs):
 
     try:
         country = sorted(data.get('Constituencies', []),
-                key=lambda c: c.get('end') if c is not None else 1
-                )[-1]['country']
+                         key=lambda c: c.get('end') if c is not None else 1
+                         )[-1]['country']
     except IndexError:
         pass
     else:
         if sender.cache.get('countries', None) is None:
             sender.cache['countries'] = {c.name: c.pk for c in
-                    Country.objects.all()}
+                                         Country.objects.all()}
         country_id = sender.cache['countries'].get(country)
 
         if memopol_representative.country_id != country_id:
@@ -98,12 +96,12 @@ def parltrack_representative_post_save(sender, representative, data, **kwargs):
 
     if sender.mep_cache['groups']:
         main_mandate = sorted(sender.mep_cache['groups'],
-                key=lambda m: m.end_date)[-1]
+                              key=lambda m: m.end_date)[-1]
 
-        if  memopol_representative.main_mandate_id != main_mandate.pk:
+        if memopol_representative.main_mandate_id != main_mandate.pk:
             memopol_representative.main_mandate_id = main_mandate.pk
             update = True
 
     if update:
         memopol_representative.save()
-parltrack_import_representatives.ParltrackImporter.representative_post_save.connect(parltrack_representative_post_save)
+representative_post_save.connect(mempol_representative)
