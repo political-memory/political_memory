@@ -121,27 +121,6 @@ the ``DJANGO_DEBUG`` variable in the current shell::
 
     $ export DJANGO_DEBUG=True
 
-Database migrations
-===================
-
-Run database migrations, it'll use a file-based sqlite database by default::
-
-    $ ./manage.py migrate
-    Operations to perform:
-      Synchronize unmigrated apps: django_filters, staticfiles, datetimewidget, autocomplete_light, messages, adminplus, compressor, humanize, django_extensions, constance, bootstrap3
-      Apply all migrations: legislature, votes, database, admin, positions, sessions, representatives, auth, contenttypes, representatives_votes, taggit
-    Synchronizing apps without migrations:
-      Creating tables...
-        Running deferred SQL...
-      Installing custom SQL...
-    Running migrations:
-      Rendering model states... DONE
-      Applying contenttypes.0001_initial... OK
-
-    [output snipped for readability]
-
-      Applying taggit.0002_auto_20150616_2121... OK
-
 Run the development server
 ==========================
 
@@ -160,10 +139,46 @@ Run the development server::
 
 The website is running on ``http://127.0.0.1:8000/``.
 
+Database migrations
+===================
+
+The repo comes with a pre-configured SQLite db with sample data so that you can
+start hacking right away. However, if you were to use a local postgresql
+database ie. with this sort of environment::
+
+    export DJANGO_DATABASE_DEFAULT_NAME=memopol
+    export DJANGO_DATABASE_DEFAULT_USER=postgres
+    export DJANGO_DATABASE_DEFAULT_ENGINE=django.db.backends.postgresql_psycopg2
+    export DJANGO_DEBUG=1
+    export DJANGO_SETTINGS_MODULE=memopol.settings
+
+Then you could run database migrations::
+
+    $ ./manage.py migrate
+    Operations to perform:
+      Synchronize unmigrated apps: django_filters, staticfiles, datetimewidget, autocomplete_light, messages, adminplus, compressor, humanize, django_extensions, constance, bootstrap3
+      Apply all migrations: legislature, votes, database, admin, positions, sessions, representatives, auth, contenttypes, representatives_votes, taggit
+    Synchronizing apps without migrations:
+      Creating tables...
+        Running deferred SQL...
+      Installing custom SQL...
+    Running migrations:
+      Rendering model states... DONE
+      Applying contenttypes.0001_initial... OK
+
+    [output snipped for readability]
+
+      Applying taggit.0002_auto_20150616_2121... OK
+
 Provision with data
 ===================
 
-To provision it with data (takes a while)::
+Again, the repo comes with a pre-configured SQLite db with sample data so that
+you can start hacking right away. However, you could still reload sample data::
+
+    $ ./manage.py loaddata memopol/fixtures/small_sample.json
+
+Or actual data (takes a while)::
 
     $ bin/update_all
 
