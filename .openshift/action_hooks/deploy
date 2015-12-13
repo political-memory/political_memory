@@ -9,6 +9,11 @@ source ${OPENSHIFT_HOMEDIR}app-root/runtime/dependencies/python/virtenv/bin/acti
 
 pip install -U pip
 
+yes | pip uninstall django-representatives django-representatives-votes
+pip install https://github.com/political-memory/django-representatives/archive/parltrack.tar.gz#egg=django-representatives
+pip install https://github.com/political-memory/django-representatives-votes/archive/parltrack.tar.gz#egg=django-representatives-votes
+pip install -Ue ${OPENSHIFT_REPO_DIR}
+
 # We don't have sentry yet
 # python ${OPENSHIFT_REPO_DIR}manage.py raven test
 
