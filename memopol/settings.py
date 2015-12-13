@@ -70,8 +70,8 @@ ORGANIZATION_NAME = os.environ.get('ORGANIZATION', 'Memopol Demo')
 INSTALLED_APPS = (
     # 'django.contrib.admin',
     'autocomplete_light',
-    # Instead of contrib.admin to use Django-Admin-Plus
-    'django.contrib.admin.apps.SimpleAdminConfig',
+    'suit',
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -202,6 +202,7 @@ TEMPLATE_LOADERS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     'constance.context_processors.config',
+    'django.template.context_processors.request',
 )
 
 # Static files finders

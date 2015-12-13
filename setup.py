@@ -25,5 +25,6 @@ setup(name='political-memory',
         'ijson>=2.2,<2.3',
         'python-dateutil>=2.4,<2.5',
         'pytz==2015.7',
+        'django-suit',
     ],
 )
