@@ -293,5 +293,4 @@ CONSTANCE_CONFIG = {
     'USE_COUNTRY': (True, 'Use country for representative'),
     'MAIN_GROUP_KIND': ('group', 'Main group kind'),
     'ORGANIZATION_NAME': ('La Quadrature du Net', 'Organization name'),
-    'POSITION_PUBLISHED': (False, 'Default position published status')
 }

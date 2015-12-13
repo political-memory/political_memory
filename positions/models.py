@@ -18,7 +18,6 @@
 #
 # Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
 
-from constance import config
 from django.db import models
 from django.template.defaultfilters import truncatewords
 from taggit.managers import TaggableManager
@@ -28,8 +27,6 @@ from legislature.models import MemopolRepresentative
 
 class PositionManager(models.Manager):
     """A simple model manager for querying published Positions"""
-
-    # https://docs.djangoproject.com/en/1.8/topics/db/managers/#using-managers-for-related-object-access
     use_for_related_fields = True
 
     def published(self, **kwargs):
@@ -48,11 +45,6 @@ class Position(models.Model):
 
     # Adds our custom manager
     objects = PositionManager()
-
-    def save(self, *args, **kwargs):
-        """ Set published to default value and save the model"""
-        self.published = config.POSITION_PUBLISHED
-        super(Position, self).save(*args, **kwargs)
 
     @property
     def short_text(self):
