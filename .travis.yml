@@ -10,13 +10,11 @@ install:
 before_script:
 - npm install -g bower
 - bower install
-- npm install
 script:
 - pep8 . --exclude '*/migrations,docs' --ignore E128
 - flake8 . --exclude '*/migrations,docs' --ignore E128
 - django-admin migrate
 - django-admin update_score
-- node_modules/gulp/bin/gulp.js less
 deploy:
 - provider: openshift
   user: jamespic@gmail.com

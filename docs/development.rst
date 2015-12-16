@@ -101,17 +101,6 @@ Then, install the bower packages::
 
     jquery#2.1.4 static/libs/jquery
 
-Build the static files with gulp::
-
-    $ node_modules/gulp/bin/gulp.js less
-    [22:26:42] Using gulpfile /tmp/political_memory/gulpfile.js
-    [22:26:42] Starting 'less'...
-    [22:26:44] Finished 'less' after 1.54 s
-
-.. note:: The ``node_modules/gulp/bin/gulp.js watch`` command may be used to
-          have gulp watching for changes and rebuilding static files
-          automatically.
-
 Activate ``DJANGO_DEBUG``
 =========================
 

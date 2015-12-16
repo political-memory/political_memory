@@ -6,10 +6,6 @@ core/static/libs/*
 static/libs
 node_modules
 
-# compiled css
-static/stylesheets/*.min.css
-
-
 # settings 
 memopol/config.json
 

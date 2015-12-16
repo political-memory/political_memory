@@ -41,11 +41,12 @@ CI=true
 npm install bower
 npm install
 node_modules/.bin/bower install
-node_modules/gulp/bin/gulp.js less
 mkdir -p wsgi
 ./manage.py collectstatic --noinput
+./manage.py compress
 popd
 
 mkdir -p ${OPENSHIFT_DATA_DIR}media
 mkdir -p ${OPENSHIFT_REPO_DIR}wsgi/static/media
 ln -sf ${OPENSHIFT_DATA_DIR}media ${OPENSHIFT_REPO_DIR}wsgi/static/media
+ln -sf ${OPENSHIFT_DATA_DIR}compress/CACHE ${OPENSHIFT_REPO_DIR}wsgi/static/collected/CACHE

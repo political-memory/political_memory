@@ -11,9 +11,10 @@
     {% load compress %}
     {% load staticfiles %}
     {% compress css %}
-    <link rel="stylesheet" href="{% static 'stylesheets/libs.min.css' %}" type="text/css" />
-    <link rel="stylesheet" href="{% static 'stylesheets/base.min.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'libs/bootstrap/dist/css/bootstrap.min.css' %}" type="text/css" />
     <link rel="stylesheet" href="{% static 'libs/fontawesome/css/font-awesome.min.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'libs/flag-icon-css/css/flag-icon.min.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'less/base.less' %}" type="text/less" />
     {% endcompress %}
     {% compress js %}
     <script type="text/javascript" src="{% static 'libs/jquery/dist/jquery.js' %}"></script>
