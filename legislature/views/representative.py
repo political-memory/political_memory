@@ -25,6 +25,7 @@ from datetime import datetime
 from django.db.models import Q
 from django.http import Http404
 from django.shortcuts import render
+from django.utils.text import slugify
 
 from core.utils import render_paginate_list
 from positions.forms import PositionForm
@@ -119,7 +120,7 @@ def _filter_by_search(request, representative_list):
     search = request.GET.get('search')
     if search:
         return representative_list.filter(
-            Q(full_name__icontains=search)
+            Q(slug__icontains=slugify(search))
         )
     else:
         return representative_list
