@@ -19,14 +19,6 @@ pip install -Ue ${OPENSHIFT_REPO_DIR}
 
 python ${OPENSHIFT_REPO_DIR}manage.py migrate --noinput
 
-pushd ${OPENSHIFT_DATA_DIR}
-if ! [ -d node ]; then
-    wget https://nodejs.org/dist/v4.2.2/node-v4.2.2-linux-x64.tar.gz
-    tar xvzf node-v4.2.2-linux-x64.tar.gz
-    ln -sfn node-v4.2.2-linux-x64 node
-fi
-popd
-
 pushd ${OPENSHIFT_REPO_DIR}
 if [ -f ${OPENSHIFT_DATA_DIR}sentry ]; then
     pip install raven
@@ -38,9 +30,7 @@ fi
 PATH="${OPENSHIFT_DATA_DIR}node/bin:$PATH"
 HOME=$OPENSHIFT_DATA_DIR
 CI=true
-npm install bower
-npm install
-node_modules/.bin/bower install
+bin/install_client_deps.sh
 mkdir -p wsgi
 ./manage.py collectstatic --noinput
 ./manage.py compress

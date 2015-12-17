@@ -8,11 +8,10 @@ install:
 - pip install -e .
 - pip install flake8 pep8
 before_script:
-- npm install -g bower
-- bower install
+- bin/install_client_deps.sh
 script:
-- pep8 . --exclude '*/migrations,docs' --ignore E128
-- flake8 . --exclude '*/migrations,docs' --ignore E128
+- pep8 . --exclude '*/migrations,docs,static' --ignore E128
+- flake8 . --exclude '*/migrations,docs,static' --ignore E128
 - django-admin migrate
 - django-admin update_score
 deploy:

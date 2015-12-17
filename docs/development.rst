@@ -67,39 +67,17 @@ Then, install the package for development::
       Running setup.py develop for political-memory
     Successfully installed django-1.9 django-coffeescript-0.7.2 django-debug-toolbar-1.4 django-extensions-1.5.9 django-pdb-0.4.2 hamlpy-0.82.2 ijson-2.2 markdown-2.6.5 political-memory pygments-2.0.2 python-dateutil-2.4.2 pytz-2015.7 six-1.10.0 south-1.0.2 sqlparse-0.1.18 werkzeug-0.11.2
 
-Install NodeJS dependencies
+Install client dependencies
 ===========================
 
-We'll also need to install bower for the staticfiles::
+We'll also need to download client libraries::
 
-    $ npm install bower
-    memopol@3.0.0 /tmp/political_memory
-    └── bower@1.7.0  extraneous
-
-As well as all the requirements from :file:`package.json`::
-
-    $ npm install
-    memopol@3.0.0 /tmp/political_memory
-    ├── bower@1.7.0  extraneous
-    ├─┬ gulp@3.9.0
-
-    [output snipped for readability]
-
-    npm WARN In bower@1.7.0 replacing bundled version of configstore with configstore@0.3.2
-    npm WARN In bower@1.7.0 replacing bundled version of latest-version with latest-version@1.0.1
-    npm WARN In bower@1.7.0 replacing bundled version of update-notifier with update-notifier@0.3.2
-
-Don't worry about the warnings, for they are non-critical (as all warnings).
-Then, install the bower packages::
-
-    $ node_modules/.bin/bower install
-    bower bootstrap#~3.3.5          cached git://github.com/twbs/bootstrap.git#3.3.6
-    bootstrap#3.3.6 static/libs/bootstrap
-    └── jquery#2.1.4
-
-    [output snipped for readability]
-
-    jquery#2.1.4 static/libs/jquery
+    $ bin/install_client_deps.sh
+    * Downloading jquery/jquery (2.1.4) from Github...
+    * Downloading FortAwesome/Font-Awesome (v4.3.0) from Github...
+    * Downloading lipis/flag-icon-css (0.7.1) from Github...
+    * Downloading twbs/bootstrap (v3.3.5) from Github...
+    * Done
 
 Activate ``DJANGO_DEBUG``
 =========================

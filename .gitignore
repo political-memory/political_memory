@@ -4,7 +4,6 @@ core/static/libs/*
 
 # libs
 static/libs
-node_modules
 
 # settings 
 memopol/config.json
