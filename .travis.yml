@@ -10,6 +10,7 @@ install:
 before_script:
 - bin/install_client_deps.sh
 script:
+- ! lesscpy -N static/less/base.less 2>&1 | grep Error
 - pep8 . --exclude '*/migrations,docs,static' --ignore E128
 - flake8 . --exclude '*/migrations,docs,static' --ignore E128
 - django-admin migrate
