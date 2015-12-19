@@ -13,6 +13,7 @@ script:
 - ! lesscpy -N static/less/base.less 2>&1 | grep Error
 - pep8 . --exclude '*/migrations,docs,static' --ignore E128
 - flake8 . --exclude '*/migrations,docs,static' --ignore E128
+- django-admin test positions votes core legislature
 - django-admin migrate
 - django-admin update_score
 deploy:

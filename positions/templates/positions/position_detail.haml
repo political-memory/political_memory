@@ -7,7 +7,7 @@
   .quote
 
     %p.quote-header
-      {{object.datetime|naturalday:"The d/m/Y"}}, {{object.representative.full_name}} declared :
+      {{object.datetime|naturalday}}, {{object.representative.full_name}} declared :
 
     .long-quote
       = object.text|linebreaks
