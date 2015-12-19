@@ -82,22 +82,14 @@ def index(request, group_kind=None, group=None):
     )
 
 
-def detail(request, pk=None, name=None):
+def detail(request, name=None):
+    query_set = MemopolRepresentative.objects.select_related(
+        'country',
+        'main_mandate'
+    )
+
     try:
-        query_set = MemopolRepresentative.objects.select_related(
-            'country',
-            'main_mandate'
-        )
-        if pk:
-            representative = query_set.get(
-                id=pk
-            )
-        elif name:
-            representative = query_set.get(
-                slug=name
-            )
-        else:
-            return Http404()
+        representative = query_set.get(slug=name)
     except MemopolRepresentative.DoesNotExist:
         return Http404()
 

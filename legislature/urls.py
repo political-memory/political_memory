@@ -35,12 +35,6 @@ urlpatterns = [
         representative.detail,
         name='representative-detail'
     ),
-    # Representative detail by representative pk
-    url(
-        r'^(?P<pk>\d+)$',
-        representative.detail,
-        name='representative-detail'
-    ),
     # List of representatives by group kind and group name or pk
     url(
         r'^(?P<group_kind>\w+)/(?P<group>.+)$',
