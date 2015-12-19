@@ -65,6 +65,8 @@ class ParltrackImporter(GenericImporter):
         self.cache = {
             'countries': {c.name: c.pk for c in Country.objects.all()},
         }
+        self.european_constituency, _ = Constituency.objects.get_or_create(
+            name='European Parliament')
 
     @transaction.atomic
     def manage_mep(self, mep_json):
@@ -206,12 +208,9 @@ class ParltrackImporter(GenericImporter):
                         abbreviation=mandate_data['committee_id'],
                         kind='committee', name=mandate_data['Organization'])
 
-                constituency, _ = self.touch_model(Constituency,
-                       name='European Parliament')
-
                 self.mep_cache['committees'].append(
                     get_or_create_mandate(mandate_data, representative,
-                                          group, constituency)
+                                          group, self.european_constituency)
                 )
 
         # Delegations
@@ -221,13 +220,9 @@ class ParltrackImporter(GenericImporter):
                                         name=mandate_data['Organization']
                                         )
 
-            constituency, _ = Constituency.objects.get_or_create(
-                name='European Parliament'
-            )
-
             self.mep_cache['delegations'].append(
                 get_or_create_mandate(mandate_data, representative, group,
-                                      constituency)
+                                      self.european_constituency)
             )
 
         # Group
@@ -253,13 +248,9 @@ class ParltrackImporter(GenericImporter):
                                         name=mandate_data['Organization']
                                         )
 
-            constituency, _ = self.touch_model(model=Constituency,
-                                               name='European Parliament'
-                                               )
-
             self.mep_cache['groups'].append(
                 get_or_create_mandate(mandate_data, representative, group,
-                                      constituency)
+                                      self.european_constituency)
             )
 
         # Countries
@@ -309,13 +300,9 @@ class ParltrackImporter(GenericImporter):
                                         name=mandate_data['Organization']
                                         )
 
-            constituency, _ = self.touch_model(model=Constituency,
-                                               name='European Parliament'
-                                               )
-
             self.mep_cache['staff'].append(
                 get_or_create_mandate(mandate_data, representative, group,
-                                      constituency)
+                                      self.european_constituency)
             )
 
     def add_contacts(self, representative, mep_json):
