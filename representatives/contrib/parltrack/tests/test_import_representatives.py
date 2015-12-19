@@ -12,7 +12,7 @@ def test_parltrack_import_representatives():
     fixture = os.path.join(os.path.dirname(__file__),
             'representatives_fixture.json')
     expected = os.path.join(os.path.dirname(__file__),
-            'representatives_expected.json')
+            '..', '..', '..', 'fixtures', 'representatives_test.json')
 
     # Disable django auto fields
     exclude = ('id', '_state', 'created', 'updated')
