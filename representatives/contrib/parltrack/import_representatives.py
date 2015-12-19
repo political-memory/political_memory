@@ -62,7 +62,9 @@ class ParltrackImporter(GenericImporter):
         return _parse_date(date)
 
     def __init__(self):
-        self.cache = {}
+        self.cache = {
+            'countries': {c.name: c.pk for c in Country.objects.all()},
+        }
 
     @transaction.atomic
     def manage_mep(self, mep_json):
@@ -275,9 +277,23 @@ class ParltrackImporter(GenericImporter):
 
             local_party = mandate_data['party'] if mandate_data[
                 'party'] and mandate_data['party'] != '-' else 'unknown'
-            constituency, _ = self.touch_model(model=Constituency,
-                                               name=local_party
-                                               )
+
+            country_id = (self.cache['countries'].get(mandate_data['country'])
+                if 'country' in mandate_data else None)
+
+            save_constituency = False
+            try:
+                constituency = Constituency.objects.get(name=local_party)
+            except Constituency.DoesNotExist:
+                constituency = Constituency(name=local_party)
+                save_constituency = True
+
+            if constituency.country_id != country_id:
+                constituency.country_id = country_id
+                save_constituency = True
+
+            if save_constituency:
+                constituency.save()
 
             self.mep_cache['constituencies'].append(
                 get_or_create_mandate(mandate_data, representative, group,

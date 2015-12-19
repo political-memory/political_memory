@@ -195,6 +195,7 @@ class Constituency(HashableModel, TimeStampedModel):
     An authority for which a representative has a mandate
     """
     name = models.CharField(max_length=255)
+    country = models.ForeignKey('Country', null=True, blank=True)
 
     hashable_fields = ['name']
 

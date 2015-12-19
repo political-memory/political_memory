@@ -2256,6 +2256,7 @@
         "updated": "2015-12-13T02:07:24.018",
         "fingerprint": "74e9c77e0664716d098cb1194927b86f2aa55f7e",
         "name": "\u00d6sterreichische Volkspartei",
+        "country": 1043,
         "created": "2015-12-13T02:07:24.018"
     },
     "model": "representatives.constituency",
@@ -2266,6 +2267,7 @@
         "updated": "2015-12-13T02:07:24.390",
         "fingerprint": "a8fa2ff595aedee63954c3b5ad6e1dcd5dfac910",
         "name": "Arbetarepartiet- Socialdemokraterna",
+        "country": 1202,
         "created": "2015-12-13T02:07:24.390"
     },
     "model": "representatives.constituency",
