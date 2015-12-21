@@ -158,8 +158,9 @@ class Group(HashableModel, TimeStampedModel):
     An entity represented by a representative through a mandate
     """
     name = models.CharField(max_length=255)
-    abbreviation = models.CharField(max_length=10, blank=True, default='')
-    kind = models.CharField(max_length=255, blank=True, default='')
+    abbreviation = models.CharField(max_length=10, blank=True, default='',
+        db_index=True)
+    kind = models.CharField(max_length=255, db_index=True)
 
     hashable_fields = ['name', 'abbreviation', 'kind']
 
