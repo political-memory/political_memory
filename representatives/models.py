@@ -232,3 +232,6 @@ class Mandate(HashableModel, TimeStampedModel):
                     self.role) if self.role else u''),
             constituency=self.constituency,
             group=self.group)
+
+    class Meta:
+        ordering = ('-end_date',)
