@@ -25,7 +25,7 @@ def render_paginate_list(request, object_list, template_name):
     """
     Render a paginated list of representatives
     """
-    pagination_limits = (10, 20, 50, 100)
+    pagination_limits = (12, 24, 48, 96)
     num_by_page = request.GET.get('limit', unicode(pagination_limits[0]))
     num_by_page = int(num_by_page) if num_by_page.isdigit() else 1
     paginator = Paginator(object_list, num_by_page)
