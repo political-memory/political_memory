@@ -48,7 +48,7 @@ with open(SECRET_FILE, 'r') as f:
 
 DEBUG = os.environ.get('DJANGO_DEBUG', False)
 TEMPLATE_DEBUG = DEBUG
-LOG_LEVEL = os.environ.get('DJANGO_LOG_LEVEL', 'INFO')
+LOG_LEVEL = os.environ.get('DJANGO_LOG_LEVEL', 'DEBUG' if DEBUG else 'INFO')
 
 if SECRET_KEY == 'notsecret' and not DEBUG:
     raise Exception('Please export DJANGO_SECRET_KEY or DEBUG')
@@ -78,21 +78,20 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    'django.contrib.sites',
     # 3rd party apps
     'compressor',
-    'constance',
-    'constance.backends.database',
     'bootstrap3',
     'datetimewidget',
     'django_filters',
     'taggit',
     # ---
     'core',
+    'memopol',
     'representatives',
     'representatives_votes',
-    'legislature',
-    'votes',
-    'positions',
+    'representatives_recommendations',
+    'representatives_positions',
 )
 
 if DEBUG:
@@ -111,6 +110,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.sites.middleware.CurrentSiteMiddleware',
 )
 
 ROOT_URLCONF = 'memopol.urls'
@@ -180,10 +180,9 @@ if PUBLIC_DIR:
 
 # HAML Templates
 # https://github.com/jessemiller/hamlpy
+HAMLPY_ATTR_WRAPPER = '"'
 
-TEMPLATE_DIRS = (
-    'core/templates',
-)
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
@@ -202,7 +201,6 @@ TEMPLATE_LOADERS = (
 """
 
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
-    'constance.context_processors.config',
     'django.template.context_processors.request',
 )
 
@@ -271,6 +269,7 @@ if DEBUG:
         'class': 'logging.FileHandler',
         'filename': os.path.join(LOG_DIR, 'debug.log'),
     }
+
     for logger in LOGGING['loggers'].values():
         logger['handlers'].append('debug')
 
@@ -293,10 +292,8 @@ if os.path.exists(RAVEN_FILE):
             'dsn': f.read().strip()
         }
 
-CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
+SITE_ID = 1
+SITE_NAME = os.environ.get('DJANGO_SITE_NAME', 'La Quadrature du Net')
+SITE_DOMAIN = os.environ.get('OPENSHIFT_APP_DNS', 'localhost:8000')
 
-CONSTANCE_CONFIG = {
-    'USE_COUNTRY': (True, 'Use country for representative'),
-    'MAIN_GROUP_KIND': ('group', 'Main group kind'),
-    'ORGANIZATION_NAME': ('La Quadrature du Net', 'Organization name'),
-}
+SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'

@@ -1,0 +1,53 @@
+- extends 'base.html'
+
+- load i18n
+- load representatives_tags
+- load representatives_recommendations_tags
+
+- block content
+
+  - block search
+
+    %form{action:'', method:'get'}
+      %label{for:'search'}
+        - trans 'Search'
+      %input{id:"search", type:"text", name:"search"}
+      %input{type:"submit", value:"Go"}
+
+  - include 'core/blocks/pagination.html'
+
+  - block list
+
+    %table.table
+      %tr
+        %th
+          - trans 'Photo'
+        %th
+          - trans 'Name'
+        %th
+          - trans 'Country'
+        %th
+          - trans 'Group'
+        %th
+          - trans 'Score'
+
+      - for representative in object_list
+        %tr
+          %td
+            %a{'href': "{{ representative.get_absolute_url }}"}
+              %img{'src': '={representative.photo}', 'width': '80'}/
+
+          %td
+            %a{'href': "{{ representative.get_absolute_url }}"}
+              = representative.full_name
+
+          %td
+              = representative.country
+
+          %td
+            %a{'href': "{{ representative.main_mandate.group.get_absolute_url }}"}
+              = representative.main_mandate.group.abbreviation
+          %td
+            = representative.get_score|score_label
+
+  - include 'core/blocks/pagination.html'

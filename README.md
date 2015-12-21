@@ -1,10 +1,9 @@
 [![Build Status](https://travis-ci.org/political-memory/political_memory.svg?branch=master)](https://travis-ci.org/political-memory/political_memory)
+[![codecov.io](https://codecov.io/github/political-memory/political_memory/coverage.svg?branch=master)](https://codecov.io/github/political-memory/political_memory?branch=master)
 
     git clone git@github.com:political-memory/political_memory.git
 
     cd political_memory
-
-    cp memopol/config.json.sample memopol/config.json
 
     # Create a throwable virtualenv
     virtualenv ve

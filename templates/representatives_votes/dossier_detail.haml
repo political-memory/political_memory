@@ -1,0 +1,32 @@
+- extends "base.html"
+
+- block content
+
+  %h2= dossier.name
+  %h3= dossier.title
+  %p
+    <strong>{{ dossier.reference }}</strong>
+
+  %h3 Votes ({{dossier.proposals.count}})
+  - for proposal in dossier.proposals.all    
+    %h4
+      {{ forloop.counter }}.
+      {{ proposal.recommendation.title }} -
+      {{ proposal.datetime }} -
+      {{ proposal.status }}     
+    %p
+      {{ proposal.title }}
+      %small
+        {{ proposal.reference }}
+        {{ proposal.kind }}
+      {{ proposal.recommendation.description }}
+    %p
+      %h5
+        For : {{ proposal.total_for }}
+      %h5
+        Against : {{ proposal.total_against }}
+      %h5
+        Abstain : {{ proposal.total_abstain }}
+    %p
+      Participants : {{ proposal.representatives.count }}
+      

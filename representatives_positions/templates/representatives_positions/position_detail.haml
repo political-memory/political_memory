@@ -1,0 +1,21 @@
+- extends 'base.html'
+
+- load humanize
+
+- block content
+  - include 'representatives/_representative_block.html' with representative=object.representative
+  .quote
+
+    %p.quote-header
+      {{object.datetime|naturalday}}, {{object.representative.full_name}} declared :
+
+    .long-quote
+      = object.text|linebreaks
+    %p.tags
+      - for tag in object.tags.all
+        %span.label.label-default
+          = tag
+    %p
+      Source :
+      %a{:href => '{{object.link}}'}
+        = object.link

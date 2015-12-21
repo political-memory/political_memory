@@ -1,0 +1,14 @@
+- extends "base.html"
+
+- block content
+  %h1 Dossiers
+
+  %table.table
+    - for dossier in object_list
+      %tr
+        %td
+          %a{'href': "{{ dossier.get_absolute_url }}"}
+            {{ dossier.title }}
+        %td= dossier.reference
+
+  - include "core/blocks/pagination.html"
