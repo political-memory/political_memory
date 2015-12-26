@@ -193,7 +193,7 @@ class Constituency(HashableModel, TimeStampedModel):
 
 
 class MandateManager(models.Manager):
-
+    """ This satisfies repr(Mandate) """
     def get_queryset(self):
         return super(
             MandateManager,
