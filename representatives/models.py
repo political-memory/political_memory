@@ -171,6 +171,9 @@ class Group(HashableModel, TimeStampedModel):
     def __unicode__(self):
         return unicode(self.name)
 
+    class Meta:
+        ordering = ('name',)
+
 
 class Constituency(HashableModel, TimeStampedModel):
     """
