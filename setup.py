@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='django-representatives-votes',
-    version='0.0.8',
+    version='0.0.9',
     description='Base app for government representative votes',
     author='Olivier Le Thanh Duong, Laurent Peuch, Arnaud Fabre, James Pic',
     author_email='olivier@lethanh.be',
