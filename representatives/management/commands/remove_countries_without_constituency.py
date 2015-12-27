@@ -5,4 +5,4 @@ from representatives.models import Country
 
 class Command(RemoveCommand):
     manager = Country.objects
-    conditions = {'groups': None}
+    conditions = {'constituencies': None}
