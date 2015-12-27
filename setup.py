@@ -16,7 +16,6 @@ setup(
         'py-dateutil',
         'pytz',
         'ijson',
-        'django-autocomplete-light',
     ],
     entry_points={
         'console_scripts': [

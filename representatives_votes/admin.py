@@ -12,16 +12,10 @@ class DossierAdmin(admin.ModelAdmin):
 
 class ProposalAdmin(admin.ModelAdmin):
     list_display = (
-        'id',
-        'fingerprint',
         'reference',
         'dossier_reference',
         'title',
-        'datetime',
-        'kind',
-        'total_abstain',
-        'total_against',
-        'total_for')
+        'kind')
     search_fields = ('reference', 'dossier__reference', 'title', 'fingerprint')
 
     def dossier_reference(self, obj):
