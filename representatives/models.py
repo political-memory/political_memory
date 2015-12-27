@@ -1,7 +1,7 @@
 # coding: utf-8
 
 import hashlib
-from datetime import datetime, date
+from datetime import datetime
 
 from django.db import models
 from django.utils.encoding import smart_str, smart_unicode
@@ -113,6 +113,9 @@ class Representative(HashableModel, TimeStampedModel):
 
     class Meta:
         ordering = ['last_name', 'first_name']
+
+    def get_absolute_url(self):
+        return reverse('representatives:representative-detail', args=(self.slug,))
 
 # Contact related models
 
