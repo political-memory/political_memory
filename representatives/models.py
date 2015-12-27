@@ -4,6 +4,7 @@ import hashlib
 from datetime import datetime
 
 from django.db import models
+from django.core.urlresolvers import reverse
 from django.utils.encoding import smart_str, smart_unicode
 from django.utils.functional import cached_property
 
@@ -115,7 +116,8 @@ class Representative(HashableModel, TimeStampedModel):
         ordering = ['last_name', 'first_name']
 
     def get_absolute_url(self):
-        return reverse('representatives:representative-detail', args=(self.slug,))
+        return reverse('representatives:representative-detail',
+                args=(self.slug,))
 
 # Contact related models
 
@@ -176,6 +178,10 @@ class Group(HashableModel, TimeStampedModel):
 
     class Meta:
         ordering = ('name',)
+
+    def get_absolute_url(self):
+        return reverse('representatives:representative-list',
+            kwargs=dict(group_kind=self.kind, group=self.name))
 
 
 class Constituency(HashableModel, TimeStampedModel):
