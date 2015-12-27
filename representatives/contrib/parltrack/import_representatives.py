@@ -18,8 +18,8 @@ from representatives.models import (Address, Constituency, Country, Email,
 
 logger = logging.getLogger(__name__)
 
-representative_post_save = django.dispatch.Signal(
-    providing_args=['representative', 'data'])
+representative_pre_import = django.dispatch.Signal(
+    providing_args=['representative_data'])
 
 
 def _parse_date(date):
@@ -81,6 +81,16 @@ class ParltrackImporter(GenericImporter):
                            mep_json['Name']['full'], mep_json['UserID'])
             return
 
+        # Some versions of memopol will connect to this and skip inactive meps.
+        responses = representative_pre_import.send(sender=self,
+                representative_data=mep_json)
+
+        for receiver, response in responses:
+            if response is False:
+                logger.debug(
+                    'Skipping MEP %s', mep_json['Name']['full'])
+                return
+
         try:
             representative = Representative.objects.get(remote_id=remote_id)
         except Representative.DoesNotExist:
@@ -94,14 +104,6 @@ class ParltrackImporter(GenericImporter):
         self.add_mandates(representative, mep_json)
 
         self.add_contacts(representative, mep_json)
-
-        # if you have memopol installed, this hook will trigger
-        # the legislature.models.mempol_representative to synchronize with
-        # legislature.models subclasses. If you choose a one-to-one relation
-        # instead then good for you, you made a wise decision and this won't do
-        # anything !
-        representative_post_save.send(
-            sender=self, representative=representative, data=mep_json)
 
         logger.debug('Imported MEP %s', unicode(representative))
 
