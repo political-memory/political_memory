@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='django-representatives',
-    version='0.0.6',
+    version='0.0.7',
     description='Base app for government representative',
     author='Laurent Peuch, Olivier Le Thanh Duong, Yohan Boniface, Arnaud Fabre',
     author_email='webmaster@memopol.org',

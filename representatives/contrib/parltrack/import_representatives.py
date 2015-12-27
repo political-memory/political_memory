@@ -18,8 +18,8 @@ from representatives.models import (Address, Constituency, Country, Email,
 
 logger = logging.getLogger(__name__)
 
-representative_post_save = django.dispatch.Signal(
-    providing_args=['representative', 'data'])
+representative_pre_import = django.dispatch.Signal(
+    providing_args=['representative_data'])
 
 
 def _parse_date(date):
@@ -62,7 +62,11 @@ class ParltrackImporter(GenericImporter):
         return _parse_date(date)
 
     def __init__(self):
-        self.cache = {}
+        self.cache = {
+            'countries': {c.name: c.pk for c in Country.objects.all()},
+        }
+        self.european_constituency, _ = Constituency.objects.get_or_create(
+            name='European Parliament')
 
     @transaction.atomic
     def manage_mep(self, mep_json):
@@ -77,6 +81,16 @@ class ParltrackImporter(GenericImporter):
                            mep_json['Name']['full'], mep_json['UserID'])
             return
 
+        # Some versions of memopol will connect to this and skip inactive meps.
+        responses = representative_pre_import.send(sender=self,
+                representative_data=mep_json)
+
+        for receiver, response in responses:
+            if response is False:
+                logger.debug(
+                    'Skipping MEP %s', mep_json['Name']['full'])
+                return
+
         try:
             representative = Representative.objects.get(remote_id=remote_id)
         except Representative.DoesNotExist:
@@ -90,14 +104,6 @@ class ParltrackImporter(GenericImporter):
         self.add_mandates(representative, mep_json)
 
         self.add_contacts(representative, mep_json)
-
-        # if you have memopol installed, this hook will trigger
-        # the legislature.models.mempol_representative to synchronize with
-        # legislature.models subclasses. If you choose a one-to-one relation
-        # instead then good for you, you made a wise decision and this won't do
-        # anything !
-        representative_post_save.send(
-            sender=self, representative=representative, data=mep_json)
 
         logger.debug('Imported MEP %s', unicode(representative))
 
@@ -204,12 +210,9 @@ class ParltrackImporter(GenericImporter):
                         abbreviation=mandate_data['committee_id'],
                         kind='committee', name=mandate_data['Organization'])
 
-                constituency, _ = self.touch_model(Constituency,
-                       name='European Parliament')
-
                 self.mep_cache['committees'].append(
                     get_or_create_mandate(mandate_data, representative,
-                                          group, constituency)
+                                          group, self.european_constituency)
                 )
 
         # Delegations
@@ -219,13 +222,9 @@ class ParltrackImporter(GenericImporter):
                                         name=mandate_data['Organization']
                                         )
 
-            constituency, _ = Constituency.objects.get_or_create(
-                name='European Parliament'
-            )
-
             self.mep_cache['delegations'].append(
                 get_or_create_mandate(mandate_data, representative, group,
-                                      constituency)
+                                      self.european_constituency)
             )
 
         # Group
@@ -251,13 +250,9 @@ class ParltrackImporter(GenericImporter):
                                         name=mandate_data['Organization']
                                         )
 
-            constituency, _ = self.touch_model(model=Constituency,
-                                               name='European Parliament'
-                                               )
-
             self.mep_cache['groups'].append(
                 get_or_create_mandate(mandate_data, representative, group,
-                                      constituency)
+                                      self.european_constituency)
             )
 
         # Countries
@@ -275,9 +270,23 @@ class ParltrackImporter(GenericImporter):
 
             local_party = mandate_data['party'] if mandate_data[
                 'party'] and mandate_data['party'] != '-' else 'unknown'
-            constituency, _ = self.touch_model(model=Constituency,
-                                               name=local_party
-                                               )
+
+            country_id = (self.cache['countries'].get(mandate_data['country'])
+                if 'country' in mandate_data else None)
+
+            save_constituency = False
+            try:
+                constituency = Constituency.objects.get(name=local_party)
+            except Constituency.DoesNotExist:
+                constituency = Constituency(name=local_party)
+                save_constituency = True
+
+            if constituency.country_id != country_id:
+                constituency.country_id = country_id
+                save_constituency = True
+
+            if save_constituency:
+                constituency.save()
 
             self.mep_cache['constituencies'].append(
                 get_or_create_mandate(mandate_data, representative, group,
@@ -293,13 +302,9 @@ class ParltrackImporter(GenericImporter):
                                         name=mandate_data['Organization']
                                         )
 
-            constituency, _ = self.touch_model(model=Constituency,
-                                               name='European Parliament'
-                                               )
-
             self.mep_cache['staff'].append(
                 get_or_create_mandate(mandate_data, representative, group,
-                                      constituency)
+                                      self.european_constituency)
             )
 
     def add_contacts(self, representative, mep_json):

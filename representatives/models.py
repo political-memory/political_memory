@@ -1,28 +1,10 @@
 # coding: utf-8
 
-# This file is part of compotista.
-#
-# compotista is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as
-# published by the Free Software Foundation, either version 3 of
-# the License, or any later version.
-#
-# compotista is distributed in the hope that it will
-# be useful, but WITHOUT ANY WARRANTY; without even the implied
-# warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-# See the GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU General Affero Public
-# License along with django-representatives.
-# If not, see <http://www.gnu.org/licenses/>.
-#
-# Copyright (C) 2013 Laurent Peuch <cortex@worlddomination.be>
-# Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
-
 import hashlib
 from datetime import datetime
 
 from django.db import models
+from django.core.urlresolvers import reverse
 from django.utils.encoding import smart_str, smart_unicode
 from django.utils.functional import cached_property
 
@@ -133,6 +115,10 @@ class Representative(HashableModel, TimeStampedModel):
     class Meta:
         ordering = ['last_name', 'first_name']
 
+    def get_absolute_url(self):
+        return reverse('representatives:representative-detail',
+                args=(self.slug,))
+
 # Contact related models
 
 
@@ -176,9 +162,10 @@ class Group(HashableModel, TimeStampedModel):
     """
     An entity represented by a representative through a mandate
     """
-    name = models.CharField(max_length=255)
-    abbreviation = models.CharField(max_length=10, blank=True, default='')
-    kind = models.CharField(max_length=255, blank=True, default='')
+    name = models.CharField(max_length=255, db_index=True)
+    abbreviation = models.CharField(max_length=10, blank=True, default='',
+        db_index=True)
+    kind = models.CharField(max_length=255, db_index=True)
 
     hashable_fields = ['name', 'abbreviation', 'kind']
 
@@ -189,12 +176,20 @@ class Group(HashableModel, TimeStampedModel):
     def __unicode__(self):
         return unicode(self.name)
 
+    class Meta:
+        ordering = ('name',)
+
+    def get_absolute_url(self):
+        return reverse('representatives:representative-list',
+            kwargs=dict(group_kind=self.kind, group=self.name))
+
 
 class Constituency(HashableModel, TimeStampedModel):
     """
     An authority for which a representative has a mandate
     """
     name = models.CharField(max_length=255)
+    country = models.ForeignKey('Country', null=True, blank=True)
 
     hashable_fields = ['name']
 
@@ -207,7 +202,7 @@ class Constituency(HashableModel, TimeStampedModel):
 
 
 class MandateManager(models.Manager):
-
+    """ This satisfies repr(Mandate) """
     def get_queryset(self):
         return super(
             MandateManager,
@@ -250,3 +245,6 @@ class Mandate(HashableModel, TimeStampedModel):
                     self.role) if self.role else u''),
             constituency=self.constituency,
             group=self.group)
+
+    class Meta:
+        ordering = ('-end_date',)
