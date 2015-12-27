@@ -12,7 +12,7 @@ setup(
     license='GPLv3',
     keywords='django government parliament votes',
     install_requires=[
-        'django-representatives',
+        'django-representatives>=0.0.7',
         'py-dateutil',
         'pytz',
         'ijson',

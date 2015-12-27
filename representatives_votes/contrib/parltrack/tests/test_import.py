@@ -7,8 +7,8 @@ from django.core.management import call_command
 from representatives_votes.contrib.parltrack import import_dossiers
 from representatives_votes.contrib.parltrack import import_votes
 from representatives_votes.models import Dossier, Proposal, Vote
+import representatives
 from representatives.models import Representative
-from representatives.contrib import parltrack
 
 
 def _test_import(scenario, callback):
@@ -45,7 +45,7 @@ def test_parltrack_import_votes():
         model.objects.all().delete()
 
     call_command('loaddata', os.path.join(os.path.abspath(
-        parltrack.__path__[0]), 'tests', 'representatives_expected.json'))
+        representatives.__path__[0]), 'fixtures', 'representatives_test.json'))
     call_command('loaddata', os.path.join(os.path.dirname(__file__),
         'dossiers_expected.json'))
 
