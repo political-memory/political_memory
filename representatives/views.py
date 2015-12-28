@@ -92,7 +92,7 @@ class RepresentativeList(RepresentativeViewMixin, generic.ListView):
         return qs
 
     def get_queryset(self):
-        qs = Representative.objects.filter(active=True)
+        qs = super(RepresentativeList, self).get_queryset()
         qs = self.group_filter(qs)
         qs = self.search_filter(qs)
         qs = self.prefetch_for_representative_country_and_main_mandate(qs)
