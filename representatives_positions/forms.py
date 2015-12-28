@@ -8,7 +8,7 @@ from .models import Position
 class PositionForm(forms.ModelForm):
     class Meta:
         model = Position
-        fields = ['tags', 'datetime', 'text', 'link']
+        fields = ['tags', 'datetime', 'text', 'link', 'representative']
         widgets = {
             # Use localization and bootstrap 3
             'datetime': DateWidget(
@@ -17,5 +17,6 @@ class PositionForm(forms.ModelForm):
                 },
                 usel10n=True,
                 bootstrap_version=3,
-            )
+            ),
+            'representative': forms.HiddenInput
         }

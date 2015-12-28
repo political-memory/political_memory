@@ -1,12 +1,9 @@
--# List representatives
-
 - extends 'base.html'
 
 - load humanize
 - load representatives_tags
 - load representatives_votes_tags
 - load representatives_recommendations_tags
-- load bootstrap3
 
 - block head
   {{ position_form.media }}
@@ -15,6 +12,7 @@
   .row
     .col-md-6
       - include 'representatives/_representative_block.html' with representative=representative
+
     .col-md-6
       %h2#votes Votes
 
@@ -72,16 +70,4 @@
             %a{:href => '{{position.link}}'}
               = position.link
 
-    %form{:action => '{% url "representatives_positions:position-create" %}',
-          :method => 'post'}
-      - csrf_token
-      %input{:type => 'hidden',
-             :name => 'representative',
-             :value => '{{ representative.pk }}'}
-
-      - bootstrap_form position_form
-
-      - buttons
-        %button{'type': 'submit', 'class': 'btn btn-primary'}
-          {% bootstrap_icon "star" %} Submit
-      - endbuttons
+    - include 'representatives_positions/_form.html' with form=position_form

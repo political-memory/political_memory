@@ -10,7 +10,7 @@ from .forms import PositionForm
 
 class PositionCreate(generic.CreateView):
     model = Position
-    fields = PositionForm.Meta.fields + ['representative']
+    form_class = PositionForm
 
     def get_success_url(self):
         return self.object.representative.get_absolute_url()

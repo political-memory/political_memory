@@ -28,7 +28,8 @@ class RepresentativeDetail(representatives_views.RepresentativeDetail):
 
     def get_context_data(self, **kwargs):
         c = super(RepresentativeDetail, self).get_context_data(**kwargs)
-        c['position_form'] = PositionForm()
+        c['position_form'] = PositionForm(
+            initial={'representative': self.object.pk})
         self.add_representative_country_and_main_mandate(c['object'])
         return c
 
