@@ -4,7 +4,7 @@ from django.db import models
 from django.views import generic
 from django.utils.text import slugify
 
-from .models import Mandate, Representative, Group
+from .models import Mandate, Group
 
 
 class RepresentativeViewMixin(object):
