@@ -48,6 +48,6 @@
             %a{'href': "{{ representative.main_mandate.group.get_absolute_url }}"}
               = representative.main_mandate.group.abbreviation
           %td
-            = representative.get_score|score_label
+            = representative.score.score|score_label
 
   - include 'core/blocks/pagination.html'
