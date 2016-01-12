@@ -1,0 +1,1208 @@
+[
+{
+    "fields": {
+        "code": "GB",
+        "name": "United Kingdom"
+    },
+    "model": "representatives.country",
+    "pk": 1218
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.207Z",
+        "last_name": "HONEYBALL",
+        "photo": "http://www.europarl.europa.eu/mepphoto/5846.jpg",
+        "created": "2015-12-27T16:05:08.207Z",
+        "gender": 1,
+        "remote_id": "5846",
+        "first_name": "Mary",
+        "cv": "",
+        "active": true,
+        "birth_place": "Weymouth",
+        "full_name": "Mary HONEYBALL",
+        "fingerprint": "81d9de63359e216376592338ae2f1638dd41e45f",
+        "birth_date": "1952-11-12",
+        "slug": "mary-honeyball"
+    },
+    "model": "representatives.representative",
+    "pk": 160
+},
+{
+    "fields": {
+        "email": "mary.honeyball@europarl.europa.eu",
+        "updated": "2015-12-27T16:05:08.423Z",
+        "representative": 160,
+        "kind": "official",
+        "created": "2015-12-27T16:05:08.423Z"
+    },
+    "model": "representatives.email",
+    "pk": 160
+},
+{
+    "fields": {
+        "url": "http://twitter.com/maryhoneyball",
+        "updated": "2015-12-27T16:05:08.425Z",
+        "representative": 160,
+        "kind": "twitter",
+        "created": "2015-12-27T16:05:08.425Z"
+    },
+    "model": "representatives.website",
+    "pk": 296
+},
+{
+    "fields": {
+        "url": "https://www.facebook.com/mhoneyball",
+        "updated": "2015-12-27T16:05:08.427Z",
+        "representative": 160,
+        "kind": "facebook",
+        "created": "2015-12-27T16:05:08.427Z"
+    },
+    "model": "representatives.website",
+    "pk": 297
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:03:31.046Z",
+        "name": "Committee on Employment and Social Affairs",
+        "created": "2015-12-27T16:03:31.046Z",
+        "kind": "committee",
+        "abbreviation": "EMPL",
+        "fingerprint": "7f0e6d2c3342dde2c6077e127a418a19e0e891bb"
+    },
+    "model": "representatives.group",
+    "pk": 3
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:03:31.100Z",
+        "name": "Committee on Legal Affairs",
+        "created": "2015-12-27T16:03:31.100Z",
+        "kind": "committee",
+        "abbreviation": "JURI",
+        "fingerprint": "bc1a051072a9f2caf7c5c7105bccd13834b4d89d"
+    },
+    "model": "representatives.group",
+    "pk": 9
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:03:31.388Z",
+        "name": "Committee on Culture and Education",
+        "created": "2015-12-27T16:03:31.388Z",
+        "kind": "committee",
+        "abbreviation": "CULT",
+        "fingerprint": "a169e2d7e6009d3c089e4de43c0f3e0fc312fca4"
+    },
+    "model": "representatives.group",
+    "pk": 20
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:03:31.402Z",
+        "name": "Group of the Progressive Alliance of Socialists and Democrats in the European Parliament",
+        "created": "2015-12-27T16:03:31.402Z",
+        "kind": "group",
+        "abbreviation": "SD",
+        "fingerprint": "729890eba3ce20f90808b32110871d1fe41b53b6"
+    },
+    "model": "representatives.group",
+    "pk": 21
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:03:31.510Z",
+        "name": "Committee on Industry, Research and Energy",
+        "created": "2015-12-27T16:03:31.510Z",
+        "kind": "committee",
+        "abbreviation": "ITRE",
+        "fingerprint": "17ff1a9fe036e400612c9153c1647a8258c34d63"
+    },
+    "model": "representatives.group",
+    "pk": 23
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:03:31.521Z",
+        "name": "Committee on Regional Development",
+        "created": "2015-12-27T16:03:31.521Z",
+        "kind": "committee",
+        "abbreviation": "REGI",
+        "fingerprint": "7a2a03e6d40e5af34f3dc6bccd8e1900e2de3abf"
+    },
+    "model": "representatives.group",
+    "pk": 24
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:03:31.768Z",
+        "name": "Committee on Economic and Monetary Affairs",
+        "created": "2015-12-27T16:03:31.768Z",
+        "kind": "committee",
+        "abbreviation": "ECON",
+        "fingerprint": "2da973401cd76bb56b36f3a9162cda13d2f2d8f3"
+    },
+    "model": "representatives.group",
+    "pk": 30
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:03:31.794Z",
+        "name": "United Kingdom",
+        "created": "2015-12-27T16:03:31.794Z",
+        "kind": "country",
+        "abbreviation": "GB",
+        "fingerprint": "94e7f4c5dc6d7ca1c8ceade3f5bf782b56f0b0de"
+    },
+    "model": "representatives.group",
+    "pk": 33
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:03:32.489Z",
+        "name": "Socialist Group in the European Parliament",
+        "created": "2015-12-27T16:03:32.489Z",
+        "kind": "group",
+        "abbreviation": "PSE",
+        "fingerprint": "53961127dd190ceb0568d2290e195570ed907164"
+    },
+    "model": "representatives.group",
+    "pk": 41
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:03:33.606Z",
+        "name": "Committee on the Environment, Public Health and Food Safety",
+        "created": "2015-12-27T16:03:33.606Z",
+        "kind": "committee",
+        "abbreviation": "ENVI",
+        "fingerprint": "9d81a89ff2836afbe40dc4109b085c00bf0b1fdd"
+    },
+    "model": "representatives.group",
+    "pk": 48
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:03:34.712Z",
+        "name": "Delegation for relations with South Africa",
+        "created": "2015-12-27T16:03:34.712Z",
+        "kind": "delegation",
+        "abbreviation": "",
+        "fingerprint": "6482a4de9bdda2ae85fb71f78de0cfd49441a0e6"
+    },
+    "model": "representatives.group",
+    "pk": 64
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:03:34.756Z",
+        "name": "Group of the Party of European Socialists",
+        "created": "2015-12-27T16:03:34.756Z",
+        "kind": "group",
+        "abbreviation": "PSE",
+        "fingerprint": "bdcddf45a869f242e80961303a719a3e0f29d795"
+    },
+    "model": "representatives.group",
+    "pk": 67
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:03:36.124Z",
+        "name": "Committee on Women's Rights and Gender Equality",
+        "created": "2015-12-27T16:03:36.124Z",
+        "kind": "committee",
+        "abbreviation": "FEMM",
+        "fingerprint": "07290c78bb6679e36a5413d2b8122ff4c1477889"
+    },
+    "model": "representatives.group",
+    "pk": 77
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:03:36.219Z",
+        "name": "Delegation to the EU-Turkey Joint Parliamentary Committee",
+        "created": "2015-12-27T16:03:36.219Z",
+        "kind": "delegation",
+        "abbreviation": "",
+        "fingerprint": "171567aaa5ebc7bbdcf3fa3b8a293f9ade40c03a"
+    },
+    "model": "representatives.group",
+    "pk": 79
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:03:37.137Z",
+        "name": "Delegation for relations with Canada",
+        "created": "2015-12-27T16:03:37.137Z",
+        "kind": "delegation",
+        "abbreviation": "",
+        "fingerprint": "e2ece7c8073aa5d8ed32a003ecb5989eb363fe95"
+    },
+    "model": "representatives.group",
+    "pk": 86
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:03:40.000Z",
+        "name": "Delegation to the Parliamentary Assembly of the Union for the Mediterranean",
+        "created": "2015-12-27T16:03:40.000Z",
+        "kind": "delegation",
+        "abbreviation": "",
+        "fingerprint": "25ea9a5e8434c4c550c2fa4d7d8b79769f5eb8c0"
+    },
+    "model": "representatives.group",
+    "pk": 97
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:03:42.041Z",
+        "name": "Delegation to the Euro-Mediterranean Parliamentary Assembly",
+        "created": "2015-12-27T16:03:42.041Z",
+        "kind": "delegation",
+        "abbreviation": "",
+        "fingerprint": "ae4f709686238bb59f0e8d3f1f1362d6c6777744"
+    },
+    "model": "representatives.group",
+    "pk": 101
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:03:47.768Z",
+        "name": "Delegation to the EU-Former Yugoslav Republic of Macedonia Joint Parliamentary Committee",
+        "created": "2015-12-27T16:03:47.768Z",
+        "kind": "delegation",
+        "abbreviation": "",
+        "fingerprint": "fe7cabd2bfa99251e4f9bb2d700ec2a1898c312b"
+    },
+    "model": "representatives.group",
+    "pk": 111
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:03:58.940Z",
+        "name": "Delegation for relations with Palestine",
+        "created": "2015-12-27T16:03:58.940Z",
+        "kind": "delegation",
+        "abbreviation": "",
+        "fingerprint": "6d1f6a5bcc43f05a7cfdee1d2bc7b0d0cc5db6dc"
+    },
+    "model": "representatives.group",
+    "pk": 121
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:04:34.387Z",
+        "name": "Delegation to the EU-Malta Joint Parliamentary Committee",
+        "created": "2015-12-27T16:04:34.387Z",
+        "kind": "delegation",
+        "abbreviation": "",
+        "fingerprint": "920d936c976ee2b6fff4ce760dfb154d926dc2d1"
+    },
+    "model": "representatives.group",
+    "pk": 141
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:04:50.770Z",
+        "name": "Delegation to the EU-Cyprus Joint Parliamentary Committee",
+        "created": "2015-12-27T16:04:50.770Z",
+        "kind": "delegation",
+        "abbreviation": "",
+        "fingerprint": "35588fd232a2f314c16242334bad5f5190b4efae"
+    },
+    "model": "representatives.group",
+    "pk": 150
+},
+{
+    "fields": {
+        "country": null,
+        "updated": "2015-12-27T16:03:05.604Z",
+        "fingerprint": "bc0c3668435accfa5da4479c80478fe68d15ddb1",
+        "name": "European Parliament",
+        "created": "2015-12-27T16:03:05.603Z"
+    },
+    "model": "representatives.constituency",
+    "pk": 1
+},
+{
+    "fields": {
+        "country": 1218,
+        "updated": "2015-12-27T16:11:32.621Z",
+        "fingerprint": "1fae044a475096192745808b5dfe00e8a04ce172",
+        "name": "Labour Party",
+        "created": "2015-12-27T16:03:38.998Z"
+    },
+    "model": "representatives.constituency",
+    "pk": 21
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.213Z",
+        "group": 77,
+        "end_date": "9999-12-31",
+        "created": "2015-12-27T16:05:08.213Z",
+        "role": "Member",
+        "representative": 160,
+        "fingerprint": "3e27ddc2a03ae3e46486559f18c6fa79f6f073fc",
+        "link": "",
+        "begin_date": "2014-07-01",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3287
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.218Z",
+        "group": 9,
+        "end_date": "9999-12-31",
+        "created": "2015-12-27T16:05:08.218Z",
+        "role": "Member",
+        "representative": 160,
+        "fingerprint": "4f954af920af7bd2d2fcf4032a7bf17ad256cfd6",
+        "link": "",
+        "begin_date": "2014-07-01",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3288
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.223Z",
+        "group": 20,
+        "end_date": "9999-12-31",
+        "created": "2015-12-27T16:05:08.223Z",
+        "role": "Substitute",
+        "representative": 160,
+        "fingerprint": "64725eafb08a172af88d6bfca27f1873e1e8e712",
+        "link": "",
+        "begin_date": "2014-07-08",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3289
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.229Z",
+        "group": 77,
+        "end_date": "2014-06-30",
+        "created": "2015-12-27T16:05:08.228Z",
+        "role": "Member",
+        "representative": 160,
+        "fingerprint": "bba85aa92d24693bc71de5c8a39c6954913cbdec",
+        "link": "",
+        "begin_date": "2012-01-19",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3290
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.233Z",
+        "group": 20,
+        "end_date": "2014-06-30",
+        "created": "2015-12-27T16:05:08.233Z",
+        "role": "Member",
+        "representative": 160,
+        "fingerprint": "87c6f21c59d89374f12671ea1eea7fb6f041bbce",
+        "link": "",
+        "begin_date": "2012-01-19",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3291
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.238Z",
+        "group": 9,
+        "end_date": "2014-06-30",
+        "created": "2015-12-27T16:05:08.238Z",
+        "role": "Substitute",
+        "representative": 160,
+        "fingerprint": "7e407006eb3066ee67b55b4573d176daeb9aef6c",
+        "link": "",
+        "begin_date": "2012-01-19",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3292
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.244Z",
+        "group": 77,
+        "end_date": "2012-01-18",
+        "created": "2015-12-27T16:05:08.244Z",
+        "role": "Member",
+        "representative": 160,
+        "fingerprint": "14e44f282c0e7c727e7d4d3419570c6cbbcde153",
+        "link": "",
+        "begin_date": "2009-07-16",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3293
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.248Z",
+        "group": 20,
+        "end_date": "2012-01-18",
+        "created": "2015-12-27T16:05:08.248Z",
+        "role": "Member",
+        "representative": 160,
+        "fingerprint": "bdd2841c54da20685855881b0d5ab2a533a48824",
+        "link": "",
+        "begin_date": "2009-07-16",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3294
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.253Z",
+        "group": 9,
+        "end_date": "2012-01-18",
+        "created": "2015-12-27T16:05:08.253Z",
+        "role": "Substitute",
+        "representative": 160,
+        "fingerprint": "b5dc7889c922b88d386d11cdb634c3858dd3ac27",
+        "link": "",
+        "begin_date": "2010-09-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3295
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.258Z",
+        "group": 24,
+        "end_date": "2010-09-19",
+        "created": "2015-12-27T16:05:08.258Z",
+        "role": "Substitute",
+        "representative": 160,
+        "fingerprint": "984397862c0a64e995ce1a0194726543f56fa017",
+        "link": "",
+        "begin_date": "2009-07-16",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3296
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.263Z",
+        "group": 23,
+        "end_date": "2009-07-13",
+        "created": "2015-12-27T16:05:08.263Z",
+        "role": "Member",
+        "representative": 160,
+        "fingerprint": "6c8e6e4b91cf18e09eca545a662d832f90238f86",
+        "link": "",
+        "begin_date": "2007-01-31",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3297
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.268Z",
+        "group": 20,
+        "end_date": "2009-07-13",
+        "created": "2015-12-27T16:05:08.268Z",
+        "role": "Substitute",
+        "representative": 160,
+        "fingerprint": "59213d472d4022edafa03dbf0a0c8164ae37fad2",
+        "link": "",
+        "begin_date": "2007-01-31",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3298
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.274Z",
+        "group": 77,
+        "end_date": "2009-07-13",
+        "created": "2015-12-27T16:05:08.274Z",
+        "role": "Substitute",
+        "representative": 160,
+        "fingerprint": "0e6f6ec034595c44a1e3404dd924215c8604c504",
+        "link": "",
+        "begin_date": "2007-01-31",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3299
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.279Z",
+        "group": 48,
+        "end_date": "2007-01-30",
+        "created": "2015-12-27T16:05:08.279Z",
+        "role": "Member",
+        "representative": 160,
+        "fingerprint": "8ba5d46442df153c17a6d691e99339db92d178e0",
+        "link": "",
+        "begin_date": "2007-01-15",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3300
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.284Z",
+        "group": 77,
+        "end_date": "2007-01-30",
+        "created": "2015-12-27T16:05:08.283Z",
+        "role": "Substitute",
+        "representative": 160,
+        "fingerprint": "b362be416369a5798a4f39e8c071ac5f6ad59ec1",
+        "link": "",
+        "begin_date": "2007-01-15",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3301
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.288Z",
+        "group": 20,
+        "end_date": "2007-01-30",
+        "created": "2015-12-27T16:05:08.288Z",
+        "role": "Substitute",
+        "representative": 160,
+        "fingerprint": "ffbb2ab83dd43369215c2d79bf9be177dbe247f6",
+        "link": "",
+        "begin_date": "2007-01-15",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3302
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.293Z",
+        "group": 48,
+        "end_date": "2007-01-14",
+        "created": "2015-12-27T16:05:08.293Z",
+        "role": "Member",
+        "representative": 160,
+        "fingerprint": "0cb7ee1883626dbd5228c279d5621327f271d786",
+        "link": "",
+        "begin_date": "2004-07-21",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3303
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.298Z",
+        "group": 77,
+        "end_date": "2007-01-14",
+        "created": "2015-12-27T16:05:08.298Z",
+        "role": "Substitute",
+        "representative": 160,
+        "fingerprint": "9db1fc8d28feeee3f7dc14136426fe26f3df8d3a",
+        "link": "",
+        "begin_date": "2004-07-21",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3304
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.302Z",
+        "group": 20,
+        "end_date": "2007-01-14",
+        "created": "2015-12-27T16:05:08.302Z",
+        "role": "Substitute",
+        "representative": 160,
+        "fingerprint": "a7ee142c48158483a12dc300e83e562f7552717f",
+        "link": "",
+        "begin_date": "2004-07-21",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3305
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.307Z",
+        "group": 30,
+        "end_date": "2004-07-19",
+        "created": "2015-12-27T16:05:08.307Z",
+        "role": "Member",
+        "representative": 160,
+        "fingerprint": "f7ab1b25eed25a6f577886d7ce2a89c5da877fab",
+        "link": "",
+        "begin_date": "2002-01-17",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3306
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.313Z",
+        "group": 3,
+        "end_date": "2002-01-14",
+        "created": "2015-12-27T16:05:08.313Z",
+        "role": "Substitute",
+        "representative": 160,
+        "fingerprint": "ed100b9f3db921cd180295391d416b49ed799641",
+        "link": "",
+        "begin_date": "2000-03-01",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3307
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.318Z",
+        "group": 64,
+        "end_date": "9999-12-31",
+        "created": "2015-12-27T16:05:08.318Z",
+        "role": "Member",
+        "representative": 160,
+        "fingerprint": "b64dc41dd0d357720738c7efb46849caf60ec14d",
+        "link": "",
+        "begin_date": "2014-07-14",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3308
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.322Z",
+        "group": 97,
+        "end_date": "9999-12-31",
+        "created": "2015-12-27T16:05:08.322Z",
+        "role": "Member",
+        "representative": 160,
+        "fingerprint": "c2b6824cf3b29f77da6fc7c02d29ff95f78c622c",
+        "link": "",
+        "begin_date": "2014-07-14",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3309
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.328Z",
+        "group": 121,
+        "end_date": "9999-12-31",
+        "created": "2015-12-27T16:05:08.328Z",
+        "role": "Substitute",
+        "representative": 160,
+        "fingerprint": "77ea8b27c3aac210c2352d9469cb5e5dccda681f",
+        "link": "",
+        "begin_date": "2014-07-14",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3310
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.332Z",
+        "group": 86,
+        "end_date": "2014-06-30",
+        "created": "2015-12-27T16:05:08.332Z",
+        "role": "Substitute",
+        "representative": 160,
+        "fingerprint": "f617bbbdcc14f0eb7e84fe80f63c9b127d8c6441",
+        "link": "",
+        "begin_date": "2009-09-16",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3311
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.337Z",
+        "group": 111,
+        "end_date": "2009-07-13",
+        "created": "2015-12-27T16:05:08.337Z",
+        "role": "Member",
+        "representative": 160,
+        "fingerprint": "e4b7462f237417fb7654725e63dc8ff6306d6f06",
+        "link": "",
+        "begin_date": "2004-09-15",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3312
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.342Z",
+        "group": 79,
+        "end_date": "2009-07-13",
+        "created": "2015-12-27T16:05:08.342Z",
+        "role": "Substitute",
+        "representative": 160,
+        "fingerprint": "76a4b0814908a0dc15fec2eadd18de8344902222",
+        "link": "",
+        "begin_date": "2004-09-15",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3313
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.348Z",
+        "group": 101,
+        "end_date": "2009-07-13",
+        "created": "2015-12-27T16:05:08.348Z",
+        "role": "Substitute",
+        "representative": 160,
+        "fingerprint": "8cfe1ab42ee6b094fb26aecfad5ca68bee37c307",
+        "link": "",
+        "begin_date": "2004-09-15",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3314
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.352Z",
+        "group": 150,
+        "end_date": "2004-04-30",
+        "created": "2015-12-27T16:05:08.352Z",
+        "role": "Member",
+        "representative": 160,
+        "fingerprint": "a3910f55303b76c08fdbb46be9707b71d20bc618",
+        "link": "",
+        "begin_date": "2002-02-07",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3315
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.357Z",
+        "group": 141,
+        "end_date": "2004-04-30",
+        "created": "2015-12-27T16:05:08.357Z",
+        "role": "Substitute",
+        "representative": 160,
+        "fingerprint": "8ed925d938dd2196228db9e8bfe9635c81e9c563",
+        "link": "",
+        "begin_date": "2002-02-07",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3316
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.363Z",
+        "group": 150,
+        "end_date": "2002-01-14",
+        "created": "2015-12-27T16:05:08.363Z",
+        "role": "Member",
+        "representative": 160,
+        "fingerprint": "e840b8192789f083b0ce07d04a850349ce3ce3fe",
+        "link": "",
+        "begin_date": "2000-04-11",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3317
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.368Z",
+        "group": 21,
+        "end_date": "9999-12-31",
+        "created": "2015-12-27T16:05:08.368Z",
+        "role": "Member",
+        "representative": 160,
+        "fingerprint": "e1521b961d18f8b2ed5254a6bdd0e90f32bb4481",
+        "link": "",
+        "begin_date": "2014-07-01",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3318
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.373Z",
+        "group": 21,
+        "end_date": "2014-06-30",
+        "created": "2015-12-27T16:05:08.373Z",
+        "role": "Member",
+        "representative": 160,
+        "fingerprint": "d97dfd44f2e19ea2a71af9c96c211db06fb1ff94",
+        "link": "",
+        "begin_date": "2009-07-14",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3319
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.378Z",
+        "group": 41,
+        "end_date": "2009-07-13",
+        "created": "2015-12-27T16:05:08.378Z",
+        "role": "Member",
+        "representative": 160,
+        "fingerprint": "c6ff4291f008ae6636765819ce203b1068cb77f5",
+        "link": "",
+        "begin_date": "2004-07-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3320
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.383Z",
+        "group": 67,
+        "end_date": "2004-07-19",
+        "created": "2015-12-27T16:05:08.383Z",
+        "role": "Member",
+        "representative": 160,
+        "fingerprint": "07e323ac8bfc7caf30b66966b9ffaf22104d02ad",
+        "link": "",
+        "begin_date": "2000-02-17",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3321
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.389Z",
+        "group": 33,
+        "end_date": "9999-12-31",
+        "created": "2015-12-27T16:05:08.389Z",
+        "role": "",
+        "representative": 160,
+        "fingerprint": "73c6575b59a2b165f5bd921aa1ae9a08d4a5b980",
+        "link": "",
+        "begin_date": "2014-07-01",
+        "constituency": 21
+    },
+    "model": "representatives.mandate",
+    "pk": 3322
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.395Z",
+        "group": 33,
+        "end_date": "2014-06-30",
+        "created": "2015-12-27T16:05:08.395Z",
+        "role": "",
+        "representative": 160,
+        "fingerprint": "1059f328912485c62db49fdc082d351dae775cea",
+        "link": "",
+        "begin_date": "2009-07-14",
+        "constituency": 21
+    },
+    "model": "representatives.mandate",
+    "pk": 3323
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.402Z",
+        "group": 33,
+        "end_date": "2009-07-13",
+        "created": "2015-12-27T16:05:08.402Z",
+        "role": "",
+        "representative": 160,
+        "fingerprint": "aca5e73cc97f7b3726ded9cf8b3c0aa3ad303485",
+        "link": "",
+        "begin_date": "2004-07-20",
+        "constituency": 21
+    },
+    "model": "representatives.mandate",
+    "pk": 3324
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:05:08.408Z",
+        "group": 33,
+        "end_date": "2004-07-19",
+        "created": "2015-12-27T16:05:08.408Z",
+        "role": "",
+        "representative": 160,
+        "fingerprint": "cca1fca42f5d43291fdc014126bc0b76f3c8ba14",
+        "link": "",
+        "begin_date": "2000-02-17",
+        "constituency": 21
+    },
+    "model": "representatives.mandate",
+    "pk": 3325
+},
+{
+    "fields": {
+        "updated": "2015-12-27T17:40:18.700Z",
+        "reference": "2010/2935(RSP)",
+        "title": "Resolution on the Anti-Counterfeiting Trade Agreement (ACTA)",
+        "text": "",
+        "created": "2015-12-27T17:40:18.700Z",
+        "link": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2010/2935(RSP)",
+        "fingerprint": "30ca011fd2991db0e6de50aef0d76e83530003a6"
+    },
+    "model": "representatives_votes.dossier",
+    "pk": 28147
+},
+{
+    "fields": {
+        "updated": "2015-12-27T18:03:52.645Z",
+        "total_for": 329,
+        "description": "",
+        "reference": "B7-0617/2010",
+        "title": "RC-B7-0617/2010 - Accord commercial anti-contrefa\u00e7on (ACAC) - Consid\u00e9rant X",
+        "dossier": 28147,
+        "created": "2015-12-27T17:53:17.771Z",
+        "kind": "Consid\u00e9rant X",
+        "datetime": "2010-11-24T11:48:48Z",
+        "total_against": 249,
+        "fingerprint": "d07e0a7f35d385a04fcff7ec08976bfa2d74a510",
+        "total_abstain": 75
+    },
+    "model": "representatives_votes.proposal",
+    "pk": 5744
+},
+{
+    "fields": {
+        "updated": "2015-12-27T18:03:53.335Z",
+        "total_for": 315,
+        "description": "",
+        "reference": "B7-0617/2010",
+        "title": "RC-B7-0617/2010 - Accord commercial anti-contrefa\u00e7on (ACAC) - Consid\u00e9rant CC",
+        "dossier": 28147,
+        "created": "2015-12-27T17:53:17.847Z",
+        "kind": "Consid\u00e9rant CC",
+        "datetime": "2010-11-24T11:49:01Z",
+        "total_against": 312,
+        "fingerprint": "c32565895a10dd6c145d56593ecc6e5ee8e6c69e",
+        "total_abstain": 14
+    },
+    "model": "representatives_votes.proposal",
+    "pk": 5745
+},
+{
+    "fields": {
+        "updated": "2015-12-27T18:03:53.999Z",
+        "total_for": 306,
+        "description": "",
+        "reference": "B7-0617/2010",
+        "title": "RC-B7-0617/2010 - Accord commercial anti-contrefa\u00e7on (ACAC) - R\u00e9solution",
+        "dossier": 28147,
+        "created": "2015-12-27T17:53:17.920Z",
+        "kind": "R\u00e9solution",
+        "datetime": "2010-11-24T11:49:18Z",
+        "total_against": 322,
+        "fingerprint": "be07f4680af54c8c43ea4ca19194fee88873c8cc",
+        "total_abstain": 26
+    },
+    "model": "representatives_votes.proposal",
+    "pk": 5746
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "for",
+        "proposal": 5744,
+        "representative": 160
+    },
+    "model": "representatives_votes.vote",
+    "pk": 24758
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "against",
+        "proposal": 5745,
+        "representative": 160
+    },
+    "model": "representatives_votes.vote",
+    "pk": 25246
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "against",
+        "proposal": 5746,
+        "representative": 160
+    },
+    "model": "representatives_votes.vote",
+    "pk": 25535
+},
+{
+    "fields": {
+        "score": -7
+    },
+    "model": "representatives_recommendations.representativescore",
+    "pk": 160
+},
+{
+    "fields": {
+        "proposal": 5744,
+        "title": "Stop acta !",
+        "description": "",
+        "weight": 4,
+        "recommendation": "for"
+    },
+    "model": "representatives_recommendations.recommendation",
+    "pk": 45
+},
+{
+    "fields": {
+        "proposal": 5745,
+        "title": "Stop acta !",
+        "description": "",
+        "weight": 5,
+        "recommendation": "for"
+    },
+    "model": "representatives_recommendations.recommendation",
+    "pk": 46
+},
+{
+    "fields": {
+        "proposal": 5746,
+        "title": "Stop acta !",
+        "description": "",
+        "weight": 6,
+        "recommendation": "for"
+    },
+    "model": "representatives_recommendations.recommendation",
+    "pk": 47
+},
+{
+    "fields": {
+        "name": "acta",
+        "slug": "acta"
+    },
+    "model": "taggit.tag",
+    "pk": 1
+},
+{
+    "fields": {
+        "name": "foo",
+        "slug": "foo"
+    },
+    "model": "taggit.tag",
+    "pk": 2
+},
+{
+    "fields": {
+        "name": "bar",
+        "slug": "bar"
+    },
+    "model": "taggit.tag",
+    "pk": 3
+},
+{
+    "fields": {
+        "model": "position",
+        "app_label": "representatives_positions"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 25
+},
+{
+    "fields": {
+        "tag": 1,
+        "object_id": 1,
+        "content_type": 25
+    },
+    "model": "taggit.taggeditem",
+    "pk": 1
+},
+{
+    "fields": {
+        "tag": 2,
+        "object_id": 1,
+        "content_type": 25
+    },
+    "model": "taggit.taggeditem",
+    "pk": 2
+},
+{
+    "fields": {
+        "tag": 1,
+        "object_id": 3,
+        "content_type": 25
+    },
+    "model": "taggit.taggeditem",
+    "pk": 5
+},
+{
+    "fields": {
+        "tag": 1,
+        "object_id": 2,
+        "content_type": 25
+    },
+    "model": "taggit.taggeditem",
+    "pk": 6
+},
+{
+    "fields": {
+        "tag": 3,
+        "object_id": 2,
+        "content_type": 25
+    },
+    "model": "taggit.taggeditem",
+    "pk": 7
+},
+{
+    "fields": {
+        "representative": 160,
+        "datetime": "2010-11-24",
+        "text": "not-validated",
+        "link": "http://example.com/not-validated",
+        "published": false
+    },
+    "model": "representatives_positions.position",
+    "pk": 1
+},
+{
+    "fields": {
+        "representative": 160,
+        "datetime": "2010-11-24",
+        "text": "first-validated",
+        "link": "http://example.com/first-validated",
+        "published": true
+    },
+    "model": "representatives_positions.position",
+    "pk": 2
+},
+{
+    "fields": {
+        "representative": 160,
+        "datetime": "2010-11-24",
+        "text": "other-validated",
+        "link": "http://example.com/second-validated",
+        "published": true
+    },
+    "model": "representatives_positions.position",
+    "pk": 3
+}
+]

@@ -1,35 +1,39 @@
--# Pagination block display pagination for the `object_list`
-   `object_list` could be generated with core.view_utils.render_paginate_list
-
 .pagination-block
 
   %nav
     %ul.pagination.pagination-sm
-      - if object_list.has_previous
+      - if page_obj.has_previous
         %li
-          %a{'href': '?={queries.urlencode}&page=={object_list.previous_page_number}',
+          %a{'href': '?={queries.urlencode}&page=1',
+             'aria-label': 'First'}
+            <i aria-hidden="true" class="fa fa-chevron-circle-left"></i>
+
+        %li
+          %a{'href': '?={queries.urlencode}&page=={page_obj.previous_page_number}',
              'aria-label': 'Previous'}
             <i aria-hidden="true" class="fa fa-chevron-left"></i>
 
-      - for page_num in object_list.page_range
-        - if not page_num
-          %li.disabled
-            %a{'href': ''}
-              …
-        - elif page_num == object_list.number
-          %li.active
-            %a{'href': ''}
-              {{ page_num }}
-        - else
-          %li
-            %a{'href': '?={queries.urlencode}&page=={page_num}'}
-              {{ page_num }}
+      - for p in page_range
+        - if p
+          - if p == page_obj.number
+            %li.active
+              %a{'href': ''}
+                {{ p }}
+          - else
+            %li
+              %a{'href': '?={queries.urlencode}&page=={p}'}
+                {{ p }}
 
-      - if object_list.has_next
+      - if page_obj.has_next
         %li
-          %a{'href': '?={queries.urlencode}&page=={object_list.next_page_number}',
+          %a{'href': '?={queries.urlencode}&page=={page_obj.next_page_number}',
              'aria-label': 'Next'}
             <i aria-hidden="true" class="fa fa-chevron-right"></i>
+
+        %li
+          %a{'href': '?={queries.urlencode}&page=={paginator.num_pages}',
+             'aria-label': 'Last'}
+            <i aria-hidden="true" class="fa fa-chevron-circle-right"></i>
 
   %div.count
     Number of results : {{ paginator.count }}
@@ -38,9 +42,10 @@
     {{ paginator.per_page }}
     (
     - for limit in pagination_limits
-      %a{'href': '?limit={{ limit }}'}
+      %a{'href': '?paginate_by={{ limit }}'}
         {{ limit }}
       - if not forloop.last
         \/
     )
-    - include 'core/blocks/grid-list.html'
+    - if grid_list
+      - include 'core/blocks/grid-list.html'

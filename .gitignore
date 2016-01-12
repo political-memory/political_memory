@@ -1,15 +1,9 @@
 *.sqlite3
 celerybeat-*
 core/static/libs/*
-deploy
 
 # libs
 static/libs
-node_modules
-
-# compiled css
-static/stylesheets/*.min.css
-
 
 # settings 
 memopol/config.json
@@ -21,3 +15,6 @@ __pycache__/
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
+.dpl
+db.sqlite
+log/

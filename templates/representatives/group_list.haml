@@ -1,0 +1,12 @@
+- extends 'base.html'
+
+- block content
+  %table.table
+    - for group in object_list
+      %tr
+        %td
+          %a{'href': '{{ group.get_absolute_url }}'}w
+            - if group.abbreviation
+              ={group.abbreviation}
+        %td
+          %a{'href': '{{ group.get_absolute_url }}'}= group.name

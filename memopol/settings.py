@@ -9,89 +9,98 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import json
 import os
-import django
+from socket import gethostname
 
-# Normally you should not import ANYTHING from Django directly
-# into your settings, but ImproperlyConfigured is an exception.
-from django.core.exceptions import ImproperlyConfigured
-from django.conf import settings
+from django.conf import global_settings
+from django.utils.crypto import get_random_string
 
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-config_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config.json')
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-with open(config_file) as f:
-    config = json.loads(f.read())
+DATA_DIR = os.environ.get('OPENSHIFT_DATA_DIR', 'data')
+if not os.path.exists(DATA_DIR):
+    os.makedirs(DATA_DIR)
 
-def get_param(setting, config=config, default=None):
-    """Get the secret variable or return explicit exception."""
-    try:
-        return config[setting]
-    except KeyError:
-        if default:
-            return default
-        error_msg = "Set the {0} config variable".format(setting)
-        raise ImproperlyConfigured(error_msg)
+LOG_DIR = os.environ.get('OPENSHIFT_LOG_DIR', 'log')
+if not os.path.exists(LOG_DIR):
+    os.makedirs(LOG_DIR)
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
+PUBLIC_DIR = os.path.join(
+    os.environ.get(
+        'OPENSHIFT_REPO_DIR',
+        ''),
+    'wsgi/static')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = get_param('secret_key')
+SECRET_FILE = os.path.join(DATA_DIR, 'secret.txt')
 
-DEBUG = get_param('debug')
+if not os.path.exists(SECRET_FILE):
+    chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'
+    with open(SECRET_FILE, 'w+') as f:
+        f.write(get_random_string(50, chars))
+
+with open(SECRET_FILE, 'r') as f:
+    SECRET_KEY = f.read()
+
+
+DEBUG = os.environ.get('DJANGO_DEBUG', False)
 TEMPLATE_DEBUG = DEBUG
+LOG_LEVEL = os.environ.get('DJANGO_LOG_LEVEL', 'DEBUG' if DEBUG else 'INFO')
 
-ALLOWED_HOSTS = []
+if SECRET_KEY == 'notsecret' and not DEBUG:
+    raise Exception('Please export DJANGO_SECRET_KEY or DEBUG')
 
-COMPOTISTA_SERVER = get_param('compotista_server')
-TOUTATIS_SERVER = get_param('toutatis_server')
-REDIS_DB = get_param('redis_db')
-ORGANIZATION_NAME = get_param('organization')
+ALLOWED_HOSTS = [
+    gethostname(),
+]
 
-# Application definition
+DNS = os.environ.get('OPENSHIFT_APP_DNS', None),
+if DNS:
+    ALLOWED_HOSTS += DNS
+
+if 'DJANGO_ALLOWED_HOSTS' in os.environ:
+    ALLOWED_HOSTS += os.environ.get('DJANGO_ALLOWED_HOSTS').split(',')
+
+REDIS_DB = os.environ.get('REDIS_DB', 1)
+ORGANIZATION_NAME = os.environ.get('ORGANIZATION', 'Memopol Demo')
 
 INSTALLED_APPS = (
     # 'django.contrib.admin',
-    # Instead of contrib.admin to use Django-Admin-Plus
-    'django.contrib.admin.apps.SimpleAdminConfig',
+    'autocomplete_light',
+    'suit',
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    'django.contrib.sites',
     # 3rd party apps
     'compressor',
-    'adminplus',
-    'constance',
     'bootstrap3',
     'datetimewidget',
     'django_filters',
     'taggit',
     # ---
     'core',
+    'memopol',
     'representatives',
     'representatives_votes',
-    'legislature',
-    'votes',
-    'positions'
+    'representatives_recommendations',
+    'representatives_positions',
 )
 
 if DEBUG:
-    INSTALLED_APPS += (
-        'django_extensions',
-    )
-
-if get_param('local'):
-    INSTALLED_APPS += (
-        'debug_toolbar',
-    )
-
+    try:
+        import debug_toolbar  # noqa
+    except:
+        pass
+    else:
+        INSTALLED_APPS += ('debug_toolbar',)
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -101,6 +110,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.sites.middleware.CurrentSiteMiddleware',
 )
 
 ROOT_URLCONF = 'memopol.urls'
@@ -113,25 +123,34 @@ WSGI_APPLICATION = 'memopol.wsgi.application'
 
 DATABASES = {
     'default': {
-        'NAME': get_param('database_name'),
-        'USER': get_param('database_user'),
-        'PASSWORD': get_param('database_password'),
-        'HOST': get_param('database_host'),
-        'PORT': get_param('database_port'),
+        'NAME': os.environ.get('DJANGO_DATABASE_DEFAULT_NAME', 'db.sqlite'),
+        'USER': os.environ.get('DJANGO_DATABASE_DEFAULT_USER', ''),
+        'PASSWORD': os.environ.get('DJANGO_DATABASE_DEFAULT_PASSWORD', ''),
+        'HOST': os.environ.get('DJANGO_DATABASE_DEFAULT_HOST', ''),
+        'PORT': os.environ.get('DJANGO_DATABASE_DEFAULT_PORT', ''),
+        'ENGINE': os.environ.get('DJANGO_DATABASE_DEFAULT_ENGINE',
+                                 'django.db.backends.sqlite3'),
+
     }
 }
 
-if get_param('local'):
-    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
-elif get_param('database_server') == 'mysql':
-    DATABASES['default']['ENGINE'] = 'django.db.backends.mysql'
-elif get_param('database_server') == 'postgresql':
+if 'OPENSHIFT_DATA_DIR' in os.environ:
+    DATABASES['default']['NAME'] = os.path.join(DATA_DIR, 'db.sqlite')
+
+if 'OPENSHIFT_POSTGRESQL_DB_HOST' in os.environ:
+    DATABASES['default']['NAME'] = os.environ['OPENSHIFT_APP_NAME']
+    DATABASES['default']['USER'] = os.environ[
+        'OPENSHIFT_POSTGRESQL_DB_USERNAME']
+    DATABASES['default']['PASSWORD'] = os.environ[
+        'OPENSHIFT_POSTGRESQL_DB_PASSWORD']
+    DATABASES['default']['HOST'] = os.environ['OPENSHIFT_POSTGRESQL_DB_HOST']
+    DATABASES['default']['PORT'] = os.environ['OPENSHIFT_POSTGRESQL_DB_PORT']
     DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = get_param('language_code', default='en-us')
+LANGUAGE_CODE = os.environ.get('DJANGO_LANGUAGE_CODE', 'en-us')
 
 TIME_ZONE = 'UTC'
 
@@ -145,25 +164,31 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
 STATIC_URL = '/static/'
+COMPRESS_ROOT = 'static/'
+
+if DATA_DIR:
+    MEDIA_URL = '/static/media/'
+    MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
+    COMPRESS_ROOT = os.path.join(DATA_DIR, 'compress')
+
+if PUBLIC_DIR:
+    STATIC_URL = '/static/collected/'
+    STATIC_ROOT = os.path.join(PUBLIC_DIR, 'collected')
 
 # HAML Templates
 # https://github.com/jessemiller/hamlpy
+HAMLPY_ATTR_WRAPPER = '"'
 
-TEMPLATE_DIRS = (
-    'core/templates',
-    os.path.dirname(django.__file__)
-)
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
     'hamlpy.template.loaders.HamlPyFilesystemLoader',
     'hamlpy.template.loaders.HamlPyAppDirectoriesLoader',
-)
-
-TEMPLATE_CONTEXT_PROCESSORS = settings.TEMPLATE_CONTEXT_PROCESSORS + (
-    'constance.context_processors.config',
 )
 
 """
@@ -175,10 +200,12 @@ TEMPLATE_LOADERS = (
 )
 """
 
+TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
+    'django.template.context_processors.request',
+)
+
 # Static files finders
 
-STATIC_URL = '/static/'
-COMPRESS_ROOT = 'static/'
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -190,11 +217,16 @@ STATICFILES_FINDERS = (
 # Use compressor even in debug
 COMPRESS_ENABLED = False
 
+if os.environ.get('OPENSHIFT_LOG_DIR', None):
+    # Enable offline compression on openshift
+    COMPRESS_ENABLED = True
+    COMPRESS_OFFLINE = True
+
 COMPRESS_PRECOMPILERS = (
     # ('text/coffeescript', 'coffee --compile --stdio'),
-    ('text/less', 'lessc {infile} {outfile}'),
-    ('text/x-sass', 'sass {infile} {outfile}'),
-    ('text/x-scss', 'sass --scss {infile} {outfile}'),
+    ('text/less', 'lesscpy {infile}'),
+    # ('text/x-sass', 'sass {infile} {outfile}'),
+    # ('text/x-scss', 'sass --scss {infile} {outfile}'),
     # ('text/stylus', 'stylus < {infile} > {outfile}'),
     # ('text/foobar', 'path.to.MyPrecompilerFilter'),
 )
@@ -204,21 +236,13 @@ LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'formatters': {
-        'verbose': {
-            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
-        },
         'simple': {
             'format': '%(levelname)s[%(module)s]: %(message)s'
         },
     },
     'handlers': {
-        'file': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': '/tmp/compotista-debug.log',
-        },
         'console': {
-            'level': 'DEBUG',
+            'level': LOG_LEVEL,
             'class': 'logging.StreamHandler',
             'formatter': 'simple'
         },
@@ -226,29 +250,50 @@ LOGGING = {
     'loggers': {
         'memopol': {
             'handlers': ['console'],
-            'level': 'DEBUG'
+            'level': LOG_LEVEL,
         },
         'representatives': {
             'handlers': ['console'],
-            'level': 'DEBUG'
+            'level': LOG_LEVEL,
         },
         'representatives_votes': {
             'handlers': ['console'],
-            'level': 'DEBUG'
+            'level': LOG_LEVEL,
         }
     },
 }
 
-CONSTANCE_BACKEND = 'constance.backends.redisd.RedisBackend'
-CONSTANCE_REDIS_CONNECTION = {
-    'host': 'localhost',
-    'port': 6379,
-    'db': 0,
-}
+if DEBUG:
+    LOGGING['handlers']['debug'] = {
+        'level': 'DEBUG',
+        'class': 'logging.FileHandler',
+        'filename': os.path.join(LOG_DIR, 'debug.log'),
+    }
 
-CONSTANCE_CONFIG = {
-    'USE_COUNTRY': (True, 'Use country for representative'),
-    'MAIN_GROUP_KIND': ('group', 'Main group kind'),
-    'ORGANIZATION_NAME': ('La Quadrature du Net', 'Organization name'),
-    'POSITION_PUBLISHED': (False, 'Default position published status')
-}
+    for logger in LOGGING['loggers'].values():
+        logger['handlers'].append('debug')
+
+RAVEN_FILE = os.path.join(DATA_DIR, 'sentry')
+if os.path.exists(RAVEN_FILE):
+    INSTALLED_APPS += ('raven.contrib.django.raven_compat',)
+
+    LOGGING['handlers']['sentry'] = {
+        'level': 'INFO',
+        'class': 'raven.contrib.django.raven_compat.handlers.SentryHandler',
+    }
+    LOGGING['loggers']['sentry.errors'] = LOGGING['loggers']['raven'] = {
+        'level': 'INFO',
+        'handlers': ['console'],
+        'propagate': False,
+    }
+
+    with open(RAVEN_FILE, 'r') as f:
+        RAVEN_CONFIG = {
+            'dsn': f.read().strip()
+        }
+
+SITE_ID = 1
+SITE_NAME = os.environ.get('DJANGO_SITE_NAME', 'La Quadrature du Net')
+SITE_DOMAIN = os.environ.get('OPENSHIFT_APP_DNS', 'localhost:8000')
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'

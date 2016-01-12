@@ -1,38 +1,38 @@
 # coding: utf-8
-
-# This file is part of memopol.
-#
-# memopol is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as
-# published by the Free Software Foundation, either version 3 of
-# the License, or any later version.
-#
-# memopol is distributed in the hope that it will
-# be useful, but WITHOUT ANY WARRANTY; without even the implied
-# warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-# See the GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU General Affero Public
-# License along with django-representatives.
-# If not, see <http://www.gnu.org/licenses/>.
-#
-# Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
-
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 from django.contrib import admin
-from adminplus.sites import AdminSitePlus
+from django.views import generic
 
-import core.views
+import views
 
-admin.site = AdminSitePlus()
 admin.autodiscover()
 
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'memopol.views.home', name='home'),
-    url(r'^$', core.views.HomeView.as_view(), name='index'),
-    url(r'^legislature/', include('legislature.urls', namespace='legislature')),
-    url(r'^votes/', include('votes.urls', namespace='votes')),
-    url(r'^positions/', include('positions.urls', namespace='positions')),
+urlpatterns = [
+    # Project-specific overrides
+    url(
+        r'^legislature/representative/(?P<group_kind>\w+)/(?P<group>.+)/$',
+        views.RepresentativeList.as_view(),
+    ),
+    url(
+        r'^legislature/representative/(?P<slug>[-\w]+)/$',
+        views.RepresentativeDetail.as_view(),
+    ),
+    url(
+        r'legislature/representative/$',
+        views.RepresentativeList.as_view(),
+    ),
+    url(
+        r'votes/dossier/$',
+        views.DossierList.as_view(),
+    ),
+
+    url(r'^autocomplete/', include('autocomplete_light.urls')),
     url(r'^admin/', include(admin.site.urls)),
-)
+    url(r'legislature/', include('representatives.urls',
+        namespace='representatives')),
+    url(r'votes/', include('representatives_votes.urls',
+        namespace='representatives_votes')),
+    url(r'positions/', include('representatives_positions.urls',
+        namespace='representatives_positions')),
+    url(r'^$', generic.TemplateView.as_view(template_name='home.html')),
+]
