@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en"> <!--<![endif]-->
-  <head>
-    <meta charset="utf-8" />
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
     <link rel="icon" type="image/png" href="{{ STATIC_URL }}img/favicon.ico" />
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width" />
@@ -12,20 +16,68 @@
     <link rel="stylesheet" href="{% static 'libs/bootstrap/dist/css/bootstrap.min.css' %}" type="text/css" />
     <link rel="stylesheet" href="{% static 'libs/fontawesome/css/font-awesome.min.css' %}" type="text/css" />
     <link rel="stylesheet" href="{% static 'libs/flag-icon-css/css/flag-icon.min.css' %}" type="text/css" />
-    <link rel="stylesheet" href="{% static 'scss/base.scss' %}" type="text/x-scss" />
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}" type="text/css" />
     {% endcompress %}
+
     {% compress js %}
     <script type="text/javascript" src="{% static 'libs/jquery/dist/jquery.js' %}"></script>
     <script type="text/javascript" src="{% static 'libs/bootstrap/dist/js/bootstrap.js' %}"></script>
     {% endcompress %}
     {% block head %}{% endblock %}
-  </head>
-  <body {% block bodyattrs %}{% endblock %}>
-    {% include "_header.html" %}
-    <div class="container-fluid main-container">
-      {% block content %}
-      {% endblock %}
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 custom-nav">
+                {% include '_base_intro.html' %}
+                <hr/>
+                {% include '_base_search.html' %}
+                <hr />
+                <a href="listMEP.html" class="btn btn-primary btn-block">Check out all MEPs</a>
+                <a href="listDossiers.html" class="btn btn-primary btn-block">Check out all Dossiers</a>
+                <br />
+                {% include '_base_position.html' %}
+            </div>
+
+            <div class="col-sm-9 col-sm-offset-3 custom-listMEP">
+            {% block content %}
+                <h1 class="text-center">Members of the European Parliement</h1>
+                <p class="lead text-center">{number} MEP from {country}, members of {party}, working in {delegation} and on {committee}.</p>
+
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default active">
+                        <input type="radio" name="view" id="cards" autocomplete="off" checked>
+                        <span class="glyphicon glyphicon-th"></span>
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="radio" name="view" id="lists" autocomplete="off">
+                        <span class="glyphicon glyphicon-list"></span>
+                    </label>
+                </div>
+            {% endblock %}
+            </div>
+
+        </div>
     </div>
-    {% include "_footer.html" %}
-  </body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./js/ie10-viewport-bug-workaround.js"></script>
+
+    <script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+    </script>
+
+</body>
 </html>

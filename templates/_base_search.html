@@ -1,0 +1,98 @@
+<form class="form-horizontal">
+    <div class="input-group">
+        <label class="sr-only" for="rechercher">Search</label>
+        <input type="text" class="form-control" placeholder="Search" id="rechercher">
+        <span class="input-group-btn">
+            <button class="btn btn-primary" type="button">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </span>
+    </div>
+</form>
+
+<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#moresearch" aria-expanded="false" aria-controls="moresearch">
+    More search options
+</button>
+
+<div class="collapse" id="moresearch">
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#formMEP" aria-expanded="false" aria-controls="formMEP">
+        Find a MEP
+    </button>
+
+    <div class="collapse" id="formMEP">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-2" for="name">Name</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="name" placeholder="Leave empty for all">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3" for="country">Country</label>
+                <div class="col-sm-9">
+                    <select class="form-control" id="country">
+                        <option>All</option>
+                        <option>AT . Austria </option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-sm-3" for="party">Party</label>
+                <div class="col-sm-9">
+                    <select class="form-control" id="party">
+                        <option>All</option>
+                        <option>GUE/NGL . Confederal Group of the European United Left - Nordic Green Left </option>
+                        <option>ECR . European Conservatives and Reformists Group </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3" for="delegation">Delegation</label>
+                <div class="col-sm-9">
+                    <select class="form-control" id="delegation">
+                        <option>All</option>
+                        <option>Delegation for relations with Afghanistan </option>
+                        <option>Delegation for relations with Australia and New Zealand </option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-sm-3" for="committee">Committee</label>
+                <div class="col-sm-9">
+                    <select class="form-control" id="committee">
+                        <option>All</option>
+                        <option>AGRI . Committee on Agriculture and Rural Development </option>
+                        <option>CONT . Committee on Budgetary Control </option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-default">Search</button>
+        </form>
+    </div>
+
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#formDossiers" aria-expanded="false" aria-controls="formDossiers">
+        Explore the dossiers
+    </button>
+
+    <div class="collapse" id="formDossiers">
+        <form class="form-horizontal">
+
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <select class="form-control" id="dossiers">
+                        <option>All</option>
+                        <option>Personal data protection: processing of data for the purposes of prevention, investigation, detection or prosecution of criminal offences or execution of criminal penalties, and free movement of data </option>
+                        <option>ACTA </option>
+                        <option>Personal data protection: processing and free movement of data </option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-default">Search</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="text-center">Members of the European Parliement</h1>
+<p class="lead text-center">{number} MEP from {country}, members of {party}, working in {delegation} and on {committee}.</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <label class="btn btn-default active">
+        <input type="radio" name="view" id="cards" autocomplete="off" checked>
+        <span class="glyphicon glyphicon-th"></span>
+    </label>
+    <label class="btn btn-default">
+        <input type="radio" name="view" id="lists" autocomplete="off">
+        <span class="glyphicon glyphicon-list"></span>
+    </label>
+</div>
+
+
+<div class="dropdown" style="display:inline-block;">
+    Order by
+
+    <button class="btn btn-default dropdown-toggle" type="button" id="orderby" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Score
+        <span class="caret"></span>
+    </button>
+
+    <ul class="dropdown-menu" aria-labelledby="orderby">
+        <li class="disabled"><a href="#">Score</a></li>
+        <li><a href="#">Country</a></li>
+        <li><a href="#">Party</a></li>
+        <li><a href="#">Group</a></li>
+    </ul>
+</div>
+
+<br />
+
+<div class="row">
+{% for representative in object_list %}
+    <div class="col-xs-12 col-md-4">
+        <div class="thumbnail">
+            <a href="{{ representative.get_absolute_url }}" class="custom-thumbnail">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <img class="img-responsive" src="{{ representative.photo }}" width="80px">
+                        <div class="custom-thumbnail-details">
+                            <p>
+                                <span class="glyphicon glyphicon-flag"></span> Germany<br>
+                                <span class="glyphicon glyphicon-paperclip"></span> Greens/EFA<br>
+                                <span class="glyphicon glyphicon-briefcase "></span> Parti national
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-7">
+                        <h4 class="text-center">Jan Philipp ALBRECHT</h4>
+                        <p class="text-center"><span class="label label-primary"><span class="glyphicon glyphicon-flag"></span></span>
+                            <span class="label label-primary"><span class="glyphicon glyphicon-paperclip"></span></span>
+                            <span class="label label-primary"><span class="glyphicon glyphicon-briefcase "></span></span>
+                        </p>
+                        <p class="text-center small">
+                            <span class="label label-primary"><span class="glyphicon glyphicon-pushpin "></span></span>
+                            <span class="label label-primary"><span class="glyphicon glyphicon-pushpin "></span></span>
+                            <span class="label label-primary"><span class="glyphicon glyphicon-pushpin "></span></span>
+                        </p>
+                        <p class="text-right"><span class="badge">130</span></p>
+                    </div>
+
+                </div>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
