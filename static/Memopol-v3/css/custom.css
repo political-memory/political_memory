@@ -1,0 +1,307 @@
+
+/***************************************************************
+					Général
+***************************************************************/
+html, body {
+	height:100%;
+}
+
+body {
+	padding-bottom: 5em;
+}
+
+.custom-feature, .custom-listMEP {
+				padding: 2em;
+			}
+
+
+/***************************************************************
+					Typographie
+***************************************************************/
+
+@font-face {
+    font-family: Propaganda;
+    src: url(../fonts/PROPAGAN.ttf);
+}
+
+body, .panel-title {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Propaganda; 
+}
+
+h1 {
+	font-size: 2.5em;
+}
+
+
+h2 {
+	font-size: 1.7em;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
+.label {
+	font-weight: 400;
+}
+
+a.custom-invisible, a.custom-invisible:hover, a.custom-invisible:focus {
+	color: #222;
+	text-decoration: none;
+}
+
+
+
+/***************************************************************
+					Forms
+***************************************************************/
+label {
+   font-weight: 400;
+}
+
+.form-control, input, textarea {
+	color: #212121 !important;
+}
+
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 37px;
+    padding: 6px 16px;
+    font-size: 13px;
+    line-height: 1.846;
+    color: #666666;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.form-control:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6);
+}
+
+textarea, textarea.form-control, input.form-control, input[type=text], input[type=password], input[type=email], input[type=number], [type=text].form-control, [type=password].form-control, [type=email].form-control, [type=tel].form-control, [contenteditable].form-control {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -webkit-box-shadow: inset 0 -1px 0 #ddd;
+    box-shadow: inset 0 -1px 0 #ddd;
+    font-size: 16px;
+}
+
+textarea:focus, textarea.form-control:focus, input.form-control:focus, input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=number]:focus, [type=text].form-control:focus, [type=password].form-control:focus, [type=email].form-control:focus, [type=tel].form-control:focus, [contenteditable].form-control:focus {
+    -webkit-box-shadow: inset 0 -2px 0 #487ED6;
+    box-shadow: inset 0 -2px 0 #487ED6;
+}
+
+select, select.form-control {
+    border: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-left: 0;
+    padding-right: 0\9;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAAJ1BMVEVmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmaP/QSjAAAADHRSTlMAAgMJC0uWpKa6wMxMdjkoAAAANUlEQVR4AeXJyQEAERAAsNl7Hf3X6xt0QL6JpZWq30pdvdadme+0PMdzvHm8YThHcT1H7K0BtOMDniZhWOgAAAAASUVORK5CYII=);
+    -webkit-background-size: 13px 13px;
+    background-size: 13px;
+    background-repeat: no-repeat;
+    background-position: right center;
+    -webkit-box-shadow: inset 0 -1px 0 #ddd;
+    box-shadow: inset 0 -1px 0 #ddd;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+select:focus, select.form-control:focus {
+    -webkit-box-shadow: inset 0 -2px 0 #487ED6;
+    box-shadow: inset 0 -2px 0 #487ED6;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAAJ1BMVEVmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmaP/QSjAAAADHRSTlMAAgMJC0uWpKa6wMxMdjkoAAAANUlEQVR4AeXJyQEAERAAsNl7Hf3X6xt0QL6JpZWq30pdvdadme+0PMdzvHm8YThHcT1H7K0BtOMDniZhWOgAAAAASUVORK5CYII=);
+}
+
+/***************************************************************
+					Buttons
+***************************************************************/
+.btn {
+	text-transform: uppercase;
+}
+
+.btn {
+				-moz-box-shadow: 1px 1px 3px #656565;
+				-webkit-box-shadow: 1px 1px 3px #656565;
+				-o-box-shadow: 1px 1px 3px #656565;
+				box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+			}
+
+/***************************************************************
+					Nav
+***************************************************************/
+
+			.custom-nav .custom-plus {
+				margin: -1.5em 0 1.5em 0;
+			}
+			
+			.custom-nav, .custom-cardMEP{
+				-moz-box-shadow: 0px 0px 5px 0px #656565;
+				-webkit-box-shadow: 0px 0px 5px 0px #656565;
+				-o-box-shadow: 0px 0px 5px 0px #656565;
+				box-shadow: 0px 0px 5px 0px #656565;
+			}
+			
+			.custom-nav {
+				height: 100%;
+				position: fixed;
+				overflow-y: auto;
+			}
+			
+			.custom-nav button, .custom-nav a[role=button] {
+				text-align: center;
+				width: 100%;
+				margin: 1em auto;
+			}
+
+/***************************************************************
+					Index
+***************************************************************/
+
+
+
+/***************************************************************
+					Cards / Résultats de la recherche
+***************************************************************/
+
+.thumbnail {
+	padding: 0;
+}
+
+.custom-thumbnail-details {
+	opacity: 0;
+	transition: opacity 0.2s;
+	
+	position: absolute;
+	top: 0;
+	background: white;
+	padding: 1em;
+	height: 100%;
+	width: 100%;
+	color: #666666;
+}
+
+a.custom-thumbnail:hover .custom-thumbnail-details {
+	opacity: 1;
+}
+
+
+.thumbnail .col-xs-7 p.lead {
+	margin-bottom: 0.5em;
+}
+
+.thumbnail .col-xs-7 {
+	padding-left: 0;
+}
+
+.thumbnail .col-xs-7 p {
+	margin-bottom: 0;
+}
+
+.custom-listMEP .thumbnail .badge {
+	position: absolute;
+	top: -0.5em;
+	right: 0.5em;
+}
+
+
+/***************************************************************
+					List / Résultat de la recherche
+***************************************************************/
+
+thead th {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAAJ1BMVEVmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmaP/QSjAAAADHRSTlMAAgMJC0uWpKa6wMxMdjkoAAAANUlEQVR4AeXJyQEAERAAsNl7Hf3X6xt0QL6JpZWq30pdvdadme+0PMdzvHm8YThHcT1H7K0BtOMDniZhWOgAAAAASUVORK5CYII=);
+   -webkit-background-size: 13px 13px;
+   background-size: 13px;
+   background-repeat: no-repeat;
+   background-position: right center;
+}
+
+/***************************************************************
+					MEPs
+***************************************************************/
+
+
+iframe {
+	border: none;
+	width: 100%;
+	height: 700px;
+	
+}
+
+.nav-tabs>li>a, .nav-tabs>li>a:focus {
+    -webkit-box-shadow: inset 0 -1px 0 #ddd;
+    box-shadow: inset 0 -1px 0 #ddd;
+	border: none;
+}
+
+.nav-tabs>li>a:hover, .nav-tabs>li>a:focus:hover, .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus {
+    background-color: transparent;
+    -webkit-box-shadow: inset 0 -2px 0 #487ED6;
+    box-shadow: inset 0 -2px 0 #487ED6;
+	border: none;
+}
+
+/***************************************************************
+					Dossiers
+***************************************************************/
+
+
+.custom-timeline thead th {
+	background: none;
+}
+
+
+.custom-dossier-tables th:first-child, .custom-dossier-tables td:first-child {
+	width: 20em;
+}
+
+
+
+.custom-dossier-tables table {
+	margin-bottom: 0;
+}
+
+.custom-dossier-tables .collapse table {
+	margin-bottom: 1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
