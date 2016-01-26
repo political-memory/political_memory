@@ -14,6 +14,9 @@
       %input{id:"search", type:"text", name:"search"}
       %input{type:"submit", value:"Go"}
 
+    %a{href:"?{% if request.GET.search %}search={{ request.GET.search }}&{% endif %}csv"}
+      - trans 'Download data as CSV'
+
   - include 'core/blocks/pagination.html'
 
   - block list

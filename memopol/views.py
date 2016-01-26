@@ -1,7 +1,7 @@
 # Project specific "glue" coupling of all apps
 from django.db import models
 
-from core.views import GridListMixin, PaginationMixin
+from core.views import GridListMixin, PaginationMixin, CSVDownloadMixin
 from representatives import views as representatives_views
 from representatives.models import Representative
 from representatives_votes import views as representatives_votes_views
@@ -10,8 +10,28 @@ from representatives_positions.forms import PositionForm
 from representatives_recommendations.models import ScoredVote
 
 
-class RepresentativeList(PaginationMixin, GridListMixin,
-        representatives_views.RepresentativeList):
+class RepresentativeList(
+    CSVDownloadMixin,
+    GridListMixin,
+    PaginationMixin,
+    representatives_views.RepresentativeList
+):
+
+    csv_name = 'meps.csv'
+
+    def get_csv_results(self, context, **kwargs):
+        qs = super(RepresentativeList, self).get_queryset()
+        qs = qs.prefetch_related('email_set')
+        return [self.add_representative_country_and_main_mandate(r)
+                for r in qs]
+
+    def get_csv_row(self, obj):
+        return (
+            obj.full_name,
+            u', '.join([e.email for e in obj.email_set.all()]),
+            obj.main_mandate.group.abbreviation,
+            obj.country,
+        )
 
     queryset = Representative.objects.filter(
         active=True).select_related('score')
