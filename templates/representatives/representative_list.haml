@@ -42,6 +42,7 @@
               = representative.full_name
 
           %td
+            %a{'href': "{{ representative.country.get_absolute_url }}"}
               = representative.country
 
           %td

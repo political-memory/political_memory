@@ -21,7 +21,8 @@
         %tr
           %th Country
           %td<
-            = representative.country|country_flag
+            %a{:href => "{{ representative.country.get_absolute_url }}"}
+              = representative.country|country_flag
         %tr
           %th Party
           %td<
