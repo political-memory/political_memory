@@ -80,6 +80,10 @@ class Country(models.Model):
     def __unicode__(self):
         return u'{} [{}]'.format(self.name, self.code)
 
+    def get_absolute_url(self):
+        return reverse('representatives:representative-list',
+            kwargs=dict(group_kind='country', group=self.name))
+
 
 class Representative(HashableModel, TimeStampedModel):
     """
