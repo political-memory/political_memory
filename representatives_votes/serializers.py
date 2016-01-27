@@ -1,23 +1,5 @@
 # coding: utf-8
 
-# This file is part of toutatis.
-#
-# toutatis is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as
-# published by the Free Software Foundation, either version 3 of
-# the License, or any later version.
-#
-# toutatis is distributed in the hope that it will
-# be useful, but WITHOUT ANY WARRANTY; without even the implied
-# warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-# See the GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU General Affero Public
-# License along with django-representatives.
-# If not, see <http://www.gnu.org/licenses/>.
-#
-# Copyright (C) 2015 Arnaud Fabre <af@laquadrature.net>
-
 import representatives_votes.models as models
 from representatives.models import Representative
 from rest_framework import serializers
@@ -34,7 +16,7 @@ class VoteSerializer(serializers.ModelSerializer):
         source='representative.fingerprint',
         allow_null=True
     )
-    
+
     class Meta:
         model = models.Vote
         fields = (
@@ -74,7 +56,7 @@ class ProposalSerializer(serializers.ModelSerializer):
         source='dossier.reference',
         read_only=True
     )
-    
+
     class Meta:
         model = models.Proposal
         fields = (
@@ -95,13 +77,14 @@ class ProposalSerializer(serializers.ModelSerializer):
         )
 
     def to_internal_value(self, data):
-        validated_data = super(ProposalSerializer, self).to_internal_value(data)
+        validated_data = super(ProposalSerializer, self).to_internal_value(
+            data)
         validated_data['dossier'] = models.Dossier.objects.get(
             fingerprint=validated_data['dossier']['fingerprint']
         )
         validated_data['votes'] = data['votes']
         return validated_data
-    
+
     def _create_votes(self, votes_data, proposal):
         for vote in votes_data:
             serializer = VoteSerializer(data=vote)
@@ -109,7 +92,7 @@ class ProposalSerializer(serializers.ModelSerializer):
                 serializer.save()
             else:
                 raise Exception(serializer.errors)
-            
+
     def create(self, validated_data):
         votes_data = validated_data.pop('votes')
         proposal = models.Proposal.objects.create(
@@ -129,7 +112,7 @@ class ProposalSerializer(serializers.ModelSerializer):
 class ProposalDetailSerializer(ProposalSerializer):
     """ Proposal serializer that includes votes """
     votes = VoteSerializer(many=True)
-    
+
     class Meta(ProposalSerializer.Meta):
         fields = ProposalSerializer.Meta.fields + (
             'votes',
@@ -152,13 +135,10 @@ class DossierSerializer(serializers.ModelSerializer):
 
 
 class DossierDetailSerializer(DossierSerializer):
-    """ 
-    Dossier serializer that includes proposals
-    and votes 
     """
-    proposals = ProposalDetailSerializer(
-        many = True,
-    )
+    Dossier serializer that includes proposals and votes.
+    """
+    proposals = ProposalDetailSerializer(many=True)
 
     class Meta(DossierSerializer.Meta):
         fields = DossierSerializer.Meta.fields + (

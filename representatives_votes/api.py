@@ -26,7 +26,11 @@ class DossierViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Dossier.objects.all()
     serializer_class = DossierSerializer
 
-    filter_backends = (filters.DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter)
+    filter_backends = (
+        filters.DjangoFilterBackend,
+        filters.SearchFilter,
+        filters.OrderingFilter
+    )
 
     filter_fields = {
         'fingerprint': ['exact'],
@@ -34,9 +38,15 @@ class DossierViewSet(viewsets.ReadOnlyModelViewSet):
         'reference': ['exact', 'icontains'],
     }
 
-    search_fields = ('title', 'fingerprint', 'reference', 'text', 'proposals__title')
-    ordering_fields = ('id', 'reference')
+    search_fields = (
+        'title',
+        'fingerprint',
+        'reference',
+        'text',
+        'proposals__title'
+    )
 
+    ordering_fields = ('id', 'reference')
 
     def list(self, request):
         return super(DossierViewSet, self).list(request)
@@ -51,10 +61,14 @@ class ProposalViewSet(viewsets.ReadOnlyModelViewSet):
     API endpoint that allows proposals to be viewed.
     """
 
-    queryset = Proposal.objects.all()
+    queryset = Proposal.objects.select_related('dossier')
     serializer_class = ProposalSerializer
 
-    filter_backends = (filters.DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter)
+    filter_backends = (
+        filters.DjangoFilterBackend,
+        filters.SearchFilter,
+        filters.OrderingFilter
+    )
 
     filter_fields = {
         'fingerprint': ['exact'],
@@ -66,9 +80,14 @@ class ProposalViewSet(viewsets.ReadOnlyModelViewSet):
         'kind': ['exact'],
     }
 
-    search_fields = ('title', 'fingerprint', 'reference',
-                     'dossier__fingerprint', 'dossier__title',
-                     'dossier__reference')
+    search_fields = (
+        'title',
+        'fingerprint', 'reference',
+        'dossier__fingerprint',
+        'dossier__title',
+        'dossier__reference'
+    )
+
     ordering_fields = ('id', 'reference')
 
     def list(self, request):
@@ -84,10 +103,14 @@ class VoteViewSet(viewsets.ReadOnlyModelViewSet):
     API endpoint that allows proposals to be viewed.
     """
 
-    queryset = Vote.objects.all()
+    queryset = Vote.objects.select_related('representative', 'proposal')
     serializer_class = VoteSerializer
 
-    filter_backends = (filters.DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter)
+    filter_backends = (
+        filters.DjangoFilterBackend,
+        filters.SearchFilter,
+        filters.OrderingFilter
+    )
 
     filter_fields = {
         'proposal__fingerprint': ['exact'],
