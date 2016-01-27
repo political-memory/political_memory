@@ -12,11 +12,17 @@ setup(
     license='GPLv3',
     keywords='django government parliament votes',
     install_requires=[
-        'django-representatives>=0.0.7',
+        'django-representatives>=0.0.13',
         'py-dateutil',
         'pytz',
         'ijson',
     ],
+    extras_require={
+        'api': [
+            'django-filter',
+            'djangorestframework',
+        ]
+    },
     entry_points={
         'console_scripts': [
             'parltrack_import_dossiers = representatives_votes.contrib.parltrack.import_dossiers:main',

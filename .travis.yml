@@ -7,9 +7,9 @@ python:
 before_install:
 - pip install codecov
 install:
-- pip install $DJANGO pep8 flake8 pytest-django pytest-cov codecov
+- pip install $DJANGO pep8 flake8 pytest-django pytest-cov codecov django-responsediff
 - pip install https://github.com/political-memory/django-representatives/archive/parltrack.tar.gz#egg=django-representatives
-- pip install -e .
+- pip install -e .[api]
 script:
 - django-admin migrate
 - flake8 representatives_votes/ --exclude migrations --ignore E128
