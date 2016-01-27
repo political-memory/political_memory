@@ -61,7 +61,7 @@ class ProposalViewSet(viewsets.ReadOnlyModelViewSet):
     API endpoint that allows proposals to be viewed.
     """
 
-    queryset = Proposal.objects.all()
+    queryset = Proposal.objects.select_related('dossier')
     serializer_class = ProposalSerializer
 
     filter_backends = (
@@ -103,7 +103,7 @@ class VoteViewSet(viewsets.ReadOnlyModelViewSet):
     API endpoint that allows proposals to be viewed.
     """
 
-    queryset = Vote.objects.all()
+    queryset = Vote.objects.select_related('representative', 'proposal')
     serializer_class = VoteSerializer
 
     filter_backends = (
