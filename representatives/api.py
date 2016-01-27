@@ -24,14 +24,18 @@ class RepresentativeViewSet(viewsets.ReadOnlyModelViewSet):
     API endpoint that allows representatives to be viewed.
     """
     queryset = Representative.objects.all()
-    filter_backends = (filters.DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter)
+    filter_backends = (
+        filters.DjangoFilterBackend,
+        filters.SearchFilter,
+        filters.OrderingFilter
+    )
     filter_fields = {
         'active': ['exact'],
         'slug': ['exact', 'icontains'],
         'id': ['exact'],
         'remote_id': ['exact'],
         'first_name': ['exact', 'icontains'],
-        'last_name' : ['exact', 'icontains'],
+        'last_name': ['exact', 'icontains'],
         'full_name': ['exact', 'icontains'],
         'gender': ['exact'],
         'birth_place': ['exact'],
@@ -56,7 +60,11 @@ class MandateViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Mandate.objects.all()
     serializer_class = MandateSerializer
 
-    filter_backends = (filters.DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter)
+    filter_backends = (
+        filters.DjangoFilterBackend,
+        filters.SearchFilter,
+        filters.OrderingFilter
+    )
     filter_fields = {
         'id': ['exact'],
         'group__name': ['exact', 'icontains'],
