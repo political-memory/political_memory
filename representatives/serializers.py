@@ -62,13 +62,12 @@ class PhoneSerializer(serializers.ModelSerializer):
 
 class AddressSerializer(serializers.ModelSerializer):
     country = CountrySerializer()
-    phones = PhoneSerializer(many=True)
 
     class Meta:
         model = models.Address
         fields = ('country', 'city', 'street',
                   'number', 'postcode', 'floor',
-                  'office_number', 'kind', 'phones',
+                  'office_number', 'kind',
                   )
 
 

@@ -1,3 +1,5 @@
+from django.db import models
+
 from rest_framework import (
     filters,
     viewsets,
@@ -12,9 +14,11 @@ from representatives.serializers import (
 )
 
 from .models import (
+    Address,
     Constituency,
     Group,
     Mandate,
+    Phone,
     Representative,
 )
 
@@ -44,6 +48,23 @@ class RepresentativeViewSet(viewsets.ReadOnlyModelViewSet):
     search_fields = ('first_name', 'last_name', 'slug')
     ordering_fields = ('id', 'birth_date', 'last_name', 'full_name')
 
+    def get_queryset(self):
+        qs = super(RepresentativeViewSet, self).get_queryset()
+        qs = qs.prefetch_related(
+            'email_set',
+            'website_set',
+            models.Prefetch(
+                'address_set',
+                queryset=Address.objects.select_related('country')
+            ),
+            models.Prefetch(
+                'phone_set',
+                queryset=Phone.objects.select_related('address__country')
+            ),
+            'mandates',
+        )
+        return qs
+
     def list(self, request):
         self.serializer_class = RepresentativeSerializer
         return super(RepresentativeViewSet, self).list(request)
@@ -71,7 +92,11 @@ class MandateViewSet(viewsets.ReadOnlyModelViewSet):
         'group__abbreviation': ['exact'],
     }
     search_fields = ('group__name', 'group__abbreviation')
-    # ordering_fields = ()
+
+    def get_queryset(self):
+        qs = super(MandateViewSet, self).get_queryset()
+        qs = qs.select_related('representative')
+        return qs
 
 
 class ConstituencyViewSet(viewsets.ReadOnlyModelViewSet):
