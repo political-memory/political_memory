@@ -34,7 +34,7 @@ class VoteSerializer(serializers.ModelSerializer):
         source='representative.fingerprint',
         allow_null=True
     )
-    
+
     class Meta:
         model = models.Vote
         fields = (
@@ -74,7 +74,7 @@ class ProposalSerializer(serializers.ModelSerializer):
         source='dossier.reference',
         read_only=True
     )
-    
+
     class Meta:
         model = models.Proposal
         fields = (
@@ -95,13 +95,14 @@ class ProposalSerializer(serializers.ModelSerializer):
         )
 
     def to_internal_value(self, data):
-        validated_data = super(ProposalSerializer, self).to_internal_value(data)
+        validated_data = super(ProposalSerializer, self).to_internal_value(
+            data)
         validated_data['dossier'] = models.Dossier.objects.get(
             fingerprint=validated_data['dossier']['fingerprint']
         )
         validated_data['votes'] = data['votes']
         return validated_data
-    
+
     def _create_votes(self, votes_data, proposal):
         for vote in votes_data:
             serializer = VoteSerializer(data=vote)
@@ -109,7 +110,7 @@ class ProposalSerializer(serializers.ModelSerializer):
                 serializer.save()
             else:
                 raise Exception(serializer.errors)
-            
+
     def create(self, validated_data):
         votes_data = validated_data.pop('votes')
         proposal = models.Proposal.objects.create(
@@ -129,7 +130,7 @@ class ProposalSerializer(serializers.ModelSerializer):
 class ProposalDetailSerializer(ProposalSerializer):
     """ Proposal serializer that includes votes """
     votes = VoteSerializer(many=True)
-    
+
     class Meta(ProposalSerializer.Meta):
         fields = ProposalSerializer.Meta.fields + (
             'votes',
@@ -152,13 +153,10 @@ class DossierSerializer(serializers.ModelSerializer):
 
 
 class DossierDetailSerializer(DossierSerializer):
-    """ 
-    Dossier serializer that includes proposals
-    and votes 
     """
-    proposals = ProposalDetailSerializer(
-        many = True,
-    )
+    Dossier serializer that includes proposals and votes.
+    """
+    proposals = ProposalDetailSerializer(many=True)
 
     class Meta(DossierSerializer.Meta):
         fields = DossierSerializer.Meta.fields + (
