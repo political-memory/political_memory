@@ -9,6 +9,8 @@ from rest_framework import (
     viewsets,
 )
 
+from representatives.api import DefaultWebPagination
+
 from representatives_votes.serializers import (
     DossierDetailSerializer,
     DossierSerializer,
@@ -23,6 +25,7 @@ class DossierViewSet(viewsets.ReadOnlyModelViewSet):
     API endpoint that allows dossiers to be viewed.
     """
 
+    pagination_class = DefaultWebPagination
     queryset = Dossier.objects.all()
     serializer_class = DossierSerializer
 
@@ -61,6 +64,7 @@ class ProposalViewSet(viewsets.ReadOnlyModelViewSet):
     API endpoint that allows proposals to be viewed.
     """
 
+    pagination_class = DefaultWebPagination
     queryset = Proposal.objects.select_related('dossier')
     serializer_class = ProposalSerializer
 
@@ -103,6 +107,7 @@ class VoteViewSet(viewsets.ReadOnlyModelViewSet):
     API endpoint that allows proposals to be viewed.
     """
 
+    pagination_class = DefaultWebPagination
     queryset = Vote.objects.select_related('representative', 'proposal')
     serializer_class = VoteSerializer
 
