@@ -63,6 +63,7 @@ class RepresentativeViewSet(viewsets.ReadOnlyModelViewSet):
     }
     search_fields = ('first_name', 'last_name', 'slug')
     ordering_fields = ('id', 'birth_date', 'last_name', 'full_name')
+    pagination_class = DefaultWebPagination
 
     def get_queryset(self):
         qs = super(RepresentativeViewSet, self).get_queryset()
