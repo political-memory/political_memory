@@ -7,8 +7,8 @@ python:
 before_install:
 - pip install codecov
 install:
-- pip install $DJANGO pep8 flake8 pytest-django pytest-cov codecov
-- pip install -e .
+- pip install $DJANGO pep8 flake8 pytest-django pytest-cov codecov django-responsediff
+- pip install -e .[api]
 script:
 - pep8 representatives/ --exclude migrations --ignore E128
 - flake8 representatives/ --exclude migrations --ignore E128

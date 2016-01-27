@@ -16,7 +16,10 @@ setup(
     ],
     extras_require={
         'celery': 'celery',
-        'api': 'djangorestframework',
+        'api': [
+            'django-filter',
+            'djangorestframework',
+        ]
     },
     entry_points={
         'console_scripts': [

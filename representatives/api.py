@@ -2,6 +2,8 @@ from django.db import models
 
 from rest_framework import (
     filters,
+    pagination,
+    renderers,
     viewsets,
 )
 
@@ -21,6 +23,20 @@ from .models import (
     Phone,
     Representative,
 )
+
+
+class DefaultWebPagination(pagination.PageNumberPagination):
+    default_web_page_size = 10
+
+    def get_page_size(self, request):
+        web = isinstance(request.accepted_renderer,
+                         renderers.BrowsableAPIRenderer)
+        size = pagination.PageNumberPagination.get_page_size(self, request)
+
+        if web and not size:
+            return self.default_web_page_size
+
+        return size
 
 
 class RepresentativeViewSet(viewsets.ReadOnlyModelViewSet):
@@ -78,7 +94,8 @@ class MandateViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows mandates to be viewed.
     """
-    queryset = Mandate.objects.all()
+    pagination_class = DefaultWebPagination
+    queryset = Mandate.objects.select_related('representative')
     serializer_class = MandateSerializer
 
     filter_backends = (
@@ -93,17 +110,19 @@ class MandateViewSet(viewsets.ReadOnlyModelViewSet):
     }
     search_fields = ('group__name', 'group__abbreviation')
 
-    def get_queryset(self):
-        qs = super(MandateViewSet, self).get_queryset()
-        qs = qs.select_related('representative')
-        return qs
+    @property
+    def paginator(self):
+        paginator = super(MandateViewSet, self).paginator
+        return paginator
 
 
 class ConstituencyViewSet(viewsets.ReadOnlyModelViewSet):
+    pagination_class = DefaultWebPagination
     queryset = Constituency.objects.all()
     serializer_class = ConstituencySerializer
 
 
 class GroupViewSet(viewsets.ReadOnlyModelViewSet):
+    pagination_class = DefaultWebPagination
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
