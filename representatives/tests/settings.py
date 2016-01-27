@@ -14,9 +14,12 @@ DATABASES = {
 }
 
 INSTALLED_APPS = (
+    'django.contrib.staticfiles',
+    'rest_framework',
     'representatives',
 )
 
+STATIC_URL = '/static/'
 DEBUG = True
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
