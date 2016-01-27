@@ -1,7 +1,80 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/static/collected/img/favicon.ico" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+    <title>
+      Home
+      - The Political Memory of </title>
+    
+    
+    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.53baf9815401.css" type="text/css" />
+    <script type="text/javascript" src="/static/collected/libs/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="/static/collected/libs/bootstrap/dist/js/bootstrap.js"></script>
+    
+  </head>
+  <body >
+    <!-- -load memopol_tags cache -->
+
+
+
+
+<div id='header' class='container-fluid'>
+  <a id='logo' href='/'>
+    <img src='/static/collected/images/logo.png' />
+  </a>
+  <h1>
+    <a id='header_banner' href='/'>
+      Political Memory
+    </a>
+  </h1>
+  <p class='organization'>
+    
+
+  </p>
+</div>
+<div id='nav' class='container-fluid'>
+  <ul class='nav'>
+    <li>
+      <a href='/legislature/representative/'>
+        Representatives
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/groups/country/'>
+        Countries
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/groups/group/'>
+        Parties
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/groups/delegation/'>
+        Delegations
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/groups/committee/'>
+        Committees
+      </a>
+    </li>
+    <li>
+      <a href='/votes/dossier/'>
+        Votes
+
+      </a>
+    </li>
+  </ul>
+</div>
+
     <div class="container-fluid main-container">
+      
 
-
-
+  
 
     <form action='' method='get'>
       <label for='search'>
@@ -11,13 +84,13 @@
       <input type='submit' value='Go' />
 
     </form>
-
+  
 
   <div class='pagination-block'>
 
   <nav>
     <ul class='pagination pagination-sm'>
-
+      
         <li>
           <a aria-label='First' href='?&page=1'>
             <i aria-hidden="true" class="fa fa-chevron-circle-left"></i>
@@ -30,41 +103,41 @@
 
           </a>
         </li>
-
-
-
-
+      
+      
+        
+          
             <li>
               <a href='?&page=1'>
                 1
 
               </a>
             </li>
-
-
-
-
-
+          
+        
+      
+        
+          
             <li class='active'>
               <a href=''>
                 2
               </a>
             </li>
-
-
-
-
-
+          
+        
+      
+        
+          
             <li>
               <a href='?&page=3'>
                 3
 
               </a>
             </li>
-
-
-
-
+          
+        
+      
+      
         <li>
           <a aria-label='Next' href='?&page=3'>
             <i aria-hidden="true" class="fa fa-chevron-right"></i>
@@ -77,7 +150,7 @@
 
           </a>
         </li>
-
+      
     </ul>
   </nav>
   <div class='count'>
@@ -86,35 +159,35 @@
     Number of displayed results :
     12
     (
-
+    
       <a href='?paginate_by=12'>
         12
       </a>
-
+      
         /
-
-
+      
+    
       <a href='?paginate_by=24'>
         24
       </a>
-
+      
         /
-
-
+      
+    
       <a href='?paginate_by=48'>
         48
       </a>
-
+      
         /
-
-
+      
+    
       <a href='?paginate_by=96'>
         96
       </a>
-
-
+      
+    
     )
-
+    
       <span class='grid-list-selector'>
   <a href='?display=grid'>
     <i class="fa fa-th"></i>
@@ -126,12 +199,12 @@
 </span>
 
 
-
+    
   </div>
 </div>
 
 
-
+  
 
     <table class='table'>
       <tr>
@@ -152,7 +225,7 @@
 
         </th>
       </tr>
-
+      
         <tr>
           <td>
             <a href='/legislature/representative/ismail-ertug/'>
@@ -167,8 +240,10 @@
             </a>
           </td>
           <td>
+            <a href='/legislature/representative/country/Germany/'>
               Germany [DE]
 
+            </a>
           </td>
           <td>
             <a href='/legislature/representative/group/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
@@ -180,7 +255,7 @@
 
           </td>
         </tr>
-
+      
         <tr>
           <td>
             <a href='/legislature/representative/jose-manuel-fernandes/'>
@@ -195,8 +270,10 @@
             </a>
           </td>
           <td>
+            <a href='/legislature/representative/country/Portugal/'>
               Portugal [PT]
 
+            </a>
           </td>
           <td>
             <a href='/legislature/representative/group/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
@@ -208,7 +285,7 @@
 
           </td>
         </tr>
-
+      
         <tr>
           <td>
             <a href='/legislature/representative/monika-flasikova-benova/'>
@@ -223,8 +300,10 @@
             </a>
           </td>
           <td>
+            <a href='/legislature/representative/country/Slovakia/'>
               Slovakia [SK]
 
+            </a>
           </td>
           <td>
             <a href='/legislature/representative/group/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
@@ -236,7 +315,7 @@
 
           </td>
         </tr>
-
+      
         <tr>
           <td>
             <a href='/legislature/representative/ashley-fox/'>
@@ -251,8 +330,10 @@
             </a>
           </td>
           <td>
+            <a href='/legislature/representative/country/United%20Kingdom/'>
               United Kingdom [GB]
 
+            </a>
           </td>
           <td>
             <a href='/legislature/representative/group/European%20Conservatives%20and%20Reformists%20Group/'>
@@ -264,7 +345,7 @@
 
           </td>
         </tr>
-
+      
         <tr>
           <td>
             <a href='/legislature/representative/eider-gardiazabal-rubial/'>
@@ -279,8 +360,10 @@
             </a>
           </td>
           <td>
+            <a href='/legislature/representative/country/Spain/'>
               Spain [ES]
 
+            </a>
           </td>
           <td>
             <a href='/legislature/representative/group/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
@@ -292,7 +375,7 @@
 
           </td>
         </tr>
-
+      
         <tr>
           <td>
             <a href='/legislature/representative/kinga-gal/'>
@@ -307,8 +390,10 @@
             </a>
           </td>
           <td>
+            <a href='/legislature/representative/country/Hungary/'>
               Hungary [HU]
 
+            </a>
           </td>
           <td>
             <a href='/legislature/representative/group/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
@@ -320,7 +405,7 @@
 
           </td>
         </tr>
-
+      
         <tr>
           <td>
             <a href='/legislature/representative/ildiko-gall-pelcz/'>
@@ -335,8 +420,10 @@
             </a>
           </td>
           <td>
+            <a href='/legislature/representative/country/Hungary/'>
               Hungary [HU]
 
+            </a>
           </td>
           <td>
             <a href='/legislature/representative/group/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
@@ -348,7 +435,7 @@
 
           </td>
         </tr>
-
+      
         <tr>
           <td>
             <a href='/legislature/representative/marian-harkin/'>
@@ -363,8 +450,10 @@
             </a>
           </td>
           <td>
+            <a href='/legislature/representative/country/Ireland/'>
               Ireland [IE]
 
+            </a>
           </td>
           <td>
             <a href='/legislature/representative/group/Group%20of%20the%20Alliance%20of%20Liberals%20and%20Democrats%20for%20Europe/'>
@@ -376,7 +465,7 @@
 
           </td>
         </tr>
-
+      
         <tr>
           <td>
             <a href='/legislature/representative/mary-honeyball/'>
@@ -391,8 +480,10 @@
             </a>
           </td>
           <td>
+            <a href='/legislature/representative/country/United%20Kingdom/'>
               United Kingdom [GB]
 
+            </a>
           </td>
           <td>
             <a href='/legislature/representative/group/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
@@ -404,7 +495,7 @@
 
           </td>
         </tr>
-
+      
         <tr>
           <td>
             <a href='/legislature/representative/iliana-iotova/'>
@@ -419,8 +510,10 @@
             </a>
           </td>
           <td>
+            <a href='/legislature/representative/country/Bulgaria/'>
               Bulgaria [BG]
 
+            </a>
           </td>
           <td>
             <a href='/legislature/representative/group/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
@@ -432,7 +525,7 @@
 
           </td>
         </tr>
-
+      
         <tr>
           <td>
             <a href='/legislature/representative/liisa-jaakonsaari/'>
@@ -447,8 +540,10 @@
             </a>
           </td>
           <td>
+            <a href='/legislature/representative/country/Finland/'>
               Finland [FI]
 
+            </a>
           </td>
           <td>
             <a href='/legislature/representative/group/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
@@ -460,7 +555,7 @@
 
           </td>
         </tr>
-
+      
         <tr>
           <td>
             <a href='/legislature/representative/yannick-jadot/'>
@@ -475,8 +570,10 @@
             </a>
           </td>
           <td>
+            <a href='/legislature/representative/country/France/'>
               France [FR]
 
+            </a>
           </td>
           <td>
             <a href='/legislature/representative/group/Group%20of%20the%20Greens/European%20Free%20Alliance/'>
@@ -488,15 +585,15 @@
 
           </td>
         </tr>
-
+      
     </table>
-
+  
 
   <div class='pagination-block'>
 
   <nav>
     <ul class='pagination pagination-sm'>
-
+      
         <li>
           <a aria-label='First' href='?&page=1'>
             <i aria-hidden="true" class="fa fa-chevron-circle-left"></i>
@@ -509,41 +606,41 @@
 
           </a>
         </li>
-
-
-
-
+      
+      
+        
+          
             <li>
               <a href='?&page=1'>
                 1
 
               </a>
             </li>
-
-
-
-
-
+          
+        
+      
+        
+          
             <li class='active'>
               <a href=''>
                 2
               </a>
             </li>
-
-
-
-
-
+          
+        
+      
+        
+          
             <li>
               <a href='?&page=3'>
                 3
 
               </a>
             </li>
-
-
-
-
+          
+        
+      
+      
         <li>
           <a aria-label='Next' href='?&page=3'>
             <i aria-hidden="true" class="fa fa-chevron-right"></i>
@@ -556,7 +653,7 @@
 
           </a>
         </li>
-
+      
     </ul>
   </nav>
   <div class='count'>
@@ -565,35 +662,35 @@
     Number of displayed results :
     12
     (
-
+    
       <a href='?paginate_by=12'>
         12
       </a>
-
+      
         /
-
-
+      
+    
       <a href='?paginate_by=24'>
         24
       </a>
-
+      
         /
-
-
+      
+    
       <a href='?paginate_by=48'>
         48
       </a>
-
+      
         /
-
-
+      
+    
       <a href='?paginate_by=96'>
         96
       </a>
-
-
+      
+    
     )
-
+    
       <span class='grid-list-selector'>
   <a href='?display=grid'>
     <i class="fa fa-th"></i>
@@ -605,8 +702,32 @@
 </span>
 
 
-
+    
   </div>
 </div>
 
 
+
+    </div>
+    
+
+<div id='footer' class='container-fluid'>
+  
+    Memopol is free software
+    <a href="https://gitorious.org/memopol2-0">released</a>
+    under the terms of the
+    <a href="http://www.gnu.org/licenses/agpl.html">GNU aGPLV3+</a>
+  
+  <a href='https://projets.lqdn.fr/projects/mempol'>
+    Bug tracking system
+  </a>
+  <a href='https://projets.lqdn.fr/projects/mempol/issues/new'>
+    Report a bug
+  </a>
+  <br />
+  Provided by <a href="http://www.laquadrature.net/">La Quadrature du Net</a>
+
+</div>
+
+  </body>
+</html>

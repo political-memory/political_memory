@@ -1,6 +1,8 @@
 # -*- coding: utf8 -*-
 from django.test import TestCase
 
+from responsediff.response import Response
+
 from .base import UrlGetTestMixin
 
 
@@ -23,7 +25,8 @@ class RepresentativeListTest(UrlGetTestMixin, TestCase):
             """
             self.response = self.client.get(url)
 
-        self.assertExpectedHtmlInResult()
+        expected = Response.for_test(self)
+        expected.assertNoDiff(self.response)
 
     def test_page1_paginateby12_displaylist(self):
         self.functional_test(1, 12, 'list')
