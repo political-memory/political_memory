@@ -110,11 +110,6 @@ class MandateViewSet(viewsets.ReadOnlyModelViewSet):
     }
     search_fields = ('group__name', 'group__abbreviation')
 
-    @property
-    def paginator(self):
-        paginator = super(MandateViewSet, self).paginator
-        return paginator
-
 
 class ConstituencyViewSet(viewsets.ReadOnlyModelViewSet):
     pagination_class = DefaultWebPagination
