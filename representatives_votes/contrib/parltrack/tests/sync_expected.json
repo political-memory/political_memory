@@ -1,0 +1,15 @@
+[
+{
+    "fields": {
+        "updated": "2015-12-13T10:11:31.369Z",
+        "reference": "2012/2002(INI)",
+        "title": "Agenda for change: the future of EU development policy",
+        "text": "",
+        "created": "2015-12-13T10:11:31.369Z",
+        "link": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2012/2002(INI)",
+        "fingerprint": "9e2cccdc5f6d22afd008af8b5b55dc193c27c5d6"
+    },
+    "model": "representatives_votes.dossier",
+    "pk": 1
+}
+]

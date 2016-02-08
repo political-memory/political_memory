@@ -1,0 +1,69 @@
+{
+    "meta": {
+        "source": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2015/2132(BUD)&l=en",
+        "updated": "2015-11-18T02:23:18.933000"
+    },
+    "procedure": {
+        "dossier_of_the_committee": "BUDE/8/04900;BUDG/8/03789",
+        "reference": "2015/2132(BUD)",
+        "stage_reached": "Budgetary conciliation committee convened",
+        "subject": [
+            "8.70.56 2016 budget"
+        ],
+        "subtype": "Budget",
+        "title": "2016 general budget: all sections",
+        "type": "BUD - Budgetary procedure"
+    },
+    "votes": {
+        "For": {
+            "groups": [
+                {
+                    "group": "PPE",
+                    "votes": [
+                        {
+                            "ep_id": 2307,
+                            "name": "Pirker",
+                            "userid": 4611
+                        }
+                    ]
+                }
+            ],
+            "total": "1"
+        },
+        "Against": {
+            "groups": [
+                {
+                    "group": "PPE",
+                    "votes": [
+                        {
+                            "ep_id": 96673,
+                            "name": "Ludvigsson",
+                            "userid": 5860
+                        }
+                    ]
+                }
+            ],
+            "total": "1"
+        },
+        "_id": "56617a11ecc52ed712fc6b15",
+        "dossierid": "55a4580ed1d1c57c1e000002",
+        "epref": "2015/2132(BUD)",
+        "eptitle": "2016 general budget: all sections",
+        "issue_type": "Am 29",
+        "rapporteur": [
+            {
+                "name": "Jos\u00e9 Manuel Fernandes",
+                "ref": 96899
+            },
+            {
+                "name": " G\u00e9rard Deprez",
+                "ref": 1473
+            }
+        ],
+        "report": "A8-0298/2015",
+        "title": "A8-0298/2015 -  Jos\u00e9 Manuel Fernandes et  G\u00e9rard Deprez - Am 29",
+        "ts": "2015-10-28T13:00:12",
+        "url": "http://www.europarl.europa.eu/RegData/seance_pleniere/proces_verbal/2015/10-28/votes_nominaux/xml/P8_PV(2015)10-28(RCV)_XC.xml",
+        "voteid": "59146"
+    }
+}

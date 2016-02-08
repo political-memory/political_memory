@@ -1,0 +1,35 @@
+[
+{
+    "fields": {
+        "updated": "2015-12-13T10:11:31.378Z",
+        "reference": "2015/2132(BUD)",
+        "title": "2016 general budget: all sections",
+        "text": "",
+        "created": "2015-12-13T10:11:31.378Z",
+        "link": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2015/2132(BUD)",
+        "fingerprint": "e6856e0880e701c1022f23d595cc37a9a1cdcca8"
+    },
+    "model": "representatives_votes.dossier",
+    "pk": 1
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "for",
+        "proposal": 1,
+        "representative": 1
+    },
+    "model": "representatives_votes.vote",
+    "pk": 2
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "against",
+        "proposal": 1,
+        "representative": 2
+    },
+    "model": "representatives_votes.vote",
+    "pk": 3
+}
+]
