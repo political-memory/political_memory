@@ -272,14 +272,14 @@
 <div id='footer' class='container-fluid'>
   
     Memopol is free software
-    <a href="https://gitorious.org/memopol2-0">released</a>
+    <a href="https://github.com/political-memory/political_memory">released</a>
     under the terms of the
     <a href="http://www.gnu.org/licenses/agpl.html">GNU aGPLV3+</a>
   
-  <a href='https://projets.lqdn.fr/projects/mempol'>
+  <a href='https://github.com/political-memory/political_memory/issues'>
     Bug tracking system
   </a>
-  <a href='https://projets.lqdn.fr/projects/mempol/issues/new'>
+  <a href='https://github.com/political-memory/political_memory/issues/new'>
     Report a bug
   </a>
   <br />
