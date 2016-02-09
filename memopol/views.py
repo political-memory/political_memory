@@ -5,7 +5,7 @@ from core.views import GridListMixin, PaginationMixin, CSVDownloadMixin
 from representatives import views as representatives_views
 from representatives.models import Representative
 from representatives_votes import views as representatives_votes_views
-from representatives_votes.models import Dossier
+from representatives_votes.models import Dossier, Proposal
 from representatives_positions.forms import PositionForm
 from representatives_recommendations.models import ScoredVote
 
@@ -42,7 +42,9 @@ class RepresentativeDetail(representatives_views.RepresentativeDetail):
 
     def get_queryset(self):
         qs = super(RepresentativeDetail, self).get_queryset()
-        votes = ScoredVote.objects.select_related('proposal__recommendation')
+        votes = ScoredVote.objects.filter(
+            proposal__in=Proposal.objects.exclude(recommendation=None),
+        ).select_related('proposal__recommendation')
         qs = qs.prefetch_related(models.Prefetch('votes', queryset=votes))
         return qs
 
