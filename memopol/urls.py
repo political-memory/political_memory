@@ -27,7 +27,6 @@ urlpatterns = [
         views.DossierList.as_view(),
     ),
 
-    url(r'^autocomplete/', include('autocomplete_light.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'legislature/', include('representatives.urls',
         namespace='representatives')),
