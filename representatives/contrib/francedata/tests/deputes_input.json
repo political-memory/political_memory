@@ -1,0 +1,386 @@
+[
+  {
+    "twitter": "bernardroman59",
+    "profession": "Avocat, administrateur territorial",
+    "url_nosdeputes_api": "https://www.nosdeputes.fr/bernard-roman/json",
+    "nb_mandats": 2,
+    "id": 153,
+    "groupes_parlementaires": [
+      {
+        "responsabilite": {
+          "organisme": "Groupe d'amitié france-mexique",
+          "fonction": "vice-président"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Groupe d'amitié france-argentine",
+          "fonction": "vice-président"
+        }
+      }
+    ],
+    "sexe": "H",
+    "lieu_naissance": "Lille (Nord)",
+    "anciens_autres_mandats": [
+      {
+        "mandat": "Nord-Pas-de-Calais / Conseil régional / Membre / 17/03/1986 / 01/04/1989"
+      },
+      {
+        "mandat": "Nord / Conseil général / Membre / 03/10/1988 / 27/03/1994"
+      },
+      {
+        "mandat": "Lille (Nord) / Conseil municipal / Adjoint au Maire / 19/03/2001 / 17/04/2004"
+      },
+      {
+        "mandat": "Nord / Conseil général / Membre / 28/03/1994 / 31/07/1997"
+      },
+      {
+        "mandat": "Lille (Nord) / Conseil municipal / Adjoint au Maire / 14/03/1983 / 19/03/1989"
+      },
+      {
+        "mandat": "Lille (Nord) / Conseil municipal / Adjoint au Maire / 20/03/1989 / 18/06/1995"
+      },
+      {
+        "mandat": "Lille (Nord) / Conseil municipal / Adjoint au Maire / 19/06/1995 / 18/03/2001"
+      },
+      {
+        "mandat": "Nord-Pas-de-Calais / Conseil régional / Vice-président / 29/03/2004 / 14/03/2010"
+      }
+    ],
+    "mandat_debut": "2012-06-20",
+    "emails": [
+      {
+        "email": "contact@bernard-roman.org"
+      },
+      {
+        "email": "broman@assemblee-nationale.fr"
+      }
+    ],
+    "responsabilites_extra_parlementaires": [],
+    "anciens_mandats": [
+      {
+        "mandat": "20/06/2007 / 19/06/2012 / fin de législature"
+      },
+      {
+        "mandat": "20/06/2012 /  / "
+      },
+      {
+        "mandat": "01/06/1997 / 18/06/2002 / fin de législature"
+      },
+      {
+        "mandat": "19/06/2002 / 19/06/2007 / fin de législature"
+      }
+    ],
+    "groupe": {
+      "organisme": "Socialiste, républicain et citoyen",
+      "fonction": "membre"
+    },
+    "nom": "Bernard Roman",
+    "sites_web": [
+      {
+        "site": "http://www.bernard-roman.net"
+      },
+      {
+        "site": "https://twitter.com/bernardroman59"
+      }
+    ],
+    "groupe_sigle": "SRC",
+    "nom_circo": "Nord",
+    "parti_ratt_financier": "Parti socialiste",
+    "place_en_hemicycle": "424",
+    "autres_mandats": [
+      {
+        "mandat": "Nord-Pas-de-Calais / Conseil régional / vice-président"
+      }
+    ],
+    "url_nosdeputes": "https://www.nosdeputes.fr/bernard-roman",
+    "url_an": "http://www2.assemblee-nationale.fr/deputes/fiche/OMC_PA2611",
+    "adresses": [
+      {
+        "geo": {
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              3.06785,
+              50.623596
+            ]
+          },
+          "type": "Feature",
+          "properties": {
+            "city": "Lille",
+            "citycode": "59350",
+            "street": "Rue d'Arras",
+            "name": "20 Rue d'Arras",
+            "housenumber": "20",
+            "label": "20 Rue d'Arras 59000 Lille",
+            "score": 0.30006938349007306,
+            "postcode": "59000",
+            "context": "59, Nord, Nord-Pas-de-Calais",
+            "type": "housenumber",
+            "id": "ADRNIVX_0000000331894641"
+          }
+        },
+        "tel": "03 20 52 09 20",
+        "fax": "03 28 54 01 37",
+        "adresse": "Permanence, 165 Rue d'Arras, 59000 Lille Téléphone : 03 20 52 09 20 Télécopie : 03 28 54 01 37"
+      },
+      {
+        "adresse": "Conseil régional, 151 Avenue du Président Hoover 59555 Lille cedex"
+      },
+      {
+        "adresse": "Assemblée nationale, 126 Rue de l'Université, 75355 Paris 07 SP"
+      }
+    ],
+    "date_naissance": "1952-07-15",
+    "slug": "bernard-roman",
+    "id_an": "2611",
+    "photo_url": "http://www.nosdeputes.fr/depute/photo/bernard-roman",
+    "prenom": "Bernard",
+    "num_deptmt": "59",
+    "nom_de_famille": "Roman",
+    "num_circo": 1,
+    "responsabilites": [
+      {
+        "responsabilite": {
+          "organisme": "Bureau de l'assemblée nationale",
+          "fonction": "questeur"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Commission des lois constitutionnelles, de la législation et de l'administration générale de la république",
+          "fonction": "membre"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Délégation chargée de la communication et de la presse",
+          "fonction": "membre"
+        }
+      }
+    ]
+  },
+  {
+    "twitter": "",
+    "profession": "Pharmacien",
+    "url_nosdeputes_api": "http://www.nosdeputes.fr/jean-pierre-barbier/json",
+    "nb_mandats": 2,
+    "id": 413,
+    "groupes_parlementaires": [
+      {
+        "responsabilite": {
+          "organisme": "Groupe d'études Économie verte et économie circulaire",
+          "fonction": "membre"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Groupe d'études aménagement du territoire",
+          "fonction": "membre"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Groupe d'études politique de l'eau",
+          "fonction": "membre"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Groupe d'études coordination des droits européens",
+          "fonction": "membre"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Groupe d'études automobile",
+          "fonction": "vice-président"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Groupe d'études prévention et lutte contre la toxicomanie",
+          "fonction": "membre"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Groupe d'amitié france-république d'autriche",
+          "fonction": "vice-président"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Groupe d'études chrétiens d'orient",
+          "fonction": "membre"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Groupe d'études granit, pierres naturelles, carrières et matériaux de construction",
+          "fonction": "membre"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Groupe d'études Élevage",
+          "fonction": "membre"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Groupe d'études sectes",
+          "fonction": "membre"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Groupe d'études famille et adoption",
+          "fonction": "membre"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Groupe d'études enseignement privé sous contrat et hors contrat",
+          "fonction": "membre"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Groupe d'études pme",
+          "fonction": "membre"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Groupe d'études république et religions",
+          "fonction": "président"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Groupe d'études industrie chimique",
+          "fonction": "membre"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Groupe d'études antisémitisme",
+          "fonction": "membre"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Groupe d'études alimentation et santé",
+          "fonction": "membre"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Groupe d'études politiques de la ruralité",
+          "fonction": "secrétaire"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Groupe d'études médicaments et produits de santé",
+          "fonction": "membre"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Groupe d'études développement de la méthanisation",
+          "fonction": "membre"
+        }
+      }
+    ],
+    "sexe": "H",
+    "lieu_naissance": "Bron (Rhône)",
+    "anciens_autres_mandats": [],
+    "mandat_debut": "2012-06-20",
+    "emails": [
+      {
+        "email": "jpbarbier.depute@orange.fr"
+      },
+      {
+        "email": "jpbarbier@assemblee-nationale.fr"
+      }
+    ],
+    "responsabilites_extra_parlementaires": [],
+    "anciens_mandats": [
+      {
+        "mandat": "20/06/2012 /  / "
+      }
+    ],
+    "groupe": {
+      "organisme": "Les républicains",
+      "fonction": "membre"
+    },
+    "nom": "Jean-Pierre Barbier",
+    "sites_web": [
+      {
+        "site": "http://www.jeanpierrebarbier.fr"
+      }
+    ],
+    "groupe_sigle": "LES-REP",
+    "nom_circo": "Isère",
+    "parti_ratt_financier": "Les Républicains",
+    "place_en_hemicycle": "64",
+    "autres_mandats": [
+      {
+        "mandat": "Isère / Conseil départemental / président"
+      }
+    ],
+    "url_nosdeputes": "http://www.nosdeputes.fr/jean-pierre-barbier",
+    "url_an": "http://www2.assemblee-nationale.fr/deputes/fiche/OMC_PA606888",
+    "adresses": [
+      {
+        "adresse": "Assemblée nationale, 126 Rue de l'Université 75355 PARIS 07 SP"
+      },
+      {
+        "geo": {
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              5.26302,
+              45.392192
+            ]
+          },
+          "type": "Feature",
+          "properties": {
+            "city": "La Côte-Saint-André",
+            "citycode": "38130",
+            "name": "6 Allée Jean Jaurès",
+            "type": "housenumber",
+            "label": "6 Allée Jean Jaurès 38260 La Côte-Saint-André",
+            "street": "Allée Jean Jaurès",
+            "postcode": "38260",
+            "context": "38, Isère, Rhône-Alpes",
+            "score": 0.3896703153988868,
+            "housenumber": "6",
+            "id": "ADRNIVX_0000000326062287"
+          }
+        },
+        "tel": "04 74 59 76 76",
+        "fax": "04 74 59 76 70",
+        "adresse": "6 Avenue Jean jaurès 38260 La Côte Saint-André Télécopie : 04 74 59 76 70 Téléphone : 04 74 59 76 76"
+      }
+    ],
+    "date_naissance": "1960-11-11",
+    "slug": "jean-pierre-barbier",
+    "id_an": "606888",
+    "photo_url": "http://www.nosdeputes.fr/depute/photo/jean-pierre-barbier",
+    "prenom": "Jean-Pierre",
+    "num_deptmt": "38",
+    "nom_de_famille": "Barbier",
+    "num_circo": 7,
+    "responsabilites": [
+      {
+        "responsabilite": {
+          "organisme": "Commission des affaires sociales",
+          "fonction": "membre"
+        }
+      }
+    ]
+  }
+]

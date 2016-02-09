@@ -24,6 +24,7 @@ setup(
     entry_points={
         'console_scripts': [
             'parltrack_import_representatives = representatives.contrib.parltrack.import_representatives:main',
+            'francedata_import_representatives = representatives.contrib.francedata.import_representatives:main',
         ]
     },
     classifiers=[

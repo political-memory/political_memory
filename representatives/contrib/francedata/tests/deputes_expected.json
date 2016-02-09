@@ -1,0 +1,856 @@
+[
+{
+    "fields": {
+        "photo": "http://www.nosdeputes.fr/depute/photo/bernard-roman",
+        "gender": 2,
+        "remote_id": "2611",
+        "active": true,
+        "birth_place": "Lille (Nord)",
+        "full_name": "Bernard Roman",
+        "birth_date": "1952-07-15",
+        "slug": "bernard-roman"
+    },
+    "model": "representatives.representative",
+    "pk": 1
+},
+{
+    "fields": {
+        "photo": "http://www.nosdeputes.fr/depute/photo/jean-pierre-barbier",
+        "gender": 2,
+        "remote_id": "606888",
+        "active": true,
+        "birth_place": "Bron (Rh\u00f4ne)",
+        "full_name": "Jean-Pierre Barbier",
+        "birth_date": "1960-11-11",
+        "slug": "jean-pierre-barbier"
+    },
+    "model": "representatives.representative",
+    "pk": 2
+},
+{
+    "fields": {
+        "email": "contact@bernard-roman.org",
+        "representative": 1,
+        "kind": "other"
+    },
+    "model": "representatives.email",
+    "pk": 1
+},
+{
+    "fields": {
+        "email": "broman@assemblee-nationale.fr",
+        "representative": 1,
+        "kind": "official"
+    },
+    "model": "representatives.email",
+    "pk": 2
+},
+{
+    "fields": {
+        "email": "jpbarbier.depute@orange.fr",
+        "representative": 2,
+        "kind": "other"
+    },
+    "model": "representatives.email",
+    "pk": 3
+},
+{
+    "fields": {
+        "email": "jpbarbier@assemblee-nationale.fr",
+        "representative": 2,
+        "kind": "official"
+    },
+    "model": "representatives.email",
+    "pk": 4
+},
+{
+    "fields": {
+        "url": "http://www.bernard-roman.net",
+        "representative": 1,
+        "kind": ""
+    },
+    "model": "representatives.website",
+    "pk": 1
+},
+{
+    "fields": {
+        "url": "https://twitter.com/bernardroman59",
+        "representative": 1,
+        "kind": ""
+    },
+    "model": "representatives.website",
+    "pk": 2
+},
+{
+    "fields": {
+        "url": "http://twitter.com/bernardroman59",
+        "representative": 1,
+        "kind": "twitter"
+    },
+    "model": "representatives.website",
+    "pk": 3
+},
+{
+    "fields": {
+        "url": "http://www.jeanpierrebarbier.fr",
+        "representative": 2,
+        "kind": ""
+    },
+    "model": "representatives.website",
+    "pk": 4
+},
+{
+    "fields": {
+        "number": "03 20 52 09 20",
+        "representative": 1,
+        "address": null,
+        "kind": ""
+    },
+    "model": "representatives.phone",
+    "pk": 1
+},
+{
+    "fields": {
+        "number": "04 74 59 76 76",
+        "representative": 2,
+        "address": null,
+        "kind": ""
+    },
+    "model": "representatives.phone",
+    "pk": 2
+},
+{
+    "fields": {
+        "name": "Socialiste, r\u00e9publicain et citoyen",
+        "kind": "group",
+        "abbreviation": "SRC"
+    },
+    "model": "representatives.group",
+    "pk": 1
+},
+{
+    "fields": {
+        "name": "Parti socialiste",
+        "kind": "party",
+        "abbreviation": "Parti socialiste"
+    },
+    "model": "representatives.group",
+    "pk": 2
+},
+{
+    "fields": {
+        "name": "Nord",
+        "kind": "department",
+        "abbreviation": "59"
+    },
+    "model": "representatives.group",
+    "pk": 3
+},
+{
+    "fields": {
+        "name": "Nord (1\u00e8re circonscription)",
+        "kind": "district",
+        "abbreviation": "59-1"
+    },
+    "model": "representatives.group",
+    "pk": 4
+},
+{
+    "fields": {
+        "name": "Groupe d'amiti\u00e9 france-mexique",
+        "kind": "parl-group",
+        "abbreviation": "Groupe d'amiti\u00e9 france-mexique"
+    },
+    "model": "representatives.group",
+    "pk": 5
+},
+{
+    "fields": {
+        "name": "Groupe d'amiti\u00e9 france-argentine",
+        "kind": "parl-group",
+        "abbreviation": "Groupe d'amiti\u00e9 france-argentine"
+    },
+    "model": "representatives.group",
+    "pk": 6
+},
+{
+    "fields": {
+        "name": "Commission des lois constitutionnelles, de la l\u00e9gislation et de l'administration g\u00e9n\u00e9rale de la r\u00e9publique",
+        "kind": "comittee",
+        "abbreviation": "Commission des lois constitutionnelles, de la l\u00e9gislation et de l'administration g\u00e9n\u00e9rale de la r\u00e9publique"
+    },
+    "model": "representatives.group",
+    "pk": 7
+},
+{
+    "fields": {
+        "name": "Les r\u00e9publicains",
+        "kind": "group",
+        "abbreviation": "LES-REP"
+    },
+    "model": "representatives.group",
+    "pk": 8
+},
+{
+    "fields": {
+        "name": "Les R\u00e9publicains",
+        "kind": "party",
+        "abbreviation": "Les R\u00e9publicains"
+    },
+    "model": "representatives.group",
+    "pk": 9
+},
+{
+    "fields": {
+        "name": "Is\u00e8re",
+        "kind": "department",
+        "abbreviation": "38"
+    },
+    "model": "representatives.group",
+    "pk": 10
+},
+{
+    "fields": {
+        "name": "Is\u00e8re (7\u00e8me circonscription)",
+        "kind": "district",
+        "abbreviation": "38-7"
+    },
+    "model": "representatives.group",
+    "pk": 11
+},
+{
+    "fields": {
+        "name": "Groupe d'\u00e9tudes \u00c9conomie verte et \u00e9conomie circulaire",
+        "kind": "parl-group",
+        "abbreviation": "Groupe d'\u00e9tudes \u00c9conomie verte et \u00e9conomie circulaire"
+    },
+    "model": "representatives.group",
+    "pk": 12
+},
+{
+    "fields": {
+        "name": "Groupe d'\u00e9tudes am\u00e9nagement du territoire",
+        "kind": "parl-group",
+        "abbreviation": "Groupe d'\u00e9tudes am\u00e9nagement du territoire"
+    },
+    "model": "representatives.group",
+    "pk": 13
+},
+{
+    "fields": {
+        "name": "Groupe d'\u00e9tudes politique de l'eau",
+        "kind": "parl-group",
+        "abbreviation": "Groupe d'\u00e9tudes politique de l'eau"
+    },
+    "model": "representatives.group",
+    "pk": 14
+},
+{
+    "fields": {
+        "name": "Groupe d'\u00e9tudes coordination des droits europ\u00e9ens",
+        "kind": "parl-group",
+        "abbreviation": "Groupe d'\u00e9tudes coordination des droits europ\u00e9ens"
+    },
+    "model": "representatives.group",
+    "pk": 15
+},
+{
+    "fields": {
+        "name": "Groupe d'\u00e9tudes automobile",
+        "kind": "parl-group",
+        "abbreviation": "Groupe d'\u00e9tudes automobile"
+    },
+    "model": "representatives.group",
+    "pk": 16
+},
+{
+    "fields": {
+        "name": "Groupe d'\u00e9tudes pr\u00e9vention et lutte contre la toxicomanie",
+        "kind": "parl-group",
+        "abbreviation": "Groupe d'\u00e9tudes pr\u00e9vention et lutte contre la toxicomanie"
+    },
+    "model": "representatives.group",
+    "pk": 17
+},
+{
+    "fields": {
+        "name": "Groupe d'amiti\u00e9 france-r\u00e9publique d'autriche",
+        "kind": "parl-group",
+        "abbreviation": "Groupe d'amiti\u00e9 france-r\u00e9publique d'autriche"
+    },
+    "model": "representatives.group",
+    "pk": 18
+},
+{
+    "fields": {
+        "name": "Groupe d'\u00e9tudes chr\u00e9tiens d'orient",
+        "kind": "parl-group",
+        "abbreviation": "Groupe d'\u00e9tudes chr\u00e9tiens d'orient"
+    },
+    "model": "representatives.group",
+    "pk": 19
+},
+{
+    "fields": {
+        "name": "Groupe d'\u00e9tudes granit, pierres naturelles, carri\u00e8res et mat\u00e9riaux de construction",
+        "kind": "parl-group",
+        "abbreviation": "Groupe d'\u00e9tudes granit, pierres naturelles, carri\u00e8res et mat\u00e9riaux de construction"
+    },
+    "model": "representatives.group",
+    "pk": 20
+},
+{
+    "fields": {
+        "name": "Groupe d'\u00e9tudes \u00c9levage",
+        "kind": "parl-group",
+        "abbreviation": "Groupe d'\u00e9tudes \u00c9levage"
+    },
+    "model": "representatives.group",
+    "pk": 21
+},
+{
+    "fields": {
+        "name": "Groupe d'\u00e9tudes sectes",
+        "kind": "parl-group",
+        "abbreviation": "Groupe d'\u00e9tudes sectes"
+    },
+    "model": "representatives.group",
+    "pk": 22
+},
+{
+    "fields": {
+        "name": "Groupe d'\u00e9tudes famille et adoption",
+        "kind": "parl-group",
+        "abbreviation": "Groupe d'\u00e9tudes famille et adoption"
+    },
+    "model": "representatives.group",
+    "pk": 23
+},
+{
+    "fields": {
+        "name": "Groupe d'\u00e9tudes enseignement priv\u00e9 sous contrat et hors contrat",
+        "kind": "parl-group",
+        "abbreviation": "Groupe d'\u00e9tudes enseignement priv\u00e9 sous contrat et hors contrat"
+    },
+    "model": "representatives.group",
+    "pk": 24
+},
+{
+    "fields": {
+        "name": "Groupe d'\u00e9tudes pme",
+        "kind": "parl-group",
+        "abbreviation": "Groupe d'\u00e9tudes pme"
+    },
+    "model": "representatives.group",
+    "pk": 25
+},
+{
+    "fields": {
+        "name": "Groupe d'\u00e9tudes r\u00e9publique et religions",
+        "kind": "parl-group",
+        "abbreviation": "Groupe d'\u00e9tudes r\u00e9publique et religions"
+    },
+    "model": "representatives.group",
+    "pk": 26
+},
+{
+    "fields": {
+        "name": "Groupe d'\u00e9tudes industrie chimique",
+        "kind": "parl-group",
+        "abbreviation": "Groupe d'\u00e9tudes industrie chimique"
+    },
+    "model": "representatives.group",
+    "pk": 27
+},
+{
+    "fields": {
+        "name": "Groupe d'\u00e9tudes antis\u00e9mitisme",
+        "kind": "parl-group",
+        "abbreviation": "Groupe d'\u00e9tudes antis\u00e9mitisme"
+    },
+    "model": "representatives.group",
+    "pk": 28
+},
+{
+    "fields": {
+        "name": "Groupe d'\u00e9tudes alimentation et sant\u00e9",
+        "kind": "parl-group",
+        "abbreviation": "Groupe d'\u00e9tudes alimentation et sant\u00e9"
+    },
+    "model": "representatives.group",
+    "pk": 29
+},
+{
+    "fields": {
+        "name": "Groupe d'\u00e9tudes politiques de la ruralit\u00e9",
+        "kind": "parl-group",
+        "abbreviation": "Groupe d'\u00e9tudes politiques de la ruralit\u00e9"
+    },
+    "model": "representatives.group",
+    "pk": 30
+},
+{
+    "fields": {
+        "name": "Groupe d'\u00e9tudes m\u00e9dicaments et produits de sant\u00e9",
+        "kind": "parl-group",
+        "abbreviation": "Groupe d'\u00e9tudes m\u00e9dicaments et produits de sant\u00e9"
+    },
+    "model": "representatives.group",
+    "pk": 31
+},
+{
+    "fields": {
+        "name": "Groupe d'\u00e9tudes d\u00e9veloppement de la m\u00e9thanisation",
+        "kind": "parl-group",
+        "abbreviation": "Groupe d'\u00e9tudes d\u00e9veloppement de la m\u00e9thanisation"
+    },
+    "model": "representatives.group",
+    "pk": 32
+},
+{
+    "fields": {
+        "name": "Commission des affaires sociales",
+        "kind": "comittee",
+        "abbreviation": "Commission des affaires sociales"
+    },
+    "model": "representatives.group",
+    "pk": 33
+},
+{
+    "fields": {
+        "country": null,
+        "name": "Assembl\u00e9e Nationale"
+    },
+    "model": "representatives.constituency",
+    "pk": 1
+},
+{
+    "fields": {
+        "group": 1,
+        "end_date": null,
+        "role": "membre",
+        "representative": 1,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 1
+},
+{
+    "fields": {
+        "group": 2,
+        "end_date": null,
+        "role": "membre",
+        "representative": 1,
+        "link": "",
+        "begin_date": null,
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 2
+},
+{
+    "fields": {
+        "group": 3,
+        "end_date": null,
+        "role": "membre",
+        "representative": 1,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3
+},
+{
+    "fields": {
+        "group": 4,
+        "end_date": null,
+        "role": "membre",
+        "representative": 1,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 4
+},
+{
+    "fields": {
+        "group": 5,
+        "end_date": null,
+        "role": "vice-pr\u00e9sident",
+        "representative": 1,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 5
+},
+{
+    "fields": {
+        "group": 6,
+        "end_date": null,
+        "role": "vice-pr\u00e9sident",
+        "representative": 1,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 6
+},
+{
+    "fields": {
+        "group": 7,
+        "end_date": null,
+        "role": "membre",
+        "representative": 1,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 7
+},
+{
+    "fields": {
+        "group": 8,
+        "end_date": null,
+        "role": "membre",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 8
+},
+{
+    "fields": {
+        "group": 9,
+        "end_date": null,
+        "role": "membre",
+        "representative": 2,
+        "link": "",
+        "begin_date": null,
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 9
+},
+{
+    "fields": {
+        "group": 10,
+        "end_date": null,
+        "role": "membre",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 10
+},
+{
+    "fields": {
+        "group": 11,
+        "end_date": null,
+        "role": "membre",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 11
+},
+{
+    "fields": {
+        "group": 12,
+        "end_date": null,
+        "role": "membre",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 12
+},
+{
+    "fields": {
+        "group": 13,
+        "end_date": null,
+        "role": "membre",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 13
+},
+{
+    "fields": {
+        "group": 14,
+        "end_date": null,
+        "role": "membre",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 14
+},
+{
+    "fields": {
+        "group": 15,
+        "end_date": null,
+        "role": "membre",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 15
+},
+{
+    "fields": {
+        "group": 16,
+        "end_date": null,
+        "role": "vice-pr\u00e9sident",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 16
+},
+{
+    "fields": {
+        "group": 17,
+        "end_date": null,
+        "role": "membre",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 17
+},
+{
+    "fields": {
+        "group": 18,
+        "end_date": null,
+        "role": "vice-pr\u00e9sident",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 18
+},
+{
+    "fields": {
+        "group": 19,
+        "end_date": null,
+        "role": "membre",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 19
+},
+{
+    "fields": {
+        "group": 20,
+        "end_date": null,
+        "role": "membre",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 20
+},
+{
+    "fields": {
+        "group": 21,
+        "end_date": null,
+        "role": "membre",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 21
+},
+{
+    "fields": {
+        "group": 22,
+        "end_date": null,
+        "role": "membre",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 22
+},
+{
+    "fields": {
+        "group": 23,
+        "end_date": null,
+        "role": "membre",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 23
+},
+{
+    "fields": {
+        "group": 24,
+        "end_date": null,
+        "role": "membre",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 24
+},
+{
+    "fields": {
+        "group": 25,
+        "end_date": null,
+        "role": "membre",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 25
+},
+{
+    "fields": {
+        "group": 26,
+        "end_date": null,
+        "role": "pr\u00e9sident",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 26
+},
+{
+    "fields": {
+        "group": 27,
+        "end_date": null,
+        "role": "membre",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 27
+},
+{
+    "fields": {
+        "group": 28,
+        "end_date": null,
+        "role": "membre",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 28
+},
+{
+    "fields": {
+        "group": 29,
+        "end_date": null,
+        "role": "membre",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 29
+},
+{
+    "fields": {
+        "group": 30,
+        "end_date": null,
+        "role": "secr\u00e9taire",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 30
+},
+{
+    "fields": {
+        "group": 31,
+        "end_date": null,
+        "role": "membre",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 31
+},
+{
+    "fields": {
+        "group": 32,
+        "end_date": null,
+        "role": "membre",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 32
+},
+{
+    "fields": {
+        "group": 33,
+        "end_date": null,
+        "role": "membre",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 33
+}
+]

@@ -13,6 +13,7 @@ script:
 - pep8 representatives/ --exclude migrations --ignore E128
 - flake8 representatives/ --exclude migrations --ignore E128
 - django-admin migrate
+- cat representatives/contrib/francedata/tests/deputes_input.json | francedata_import_representatives
 - cat representatives/contrib/parltrack/tests/representatives_fixture.json | parltrack_import_representatives
 - py.test
 after_success:
