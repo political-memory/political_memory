@@ -101,9 +101,65 @@
 },
 {
     "fields": {
+        "city": "Paris",
+        "name": "Assembl\u00e9e nationale",
+        "country": 1095,
+        "number": "126",
+        "street": "Rue de l'Universit\u00e9",
+        "representative": 1,
+        "kind": "official",
+        "postcode": "75355"
+    },
+    "model": "representatives.address",
+    "pk": 1
+},
+{
+    "fields": {
+        "city": "Lille",
+        "name": "Permanence",
+        "country": 1095,
+        "number": "20",
+        "street": "Rue d'Arras",
+        "representative": 1,
+        "kind": "",
+        "postcode": "59000"
+    },
+    "model": "representatives.address",
+    "pk": 2
+},
+{
+    "fields": {
+        "city": "Paris",
+        "name": "Assembl\u00e9e nationale",
+        "country": 1095,
+        "number": "126",
+        "street": "Rue de l'Universit\u00e9",
+        "representative": 2,
+        "kind": "official",
+        "postcode": "75355"
+    },
+    "model": "representatives.address",
+    "pk": 3
+},
+{
+    "fields": {
+        "city": "La C\u00f4te-Saint-Andr\u00e9",
+        "name": "",
+        "country": 1095,
+        "number": "6",
+        "street": "All\u00e9e Jean Jaur\u00e8s",
+        "representative": 2,
+        "kind": "",
+        "postcode": "38260"
+    },
+    "model": "representatives.address",
+    "pk": 4
+},
+{
+    "fields": {
         "number": "03 20 52 09 20",
         "representative": 1,
-        "address": null,
+        "address": 2,
         "kind": ""
     },
     "model": "representatives.phone",
@@ -113,7 +169,7 @@
     "fields": {
         "number": "04 74 59 76 76",
         "representative": 2,
-        "address": null,
+        "address": 4,
         "kind": ""
     },
     "model": "representatives.phone",
@@ -419,7 +475,7 @@
 {
     "fields": {
         "country": null,
-        "name": "Assembl\u00e9e Nationale"
+        "name": "Assembl\u00e9e nationale"
     },
     "model": "representatives.constituency",
     "pk": 1

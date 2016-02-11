@@ -11,8 +11,8 @@ from django.apps import apps
 from django.db import transaction
 from django.utils import timezone
 
-from representatives.models import (Group, Mandate, Representative, Email,
-                                    Constituency, WebSite, Phone)
+from representatives.models import (Country, Mandate, Email, Address, WebSite,
+                                    Representative, Constituency, Phone, Group)
 
 logger = logging.getLogger(__name__)
 
@@ -47,6 +47,7 @@ def _get_rep_comittees(json):
 #
 # Variant configuration
 # - mail_domain is used to distinguish official vs personal emails
+# - off_* fields are used for the official address of meps
 # - mandates defines how mandates are created from the rep json
 #
 # Mandates are defined as follows
@@ -66,9 +67,14 @@ def _get_rep_comittees(json):
 #
 FranceDataVariants = {
     "an": {
-        "constituency_name": "Assemblée Nationale",
+        "constituency_name": u"Assemblée nationale",
         "remote_id_field": "id_an",
         "mail_domain": "@assemblee-nationale.fr",
+        "off_city": "Paris",
+        "off_street": u"Rue de l'Université",
+        "off_number": "126",
+        "off_code": "75355",
+        "off_name": u"Assemblée nationale",
         "mandates": [
             {
                 "kind": "group",
@@ -186,6 +192,7 @@ class FranceDataImporter(GenericImporter):
         return _parse_date(date)
 
     def __init__(self, variant):
+        self.france = Country.objects.get(name="France")
         self.variant = FranceDataVariants[variant]
         self.variant_constituency, _ = Constituency.objects.get_or_create(
             name=self.variant['constituency_name'])
@@ -323,13 +330,47 @@ class FranceDataImporter(GenericImporter):
                     else 'other'),
                 email=mail)
 
+        # Official address
+        off_name = self.variant['off_name']
+        official_addr, _ = self.touch_model(model=Address,
+                                            representative=representative,
+                                            country=self.france,
+                                            city=self.variant['off_city'],
+                                            street=self.variant['off_street'],
+                                            number=self.variant['off_number'],
+                                            postcode=self.variant['off_code'],
+                                            kind='official',
+                                            name=off_name
+                                            )
+
         # Addresses & phone numbers
         addresses = rep_json.get('adresses', [])
-        for ad in addresses:
-            if 'tel' in ad:
-                self.touch_model(model=Phone,
+        for item in addresses:
+            addr = None
+            if 'geo' in item:
+                props = item['geo'].get('properties', {})
+                name = ''
+
+                if item['adresse'].lower().startswith('permanence'):
+                    name = 'Permanence'
+
+                addr, _ = self.touch_model(model=Address,
+                                           representative=representative,
+                                           country=self.france,
+                                           city=props.get('city', ''),
+                                           street=props.get('street', ''),
+                                           number=props.get('housenumber', ''),
+                                           postcode=props.get('postcode', ''),
+                                           kind='',
+                                           name=name
+                                           )
+            elif item['adresse'].lower().startswith(off_name.lower()):
+                addr = official_addr
+
+            if 'tel' in item:
+                self.touch_model(model=Phone, address=addr,
                                  representative=representative,
-                                 kind='', number=ad['tel']
+                                 kind='', number=item['tel']
                                  )
 
 
