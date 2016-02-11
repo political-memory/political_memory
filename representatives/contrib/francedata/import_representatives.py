@@ -195,7 +195,8 @@ class FranceDataImporter(GenericImporter):
         self.france = Country.objects.get(name="France")
         self.variant = FranceDataVariants[variant]
         self.variant_constituency, _ = Constituency.objects.get_or_create(
-            name=self.variant['constituency_name'])
+            name=self.variant['constituency_name'],
+            country=self.france)
 
     @transaction.atomic
     def manage_rep(self, rep_json):

@@ -474,7 +474,7 @@
 },
 {
     "fields": {
-        "country": null,
+        "country": 1095,
         "name": "Assembl\u00e9e nationale"
     },
     "model": "representatives.constituency",
