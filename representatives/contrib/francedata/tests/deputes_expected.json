@@ -129,6 +129,20 @@
 },
 {
     "fields": {
+        "city": "Lille",
+        "name": "",
+        "country": 1095,
+        "number": "",
+        "street": "",
+        "representative": 1,
+        "kind": "",
+        "postcode": "59000"
+    },
+    "model": "representatives.address",
+    "pk": 3
+},
+{
+    "fields": {
         "city": "Paris",
         "name": "Assembl\u00e9e nationale",
         "country": 1095,
@@ -139,7 +153,7 @@
         "postcode": "75355"
     },
     "model": "representatives.address",
-    "pk": 3
+    "pk": 4
 },
 {
     "fields": {
@@ -153,7 +167,7 @@
         "postcode": "38260"
     },
     "model": "representatives.address",
-    "pk": 4
+    "pk": 5
 },
 {
     "fields": {
@@ -169,7 +183,7 @@
     "fields": {
         "number": "04 74 59 76 76",
         "representative": 2,
-        "address": 4,
+        "address": 5,
         "kind": ""
     },
     "model": "representatives.phone",
@@ -486,7 +500,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 1,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -499,7 +512,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 1,
-        "link": "",
         "begin_date": null,
         "constituency": 1
     },
@@ -512,7 +524,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 1,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -525,7 +536,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 1,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -538,7 +548,6 @@
         "end_date": null,
         "role": "vice-pr\u00e9sident",
         "representative": 1,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -551,7 +560,6 @@
         "end_date": null,
         "role": "vice-pr\u00e9sident",
         "representative": 1,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -564,7 +572,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 1,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -577,7 +584,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 2,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -590,7 +596,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 2,
-        "link": "",
         "begin_date": null,
         "constituency": 1
     },
@@ -603,7 +608,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 2,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -616,7 +620,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 2,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -629,7 +632,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 2,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -642,7 +644,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 2,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -655,7 +656,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 2,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -668,7 +668,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 2,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -681,7 +680,6 @@
         "end_date": null,
         "role": "vice-pr\u00e9sident",
         "representative": 2,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -694,7 +692,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 2,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -707,7 +704,6 @@
         "end_date": null,
         "role": "vice-pr\u00e9sident",
         "representative": 2,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -720,7 +716,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 2,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -733,7 +728,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 2,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -746,7 +740,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 2,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -759,7 +752,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 2,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -772,7 +764,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 2,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -785,7 +776,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 2,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -798,7 +788,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 2,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -811,7 +800,6 @@
         "end_date": null,
         "role": "pr\u00e9sident",
         "representative": 2,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -824,7 +812,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 2,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -837,7 +824,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 2,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -850,7 +836,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 2,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -863,7 +848,6 @@
         "end_date": null,
         "role": "secr\u00e9taire",
         "representative": 2,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -876,7 +860,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 2,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -889,7 +872,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 2,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -902,7 +884,6 @@
         "end_date": null,
         "role": "membre",
         "representative": 2,
-        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },

@@ -125,6 +125,27 @@
         "adresse": "Permanence, 165 Rue d'Arras, 59000 Lille Téléphone : 03 20 52 09 20 Télécopie : 03 28 54 01 37"
       },
       {
+        "geo": {
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              3.077254,
+              50.628633
+            ]
+          },
+          "type": "Feature",
+          "properties": {
+            "city": "Lille",
+            "citycode": "59350",
+            "name": "Avenue du Président Hoover",
+            "label": "Avenue du Président Hoover 59000 Lille",
+            "score": 0.4689764705882353,
+            "postcode": "59000",
+            "context": "59, Nord, Nord-Pas-de-Calais",
+            "type": "street",
+            "id": "59350_XXXX_32cc9a"
+          }
+        },
         "adresse": "Conseil régional, 151 Avenue du Président Hoover 59555 Lille cedex"
       },
       {
