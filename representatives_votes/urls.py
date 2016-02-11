@@ -10,7 +10,7 @@ urlpatterns = [
         name='dossier-detail'
     ),
     url(
-        r'dossier/$',
+        r'^dossier/$',
         views.DossierList.as_view(),
         name='dossier-list'
     ),
@@ -21,7 +21,7 @@ if 'dal_select2' in settings.INSTALLED_APPS:
 
     urlpatterns.append(
         url(
-            'autocomplete/proposal/$',
+            '^autocomplete/proposal/$',
             ProposalAutocomplete.as_view(),
             name='proposal-autocomplete',
         ),
