@@ -24,8 +24,12 @@ representative_pre_import = django.dispatch.Signal(
 def _get_rep_district_name(json):
     num = json.get('num_circo')
     nom = json.get('nom_circo')
-    ordinal = u'ère' if num == 1 else u'ème'
-    return '%s (%d%s circonscription)' % (nom, num, ordinal)
+
+    if num == 'nd':
+        return nom
+    else:
+        ordinal = u'ère' if num == 1 else u'ème'
+        return '%s (%d%s circonscription)' % (nom, num, ordinal)
 
 
 def _get_rep_parl_groups(json):
@@ -83,19 +87,69 @@ FranceDataVariants = {
                 "chamber": True,
                 "abbr": "%(groupe_sigle)s",
                 "name_path": "groupe/organisme",
+                "role_path": "groupe/fonction",
                 "start": "%(mandat_debut)s"
             },
             {
                 "kind": "department",
-                "chamber": True,
                 "abbr": "%(num_deptmt)s",
                 "name": "%(nom_circo)s",
                 "start": "%(mandat_debut)s"
             },
             {
                 "kind": "district",
+                "abbr": "%(num_deptmt)s-%(num_circo)s",
+                "name_fn": _get_rep_district_name,
+                "start": "%(mandat_debut)s"
+            },
+            {
+                "kind": "parl-group",
                 "chamber": True,
-                "abbr": "%(num_deptmt)s-%(num_circo)d",
+                "from": _get_rep_parl_groups,
+                "abbr": "%(name)s",
+                "name": "%(name)s",
+                "role": "%(role)s",
+                "start": "%(start)s"
+            },
+            {
+                "kind": "comittee",
+                "chamber": True,
+                "from": _get_rep_comittees,
+                "abbr": "%(name)s",
+                "name": "%(name)s",
+                "role": "%(role)s",
+                "start": "%(start)s"
+            }
+        ]
+    },
+
+    "SEN": {
+        "chamber": u"Sénat",
+        "remote_id_field": "id_institution",
+        "mail_domain": "@senat.fr",
+        "off_city": "Paris",
+        "off_street": u"Rue de Vaugirard",
+        "off_number": "15",
+        "off_code": "75291",
+        "off_name": u"Palais du Luxembourg",
+        "mandates": [
+            {
+                "kind": "group",
+                "chamber": True,
+                "abbr": "%(groupe_sigle)s",
+                "name_path": "groupe/organisme",
+                "role_path": "groupe/fonction",
+                "start": "%(mandat_debut)s"
+            },
+            {
+                "kind": "department",
+                "abbr": "%(num_deptmt)s",
+                "name": "%(nom_circo)s",
+                "start": "%(mandat_debut)s"
+            },
+            {
+                "kind": "district",
+                "abbr": "%(num_deptmt)s-%(num_circo)s",
                 "name_fn": _get_rep_district_name,
                 "start": "%(mandat_debut)s"
             },
@@ -187,7 +241,7 @@ class GenericImporter(object):
 
 
 class FranceDataImporter(GenericImporter):
-    url = 'http://francedata.future/data/deputes.json'
+    url = 'http://francedata.future/data/parlementaires.json'
 
     def parse_date(self, date):
         return _parse_date(date)
@@ -210,6 +264,9 @@ class FranceDataImporter(GenericImporter):
         FranceData (which comes from nosdeputes.fr)
         '''
         remote_id = rep_json[self.variant['remote_id_field']]
+
+        if rep_json['num_circo'] == 'non disponible':
+            rep_json['num_circo'] = 'nd'
 
         if not remote_id:
             logger.warning('Skipping MEP without UID %s %s',
@@ -400,9 +457,15 @@ def main(stream=None):
     if not apps.ready:
         django.setup()
 
-    importer = FranceDataImporter('AN')
-    GenericImporter.pre_import(importer)
+    an_importer = FranceDataImporter('AN')
+    GenericImporter.pre_import(an_importer)
+
+    sen_importer = FranceDataImporter('SEN')
+    GenericImporter.pre_import(sen_importer)
 
     for data in ijson.items(stream or sys.stdin, ''):
         for rep in data:
-            importer.manage_rep(rep)
+            if rep['chambre'] == 'AN':
+                an_importer.manage_rep(rep)
+            elif rep['chambre'] == 'SEN':
+                sen_importer.manage_rep(rep)

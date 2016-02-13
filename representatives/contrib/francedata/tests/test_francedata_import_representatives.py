@@ -10,9 +10,9 @@ from representatives.contrib.francedata import import_representatives
 @pytest.mark.django_db
 def test_francedata_import_representatives():
     inputjson = os.path.join(os.path.dirname(__file__),
-            'deputes_input.json')
+            'representatives_input.json')
     expected = os.path.join(os.path.dirname(__file__),
-            'deputes_expected.json')
+            'representatives_expected.json')
 
     # Disable django auto fields
     exclude = ('id', '_state', 'created', 'updated', 'fingerprint')
