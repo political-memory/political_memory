@@ -12,7 +12,8 @@ from django.db import transaction
 from django.utils import timezone
 
 from representatives.models import (Country, Mandate, Email, Address, WebSite,
-                                    Representative, Constituency, Phone, Group)
+                                    Representative, Constituency, Phone, Group,
+                                    Chamber)
 
 logger = logging.getLogger(__name__)
 
@@ -52,6 +53,7 @@ def _get_rep_comittees(json):
 #
 # Mandates are defined as follows
 # - 'kind' indicates the group kind, a constant string
+# - 'chamber' tells whether the group belongs to the chamber
 # - 'from', if present, must be a function that takes the rep json and returns
 #   an array of dicts; one group will be created from each item in the dict.
 #   When 'from' is not present, only one group wil be created using the rep
@@ -66,8 +68,8 @@ def _get_rep_comittees(json):
 #   and returns the value
 #
 FranceDataVariants = {
-    "an": {
-        "constituency_name": u"Assemblée nationale",
+    "AN": {
+        "chamber": u"Assemblée nationale",
         "remote_id_field": "id_an",
         "mail_domain": "@assemblee-nationale.fr",
         "off_city": "Paris",
@@ -78,29 +80,28 @@ FranceDataVariants = {
         "mandates": [
             {
                 "kind": "group",
+                "chamber": True,
                 "abbr": "%(groupe_sigle)s",
                 "name_path": "groupe/organisme",
                 "start": "%(mandat_debut)s"
             },
             {
-                "kind": "party",
-                "abbr": "%(parti_ratt_financier)s",
-                "name": "%(parti_ratt_financier)s"
-            },
-            {
                 "kind": "department",
+                "chamber": True,
                 "abbr": "%(num_deptmt)s",
                 "name": "%(nom_circo)s",
                 "start": "%(mandat_debut)s"
             },
             {
                 "kind": "district",
+                "chamber": True,
                 "abbr": "%(num_deptmt)s-%(num_circo)d",
                 "name_fn": _get_rep_district_name,
                 "start": "%(mandat_debut)s"
             },
             {
                 "kind": "parl-group",
+                "chamber": True,
                 "from": _get_rep_parl_groups,
                 "abbr": "%(name)s",
                 "name": "%(name)s",
@@ -109,6 +110,7 @@ FranceDataVariants = {
             },
             {
                 "kind": "comittee",
+                "chamber": True,
                 "from": _get_rep_comittees,
                 "abbr": "%(name)s",
                 "name": "%(name)s",
@@ -137,8 +139,8 @@ def _parse_date(date):
     return datetime.strptime(date, "%Y-%m-%d").date()
 
 
-def _get_or_create_mandate(representative, group, constituency, role='',
-                          begin_date=None, end_date=None):
+def _create_mandate(representative, group, constituency, role='',
+                    begin_date=None, end_date=None):
     mandate, _ = Mandate.objects.get_or_create(
         representative=representative,
         group=group,
@@ -150,8 +152,6 @@ def _get_or_create_mandate(representative, group, constituency, role='',
 
     if _:
         logger.debug('Created mandate %s', mandate.pk)
-
-    return mandate
 
 
 def _get_path(dict_, path):
@@ -176,6 +176,7 @@ class GenericImporter(object):
         it saves the given model if it exists, updating its
         updated field
         '''
+
         instance, created = model.objects.get_or_create(**data)
 
         if not created:
@@ -194,9 +195,13 @@ class FranceDataImporter(GenericImporter):
     def __init__(self, variant):
         self.france = Country.objects.get(name="France")
         self.variant = FranceDataVariants[variant]
-        self.variant_constituency, _ = Constituency.objects.get_or_create(
-            name=self.variant['constituency_name'],
-            country=self.france)
+        self.chamber, _ = Chamber.objects.get_or_create(
+            name=self.variant['chamber'], country=self.france)
+        self.ch_constituency, _ = Constituency.objects.get_or_create(
+            name=self.variant['chamber'], country=self.france)
+        self.ch_group, _ = Group.objects.get_or_create(
+            name=self.variant['chamber'], kind='chamber', abbreviation=variant,
+            chamber=self.chamber)
 
     @transaction.atomic
     def manage_rep(self, rep_json):
@@ -268,7 +273,25 @@ class FranceDataImporter(GenericImporter):
         Create mandates from rep data based on variant configuration
         '''
 
+        # Mandate in country group for party constituency
+        if rep_json.get('parti_ratt_financier'):
+            constituency, _ = Constituency.objects.get_or_create(
+                name=rep_json.get('parti_ratt_financier'), country=self.france)
+
+            group, _ = self.touch_model(model=Group,
+                                        abbreviation=self.france.code,
+                                        kind='country',
+                                        name=self.france.name)
+
+            _create_mandate(representative, group, constituency, 'membre')
+
+        # Configurable mandates
         for mdef in self.variant['mandates']:
+            if mdef.get('chamber', False):
+                chamber = self.chamber
+            else:
+                chamber = None
+
             if 'from' in mdef:
                 elems = mdef['from'](rep_json)
             else:
@@ -281,6 +304,7 @@ class FranceDataImporter(GenericImporter):
                 group, _ = self.touch_model(model=Group,
                                             abbreviation=abbr,
                                             kind=mdef['kind'],
+                                            chamber=chamber,
                                             name=name)
 
                 role = _get_mdef_item(mdef, 'role', elem, 'membre')
@@ -291,11 +315,8 @@ class FranceDataImporter(GenericImporter):
                 if end is not None:
                     end = _parse_date(end)
 
-                self.rep_cache['groups'].append(
-                    _get_or_create_mandate(representative, group,
-                                          self.variant_constituency, role,
-                                          start, end)
-                )
+                _create_mandate(representative, group, self.ch_constituency,
+                                role, start, end)
 
                 logger.debug(
                     '%s => %s: %s of "%s" (%s) %s-%s' % (rep_json['slug'],
@@ -379,11 +400,9 @@ def main(stream=None):
     if not apps.ready:
         django.setup()
 
-    importer = FranceDataImporter('an')
+    importer = FranceDataImporter('AN')
     GenericImporter.pre_import(importer)
 
     for data in ijson.items(stream or sys.stdin, ''):
         for rep in data:
-            importer.rep_cache = dict(groups=[], parties=[], departments=[],
-                                      districts=[])
             importer.manage_rep(rep)
