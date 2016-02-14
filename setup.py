@@ -12,7 +12,7 @@ setup(
     license='GPLv3',
     keywords='django government parliament votes',
     install_requires=[
-        'django-representatives>=0.0.13',
+        'django-representatives>=0.0.15',
         'py-dateutil',
         'pytz',
         'ijson',
@@ -27,6 +27,9 @@ setup(
         'console_scripts': [
             'parltrack_import_dossiers = representatives_votes.contrib.parltrack.import_dossiers:main',
             'parltrack_import_votes = representatives_votes.contrib.parltrack.import_votes:main',
+            'francedata_import_dossiers = representatives_votes.contrib.francedata.import_dossiers:main',
+            'francedata_import_scrutins = representatives_votes.contrib.francedata.import_scrutins:main',
+            'francedata_import_votes = representatives_votes.contrib.francedata.import_votes:main',
         ]
     },
     classifiers=[

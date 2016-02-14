@@ -1,0 +1,28 @@
+[
+{
+    "fields": {
+        "updated": "2016-02-14T13:16:31.417Z",
+        "reference": "/14/dossiers/liberte_maires_rythmes_scolaires_premier_degre.asp",
+        "title": "Education : libre choix des maires concernant les rythmes scolaires dans le premier degr\u00e9",
+        "text": "",
+        "created": "2016-02-14T13:16:31.417Z",
+        "link": "http://www.assemblee-nationale.fr/14/dossiers/liberte_maires_rythmes_scolaires_premier_degre.asp",
+        "fingerprint": "5d1707e6663bb28d0308cdb36e9e91c5f235f8a1"
+    },
+    "model": "representatives_votes.dossier",
+    "pk": 1
+},
+{
+    "fields": {
+        "updated": "2016-02-14T13:16:31.428Z",
+        "reference": "/14/dossiers/action_publique_territoriale_metropoles.asp",
+        "title": "Collectivit\u00e9s territoriales : action publique territoriale et m\u00e9tropoles",
+        "text": "",
+        "created": "2016-02-14T13:16:31.428Z",
+        "link": "http://www.assemblee-nationale.fr/14/dossiers/action_publique_territoriale_metropoles.asp",
+        "fingerprint": "c03f5e32f66e5f03ebe0a5d100f2f4ade941accc"
+    },
+    "model": "representatives_votes.dossier",
+    "pk": 2
+}
+]
