@@ -19,21 +19,21 @@ urlpatterns = [
         views.RepresentativeDetail.as_view(),
     ),
     url(
-        r'legislature/representative/$',
+        r'^legislature/representative/$',
         views.RepresentativeList.as_view(),
     ),
     url(
-        r'votes/dossier/$',
+        r'^votes/dossier/$',
         views.DossierList.as_view(),
     ),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'legislature/', include('representatives.urls',
+    url(r'^legislature/', include('representatives.urls',
         namespace='representatives')),
-    url(r'votes/', include('representatives_votes.urls',
+    url(r'^votes/', include('representatives_votes.urls',
         namespace='representatives_votes')),
-    url(r'positions/', include('representatives_positions.urls',
+    url(r'^positions/', include('representatives_positions.urls',
         namespace='representatives_positions')),
-    url(r'api/', include(api.router.urls)),
+    url(r'^api/', include(api.router.urls)),
     url(r'^$', generic.TemplateView.as_view(template_name='home.html')),
 ]
