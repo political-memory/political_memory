@@ -17,12 +17,20 @@ urlpatterns = [
 ]
 
 if 'dal_select2' in settings.INSTALLED_APPS:
-    from autocompletes import ProposalAutocomplete  # noqa
+    from autocompletes import (  # noqa
+        DossierAutocomplete,
+        ProposalAutocomplete,
+    )
 
-    urlpatterns.append(
+    urlpatterns += [
+        url(
+            '^autocomplete/dossier/$',
+            DossierAutocomplete.as_view(),
+            name='dossier-autocomplete',
+        ),
         url(
             '^autocomplete/proposal/$',
             ProposalAutocomplete.as_view(),
             name='proposal-autocomplete',
         ),
-    )
+    ]
