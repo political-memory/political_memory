@@ -16,3 +16,24 @@ def score_label(score):
     else:
         return mark_safe(
             '<span class="label label-default">{}</span>'.format(score))
+
+
+@register.filter
+def vote_glyphicon(position):
+    if position == 'for':
+        return 'glyphicon-ok'
+    elif position == 'against':
+        return 'glyphicon-remove'
+    else:
+        return ''
+
+@register.filter
+def vote_icon_color(position, recommendation):
+    if recommendation:
+        if position == recommendation:
+            return 'text-success'
+        else:
+            return 'text-danger'
+    else:
+        return ''
+
