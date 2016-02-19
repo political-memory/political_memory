@@ -1,1 +1,16 @@
+{% load humanize %}
+
+{% for position in positions %}
+  {% if forloop.counter0|divisibleby:3 %}<div id="" class="row">{% endif %}
+  <div class="col-sm-6 col-md-4">
+	<div class="thumbnail">
+	  <div class="caption">
+		<h3 class="text-center">{{ position.datetime|naturalday }}</h3>
+		<hr>
+        <p>{{ position.text }}</p>
+	  </div>
+	</div>
+  </div>
+  {% if forloop.counter|divisibleby:3 %}</div>{% endif %}
+{% endfor %}
 
