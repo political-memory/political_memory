@@ -1,8 +1,6 @@
 {% load representatives_votes_tags %}
 {% load representatives_recommendations_tags %}
 
-<p>Un peu de blabla ? Lorem ipsum...</p>
-
 <div class="panel-group" id="accordion-Dossiers" role="tablist" aria-multiselectable="true">
 
 {% regroup votes by proposal.dossier as groups %}
@@ -20,8 +18,8 @@
 	</div>
 	<div id="Dossiers-detailsOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="Dossiers-headingOne">
 	  <div class="panel-body">
-		<p>{{ dossier.text }}</p>
-		<!-- <a class="btn btn-default">En savoir plus &raquo;</a> -->
+		{% if dossier.text %}<p>{{ dossier.text }}</p>{% endif %}
+		{% if dossier.link %}<a class="btn btn-default" href="{{ dossier.link }}">En savoir plus &raquo;</a>{% endif %}
 		<br/><br/>
 		
 		<table class="table table-striped table-hover text-center">
