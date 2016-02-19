@@ -1,9 +1,8 @@
 {% load representatives_tags %}
-
-{% for mandate in mandates %}
 <br/>
 
-<div id="" class="row">
+{% for mandate in mandates %}
+  {% if forloop.counter0|divisibleby:3 %}<div id="" class="row">{% endif %}
   <div class="col-sm-6 col-md-4">
 	<div class="thumbnail">
 	  <div class="caption">
@@ -18,5 +17,5 @@
 	  </div>
 	</div>
   </div>
-</div>	
+  {% if forloop.counter|divisibleby:3 %}</div>{% endif %}
 {% endfor %}
