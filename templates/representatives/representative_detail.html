@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block content %}
 <div class="row">
@@ -25,13 +26,19 @@
 <div>
   <ul class="nav nav-tabs nav-justified" role="tablist">
     <li role="presentation" class="active">
-      <a href="#votes" aria-controls="votes" role="tab" data-toggle="tab"><h3>Votes</h3></a>
+      <a href="#votes" aria-controls="votes" role="tab" data-toggle="tab">
+        <h3>{% trans "Votes" %}</h3>
+      </a>
     </li>
     <li role="presentation">
-      <a href="#mandates" aria-controls="mandates" role="tab" data-toggle="tab"><h3>Mandates</h3></a>
+      <a href="#mandates" aria-controls="mandates" role="tab" data-toggle="tab">
+        <h3>{% trans "Mandates" %}</h3>
+      </a>
     </li>
     <li role="presentation">
-      <a href="#positions" aria-controls="positions" role="tab" data-toggle="tab"><h3>Public positions</h3></a>
+      <a href="#positions" aria-controls="positions" role="tab" data-toggle="tab">
+        <h3>{% trans "Public positions" %}</h3>
+      </a>
     </li>
   </ul>
   
