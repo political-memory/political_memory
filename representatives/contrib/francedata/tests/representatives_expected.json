@@ -3,7 +3,7 @@
     "fields": {
         "photo": "http://www.nosdeputes.fr/depute/photo/bernard-roman",
         "gender": 2,
-        "remote_id": "2611",
+        "remote_id": "http://www2.assemblee-nationale.fr/deputes/fiche/OMC_PA2611",
         "active": true,
         "birth_place": "Lille (Nord)",
         "full_name": "Bernard Roman",
@@ -17,7 +17,7 @@
     "fields": {
         "photo": "http://www.nossenateurs.fr/senateur/photo/david-assouline",
         "gender": 2,
-        "remote_id": "assouline_david04059m",
+        "remote_id": "http://www.senat.fr/senateur/assouline_david04059m.html",
         "active": true,
         "birth_place": "non disponible",
         "full_name": "David Assouline",

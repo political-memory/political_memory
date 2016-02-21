@@ -74,7 +74,7 @@ def _get_rep_comittees(json):
 FranceDataVariants = {
     "AN": {
         "chamber": u"Assemblée nationale",
-        "remote_id_field": "id_an",
+        "remote_id_field": "url_an",
         "mail_domain": "@assemblee-nationale.fr",
         "off_city": "Paris",
         "off_street": u"Rue de l'Université",
@@ -125,7 +125,7 @@ FranceDataVariants = {
 
     "SEN": {
         "chamber": u"Sénat",
-        "remote_id_field": "id_institution",
+        "remote_id_field": "url_institution",
         "mail_domain": "@senat.fr",
         "off_city": "Paris",
         "off_street": u"Rue de Vaugirard",
