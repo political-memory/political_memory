@@ -11,6 +11,7 @@ class Dossier(HashableModel, TimeStampedModel):
     reference = models.CharField(max_length=200, unique=True)
     text = models.TextField(blank=True, default='')
     link = models.URLField()
+    ext_link = models.URLField(blank=True, default='')
 
     hashable_fields = ['title', 'reference']
 

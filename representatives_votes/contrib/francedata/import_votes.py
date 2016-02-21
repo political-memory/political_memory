@@ -14,7 +14,8 @@ logger = logging.getLogger(__name__)
 
 
 class VotesImporter:
-    deputes = None
+    deputes_slug = None
+    deputes_rid = None
     scrutins = None
     touched = []
 
@@ -24,15 +25,24 @@ class VotesImporter:
         abstention="abstain"
     )
 
-    def get_depute(self, prenom, nom):
-        if self.deputes is None:
-            self.deputes = {
+    def get_depute_by_name(self, prenom, nom):
+        if self.deputes_slug is None:
+            self.deputes_slug = {
                 slugify(r[0]): r[1] for r in
                 Representative.objects.values_list('full_name', 'pk')
             }
 
         full = (u'%s %s' % (prenom, nom)).replace(u' ', ' ')
-        return self.deputes.get(slugify(full), None)
+        return self.deputes_slug.get(slugify(full), None)
+
+    def get_depute_by_url(self, url):
+        if self.deputes_rid is None:
+            self.deputes_rid = {
+                r[0]: r[1] for r in
+                Representative.objects.values_list('remote_id', 'pk')
+            }
+
+        return self.deputes_rid.get(url, None)
 
     def get_scrutin(self, ref):
         if self.scrutins is None:
@@ -44,16 +54,21 @@ class VotesImporter:
         return self.scrutins.get(ref, None)
 
     def parse_vote_data(self, data):
-        scrutin = self.get_scrutin(data['scrutin_uri'])
+        scrutin = self.get_scrutin(data['scrutin_url'])
         if scrutin is None:
             logger.debug('Cannot import vote for unknown scrutin %s'
-                         % data['scrutin_uri'])
+                         % data['scrutin_url'])
             return
 
-        depute = self.get_depute(data['prenom'], data['nom'])
+        if 'parl_url' in data:
+            repdesc = data['parl_url']
+            depute = self.get_depute_by_url(data['parl_url'])
+        else:
+            repdesc = '%s %s' % (data['prenom'], data['nom'])
+            depute = self.get_depute_by_name(data['prenom'], data['nom'])
+
         if depute is None:
-            logger.debug('Cannot import vote by unknown rep %s %s'
-                         % (data['prenom'], data['nom']))
+            logger.debug('Cannot import vote by unknown rep %s' % repdesc)
             return
 
         if not data['division'].lower() in self.positions:
