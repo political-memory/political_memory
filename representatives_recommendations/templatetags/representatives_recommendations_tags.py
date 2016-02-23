@@ -14,8 +14,7 @@ def score_arrow(score):
         return mark_safe(
             '<span class="glyphicon glyphicon-upload text-danger"></span>')
     else:
-        return mark_safe(
-            '<span class="glyphicon glyphicon-upload text-default"></span>')
+        return ''
 
 
 @register.filter
