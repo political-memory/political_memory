@@ -22,7 +22,7 @@ class RepresentativeDetail(representatives_views.RepresentativeDetail):
 
     def get_queryset(self):
         qs = super(RepresentativeDetail, self).get_queryset()
-        votes = ScoredVote.objects.select_related('proposal__recommendation')
+        votes = ScoredVote.objects.select_related('proposal__recommendation').select_related('proposal__dossier')
         qs = qs.prefetch_related(models.Prefetch('votes', queryset=votes))
         return qs
 
