@@ -29,7 +29,7 @@ class RepresentativeDetailTest(UrlGetTestMixin, TestCase):
 
     def test_name_display(self):
         # When HAMLPY_ATTR_WRAPPER works, use double quotes in HTML attrs !
-        self.assertHtmlInResult("<h1 class='name'>Mary HONEYBALL</h1>")
+        self.assertHtmlInResult("<h1 class='text-left'>Mary HONEYBALL</h1>")
 
     def test_score_display(self):
         self.assertExpectedHtmlInResult()
