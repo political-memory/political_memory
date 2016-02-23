@@ -4,20 +4,20 @@ import copy
 
 from django.core.serializers.json import Deserializer
 from representatives.models import Representative
-from representatives.contrib.parltrack import import_representatives
+from representatives.contrib.francedata import import_representatives
 
 
 @pytest.mark.django_db
-def test_parltrack_import_representatives():
-    fixture = os.path.join(os.path.dirname(__file__),
-            'representatives_fixture.json')
+def test_francedata_import_representatives():
+    inputjson = os.path.join(os.path.dirname(__file__),
+            'representatives_input.json')
     expected = os.path.join(os.path.dirname(__file__),
             'representatives_expected.json')
 
     # Disable django auto fields
     exclude = ('id', '_state', 'created', 'updated', 'fingerprint')
 
-    with open(fixture, 'r') as f:
+    with open(inputjson, 'r') as f:
         import_representatives.main(f)
 
     missing = []

@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='django-representatives',
-    version='0.0.14',
+    version='0.0.15',
     description='Base app for government representative',
     author='Laurent Peuch, Olivier Le Thanh Duong, Yohan Boniface, Arnaud Fabre, James Pic',
     author_email='webmaster@memopol.org',
@@ -24,6 +24,7 @@ setup(
     entry_points={
         'console_scripts': [
             'parltrack_import_representatives = representatives.contrib.parltrack.import_representatives:main',
+            'francedata_import_representatives = representatives.contrib.francedata.import_representatives:main',
         ]
     },
     classifiers=[

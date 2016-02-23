@@ -41,9 +41,11 @@ class HashableModel(models.Model):
         for field_name in self.hashable_fields:
             field = self._meta.get_field(field_name)
             if field.is_relation:
-                fingerprint.update(
-                    getattr(self, field_name).fingerprint
-                )
+                related = getattr(self, field_name)
+                if related is None:
+                    fingerprint.update(smart_str(related))
+                else:
+                    fingerprint.update(related.fingerprint)
             else:
                 fingerprint.update(
                     smart_str(getattr(self, field_name))
@@ -162,6 +164,16 @@ class Phone(Contact):
     address = models.ForeignKey(Address, null=True, related_name='phones')
 
 
+class Chamber(HashableModel):
+    """
+    A representative chamber
+    """
+    name = models.CharField(max_length=255)
+    country = models.ForeignKey('Country', null=True, related_name='chambers')
+
+    hashable_fields = ['name', 'country']
+
+
 class Group(HashableModel, TimeStampedModel):
     """
     An entity represented by a representative through a mandate
@@ -170,8 +182,9 @@ class Group(HashableModel, TimeStampedModel):
     abbreviation = models.CharField(max_length=10, blank=True, default='',
         db_index=True)
     kind = models.CharField(max_length=255, db_index=True)
+    chamber = models.ForeignKey(Chamber, null=True, related_name='groups')
 
-    hashable_fields = ['name', 'abbreviation', 'kind']
+    hashable_fields = ['name', 'abbreviation', 'kind', 'chamber']
 
     @cached_property
     def active(self):
@@ -234,8 +247,8 @@ class Mandate(HashableModel, TimeStampedModel):
     end_date = models.DateField(blank=True, null=True)
     link = models.URLField()
 
-    hashable_fields = ['group', 'constituency', 'role',
-                       'begin_date', 'end_date', 'representative']
+    hashable_fields = ['group', 'constituency', 'role', 'begin_date',
+                       'end_date', 'representative']
 
     @property
     def active(self):

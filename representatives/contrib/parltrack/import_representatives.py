@@ -14,7 +14,7 @@ from django.utils import timezone
 
 from representatives.models import (Address, Constituency, Country, Email,
                                     Group, Mandate, Phone, Representative,
-                                    WebSite)
+                                    WebSite, Chamber)
 
 logger = logging.getLogger(__name__)
 
@@ -65,8 +65,13 @@ class ParltrackImporter(GenericImporter):
         self.cache = {
             'countries': {c.name: c.pk for c in Country.objects.all()},
         }
-        self.european_constituency, _ = Constituency.objects.get_or_create(
+        self.ep_chamber, _ = Chamber.objects.get_or_create(
             name='European Parliament')
+        self.ep_constituency, _ = Constituency.objects.get_or_create(
+            name='European Parliament')
+        self.ep_group, _ = Group.objects.get_or_create(
+            name='European Parliament', kind='chamber', abbreviation='EP',
+            chamber=self.ep_chamber)
 
     @transaction.atomic
     def manage_mep(self, mep_json):
@@ -180,9 +185,7 @@ class ParltrackImporter(GenericImporter):
         )
 
     def add_mandates(self, representative, mep_json):
-        def get_or_create_mandate(mandate_data, representative, group,
-                                  constituency):
-
+        def create_mandate(mandate_data, representative, group, constituency):
             if mandate_data.get("start"):
                 begin_date = _parse_date(mandate_data.get("start"))
             if mandate_data.get("end"):
@@ -201,31 +204,28 @@ class ParltrackImporter(GenericImporter):
             if _:
                 logger.debug('Created mandate %s with %s', mandate.pk,
                              mandate_data)
-            return mandate
 
         # Committee
         for mandate_data in mep_json.get('Committees', []):
             if mandate_data.get("committee_id"):
                 group, _ = self.touch_model(model=Group,
                         abbreviation=mandate_data['committee_id'],
-                        kind='committee', name=mandate_data['Organization'])
+                        kind='committee', name=mandate_data['Organization'],
+                        chamber=self.ep_chamber)
 
-                self.mep_cache['committees'].append(
-                    get_or_create_mandate(mandate_data, representative,
-                                          group, self.european_constituency)
-                )
+                create_mandate(mandate_data, representative, group,
+                               self.ep_constituency)
 
         # Delegations
         for mandate_data in mep_json.get('Delegations', []):
             group, _ = self.touch_model(model=Group,
                                         kind='delegation',
-                                        name=mandate_data['Organization']
+                                        name=mandate_data['Organization'],
+                                        chamber=self.ep_chamber
                                         )
 
-            self.mep_cache['delegations'].append(
-                get_or_create_mandate(mandate_data, representative, group,
-                                      self.european_constituency)
-            )
+            create_mandate(mandate_data, representative, group,
+                           self.ep_constituency)
 
         # Group
         convert = {
@@ -247,13 +247,12 @@ class ParltrackImporter(GenericImporter):
             group, _ = self.touch_model(model=Group,
                                         abbreviation=abbreviation,
                                         kind='group',
-                                        name=mandate_data['Organization']
+                                        name=mandate_data['Organization'],
+                                        chamber=self.ep_chamber
                                         )
 
-            self.mep_cache['groups'].append(
-                get_or_create_mandate(mandate_data, representative, group,
-                                      self.european_constituency)
-            )
+            create_mandate(mandate_data, representative, group,
+                           self.ep_constituency)
 
         # Countries
         for mandate_data in mep_json.get('Constituencies', []):
@@ -288,10 +287,10 @@ class ParltrackImporter(GenericImporter):
             if save_constituency:
                 constituency.save()
 
-            self.mep_cache['constituencies'].append(
-                get_or_create_mandate(mandate_data, representative, group,
-                                      constituency)
-            )
+            create_mandate(mandate_data, representative, group, constituency)
+
+            create_mandate(mandate_data, representative, self.ep_group,
+                           self.ep_constituency)
 
         # Organisations
         for mandate_data in mep_json.get('Staff', []):
@@ -302,10 +301,8 @@ class ParltrackImporter(GenericImporter):
                                         name=mandate_data['Organization']
                                         )
 
-            self.mep_cache['staff'].append(
-                get_or_create_mandate(mandate_data, representative, group,
-                                      self.european_constituency)
-            )
+            create_mandate(mandate_data, representative, group,
+                           self.ep_constituency)
 
     def add_contacts(self, representative, mep_json):
         # Addresses
@@ -387,8 +384,6 @@ def main(stream=None):
     GenericImporter.pre_import(importer)
 
     for data in ijson.items(stream or sys.stdin, 'item'):
-        importer.mep_cache = dict(staff=[], constituencies=[],
-                                  committees=[], groups=[], delegations=[])
         importer.manage_mep(data)
     # Commenting for now, it's a bit dangerous, if a json file was corrupt it
     # would drop valid data !

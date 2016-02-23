@@ -1,0 +1,531 @@
+[
+{
+    "fields": {
+        "photo": "http://www.nosdeputes.fr/depute/photo/bernard-roman",
+        "gender": 2,
+        "remote_id": "http://www2.assemblee-nationale.fr/deputes/fiche/OMC_PA2611",
+        "active": true,
+        "birth_place": "Lille (Nord)",
+        "full_name": "Bernard Roman",
+        "birth_date": "1952-07-15",
+        "slug": "bernard-roman"
+    },
+    "model": "representatives.representative",
+    "pk": 1
+},
+{
+    "fields": {
+        "photo": "http://www.nossenateurs.fr/senateur/photo/david-assouline",
+        "gender": 2,
+        "remote_id": "http://www.senat.fr/senateur/assouline_david04059m.html",
+        "active": true,
+        "birth_place": "non disponible",
+        "full_name": "David Assouline",
+        "birth_date": "1959-06-16",
+        "slug": "david-assouline"
+    },
+    "model": "representatives.representative",
+    "pk": 2
+},
+{
+    "fields": {
+        "email": "contact@bernard-roman.org",
+        "representative": 1,
+        "kind": "other"
+    },
+    "model": "representatives.email",
+    "pk": 1
+},
+{
+    "fields": {
+        "email": "broman@assemblee-nationale.fr",
+        "representative": 1,
+        "kind": "official"
+    },
+    "model": "representatives.email",
+    "pk": 2
+},
+{
+    "fields": {
+        "email": "d.assouline@senat.fr",
+        "representative": 2,
+        "kind": "official"
+    },
+    "model": "representatives.email",
+    "pk": 3
+},
+{
+    "fields": {
+        "url": "http://www.bernard-roman.net",
+        "representative": 1,
+        "kind": ""
+    },
+    "model": "representatives.website",
+    "pk": 1
+},
+{
+    "fields": {
+        "url": "https://twitter.com/bernardroman59",
+        "representative": 1,
+        "kind": ""
+    },
+    "model": "representatives.website",
+    "pk": 2
+},
+{
+    "fields": {
+        "url": "http://twitter.com/bernardroman59",
+        "representative": 1,
+        "kind": "twitter"
+    },
+    "model": "representatives.website",
+    "pk": 3
+},
+{
+    "fields": {
+        "url": "http://www.david-assouline.net",
+        "representative": 2,
+        "kind": ""
+    },
+    "model": "representatives.website",
+    "pk": 4
+},
+{
+    "fields": {
+        "url": "https://twitter.com/dassouline",
+        "representative": 2,
+        "kind": ""
+    },
+    "model": "representatives.website",
+    "pk": 5
+},
+{
+    "fields": {
+        "url": "https://www.facebook.com/DavAssouline",
+        "representative": 2,
+        "kind": ""
+    },
+    "model": "representatives.website",
+    "pk": 6
+},
+{
+    "fields": {
+        "url": "http://david-assouline.net",
+        "representative": 2,
+        "kind": ""
+    },
+    "model": "representatives.website",
+    "pk": 7
+},
+{
+    "fields": {
+        "url": "http://twitter.com/dassouline",
+        "representative": 2,
+        "kind": "twitter"
+    },
+    "model": "representatives.website",
+    "pk": 8
+},
+{
+    "fields": {
+        "city": "Paris",
+        "name": "Assembl\u00e9e nationale",
+        "country": 1095,
+        "number": "126",
+        "street": "Rue de l'Universit\u00e9",
+        "representative": 1,
+        "kind": "official",
+        "postcode": "75355"
+    },
+    "model": "representatives.address",
+    "pk": 1
+},
+{
+    "fields": {
+        "city": "Lille",
+        "name": "Permanence",
+        "country": 1095,
+        "number": "20",
+        "street": "Rue d'Arras",
+        "representative": 1,
+        "kind": "",
+        "postcode": "59000"
+    },
+    "model": "representatives.address",
+    "pk": 2
+},
+{
+    "fields": {
+        "city": "Lille",
+        "name": "",
+        "country": 1095,
+        "number": "",
+        "street": "",
+        "representative": 1,
+        "kind": "",
+        "postcode": "59000"
+    },
+    "model": "representatives.address",
+    "pk": 3
+},
+{
+    "fields": {
+        "city": "Paris",
+        "name": "Palais du Luxembourg",
+        "country": 1095,
+        "number": "15",
+        "street": "Rue de Vaugirard",
+        "representative": 2,
+        "kind": "official",
+        "postcode": "75291"
+    },
+    "model": "representatives.address",
+    "pk": 4
+},
+{
+    "fields": {
+        "number": "03 20 52 09 20",
+        "representative": 1,
+        "address": 2,
+        "kind": ""
+    },
+    "model": "representatives.phone",
+    "pk": 1
+},
+{
+    "fields": {
+        "country": 1095,
+        "name": "Assembl\u00e9e nationale"
+    },
+    "model": "representatives.chamber",
+    "pk": 1
+},
+{
+    "fields": {
+        "country": 1095,
+        "name": "S\u00e9nat"
+    },
+    "model": "representatives.chamber",
+    "pk": 2
+},
+{
+    "fields": {
+        "name": "Assembl\u00e9e nationale",
+        "kind": "chamber",
+        "abbreviation": "AN",
+        "chamber": 1
+    },
+    "model": "representatives.group",
+    "pk": 1
+},
+{
+    "fields": {
+        "name": "S\u00e9nat",
+        "kind": "chamber",
+        "abbreviation": "SEN",
+        "chamber": 2
+    },
+    "model": "representatives.group",
+    "pk": 2
+},
+{
+    "fields": {
+        "name": "France",
+        "kind": "country",
+        "abbreviation": "FR",
+        "chamber": null
+    },
+    "model": "representatives.group",
+    "pk": 3
+},
+{
+    "fields": {
+        "name": "Socialiste, r\u00e9publicain et citoyen",
+        "kind": "group",
+        "abbreviation": "SRC",
+        "chamber": 1
+    },
+    "model": "representatives.group",
+    "pk": 4
+},
+{
+    "fields": {
+        "name": "Nord",
+        "kind": "department",
+        "abbreviation": "59",
+        "chamber": null
+    },
+    "model": "representatives.group",
+    "pk": 5
+},
+{
+    "fields": {
+        "name": "Nord (1\u00e8re circonscription)",
+        "kind": "district",
+        "abbreviation": "59-1",
+        "chamber": null
+    },
+    "model": "representatives.group",
+    "pk": 6
+},
+{
+    "fields": {
+        "name": "Groupe d'amiti\u00e9 france-mexique",
+        "kind": "parl-group",
+        "abbreviation": "Groupe d'amiti\u00e9 france-mexique",
+        "chamber": 1
+    },
+    "model": "representatives.group",
+    "pk": 7
+},
+{
+    "fields": {
+        "name": "Groupe d'amiti\u00e9 france-argentine",
+        "kind": "parl-group",
+        "abbreviation": "Groupe d'amiti\u00e9 france-argentine",
+        "chamber": 1
+    },
+    "model": "representatives.group",
+    "pk": 8
+},
+{
+    "fields": {
+        "name": "Commission des lois constitutionnelles, de la l\u00e9gislation et de l'administration g\u00e9n\u00e9rale de la r\u00e9publique",
+        "kind": "comittee",
+        "abbreviation": "Commission des lois constitutionnelles, de la l\u00e9gislation et de l'administration g\u00e9n\u00e9rale de la r\u00e9publique",
+        "chamber": 1
+    },
+    "model": "representatives.group",
+    "pk": 9
+},
+{
+    "fields": {
+        "name": "Socialiste et r\u00e9publicain",
+        "kind": "group",
+        "abbreviation": "SOC",
+        "chamber": 2
+    },
+    "model": "representatives.group",
+    "pk": 10
+},
+{
+    "fields": {
+        "name": "Paris",
+        "kind": "department",
+        "abbreviation": "75",
+        "chamber": null
+    },
+    "model": "representatives.group",
+    "pk": 11
+},
+{
+    "fields": {
+        "name": "Paris",
+        "kind": "district",
+        "abbreviation": "75-nd",
+        "chamber": null
+    },
+    "model": "representatives.group",
+    "pk": 12
+},
+{
+    "fields": {
+        "name": "Groupe France-Japon",
+        "kind": "parl-group",
+        "abbreviation": "Groupe France-Japon",
+        "chamber": 2
+    },
+    "model": "representatives.group",
+    "pk": 13
+},
+{
+    "fields": {
+        "name": "Commission de la culture, de l'\u00e9ducation et de la communication",
+        "kind": "comittee",
+        "abbreviation": "Commission de la culture, de l'\u00e9ducation et de la communication",
+        "chamber": 2
+    },
+    "model": "representatives.group",
+    "pk": 14
+},
+{
+    "fields": {
+        "country": 1095,
+        "name": "Assembl\u00e9e nationale"
+    },
+    "model": "representatives.constituency",
+    "pk": 1
+},
+{
+    "fields": {
+        "country": 1095,
+        "name": "S\u00e9nat"
+    },
+    "model": "representatives.constituency",
+    "pk": 2
+},
+{
+    "fields": {
+        "country": 1095,
+        "name": "Parti socialiste"
+    },
+    "model": "representatives.constituency",
+    "pk": 3
+},
+{
+    "fields": {
+        "group": 3,
+        "end_date": null,
+        "role": "membre",
+        "representative": 1,
+        "begin_date": null,
+        "constituency": 3
+    },
+    "model": "representatives.mandate",
+    "pk": 1
+},
+{
+    "fields": {
+        "group": 4,
+        "end_date": null,
+        "role": "membre",
+        "representative": 1,
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 2
+},
+{
+    "fields": {
+        "group": 5,
+        "end_date": null,
+        "role": "membre",
+        "representative": 1,
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3
+},
+{
+    "fields": {
+        "group": 6,
+        "end_date": null,
+        "role": "membre",
+        "representative": 1,
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 4
+},
+{
+    "fields": {
+        "group": 7,
+        "end_date": null,
+        "role": "vice-pr\u00e9sident",
+        "representative": 1,
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 5
+},
+{
+    "fields": {
+        "group": 8,
+        "end_date": null,
+        "role": "vice-pr\u00e9sident",
+        "representative": 1,
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 6
+},
+{
+    "fields": {
+        "group": 9,
+        "end_date": null,
+        "role": "membre",
+        "representative": 1,
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 7
+},
+{
+    "fields": {
+        "group": 3,
+        "end_date": null,
+        "role": "membre",
+        "representative": 2,
+        "begin_date": null,
+        "constituency": 3
+    },
+    "model": "representatives.mandate",
+    "pk": 8
+},
+{
+    "fields": {
+        "group": 10,
+        "end_date": null,
+        "role": "membre",
+        "representative": 2,
+        "begin_date": "2004-09-26",
+        "constituency": 2
+    },
+    "model": "representatives.mandate",
+    "pk": 9
+},
+{
+    "fields": {
+        "group": 11,
+        "end_date": null,
+        "role": "membre",
+        "representative": 2,
+        "begin_date": "2004-09-26",
+        "constituency": 2
+    },
+    "model": "representatives.mandate",
+    "pk": 10
+},
+{
+    "fields": {
+        "group": 12,
+        "end_date": null,
+        "role": "membre",
+        "representative": 2,
+        "begin_date": "2004-09-26",
+        "constituency": 2
+    },
+    "model": "representatives.mandate",
+    "pk": 11
+},
+{
+    "fields": {
+        "group": 13,
+        "end_date": null,
+        "role": "pr\u00e9sident",
+        "representative": 2,
+        "begin_date": "2004-09-26",
+        "constituency": 2
+    },
+    "model": "representatives.mandate",
+    "pk": 12
+},
+{
+    "fields": {
+        "group": 14,
+        "end_date": null,
+        "role": "vice-pr\u00e9sident",
+        "representative": 2,
+        "begin_date": "2004-09-26",
+        "constituency": 2
+    },
+    "model": "representatives.mandate",
+    "pk": 13
+}
+]
