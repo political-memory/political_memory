@@ -6,16 +6,16 @@ register = template.Library()
 
 
 @register.filter
-def score_label(score):
+def score_arrow(score):
     if score > 0:
         return mark_safe(
-            '<span class="label label-success">{}</span>'.format(score))
+            '<span class="glyphicon glyphicon-upload text-success"></span>')
     elif score < 0:
         return mark_safe(
-            '<span class="label label-danger">{}</span>'.format(score))
+            '<span class="glyphicon glyphicon-upload text-danger"></span>')
     else:
         return mark_safe(
-            '<span class="label label-default">{}</span>'.format(score))
+            '<span class="glyphicon glyphicon-upload text-default"></span>')
 
 
 @register.filter

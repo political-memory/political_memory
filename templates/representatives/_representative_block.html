@@ -10,11 +10,11 @@
 	<dl class="dl-horizontal">
 	  <dt>{% trans "Score" %}</dt>
       <dd>
-        <span class="badge" data-toggle="tooltip" data-placement="right" title="{% trans "Le score est une somme de points attribués suivant si le MEP vote dans notre sens (positif) ou non (négatif) multiplié par le poids (importance) de ce vote." %}">{{ representative.score.score|score_label }}</span>&nbsp;&nbsp;<span class="glyphicon glyphicon-upload text-success"></span>
+        <span class="badge" data-toggle="tooltip" data-placement="right" title="{% trans "Le score est une somme de points attribués suivant si le MEP vote dans notre sens (positif) ou non (négatif) multiplié par le poids (importance) de ce vote." %}">{{ representative.score.score }}</span>&nbsp;&nbsp;{{ representative.score.score|score_arrow }}
       </dd>
 
 	  <dt>{% trans "Country" %}</dt>
-      <dd><span class="glyphicon glyphicon-flag"></span> 
+      <dd>
         {{ representative.country|country_flag }}
       </dd>
 
@@ -22,9 +22,9 @@
       <dd>
         {% with mandate=representative.main_mandate %}
         <a href="{{ mandate.group.get_absolute_url }}">
-          {{ mandate.group.name }}
-          - {% if mandate.group.abbreviation %}{{ mandate.group.abbreviation }}{% endif %}
-        </a>
+          {% blocktrans with role=representative.main_mandate.role group_name=mandate.group.name %}
+          {{ role }} of {{ group_name }}{% endblocktrans %}</a>
+        {% if mandate.group.abbreviation %}&nbsp;({{ mandate.group.abbreviation }}){% endif %}
         {% endwith %}
       </dd>
 

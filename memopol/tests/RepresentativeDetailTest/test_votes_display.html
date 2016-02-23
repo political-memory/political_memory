@@ -1,63 +1,40 @@
-      <h2 id='votes'>Votes</h2>
+	  <table class="table table-striped table-hover text-center">
 
-      <table class='table table-condensed votes'>
-        <tr>
-          <th>Title</th>
-          <th class='icon-cell'>
-            Memopol recommendation
-          </th>
-          <th class='icon-cell'>
-            Representative vote
-          </th>
-          <th class='icon-cell'>
-            Score
+		<thead>
+		  <tr>
+			<th class="text-center">Vote name</th>
+			<th class="text-center">MEP's vote</th>
+            
+			<th class="text-center">Lqdn's recommendation</th>
+			<th class="text-center">Points <a data-toggle="tooltip" data-placement="top" title="Le score est une somme de points attribués suivant si le MEP vote dans notre sens (positif) ou non (négatif) multiplié par le poids (importance) de ce vote."><span class="glyphicon glyphicon-info-sign"></span></a></th>
+		  </tr>
+		</thead>
 
-          </th>
-        </tr>
+		<tbody>
 
-          <tr>
-            <td>Stop acta !</td>
-            <td class='icon-cell'>
-              <i             aria-label="for"             class="fa fa-thumbs-up vote_positive"             title="for"             ></i>
-            </td>
-            <td class='icon-cell'>
-              <i             aria-label="for"             class="fa fa-thumbs-up vote_positive"             title="for"             ></i>
-            </td>
-            <td class='icon-cell'>
-              <span class="label label-success">4</span>
+          
+		  <tr>
+			<th>RC-B7-0617/2010 - Accord commercial anti-contrefaçon (ACAC) - Considérant X</th>
+			<td><span class="glyphicon glyphicon-ok text-success"></span></td>
+			<td><span class="glyphicon glyphicon-ok"></span></td>
+			<td>4</td>
+		  </tr>
+          
+		  <tr>
+			<th>RC-B7-0617/2010 - Accord commercial anti-contrefaçon (ACAC) - Considérant CC</th>
+			<td><span class="glyphicon glyphicon-remove text-danger"></span></td>
+			<td><span class="glyphicon glyphicon-ok"></span></td>
+			<td>-5</td>
+		  </tr>
+          
+		  <tr>
+			<th>RC-B7-0617/2010 - Accord commercial anti-contrefaçon (ACAC) - Résolution</th>
+			<td><span class="glyphicon glyphicon-remove text-danger"></span></td>
+			<td><span class="glyphicon glyphicon-ok"></span></td>
+			<td>-6</td>
+		  </tr>
+          
 
+		</tbody>
 
-            </td>
-          </tr>
-
-          <tr>
-            <td>Stop acta !</td>
-            <td class='icon-cell'>
-              <i             aria-label="for"             class="fa fa-thumbs-up vote_positive"             title="for"             ></i>
-            </td>
-            <td class='icon-cell'>
-              <i             aria-label="against"             class="fa fa-thumbs-down vote_negative"             title="against"             ></i>
-            </td>
-            <td class='icon-cell'>
-              <span class="label label-danger">-5</span>
-
-
-            </td>
-          </tr>
-
-          <tr>
-            <td>Stop acta !</td>
-            <td class='icon-cell'>
-              <i             aria-label="for"             class="fa fa-thumbs-up vote_positive"             title="for"             ></i>
-            </td>
-            <td class='icon-cell'>
-              <i             aria-label="against"             class="fa fa-thumbs-down vote_negative"             title="against"             ></i>
-            </td>
-            <td class='icon-cell'>
-              <span class="label label-danger">-6</span>
-
-
-            </td>
-          </tr>
-
-      </table>
+	  </table>
