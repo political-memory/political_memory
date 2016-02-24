@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='django-representatives-votes',
-    version='0.0.14',
+    version='0.0.15',
     description='Base app for government representative votes',
     author='Olivier Le Thanh Duong, Laurent Peuch, Arnaud Fabre, James Pic',
     author_email='olivier@lethanh.be',
@@ -12,7 +12,7 @@ setup(
     license='GPLv3',
     keywords='django government parliament votes',
     install_requires=[
-        'django-representatives>=0.0.13',
+        'django-representatives>=0.0.15',
         'py-dateutil',
         'pytz',
         'ijson',
@@ -27,6 +27,9 @@ setup(
         'console_scripts': [
             'parltrack_import_dossiers = representatives_votes.contrib.parltrack.import_dossiers:main',
             'parltrack_import_votes = representatives_votes.contrib.parltrack.import_votes:main',
+            'francedata_import_dossiers = representatives_votes.contrib.francedata.import_dossiers:main',
+            'francedata_import_scrutins = representatives_votes.contrib.francedata.import_scrutins:main',
+            'francedata_import_votes = representatives_votes.contrib.francedata.import_votes:main',
         ]
     },
     classifiers=[

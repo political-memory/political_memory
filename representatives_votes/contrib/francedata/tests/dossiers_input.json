@@ -1,0 +1,23 @@
+[
+    {
+        "chambre": "AN",
+        "url_an": "http://www.assemblee-nationale.fr/14/dossiers/liberte_maires_rythmes_scolaires_premier_degre.asp",
+        "titre": "Education : libre choix des maires concernant les rythmes scolaires dans le premier degr\u00e9"
+    },
+    {
+        "chambre": "SEN",
+        "url_sen": "http://www.senat.fr/dossier-legislatif/pjl12-495.html",
+        "titre": "Modernisation de l'action publique territoriale et affirmation des m\u00e9tropoles"
+    },
+    {
+        "chambre": "AN",
+        "url_an": "http://www.assemblee-nationale.fr/14/dossiers/action_publique_territoriale_metropoles.asp",
+        "url_sen": "http://www.senat.fr/dossier-legislatif/pjl12-495.html",
+        "titre": "Collectivit\u00e9s territoriales : action publique territoriale et m\u00e9tropoles"
+    },
+    {
+        "chambre": "SEN",
+        "url_sen": "http://www.senat.fr/dossier-legislatif/ppl13-799.html",
+        "titre": "Protection de l'enfant"
+    }
+]

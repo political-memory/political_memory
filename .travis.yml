@@ -14,6 +14,9 @@ script:
 - django-admin migrate
 - flake8 representatives_votes/ --exclude migrations --ignore E128
 - py.test
+- cat representatives_votes/contrib/francedata/tests/dossiers_input.json | francedata_import_dossiers
+- cat representatives_votes/contrib/francedata/tests/scrutins_input.json | francedata_import_scrutins
+- cat representatives_votes/contrib/francedata/tests/votes_input.json | francedata_import_votes
 - cat representatives_votes/contrib/parltrack/tests/dossiers_fixture.json | parltrack_import_dossiers
 - cat representatives_votes/contrib/parltrack/tests/votes_fixture.json | parltrack_import_votes
 after_success:
