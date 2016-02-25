@@ -1,5 +1,6 @@
 # Project specific "glue" coupling of all apps
 from django.db import models
+from django.db.models import Count
 
 from core.views import GridListMixin, PaginationMixin
 from representatives import views as representatives_views
@@ -36,3 +37,7 @@ class RepresentativeDetail(representatives_views.RepresentativeDetail):
 
 class DossierList(PaginationMixin, representatives_votes_views.DossierList):
     queryset = Dossier.objects.exclude(proposals__recommendation=None)
+
+    def get_queryset(self):
+        qs = super(DossierList, self).get_queryset()
+        return qs.annotate(votes_count=Count('proposals__votes'))
