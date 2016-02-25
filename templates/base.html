@@ -46,7 +46,7 @@
                 {% include '_base_position.html' %}
             </div>
 
-            <div class="col-sm-9 col-sm-offset-3 custom-listMEP">
+            <div class="col-sm-9 col-sm-offset-3 {% block container-class %}{% endblock %}">
             {% block content %}
                 <h1 class="text-center">Members of the European Parliement</h1>
                 <p class="lead text-center">{number} MEP from {country}, members of {party}, working in {delegation} and on {committee}.</p>
