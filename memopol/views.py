@@ -41,3 +41,26 @@ class DossierList(PaginationMixin, representatives_votes_views.DossierList):
     def get_queryset(self):
         qs = super(DossierList, self).get_queryset()
         return qs.annotate(votes_count=Count('proposals__votes'))
+
+
+class DossierDetail(representatives_votes_views.DossierDetail):
+    def get_queryset(self):
+        qs = super(DossierDetail, self).get_queryset().prefetch_related('proposals__votes')
+        return qs
+
+    def get_context_data(self, **kwargs):
+        c = super(DossierDetail, self).get_context_data(**kwargs)
+        c['proposals'] = c['dossier'].proposals.filter(recommendation__isnull=False)
+
+        # Note: this is a bit of a hack, we feed the RelatedManager with
+        # the prefetch_related with a clause, so that representative.votes.all
+        # doesn't query the db but returns what he has in store.
+        votes = (ScoredVote.objects
+                 .filter(proposal__in=c['proposals'])
+                 .select_related('proposal__recommendation'))
+        c['representatives'] = (Representative.objects
+                                .filter(votes__proposal__in=c['proposals'])
+                                .distinct()
+                                .prefetch_related(models.Prefetch('votes', queryset=votes)))
+
+        return c

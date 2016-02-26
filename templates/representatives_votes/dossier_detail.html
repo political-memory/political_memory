@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load humanize %}
+
+{% block content %}
+<h1 class="text-center">{% trans "Dossier" %} {{ dossier.title }}</h1>
+<p class="lead text-center">{% trans "Last updated" %} {{ dossier.updated|naturalday }}</p>
+
+
+<div class="page-header">
+  <h2>{% trans "LQDN's opinion" %}</h2>
+</div>
+
+<p>{{ dossier.text }}</p>
+
+{% comment %}
+<!-- TODO -->
+<div class="container-fluid">
+  <div class="row">
+	<div class="pull-right">
+	  <a class="btn btn-default">See Press Releases</a>
+	</div>
+  </div>
+</div>
+{% endcomment %}
+
+{% comment %}
+<!-- TODO -->
+<div class="alert alert-info text-center" role="alert">
+  <span class="glyphicon glyphicon-alert">
+  </span>&nbsp;&nbsp;A campaign is currently ongoing with La Quadrature. 
+  <a href="#" class="alert-link">Check it out!</a>
+</div>
+{% endcomment %}
+
+<div class="container-fluid">
+  <div class="row">							
+	<div class="col-xs-12">
+
+      <ul class="nav nav-tabs nav-justified" role="tablist">
+		<li role="presentation" class="active">
+          <a href="#votes" aria-controls="votes" role="tab" data-toggle="tab">
+            <h3>{% trans "Votes" %}</h3>
+          </a>
+        </li>
+		<li role="presentation">
+          <a href="#positions" aria-controls="positions" role="tab" data-toggle="tab">
+            <h3>{% trans "Public positions" %}</h3>
+          </a>
+        </li>
+	  </ul>
+
+      <div class="tab-content">
+        <div id="votes" role="tabpanel" class="tab-pane active">
+          {% include "representatives_votes/_dossiers_votes.html" %}
+        </div>
+        <div id="positions" role="tabpanel" class="tab-pane">
+          {% include "representatives_votes/_dossiers_positions.html" %}
+        </div>
+      </div>
+
+	</div>
+  </div>
+</div>
+{% endblock %}
+					
+										
+					

@@ -25,6 +25,10 @@ urlpatterns = [
         r'votes/dossier/$',
         views.DossierList.as_view(),
     ),
+    url(
+        r'^votes/dossier/(?P<pk>\d+)/$',
+        views.DossierDetail.as_view()
+    ),
 
     url(r'^autocomplete/', include('autocomplete_light.urls')),
     url(r'^admin/', include(admin.site.urls)),
