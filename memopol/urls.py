@@ -96,6 +96,10 @@ urlpatterns = [
         ThemeDetail.as_view(),
         name='theme-detail'
     ),
+    url(
+        r'^votes/dossier/(?P<pk>\d+)/$',
+        views.DossierDetail.as_view()
+    ),
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^positions/', include('representatives_positions.urls',
