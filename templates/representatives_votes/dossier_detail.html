@@ -33,10 +33,14 @@
 </div>
 {% endcomment %}
 
+
 <div class="container-fluid">
   <div class="row">							
 	<div class="col-xs-12">
+      {% include "representatives_votes/_dossiers_votes.html" %}
 
+      {% comment %}
+      <!-- we have no way to link a dossier to a public position -->
       <ul class="nav nav-tabs nav-justified" role="tablist">
 		<li role="presentation" class="active">
           <a href="#votes" aria-controls="votes" role="tab" data-toggle="tab">
@@ -58,6 +62,7 @@
           {% include "representatives_votes/_dossiers_positions.html" %}
         </div>
       </div>
+      {% endcomment %}
 
 	</div>
   </div>

@@ -1,16 +1,53 @@
 {% load humanize %}
+{% load i18n %}
+
+{% if not positions %}
+{# TODO: link #}
+<p>No public position has been recorded. You can always <a>add a public position</a>.</p>
+{% else %}
+
+{% regroup positions by datetime|date:'M Y' as groups %}
+<table class="table table-responsive custom-timeline text-center">
+  <thead>
+	<tr>
+      {% comment %}
+	  <th class="text-center">{% trans "Before" %}</th>
+	  <th class="text-center">{% trans "Last year" %}</th>
+	  <th class="text-center">{% trans "Last 6 months" %}</th>
+	  <th class="text-center">{% trans "This month" %}</th>
+      {% endcomment %}
+      {% for group in groups %}
+      <th class="text-center">{{ group.grouper }}</th>
+      {% endfor %}
+	</tr>
+  </thead>
+  
+  <tbody>
+	<tr>
+      {% for group in groups %}
+	  <td>
+        {% for position in group.list %}
+		<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#collapsePosition-{{ position.pk }}" aria-expanded="false" aria-controls="collapsePosition-{{ position.pk }}">
+          {{ position.datetime|naturalday }}
+		</button>
+        {% endfor %}
+	  </td>
+      {% endfor %}
+	</tr>
+  </tbody>
+</table>
 
 {% for position in positions %}
-  {% if forloop.counter0|divisibleby:3 %}<div id="" class="row">{% endif %}
-  <div class="col-sm-6 col-md-4">
-	<div class="thumbnail">
-	  <div class="caption">
-		<h3 class="text-center">{{ position.datetime|naturalday }}</h3>
-		<hr>
-        <p>{{ position.text }}</p>
-	  </div>
+<div class="collapse" id="collapsePosition-{{ position.pk }}">
+  <div class="panel panel-default">
+	<div class="panel-body text-justify">
+	  <blockquote>
+		<p>{{ position.text }}</p>
+	  </blockquote>
+	  <p class="text-right"><a class="btn btn-primary" href="{{ position.link }}" target="blank">Check the source &raquo;</a></p>
 	</div>
   </div>
-  {% if forloop.counter|divisibleby:3 %}</div>{% endif %}
+</div>
 {% endfor %}
 
+{% endif %}
