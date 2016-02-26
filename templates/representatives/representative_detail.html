@@ -23,34 +23,36 @@
 </div>
 
 <div class="row">
-  <ul class="nav nav-tabs nav-justified" role="tablist">
-    <li role="presentation" class="active">
-      <a href="#votes" aria-controls="votes" role="tab" data-toggle="tab">
-        <h3>{% trans "Votes" %}</h3>
-      </a>
-    </li>
-    <li role="presentation">
-      <a href="#mandates" aria-controls="mandates" role="tab" data-toggle="tab">
-        <h3>{% trans "Mandates" %}</h3>
-      </a>
-    </li>
-    <li role="presentation">
-      <a href="#positions" aria-controls="positions" role="tab" data-toggle="tab">
-        <h3>{% trans "Public positions" %}</h3>
-      </a>
-    </li>
-  </ul>
-  
-  <div class="tab-content">
-    <div id="votes" role="tabpanel" class="tab-pane active">
-      {% include "representatives/_votes.html" %}
-    </div>
-    <div id="mandates" role="tabpanel" class="tab-pane">
-      {% include "representatives/_mandates.html" %}
-    </div>
-    <div id="positions" role="tabpanel" class="tab-pane">
-      {% include "representatives/_positions.html" %}
+  <div class="col-xs-12">
+    <ul class="nav nav-tabs nav-justified" role="tablist">
+      <li role="presentation" class="active">
+        <a href="#votes" aria-controls="votes" role="tab" data-toggle="tab">
+          <h3>{% trans "Votes" %}</h3>
+        </a>
+      </li>
+      <li role="presentation">
+        <a href="#mandates" aria-controls="mandates" role="tab" data-toggle="tab">
+          <h3>{% trans "Mandates" %}</h3>
+        </a>
+      </li>
+      <li role="presentation">
+        <a href="#positions" aria-controls="positions" role="tab" data-toggle="tab">
+          <h3>{% trans "Public positions" %}</h3>
+        </a>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="votes" role="tabpanel" class="tab-pane active">
+        {% include "representatives/_votes.html" %}
+      </div>
+      <div id="mandates" role="tabpanel" class="tab-pane">
+        {% include "representatives/_mandates.html" %}
+      </div>
+      <div id="positions" role="tabpanel" class="tab-pane">
+        {% include "representatives/_positions.html" %}
+      </div>
     </div>
   </div>
-<div>
+</div>
 {% endblock %}
