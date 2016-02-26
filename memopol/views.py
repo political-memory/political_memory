@@ -36,7 +36,7 @@ class RepresentativeDetail(representatives_views.RepresentativeDetail):
 
 
 class DossierList(PaginationMixin, representatives_votes_views.DossierList):
-    queryset = Dossier.objects.exclude(proposals__recommendation=None)
+    queryset = Dossier.objects.filter(proposals__recommendation__isnull=False)
 
     def get_queryset(self):
         qs = super(DossierList, self).get_queryset()
