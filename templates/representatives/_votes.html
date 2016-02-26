@@ -10,14 +10,14 @@
 {% with dossier=group.grouper %}
 {% with votes=group.list %}
 <div class="panel panel-default">
-  <div class="panel-heading" role="tab" id="Dossiers-headingOne">
+  <div class="panel-heading" role="tab" id="Dossiers-heading-{{ dossier.pk }}">
 	<h4 class="panel-title">
-	  <a role="button" data-toggle="collapse" data-parent="#accordion-Dossiers" href="#Dossiers-detailsOne" aria-expanded="false" aria-controls="Dossiers-detailsOne">
+	  <a role="button" data-toggle="collapse" data-parent="#accordion-Dossiers" href="#Dossiers-{{ dossier.pk }}" aria-expanded="false" aria-controls="Dossiers-{{ dossier.pk }}">
 		{{ dossier.title }}
 	  </a>
 	</h4>
   </div>
-  <div id="Dossiers-detailsOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="Dossiers-headingOne">
+  <div id="Dossiers-{{ dossier.pk }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="Dossiers-heading-{{ dossier.pk }}">
 	<div class="panel-body">
 	  {% if dossier.text %}<p>{{ dossier.text }}</p>{% endif %}
 	  {% if dossier.link %}<a class="btn btn-default" target="blank" href="{{ dossier.link }}">{% trans "En savoir plus" %} &raquo;</a>{% endif %}
