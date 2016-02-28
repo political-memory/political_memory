@@ -134,6 +134,7 @@
         "number": "126",
         "street": "Rue de l'Universit\u00e9",
         "representative": 1,
+        "location": "",
         "kind": "official",
         "postcode": "75355"
     },
@@ -148,6 +149,7 @@
         "number": "20",
         "street": "Rue d'Arras",
         "representative": 1,
+        "location": "",
         "kind": "",
         "postcode": "59000"
     },
@@ -162,6 +164,7 @@
         "number": "",
         "street": "",
         "representative": 1,
+        "location": "",
         "kind": "",
         "postcode": "59000"
     },
@@ -176,6 +179,7 @@
         "number": "15",
         "street": "Rue de Vaugirard",
         "representative": 2,
+        "location": "",
         "kind": "official",
         "postcode": "75291"
     },
@@ -270,33 +274,13 @@
 },
 {
     "fields": {
-        "name": "Groupe d'amiti\u00e9 france-mexique",
-        "kind": "parl-group",
-        "abbreviation": "Groupe d'amiti\u00e9 france-mexique",
+        "name": "Commission des lois constitutionnelles, de la l\u00e9gislation et de l'administration g\u00e9n\u00e9rale de la r\u00e9publique",
+        "kind": "comittee",
+        "abbreviation": "AnComLois",
         "chamber": 1
     },
     "model": "representatives.group",
     "pk": 7
-},
-{
-    "fields": {
-        "name": "Groupe d'amiti\u00e9 france-argentine",
-        "kind": "parl-group",
-        "abbreviation": "Groupe d'amiti\u00e9 france-argentine",
-        "chamber": 1
-    },
-    "model": "representatives.group",
-    "pk": 8
-},
-{
-    "fields": {
-        "name": "Commission des lois constitutionnelles, de la l\u00e9gislation et de l'administration g\u00e9n\u00e9rale de la r\u00e9publique",
-        "kind": "comittee",
-        "abbreviation": "Commission des lois constitutionnelles, de la l\u00e9gislation et de l'administration g\u00e9n\u00e9rale de la r\u00e9publique",
-        "chamber": 1
-    },
-    "model": "representatives.group",
-    "pk": 9
 },
 {
     "fields": {
@@ -306,7 +290,7 @@
         "chamber": 2
     },
     "model": "representatives.group",
-    "pk": 10
+    "pk": 8
 },
 {
     "fields": {
@@ -316,7 +300,7 @@
         "chamber": null
     },
     "model": "representatives.group",
-    "pk": 11
+    "pk": 9
 },
 {
     "fields": {
@@ -326,27 +310,17 @@
         "chamber": null
     },
     "model": "representatives.group",
-    "pk": 12
-},
-{
-    "fields": {
-        "name": "Groupe France-Japon",
-        "kind": "parl-group",
-        "abbreviation": "Groupe France-Japon",
-        "chamber": 2
-    },
-    "model": "representatives.group",
-    "pk": 13
+    "pk": 10
 },
 {
     "fields": {
         "name": "Commission de la culture, de l'\u00e9ducation et de la communication",
         "kind": "comittee",
-        "abbreviation": "Commission de la culture, de l'\u00e9ducation et de la communication",
+        "abbreviation": "SenComCult",
         "chamber": 2
     },
     "model": "representatives.group",
-    "pk": 14
+    "pk": 11
 },
 {
     "fields": {
@@ -378,6 +352,7 @@
         "end_date": null,
         "role": "membre",
         "representative": 1,
+        "link": "",
         "begin_date": null,
         "constituency": 3
     },
@@ -390,6 +365,7 @@
         "end_date": null,
         "role": "membre",
         "representative": 1,
+        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -402,6 +378,7 @@
         "end_date": null,
         "role": "membre",
         "representative": 1,
+        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -414,6 +391,7 @@
         "end_date": null,
         "role": "membre",
         "representative": 1,
+        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -424,8 +402,9 @@
     "fields": {
         "group": 7,
         "end_date": null,
-        "role": "vice-pr\u00e9sident",
+        "role": "membre",
         "representative": 1,
+        "link": "",
         "begin_date": "2012-06-20",
         "constituency": 1
     },
@@ -434,36 +413,39 @@
 },
 {
     "fields": {
-        "group": 8,
+        "group": 3,
         "end_date": null,
-        "role": "vice-pr\u00e9sident",
-        "representative": 1,
-        "begin_date": "2012-06-20",
-        "constituency": 1
+        "role": "membre",
+        "representative": 2,
+        "link": "",
+        "begin_date": null,
+        "constituency": 3
     },
     "model": "representatives.mandate",
     "pk": 6
 },
 {
     "fields": {
-        "group": 9,
+        "group": 8,
         "end_date": null,
         "role": "membre",
-        "representative": 1,
-        "begin_date": "2012-06-20",
-        "constituency": 1
+        "representative": 2,
+        "link": "",
+        "begin_date": "2004-09-26",
+        "constituency": 2
     },
     "model": "representatives.mandate",
     "pk": 7
 },
 {
     "fields": {
-        "group": 3,
+        "group": 9,
         "end_date": null,
         "role": "membre",
         "representative": 2,
-        "begin_date": null,
-        "constituency": 3
+        "link": "",
+        "begin_date": "2004-09-26",
+        "constituency": 2
     },
     "model": "representatives.mandate",
     "pk": 8
@@ -474,6 +456,7 @@
         "end_date": null,
         "role": "membre",
         "representative": 2,
+        "link": "",
         "begin_date": "2004-09-26",
         "constituency": 2
     },
@@ -484,48 +467,13 @@
     "fields": {
         "group": 11,
         "end_date": null,
-        "role": "membre",
+        "role": "vice-pr\u00e9sident",
         "representative": 2,
+        "link": "",
         "begin_date": "2004-09-26",
         "constituency": 2
     },
     "model": "representatives.mandate",
     "pk": 10
-},
-{
-    "fields": {
-        "group": 12,
-        "end_date": null,
-        "role": "membre",
-        "representative": 2,
-        "begin_date": "2004-09-26",
-        "constituency": 2
-    },
-    "model": "representatives.mandate",
-    "pk": 11
-},
-{
-    "fields": {
-        "group": 13,
-        "end_date": null,
-        "role": "pr\u00e9sident",
-        "representative": 2,
-        "begin_date": "2004-09-26",
-        "constituency": 2
-    },
-    "model": "representatives.mandate",
-    "pk": 12
-},
-{
-    "fields": {
-        "group": 14,
-        "end_date": null,
-        "role": "vice-pr\u00e9sident",
-        "representative": 2,
-        "begin_date": "2004-09-26",
-        "constituency": 2
-    },
-    "model": "representatives.mandate",
-    "pk": 13
 }
 ]
