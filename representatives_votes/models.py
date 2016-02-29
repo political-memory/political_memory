@@ -27,7 +27,7 @@ class Proposal(HashableModel, TimeStampedModel):
     title = models.CharField(max_length=1000, unique=True)
     description = models.TextField(blank=True, default='')
     reference = models.CharField(max_length=200, blank=True, null=True)
-    datetime = models.DateTimeField()
+    datetime = models.DateTimeField(db_index=True)
     kind = models.CharField(max_length=200, blank=True, default='')
     total_abstain = models.IntegerField()
     total_against = models.IntegerField()
