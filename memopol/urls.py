@@ -12,22 +12,27 @@ urlpatterns = [
     url(
         r'^legislature/representative/(?P<group_kind>\w+)/(?P<group>.+)/$',
         views.RepresentativeList.as_view(),
+        name='representative-list'
     ),
     url(
         r'^legislature/representative/(?P<slug>[-\w]+)/$',
         views.RepresentativeDetail.as_view(),
+        name='representative-detail'
     ),
     url(
         r'legislature/representative/$',
         views.RepresentativeList.as_view(),
+        name='representative-list'
     ),
     url(
         r'votes/dossier/$',
         views.DossierList.as_view(),
+        name='dossier-list'
     ),
     url(
         r'^votes/dossier/(?P<pk>\d+)/$',
-        views.DossierDetail.as_view()
+        views.DossierDetail.as_view(),
+        name='dossier-detail'
     ),
 
     url(r'^autocomplete/', include('autocomplete_light.urls')),

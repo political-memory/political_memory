@@ -2,8 +2,10 @@
 {% load i18n %}
 {% load humanize %}
 
+{% block title %}{% trans "Dosssiers" %}{% endblock %}
+
 {% block content %}
-<h1 class="text-center">Dossiers</h1>
+<h1 class="text-center">{% trans "Dossiers" %}</h1>
 <p class="lead text-center">
 {% blocktrans count counter=paginator.count %}{{ counter }} dossier{% plural %}{{ counter }} dossier{% endblocktrans %}{% if search %}{% blocktrans %}on {{ search }}{% endblocktrans %}{% endif %}.
 </p>

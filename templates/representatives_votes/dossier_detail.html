@@ -2,6 +2,8 @@
 {% load i18n %}
 {% load humanize %}
 
+{% block title %}{% trans "Dossier" %} {{ dossier.title }}{% endblock %}
+
 {% block content %}
 <h1 class="text-center">{% trans "Dossier" %} {{ dossier.title }}</h1>
 <p class="lead text-center">{% trans "Last updated" %} {{ dossier.updated|naturalday }}</p>
