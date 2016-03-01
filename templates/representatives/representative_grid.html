@@ -1,8 +1,11 @@
 {% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Members of the European Parliement" %}{% endblock %}
 
 {% block container-class %}custom-listMEP{% endblock %}
 {% block content %}
-<h1 class="text-center">Members of the European Parliement</h1>
+<h1 class="text-center">{% trans "Members of the European Parliement" %}</h1>
 <p class="lead text-center">{number} MEP from {country}, members of {party}, working in {delegation} and on {committee}.</p>
 
 <div class="btn-group" data-toggle="buttons">
