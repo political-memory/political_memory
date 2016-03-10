@@ -28,11 +28,6 @@ class DossierDetailTest(UrlGetTestMixin, TestCase):
         self.assertHtmlInResult("<p class='lead text-center'>Last updated Dec. 27, 2015</p>")
 
     def test_description_display(self):
-
-        resp = self.client.get(self.url)
-        with open("t.html", 'w+') as f:
-            f.write(resp.content)
-
         self.assertExpectedHtmlInResult()
 
     def test_votes_display(self):
