@@ -1,6 +1,7 @@
 # Project specific "glue" coupling of all apps
 from django.db import models
 from django.db.models import Count
+from django.utils.http import urlencode
 
 from core.views import GridListMixin, PaginationMixin
 from representatives import views as representatives_views
@@ -11,11 +12,40 @@ from representatives_positions.forms import PositionForm
 from representatives_recommendations.models import ScoredVote
 
 
-class RepresentativeList(PaginationMixin, GridListMixin,
-        representatives_views.RepresentativeList):
+class PaginationFormMixin(PaginationMixin):
+    """
+    Only add an searchparameters to the context to make it easy to paginate
+    without duplicating the 'page' parameter and keeping the form's GET parameters.
+    """
+    def get_context_data(self, **kwargs):
+        c = super(PaginationFormMixin, self).get_context_data(**kwargs)
+        params = [(k,v) for k, v in self.request.GET.iteritems() if k != 'page']
+        c['searchparameters'] = urlencode(dict(params))
+        return c
 
+
+class RepresentativeList(PaginationFormMixin, GridListMixin,
+                         representatives_views.RepresentativeList):
     queryset = Representative.objects.filter(
         active=True).select_related('score')
+
+    def country_filter(self, qs):
+        country = self.request.GET.get('country', None)
+
+        if country:
+            # Note: very heavy
+            if country.isnumeric():
+                qs = qs.filter(mandates__constituency__country__pk=country).distinct()
+            else:
+                qs = qs.filter(mandates__constituency__country__name__iexact=country).distinct()
+
+        return qs
+
+    def get_queryset(self):
+        # Note: should probably lies in representatives.views.RepresentativeList
+        qs = super(RepresentativeList, self).get_queryset()
+        qs = self.country_filter(qs)
+        return qs
 
 
 class RepresentativeDetail(representatives_views.RepresentativeDetail):
@@ -36,7 +66,7 @@ class RepresentativeDetail(representatives_views.RepresentativeDetail):
         return c
 
 
-class DossierList(PaginationMixin, representatives_votes_views.DossierList):
+class DossierList(PaginationFormMixin, representatives_votes_views.DossierList):
     queryset = Dossier.objects.filter(proposals__recommendation__isnull=False)
 
     def get_queryset(self):
