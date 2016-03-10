@@ -22038,8 +22038,10 @@
         "updated": "2015-12-27T17:40:18.700Z",
         "reference": "2010/2935(RSP)",
         "title": "Resolution on the Anti-Counterfeiting Trade Agreement (ACTA)",
-        "text": "",
-        "created": "2015-12-27T17:40:18.700Z"
+        "text": "6.20 Common commercial policy in general\n6.20.01 Agreements and relations in the context of the World Trade Organization (WTO)\n7.30.30.10 Action against counterfeiting",
+        "created": "2015-12-27T17:40:18.700Z",
+        "link": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2010/2935(RSP)",
+        "fingerprint": "30ca011fd2991db0e6de50aef0d76e83530003a6"
     },
     "model": "representatives_votes.dossier",
     "pk": 28147

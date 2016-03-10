@@ -9,22 +9,22 @@
 <p class="lead text-center">{% trans "Last updated" %} {{ dossier.updated|naturalday }}</p>
 
 
+{% if dossier.text %}
 <div class="page-header">
   <h2>{% trans "LQDN's opinion" %}</h2>
 </div>
-
 <p>{{ dossier.text }}</p>
+{% endif %}
 
-{% comment %}
-<!-- TODO -->
+{% if dossier.link %}
 <div class="container-fluid">
   <div class="row">
 	<div class="pull-right">
-	  <a class="btn btn-default">See Press Releases</a>
+	  <a class="btn btn-default" href="{{ dossier.link }}">{% trans "See details" %}</a>
 	</div>
   </div>
 </div>
-{% endcomment %}
+{% endif %}
 
 {% comment %}
 <!-- TODO -->
@@ -34,7 +34,6 @@
   <a href="#" class="alert-link">Check it out!</a>
 </div>
 {% endcomment %}
-
 
 <div class="container-fluid">
   <div class="row">							
