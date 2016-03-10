@@ -4,7 +4,11 @@
 
 <div class="panel-group" id="accordion-proposals" role="tablist" aria-multiselectable="true">
 
-  <table class="table table-hover text-center ">
+  <table class="table table-hover text-center">
+    <colgroup>
+      {# justifies first col all at once #}
+      <col class="col-md-2">
+    </colgroup>
 
 	<thead>
 	  <tr>
@@ -42,7 +46,7 @@
 	  </tr>
 
       {% comment %}
-      <!-- TODO: regroup by main_mandate but might be very query heavy -->
+      <!-- TODO: regroup by representative.main_mandate but might be very query heavy -->
 	  <tr>
 		<th>
 		  <a class="btn btn-sm btn-default" role="button" data-toggle="collapse" href="#collapse-PartyChose" aria-expanded="false" aria-controls="collapse-PartyChose">Party chose <span class="caret"></span></a>
@@ -52,8 +56,7 @@
 
       {% for representative in representatives %}
       <tr>
-		<th>{{ representative.full_name }}
-		</th>
+		<th>{{ representative.full_name }}</th>
         {% for proposal in proposals %}
         {# Note: the manager has been fed with only the relevant data #}
         {# so representative.votes.all only contains votes from the relevant proposals #}

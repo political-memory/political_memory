@@ -44,13 +44,10 @@ class DossierList(PaginationMixin, representatives_votes_views.DossierList):
 
 
 class DossierDetail(representatives_votes_views.DossierDetail):
-    def get_queryset(self):
-        qs = super(DossierDetail, self).get_queryset().prefetch_related('proposals__votes')
-        return qs
 
     def get_context_data(self, **kwargs):
         c = super(DossierDetail, self).get_context_data(**kwargs)
-        c['proposals'] = c['dossier'].proposals.filter(recommendation__isnull=False)
+        c['proposals'] = c['dossier'].proposals.filter(recommendation__isnull=False).select_related('recommendation')
 
         # Note: this is a bit of a hack, we feed the RelatedManager with
         # the prefetch_related with a clause, so that representative.votes.all
