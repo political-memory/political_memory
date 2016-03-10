@@ -23,7 +23,8 @@ class RepresentativeDetail(representatives_views.RepresentativeDetail):
 
     def get_queryset(self):
         qs = super(RepresentativeDetail, self).get_queryset()
-        votes = ScoredVote.objects.select_related('proposal__recommendation').select_related('proposal__dossier')
+        votes = (ScoredVote.objects.select_related('proposal__recommendation')
+                                   .select_related('proposal__dossier'))
         qs = qs.prefetch_related(models.Prefetch('votes', queryset=votes))
         return qs
 
@@ -47,7 +48,8 @@ class DossierDetail(representatives_votes_views.DossierDetail):
 
     def get_context_data(self, **kwargs):
         c = super(DossierDetail, self).get_context_data(**kwargs)
-        c['proposals'] = c['dossier'].proposals.filter(recommendation__isnull=False).select_related('recommendation')
+        c['proposals'] = (c['dossier'].proposals.filter(recommendation__isnull=False)
+                                                .select_related('recommendation'))
 
         # Note: this is a bit of a hack, we feed the RelatedManager with
         # the prefetch_related with a clause, so that representative.votes.all
