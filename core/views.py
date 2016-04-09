@@ -1,4 +1,7 @@
 # coding: utf-8
+from django import http
+
+import unicodecsv as csv
 
 
 class PaginationMixin(object):
@@ -22,7 +25,7 @@ class PaginationMixin(object):
     def get_page_range(self, page):
         pages = []
 
-        if page.paginator.num_pages != 1:
+        if page and page.paginator.num_pages != 1:
             for i in page.paginator.page_range:
                 if page.number - 4 < i < page.number + 4:
                     pages.append(i)
@@ -57,3 +60,29 @@ class GridListMixin(object):
         c = super(GridListMixin, self).get_context_data(**kwargs)
         c['grid_list'] = True
         return c
+
+
+class CSVDownloadMixin(object):
+    def get_paginate_by(self, queryset):
+        if self.request.GET.get('csv', None) is None:
+            return super(CSVDownloadMixin, self).get_paginate_by(queryset)
+        return None
+
+    def render_to_csv_response(self, context, **kwargs):
+        response = http.HttpResponse(content_type='text/csv')
+
+        writer = csv.writer(response)
+        for result in self.get_csv_results(context, **kwargs):
+            writer.writerow(self.get_csv_row(result))
+
+        response['Content-Disposition'] = 'attachment; filename="%s.csv"' % (
+            self.csv_name)
+
+        return response
+
+    def render_to_response(self, context, **kwargs):
+        if self.request.GET.get('csv', None) is None:
+            return super(CSVDownloadMixin, self).render_to_response(
+                context, **kwargs)
+
+        return self.render_to_csv_response(context, **kwargs)

@@ -4,6 +4,7 @@ from django.contrib import admin
 from django.views import generic
 
 import views
+import api
 
 admin.autodiscover()
 
@@ -20,12 +21,12 @@ urlpatterns = [
         name='representative-detail'
     ),
     url(
-        r'legislature/representative/$',
+        r'^legislature/representative/$',
         views.RepresentativeList.as_view(),
         name='representative-list'
     ),
     url(
-        r'votes/dossier/$',
+        r'^votes/dossier/$',
         views.DossierList.as_view(),
         name='dossier-list'
     ),
@@ -35,13 +36,13 @@ urlpatterns = [
         name='dossier-detail'
     ),
 
-    url(r'^autocomplete/', include('autocomplete_light.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'legislature/', include('representatives.urls',
+    url(r'^legislature/', include('representatives.urls',
         namespace='representatives')),
-    url(r'votes/', include('representatives_votes.urls',
+    url(r'^votes/', include('representatives_votes.urls',
         namespace='representatives_votes')),
-    url(r'positions/', include('representatives_positions.urls',
+    url(r'^positions/', include('representatives_positions.urls',
         namespace='representatives_positions')),
+    url(r'^api/', include(api.router.urls, namespace='api')),
     url(r'^$', generic.TemplateView.as_view(template_name='home.html')),
 ]

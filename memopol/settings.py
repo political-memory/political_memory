@@ -69,7 +69,8 @@ ORGANIZATION_NAME = os.environ.get('ORGANIZATION', 'Memopol Demo')
 
 INSTALLED_APPS = (
     # 'django.contrib.admin',
-    'autocomplete_light',
+    'dal',
+    'dal_select2',
     'suit',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -84,6 +85,7 @@ INSTALLED_APPS = (
     'bootstrap3',
     'datetimewidget',
     'django_filters',
+    'rest_framework',
     'taggit',
     # ---
     'core',
