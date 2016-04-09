@@ -106,6 +106,20 @@ if DEBUG:
     else:
         INSTALLED_APPS += ('debug_toolbar',)
 
+    try:
+        import django_extensions  # noqa
+    except:
+        pass
+    else:
+        INSTALLED_APPS += ('django_extensions',)
+
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+        }
+    }
+
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
