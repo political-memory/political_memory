@@ -11,37 +11,44 @@
 {{ paginator.count }} {% trans "MEP" %}{% if search.country %} {% trans "from" %} {{ search.country }}{% endif %}{% if search.group %}, {% trans "members of" %} {{ search.group }}{% endif %}{% if search.delegation %}, {% trans "working in" %} {{ search.delegation }}{% endif %}{% if search.commitee %}, {% trans "on" %} {{ search.commitee }}{% endif %}.
 </p>
 
-{% comment %}
-<!-- TODO: layout & ordering -->
-<div class="btn-group" data-toggle="buttons">
+<div class="row">
+    <a href="?{{ searchparameters }}&csv" class="btn btn-default">
+      <span class="glyphicon glyphicon-file"> {% trans "Download as csv." %}</span>
+    </a>
+
+  {% comment %}
+  <!-- TODO: layout & ordering -->
+  <div class="btn-group" data-toggle="buttons">
     <label class="btn btn-default active">
-        <input type="radio" name="view" id="cards" autocomplete="off" checked>
-        <span class="glyphicon glyphicon-th"></span>
+      <input type="radio" name="view" id="cards" autocomplete="off" checked>
+      <span class="glyphicon glyphicon-th"></span>
     </label>
     <label class="btn btn-default">
-        <input type="radio" name="view" id="lists" autocomplete="off">
-        <span class="glyphicon glyphicon-list"></span>
+      <input type="radio" name="view" id="lists" autocomplete="off">
+      <span class="glyphicon glyphicon-list"></span>
     </label>
-</div>
 
-<div class="dropdown" style="display:inline-block;">
+  </div>
+
+  <div class="dropdown" style="display:inline-block;">
     Order by
 
     <button class="btn btn-default dropdown-toggle" type="button" id="orderby" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        Score
-        <span class="caret"></span>
+      Score
+      <span class="caret"></span>
     </button>
 
     <ul class="dropdown-menu" aria-labelledby="orderby">
-        <li class="disabled"><a href="#">Score</a></li>
-        <li><a href="#">Country</a></li>
-        <li><a href="#">Party</a></li>
-        <li><a href="#">Group</a></li>
+      <li class="disabled"><a href="#">Score</a></li>
+      <li><a href="#">Country</a></li>
+      <li><a href="#">Party</a></li>
+      <li><a href="#">Group</a></li>
     </ul>
+  </div>
+  {% endcomment %}
 </div>
-{% endcomment %}
 
-<br />
+<br/>
 
 <div class="row">
 {% for representative in object_list %}
