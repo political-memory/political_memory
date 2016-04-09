@@ -7,8 +7,9 @@
 {% block container-class %}custom-listMEP{% endblock %}
 {% block content %}
 <h1 class="text-center">{% trans "Members of the European Parliement" %}</h1>
-<p class="lead text-center">{number} MEP from {country}, members of {party}, working in {delegation} and on {committee}.</p>
-
+<p class="lead text-center">
+{{ paginator.count }} {% trans "MEP" %}{% if search.country %} {% trans "from" %} {{ search.country }}{% endif %}{% if search.group %}, {% trans "members of" %} {{ search.group }}{% endif %}{% if search.delegation %}, {% trans "working in" %} {{ search.delegation }}{% endif %}{% if search.commitee %}, {% trans "on" %} {{ search.commitee }}{% endif %}.
+</p>
 
 {% comment %}
 <!-- TODO: layout & ordering -->

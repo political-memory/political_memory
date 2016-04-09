@@ -1,0 +1,9 @@
+<script>
+  $(function() {
+      // redirect to the url contained in data-url of the selected <option>
+      $('#search-form :input').change(function(event) {
+          var url = $(':selected', event.target).data('url')
+          if (url) window.location.href = url;
+      });
+  });
+</script>

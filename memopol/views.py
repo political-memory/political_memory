@@ -29,23 +29,15 @@ class RepresentativeList(PaginationFormMixin, GridListMixin,
     queryset = Representative.objects.filter(
         active=True).select_related('score')
 
-    def country_filter(self, qs):
-        country = self.request.GET.get('country', None)
-
-        if country:
-            # Note: very heavy
-            if country.isnumeric():
-                qs = qs.filter(mandates__constituency__country__pk=country).distinct()
-            else:
-                qs = qs.filter(mandates__constituency__country__name__iexact=country).distinct()
-
-        return qs
-
-    def get_queryset(self):
-        # Note: should probably lies in representatives.views.RepresentativeList
-        qs = super(RepresentativeList, self).get_queryset()
-        qs = self.country_filter(qs)
-        return qs
+    def get_context_data(self, **kwargs):
+        c = super(RepresentativeList, self).get_context_data(**kwargs)
+        group = self.kwargs.get('group', None)
+        group_kind = self.kwargs.get('group_kind', None)
+        c['search'] = {
+            'search': self.request.GET.get('search', None),
+            group_kind: group,
+        }
+        return c
 
 
 class RepresentativeDetail(representatives_views.RepresentativeDetail):
