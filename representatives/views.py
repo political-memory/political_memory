@@ -80,23 +80,23 @@ class RepresentativeList(RepresentativeViewMixin, generic.ListView):
 
         if group_kind and group:
             if group.isnumeric():
-                # Search group based on pk
-                qs = qs.filter(
-                    models.Q(mandates__end_date__gte=today) |
-                    models.Q(mandates__end_date__isnull=True),
-                    mandates__group_id=int(group),
+                group_qs = Group.objects.filter(
+                    id=int(group)
                 )
             else:
-                # Search group based on abbreviation
-                qs = qs.filter(
-                    models.Q(mandates__end_date__gte=today) |
-                    models.Q(mandates__end_date__isnull=True),
-                    mandates__group__name=group,
-                    mandates__group__kind=group_kind,
+                group_qs = Group.objects.filter(
+                    name=group,
+                    kind=group_kind
                 )
 
-        if chamber:
-            qs = qs.filter(mandates__group__chamber__name=chamber)
+            if chamber:
+                group_qs = group_qs.filter(chamber__name=chamber)
+
+            qs = qs.filter(
+                models.Q(mandates__end_date__gte=today) |
+                models.Q(mandates__end_date__isnull=True),
+                mandates__group__in=group_qs
+            )
 
         return qs
 
