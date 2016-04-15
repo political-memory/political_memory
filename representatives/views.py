@@ -83,14 +83,14 @@ class RepresentativeList(RepresentativeViewMixin, generic.ListView):
                 # Search group based on pk
                 qs = qs.filter(
                     models.Q(mandates__end_date__gte=today) |
-                        models.Q(mandates__end_date__isnull=True),
+                    models.Q(mandates__end_date__isnull=True),
                     mandates__group_id=int(group),
                 )
             else:
                 # Search group based on abbreviation
                 qs = qs.filter(
                     models.Q(mandates__end_date__gte=today) |
-                        models.Q(mandates__end_date__isnull=True),
+                    models.Q(mandates__end_date__isnull=True),
                     mandates__group__name=group,
                     mandates__group__kind=group_kind,
                 )
@@ -131,7 +131,7 @@ class GroupList(generic.ListView):
     def get_queryset(self):
         qs = Group.objects.filter(
             models.Q(mandates__end_date__gte=datetime.date.today()) |
-                models.Q(mandates__end_date__isnull=True)
+            models.Q(mandates__end_date__isnull=True)
         )
 
         kind = self.kwargs.get('kind', None)
