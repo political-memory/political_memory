@@ -197,8 +197,13 @@ class Group(HashableModel, TimeStampedModel):
         ordering = ('name',)
 
     def get_absolute_url(self):
-        return reverse('representatives:representative-list',
-            kwargs=dict(group_kind=self.kind, group=self.name))
+        if self.chamber:
+            return reverse('representatives:representative-list',
+                kwargs=dict(group_kind=self.kind, chamber=self.chamber.name,
+                    group=self.name))
+        else:
+            return reverse('representatives:representative-list',
+                kwargs=dict(group_kind=self.kind, group=self.name))
 
 
 class Constituency(HashableModel, TimeStampedModel):

@@ -74,6 +74,7 @@ class RepresentativeList(RepresentativeViewMixin, generic.ListView):
 
     def group_filter(self, qs):
         group_kind = self.kwargs.get('group_kind', None)
+        chamber = self.kwargs.get('chamber', None)
         group = self.kwargs.get('group', None)
         today = datetime.date.today()
 
@@ -93,6 +94,10 @@ class RepresentativeList(RepresentativeViewMixin, generic.ListView):
                     mandates__group__name=group,
                     mandates__group__kind=group_kind,
                 )
+
+        if chamber:
+            qs = qs.filter(mandates__group__chamber__name=chamber)
+
         return qs
 
     def get_queryset(self):
@@ -134,4 +139,3 @@ class GroupList(generic.ListView):
             qs = qs.filter(kind=kind).distinct()
 
         return qs.select_related('chamber')
-
