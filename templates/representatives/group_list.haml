@@ -4,8 +4,12 @@
   %table.table
     - for group in object_list
       %tr
+        - if group.kind != 'country' and group.kind != 'chamber'
+          %td
+            %a{'href': "{% url 'representatives:representative-list' group_kind='chamber' group=group.chamber.name %}"}= group.chamber.name
+
         %td
-          %a{'href': '{{ group.get_absolute_url }}'}w
+          %a{'href': '{{ group.get_absolute_url }}'}
             - if group.abbreviation
               ={group.abbreviation}
         %td
