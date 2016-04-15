@@ -22,6 +22,14 @@ _abbr_Com_AN = {
         "AnComDevD"
 }
 
+# Equivalences of nat. Assembly delegations
+_equiv_Deleg_AN = {
+}
+
+# Abbreviations for nat. Assembly delegations
+_abbr_Deleg_AN = {
+}
+
 # Equivalences of Senate committees
 _equiv_Com_SEN = {
     u"COMMISSION DES AFFAIRES EUROPÉENNES Commission des affaires européennes":
@@ -50,6 +58,14 @@ _abbr_Com_SEN = {
         "SenComAppL"
 }
 
+# Equivalences of Senate delegations
+_equiv_Deleg_SEN = {
+}
+
+# Abbreviations for Senate delegations
+_abbr_Deleg_SEN = {
+}
+
 
 def _get_rep_district_name(json):
     num = json.get('num_circo')
@@ -70,7 +86,7 @@ def _get_sen_comittees(json):
         orga = g['responsabilite']['organisme']
         role = g['responsabilite']['fonction']
 
-        if not orga.startswith('Commission'):
+        if not orga.lower().startswith('commission'):
             continue
 
         if orga in _equiv_Com_SEN:
@@ -86,6 +102,31 @@ def _get_sen_comittees(json):
     return comittees
 
 
+def _get_sen_delegations(json):
+    delegations = []
+    start = json['mandat_debut']
+
+    for g in ([i['responsabilite'] for i in json['responsabilites']] +
+            [j['responsabilite'] for j in json['groupes_parlementaires']]):
+        orga = g['organisme']
+        role = g['fonction']
+
+        if orga.lower().startswith('commission'):
+            continue
+
+        if orga in _equiv_Deleg_SEN:
+            orga = _equiv_Deleg_SEN[orga]
+
+        delegations.append({
+            'abbr': _abbr_Deleg_SEN[orga] if orga in _abbr_Deleg_SEN else '',
+            'name': orga,
+            'role': role,
+            'start': start
+        })
+
+    return delegations
+
+
 def _get_an_comittees(json):
     comittees = []
     start = json['mandat_debut']
@@ -94,7 +135,7 @@ def _get_an_comittees(json):
         orga = g['responsabilite']['organisme']
         role = g['responsabilite']['fonction']
 
-        if not orga.startswith('Commission'):
+        if not orga.lower().startswith('commission'):
             continue
 
         if orga in _equiv_Com_AN:
@@ -108,6 +149,31 @@ def _get_an_comittees(json):
         })
 
     return comittees
+
+
+def _get_an_delegations(json):
+    delegations = []
+    start = json['mandat_debut']
+
+    for g in ([i['responsabilite'] for i in json['responsabilites']] +
+            [j['responsabilite'] for j in json['groupes_parlementaires']]):
+        orga = g['organisme']
+        role = g['fonction']
+
+        if orga.lower().startswith('commission'):
+            continue
+
+        if orga in _equiv_Deleg_AN:
+            orga = _equiv_Deleg_AN[orga]
+
+        delegations.append({
+            'abbr': _abbr_Deleg_AN[orga] if orga in _abbr_Deleg_AN else '',
+            'name': orga,
+            'role': role,
+            'start': start
+        })
+
+    return delegations
 
 
 #
@@ -164,9 +230,18 @@ FranceDataVariants = {
                 "start": "%(mandat_debut)s"
             },
             {
-                "kind": "comittee",
+                "kind": "committee",
                 "chamber": True,
                 "from": _get_an_comittees,
+                "abbr": "%(abbr)s",
+                "name": "%(name)s",
+                "role": "%(role)s",
+                "start": "%(start)s"
+            },
+            {
+                "kind": "delegation",
+                "chamber": True,
+                "from": _get_an_delegations,
                 "abbr": "%(abbr)s",
                 "name": "%(name)s",
                 "role": "%(role)s",
@@ -206,9 +281,18 @@ FranceDataVariants = {
                 "start": "%(mandat_debut)s"
             },
             {
-                "kind": "comittee",
+                "kind": "committee",
                 "chamber": True,
                 "from": _get_sen_comittees,
+                "abbr": "%(abbr)s",
+                "name": "%(name)s",
+                "role": "%(role)s",
+                "start": "%(start)s"
+            },
+            {
+                "kind": "delegation",
+                "chamber": True,
+                "from": _get_sen_delegations,
                 "abbr": "%(abbr)s",
                 "name": "%(name)s",
                 "role": "%(role)s",
