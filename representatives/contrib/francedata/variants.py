@@ -210,6 +210,14 @@ FranceDataVariants = {
         "off_name": u"Assemblée nationale",
         "mandates": [
             {
+                "kind": "chamber",
+                "chamber": True,
+                "abbr": "AN",
+                "name": u"Assemblée nationale",
+                "role": u"Député",
+                "start": "%(mandat_debut)s"
+            },
+            {
                 "kind": "group",
                 "chamber": True,
                 "abbr": "%(groupe_sigle)s",
@@ -260,6 +268,14 @@ FranceDataVariants = {
         "off_code": "75291",
         "off_name": u"Palais du Luxembourg",
         "mandates": [
+            {
+                "kind": "chamber",
+                "chamber": True,
+                "abbr": "SEN",
+                "name": u"Sénat",
+                "role": u"Sénateur",
+                "start": "%(mandat_debut)s"
+            },
             {
                 "kind": "group",
                 "chamber": True,

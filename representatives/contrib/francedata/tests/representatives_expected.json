@@ -222,33 +222,23 @@
 },
 {
     "fields": {
-        "name": "Assembl\u00e9e nationale",
-        "kind": "chamber",
-        "abbreviation": "AN",
-        "chamber": 1
-    },
-    "model": "representatives.group",
-    "pk": 1
-},
-{
-    "fields": {
-        "name": "S\u00e9nat",
-        "kind": "chamber",
-        "abbreviation": "SEN",
-        "chamber": 2
-    },
-    "model": "representatives.group",
-    "pk": 2
-},
-{
-    "fields": {
         "name": "France",
         "kind": "country",
         "abbreviation": "FR",
         "chamber": null
     },
     "model": "representatives.group",
-    "pk": 3
+    "pk": 1
+},
+{
+    "fields": {
+        "name": "Assembl\u00e9e nationale",
+        "kind": "chamber",
+        "abbreviation": "AN",
+        "chamber": 1
+    },
+    "model": "representatives.group",
+    "pk": 2
 },
 {
     "fields": {
@@ -258,7 +248,7 @@
         "chamber": 1
     },
     "model": "representatives.group",
-    "pk": 4
+    "pk": 3
 },
 {
     "fields": {
@@ -268,7 +258,7 @@
         "chamber": null
     },
     "model": "representatives.group",
-    "pk": 5
+    "pk": 4
 },
 {
     "fields": {
@@ -278,7 +268,7 @@
         "chamber": null
     },
     "model": "representatives.group",
-    "pk": 6
+    "pk": 5
 },
 {
     "fields": {
@@ -288,7 +278,7 @@
         "chamber": 1
     },
     "model": "representatives.group",
-    "pk": 7
+    "pk": 6
 },
 {
     "fields": {
@@ -298,7 +288,7 @@
         "chamber": 1
     },
     "model": "representatives.group",
-    "pk": 8
+    "pk": 7
 },
 {
     "fields": {
@@ -308,7 +298,7 @@
         "chamber": 1
     },
     "model": "representatives.group",
-    "pk": 9
+    "pk": 8
 },
 {
     "fields": {
@@ -318,7 +308,7 @@
         "chamber": 1
     },
     "model": "representatives.group",
-    "pk": 10
+    "pk": 9
 },
 {
     "fields": {
@@ -326,6 +316,16 @@
         "kind": "delegation",
         "abbreviation": "",
         "chamber": 1
+    },
+    "model": "representatives.group",
+    "pk": 10
+},
+{
+    "fields": {
+        "name": "S\u00e9nat",
+        "kind": "chamber",
+        "abbreviation": "SEN",
+        "chamber": 2
     },
     "model": "representatives.group",
     "pk": 11
@@ -406,7 +406,7 @@
 },
 {
     "fields": {
-        "group": 3,
+        "group": 1,
         "end_date": null,
         "role": "membre",
         "representative": 1,
@@ -419,9 +419,9 @@
 },
 {
     "fields": {
-        "group": 4,
+        "group": 2,
         "end_date": null,
-        "role": "membre",
+        "role": "D\u00e9put\u00e9",
         "representative": 1,
         "link": "",
         "begin_date": "2012-06-20",
@@ -432,7 +432,7 @@
 },
 {
     "fields": {
-        "group": 5,
+        "group": 3,
         "end_date": null,
         "role": "membre",
         "representative": 1,
@@ -445,7 +445,7 @@
 },
 {
     "fields": {
-        "group": 6,
+        "group": 4,
         "end_date": null,
         "role": "membre",
         "representative": 1,
@@ -458,7 +458,7 @@
 },
 {
     "fields": {
-        "group": 7,
+        "group": 5,
         "end_date": null,
         "role": "membre",
         "representative": 1,
@@ -471,9 +471,9 @@
 },
 {
     "fields": {
-        "group": 8,
+        "group": 6,
         "end_date": null,
-        "role": "questeur",
+        "role": "membre",
         "representative": 1,
         "link": "",
         "begin_date": "2012-06-20",
@@ -484,9 +484,9 @@
 },
 {
     "fields": {
-        "group": 9,
+        "group": 7,
         "end_date": null,
-        "role": "membre",
+        "role": "questeur",
         "representative": 1,
         "link": "",
         "begin_date": "2012-06-20",
@@ -497,9 +497,9 @@
 },
 {
     "fields": {
-        "group": 10,
+        "group": 8,
         "end_date": null,
-        "role": "vice-pr\u00e9sident",
+        "role": "membre",
         "representative": 1,
         "link": "",
         "begin_date": "2012-06-20",
@@ -510,7 +510,7 @@
 },
 {
     "fields": {
-        "group": 11,
+        "group": 9,
         "end_date": null,
         "role": "vice-pr\u00e9sident",
         "representative": 1,
@@ -523,7 +523,20 @@
 },
 {
     "fields": {
-        "group": 3,
+        "group": 10,
+        "end_date": null,
+        "role": "vice-pr\u00e9sident",
+        "representative": 1,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 10
+},
+{
+    "fields": {
+        "group": 1,
         "end_date": null,
         "role": "membre",
         "representative": 2,
@@ -532,7 +545,20 @@
         "constituency": 3
     },
     "model": "representatives.mandate",
-    "pk": 10
+    "pk": 11
+},
+{
+    "fields": {
+        "group": 11,
+        "end_date": null,
+        "role": "S\u00e9nateur",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2004-09-26",
+        "constituency": 2
+    },
+    "model": "representatives.mandate",
+    "pk": 12
 },
 {
     "fields": {
@@ -545,7 +571,7 @@
         "constituency": 2
     },
     "model": "representatives.mandate",
-    "pk": 11
+    "pk": 13
 },
 {
     "fields": {
@@ -558,7 +584,7 @@
         "constituency": 2
     },
     "model": "representatives.mandate",
-    "pk": 12
+    "pk": 14
 },
 {
     "fields": {
@@ -571,7 +597,7 @@
         "constituency": 2
     },
     "model": "representatives.mandate",
-    "pk": 13
+    "pk": 15
 },
 {
     "fields": {
@@ -584,7 +610,7 @@
         "constituency": 2
     },
     "model": "representatives.mandate",
-    "pk": 14
+    "pk": 16
 },
 {
     "fields": {
@@ -597,6 +623,6 @@
         "constituency": 2
     },
     "model": "representatives.mandate",
-    "pk": 15
+    "pk": 17
 }
 ]
