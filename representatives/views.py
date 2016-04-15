@@ -138,4 +138,4 @@ class GroupList(generic.ListView):
         if kind:
             qs = qs.filter(kind=kind).distinct()
 
-        return qs.select_related('chamber')
+        return qs.select_related('chamber').order_by('chamber__name', 'name')
