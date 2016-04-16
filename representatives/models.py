@@ -170,8 +170,13 @@ class Chamber(HashableModel):
     """
     name = models.CharField(max_length=255)
     country = models.ForeignKey('Country', null=True, related_name='chambers')
+    abbreviation = models.CharField(max_length=10, blank=True, default='',
+        db_index=True)
 
-    hashable_fields = ['name', 'country']
+    hashable_fields = ['name', 'country', 'abbreviation']
+
+    def __unicode__(self):
+        return u'{} [{}]'.format(self.name, self.abbreviation)
 
 
 class Group(HashableModel, TimeStampedModel):

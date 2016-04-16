@@ -97,7 +97,8 @@ class FranceDataImporter(GenericImporter):
         self.france = Country.objects.get(name="France")
         self.variant = FranceDataVariants[variant]
         self.chamber, _ = Chamber.objects.get_or_create(
-            name=self.variant['chamber'], country=self.france)
+            name=self.variant['chamber'],
+            abbreviation=self.variant['abbreviation'], country=self.france)
         self.ch_constituency, _ = Constituency.objects.get_or_create(
             name=self.variant['chamber'], country=self.france)
 

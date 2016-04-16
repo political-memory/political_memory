@@ -14,6 +14,15 @@ def country_flag(country):
 
 
 @register.filter
+def chamber_icon(chamber):
+    return mark_safe(
+        u'<span class="chamber-icon ' +
+        u'chamber-icon-{abbr}"></span> {name}'.format(
+            name=chamber.name,
+            abbr=chamber.abbreviation.lower()))
+
+
+@register.filter
 def mandate_date(date, arg=None):
     if date.year == 9999:
         return 'present'

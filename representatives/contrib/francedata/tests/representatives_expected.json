@@ -207,7 +207,8 @@
 {
     "fields": {
         "country": 1095,
-        "name": "Assembl\u00e9e nationale"
+        "name": "Assembl\u00e9e nationale",
+        "abbreviation": "AN"
     },
     "model": "representatives.chamber",
     "pk": 1
@@ -215,7 +216,8 @@
 {
     "fields": {
         "country": 1095,
-        "name": "S\u00e9nat"
+        "name": "S\u00e9nat",
+        "abbreviation": "SEN"
     },
     "model": "representatives.chamber",
     "pk": 2
