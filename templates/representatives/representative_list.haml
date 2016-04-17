@@ -28,6 +28,8 @@
         %th
           - trans 'Name'
         %th
+          - trans 'Chamber'
+        %th
           - trans 'Country'
         %th
           - trans 'Group'
@@ -43,6 +45,10 @@
           %td
             %a{'href': "{{ representative.get_absolute_url }}"}
               = representative.full_name
+
+          %td
+            %a{'href': "{% url 'representatives:representative-list' group_kind='chamber' group=representative.main_mandate.group.chamber.name %}"}
+              = representative.main_mandate.group.chamber
 
           %td
             %a{'href': "{{ representative.country.get_absolute_url }}"}
