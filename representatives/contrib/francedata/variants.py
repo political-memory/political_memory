@@ -1,46 +1,65 @@
 # coding: utf-8
 
-# Equivalences of nat. Assembly committees
-_equiv_Com_AN = {
-}
 
-# Abbreviations for nat. Assembly committees
-_abbr_Com_AN = {
-    (u"Commission chargée de l'application de l'article 26 de la "
-        u"constitution"): "AnComImmu",
-    u"Commission de la défense nationale et des forces armées": "AnComDef",
-    u"Commission des affaires culturelles et de l'éducation": "AnComCult",
-    u"Commission des affaires économiques": "AnComEco",
-    u"Commission des affaires étrangères": "AnComEtrg",
-    u"Commission des affaires européennes": "AnComEU",
-    u"Commission des affaires sociales": "AnComSoc",
-    (u"Commission des finances, de l'économie générale et du contrôle "
-        u"budgétaire"): "AnComFin",
-    (u"Commission des lois constitutionnelles, de la législation et de "
-        u"l'administration générale de la république"): "AnComLois",
-    u"Commission du développement durable et de l'aménagement du territoire":
-        "AnComDevD"
-}
+class DelegationHelper:
+    '''
+    Helper class for building committees/delegations from rep json data
+    given dicts for equivalences and abbreviations
+    '''
 
-# Equivalences of nat. Assembly delegations
-_equiv_Deleg_AN = {
-}
+    def __init__(self, equivs, abbrevs, committees=True):
+        self.equivs = equivs
+        self.abbrevs = abbrevs
+        self.committees = committees
 
-# Abbreviations for nat. Assembly delegations
-_abbr_Deleg_AN = {
-}
+    def __call__(self, data):
+        items = []
+        start = data['mandat_debut']
 
-# Equivalences of Senate committees
-_equiv_Com_SEN = {
+        if self.committees:
+            gdata = (i['responsabilite'] for i in data['responsabilites'])
+        else:
+            gdata = ([i['responsabilite'] for i in data['responsabilites']] +
+                [j['responsabilite'] for j in data['groupes_parlementaires']])
+
+        for g in gdata:
+            orga = g['organisme']
+            role = g['fonction']
+
+            if self.committees != orga.lower().startswith('commission'):
+                continue
+
+            if orga in self.equivs:
+                orga = self.equivs[orga]
+
+            items.append({
+                'abbr': self.abbrevs[orga] if orga in self.abbrevs else '',
+                'name': orga,
+                'role': role,
+                'start': start
+            })
+
+        return items
+
+
+def _get_rep_district_name(data):
+    num = data.get('num_circo')
+    nom = data.get('nom_circo')
+
+    if num == 'nd':
+        return nom
+    else:
+        ordinal = u'ère' if num == 1 else u'ème'
+        return '%s (%d%s circonscription)' % (nom, num, ordinal)
+
+
+_get_sen_committees = DelegationHelper({
     u"COMMISSION DES AFFAIRES EUROPÉENNES Commission des affaires européennes":
         u"Commission des affaires européennes",
     u"Commission de l'aménagement du territoire et du développement durable":
         (u"Commission du développement durable, des infrastructures, de "
             u"l'équipement et de l'aménagement du territoire")
-}
-
-# Abbreviations for Senate committees
-_abbr_Com_SEN = {
+}, {
     u"Commission de la culture, de l'éducation et de la communication":
         "SenComCult",
     u"Commission des affaires économiques": "SenComEco",
@@ -56,124 +75,28 @@ _abbr_Com_SEN = {
         u"l'équipement et de l'aménagement du territoire"): "SenComDevD",
     u"Commission sénatoriale pour le contrôle de l'application des lois":
         "SenComAppL"
-}
+})
 
-# Equivalences of Senate delegations
-_equiv_Deleg_SEN = {
-}
+_get_an_committees = DelegationHelper({}, {
+    (u"Commission chargée de l'application de l'article 26 de la "
+        u"constitution"): "AnComImmu",
+    u"Commission de la défense nationale et des forces armées": "AnComDef",
+    u"Commission des affaires culturelles et de l'éducation": "AnComCult",
+    u"Commission des affaires économiques": "AnComEco",
+    u"Commission des affaires étrangères": "AnComEtrg",
+    u"Commission des affaires européennes": "AnComEU",
+    u"Commission des affaires sociales": "AnComSoc",
+    (u"Commission des finances, de l'économie générale et du contrôle "
+        u"budgétaire"): "AnComFin",
+    (u"Commission des lois constitutionnelles, de la législation et de "
+        u"l'administration générale de la république"): "AnComLois",
+    u"Commission du développement durable et de l'aménagement du territoire":
+        "AnComDevD"
+})
 
-# Abbreviations for Senate delegations
-_abbr_Deleg_SEN = {
-}
+_get_sen_delegations = DelegationHelper({}, {}, False)
 
-
-def _get_rep_district_name(data):
-    num = data.get('num_circo')
-    nom = data.get('nom_circo')
-
-    if num == 'nd':
-        return nom
-    else:
-        ordinal = u'ère' if num == 1 else u'ème'
-        return '%s (%d%s circonscription)' % (nom, num, ordinal)
-
-
-def _get_sen_committees(data):
-    committees = []
-    start = data['mandat_debut']
-
-    for g in data['responsabilites']:
-        orga = g['responsabilite']['organisme']
-        role = g['responsabilite']['fonction']
-
-        if not orga.lower().startswith('commission'):
-            continue
-
-        if orga in _equiv_Com_SEN:
-            orga = _equiv_Com_SEN[orga]
-
-        committees.append({
-            'abbr': _abbr_Com_SEN[orga] if orga in _abbr_Com_SEN else '',
-            'name': orga,
-            'role': role,
-            'start': start
-        })
-
-    return committees
-
-
-def _get_sen_delegations(data):
-    delegations = []
-    start = data['mandat_debut']
-
-    for g in ([i['responsabilite'] for i in data['responsabilites']] +
-            [j['responsabilite'] for j in data['groupes_parlementaires']]):
-        orga = g['organisme']
-        role = g['fonction']
-
-        if orga.lower().startswith('commission'):
-            continue
-
-        if orga in _equiv_Deleg_SEN:
-            orga = _equiv_Deleg_SEN[orga]
-
-        delegations.append({
-            'abbr': _abbr_Deleg_SEN[orga] if orga in _abbr_Deleg_SEN else '',
-            'name': orga,
-            'role': role,
-            'start': start
-        })
-
-    return delegations
-
-
-def _get_an_committees(data):
-    committees = []
-    start = data['mandat_debut']
-
-    for g in data['responsabilites']:
-        orga = g['responsabilite']['organisme']
-        role = g['responsabilite']['fonction']
-
-        if not orga.lower().startswith('commission'):
-            continue
-
-        if orga in _equiv_Com_AN:
-            orga = _equiv_Com_AN[orga]
-
-        committees.append({
-            'abbr': _abbr_Com_AN[orga] if orga in _abbr_Com_AN else '',
-            'name': orga,
-            'role': role,
-            'start': start
-        })
-
-    return committees
-
-
-def _get_an_delegations(data):
-    delegations = []
-    start = data['mandat_debut']
-
-    for g in ([i['responsabilite'] for i in data['responsabilites']] +
-            [j['responsabilite'] for j in data['groupes_parlementaires']]):
-        orga = g['organisme']
-        role = g['fonction']
-
-        if orga.lower().startswith('commission'):
-            continue
-
-        if orga in _equiv_Deleg_AN:
-            orga = _equiv_Deleg_AN[orga]
-
-        delegations.append({
-            'abbr': _abbr_Deleg_AN[orga] if orga in _abbr_Deleg_AN else '',
-            'name': orga,
-            'role': role,
-            'start': start
-        })
-
-    return delegations
+_get_an_delegations = DelegationHelper({}, {}, False)
 
 
 #
