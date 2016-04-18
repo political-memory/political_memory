@@ -66,7 +66,7 @@ class ParltrackImporter(GenericImporter):
             'countries': {c.name: c.pk for c in Country.objects.all()},
         }
         self.ep_chamber, _ = Chamber.objects.get_or_create(
-            name='European Parliament')
+            name='European Parliament', abbreviation='EP')
         self.ep_constituency, _ = Constituency.objects.get_or_create(
             name='European Parliament')
         self.ep_group, _ = Group.objects.get_or_create(

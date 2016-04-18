@@ -23,13 +23,14 @@ class RepresentativeViewMixin(object):
         Prefetch Mandates with their Group and Constituency with Country.
         """
         mandates = Mandate.objects.order_by(
-            '-end_date').select_related('constituency__country', 'group')
+            '-end_date').select_related('constituency__country', 'group',
+            'group__chamber')
         return queryset.prefetch_related(
             models.Prefetch('mandates', queryset=mandates))
 
     def add_representative_country_and_main_mandate(self, representative):
         """
-        Set representative country and main_mandate.
+        Set representative country, main_mandate and chamber.
 
         Note that this will butcher your database if you don't use
         self.prefetch_related.
@@ -43,13 +44,17 @@ class RepresentativeViewMixin(object):
             if m.constituency.country_id and not representative.country:
                 representative.country = m.constituency.country
 
-            if (m.end_date > today and m.group.kind == 'group' and
+            if ((m.end_date is None or m.end_date > today) and
+                    m.group.kind == 'group' and
                     not representative.main_mandate):
 
                 representative.main_mandate = m
 
             if representative.country and representative.main_mandate:
                 break
+
+        if representative.main_mandate:
+            representative.chamber = representative.main_mandate.group.chamber
 
         return representative
 
@@ -73,22 +78,30 @@ class RepresentativeList(RepresentativeViewMixin, generic.ListView):
 
     def group_filter(self, qs):
         group_kind = self.kwargs.get('group_kind', None)
+        chamber = self.kwargs.get('chamber', None)
         group = self.kwargs.get('group', None)
+        today = datetime.date.today()
 
         if group_kind and group:
             if group.isnumeric():
-                # Search group based on pk
-                qs = qs.filter(
-                    mandates__group_id=int(group),
-                    mandates__end_date__gte=datetime.now()
+                group_qs = Group.objects.filter(
+                    id=int(group)
                 )
             else:
-                # Search group based on abbreviation
-                qs = qs.filter(
-                    mandates__group__name=group,
-                    mandates__group__kind=group_kind,
-                    mandates__end_date__gte=datetime.date.today()
+                group_qs = Group.objects.filter(
+                    name=group,
+                    kind=group_kind
                 )
+
+            if chamber:
+                group_qs = group_qs.filter(chamber__name=chamber)
+
+            qs = qs.filter(
+                models.Q(mandates__end_date__gte=today) |
+                models.Q(mandates__end_date__isnull=True),
+                mandates__group__in=group_qs
+            )
+
         return qs
 
     def get_queryset(self):
@@ -121,11 +134,12 @@ class RepresentativeDetail(RepresentativeViewMixin, generic.DetailView):
 class GroupList(generic.ListView):
     def get_queryset(self):
         qs = Group.objects.filter(
-            mandates__end_date__gte=datetime.date.today()
+            models.Q(mandates__end_date__gte=datetime.date.today()) |
+            models.Q(mandates__end_date__isnull=True)
         )
 
         kind = self.kwargs.get('kind', None)
         if kind:
             qs = qs.filter(kind=kind).distinct()
 
-        return qs
+        return qs.select_related('chamber').order_by('chamber__name', 'name')

@@ -126,7 +126,8 @@
 {
     "fields": {
         "country": null,
-        "name": "European Parliament"
+        "name": "European Parliament",
+        "abbreviation": "EP"
     },
     "model": "representatives.chamber",
     "pk": 1
