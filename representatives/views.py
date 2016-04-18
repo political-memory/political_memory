@@ -30,7 +30,7 @@ class RepresentativeViewMixin(object):
 
     def add_representative_country_and_main_mandate(self, representative):
         """
-        Set representative country and main_mandate.
+        Set representative country, main_mandate and chamber.
 
         Note that this will butcher your database if you don't use
         self.prefetch_related.
@@ -52,6 +52,9 @@ class RepresentativeViewMixin(object):
 
             if representative.country and representative.main_mandate:
                 break
+
+        if representative.main_mandate:
+            representative.chamber = representative.main_mandate.group.chamber
 
         return representative
 
