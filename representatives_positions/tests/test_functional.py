@@ -76,9 +76,10 @@ class PositionTest(TestCase):
         # Trigger irrelevant queries that happen only once ie. constance before
         # testing actual page queries.
         self.client.get(position.get_absolute_url())
-        with self.assertNumQueries(3):
+        with self.assertNumQueries(4):
             # One for position and rep and score
             # One for rep mandates
+            # One for rep chamber
             # One for position tags
             response = self.client.get(position.get_absolute_url())
 
