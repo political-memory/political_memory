@@ -78,8 +78,8 @@ def _get_rep_district_name(data):
         return '%s (%d%s circonscription)' % (nom, num, ordinal)
 
 
-def _get_sen_comittees(data):
-    comittees = []
+def _get_sen_committees(data):
+    committees = []
     start = data['mandat_debut']
 
     for g in data['responsabilites']:
@@ -92,14 +92,14 @@ def _get_sen_comittees(data):
         if orga in _equiv_Com_SEN:
             orga = _equiv_Com_SEN[orga]
 
-        comittees.append({
+        committees.append({
             'abbr': _abbr_Com_SEN[orga] if orga in _abbr_Com_SEN else '',
             'name': orga,
             'role': role,
             'start': start
         })
 
-    return comittees
+    return committees
 
 
 def _get_sen_delegations(data):
@@ -127,8 +127,8 @@ def _get_sen_delegations(data):
     return delegations
 
 
-def _get_an_comittees(data):
-    comittees = []
+def _get_an_committees(data):
+    committees = []
     start = data['mandat_debut']
 
     for g in data['responsabilites']:
@@ -141,14 +141,14 @@ def _get_an_comittees(data):
         if orga in _equiv_Com_AN:
             orga = _equiv_Com_AN[orga]
 
-        comittees.append({
+        committees.append({
             'abbr': _abbr_Com_AN[orga] if orga in _abbr_Com_AN else '',
             'name': orga,
             'role': role,
             'start': start
         })
 
-    return comittees
+    return committees
 
 
 def _get_an_delegations(data):
@@ -241,7 +241,7 @@ FranceDataVariants = {
             {
                 "kind": "committee",
                 "chamber": True,
-                "from": _get_an_comittees,
+                "from": _get_an_committees,
                 "abbr": "%(abbr)s",
                 "name": "%(name)s",
                 "role": "%(role)s",
@@ -301,7 +301,7 @@ FranceDataVariants = {
             {
                 "kind": "committee",
                 "chamber": True,
-                "from": _get_sen_comittees,
+                "from": _get_sen_committees,
                 "abbr": "%(abbr)s",
                 "name": "%(name)s",
                 "role": "%(role)s",
