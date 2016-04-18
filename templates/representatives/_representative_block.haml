@@ -21,8 +21,8 @@
         %tr
           %th Chamber
           %td<
-            %a{'href': "{% url 'representatives:representative-list' group_kind='chamber' group=representative.main_mandate.group.chamber.name %}"}
-              = representative.main_mandate.group.chamber|chamber_icon
+            %a{'href': "{% url 'representatives:representative-list' group_kind='chamber' group=representative.chamber.name %}"}
+              = representative.chamber|chamber_icon
         %tr
           %th Country
           %td<

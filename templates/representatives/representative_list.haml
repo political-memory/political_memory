@@ -47,8 +47,8 @@
               = representative.full_name
 
           %td
-            %a{'href': "{% url 'representatives:representative-list' group_kind='chamber' group=representative.main_mandate.group.chamber.name %}"}
-              = representative.main_mandate.group.chamber
+            %a{'href': "{% url 'representatives:representative-list' group_kind='chamber' group=representative.chamber.name %}"}
+              = representative.chamber
 
           %td
             %a{'href': "{{ representative.country.get_absolute_url }}"}
