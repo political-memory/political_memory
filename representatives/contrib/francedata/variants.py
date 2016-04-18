@@ -67,9 +67,9 @@ _abbr_Deleg_SEN = {
 }
 
 
-def _get_rep_district_name(json):
-    num = json.get('num_circo')
-    nom = json.get('nom_circo')
+def _get_rep_district_name(data):
+    num = data.get('num_circo')
+    nom = data.get('nom_circo')
 
     if num == 'nd':
         return nom
@@ -78,11 +78,11 @@ def _get_rep_district_name(json):
         return '%s (%d%s circonscription)' % (nom, num, ordinal)
 
 
-def _get_sen_comittees(json):
+def _get_sen_comittees(data):
     comittees = []
-    start = json['mandat_debut']
+    start = data['mandat_debut']
 
-    for g in json['responsabilites']:
+    for g in data['responsabilites']:
         orga = g['responsabilite']['organisme']
         role = g['responsabilite']['fonction']
 
@@ -102,12 +102,12 @@ def _get_sen_comittees(json):
     return comittees
 
 
-def _get_sen_delegations(json):
+def _get_sen_delegations(data):
     delegations = []
-    start = json['mandat_debut']
+    start = data['mandat_debut']
 
-    for g in ([i['responsabilite'] for i in json['responsabilites']] +
-            [j['responsabilite'] for j in json['groupes_parlementaires']]):
+    for g in ([i['responsabilite'] for i in data['responsabilites']] +
+            [j['responsabilite'] for j in data['groupes_parlementaires']]):
         orga = g['organisme']
         role = g['fonction']
 
@@ -127,11 +127,11 @@ def _get_sen_delegations(json):
     return delegations
 
 
-def _get_an_comittees(json):
+def _get_an_comittees(data):
     comittees = []
-    start = json['mandat_debut']
+    start = data['mandat_debut']
 
-    for g in json['responsabilites']:
+    for g in data['responsabilites']:
         orga = g['responsabilite']['organisme']
         role = g['responsabilite']['fonction']
 
@@ -151,12 +151,12 @@ def _get_an_comittees(json):
     return comittees
 
 
-def _get_an_delegations(json):
+def _get_an_delegations(data):
     delegations = []
-    start = json['mandat_debut']
+    start = data['mandat_debut']
 
-    for g in ([i['responsabilite'] for i in json['responsabilites']] +
-            [j['responsabilite'] for j in json['groupes_parlementaires']]):
+    for g in ([i['responsabilite'] for i in data['responsabilites']] +
+            [j['responsabilite'] for j in data['groupes_parlementaires']]):
         orga = g['organisme']
         role = g['fonction']
 
