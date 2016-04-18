@@ -30,7 +30,7 @@ setup(name='political-memory',
     ],
     extras_require={
         'testing': [
-            'django-responsediff',
+            'django-responsediff==0.2.0',
             'flake8',
             'pep8',
             'pytest',
