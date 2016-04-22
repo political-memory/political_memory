@@ -25,7 +25,10 @@ representative_pre_import = django.dispatch.Signal(
 
 def _get_mdef_item(mdef, item, json, default=None):
     if item in mdef:
-        return mdef[item] % json
+        try:
+            return mdef[item] % json
+        except:
+            return default
 
     if '%s_path' % item in mdef:
         return _get_path(json, mdef['%s_path' % item])
