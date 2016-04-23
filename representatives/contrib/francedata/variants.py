@@ -15,6 +15,7 @@ class DelegationHelper:
     def __call__(self, data):
         items = []
         start = data['mandat_debut']
+        end = data.get('mandat_fin', None)
 
         if self.committees:
             gdata = (i['responsabilite'] for i in data['responsabilites'])
@@ -32,12 +33,17 @@ class DelegationHelper:
             if orga in self.equivs:
                 orga = self.equivs[orga]
 
-            items.append({
+            item = {
                 'abbr': self.abbrevs[orga] if orga in self.abbrevs else '',
                 'name': orga,
                 'role': role,
                 'start': start
-            })
+            }
+
+            if end:
+                item['end'] = end
+
+            items.append(item)
 
         return items
 
@@ -139,7 +145,8 @@ FranceDataVariants = {
                 "abbr": "AN",
                 "name": u"Assemblée nationale",
                 "role": u"Député",
-                "start": "%(mandat_debut)s"
+                "start": "%(mandat_debut)s",
+                "end": "%(mandat_fin)s"
             },
             {
                 "kind": "group",
@@ -147,19 +154,22 @@ FranceDataVariants = {
                 "abbr": "%(groupe_sigle)s",
                 "name_path": "groupe/organisme",
                 "role_path": "groupe/fonction",
-                "start": "%(mandat_debut)s"
+                "start": "%(mandat_debut)s",
+                "end": "%(mandat_fin)s"
             },
             {
                 "kind": "department",
                 "abbr": "%(num_deptmt)s",
                 "name": "%(nom_circo)s",
-                "start": "%(mandat_debut)s"
+                "start": "%(mandat_debut)s",
+                "end": "%(mandat_fin)s"
             },
             {
                 "kind": "district",
                 "abbr": "%(num_deptmt)s-%(num_circo)s",
                 "name_fn": _get_rep_district_name,
-                "start": "%(mandat_debut)s"
+                "start": "%(mandat_debut)s",
+                "end": "%(mandat_fin)s"
             },
             {
                 "kind": "committee",
@@ -168,7 +178,8 @@ FranceDataVariants = {
                 "abbr": "%(abbr)s",
                 "name": "%(name)s",
                 "role": "%(role)s",
-                "start": "%(start)s"
+                "start": "%(start)s",
+                "end": "%(end)s"
             },
             {
                 "kind": "delegation",
@@ -177,7 +188,8 @@ FranceDataVariants = {
                 "abbr": "%(abbr)s",
                 "name": "%(name)s",
                 "role": "%(role)s",
-                "start": "%(start)s"
+                "start": "%(start)s",
+                "end": "%(end)s"
             }
         ]
     },
@@ -199,7 +211,8 @@ FranceDataVariants = {
                 "abbr": "SEN",
                 "name": u"Sénat",
                 "role": u"Sénateur",
-                "start": "%(mandat_debut)s"
+                "start": "%(mandat_debut)s",
+                "end": "%(mandat_fin)s"
             },
             {
                 "kind": "group",
@@ -207,19 +220,22 @@ FranceDataVariants = {
                 "abbr": "%(groupe_sigle)s",
                 "name_path": "groupe/organisme",
                 "role_path": "groupe/fonction",
-                "start": "%(mandat_debut)s"
+                "start": "%(mandat_debut)s",
+                "end": "%(mandat_fin)s"
             },
             {
                 "kind": "department",
                 "abbr": "%(num_deptmt)s",
                 "name": "%(nom_circo)s",
-                "start": "%(mandat_debut)s"
+                "start": "%(mandat_debut)s",
+                "end": "%(mandat_fin)s"
             },
             {
                 "kind": "district",
                 "abbr": "%(num_deptmt)s-%(num_circo)s",
                 "name_fn": _get_rep_district_name,
-                "start": "%(mandat_debut)s"
+                "start": "%(mandat_debut)s",
+                "end": "%(mandat_fin)s"
             },
             {
                 "kind": "committee",
@@ -228,7 +244,8 @@ FranceDataVariants = {
                 "abbr": "%(abbr)s",
                 "name": "%(name)s",
                 "role": "%(role)s",
-                "start": "%(start)s"
+                "start": "%(start)s",
+                "end": "%(end)s"
             },
             {
                 "kind": "delegation",
@@ -237,7 +254,8 @@ FranceDataVariants = {
                 "abbr": "%(abbr)s",
                 "name": "%(name)s",
                 "role": "%(role)s",
-                "start": "%(start)s"
+                "start": "%(start)s",
+                "end": "%(end)s"
             }
         ]
     }

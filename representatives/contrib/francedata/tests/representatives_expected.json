@@ -557,6 +557,7 @@
         "representative": 2,
         "link": "",
         "begin_date": "2004-09-26",
+        "end_date": "2012-01-01",
         "constituency": 2
     },
     "model": "representatives.mandate",
@@ -570,6 +571,7 @@
         "representative": 2,
         "link": "",
         "begin_date": "2004-09-26",
+        "end_date": "2012-01-01",
         "constituency": 2
     },
     "model": "representatives.mandate",
@@ -583,6 +585,7 @@
         "representative": 2,
         "link": "",
         "begin_date": "2004-09-26",
+        "end_date": "2012-01-01",
         "constituency": 2
     },
     "model": "representatives.mandate",
@@ -596,6 +599,7 @@
         "representative": 2,
         "link": "",
         "begin_date": "2004-09-26",
+        "end_date": "2012-01-01",
         "constituency": 2
     },
     "model": "representatives.mandate",
@@ -609,6 +613,7 @@
         "representative": 2,
         "link": "",
         "begin_date": "2004-09-26",
+        "end_date": "2012-01-01",
         "constituency": 2
     },
     "model": "representatives.mandate",
@@ -622,6 +627,7 @@
         "representative": 2,
         "link": "",
         "begin_date": "2004-09-26",
+        "end_date": "2012-01-01",
         "constituency": 2
     },
     "model": "representatives.mandate",
