@@ -2,9 +2,9 @@ from setuptools import find_packages, setup
 
 setup(
     name='django-representatives',
-    version='0.0.17',
+    version='0.0.18',
     description='Base app for government representative',
-    author='Laurent Peuch, Olivier Le Thanh Duong, Yohan Boniface, Arnaud Fabre, James Pic',
+    author='Laurent Peuch, Olivier Le Thanh Duong, Yohan Boniface, Arnaud Fabre, James Pic, Nicolas Joyard',
     author_email='webmaster@memopol.org',
     url='http://github.com/political-memory/django-representatives',
     packages=find_packages(),
