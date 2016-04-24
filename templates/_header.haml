@@ -21,6 +21,9 @@
       %a{href: "{% url 'representatives:group-list' kind='country' %}"}
         - trans 'Countries'
     %li
+      %a{href: "{% url 'representatives:group-list' kind='chamber' %}"}
+        - trans 'Chambers'
+    %li
       %a{href: "{% url 'representatives:group-list' kind='group' %}"}
         - trans 'Parties'
     %li

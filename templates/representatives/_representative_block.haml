@@ -19,6 +19,11 @@
           %td
             = representative.score.score|score_label
         %tr
+          %th Chamber
+          %td<
+            %a{'href': "{% url 'representatives:representative-list' group_kind='chamber' group=representative.chamber.name %}"}
+              = representative.chamber|chamber_icon
+        %tr
           %th Country
           %td<
             %a{:href => "{{ representative.country.get_absolute_url }}"}

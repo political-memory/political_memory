@@ -10,7 +10,7 @@
       - The Political Memory of </title>
     
     
-    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.53baf9815401.css" type="text/css" />
+    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.0eebcec6fcc2.css" type="text/css" />
     <script type="text/javascript" src="/static/collected/libs/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="/static/collected/libs/bootstrap/dist/js/bootstrap.js"></script>
     
@@ -45,6 +45,11 @@
     <li>
       <a href='/legislature/groups/country/'>
         Countries
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/groups/chamber/'>
+        Chambers
       </a>
     </li>
     <li>
@@ -200,13 +205,18 @@
               Zigmantas BALČYTIS
             </a>
           </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
           <li class='country'>
             <a href='/legislature/representative/country/Lithuania/'>
               <span class="flag-icon flag-icon-lt"></span> Lithuania
             </a>
           </li>
           <li class='mandate'>
-            <a href='/legislature/representative/group/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
               SD
             </a>
           </li>
@@ -229,13 +239,18 @@
               Vilija BLINKEVIČIŪTĖ
             </a>
           </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
           <li class='country'>
             <a href='/legislature/representative/country/Lithuania/'>
               <span class="flag-icon flag-icon-lt"></span> Lithuania
             </a>
           </li>
           <li class='mandate'>
-            <a href='/legislature/representative/group/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
               SD
             </a>
           </li>
@@ -258,13 +273,18 @@
               Elmar BROK
             </a>
           </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
           <li class='country'>
             <a href='/legislature/representative/country/Germany/'>
               <span class="flag-icon flag-icon-de"></span> Germany
             </a>
           </li>
           <li class='mandate'>
-            <a href='/legislature/representative/group/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
               EPP
             </a>
           </li>
@@ -287,13 +307,18 @@
               Cristian-Silviu BUŞOI
             </a>
           </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
           <li class='country'>
             <a href='/legislature/representative/country/Romania/'>
               <span class="flag-icon flag-icon-ro"></span> Romania
             </a>
           </li>
           <li class='mandate'>
-            <a href='/legislature/representative/group/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
               EPP
             </a>
           </li>
@@ -316,13 +341,18 @@
               David CASA
             </a>
           </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
           <li class='country'>
             <a href='/legislature/representative/country/Malta/'>
               <span class="flag-icon flag-icon-mt"></span> Malta
             </a>
           </li>
           <li class='mandate'>
-            <a href='/legislature/representative/group/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
               EPP
             </a>
           </li>
@@ -345,13 +375,18 @@
               Jean-Marie CAVADA
             </a>
           </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
           <li class='country'>
             <a href='/legislature/representative/country/France/'>
               <span class="flag-icon flag-icon-fr"></span> France
             </a>
           </li>
           <li class='mandate'>
-            <a href='/legislature/representative/group/Group%20of%20the%20Alliance%20of%20Liberals%20and%20Democrats%20for%20Europe/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Alliance%20of%20Liberals%20and%20Democrats%20for%20Europe/'>
               ALDE
             </a>
           </li>
@@ -374,13 +409,18 @@
               Nikolaos CHOUNTIS
             </a>
           </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
           <li class='country'>
             <a href='/legislature/representative/country/Greece/'>
               <span class="flag-icon flag-icon-gr"></span> Greece
             </a>
           </li>
           <li class='mandate'>
-            <a href='/legislature/representative/group/Confederal%20Group%20of%20the%20European%20United%20Left%20-%20Nordic%20Green%20Left/'>
+            <a href='/legislature/representative/group/European%20Parliament/Confederal%20Group%20of%20the%20European%20United%20Left%20-%20Nordic%20Green%20Left/'>
               GUE/NGL
             </a>
           </li>
@@ -403,13 +443,18 @@
               Michael CRAMER
             </a>
           </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
           <li class='country'>
             <a href='/legislature/representative/country/Germany/'>
               <span class="flag-icon flag-icon-de"></span> Germany
             </a>
           </li>
           <li class='mandate'>
-            <a href='/legislature/representative/group/Group%20of%20the%20Greens/European%20Free%20Alliance/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Greens/European%20Free%20Alliance/'>
               Greens/EFA
             </a>
           </li>
@@ -432,13 +477,18 @@
               Michel DANTIN
             </a>
           </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
           <li class='country'>
             <a href='/legislature/representative/country/France/'>
               <span class="flag-icon flag-icon-fr"></span> France
             </a>
           </li>
           <li class='mandate'>
-            <a href='/legislature/representative/group/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
               EPP
             </a>
           </li>
@@ -461,13 +511,18 @@
               Tamás DEUTSCH
             </a>
           </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
           <li class='country'>
             <a href='/legislature/representative/country/Hungary/'>
               <span class="flag-icon flag-icon-hu"></span> Hungary
             </a>
           </li>
           <li class='mandate'>
-            <a href='/legislature/representative/group/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
               EPP
             </a>
           </li>
@@ -490,13 +545,18 @@
               Viorica DĂNCILĂ
             </a>
           </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
           <li class='country'>
             <a href='/legislature/representative/country/Romania/'>
               <span class="flag-icon flag-icon-ro"></span> Romania
             </a>
           </li>
           <li class='mandate'>
-            <a href='/legislature/representative/group/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
               SD
             </a>
           </li>
@@ -519,13 +579,18 @@
               Bas EICKHOUT
             </a>
           </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
           <li class='country'>
             <a href='/legislature/representative/country/Netherlands/'>
               <span class="flag-icon flag-icon-nl"></span> Netherlands
             </a>
           </li>
           <li class='mandate'>
-            <a href='/legislature/representative/group/Group%20of%20the%20Greens/European%20Free%20Alliance/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Greens/European%20Free%20Alliance/'>
               Greens/EFA
             </a>
           </li>
@@ -548,13 +613,18 @@
               Ismail ERTUG
             </a>
           </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
           <li class='country'>
             <a href='/legislature/representative/country/Germany/'>
               <span class="flag-icon flag-icon-de"></span> Germany
             </a>
           </li>
           <li class='mandate'>
-            <a href='/legislature/representative/group/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
               SD
             </a>
           </li>
@@ -577,13 +647,18 @@
               José Manuel FERNANDES
             </a>
           </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
           <li class='country'>
             <a href='/legislature/representative/country/Portugal/'>
               <span class="flag-icon flag-icon-pt"></span> Portugal
             </a>
           </li>
           <li class='mandate'>
-            <a href='/legislature/representative/group/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
               EPP
             </a>
           </li>
@@ -606,13 +681,18 @@
               Monika FLAŠÍKOVÁ BEŇOVÁ
             </a>
           </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
           <li class='country'>
             <a href='/legislature/representative/country/Slovakia/'>
               <span class="flag-icon flag-icon-sk"></span> Slovakia
             </a>
           </li>
           <li class='mandate'>
-            <a href='/legislature/representative/group/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
               SD
             </a>
           </li>
@@ -635,13 +715,18 @@
               Ashley FOX
             </a>
           </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
           <li class='country'>
             <a href='/legislature/representative/country/United%20Kingdom/'>
               <span class="flag-icon flag-icon-gb"></span> United Kingdom
             </a>
           </li>
           <li class='mandate'>
-            <a href='/legislature/representative/group/European%20Conservatives%20and%20Reformists%20Group/'>
+            <a href='/legislature/representative/group/European%20Parliament/European%20Conservatives%20and%20Reformists%20Group/'>
               ECR
             </a>
           </li>
@@ -664,13 +749,18 @@
               Eider GARDIAZABAL RUBIAL
             </a>
           </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
           <li class='country'>
             <a href='/legislature/representative/country/Spain/'>
               <span class="flag-icon flag-icon-es"></span> Spain
             </a>
           </li>
           <li class='mandate'>
-            <a href='/legislature/representative/group/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
               SD
             </a>
           </li>
@@ -693,13 +783,18 @@
               Kinga GÁL
             </a>
           </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
           <li class='country'>
             <a href='/legislature/representative/country/Hungary/'>
               <span class="flag-icon flag-icon-hu"></span> Hungary
             </a>
           </li>
           <li class='mandate'>
-            <a href='/legislature/representative/group/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
               EPP
             </a>
           </li>
@@ -722,13 +817,18 @@
               Ildikó GÁLL-PELCZ
             </a>
           </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
           <li class='country'>
             <a href='/legislature/representative/country/Hungary/'>
               <span class="flag-icon flag-icon-hu"></span> Hungary
             </a>
           </li>
           <li class='mandate'>
-            <a href='/legislature/representative/group/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
               EPP
             </a>
           </li>
@@ -751,13 +851,18 @@
               Marian HARKIN
             </a>
           </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
           <li class='country'>
             <a href='/legislature/representative/country/Ireland/'>
               <span class="flag-icon flag-icon-ie"></span> Ireland
             </a>
           </li>
           <li class='mandate'>
-            <a href='/legislature/representative/group/Group%20of%20the%20Alliance%20of%20Liberals%20and%20Democrats%20for%20Europe/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Alliance%20of%20Liberals%20and%20Democrats%20for%20Europe/'>
               ALDE
             </a>
           </li>
@@ -780,13 +885,18 @@
               Mary HONEYBALL
             </a>
           </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
           <li class='country'>
             <a href='/legislature/representative/country/United%20Kingdom/'>
               <span class="flag-icon flag-icon-gb"></span> United Kingdom
             </a>
           </li>
           <li class='mandate'>
-            <a href='/legislature/representative/group/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
               SD
             </a>
           </li>
@@ -809,13 +919,18 @@
               Iliana IOTOVA
             </a>
           </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
           <li class='country'>
             <a href='/legislature/representative/country/Bulgaria/'>
               <span class="flag-icon flag-icon-bg"></span> Bulgaria
             </a>
           </li>
           <li class='mandate'>
-            <a href='/legislature/representative/group/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
               SD
             </a>
           </li>
@@ -838,13 +953,18 @@
               Liisa JAAKONSAARI
             </a>
           </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
           <li class='country'>
             <a href='/legislature/representative/country/Finland/'>
               <span class="flag-icon flag-icon-fi"></span> Finland
             </a>
           </li>
           <li class='mandate'>
-            <a href='/legislature/representative/group/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
               SD
             </a>
           </li>
@@ -867,13 +987,18 @@
               Yannick JADOT
             </a>
           </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
           <li class='country'>
             <a href='/legislature/representative/country/France/'>
               <span class="flag-icon flag-icon-fr"></span> France
             </a>
           </li>
           <li class='mandate'>
-            <a href='/legislature/representative/group/Group%20of%20the%20Greens/European%20Free%20Alliance/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Greens/European%20Free%20Alliance/'>
               Greens/EFA
             </a>
           </li>

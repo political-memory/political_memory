@@ -48,8 +48,12 @@
             {{ mandate.group.name }}
             - if mandate.group.abbreviation
               {{ mandate.group.abbreviation }}
-        %td= mandate.begin_date|mandate_date:'d/m/Y'
-        %td= mandate.end_date|mandate_date:'d/m/Y'
+        %td
+          - if mandate.begin_date
+            = mandate.begin_date|mandate_date:'d/m/Y'
+        %td
+          - if mandate.end_date
+            = mandate.end_date|mandate_date:'d/m/Y'
         %td= mandate.constituency.name
 
   .positions

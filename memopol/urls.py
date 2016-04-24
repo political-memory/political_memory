@@ -11,6 +11,11 @@ admin.autodiscover()
 urlpatterns = [
     # Project-specific overrides
     url(
+        r'^legislature/representative/(?P<group_kind>\w+)/(?P<chamber>.+)/' +
+        r'(?P<group>.+)/$',
+        views.RepresentativeList.as_view(),
+    ),
+    url(
         r'^legislature/representative/(?P<group_kind>\w+)/(?P<group>.+)/$',
         views.RepresentativeList.as_view(),
     ),

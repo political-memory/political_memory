@@ -15,6 +15,9 @@
           %li.name
             %a{'href': "{{ representative.get_absolute_url }}"}
               = representative.full_name
+          %li.chamber
+            %a{'href': "{% url 'representatives:representative-list' group_kind='chamber' group=representative.chamber.name %}"}
+              = representative.chamber|chamber_icon
           %li.country
             %a{'href': "{{ representative.country.get_absolute_url }}"}
               = representative.country|country_flag

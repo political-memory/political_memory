@@ -10,7 +10,7 @@
       - The Political Memory of </title>
     
     
-    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.53baf9815401.css" type="text/css" />
+    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.0eebcec6fcc2.css" type="text/css" />
     <script type="text/javascript" src="/static/collected/libs/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="/static/collected/libs/bootstrap/dist/js/bootstrap.js"></script>
     
@@ -45,6 +45,11 @@
     <li>
       <a href='/legislature/groups/country/'>
         Countries
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/groups/chamber/'>
+        Chambers
       </a>
     </li>
     <li>
@@ -195,6 +200,9 @@
           Name
         </th>
         <th>
+          Chamber
+        </th>
+        <th>
           Country
         </th>
         <th>
@@ -220,13 +228,19 @@
             </a>
           </td>
           <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              European Parliament [EP]
+
+            </a>
+          </td>
+          <td>
             <a href='/legislature/representative/country/France/'>
               France [FR]
 
             </a>
           </td>
           <td>
-            <a href='/legislature/representative/group/Group%20of%20the%20Greens/European%20Free%20Alliance/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Greens/European%20Free%20Alliance/'>
               Greens/EFA
             </a>
           </td>
@@ -250,13 +264,19 @@
             </a>
           </td>
           <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              European Parliament [EP]
+
+            </a>
+          </td>
+          <td>
             <a href='/legislature/representative/country/Poland/'>
               Poland [PL]
 
             </a>
           </td>
           <td>
-            <a href='/legislature/representative/group/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
               EPP
             </a>
           </td>
@@ -280,13 +300,19 @@
             </a>
           </td>
           <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              European Parliament [EP]
+
+            </a>
+          </td>
+          <td>
             <a href='/legislature/representative/country/Bulgaria/'>
               Bulgaria [BG]
 
             </a>
           </td>
           <td>
-            <a href='/legislature/representative/group/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
               EPP
             </a>
           </td>
@@ -310,13 +336,19 @@
             </a>
           </td>
           <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              European Parliament [EP]
+
+            </a>
+          </td>
+          <td>
             <a href='/legislature/representative/country/Sweden/'>
               Sweden [SE]
 
             </a>
           </td>
           <td>
-            <a href='/legislature/representative/group/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
               SD
             </a>
           </td>
@@ -340,13 +372,19 @@
             </a>
           </td>
           <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              European Parliament [EP]
+
+            </a>
+          </td>
+          <td>
             <a href='/legislature/representative/country/Finland/'>
               Finland [FI]
 
             </a>
           </td>
           <td>
-            <a href='/legislature/representative/group/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
               EPP
             </a>
           </td>
@@ -370,13 +408,19 @@
             </a>
           </td>
           <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              European Parliament [EP]
+
+            </a>
+          </td>
+          <td>
             <a href='/legislature/representative/country/Belgium/'>
               Belgium [BE]
 
             </a>
           </td>
           <td>
-            <a href='/legislature/representative/group/Group%20of%20the%20Alliance%20of%20Liberals%20and%20Democrats%20for%20Europe/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Alliance%20of%20Liberals%20and%20Democrats%20for%20Europe/'>
               ALDE
             </a>
           </td>
@@ -400,13 +444,19 @@
             </a>
           </td>
           <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              European Parliament [EP]
+
+            </a>
+          </td>
+          <td>
             <a href='/legislature/representative/country/Germany/'>
               Germany [DE]
 
             </a>
           </td>
           <td>
-            <a href='/legislature/representative/group/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
               SD
             </a>
           </td>
@@ -430,13 +480,19 @@
             </a>
           </td>
           <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              European Parliament [EP]
+
+            </a>
+          </td>
+          <td>
             <a href='/legislature/representative/country/United%20Kingdom/'>
               United Kingdom [GB]
 
             </a>
           </td>
           <td>
-            <a href='/legislature/representative/group/European%20Conservatives%20and%20Reformists%20Group/'>
+            <a href='/legislature/representative/group/European%20Parliament/European%20Conservatives%20and%20Reformists%20Group/'>
               ECR
             </a>
           </td>
@@ -460,13 +516,19 @@
             </a>
           </td>
           <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              European Parliament [EP]
+
+            </a>
+          </td>
+          <td>
             <a href='/legislature/representative/country/Spain/'>
               Spain [ES]
 
             </a>
           </td>
           <td>
-            <a href='/legislature/representative/group/Group%20of%20the%20Alliance%20of%20Liberals%20and%20Democrats%20for%20Europe/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Alliance%20of%20Liberals%20and%20Democrats%20for%20Europe/'>
               ALDE
             </a>
           </td>
@@ -490,13 +552,19 @@
             </a>
           </td>
           <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              European Parliament [EP]
+
+            </a>
+          </td>
+          <td>
             <a href='/legislature/representative/country/Bulgaria/'>
               Bulgaria [BG]
 
             </a>
           </td>
           <td>
-            <a href='/legislature/representative/group/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
               EPP
             </a>
           </td>
@@ -520,13 +588,19 @@
             </a>
           </td>
           <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              European Parliament [EP]
+
+            </a>
+          </td>
+          <td>
             <a href='/legislature/representative/country/Slovenia/'>
               Slovenia [SI]
 
             </a>
           </td>
           <td>
-            <a href='/legislature/representative/group/Group%20of%20the%20Alliance%20of%20Liberals%20and%20Democrats%20for%20Europe/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Alliance%20of%20Liberals%20and%20Democrats%20for%20Europe/'>
               ALDE
             </a>
           </td>
@@ -550,13 +624,19 @@
             </a>
           </td>
           <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              European Parliament [EP]
+
+            </a>
+          </td>
+          <td>
             <a href='/legislature/representative/country/Sweden/'>
               Sweden [SE]
 
             </a>
           </td>
           <td>
-            <a href='/legislature/representative/group/Group%20of%20the%20Alliance%20of%20Liberals%20and%20Democrats%20for%20Europe/'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Alliance%20of%20Liberals%20and%20Democrats%20for%20Europe/'>
               ALDE
             </a>
           </td>

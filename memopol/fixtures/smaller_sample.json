@@ -4502,12 +4502,22 @@
 },
 {
     "fields": {
+        "country": null,
+        "name": "European Parliament",
+        "abbreviation": "EP"
+    },
+    "model": "representatives.chamber",
+    "pk": 1
+},
+{
+    "fields": {
         "updated": "2015-12-27T16:03:15.969Z",
         "name": "European Conservatives and Reformists Group",
         "created": "2015-12-27T16:03:15.969Z",
         "kind": "group",
         "abbreviation": "ECR",
-        "fingerprint": "8bd3697c0efa3701da57463c094f9d25112951a3"
+        "fingerprint": "8bd3697c0efa3701da57463c094f9d25112951a3",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 1
@@ -4519,7 +4529,8 @@
         "created": "2015-12-27T16:03:15.976Z",
         "kind": "country",
         "abbreviation": "PL",
-        "fingerprint": "ae1f4d669e4081dc0fbc6c44f6159690b450e898"
+        "fingerprint": "ae1f4d669e4081dc0fbc6c44f6159690b450e898",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 2
@@ -4531,7 +4542,8 @@
         "created": "2015-12-27T16:03:31.046Z",
         "kind": "committee",
         "abbreviation": "EMPL",
-        "fingerprint": "7f0e6d2c3342dde2c6077e127a418a19e0e891bb"
+        "fingerprint": "7f0e6d2c3342dde2c6077e127a418a19e0e891bb",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 3
@@ -4543,7 +4555,8 @@
         "created": "2015-12-27T16:03:31.051Z",
         "kind": "committee",
         "abbreviation": "DROI",
-        "fingerprint": "8eb1566f29d0bfdd7bc4d6644668d209aac12786"
+        "fingerprint": "8eb1566f29d0bfdd7bc4d6644668d209aac12786",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 4
@@ -4555,7 +4568,8 @@
         "created": "2015-12-27T16:03:31.057Z",
         "kind": "committee",
         "abbreviation": "AFET",
-        "fingerprint": "27a168e3c0d53be10e03232f28bedde50d5239a5"
+        "fingerprint": "27a168e3c0d53be10e03232f28bedde50d5239a5",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 5
@@ -4567,7 +4581,8 @@
         "created": "2015-12-27T16:03:31.062Z",
         "kind": "committee",
         "abbreviation": "PETI",
-        "fingerprint": "317765b692e510959d1a524b37115bdea481fd69"
+        "fingerprint": "317765b692e510959d1a524b37115bdea481fd69",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 6
@@ -4579,7 +4594,8 @@
         "created": "2015-12-27T16:03:31.072Z",
         "kind": "committee",
         "abbreviation": "LIBE",
-        "fingerprint": "dfc42d1a6bede52cd41f1ee9daa2e7b158ccea98"
+        "fingerprint": "dfc42d1a6bede52cd41f1ee9daa2e7b158ccea98",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 7
@@ -4591,7 +4607,8 @@
         "created": "2015-12-27T16:03:31.095Z",
         "kind": "committee",
         "abbreviation": "DEVE",
-        "fingerprint": "34095594da8c0f96f26cb347207d7e891ef070f0"
+        "fingerprint": "34095594da8c0f96f26cb347207d7e891ef070f0",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 8
@@ -4603,7 +4620,8 @@
         "created": "2015-12-27T16:03:31.100Z",
         "kind": "committee",
         "abbreviation": "JURI",
-        "fingerprint": "bc1a051072a9f2caf7c5c7105bccd13834b4d89d"
+        "fingerprint": "bc1a051072a9f2caf7c5c7105bccd13834b4d89d",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 9
@@ -4615,7 +4633,8 @@
         "created": "2015-12-27T16:03:31.106Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "98e8dbf2710a233e91728adac6c9642c17e49918"
+        "fingerprint": "98e8dbf2710a233e91728adac6c9642c17e49918",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 10
@@ -4627,7 +4646,8 @@
         "created": "2015-12-27T16:03:31.112Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "ab1f9ebc509a8c6cc33701a83b7ded3bbb428dfe"
+        "fingerprint": "ab1f9ebc509a8c6cc33701a83b7ded3bbb428dfe",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 11
@@ -4639,7 +4659,8 @@
         "created": "2015-12-27T16:03:31.117Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "f784393bca286fd4ab3a3e1293e721113ed403dd"
+        "fingerprint": "f784393bca286fd4ab3a3e1293e721113ed403dd",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 12
@@ -4651,7 +4672,8 @@
         "created": "2015-12-27T16:03:31.122Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "c6dc5d11f490a78013cbe9d5338fa9ebc5218de3"
+        "fingerprint": "c6dc5d11f490a78013cbe9d5338fa9ebc5218de3",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 13
@@ -4663,7 +4685,8 @@
         "created": "2015-12-27T16:03:31.127Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "b29504ef8f10a597e655f69264c4f278e856eb4f"
+        "fingerprint": "b29504ef8f10a597e655f69264c4f278e856eb4f",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 14
@@ -4675,7 +4698,8 @@
         "created": "2015-12-27T16:03:31.146Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "04f35e9874b0a631e49ae847770a3739045f077c"
+        "fingerprint": "04f35e9874b0a631e49ae847770a3739045f077c",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 15
@@ -4687,7 +4711,8 @@
         "created": "2015-12-27T16:03:31.156Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "05b37882b29486b9e7f890a238f42e40bb06823d"
+        "fingerprint": "05b37882b29486b9e7f890a238f42e40bb06823d",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 16
@@ -4699,7 +4724,8 @@
         "created": "2015-12-27T16:03:31.165Z",
         "kind": "group",
         "abbreviation": "ALDE",
-        "fingerprint": "c4b680a6da627508a40d80d7fba31bceca3701af"
+        "fingerprint": "c4b680a6da627508a40d80d7fba31bceca3701af",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 17
@@ -4711,7 +4737,8 @@
         "created": "2015-12-27T16:03:31.170Z",
         "kind": "group",
         "abbreviation": "EPP",
-        "fingerprint": "588d232c0ca166c05796ec20ee13ce9a73e2ceea"
+        "fingerprint": "588d232c0ca166c05796ec20ee13ce9a73e2ceea",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 18
@@ -4723,7 +4750,8 @@
         "created": "2015-12-27T16:03:31.186Z",
         "kind": "country",
         "abbreviation": "RO",
-        "fingerprint": "b548c9d3b5939ed04d431bd70191fcaa172300c4"
+        "fingerprint": "b548c9d3b5939ed04d431bd70191fcaa172300c4",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 19
@@ -4735,7 +4763,8 @@
         "created": "2015-12-27T16:03:31.388Z",
         "kind": "committee",
         "abbreviation": "CULT",
-        "fingerprint": "a169e2d7e6009d3c089e4de43c0f3e0fc312fca4"
+        "fingerprint": "a169e2d7e6009d3c089e4de43c0f3e0fc312fca4",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 20
@@ -4747,7 +4776,8 @@
         "created": "2015-12-27T16:03:31.402Z",
         "kind": "group",
         "abbreviation": "SD",
-        "fingerprint": "729890eba3ce20f90808b32110871d1fe41b53b6"
+        "fingerprint": "729890eba3ce20f90808b32110871d1fe41b53b6",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 21
@@ -4759,7 +4789,8 @@
         "created": "2015-12-27T16:03:31.408Z",
         "kind": "country",
         "abbreviation": "DE",
-        "fingerprint": "bcd9d96905cfdb00e30ed24e5ee5b65595b92fc5"
+        "fingerprint": "bcd9d96905cfdb00e30ed24e5ee5b65595b92fc5",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 22
@@ -4771,7 +4802,8 @@
         "created": "2015-12-27T16:03:31.510Z",
         "kind": "committee",
         "abbreviation": "ITRE",
-        "fingerprint": "17ff1a9fe036e400612c9153c1647a8258c34d63"
+        "fingerprint": "17ff1a9fe036e400612c9153c1647a8258c34d63",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 23
@@ -4783,7 +4815,8 @@
         "created": "2015-12-27T16:03:31.521Z",
         "kind": "committee",
         "abbreviation": "REGI",
-        "fingerprint": "7a2a03e6d40e5af34f3dc6bccd8e1900e2de3abf"
+        "fingerprint": "7a2a03e6d40e5af34f3dc6bccd8e1900e2de3abf",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 24
@@ -4795,7 +4828,8 @@
         "created": "2015-12-27T16:03:31.540Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "b0ce2a08d7683b7467df0e94d70f641f0337f0c1"
+        "fingerprint": "b0ce2a08d7683b7467df0e94d70f641f0337f0c1",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 25
@@ -4807,7 +4841,8 @@
         "created": "2015-12-27T16:03:31.546Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "2ddf20d5b65ca20b403cebb5cfa59a4702dbdcd0"
+        "fingerprint": "2ddf20d5b65ca20b403cebb5cfa59a4702dbdcd0",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 26
@@ -4819,7 +4854,8 @@
         "created": "2015-12-27T16:03:31.552Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "26287ff18e40061744e4585ac5da69b3face4a84"
+        "fingerprint": "26287ff18e40061744e4585ac5da69b3face4a84",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 27
@@ -4831,7 +4867,8 @@
         "created": "2015-12-27T16:03:31.557Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "a2d2797d3a8bd6e5e261ffd775aad8930381535a"
+        "fingerprint": "a2d2797d3a8bd6e5e261ffd775aad8930381535a",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 28
@@ -4843,7 +4880,8 @@
         "created": "2015-12-27T16:03:31.562Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "2c4cb5bbf4e4c6b7cfdca2087c085b2654c9e897"
+        "fingerprint": "2c4cb5bbf4e4c6b7cfdca2087c085b2654c9e897",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 29
@@ -4855,7 +4893,8 @@
         "created": "2015-12-27T16:03:31.768Z",
         "kind": "committee",
         "abbreviation": "ECON",
-        "fingerprint": "2da973401cd76bb56b36f3a9162cda13d2f2d8f3"
+        "fingerprint": "2da973401cd76bb56b36f3a9162cda13d2f2d8f3",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 30
@@ -4867,7 +4906,8 @@
         "created": "2015-12-27T16:03:31.778Z",
         "kind": "group",
         "abbreviation": "EFDD",
-        "fingerprint": "62eb3f22e77c29721b6ffdab6124da4e32f8c156"
+        "fingerprint": "62eb3f22e77c29721b6ffdab6124da4e32f8c156",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 31
@@ -4879,7 +4919,8 @@
         "created": "2015-12-27T16:03:31.783Z",
         "kind": "group",
         "abbreviation": "NI",
-        "fingerprint": "4d3b67e7046c7f50f62ab55ce72c239d12041926"
+        "fingerprint": "4d3b67e7046c7f50f62ab55ce72c239d12041926",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 32
@@ -4891,7 +4932,8 @@
         "created": "2015-12-27T16:03:31.794Z",
         "kind": "country",
         "abbreviation": "GB",
-        "fingerprint": "94e7f4c5dc6d7ca1c8ceade3f5bf782b56f0b0de"
+        "fingerprint": "94e7f4c5dc6d7ca1c8ceade3f5bf782b56f0b0de",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 33
@@ -4903,7 +4945,8 @@
         "created": "2015-12-27T16:03:32.041Z",
         "kind": "committee",
         "abbreviation": "BUDG",
-        "fingerprint": "602a395c409b71c8e714410d7044742d09116e05"
+        "fingerprint": "602a395c409b71c8e714410d7044742d09116e05",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 34
@@ -4915,7 +4958,8 @@
         "created": "2015-12-27T16:03:32.061Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "1e5d79317501c2fdf7f36846ad1d5491a244a103"
+        "fingerprint": "1e5d79317501c2fdf7f36846ad1d5491a244a103",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 35
@@ -4927,7 +4971,8 @@
         "created": "2015-12-27T16:03:32.086Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "c2cf88013552060adcd602be1a7e2c52690dfa0e"
+        "fingerprint": "c2cf88013552060adcd602be1a7e2c52690dfa0e",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 36
@@ -4939,7 +4984,8 @@
         "created": "2015-12-27T16:03:32.397Z",
         "kind": "committee",
         "abbreviation": "AFCO",
-        "fingerprint": "0be0f5fe4df35d525be178523378d603e6f97a60"
+        "fingerprint": "0be0f5fe4df35d525be178523378d603e6f97a60",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 37
@@ -4951,7 +4997,8 @@
         "created": "2015-12-27T16:03:32.444Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "13ce0bd5d499e9a95326c412c96fe3e5897dffe9"
+        "fingerprint": "13ce0bd5d499e9a95326c412c96fe3e5897dffe9",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 38
@@ -4963,7 +5010,8 @@
         "created": "2015-12-27T16:03:32.450Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "df3c3205a872dcb4d6cc237324e30fbd3a21551c"
+        "fingerprint": "df3c3205a872dcb4d6cc237324e30fbd3a21551c",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 39
@@ -4975,7 +5023,8 @@
         "created": "2015-12-27T16:03:32.460Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "4603063cf8afd16e8173669784f97fb6242e388f"
+        "fingerprint": "4603063cf8afd16e8173669784f97fb6242e388f",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 40
@@ -4987,7 +5036,8 @@
         "created": "2015-12-27T16:03:32.489Z",
         "kind": "group",
         "abbreviation": "PSE",
-        "fingerprint": "53961127dd190ceb0568d2290e195570ed907164"
+        "fingerprint": "53961127dd190ceb0568d2290e195570ed907164",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 41
@@ -4999,7 +5049,8 @@
         "created": "2015-12-27T16:03:32.494Z",
         "kind": "group",
         "abbreviation": "GUE/NGL",
-        "fingerprint": "0ea778b4de418eaf9a9ffe7e0aa8a48775506d8b"
+        "fingerprint": "0ea778b4de418eaf9a9ffe7e0aa8a48775506d8b",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 42
@@ -5011,7 +5062,8 @@
         "created": "2015-12-27T16:03:32.500Z",
         "kind": "group",
         "abbreviation": "GUE/NGL",
-        "fingerprint": "9529277f277ef13290e54f8717108dc0592d1f32"
+        "fingerprint": "9529277f277ef13290e54f8717108dc0592d1f32",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 43
@@ -5023,7 +5075,8 @@
         "created": "2015-12-27T16:03:32.547Z",
         "kind": "organization",
         "abbreviation": "",
-        "fingerprint": "bd5d8c24d2d8b9a1cb7aa7e5ec150d581c96e946"
+        "fingerprint": "bd5d8c24d2d8b9a1cb7aa7e5ec150d581c96e946",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 45
@@ -5035,7 +5088,8 @@
         "created": "2015-12-27T16:03:32.553Z",
         "kind": "organization",
         "abbreviation": "",
-        "fingerprint": "437591e26ed112c503413620fec58ce7c21b7311"
+        "fingerprint": "437591e26ed112c503413620fec58ce7c21b7311",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 46
@@ -5047,7 +5101,8 @@
         "created": "2015-12-27T16:03:33.601Z",
         "kind": "committee",
         "abbreviation": "AGRI",
-        "fingerprint": "3c73863a158c48175bc4996411bf1648effab223"
+        "fingerprint": "3c73863a158c48175bc4996411bf1648effab223",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 47
@@ -5059,7 +5114,8 @@
         "created": "2015-12-27T16:03:33.606Z",
         "kind": "committee",
         "abbreviation": "ENVI",
-        "fingerprint": "9d81a89ff2836afbe40dc4109b085c00bf0b1fdd"
+        "fingerprint": "9d81a89ff2836afbe40dc4109b085c00bf0b1fdd",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 48
@@ -5071,7 +5127,8 @@
         "created": "2015-12-27T16:03:33.617Z",
         "kind": "committee",
         "abbreviation": "INTA",
-        "fingerprint": "cc9baed4163f67017af4e7308f1dcb3dab8cd69a"
+        "fingerprint": "cc9baed4163f67017af4e7308f1dcb3dab8cd69a",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 49
@@ -5083,7 +5140,8 @@
         "created": "2015-12-27T16:03:33.632Z",
         "kind": "committee",
         "abbreviation": "SURE",
-        "fingerprint": "0cd18437373534a619c5b6552ee1aaa73161370f"
+        "fingerprint": "0cd18437373534a619c5b6552ee1aaa73161370f",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 50
@@ -5095,7 +5153,8 @@
         "created": "2015-12-27T16:03:33.663Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "b6344bc3e3649ec0b0c10db28aa997a58ec6b3c7"
+        "fingerprint": "b6344bc3e3649ec0b0c10db28aa997a58ec6b3c7",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 51
@@ -5107,7 +5166,8 @@
         "created": "2015-12-27T16:03:33.699Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "bc0755217ddd5b98ed7db4f6deffe38a5698b46c"
+        "fingerprint": "bc0755217ddd5b98ed7db4f6deffe38a5698b46c",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 52
@@ -5119,7 +5179,8 @@
         "created": "2015-12-27T16:03:33.712Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "2bcceb82a9546435a63652672fac48660951c741"
+        "fingerprint": "2bcceb82a9546435a63652672fac48660951c741",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 53
@@ -5131,7 +5192,8 @@
         "created": "2015-12-27T16:03:33.735Z",
         "kind": "group",
         "abbreviation": "PPE-DE",
-        "fingerprint": "cab4a9a406aa114716967e6fd6e698dfd2421794"
+        "fingerprint": "cab4a9a406aa114716967e6fd6e698dfd2421794",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 54
@@ -5143,7 +5205,8 @@
         "created": "2015-12-27T16:03:34.099Z",
         "kind": "committee",
         "abbreviation": "PECH",
-        "fingerprint": "14c5c0cada7bb36ae57d6123ab17123c4efc0b8c"
+        "fingerprint": "14c5c0cada7bb36ae57d6123ab17123c4efc0b8c",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 55
@@ -5155,7 +5218,8 @@
         "created": "2015-12-27T16:03:34.108Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "c8ab0e63c992e0727c522e2fe5209ffe5535f669"
+        "fingerprint": "c8ab0e63c992e0727c522e2fe5209ffe5535f669",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 56
@@ -5167,7 +5231,8 @@
         "created": "2015-12-27T16:03:34.118Z",
         "kind": "country",
         "abbreviation": "NL",
-        "fingerprint": "7351af1e7af697798365c5a83e4f8611d59a0a5b"
+        "fingerprint": "7351af1e7af697798365c5a83e4f8611d59a0a5b",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 57
@@ -5179,7 +5244,8 @@
         "created": "2015-12-27T16:03:34.229Z",
         "kind": "committee",
         "abbreviation": "IMCO",
-        "fingerprint": "7b78537337042e64aab020a48679b51fa50f2f10"
+        "fingerprint": "7b78537337042e64aab020a48679b51fa50f2f10",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 58
@@ -5191,7 +5257,8 @@
         "created": "2015-12-27T16:03:34.253Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "4aa9f25622a093b3ece9d04d3c3934a8e988c090"
+        "fingerprint": "4aa9f25622a093b3ece9d04d3c3934a8e988c090",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 59
@@ -5203,7 +5270,8 @@
         "created": "2015-12-27T16:03:34.276Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "3380645ac10ccea0eb822ed556a8a7fbd66b87f6"
+        "fingerprint": "3380645ac10ccea0eb822ed556a8a7fbd66b87f6",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 60
@@ -5215,7 +5283,8 @@
         "created": "2015-12-27T16:03:34.621Z",
         "kind": "committee",
         "abbreviation": "CRIS",
-        "fingerprint": "60cd5cbf993238947a89c8059c6a605fd2859ca9"
+        "fingerprint": "60cd5cbf993238947a89c8059c6a605fd2859ca9",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 61
@@ -5227,7 +5296,8 @@
         "created": "2015-12-27T16:03:34.683Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "6cea8a0411dcc1c59c087caeb5345ef4d77f98e9"
+        "fingerprint": "6cea8a0411dcc1c59c087caeb5345ef4d77f98e9",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 62
@@ -5239,7 +5309,8 @@
         "created": "2015-12-27T16:03:34.702Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "111fa27c8d5d516768dc36fbd62376fa7e5296b3"
+        "fingerprint": "111fa27c8d5d516768dc36fbd62376fa7e5296b3",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 63
@@ -5251,7 +5322,8 @@
         "created": "2015-12-27T16:03:34.712Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "6482a4de9bdda2ae85fb71f78de0cfd49441a0e6"
+        "fingerprint": "6482a4de9bdda2ae85fb71f78de0cfd49441a0e6",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 64
@@ -5263,7 +5335,8 @@
         "created": "2015-12-27T16:03:34.717Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "acec1fdcb45f8bf080ab7d6971d8e29974f8941c"
+        "fingerprint": "acec1fdcb45f8bf080ab7d6971d8e29974f8941c",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 65
@@ -5275,7 +5348,8 @@
         "created": "2015-12-27T16:03:34.732Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "85b7864e84a7f9aaed2cf16ecfc1e93855b1158a"
+        "fingerprint": "85b7864e84a7f9aaed2cf16ecfc1e93855b1158a",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 66
@@ -5287,7 +5361,8 @@
         "created": "2015-12-27T16:03:34.756Z",
         "kind": "group",
         "abbreviation": "PSE",
-        "fingerprint": "bdcddf45a869f242e80961303a719a3e0f29d795"
+        "fingerprint": "bdcddf45a869f242e80961303a719a3e0f29d795",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 67
@@ -5299,7 +5374,8 @@
         "created": "2015-12-27T16:03:34.966Z",
         "kind": "committee",
         "abbreviation": "TRAN",
-        "fingerprint": "675dea89a247d6d86d193adc214554e5927af202"
+        "fingerprint": "675dea89a247d6d86d193adc214554e5927af202",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 68
@@ -5311,7 +5387,8 @@
         "created": "2015-12-27T16:03:34.981Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "93ff8f764de6a7472bbe21e25303509cda291f5e"
+        "fingerprint": "93ff8f764de6a7472bbe21e25303509cda291f5e",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 69
@@ -5323,7 +5400,8 @@
         "created": "2015-12-27T16:03:35.012Z",
         "kind": "organization",
         "abbreviation": "",
-        "fingerprint": "eb99949bb40fd2e906d738eef276a912c5412f67"
+        "fingerprint": "eb99949bb40fd2e906d738eef276a912c5412f67",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 70
@@ -5335,7 +5413,8 @@
         "created": "2015-12-27T16:03:35.398Z",
         "kind": "group",
         "abbreviation": "EFD",
-        "fingerprint": "1c6c4f9fa9c54bde6ee424677368dc651f1484a0"
+        "fingerprint": "1c6c4f9fa9c54bde6ee424677368dc651f1484a0",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 71
@@ -5347,7 +5426,8 @@
         "created": "2015-12-27T16:03:35.667Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "23bb5f3e808b2ea6a02ddbe01705714ecfe7a82a"
+        "fingerprint": "23bb5f3e808b2ea6a02ddbe01705714ecfe7a82a",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 72
@@ -5359,7 +5439,8 @@
         "created": "2015-12-27T16:03:35.687Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "6a2299d06c5f43dc5b60a6f7250c824940e9153e"
+        "fingerprint": "6a2299d06c5f43dc5b60a6f7250c824940e9153e",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 73
@@ -5371,7 +5452,8 @@
         "created": "2015-12-27T16:03:35.711Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "d0a0adace87af0718eee4d718cb57fe0ab890dae"
+        "fingerprint": "d0a0adace87af0718eee4d718cb57fe0ab890dae",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 74
@@ -5383,7 +5465,8 @@
         "created": "2015-12-27T16:03:35.735Z",
         "kind": "group",
         "abbreviation": "UEN",
-        "fingerprint": "eeeb511b2183aa080fce9fdd248b6c3d41ea8c90"
+        "fingerprint": "eeeb511b2183aa080fce9fdd248b6c3d41ea8c90",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 75
@@ -5395,7 +5478,8 @@
         "created": "2015-12-27T16:03:35.740Z",
         "kind": "group",
         "abbreviation": "IND/DEM",
-        "fingerprint": "634d66a0862ab72a109d86cc8379852dd57700e6"
+        "fingerprint": "634d66a0862ab72a109d86cc8379852dd57700e6",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 76
@@ -5407,7 +5491,8 @@
         "created": "2015-12-27T16:03:36.124Z",
         "kind": "committee",
         "abbreviation": "FEMM",
-        "fingerprint": "07290c78bb6679e36a5413d2b8122ff4c1477889"
+        "fingerprint": "07290c78bb6679e36a5413d2b8122ff4c1477889",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 77
@@ -5419,7 +5504,8 @@
         "created": "2015-12-27T16:03:36.213Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "b5bb4ac08d85856d1270f0bca9b8dd60ef402e18"
+        "fingerprint": "b5bb4ac08d85856d1270f0bca9b8dd60ef402e18",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 78
@@ -5431,7 +5517,8 @@
         "created": "2015-12-27T16:03:36.219Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "171567aaa5ebc7bbdcf3fa3b8a293f9ade40c03a"
+        "fingerprint": "171567aaa5ebc7bbdcf3fa3b8a293f9ade40c03a",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 79
@@ -5443,7 +5530,8 @@
         "created": "2015-12-27T16:03:36.334Z",
         "kind": "organization",
         "abbreviation": "",
-        "fingerprint": "3a623d2f97f655cf2c0211c5094ebd6a5d478217"
+        "fingerprint": "3a623d2f97f655cf2c0211c5094ebd6a5d478217",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 80
@@ -5455,7 +5543,8 @@
         "created": "2015-12-27T16:03:36.859Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "3d2d9370cc501b1208a4692baf69deeab1e65d0a"
+        "fingerprint": "3d2d9370cc501b1208a4692baf69deeab1e65d0a",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 81
@@ -5467,7 +5556,8 @@
         "created": "2015-12-27T16:03:36.868Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "ebc7400c93c7aad143a44037abcd384a151c9973"
+        "fingerprint": "ebc7400c93c7aad143a44037abcd384a151c9973",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 82
@@ -5479,7 +5569,8 @@
         "created": "2015-12-27T16:03:36.878Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "044927d961dacfb2844be2429269dc79a85402ba"
+        "fingerprint": "044927d961dacfb2844be2429269dc79a85402ba",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 83
@@ -5491,7 +5582,8 @@
         "created": "2015-12-27T16:03:36.896Z",
         "kind": "group",
         "abbreviation": "Greens/EFA",
-        "fingerprint": "8629bf187b99268f92af6c06fb0414816aee18b3"
+        "fingerprint": "8629bf187b99268f92af6c06fb0414816aee18b3",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 84
@@ -5503,7 +5595,8 @@
         "created": "2015-12-27T16:03:36.907Z",
         "kind": "country",
         "abbreviation": "HU",
-        "fingerprint": "39fe62a77ad867b0395f452e50474cfb9c33f0da"
+        "fingerprint": "39fe62a77ad867b0395f452e50474cfb9c33f0da",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 85
@@ -5515,7 +5608,8 @@
         "created": "2015-12-27T16:03:37.137Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "e2ece7c8073aa5d8ed32a003ecb5989eb363fe95"
+        "fingerprint": "e2ece7c8073aa5d8ed32a003ecb5989eb363fe95",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 86
@@ -5527,7 +5621,8 @@
         "created": "2015-12-27T16:03:37.142Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "2c7d8e7494a270ea6a9012b027edb9271ff0380a"
+        "fingerprint": "2c7d8e7494a270ea6a9012b027edb9271ff0380a",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 87
@@ -5539,7 +5634,8 @@
         "created": "2015-12-27T16:03:37.152Z",
         "kind": "country",
         "abbreviation": "CZ",
-        "fingerprint": "f4c8648e5a0f64c7ec80e6d76b2046c6db9d07f3"
+        "fingerprint": "f4c8648e5a0f64c7ec80e6d76b2046c6db9d07f3",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 88
@@ -5551,7 +5647,8 @@
         "created": "2015-12-27T16:03:37.440Z",
         "kind": "committee",
         "abbreviation": "CONT",
-        "fingerprint": "53ab3219fbcbe9f02d9da871f7b5c92afbbd49e4"
+        "fingerprint": "53ab3219fbcbe9f02d9da871f7b5c92afbbd49e4",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 89
@@ -5563,7 +5660,8 @@
         "created": "2015-12-27T16:03:37.497Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "4141808c75fa06e78919846a66c09bb25bd2ab69"
+        "fingerprint": "4141808c75fa06e78919846a66c09bb25bd2ab69",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 90
@@ -5575,7 +5673,8 @@
         "created": "2015-12-27T16:03:37.513Z",
         "kind": "country",
         "abbreviation": "ES",
-        "fingerprint": "287fb1cd6a6cb8f46998db18052111a99444f2fb"
+        "fingerprint": "287fb1cd6a6cb8f46998db18052111a99444f2fb",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 91
@@ -5587,7 +5686,8 @@
         "created": "2015-12-27T16:03:37.766Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "42f6fddfd6f6fc480c686593639ef71173d98e56"
+        "fingerprint": "42f6fddfd6f6fc480c686593639ef71173d98e56",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 92
@@ -5599,7 +5699,8 @@
         "created": "2015-12-27T16:03:37.801Z",
         "kind": "country",
         "abbreviation": "LV",
-        "fingerprint": "6f34f5bc7b09a3350c317e6892d97e8c76868f09"
+        "fingerprint": "6f34f5bc7b09a3350c317e6892d97e8c76868f09",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 93
@@ -5611,7 +5712,8 @@
         "created": "2015-12-27T16:03:38.340Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "ab2772db9664b2fe09e8c8d5e36f4a3b8a6c6b94"
+        "fingerprint": "ab2772db9664b2fe09e8c8d5e36f4a3b8a6c6b94",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 94
@@ -5623,7 +5725,8 @@
         "created": "2015-12-27T16:03:38.360Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "11550c74d514fb8663bfd42eac2a4dffe6fafe77"
+        "fingerprint": "11550c74d514fb8663bfd42eac2a4dffe6fafe77",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 95
@@ -5635,7 +5738,8 @@
         "created": "2015-12-27T16:03:39.543Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "a2ff552f212a1766e32167330a80b861c200bf3b"
+        "fingerprint": "a2ff552f212a1766e32167330a80b861c200bf3b",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 96
@@ -5647,7 +5751,8 @@
         "created": "2015-12-27T16:03:40.000Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "25ea9a5e8434c4c550c2fa4d7d8b79769f5eb8c0"
+        "fingerprint": "25ea9a5e8434c4c550c2fa4d7d8b79769f5eb8c0",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 97
@@ -5659,7 +5764,8 @@
         "created": "2015-12-27T16:03:41.156Z",
         "kind": "country",
         "abbreviation": "BE",
-        "fingerprint": "4010a8da8f4930601ef6cd3f3e988c2e843dc742"
+        "fingerprint": "4010a8da8f4930601ef6cd3f3e988c2e843dc742",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 98
@@ -5671,7 +5777,8 @@
         "created": "2015-12-27T16:03:41.376Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "c229ebeda0bf3c97da40ef775c149369c5e8a070"
+        "fingerprint": "c229ebeda0bf3c97da40ef775c149369c5e8a070",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 99
@@ -5683,7 +5790,8 @@
         "created": "2015-12-27T16:03:41.396Z",
         "kind": "country",
         "abbreviation": "IT",
-        "fingerprint": "f36a9c06d7b92b8c65ad3d6717500ed2b8c1c2a6"
+        "fingerprint": "f36a9c06d7b92b8c65ad3d6717500ed2b8c1c2a6",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 100
@@ -5695,7 +5803,8 @@
         "created": "2015-12-27T16:03:42.041Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "ae4f709686238bb59f0e8d3f1f1362d6c6777744"
+        "fingerprint": "ae4f709686238bb59f0e8d3f1f1362d6c6777744",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 101
@@ -5707,7 +5816,8 @@
         "created": "2015-12-27T16:03:42.065Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "8e98af76f45b1d2a9b3f540d812ec3ef6256492e"
+        "fingerprint": "8e98af76f45b1d2a9b3f540d812ec3ef6256492e",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 102
@@ -5719,7 +5829,8 @@
         "created": "2015-12-27T16:03:42.090Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "ccc2152cd5ec1ef9497e0e65ae7c0cad61439c03"
+        "fingerprint": "ccc2152cd5ec1ef9497e0e65ae7c0cad61439c03",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 103
@@ -5731,7 +5842,8 @@
         "created": "2015-12-27T16:03:42.157Z",
         "kind": "group",
         "abbreviation": "EPP",
-        "fingerprint": "669373eca233e4101a0af25debda58fdfd59741f"
+        "fingerprint": "669373eca233e4101a0af25debda58fdfd59741f",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 104
@@ -5743,7 +5855,8 @@
         "created": "2015-12-27T16:03:42.913Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "69630386e1078e6247b05b5606ea6d8436a0848b"
+        "fingerprint": "69630386e1078e6247b05b5606ea6d8436a0848b",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 105
@@ -5755,7 +5868,8 @@
         "created": "2015-12-27T16:03:42.967Z",
         "kind": "country",
         "abbreviation": "AT",
-        "fingerprint": "7b37fb29f750421d82ee36539c2cb5bca9cef938"
+        "fingerprint": "7b37fb29f750421d82ee36539c2cb5bca9cef938",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 106
@@ -5767,7 +5881,8 @@
         "created": "2015-12-27T16:03:43.381Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "17d431a1bc6e86ce67daff28a0e9d2c8c2af5532"
+        "fingerprint": "17d431a1bc6e86ce67daff28a0e9d2c8c2af5532",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 107
@@ -5779,7 +5894,8 @@
         "created": "2015-12-27T16:03:43.403Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "912abe0e8bfdfcc091072aab169ffd2f77fcaea8"
+        "fingerprint": "912abe0e8bfdfcc091072aab169ffd2f77fcaea8",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 108
@@ -5791,7 +5907,8 @@
         "created": "2015-12-27T16:03:43.736Z",
         "kind": "country",
         "abbreviation": "PT",
-        "fingerprint": "2b8fffbbc2091ce2b61a552ae68e5633c7715e3e"
+        "fingerprint": "2b8fffbbc2091ce2b61a552ae68e5633c7715e3e",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 109
@@ -5803,7 +5920,8 @@
         "created": "2015-12-27T16:03:45.838Z",
         "kind": "country",
         "abbreviation": "FR",
-        "fingerprint": "b912783fa1b00d123f918549095e7e2a4288c754"
+        "fingerprint": "b912783fa1b00d123f918549095e7e2a4288c754",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 110
@@ -5815,7 +5933,8 @@
         "created": "2015-12-27T16:03:47.768Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "fe7cabd2bfa99251e4f9bb2d700ec2a1898c312b"
+        "fingerprint": "fe7cabd2bfa99251e4f9bb2d700ec2a1898c312b",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 111
@@ -5827,7 +5946,8 @@
         "created": "2015-12-27T16:03:47.797Z",
         "kind": "country",
         "abbreviation": "LU",
-        "fingerprint": "a63c43da1767158ed37423f4ee321a0fdc1260a0"
+        "fingerprint": "a63c43da1767158ed37423f4ee321a0fdc1260a0",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 112
@@ -5839,7 +5959,8 @@
         "created": "2015-12-27T16:03:48.083Z",
         "kind": "country",
         "abbreviation": "DK",
-        "fingerprint": "9b824198b741d174a0fa91c0e8928254e0a538fe"
+        "fingerprint": "9b824198b741d174a0fa91c0e8928254e0a538fe",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 113
@@ -5851,7 +5972,8 @@
         "created": "2015-12-27T16:03:48.666Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "baaf3964f8783c71040001d0c35c96201df88ec5"
+        "fingerprint": "baaf3964f8783c71040001d0c35c96201df88ec5",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 114
@@ -5863,7 +5985,8 @@
         "created": "2015-12-27T16:03:49.415Z",
         "kind": "country",
         "abbreviation": "FI",
-        "fingerprint": "2d49d4737b00ec60d1c09200cf4edd8021a5d304"
+        "fingerprint": "2d49d4737b00ec60d1c09200cf4edd8021a5d304",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 115
@@ -5875,7 +5998,8 @@
         "created": "2015-12-27T16:03:50.297Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "0bdd44704ca5f0cd74f6bf0aeadfd46e9df87b2b"
+        "fingerprint": "0bdd44704ca5f0cd74f6bf0aeadfd46e9df87b2b",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 116
@@ -5887,7 +6011,8 @@
         "created": "2015-12-27T16:03:50.309Z",
         "kind": "country",
         "abbreviation": "BG",
-        "fingerprint": "423cd78fb16250f3b83689546daee2cb3f8e7aff"
+        "fingerprint": "423cd78fb16250f3b83689546daee2cb3f8e7aff",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 117
@@ -5899,7 +6024,8 @@
         "created": "2015-12-27T16:03:50.986Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "7f975789d28b10a65dc89d3e46fc845fa4c5231e"
+        "fingerprint": "7f975789d28b10a65dc89d3e46fc845fa4c5231e",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 118
@@ -5911,7 +6037,8 @@
         "created": "2015-12-27T16:03:51.709Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "05e7e79ab77d34fbafe5cb03602e3544bc252263"
+        "fingerprint": "05e7e79ab77d34fbafe5cb03602e3544bc252263",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 119
@@ -5923,7 +6050,8 @@
         "created": "2015-12-27T16:03:55.459Z",
         "kind": "country",
         "abbreviation": "SI",
-        "fingerprint": "9394905e12f193296e8e5968498908de0d3d917f"
+        "fingerprint": "9394905e12f193296e8e5968498908de0d3d917f",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 120
@@ -5935,7 +6063,8 @@
         "created": "2015-12-27T16:03:58.940Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "6d1f6a5bcc43f05a7cfdee1d2bc7b0d0cc5db6dc"
+        "fingerprint": "6d1f6a5bcc43f05a7cfdee1d2bc7b0d0cc5db6dc",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 121
@@ -5947,7 +6076,8 @@
         "created": "2015-12-27T16:03:59.630Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "0a8e547137dc5c0c5491eef9a45bc2ea4bd8950e"
+        "fingerprint": "0a8e547137dc5c0c5491eef9a45bc2ea4bd8950e",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 122
@@ -5959,7 +6089,8 @@
         "created": "2015-12-27T16:04:00.384Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "33af01f5ae2b8afbdef0a7ee99b2d34d9c486a02"
+        "fingerprint": "33af01f5ae2b8afbdef0a7ee99b2d34d9c486a02",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 123
@@ -5971,7 +6102,8 @@
         "created": "2015-12-27T16:04:00.390Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "d2a029ff5dec89e1ef1aed6ed40fdf32b4014fc2"
+        "fingerprint": "d2a029ff5dec89e1ef1aed6ed40fdf32b4014fc2",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 124
@@ -5983,7 +6115,8 @@
         "created": "2015-12-27T16:04:00.396Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "3d0bc2c9506b90bb22e02e3866c1d14c9be1867e"
+        "fingerprint": "3d0bc2c9506b90bb22e02e3866c1d14c9be1867e",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 125
@@ -5995,7 +6128,8 @@
         "created": "2015-12-27T16:04:07.308Z",
         "kind": "country",
         "abbreviation": "EE",
-        "fingerprint": "d97b767c8db6b3c5de8cac18539e1f4a41e251a9"
+        "fingerprint": "d97b767c8db6b3c5de8cac18539e1f4a41e251a9",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 126
@@ -6007,7 +6141,8 @@
         "created": "2015-12-27T16:04:09.198Z",
         "kind": "organization",
         "abbreviation": "",
-        "fingerprint": "be8eb1067f1a6641d31154a7553943066cee6850"
+        "fingerprint": "be8eb1067f1a6641d31154a7553943066cee6850",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 127
@@ -6019,7 +6154,8 @@
         "created": "2015-12-27T16:04:09.418Z",
         "kind": "group",
         "abbreviation": "ENF",
-        "fingerprint": "a2c7d81af6acb936c910d692706ffb8df077826c"
+        "fingerprint": "a2c7d81af6acb936c910d692706ffb8df077826c",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 128
@@ -6031,7 +6167,8 @@
         "created": "2015-12-27T16:04:10.747Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "b961a55212f1f4264764435b1cab418dd24d8d97"
+        "fingerprint": "b961a55212f1f4264764435b1cab418dd24d8d97",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 129
@@ -6043,7 +6180,8 @@
         "created": "2015-12-27T16:04:10.783Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "c02e7e16ff1dcdb8a241ea35d81830cfd5b5db2b"
+        "fingerprint": "c02e7e16ff1dcdb8a241ea35d81830cfd5b5db2b",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 130
@@ -6055,7 +6193,8 @@
         "created": "2015-12-27T16:04:10.800Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "d73af0e95ddbd65c7cb7f63d86d52662c295c646"
+        "fingerprint": "d73af0e95ddbd65c7cb7f63d86d52662c295c646",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 131
@@ -6067,7 +6206,8 @@
         "created": "2015-12-27T16:04:10.820Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "4235f0ba3b0cea0529565b415e93cf0e3652cc90"
+        "fingerprint": "4235f0ba3b0cea0529565b415e93cf0e3652cc90",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 132
@@ -6079,7 +6219,8 @@
         "created": "2015-12-27T16:04:14.955Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "451e5d35e10e983e3b514b4dc74142d37f0131a5"
+        "fingerprint": "451e5d35e10e983e3b514b4dc74142d37f0131a5",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 133
@@ -6091,7 +6232,8 @@
         "created": "2015-12-27T16:04:17.442Z",
         "kind": "country",
         "abbreviation": "GR",
-        "fingerprint": "ae62a38e9d6b431586932605b4644cec9340af0f"
+        "fingerprint": "ae62a38e9d6b431586932605b4644cec9340af0f",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 134
@@ -6103,7 +6245,8 @@
         "created": "2015-12-27T16:04:19.283Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "a24b4e184cf25f0e300c07a1402b65243f5ba93d"
+        "fingerprint": "a24b4e184cf25f0e300c07a1402b65243f5ba93d",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 135
@@ -6115,7 +6258,8 @@
         "created": "2015-12-27T16:04:21.182Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "5bdd75e70de4baa05c4816adc3697076a70f8b90"
+        "fingerprint": "5bdd75e70de4baa05c4816adc3697076a70f8b90",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 136
@@ -6127,7 +6271,8 @@
         "created": "2015-12-27T16:04:23.646Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "629d1e35b41e9a4d089d3398870fad345ffdf459"
+        "fingerprint": "629d1e35b41e9a4d089d3398870fad345ffdf459",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 137
@@ -6139,7 +6284,8 @@
         "created": "2015-12-27T16:04:23.657Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "5fafde747f5195c0b49c35936e859cefd1cbf71b"
+        "fingerprint": "5fafde747f5195c0b49c35936e859cefd1cbf71b",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 138
@@ -6151,7 +6297,8 @@
         "created": "2015-12-27T16:04:23.673Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "acc9d5350c3e88980f4e5119418e168030fd75c9"
+        "fingerprint": "acc9d5350c3e88980f4e5119418e168030fd75c9",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 139
@@ -6163,7 +6310,8 @@
         "created": "2015-12-27T16:04:32.704Z",
         "kind": "country",
         "abbreviation": "SE",
-        "fingerprint": "ea4cacc64af470d01e5b4da150b8b9d3a9dc4bfe"
+        "fingerprint": "ea4cacc64af470d01e5b4da150b8b9d3a9dc4bfe",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 140
@@ -6175,7 +6323,8 @@
         "created": "2015-12-27T16:04:34.387Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "920d936c976ee2b6fff4ce760dfb154d926dc2d1"
+        "fingerprint": "920d936c976ee2b6fff4ce760dfb154d926dc2d1",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 141
@@ -6187,7 +6336,8 @@
         "created": "2015-12-27T16:04:38.789Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "e6ecd9e6628daddc401df8ead30c7298b1b4d2d0"
+        "fingerprint": "e6ecd9e6628daddc401df8ead30c7298b1b4d2d0",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 142
@@ -6199,7 +6349,8 @@
         "created": "2015-12-27T16:04:38.836Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "4c1fc10c90dea7a543ae906e11ff50baeefb49ba"
+        "fingerprint": "4c1fc10c90dea7a543ae906e11ff50baeefb49ba",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 143
@@ -6211,7 +6362,8 @@
         "created": "2015-12-27T16:04:38.861Z",
         "kind": "group",
         "abbreviation": "ELDR",
-        "fingerprint": "4ee64aca0737961bd787c145224d0b1347f6b85b"
+        "fingerprint": "4ee64aca0737961bd787c145224d0b1347f6b85b",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 144
@@ -6223,7 +6375,8 @@
         "created": "2015-12-27T16:04:40.553Z",
         "kind": "country",
         "abbreviation": "LT",
-        "fingerprint": "2f13a73e617aaf97dbc618b61e2b3505cb0fe98c"
+        "fingerprint": "2f13a73e617aaf97dbc618b61e2b3505cb0fe98c",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 145
@@ -6235,7 +6388,8 @@
         "created": "2015-12-27T16:04:42.405Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "181e795ce80c3e81bdeec444273bd76add8bd4aa"
+        "fingerprint": "181e795ce80c3e81bdeec444273bd76add8bd4aa",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 146
@@ -6247,7 +6401,8 @@
         "created": "2015-12-27T16:04:42.541Z",
         "kind": "organization",
         "abbreviation": "",
-        "fingerprint": "5b9792db0eb0697fc5812e1c6a9a91842ef77f28"
+        "fingerprint": "5b9792db0eb0697fc5812e1c6a9a91842ef77f28",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 147
@@ -6259,7 +6414,8 @@
         "created": "2015-12-27T16:04:44.926Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "db2654f2b0f242ae65ab701bf0f0043c650c8f7e"
+        "fingerprint": "db2654f2b0f242ae65ab701bf0f0043c650c8f7e",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 148
@@ -6271,7 +6427,8 @@
         "created": "2015-12-27T16:04:50.770Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "35588fd232a2f314c16242334bad5f5190b4efae"
+        "fingerprint": "35588fd232a2f314c16242334bad5f5190b4efae",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 150
@@ -6283,7 +6440,8 @@
         "created": "2015-12-27T16:04:50.785Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "451d798994c47b4b1fccfa5850aa90fe3eaee3c8"
+        "fingerprint": "451d798994c47b4b1fccfa5850aa90fe3eaee3c8",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 151
@@ -6295,7 +6453,8 @@
         "created": "2015-12-27T16:04:50.791Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "8ae92f9ec1b732b35dbe014f04652ade1dd2e332"
+        "fingerprint": "8ae92f9ec1b732b35dbe014f04652ade1dd2e332",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 152
@@ -6307,7 +6466,8 @@
         "created": "2015-12-27T16:04:50.859Z",
         "kind": "group",
         "abbreviation": "LDR",
-        "fingerprint": "d867a41ee864ac6caefcaceeb3a5db532a94c335"
+        "fingerprint": "d867a41ee864ac6caefcaceeb3a5db532a94c335",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 153
@@ -6319,7 +6479,8 @@
         "created": "2015-12-27T16:04:53.492Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "b7b3ef3b34728ede8422aa8546e70c423637e589"
+        "fingerprint": "b7b3ef3b34728ede8422aa8546e70c423637e589",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 154
@@ -6331,7 +6492,8 @@
         "created": "2015-12-27T16:04:53.535Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "f47a56fafeb4807ca4c6d7c534196514aa358a15"
+        "fingerprint": "f47a56fafeb4807ca4c6d7c534196514aa358a15",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 156
@@ -6343,7 +6505,8 @@
         "created": "2015-12-27T16:04:55.794Z",
         "kind": "group",
         "abbreviation": "EDA",
-        "fingerprint": "dcb69ba06c6566e832d9d70947053a4946035d2c"
+        "fingerprint": "dcb69ba06c6566e832d9d70947053a4946035d2c",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 162
@@ -6355,7 +6518,8 @@
         "created": "2015-12-27T16:05:00.943Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "b265b84cad681fbccca44bdfcab0321800bc1716"
+        "fingerprint": "b265b84cad681fbccca44bdfcab0321800bc1716",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 163
@@ -6367,7 +6531,8 @@
         "created": "2015-12-27T16:05:00.958Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "d761392121763e6f9c7813d60b7c8f185a06f5b9"
+        "fingerprint": "d761392121763e6f9c7813d60b7c8f185a06f5b9",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 164
@@ -6379,7 +6544,8 @@
         "created": "2015-12-27T16:05:00.967Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "01a5edd340eddd20aff629b1efe823e39738447d"
+        "fingerprint": "01a5edd340eddd20aff629b1efe823e39738447d",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 165
@@ -6391,7 +6557,8 @@
         "created": "2015-12-27T16:05:03.576Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "fb0cca941803a2ed54970dd91308dcf593826694"
+        "fingerprint": "fb0cca941803a2ed54970dd91308dcf593826694",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 166
@@ -6403,7 +6570,8 @@
         "created": "2015-12-27T16:05:03.607Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "6731702fe94dfb2162c98ae8f9fd97cab1b4f77c"
+        "fingerprint": "6731702fe94dfb2162c98ae8f9fd97cab1b4f77c",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 167
@@ -6415,7 +6583,8 @@
         "created": "2015-12-27T16:05:06.510Z",
         "kind": "group",
         "abbreviation": "SOC",
-        "fingerprint": "d15c543360712349fb6b87b7e126dd4af41291a1"
+        "fingerprint": "d15c543360712349fb6b87b7e126dd4af41291a1",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 168
@@ -6427,7 +6596,8 @@
         "created": "2015-12-27T16:05:31.664Z",
         "kind": "country",
         "abbreviation": "SK",
-        "fingerprint": "0ca95a837c8a4b081f3ccab175a3ffca07ebc568"
+        "fingerprint": "0ca95a837c8a4b081f3ccab175a3ffca07ebc568",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 169
@@ -6439,7 +6609,8 @@
         "created": "2015-12-27T16:05:40.521Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "97700162d80c0d6c99cb02942c740b40aa2dfb52"
+        "fingerprint": "97700162d80c0d6c99cb02942c740b40aa2dfb52",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 170
@@ -6451,7 +6622,8 @@
         "created": "2015-12-27T16:05:44.901Z",
         "kind": "group",
         "abbreviation": "EDD",
-        "fingerprint": "eb5f5c79ec291098a6b0fbe617acf250561c80d6"
+        "fingerprint": "eb5f5c79ec291098a6b0fbe617acf250561c80d6",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 171
@@ -6463,7 +6635,8 @@
         "created": "2015-12-27T16:06:02.273Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "90c7c3467995162b6b9cc3860b99264e74a63715"
+        "fingerprint": "90c7c3467995162b6b9cc3860b99264e74a63715",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 173
@@ -6475,7 +6648,8 @@
         "created": "2015-12-27T16:06:04.066Z",
         "kind": "group",
         "abbreviation": "ER",
-        "fingerprint": "0797d178cf531399d3c8db188a4e0a54b0c03f84"
+        "fingerprint": "0797d178cf531399d3c8db188a4e0a54b0c03f84",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 174
@@ -6487,7 +6661,8 @@
         "created": "2015-12-27T16:06:06.560Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "6aa86abd70c5f86691f29b23baa427f891594836"
+        "fingerprint": "6aa86abd70c5f86691f29b23baa427f891594836",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 175
@@ -6499,7 +6674,8 @@
         "created": "2015-12-27T16:06:06.617Z",
         "kind": "group",
         "abbreviation": "LD",
-        "fingerprint": "578aa2847878fa82dc9962e6ec9bf5e61328e693"
+        "fingerprint": "578aa2847878fa82dc9962e6ec9bf5e61328e693",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 176
@@ -6511,7 +6687,8 @@
         "created": "2015-12-27T16:06:18.024Z",
         "kind": "group",
         "abbreviation": "ERA",
-        "fingerprint": "470e8139a4f8245741658aab1bb9ded61df5f1c3"
+        "fingerprint": "470e8139a4f8245741658aab1bb9ded61df5f1c3",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 177
@@ -6523,7 +6700,8 @@
         "created": "2015-12-27T16:06:28.934Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "dfdd5c3c33256ce1b7c0f9a3596454cfc91ee2c6"
+        "fingerprint": "dfdd5c3c33256ce1b7c0f9a3596454cfc91ee2c6",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 178
@@ -6535,7 +6713,8 @@
         "created": "2015-12-27T16:06:31.232Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "f77ae45d24ddcf30e31d564845371daae70ae745"
+        "fingerprint": "f77ae45d24ddcf30e31d564845371daae70ae745",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 179
@@ -6547,7 +6726,8 @@
         "created": "2015-12-27T16:06:41.488Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "124c5841d0c6a9f3dbfab303d6f5076e7bc7b370"
+        "fingerprint": "124c5841d0c6a9f3dbfab303d6f5076e7bc7b370",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 180
@@ -6559,7 +6739,8 @@
         "created": "2015-12-27T16:06:41.535Z",
         "kind": "group",
         "abbreviation": "UFE",
-        "fingerprint": "91601c5958018a8b3ee8179683059593152d08dd"
+        "fingerprint": "91601c5958018a8b3ee8179683059593152d08dd",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 181
@@ -6571,7 +6752,8 @@
         "created": "2015-12-27T16:06:41.548Z",
         "kind": "country",
         "abbreviation": "IE",
-        "fingerprint": "4c6a6bf1707f3df3756b475dd84f7c3c412ad4a2"
+        "fingerprint": "4c6a6bf1707f3df3756b475dd84f7c3c412ad4a2",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 182
@@ -6583,7 +6765,8 @@
         "created": "2015-12-27T16:06:51.030Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "009c8ae5630697fac7bd4e3da66af1cc76a4035a"
+        "fingerprint": "009c8ae5630697fac7bd4e3da66af1cc76a4035a",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 183
@@ -6595,7 +6778,8 @@
         "created": "2015-12-27T16:07:18.488Z",
         "kind": "country",
         "abbreviation": "CY",
-        "fingerprint": "8d2f1e4d0976fa72efdb143c01950d2b2fedca17"
+        "fingerprint": "8d2f1e4d0976fa72efdb143c01950d2b2fedca17",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 184
@@ -6607,7 +6791,8 @@
         "created": "2015-12-27T16:07:49.899Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "7abc286a00fca26192b303b9335702d239ca05a3"
+        "fingerprint": "7abc286a00fca26192b303b9335702d239ca05a3",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 185
@@ -6619,7 +6804,8 @@
         "created": "2015-12-27T16:08:15.625Z",
         "kind": "country",
         "abbreviation": "MT",
-        "fingerprint": "e5789a9bdf3dade9adb0dae90e640e290a01d1e5"
+        "fingerprint": "e5789a9bdf3dade9adb0dae90e640e290a01d1e5",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 186
@@ -6631,7 +6817,8 @@
         "created": "2015-12-27T16:08:35.840Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "e5cb69ea462068e481e6b5f7c2575e34a517c454"
+        "fingerprint": "e5cb69ea462068e481e6b5f7c2575e34a517c454",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 188
@@ -6643,7 +6830,8 @@
         "created": "2015-12-27T16:09:03.259Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "f4ab8081ddcbacf4f55dc96f357b5a8c241c5e39"
+        "fingerprint": "f4ab8081ddcbacf4f55dc96f357b5a8c241c5e39",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 189
@@ -6655,7 +6843,8 @@
         "created": "2015-12-27T16:09:08.091Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "afe5e44b92216845c533dd54902b1e91a7f52e2f"
+        "fingerprint": "afe5e44b92216845c533dd54902b1e91a7f52e2f",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 190
@@ -6667,7 +6856,8 @@
         "created": "2015-12-27T16:09:08.101Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "50521d98a464614d73e241c2052b26ab73260d9a"
+        "fingerprint": "50521d98a464614d73e241c2052b26ab73260d9a",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 191
@@ -6679,7 +6869,8 @@
         "created": "2015-12-27T16:09:08.112Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "7a8f0efca25f142a1921962f78d331ed59c0ed51"
+        "fingerprint": "7a8f0efca25f142a1921962f78d331ed59c0ed51",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 192
@@ -6691,7 +6882,8 @@
         "created": "2015-12-27T16:09:08.125Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "6a1970a6762e4fa5c06edf063b2f5365d4739ee9"
+        "fingerprint": "6a1970a6762e4fa5c06edf063b2f5365d4739ee9",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 193
@@ -6703,7 +6895,8 @@
         "created": "2015-12-27T16:09:08.136Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "a13d4f671a279e893fbc1f6f80c6efc30247582f"
+        "fingerprint": "a13d4f671a279e893fbc1f6f80c6efc30247582f",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 194
@@ -6715,7 +6908,8 @@
         "created": "2015-12-27T16:09:08.147Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "09d61ada18ec3e8374a0a472d27f6efd8dbec062"
+        "fingerprint": "09d61ada18ec3e8374a0a472d27f6efd8dbec062",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 195
@@ -6727,7 +6921,8 @@
         "created": "2015-12-27T16:10:29.021Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "fc4a54b604e4032178129bea60a7a22b83a4d793"
+        "fingerprint": "fc4a54b604e4032178129bea60a7a22b83a4d793",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 197
@@ -6739,7 +6934,8 @@
         "created": "2015-12-27T16:10:55.139Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "9950bd8c809cf6d99da6b822b33140e35c11e2d1"
+        "fingerprint": "9950bd8c809cf6d99da6b822b33140e35c11e2d1",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 198
@@ -6751,7 +6947,8 @@
         "created": "2015-12-27T16:11:11.150Z",
         "kind": "group",
         "abbreviation": "GUE/NGL",
-        "fingerprint": "79224b1529ffb46736b23ee2f64749bfdcbf1cc5"
+        "fingerprint": "79224b1529ffb46736b23ee2f64749bfdcbf1cc5",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 199
@@ -6763,10 +6960,23 @@
         "created": "2015-12-27T16:11:23.253Z",
         "kind": "group",
         "abbreviation": "Greens/EFA",
-        "fingerprint": "143c61fa1e87543916b86d5d4b62c1147679437e"
+        "fingerprint": "143c61fa1e87543916b86d5d4b62c1147679437e",
+        "chamber": 1
     },
     "model": "representatives.group",
     "pk": 200
+},
+{
+    "fields": {
+        "updated": "2015-12-27T16:03:31.046Z",
+        "name": "European Parliament",
+        "created": "2015-12-27T16:03:31.046Z",
+        "kind": "chamber",
+        "abbreviation": "EP",
+        "chamber": 1
+    },
+    "model": "representatives.group",
+    "pk": 201
 },
 {
     "fields": {
