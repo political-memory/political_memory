@@ -92,6 +92,7 @@ INSTALLED_APPS = (
     'memopol',
     'representatives',
     'representatives_votes',
+    'representatives_votes.contrib.api',
     'representatives_recommendations',
     'representatives_positions',
 )
