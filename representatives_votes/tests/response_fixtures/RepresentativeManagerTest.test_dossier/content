@@ -1,0 +1,37 @@
+{
+    "url": "http://testserver/api/dossiers/1/",
+    "proposals": [
+        {
+            "dossier": "http://testserver/api/dossiers/1/",
+            "title": "A7-0234/2012 -  Charles Goerens - § 31",
+            "description": "",
+            "reference": "A7-0234/2012",
+            "datetime": "2012-10-23T16:31:10Z",
+            "kind": "§ 31",
+            "total_abstain": 2,
+            "total_against": 0,
+            "total_for": 0,
+            "url": "http://testserver/api/proposals/1/"
+        },
+        {
+            "dossier": "http://testserver/api/dossiers/1/",
+            "title": "A7-0234/2012 -  Charles Goerens - Résolution",
+            "description": "",
+            "reference": "A7-0234/2012",
+            "datetime": "2012-10-23T16:34:32Z",
+            "kind": "Résolution",
+            "total_abstain": 0,
+            "total_against": 0,
+            "total_for": 2,
+            "url": "http://testserver/api/proposals/2/"
+        }
+    ],
+    "created": "2015-12-27T11:51:14.770000Z",
+    "updated": "2015-12-27T11:51:14.770000Z",
+    "fingerprint": "9e2cccdc5f6d22afd008af8b5b55dc193c27c5d6",
+    "title": "Agenda for change: the future of EU development policy",
+    "reference": "2012/2002(INI)",
+    "text": "",
+    "link": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2012/2002(INI)",
+    "ext_link": ""
+}

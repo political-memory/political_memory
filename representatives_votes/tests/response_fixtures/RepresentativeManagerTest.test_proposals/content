@@ -1,1 +1,74 @@
-[{"id":1,"fingerprint":"6c1fb67feac3ab2ea567b37aa7dfd0d578bc04b4","dossier":"9e2cccdc5f6d22afd008af8b5b55dc193c27c5d6","dossier_title":"Agenda for change: the future of EU development policy","dossier_reference":"2012/2002(INI)","title":"A7-0234/2012 -  Charles Goerens - § 31","description":"","reference":"A7-0234/2012","datetime":"2012-10-23T16:31:10Z","kind":"§ 31","total_abstain":2,"total_against":0,"total_for":0,"url":"http://testserver/api/proposals/1/?format=json"},{"id":2,"fingerprint":"18df8a97581832a95f3bdfb8c14ba2b05abb91e9","dossier":"9e2cccdc5f6d22afd008af8b5b55dc193c27c5d6","dossier_title":"Agenda for change: the future of EU development policy","dossier_reference":"2012/2002(INI)","title":"A7-0234/2012 -  Charles Goerens - Résolution","description":"","reference":"A7-0234/2012","datetime":"2012-10-23T16:34:32Z","kind":"Résolution","total_abstain":0,"total_against":0,"total_for":2,"url":"http://testserver/api/proposals/2/?format=json"},{"id":3,"fingerprint":"4e575a1bc17602d23d2f0acf8ee482ebe08de79c","dossier":"e6856e0880e701c1022f23d595cc37a9a1cdcca8","dossier_title":"2016 general budget: all sections","dossier_reference":"2015/2132(BUD)","title":"A8-0298/2015 -  José Manuel Fernandes et  Gérard Deprez - Am 4","description":"","reference":"A8-0298/2015","datetime":"2015-10-28T11:59:35Z","kind":"Am 4","total_abstain":0,"total_against":2,"total_for":0,"url":"http://testserver/api/proposals/3/?format=json"},{"id":4,"fingerprint":"fc786534e832d9af7e2cdcd0b0952d7d60bb4331","dossier":"e6856e0880e701c1022f23d595cc37a9a1cdcca8","dossier_title":"2016 general budget: all sections","dossier_reference":"2015/2132(BUD)","title":"A8-0298/2015 -  José Manuel Fernandes et  Gérard Deprez - Am 29","description":"","reference":"A8-0298/2015","datetime":"2015-10-28T12:00:12Z","kind":"Am 29","total_abstain":0,"total_against":1,"total_for":1,"url":"http://testserver/api/proposals/4/?format=json"},{"id":5,"fingerprint":"90c022cf70dc6ceff796b876d3e1b814620c8637","dossier":"e6856e0880e701c1022f23d595cc37a9a1cdcca8","dossier_title":"2016 general budget: all sections","dossier_reference":"2015/2132(BUD)","title":"A8-0298/2015 -  José Manuel Fernandes et  Gérard Deprez - Am 31","description":"","reference":"A8-0298/2015","datetime":"2015-10-28T12:00:42Z","kind":"Am 31","total_abstain":1,"total_against":1,"total_for":0,"url":"http://testserver/api/proposals/5/?format=json"},{"id":6,"fingerprint":"5b3aa46182803c11d70ccfec666234b9fe2f44a7","dossier":"e6856e0880e701c1022f23d595cc37a9a1cdcca8","dossier_title":"2016 general budget: all sections","dossier_reference":"2015/2132(BUD)","title":"A8-0298/2015 -  José Manuel Fernandes et  Gérard Deprez - Am 30","description":"","reference":"A8-0298/2015","datetime":"2015-10-28T12:01:09Z","kind":"Am 30","total_abstain":0,"total_against":0,"total_for":2,"url":"http://testserver/api/proposals/6/?format=json"}]
+[
+    {
+        "dossier": "http://testserver/api/dossiers/1/",
+        "title": "A7-0234/2012 -  Charles Goerens - § 31",
+        "description": "",
+        "reference": "A7-0234/2012",
+        "datetime": "2012-10-23T16:31:10Z",
+        "kind": "§ 31",
+        "total_abstain": 2,
+        "total_against": 0,
+        "total_for": 0,
+        "url": "http://testserver/api/proposals/1/"
+    },
+    {
+        "dossier": "http://testserver/api/dossiers/1/",
+        "title": "A7-0234/2012 -  Charles Goerens - Résolution",
+        "description": "",
+        "reference": "A7-0234/2012",
+        "datetime": "2012-10-23T16:34:32Z",
+        "kind": "Résolution",
+        "total_abstain": 0,
+        "total_against": 0,
+        "total_for": 2,
+        "url": "http://testserver/api/proposals/2/"
+    },
+    {
+        "dossier": "http://testserver/api/dossiers/2/",
+        "title": "A8-0298/2015 -  José Manuel Fernandes et  Gérard Deprez - Am 4",
+        "description": "",
+        "reference": "A8-0298/2015",
+        "datetime": "2015-10-28T11:59:35Z",
+        "kind": "Am 4",
+        "total_abstain": 0,
+        "total_against": 2,
+        "total_for": 0,
+        "url": "http://testserver/api/proposals/3/"
+    },
+    {
+        "dossier": "http://testserver/api/dossiers/2/",
+        "title": "A8-0298/2015 -  José Manuel Fernandes et  Gérard Deprez - Am 29",
+        "description": "",
+        "reference": "A8-0298/2015",
+        "datetime": "2015-10-28T12:00:12Z",
+        "kind": "Am 29",
+        "total_abstain": 0,
+        "total_against": 1,
+        "total_for": 1,
+        "url": "http://testserver/api/proposals/4/"
+    },
+    {
+        "dossier": "http://testserver/api/dossiers/2/",
+        "title": "A8-0298/2015 -  José Manuel Fernandes et  Gérard Deprez - Am 31",
+        "description": "",
+        "reference": "A8-0298/2015",
+        "datetime": "2015-10-28T12:00:42Z",
+        "kind": "Am 31",
+        "total_abstain": 1,
+        "total_against": 1,
+        "total_for": 0,
+        "url": "http://testserver/api/proposals/5/"
+    },
+    {
+        "dossier": "http://testserver/api/dossiers/2/",
+        "title": "A8-0298/2015 -  José Manuel Fernandes et  Gérard Deprez - Am 30",
+        "description": "",
+        "reference": "A8-0298/2015",
+        "datetime": "2015-10-28T12:01:09Z",
+        "kind": "Am 30",
+        "total_abstain": 0,
+        "total_against": 0,
+        "total_for": 2,
+        "url": "http://testserver/api/proposals/6/"
+    }
+]
