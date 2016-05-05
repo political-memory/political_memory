@@ -8,14 +8,28 @@ class RepresentativeManagerTest(test.TestCase):
 
     def functional_test(self, queries, url):
         with self.assertNumQueries(queries):
-            result = test.client.Client().get(url)
+            result = test.client.Client().get(
+                url,
+                HTTP_ACCEPT='application/json; indent=4',
+            )
         Response.for_test(self).assertNoDiff(result)
 
+    def test_dossier(self):
+        # One for dossier + 1 for proposals
+        self.functional_test(2, '/api/dossiers/1/')
+
     def test_dossiers(self):
-        self.functional_test(1, '/api/dossiers/?format=json')
+        self.functional_test(1, '/api/dossiers/')
+
+    def test_proposal(self):
+        # One for proposal and dossier + 1 for votes
+        self.functional_test(2, '/api/proposals/1/')
 
     def test_proposals(self):
-        self.functional_test(1, '/api/proposals/?format=json')
+        self.functional_test(1, '/api/proposals/')
+
+    def test_vote(self):
+        self.functional_test(1, '/api/votes/1/')
 
     def test_votes(self):
-        self.functional_test(1, '/api/votes/?format=json')
+        self.functional_test(1, '/api/votes/')
