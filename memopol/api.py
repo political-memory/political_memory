@@ -14,6 +14,7 @@ from representatives_votes.api import (
 )
 
 from representatives_recommendations.api import (
+    DossierScoreViewSet,
     RecommendationViewSet,
     RepresentativeScoreViewSet,
     ScoredVoteViewSet
@@ -24,6 +25,7 @@ router = routers.DefaultRouter()
 
 router.register(r'constituencies', ConstituencyViewSet)
 router.register(r'dossiers', DossierViewSet)
+router.register(r'dossier_scores', DossierScoreViewSet)
 router.register(r'groups', GroupViewSet)
 router.register(r'mandates', MandateViewSet)
 router.register(r'proposals', ProposalViewSet)

@@ -6,16 +6,40 @@ from rest_framework import (
 from representatives.api import DefaultWebPagination
 
 from .models import (
+    DossierScore,
     Recommendation,
     RepresentativeScore,
     ScoredVote
 )
 
 from .serializers import (
+    DossierScoreSerializer,
     RecommendationSerializer,
     RepresentativeScoreSerializer,
     ScoredVoteSerializer
 )
+
+
+class DossierScoreViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    API endpoint to view representative score contribution for each dossier
+    """
+    queryset = DossierScore.objects.all()
+    filter_backends = (
+        filters.DjangoFilterBackend,
+        filters.SearchFilter,
+        filters.OrderingFilter
+    )
+    filter_fields = {
+        'id': ['exact'],
+        'dossier': ['exact'],
+        'representative': ['exact'],
+        'score': ['exact', 'gte', 'lte']
+    }
+    search_fields = ('dossier', 'representative')
+    ordering_fields = ('representative', 'dossier')
+    pagination_class = DefaultWebPagination
+    serializer_class = DossierScoreSerializer
 
 
 class RecommendationViewSet(viewsets.ReadOnlyModelViewSet):

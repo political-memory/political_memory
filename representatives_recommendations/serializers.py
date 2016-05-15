@@ -1,10 +1,18 @@
 from rest_framework import serializers
 
 from .models import (
+    DossierScore,
     Recommendation,
     RepresentativeScore,
     ScoredVote
 )
+
+
+class DossierScoreSerializer(serializers.HyperlinkedModelSerializer):
+
+    class Meta:
+        model = DossierScore
+        fields = ('representative', 'dossier', 'score')
 
 
 class RecommendationSerializer(serializers.HyperlinkedModelSerializer):
