@@ -11,6 +11,18 @@ from representatives_votes.models import Dossier, Proposal, Vote
 from representatives.models import Representative
 
 
+class DossierScore(models.Model):
+    id = models.CharField(max_length=255, primary_key=True)
+    representative = models.ForeignKey(Representative,
+        on_delete=models.DO_NOTHING)
+    dossier = models.ForeignKey(Dossier, on_delete=models.DO_NOTHING)
+    score = models.IntegerField(default=0)
+
+    class Meta:
+        managed = False
+        db_table = 'representatives_recommendations_dossierscores'
+
+
 class RepresentativeScore(models.Model):
     representative = models.OneToOneField('representatives.representative',
         primary_key=True, related_name='score')

@@ -27,6 +27,7 @@ setup(name='political-memory',
         'unicodecsv==0.14.1',
         'pytz==2015.7',
         'django-suit>=0.2.16,<0.3.0',
+        'sqlparse>=0.1',
     ],
     extras_require={
         # Full version hardcode for testing dependencies so that

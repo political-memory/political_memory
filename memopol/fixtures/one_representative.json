@@ -1166,13 +1166,13 @@
         "app_label": "representatives_positions"
     },
     "model": "contenttypes.contenttype",
-    "pk": 26
+    "pk": 27
 },
 {
     "fields": {
         "tag": 1,
         "object_id": 1,
-        "content_type": 26
+        "content_type": 27
     },
     "model": "taggit.taggeditem",
     "pk": 1
@@ -1181,7 +1181,7 @@
     "fields": {
         "tag": 2,
         "object_id": 1,
-        "content_type": 26
+        "content_type": 27
     },
     "model": "taggit.taggeditem",
     "pk": 2
@@ -1190,7 +1190,7 @@
     "fields": {
         "tag": 1,
         "object_id": 3,
-        "content_type": 26
+        "content_type": 27
     },
     "model": "taggit.taggeditem",
     "pk": 5
@@ -1199,7 +1199,7 @@
     "fields": {
         "tag": 1,
         "object_id": 2,
-        "content_type": 26
+        "content_type": 27
     },
     "model": "taggit.taggeditem",
     "pk": 6
@@ -1208,7 +1208,7 @@
     "fields": {
         "tag": 3,
         "object_id": 2,
-        "content_type": 26
+        "content_type": 27
     },
     "model": "taggit.taggeditem",
     "pk": 7
