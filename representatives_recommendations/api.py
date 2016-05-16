@@ -93,6 +93,7 @@ class ScoredVoteViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = ScoredVote.objects.select_related(
         'representative',
         'proposal',
+        'proposal__dossier',
         'proposal__recommendation'
     ).filter(
         proposal__recommendation__isnull=False
@@ -105,6 +106,9 @@ class ScoredVoteViewSet(viewsets.ReadOnlyModelViewSet):
     )
 
     filter_fields = {
+        'representative': ['exact'],
+        'proposal': ['exact'],
+        'proposal__dossier': ['exact']
     }
 
     pagination_class = DefaultWebPagination
