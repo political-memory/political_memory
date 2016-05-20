@@ -1,6 +1,15 @@
 Hacker guide
 ~~~~~~~~~~~~
 
+See a `hacking demo on the Memopol project in some epic
+slides
+<https://slides.com/jamespic/cd-devops/fullscreen#/>`_.
+
+Read about it in `Continuous Delivery and DevOps
+quickstart
+<https://www.packtpub.com/application-development/continuous-delivery-and-devops-%E2%80%93-quickstart-guide-second-edition)>`_,
+and I bet you'll order a paperback edition for reference !
+
 Adding random recommendations
 =============================
 
