@@ -11,8 +11,6 @@ pip install -U pip
 
 pip install -Ue ${OPENSHIFT_REPO_DIR}
 
-# We don't have sentry yet
-# python ${OPENSHIFT_REPO_DIR}manage.py raven test
 
 python ${OPENSHIFT_REPO_DIR}manage.py migrate --noinput
 
