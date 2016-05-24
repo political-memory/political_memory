@@ -4,6 +4,7 @@
         "photo": "http://www.nosdeputes.fr/depute/photo/bernard-roman",
         "gender": 2,
         "remote_id": "http://www2.assemblee-nationale.fr/deputes/fiche/OMC_PA2611",
+        "cv": "",
         "active": true,
         "birth_place": "Lille (Nord)",
         "full_name": "Bernard Roman",
@@ -18,6 +19,7 @@
         "photo": "http://www.nossenateurs.fr/senateur/photo/david-assouline",
         "gender": 2,
         "remote_id": "http://www.senat.fr/senateur/assouline_david04059m.html",
+        "cv": "",
         "active": true,
         "birth_place": "non disponible",
         "full_name": "David Assouline",
@@ -206,21 +208,40 @@
 },
 {
     "fields": {
-        "country": 1095,
-        "name": "Assembl\u00e9e nationale",
-        "abbreviation": "AN"
+        "abbreviation": "EP",
+        "country": null,
+        "name": "European Parliament"
     },
     "model": "representatives.chamber",
     "pk": 1
 },
 {
     "fields": {
+        "abbreviation": "AN",
         "country": 1095,
-        "name": "S\u00e9nat",
-        "abbreviation": "SEN"
+        "name": "Assembl\u00e9e nationale"
     },
     "model": "representatives.chamber",
     "pk": 2
+},
+{
+    "fields": {
+        "abbreviation": "SEN",
+        "country": 1095,
+        "name": "S\u00e9nat"
+    },
+    "model": "representatives.chamber",
+    "pk": 3
+},
+{
+    "fields": {
+        "name": "European Parliament",
+        "kind": "chamber",
+        "abbreviation": "EP",
+        "chamber": 1
+    },
+    "model": "representatives.group",
+    "pk": 1
 },
 {
     "fields": {
@@ -230,27 +251,27 @@
         "chamber": null
     },
     "model": "representatives.group",
-    "pk": 1
+    "pk": 2
 },
 {
     "fields": {
         "name": "Assembl\u00e9e nationale",
         "kind": "chamber",
         "abbreviation": "AN",
-        "chamber": 1
+        "chamber": 2
     },
     "model": "representatives.group",
-    "pk": 2
+    "pk": 3
 },
 {
     "fields": {
         "name": "Socialiste, r\u00e9publicain et citoyen",
         "kind": "group",
         "abbreviation": "SRC",
-        "chamber": 1
+        "chamber": 2
     },
     "model": "representatives.group",
-    "pk": 3
+    "pk": 4
 },
 {
     "fields": {
@@ -260,7 +281,7 @@
         "chamber": null
     },
     "model": "representatives.group",
-    "pk": 4
+    "pk": 5
 },
 {
     "fields": {
@@ -270,63 +291,53 @@
         "chamber": null
     },
     "model": "representatives.group",
-    "pk": 5
+    "pk": 6
 },
 {
     "fields": {
         "name": "Commission des lois constitutionnelles, de la l\u00e9gislation et de l'administration g\u00e9n\u00e9rale de la r\u00e9publique",
         "kind": "committee",
         "abbreviation": "AnComLois",
-        "chamber": 1
-    },
-    "model": "representatives.group",
-    "pk": 6
-},
-{
-    "fields": {
-        "name": "Bureau de l'assembl\u00e9e nationale",
-        "kind": "delegation",
-        "abbreviation": "",
-        "chamber": 1
+        "chamber": 2
     },
     "model": "representatives.group",
     "pk": 7
 },
 {
     "fields": {
-        "name": "D\u00e9l\u00e9gation charg\u00e9e de la communication et de la presse",
+        "name": "Bureau de l'assembl\u00e9e nationale",
         "kind": "delegation",
         "abbreviation": "",
-        "chamber": 1
+        "chamber": 2
     },
     "model": "representatives.group",
     "pk": 8
 },
 {
     "fields": {
-        "name": "Groupe d'amiti\u00e9 france-mexique",
+        "name": "D\u00e9l\u00e9gation charg\u00e9e de la communication et de la presse",
         "kind": "delegation",
         "abbreviation": "",
-        "chamber": 1
+        "chamber": 2
     },
     "model": "representatives.group",
     "pk": 9
 },
 {
     "fields": {
-        "name": "Groupe d'amiti\u00e9 france-argentine",
+        "name": "Groupe d'amiti\u00e9 france-mexique",
         "kind": "delegation",
         "abbreviation": "",
-        "chamber": 1
+        "chamber": 2
     },
     "model": "representatives.group",
     "pk": 10
 },
 {
     "fields": {
-        "name": "S\u00e9nat",
-        "kind": "chamber",
-        "abbreviation": "SEN",
+        "name": "Groupe d'amiti\u00e9 france-argentine",
+        "kind": "delegation",
+        "abbreviation": "",
         "chamber": 2
     },
     "model": "representatives.group",
@@ -334,13 +345,23 @@
 },
 {
     "fields": {
-        "name": "Socialiste et r\u00e9publicain",
-        "kind": "group",
-        "abbreviation": "SOC",
-        "chamber": 2
+        "name": "S\u00e9nat",
+        "kind": "chamber",
+        "abbreviation": "SEN",
+        "chamber": 3
     },
     "model": "representatives.group",
     "pk": 12
+},
+{
+    "fields": {
+        "name": "Socialiste et r\u00e9publicain",
+        "kind": "group",
+        "abbreviation": "SOC",
+        "chamber": 3
+    },
+    "model": "representatives.group",
+    "pk": 13
 },
 {
     "fields": {
@@ -350,7 +371,7 @@
         "chamber": null
     },
     "model": "representatives.group",
-    "pk": 13
+    "pk": 14
 },
 {
     "fields": {
@@ -360,27 +381,35 @@
         "chamber": null
     },
     "model": "representatives.group",
-    "pk": 14
+    "pk": 15
 },
 {
     "fields": {
         "name": "Commission de la culture, de l'\u00e9ducation et de la communication",
         "kind": "committee",
         "abbreviation": "SenComCult",
-        "chamber": 2
+        "chamber": 3
     },
     "model": "representatives.group",
-    "pk": 15
+    "pk": 16
 },
 {
     "fields": {
         "name": "Groupe France-Japon",
         "kind": "delegation",
         "abbreviation": "",
-        "chamber": 2
+        "chamber": 3
     },
     "model": "representatives.group",
-    "pk": 16
+    "pk": 17
+},
+{
+    "fields": {
+        "country": null,
+        "name": "European Parliament"
+    },
+    "model": "representatives.constituency",
+    "pk": 1
 },
 {
     "fields": {
@@ -388,7 +417,7 @@
         "name": "Assembl\u00e9e nationale"
     },
     "model": "representatives.constituency",
-    "pk": 1
+    "pk": 2
 },
 {
     "fields": {
@@ -396,7 +425,7 @@
         "name": "S\u00e9nat"
     },
     "model": "representatives.constituency",
-    "pk": 2
+    "pk": 3
 },
 {
     "fields": {
@@ -404,46 +433,33 @@
         "name": "Parti socialiste"
     },
     "model": "representatives.constituency",
-    "pk": 3
+    "pk": 4
 },
 {
     "fields": {
-        "group": 1,
+        "group": 2,
         "end_date": null,
         "role": "membre",
         "representative": 1,
         "link": "",
         "begin_date": null,
-        "constituency": 3
+        "constituency": 4
     },
     "model": "representatives.mandate",
     "pk": 1
 },
 {
     "fields": {
-        "group": 2,
+        "group": 3,
         "end_date": null,
         "role": "D\u00e9put\u00e9",
         "representative": 1,
         "link": "",
         "begin_date": "2012-06-20",
-        "constituency": 1
+        "constituency": 2
     },
     "model": "representatives.mandate",
     "pk": 2
-},
-{
-    "fields": {
-        "group": 3,
-        "end_date": null,
-        "role": "membre",
-        "representative": 1,
-        "link": "",
-        "begin_date": "2012-06-20",
-        "constituency": 1
-    },
-    "model": "representatives.mandate",
-    "pk": 3
 },
 {
     "fields": {
@@ -453,10 +469,10 @@
         "representative": 1,
         "link": "",
         "begin_date": "2012-06-20",
-        "constituency": 1
+        "constituency": 2
     },
     "model": "representatives.mandate",
-    "pk": 4
+    "pk": 3
 },
 {
     "fields": {
@@ -466,10 +482,10 @@
         "representative": 1,
         "link": "",
         "begin_date": "2012-06-20",
-        "constituency": 1
+        "constituency": 2
     },
     "model": "representatives.mandate",
-    "pk": 5
+    "pk": 4
 },
 {
     "fields": {
@@ -479,49 +495,49 @@
         "representative": 1,
         "link": "",
         "begin_date": "2012-06-20",
-        "constituency": 1
+        "constituency": 2
+    },
+    "model": "representatives.mandate",
+    "pk": 5
+},
+{
+    "fields": {
+        "group": 7,
+        "end_date": null,
+        "role": "membre",
+        "representative": 1,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 2
     },
     "model": "representatives.mandate",
     "pk": 6
 },
 {
     "fields": {
-        "group": 7,
+        "group": 8,
         "end_date": null,
         "role": "questeur",
         "representative": 1,
         "link": "",
         "begin_date": "2012-06-20",
-        "constituency": 1
+        "constituency": 2
     },
     "model": "representatives.mandate",
     "pk": 7
 },
 {
     "fields": {
-        "group": 8,
+        "group": 9,
         "end_date": null,
         "role": "membre",
         "representative": 1,
         "link": "",
         "begin_date": "2012-06-20",
-        "constituency": 1
+        "constituency": 2
     },
     "model": "representatives.mandate",
     "pk": 8
-},
-{
-    "fields": {
-        "group": 9,
-        "end_date": null,
-        "role": "vice-pr\u00e9sident",
-        "representative": 1,
-        "link": "",
-        "begin_date": "2012-06-20",
-        "constituency": 1
-    },
-    "model": "representatives.mandate",
-    "pk": 9
 },
 {
     "fields": {
@@ -531,104 +547,111 @@
         "representative": 1,
         "link": "",
         "begin_date": "2012-06-20",
-        "constituency": 1
+        "constituency": 2
+    },
+    "model": "representatives.mandate",
+    "pk": 9
+},
+{
+    "fields": {
+        "group": 11,
+        "end_date": null,
+        "role": "vice-pr\u00e9sident",
+        "representative": 1,
+        "link": "",
+        "begin_date": "2012-06-20",
+        "constituency": 2
     },
     "model": "representatives.mandate",
     "pk": 10
 },
 {
     "fields": {
-        "group": 1,
+        "group": 2,
         "end_date": null,
         "role": "membre",
         "representative": 2,
         "link": "",
         "begin_date": null,
-        "constituency": 3
+        "constituency": 4
     },
     "model": "representatives.mandate",
     "pk": 11
 },
 {
     "fields": {
-        "group": 11,
-        "end_date": null,
+        "group": 12,
+        "end_date": "2012-01-01",
         "role": "S\u00e9nateur",
         "representative": 2,
         "link": "",
         "begin_date": "2004-09-26",
-        "end_date": "2012-01-01",
-        "constituency": 2
+        "constituency": 3
     },
     "model": "representatives.mandate",
     "pk": 12
 },
 {
     "fields": {
-        "group": 12,
-        "end_date": null,
+        "group": 13,
+        "end_date": "2012-01-01",
         "role": "membre",
         "representative": 2,
         "link": "",
         "begin_date": "2004-09-26",
-        "end_date": "2012-01-01",
-        "constituency": 2
+        "constituency": 3
     },
     "model": "representatives.mandate",
     "pk": 13
 },
 {
     "fields": {
-        "group": 13,
-        "end_date": null,
+        "group": 14,
+        "end_date": "2012-01-01",
         "role": "membre",
         "representative": 2,
         "link": "",
         "begin_date": "2004-09-26",
-        "end_date": "2012-01-01",
-        "constituency": 2
+        "constituency": 3
     },
     "model": "representatives.mandate",
     "pk": 14
 },
 {
     "fields": {
-        "group": 14,
-        "end_date": null,
+        "group": 15,
+        "end_date": "2012-01-01",
         "role": "membre",
         "representative": 2,
         "link": "",
         "begin_date": "2004-09-26",
-        "end_date": "2012-01-01",
-        "constituency": 2
+        "constituency": 3
     },
     "model": "representatives.mandate",
     "pk": 15
 },
 {
     "fields": {
-        "group": 15,
-        "end_date": null,
+        "group": 16,
+        "end_date": "2012-01-01",
         "role": "vice-pr\u00e9sident",
         "representative": 2,
         "link": "",
         "begin_date": "2004-09-26",
-        "end_date": "2012-01-01",
-        "constituency": 2
+        "constituency": 3
     },
     "model": "representatives.mandate",
     "pk": 16
 },
 {
     "fields": {
-        "group": 16,
-        "end_date": null,
+        "group": 17,
+        "end_date": "2012-01-01",
         "role": "pr\u00e9sident",
         "representative": 2,
         "link": "",
         "begin_date": "2004-09-26",
-        "end_date": "2012-01-01",
-        "constituency": 2
+        "constituency": 3
     },
     "model": "representatives.mandate",
     "pk": 17
