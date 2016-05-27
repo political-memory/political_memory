@@ -18,3 +18,4 @@ pip-delete-this-directory.txt
 .dpl
 db.sqlite
 log/
+wsgi/static/
