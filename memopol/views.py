@@ -88,4 +88,4 @@ class DossierList(PaginationMixin, representatives_votes_views.DossierList):
         'proposals__recommendation'
     ).annotate(
         nb_recomm=Count('proposals__recommendation')
-    ).order_by('-reference')
+    ).order_by('-nb_recomm', '-reference')
