@@ -1,5 +1,6 @@
 # Project specific "glue" coupling of all apps
 from django.db import models
+from django.db.models import Count
 
 from core.views import GridListMixin, PaginationMixin, CSVDownloadMixin
 from representatives import views as representatives_views
@@ -82,4 +83,9 @@ class RepresentativeDetail(representatives_views.RepresentativeDetail):
 
 
 class DossierList(PaginationMixin, representatives_votes_views.DossierList):
-    queryset = Dossier.objects.exclude(proposals__recommendation=None)
+    queryset = Dossier.objects.prefetch_related(
+        'proposals',
+        'proposals__recommendation'
+    ).annotate(
+        nb_recomm=Count('proposals__recommendation')
+    ).order_by('-reference')
