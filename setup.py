@@ -41,5 +41,10 @@ setup(name='political-memory',
             'pytest-cov==2.2.0',
             'codecov',
         ]
+    },
+    entry_points={
+        'console_scripts': [
+            'memopol_import_recommendations = representatives_recommendations.contrib.import_recommendations:main'
+        ]
     }
 )

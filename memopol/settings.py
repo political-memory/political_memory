@@ -258,6 +258,10 @@ LOGGING = {
             'handlers': ['console'],
             'level': LOG_LEVEL,
         },
+        'representatives_recommendations': {
+            'handlers': ['console'],
+            'level': LOG_LEVEL
+        },
         'representatives_votes': {
             'handlers': ['console'],
             'level': LOG_LEVEL,
