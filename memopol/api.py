@@ -17,7 +17,7 @@ from representatives_recommendations.api import (
     DossierScoreViewSet,
     RecommendationViewSet,
     RepresentativeScoreViewSet,
-    ScoredVoteViewSet
+    VoteScoreViewSet
 )
 
 
@@ -32,5 +32,5 @@ router.register(r'proposals', ProposalViewSet)
 router.register(r'recommendations', RecommendationViewSet)
 router.register(r'representatives', RepresentativeViewSet)
 router.register(r'scores', RepresentativeScoreViewSet)
-router.register(r'scored_votes', ScoredVoteViewSet)
+router.register(r'vote_scores', VoteScoreViewSet)
 router.register(r'votes', VoteViewSet)
