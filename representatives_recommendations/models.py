@@ -1,6 +1,5 @@
 # coding: utf-8
 from django.db import models
-from django.db.models.signals import post_save
 
 from representatives_votes.contrib.parltrack.import_votes import \
     vote_pre_import
@@ -41,6 +40,10 @@ class RepresentativeScore(models.Model):
         primary_key=True, related_name='score')
     score = models.IntegerField(default=0)
 
+    class Meta:
+        managed = False
+        db_table = 'representatives_recommendations_representativescore'
+
 
 class Recommendation(models.Model):
     proposal = models.OneToOneField(
@@ -74,28 +77,3 @@ def skip_representatives(sender, representative_data=None, **kwargs):
     if not representative_data.get('active', False):
         return False
 representative_pre_import.connect(skip_representatives)
-
-
-def create_representative_vote_profile(sender, instance=None, created=None,
-        **kwargs):
-
-    if not created:
-        return
-
-    RepresentativeScore.objects.create(representative=instance)
-post_save.connect(create_representative_vote_profile, sender=Representative)
-
-
-def calculate_representative_score(representative):
-    score = 0
-
-    votes = representative.votes.exclude(
-        proposal__recommendation=None
-    ).select_related('proposal__recommendation')
-
-    votes = VoteScore.objects.filter(pk__in=votes.values_list('pk'))
-
-    for vote in votes:
-        score += vote.score
-
-    return score

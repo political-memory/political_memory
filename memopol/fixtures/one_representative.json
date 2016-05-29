@@ -1098,13 +1098,6 @@
 },
 {
     "fields": {
-        "score": -7
-    },
-    "model": "representatives_recommendations.representativescore",
-    "pk": 160
-},
-{
-    "fields": {
         "proposal": 5744,
         "title": "Stop acta !",
         "description": "",

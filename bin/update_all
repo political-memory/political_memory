@@ -10,7 +10,3 @@ bin/update_dossiers
 sleep 120
 
 bin/update_votes
-
-sleep 120
-
-bin/update_scores
