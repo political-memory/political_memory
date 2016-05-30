@@ -44,7 +44,8 @@ setup(name='political-memory',
     },
     entry_points={
         'console_scripts': [
-            'memopol_import_recommendations = representatives_recommendations.contrib.import_recommendations:main'
+            'memopol_import_positions = representatives_positions.contrib.import_positions:main',
+            'memopol_import_recommendations = representatives_recommendations.contrib.import_recommendations:main',
         ]
     }
 )
