@@ -3,7 +3,6 @@
 import csv
 import django
 from django.apps import apps
-from django.db import transaction
 import logging
 import sys
 import re
@@ -106,4 +105,3 @@ def main(stream=None):
             imported = imported + 1
 
     logger.info('%d rows imported, %d rows rejected', imported, len(rejected))
-

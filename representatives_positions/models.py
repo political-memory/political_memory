@@ -2,8 +2,8 @@ from django.db import models
 from django.core.urlresolvers import reverse
 from django.template.defaultfilters import truncatewords
 from taggit.managers import TaggableManager
-
 from representatives.models import Representative
+
 
 class Position(models.Model):
     representative = models.ForeignKey(Representative,

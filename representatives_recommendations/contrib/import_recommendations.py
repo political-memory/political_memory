@@ -3,27 +3,15 @@
 import csv
 import django
 from django.apps import apps
-from django.db import transaction
 import logging
 import sys
 
 from representatives_recommendations.models import Recommendation
 from representatives_votes.models import Dossier, Proposal
 
-logger = logging.getLogger(__name__)
+from .dossier_mappings import dossier_mappings
 
-dossier_mappings = {
-    "Resolution on Anti-Counterfeiting Trade Agreement (ACTA)":
-        "Resolution on the Anti-Counterfeiting Trade Agreement (ACTA)",
-    "Rapport Bono on cultural industries in Europe":
-        "Cultural industries in Europe",
-    "Rapport Gallo on enforcement of intellectual property rights in the internal market":
-        "Enforcement of intellectual property rights in the internal market",
-    "Rapport Lambrinidis on strengthening security and fundamental freedoms on the Internet":
-        "Strengthening security and fundamental freedoms on the Internet",
-    "Criminal measures aimed at ensuring the enforcement of intellectual property rights (IPRED 2), 1st reading":
-        "Criminal measures aimed at ensuring the enforcement of intellectual property rights"
-}
+logger = logging.getLogger(__name__)
 
 
 class RecommendationImporter:
@@ -124,4 +112,3 @@ def main(stream=None):
             imported = imported + 1
 
     logger.info('%d rows imported, %d rows rejected', imported, len(rejected))
-
