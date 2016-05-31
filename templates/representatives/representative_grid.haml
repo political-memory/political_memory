@@ -23,6 +23,6 @@
               = representative.country|country_flag
           %li.mandate
             %a{'href': "{{ representative.main_mandate.group.get_absolute_url }}"}
-              = representative.main_mandate.group.abbreviation
+              = representative.main_mandate.group|group_icon
           %li.score
             = representative.score.score|score_label

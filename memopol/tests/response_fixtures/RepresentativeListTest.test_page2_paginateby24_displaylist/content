@@ -10,7 +10,7 @@
       - The Political Memory of </title>
     
     
-    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.0eebcec6fcc2.css" type="text/css" />
+    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.6aeeaa87703d.css" type="text/css" />
     <script type="text/javascript" src="/static/collected/libs/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="/static/collected/libs/bootstrap/dist/js/bootstrap.js"></script>
     
@@ -241,7 +241,7 @@
           </td>
           <td>
             <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Greens/European%20Free%20Alliance/'>
-              Greens/EFA
+              <span class="group-icon group-icon-greensefa"></span> Greens/EFA
             </a>
           </td>
           <td>
@@ -277,7 +277,7 @@
           </td>
           <td>
             <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
-              EPP
+              <span class="group-icon group-icon-epp"></span> EPP
             </a>
           </td>
           <td>
@@ -313,7 +313,7 @@
           </td>
           <td>
             <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
-              EPP
+              <span class="group-icon group-icon-epp"></span> EPP
             </a>
           </td>
           <td>
@@ -349,7 +349,7 @@
           </td>
           <td>
             <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
-              SD
+              <span class="group-icon group-icon-sd"></span> SD
             </a>
           </td>
           <td>
@@ -385,7 +385,7 @@
           </td>
           <td>
             <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
-              EPP
+              <span class="group-icon group-icon-epp"></span> EPP
             </a>
           </td>
           <td>
@@ -421,7 +421,7 @@
           </td>
           <td>
             <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Alliance%20of%20Liberals%20and%20Democrats%20for%20Europe/'>
-              ALDE
+              <span class="group-icon group-icon-alde"></span> ALDE
             </a>
           </td>
           <td>
@@ -457,7 +457,7 @@
           </td>
           <td>
             <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
-              SD
+              <span class="group-icon group-icon-sd"></span> SD
             </a>
           </td>
           <td>
@@ -493,7 +493,7 @@
           </td>
           <td>
             <a href='/legislature/representative/group/European%20Parliament/European%20Conservatives%20and%20Reformists%20Group/'>
-              ECR
+              <span class="group-icon group-icon-ecr"></span> ECR
             </a>
           </td>
           <td>
@@ -529,7 +529,7 @@
           </td>
           <td>
             <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Alliance%20of%20Liberals%20and%20Democrats%20for%20Europe/'>
-              ALDE
+              <span class="group-icon group-icon-alde"></span> ALDE
             </a>
           </td>
           <td>
@@ -565,7 +565,7 @@
           </td>
           <td>
             <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
-              EPP
+              <span class="group-icon group-icon-epp"></span> EPP
             </a>
           </td>
           <td>
@@ -601,7 +601,7 @@
           </td>
           <td>
             <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Alliance%20of%20Liberals%20and%20Democrats%20for%20Europe/'>
-              ALDE
+              <span class="group-icon group-icon-alde"></span> ALDE
             </a>
           </td>
           <td>
@@ -637,7 +637,7 @@
           </td>
           <td>
             <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Alliance%20of%20Liberals%20and%20Democrats%20for%20Europe/'>
-              ALDE
+              <span class="group-icon group-icon-alde"></span> ALDE
             </a>
           </td>
           <td>

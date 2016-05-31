@@ -32,8 +32,7 @@
           %th Party
           %td<
             %a{:href => "{{ representative.main_mandate.group.get_absolute_url }}"}
-              {{ representative.main_mandate.role }} of
-              {{ representative.main_mandate.group.name }}
+              = representative.main_mandate|mandate_icon
         %tr
           %th Biography
           %td<
