@@ -1,8 +1,13 @@
+import re
 from django import template
 from django.utils.safestring import mark_safe
 from django.contrib.humanize.templatetags.humanize import naturalday
 
 register = template.Library()
+
+
+def cssify(string):
+    return re.sub('[^a-z_-]', '', string.lower())
 
 
 @register.filter
@@ -19,17 +24,35 @@ def chamber_icon(chamber):
         u'<span class="chamber-icon ' +
         u'chamber-icon-{abbr}"></span> {name}'.format(
             name=chamber.name,
-            abbr=chamber.abbreviation.lower()))
+            abbr=cssify(chamber.abbreviation)))
 
 
 @register.filter
-def group_icon(main_mandate):
+def mandate_icon(main_mandate):
     return mark_safe(
         u'<span class="group-icon ' +
         u'group-icon-{abbr}"></span> {role} of {name}'.format(
             role=main_mandate.role,
             name=main_mandate.group.name,
-            abbr=main_mandate.group.abbreviation.lower()))
+            abbr=cssify(main_mandate.group.abbreviation)))
+
+
+@register.filter
+def group_icon(group):
+    return mark_safe(
+        u'<span class="group-icon ' +
+        u'group-icon-{abbr}"></span> {name}'.format(
+            abbr=cssify(group.abbreviation),
+            name=group.abbreviation))
+
+
+@register.filter
+def group_long_icon(group):
+    return mark_safe(
+        u'<span class="group-icon ' +
+        u'group-icon-{abbr}"></span> {name}'.format(
+            abbr=cssify(group.abbreviation),
+            name=group.name))
 
 
 @register.filter
