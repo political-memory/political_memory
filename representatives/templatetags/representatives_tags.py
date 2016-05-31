@@ -23,6 +23,16 @@ def chamber_icon(chamber):
 
 
 @register.filter
+def group_icon(main_mandate):
+    return mark_safe(
+        u'<span class="group-icon ' +
+        u'group-icon-{abbr}"></span> {role} of {name}'.format(
+            role=main_mandate.role,
+            name=main_mandate.group.name,
+            abbr=main_mandate.group.abbreviation.lower()))
+
+
+@register.filter
 def mandate_date(date, arg=None):
     if date is None or date.year == 9999:
         return 'present'
