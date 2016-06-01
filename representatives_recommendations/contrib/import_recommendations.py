@@ -9,7 +9,7 @@ import sys
 from representatives_recommendations.models import Recommendation
 from representatives_votes.models import Dossier, Proposal
 
-from .dossier_mappings import dossier_mappings
+from .import_data import dossier_mappings, resolutions
 
 logger = logging.getLogger(__name__)
 
@@ -35,10 +35,21 @@ class RecommendationImporter:
         return dossier
 
     def get_proposal(self, dossier, kind):
+        kinds = [kind]
+
         try:
-            return Proposal.objects.get(dossier=dossier, kind__iexact=kind)
-        except Proposal.DoesNotExist:
-            return None
+            resolutions.index(kind.lower())
+            kinds.extend(resolutions)
+        except ValueError:
+            pass
+
+        for k in kinds:
+            try:
+                return Proposal.objects.get(dossier=dossier, kind__iexact=k)
+            except Proposal.DoesNotExist:
+                continue
+
+        return None
 
     def import_row(self, row):
         dossier = self.get_dossier(row['title'])

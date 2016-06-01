@@ -11,5 +11,16 @@ dossier_mappings = {
     "Rapport Lambrinidis on strengthening security and fundamental freedoms on the Internet":
         "Strengthening security and fundamental freedoms on the Internet",
     "Criminal measures aimed at ensuring the enforcement of intellectual property rights (IPRED 2), 1st reading":
-        "Criminal measures aimed at ensuring the enforcement of intellectual property rights"
+        "Criminal measures aimed at ensuring the enforcement of intellectual property rights",
+    "A7-0204/2012":
+        "EU/Australia, Canada, Japan, Korea, Mexico, Morocco, New Zealand, Singapore, Switzerland and United States Anti-Counterfeiting Trade Agreement (ACTA)",
+    "A7-0001/2012":
+        "Enhanced cooperation in the area of the creation of unitary patent protection: implementation"
 }
+
+resolutions = [
+    u'résolution législative',
+    u'résolution',
+    'legislative resolution',
+    'resolution'
+]
