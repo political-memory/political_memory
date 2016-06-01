@@ -146,12 +146,12 @@ The following fields are available for filtering:
 * ``weight`` (alt.: gte, lte)
 * ``search``: searches in the ``title`` and ``description`` fields
 
-Scored Votes
-------------
+Vote Scores
+-----------
 
-The ``/api/scored_votes/[<pk>/]`` endpoints give access to scored votes; that
-is, representative votes with their contribution to the representative score.
-Only votes that match a recommendation are visible using this endpoint.  The
+The ``/api/vote_scores/[<pk>/]`` endpoints give access to scored votes; that is,
+representative votes with their contribution to the representative score. Only
+votes that match a recommendation are visible using this endpoint.  The
 following fields are available for filtering:
 
 * ``representative``

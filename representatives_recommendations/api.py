@@ -9,14 +9,14 @@ from .models import (
     DossierScore,
     Recommendation,
     RepresentativeScore,
-    ScoredVote
+    VoteScore
 )
 
 from .serializers import (
     DossierScoreSerializer,
     RecommendationSerializer,
     RepresentativeScoreSerializer,
-    ScoredVoteSerializer
+    VoteScoreSerializer
 )
 
 
@@ -85,12 +85,12 @@ class RepresentativeScoreViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = RepresentativeScoreSerializer
 
 
-class ScoredVoteViewSet(viewsets.ReadOnlyModelViewSet):
+class VoteScoreViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint to view votes with their score impact.
     This endpoint only shows votes that have a matching recommendation.
     """
-    queryset = ScoredVote.objects.select_related(
+    queryset = VoteScore.objects.select_related(
         'representative',
         'proposal',
         'proposal__dossier',
@@ -112,4 +112,4 @@ class ScoredVoteViewSet(viewsets.ReadOnlyModelViewSet):
     }
 
     pagination_class = DefaultWebPagination
-    serializer_class = ScoredVoteSerializer
+    serializer_class = VoteScoreSerializer

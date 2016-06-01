@@ -16,7 +16,6 @@ script:
 - py.test memopol representatives_positions representatives_recommendations
 - rm -rf db.sqlite
 - django-admin migrate
-- django-admin update_score
 after_success:
 - codecov
 deploy:

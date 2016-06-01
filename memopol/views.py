@@ -7,7 +7,7 @@ from representatives.models import Representative
 from representatives_votes import views as representatives_votes_views
 from representatives_votes.models import Dossier, Proposal
 from representatives_positions.forms import PositionForm
-from representatives_recommendations.models import ScoredVote
+from representatives_recommendations.models import VoteScore
 
 
 class RepresentativeList(
@@ -42,7 +42,7 @@ class RepresentativeDetail(representatives_views.RepresentativeDetail):
 
     def get_queryset(self):
         qs = super(RepresentativeDetail, self).get_queryset()
-        votes = ScoredVote.objects.filter(
+        votes = VoteScore.objects.filter(
             proposal__in=Proposal.objects.exclude(recommendation=None),
         ).select_related('proposal__recommendation')
         qs = qs.prefetch_related(models.Prefetch('votes', queryset=votes))

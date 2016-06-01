@@ -4,7 +4,7 @@ from .models import (
     DossierScore,
     Recommendation,
     RepresentativeScore,
-    ScoredVote
+    VoteScore
 )
 
 
@@ -30,16 +30,8 @@ class RepresentativeScoreSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('representative', 'score')
 
 
-class ScoredVoteSerializer(serializers.HyperlinkedModelSerializer):
-    """
-    Scored Vote serializer
-    """
+class VoteScoreSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
-        model = ScoredVote
-        fields = (
-            'proposal',
-            'representative',
-            'position',
-            'absolute_score'
-        )
+        model = VoteScore
+        fields = ('proposal', 'representative', 'position', 'score')
