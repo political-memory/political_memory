@@ -19,15 +19,17 @@ class RecommendationImporter:
         self.dossier_cache = {}
 
     def get_dossier(self, title):
-        alt_title = dossier_mappings.get(title, None)
-        if alt_title is not None:
-            title = alt_title
-
         dossier = self.dossier_cache.get(title, None)
 
         if dossier is None:
+            ref = dossier_mappings.get(title, None)
+            if ref is not None:
+                query = { 'reference':ref }
+            else:
+                query = { 'title__iexact': title }
+
             try:
-                dossier = Dossier.objects.get(title__iexact=title)
+                dossier = Dossier.objects.get(**query)
                 self.dossier_cache[title] = dossier
             except Dossier.DoesNotExist:
                 dossier = None
@@ -54,13 +56,14 @@ class RecommendationImporter:
     def import_row(self, row):
         dossier = self.get_dossier(row['title'])
         if dossier is None:
-            logger.warn('Could not find dossier "%s"' % row['title'])
+            logger.warn('No dossier "%s"' % row['title'])
             return False
 
         proposal = self.get_proposal(dossier, row['part'])
         if proposal is None:
-            logger.warn('Could not find proposal "%s" for dossier "%s"' % (
-                row['part'], row['title']))
+            logger.warn('No proposal "%s" for dossier %s (%d): "%s"' % (
+                row['part'].decode('utf-8'), dossier.reference, dossier.pk,
+                row['title']))
             return False
 
         weight = int(row['weight']) * int(row['ponderation'])
