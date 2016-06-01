@@ -36,6 +36,7 @@ class RepresentativeDetailTest(UrlGetTestMixin, TestCase):
     def test_current_mandate_display(self):
         expected = ''.join((
             "<a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>",  # noqa
+            "<span class='group-icon group-icon-sd'></span>",
             "Member of Group of the Progressive Alliance of Socialists and Democrats in the European Parliament",  # noqa
             "</a>",
         ))
