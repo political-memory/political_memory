@@ -51,3 +51,9 @@
                 - elif site.kind == 'facebook'
                   = site.url|facebook_link
 
+        - if representative.other_websites|length > 0
+          %tr
+            %th Websites
+            %td
+              - for site in representative.other_websites
+                = site.url|website_link
