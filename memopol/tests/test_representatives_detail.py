@@ -12,9 +12,13 @@ class RepresentativeDetailTest(UrlGetTestMixin, TestCase):
         # Ensure one-time cached queries occur before the actual test
         self.client.get(self.url)
 
-        with self.assertNumQueries(5):
+        with self.assertNumQueries(10):
             """
             - One query for the rep details and foreign key (profile)
+            - One query for reverse relation on phones
+            - One query for reverse relation on addresses
+            - One query for reverse relation on emails
+            - Two queries for reverse relation on websites (social and other)
             - One query for reverse relation on votes
             - One query for reverse relation on mandates
             - One query for reverse relation positions

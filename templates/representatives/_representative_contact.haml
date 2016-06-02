@@ -1,0 +1,25 @@
+- load memopol_tags
+
+.row.representative-contact
+  .col-md-12
+    %h2 Contact information
+    %table.table.table-condensed.detail-view
+      - for email in representative.email_set.all
+        %tr
+          %th E-mail
+          %td
+            = email.email|email_link
+
+      - if representative.phone_set.all|length > 0
+        %tr
+          %th Phone numbers
+          %td
+            - for phone in representative.phone_set.all
+              .phone {{ phone.number }}
+
+      - for address in representative.address_set.all
+        %tr
+          %th
+            = address.name
+          %td
+            - include 'representatives/_address_block.html' with address=address

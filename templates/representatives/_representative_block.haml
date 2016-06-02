@@ -1,3 +1,4 @@
+- load memopol_tags
 - load representatives_tags
 - load representatives_recommendations_tags
 - load humanize
@@ -39,3 +40,20 @@
             Born in {{ representative.birth_place }} the
             {{ representative.birth_date|naturalday:'d/m/Y' }}
             ({{ representative.get_gender_display }})
+
+        - if representative.social_websites|length > 0
+          %tr
+            %th Social
+            %td
+              - for site in representative.social_websites
+                - if site.kind == 'twitter'
+                  = site.url|twitter_link
+                - elif site.kind == 'facebook'
+                  = site.url|facebook_link
+
+        - if representative.other_websites|length > 0
+          %tr
+            %th Websites
+            %td
+              - for site in representative.other_websites
+                = site.url|website_link
