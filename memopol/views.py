@@ -66,7 +66,8 @@ class RepresentativeDetail(representatives_views.RepresentativeDetail):
                 'votes',
                 queryset=VoteScore.objects.filter(
                     proposal__in=Proposal.objects.exclude(recommendation=None),
-                ).select_related('proposal__recommendation')
+                ).select_related('proposal__recommendation').order_by(
+                    '-proposal__datetime')
             )
         )
         return qs
