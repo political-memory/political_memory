@@ -24,3 +24,9 @@ def website_link(url):
     short_url = re.sub(r'^https?://([^/]+).*', '\\1', url)
     return mark_safe(link.format(network='website', url=url,
                                  label=short_url))
+
+
+@register.filter
+def email_link(address):
+    return mark_safe(link.format(network='email', url='mailto:%s' % address,
+                                 label=address))

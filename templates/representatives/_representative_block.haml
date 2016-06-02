@@ -57,3 +57,19 @@
             %td
               - for site in representative.other_websites
                 = site.url|website_link
+
+  .row
+    %h2 Contact information
+    %table.table.table-condensed.detail-view
+      - for email in representative.email_set.all
+        %tr
+          %th E-mail
+          %td
+            = email.email|email_link
+
+      - for address in representative.address_set.all
+        %tr
+          %th
+            = address.name
+          %td
+            - include 'representatives/_address_block.html' with address=address

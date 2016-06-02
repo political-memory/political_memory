@@ -1,0 +1,9 @@
+.address
+  - if address.floor or address.office_number
+    .detail
+      - if address.floor
+        %span.floor Floor {{ address.floor }}
+      - if address.office_number
+        %span.office Office {{ address.office_number }}
+  .street {{ address.number }} {{ address.street }}
+  .city {{ address.city }} {{ address.postcode }}, {{ address.country.name }}
