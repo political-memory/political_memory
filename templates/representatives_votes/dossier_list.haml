@@ -1,14 +1,25 @@
 - extends "base.html"
+- load i18n
 
 - block content
-  %h1 Dossiers
+  %h1
+    - trans "Dossiers"
 
   %table.table
+    %tr
+      %th
+        - trans "Title"
+      %th
+        - trans "Recommendations"
+      %th
+        - trans "Reference"
+
     - for dossier in object_list
       %tr
         %td
           %a{'href': "{{ dossier.get_absolute_url }}"}
             {{ dossier.title }}
+        %td= dossier.nb_recomm
         %td= dossier.reference
 
   - include "core/blocks/pagination.html"
