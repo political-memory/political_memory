@@ -67,6 +67,13 @@
           %td
             = email.email|email_link
 
+      - if representative.phone_set.all|length > 0
+        %tr
+          %th Phone numbers
+          %td
+            - for phone in representative.phone_set.all
+              .phone {{ phone.number }}
+
       - for address in representative.address_set.all
         %tr
           %th
