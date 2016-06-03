@@ -1,0 +1,4 @@
+[run]
+omit =
+	representatives_positions/contrib/*
+	representatives_recommendations/contrib/*
