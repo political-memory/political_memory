@@ -24,9 +24,9 @@ class RecommendationImporter:
         if dossier is None:
             ref = dossier_mappings.get(title, None)
             if ref is not None:
-                query = { 'reference':ref }
+                query = {'reference': ref}
             else:
-                query = { 'title__iexact': title }
+                query = {'title__iexact': title}
 
             try:
                 dossier = Dossier.objects.get(**query)
@@ -67,6 +67,9 @@ class RecommendationImporter:
             return False
 
         weight = int(row['weight']) * int(row['ponderation'])
+        descr = row['description'].strip()
+        if len(descr) == 0:
+            descr = '%s on %s' % (row['part'], dossier.reference)
 
         try:
             recom = Recommendation.objects.get(proposal=proposal)
@@ -74,7 +77,7 @@ class RecommendationImporter:
             recom = Recommendation(
                 proposal=proposal,
                 recommendation=row['recommendation'],
-                title=row['description'],
+                title=descr,
                 weight=weight
             )
             recom.save()
