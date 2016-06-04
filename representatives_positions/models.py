@@ -10,7 +10,7 @@ class Position(models.Model):
         related_name='positions')
     datetime = models.DateField()
     text = models.TextField()
-    link = models.URLField()
+    link = models.URLField(max_length=500)
     published = models.BooleanField(default=False)
     tags = TaggableManager()
 
