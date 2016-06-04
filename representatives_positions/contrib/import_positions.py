@@ -9,6 +9,7 @@ import re
 
 from representatives_positions.models import Position
 from representatives.models import Representative
+from .import_data import position_dates, rep_names
 
 logger = logging.getLogger(__name__)
 
@@ -21,6 +22,7 @@ class PositionImporter:
         key = '%s %s' % (first_name, last_name)
         rep = self.rep_cache.get(key, None)
 
+        # Find rep
         if rep is None:
             try:
                 rep = Representative.objects.get(first_name=first_name,
@@ -29,13 +31,31 @@ class PositionImporter:
             except Representative.DoesNotExist:
                 rep = None
 
+        # Not found => try to use an alternate name
+        if rep is None:
+            newname = rep_names.get(key, None)
+            if newname is not None:
+                try:
+                    rep = Representative.objects.get(first_name=newname[0],
+                        last_name=newname[1])
+                    self.rep_cache[key] = rep
+                except Representative.DoesNotExist:
+                    rep = None
+
         return rep
 
     def import_row(self, row):
         if len(row['date']) == 0:
-            logger.warn('Cannot import dateless position for %s %s on URL %s' %
-                (row['first_name'], row['last_name'], row['url']))
-            return False
+            if len(row['url']) == 0:
+                row['date'] = '2010-01-01'
+                row['url'] = '/'
+            else:
+                row['date'] = position_dates.get(row['url'], None)
+
+                if row['date'] is None:
+                    logger.warn('Dateless position for %s %s on URL %s' %
+                        (row['first_name'], row['last_name'], row['url']))
+                    return False
 
         rep = self.get_rep(row['first_name'], row['last_name'])
         if rep is None:
@@ -104,4 +124,5 @@ def main(stream=None):
         else:
             imported = imported + 1
 
-    logger.info('%d rows imported, %d rows rejected', imported, len(rejected))
+    logger.info('%d rows imported or already present, %d rows rejected',
+        imported, len(rejected))
