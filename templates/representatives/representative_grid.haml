@@ -1,5 +1,6 @@
 - extends 'representatives/representative_list.html'
 
+- load memopol_tags
 - load representatives_tags
 - load representatives_recommendations_tags
 
@@ -9,20 +10,20 @@
     - for representative in object_list
       .representative_item
         %p.photo
-          %a{'href': "{{ representative.get_absolute_url }}"}
+          %a{'href': "{% url 'representative-detail' representative.slug %}"}
             %img{'src': '={representative.photo}', 'width': '80'}/
         %ul
           %li.name
-            %a{'href': "{{ representative.get_absolute_url }}"}
+            %a{'href': "{% url 'representative-detail' representative.slug %}"}
               = representative.full_name
           %li.chamber
-            %a{'href': "{% url 'representatives:representative-list' group_kind='chamber' group=representative.chamber.name %}"}
+            %a{'href': "{% chamber_url representative.chamber %}"}
               = representative.chamber|chamber_icon
           %li.country
-            %a{'href': "{{ representative.country.get_absolute_url }}"}
+            %a{'href': "{% country_url representative.country %}"}
               = representative.country|country_flag
           %li.mandate
-            %a{'href': "{{ representative.main_mandate.group.get_absolute_url }}"}
+            %a{'href': "{% group_url representative.main_mandate.group %}"}
               = representative.main_mandate.group|group_icon
           %li.score
             = representative.score.score|score_label

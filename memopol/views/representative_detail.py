@@ -1,49 +1,27 @@
-# Project specific "glue" coupling of all apps
-from django.db import models
-from django.db.models import Count
+# coding: utf-8
 
-from core.views import GridListMixin, PaginationMixin, CSVDownloadMixin
-from representatives import views as representatives_views
-from representatives.models import (Representative, Address, Phone, WebSite)
-from representatives_votes import views as representatives_votes_views
-from representatives_votes.models import Dossier, Proposal
+from django.db import models
+from django.views import generic
+
+from representatives.models import Representative, Address, Phone, WebSite
 from representatives_positions.forms import PositionForm
 from representatives_recommendations.models import VoteScore
+from representatives_votes.models import Proposal
+
+from .representative_mixin import RepresentativeViewMixin
 
 
-class RepresentativeList(
-    CSVDownloadMixin,
-    GridListMixin,
-    PaginationMixin,
-    representatives_views.RepresentativeList
-):
+class RepresentativeDetail(RepresentativeViewMixin, generic.DetailView):
 
-    csv_name = 'meps.csv'
-
-    def get_csv_results(self, context, **kwargs):
-        qs = super(RepresentativeList, self).get_queryset()
-        qs = qs.prefetch_related('email_set')
-        return [self.add_representative_country_and_main_mandate(r)
-                for r in qs]
-
-    def get_csv_row(self, obj):
-        return (
-            obj.full_name,
-            u', '.join([e.email for e in obj.email_set.all()]),
-            obj.main_mandate.group.abbreviation,
-            obj.country,
-        )
-
-    queryset = Representative.objects.filter(
-        active=True).select_related('score')
-
-
-class RepresentativeDetail(representatives_views.RepresentativeDetail):
     queryset = Representative.objects.select_related('score')
 
     def get_queryset(self):
+        qs = super(RepresentativeDetail, self).get_queryset()
+
+        qs = self.prefetch_for_representative_country_and_main_mandate(qs)
+
         social = ['twitter', 'facebook']
-        qs = super(RepresentativeDetail, self).get_queryset().prefetch_related(
+        qs = qs.prefetch_related(
             'email_set',
             models.Prefetch(
                 'website_set',
@@ -71,21 +49,21 @@ class RepresentativeDetail(representatives_views.RepresentativeDetail):
                     '-proposal__datetime')
             )
         )
+
         return qs
 
     def get_context_data(self, **kwargs):
         c = super(RepresentativeDetail, self).get_context_data(**kwargs)
+
+        self.add_representative_country_and_main_mandate(c['object'])
+
+        c['votes'] = c['object'].votes.all()
+        c['mandates'] = c['object'].mandates.all()
+        c['positions'] = c['object'].positions.filter(
+            published=True).prefetch_related('tags')
+
         c['position_form'] = PositionForm(
             initial={'representative': self.object.pk})
         self.add_representative_country_and_main_mandate(c['object'])
 
         return c
-
-
-class DossierList(PaginationMixin, representatives_votes_views.DossierList):
-    queryset = Dossier.objects.prefetch_related(
-        'proposals',
-        'proposals__recommendation'
-    ).annotate(
-        nb_recomm=Count('proposals__recommendation')
-    ).order_by('-nb_recomm', '-reference')

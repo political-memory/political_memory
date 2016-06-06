@@ -1,6 +1,8 @@
 - extends 'base.html'
 
+- load memopol_tags
 - load representatives_tags
+
 
 - block content
   %table.table
@@ -8,15 +10,15 @@
       %tr
         - if group.kind != 'country' and group.kind != 'chamber'
           %td
-            %a{'href': "{% url 'representatives:representative-list' group_kind='chamber' group=group.chamber.name %}"}
+            %a{'href': "{% chamber_url group.chamber %}"}
               = group.chamber|chamber_icon
 
         %td
-          %a{'href': '{{ group.get_absolute_url }}'}
+          %a{'href': "{% group_url group %}"}
             - if group.abbreviation
               ={group.abbreviation}
         %td
-          %a{'href': '{{ group.get_absolute_url }}'}=
+          %a{'href': "{% group_url group %}"}=
             - if group.kind == 'chamber'
               = group|chamber_icon
             - elif group.kind == 'group'

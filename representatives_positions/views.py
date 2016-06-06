@@ -1,7 +1,8 @@
 from django.views import generic
 from django.db import models
+from django.core.urlresolvers import reverse
 
-from representatives.views import RepresentativeViewMixin
+from memopol.views.representative_mixin import RepresentativeViewMixin
 from representatives.models import Mandate
 
 from .models import Position
@@ -13,7 +14,8 @@ class PositionCreate(generic.CreateView):
     form_class = PositionForm
 
     def get_success_url(self):
-        return self.object.representative.get_absolute_url()
+        return reverse('representative-detail',
+            args=(self.object.representative.slug,))
 
 
 class PositionDetail(RepresentativeViewMixin, generic.DetailView):
