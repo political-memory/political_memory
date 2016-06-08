@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/static/collected/img/favicon.ico" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+    <title>
+      Home
+      - The Political Memory of </title>
+    
+    
+    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.3c5ffeab3cbf.css" type="text/css" />
+    <script type="text/javascript" src="/static/collected/libs/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="/static/collected/libs/bootstrap/dist/js/bootstrap.js"></script>
+    
+  </head>
+  <body >
+    <!-- -load memopol_tags cache -->
+
+
+
+
+<div id='header' class='container-fluid'>
+  <a id='logo' href='/'>
+    <img src='/static/collected/images/logo.png' />
+  </a>
+  <h1>
+    <a id='header_banner' href='/'>
+      Political Memory
+    </a>
+  </h1>
+  <p class='organization'>
+    
+
+  </p>
+</div>
+<div id='nav' class='container-fluid'>
+  <ul class='nav'>
+    <li>
+      <a href='/legislature/representative/'>
+        Representatives
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/country/'>
+        Countries
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/chamber/'>
+        Chambers
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/group/'>
+        Parties
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/delegation/'>
+        Delegations
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/committee/'>
+        Committees
+      </a>
+    </li>
+    <li>
+      <a href='/votes/dossier/'>
+        Dossiers
+
+      </a>
+    </li>
+  </ul>
+</div>
+
+    <div class="container-fluid main-container">
+      
+  <h1>
+    Dossiers
+
+  </h1>
+  <table class='table'>
+    <tr>
+      <th>
+        Title
+      </th>
+      <th>
+        Recommendations
+      </th>
+      <th>
+        Reference
+
+      </th>
+    </tr>
+    
+      <tr>
+        <td>
+          <a href='/votes/dossier/28147/'>
+            Resolution on the Anti-Counterfeiting Trade Agreement (ACTA)
+          </a>
+        </td>
+        <td>3</td>
+        <td>2010/2935(RSP)</td>
+
+      </tr>
+    
+  </table>
+  <div class='pagination-block'>
+
+  <nav>
+    <ul class='pagination pagination-sm'>
+      
+      
+      
+    </ul>
+  </nav>
+  <div class='count'>
+    Number of results : 1
+    <br />
+    Number of displayed results :
+    12
+    (
+    
+      <a href='?paginate_by=12'>
+        12
+      </a>
+      
+        /
+      
+    
+      <a href='?paginate_by=24'>
+        24
+      </a>
+      
+        /
+      
+    
+      <a href='?paginate_by=48'>
+        48
+      </a>
+      
+        /
+      
+    
+      <a href='?paginate_by=96'>
+        96
+      </a>
+      
+    
+    )
+    
+  </div>
+</div>
+
+
+
+    </div>
+    
+
+<div id='footer' class='container-fluid'>
+  
+    Memopol is free software
+    <a href="https://github.com/political-memory/political_memory">released</a>
+    under the terms of the
+    <a href="http://www.gnu.org/licenses/agpl.html">GNU aGPLV3+</a>
+  
+  <a href='https://github.com/political-memory/political_memory/issues'>
+    Bug tracking system
+  </a>
+  <a href='https://github.com/political-memory/political_memory/issues/new'>
+    Report a bug
+  </a>
+  <br />
+  Provided by <a href="http://www.laquadrature.net/">La Quadrature du Net</a>
+
+</div>
+
+  </body>
+</html>

@@ -2,23 +2,14 @@
 
 from django.test import TestCase
 
-from responsediff.response import Response
+from .base import ResponseDiffMixin
 
 
-class GroupListTest(TestCase):
+class GroupListTest(ResponseDiffMixin, TestCase):
     fixtures = ['smaller_sample.json']
 
     def group_test(self, kind, numQueries):
-        url = '/legislature/group/%s/' % kind
-
-        # Setup session variables
-        self.client.get(url)
-
-        with self.assertNumQueries(numQueries):
-            response = self.client.get(url)
-
-        expected = Response.for_test(self)
-        expected.assertNoDiff(response)
+        self.responsediff_test('/legislature/group/%s/' % kind, numQueries)
 
     def test_chambers(self):
         # 1 query for chambers

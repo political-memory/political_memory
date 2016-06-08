@@ -3,6 +3,8 @@ import os.path
 
 from django.test import Client
 
+from responsediff.response import Response
+
 
 class UrlGetTestMixin(object):
     url = None
@@ -35,3 +37,16 @@ class UrlGetTestMixin(object):
 
         with open(expected, 'r') as f:
             self.assertHtmlInResult(f.read())
+
+
+class ResponseDiffMixin(object):
+
+    def responsediff_test(self, url, numQueries):
+        # Setup session variables
+        self.client.get(url)
+
+        with self.assertNumQueries(numQueries):
+            response = self.client.get(url)
+
+        expected = Response.for_test(self)
+        expected.assertNoDiff(response)
