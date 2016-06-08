@@ -9,6 +9,7 @@ from views.dossier_list import DossierList
 from views.group_list import GroupList
 from views.representative_detail import RepresentativeDetail
 from views.representative_list import RepresentativeList
+from views.redirects import RedirectGroupList
 
 import api
 
@@ -17,43 +18,53 @@ admin.autodiscover()
 urlpatterns = [
     # Project-specific overrides
     url(
-        r'^legislature/representatives?/(?P<group_kind>\w+)/(?P<chamber>.+)/' +
+        r'^legislature/representative/(?P<group_kind>\w+)/(?P<chamber>.+)/' +
         r'(?P<group>.+)/$',
         RepresentativeList.as_view(),
         name='representative-list'
     ),
     url(
-        r'^legislature/representatives?/(?P<group_kind>\w+)/(?P<group>.+)/$',
+        r'^legislature/representative/(?P<group_kind>\w+)/(?P<group>.+)/$',
         RepresentativeList.as_view(),
         name='representative-list'
     ),
     url(
-        r'^legislature/representatives?/(?P<slug>[-\w]+)/$',
+        r'^legislature/representative/$',
+        RepresentativeList.as_view(),
+        name='representative-list'
+    ),
+    url(
+        r'^legislature/representative/(?P<slug>[-\w]+)/$',
         RepresentativeDetail.as_view(),
         name='representative-detail'
     ),
     url(
-        r'^legislature/groups?/$',
+        r'^legislature/group/$',
         GroupList.as_view(),
         name='group-list'
     ),
     url(
-        r'^legislature/groups?/(?P<kind>\w+)/$',
+        r'^legislature/groups/$',
+        RedirectGroupList.as_view(),
+        name='group-list-redirect'
+    ),
+    url(
+        r'^legislature/group/(?P<kind>\w+)/$',
         GroupList.as_view(),
         name='group-list'
     ),
     url(
-        r'^legislature/representatives?/$',
-        RepresentativeList.as_view(),
-        name='representative-list'
+        r'^legislature/groups/(?P<kind>\w+)/$',
+        RedirectGroupList.as_view(),
+        name='group-list-redirect'
     ),
     url(
-        r'^votes/dossiers?/$',
+        r'^votes/dossier/$',
         DossierList.as_view(),
         name='dossier-list'
     ),
     url(
-        r'^votes/dossiers?/(?P<pk>\d+)/$',
+        r'^votes/dossier/(?P<pk>\d+)/$',
         DossierDetail.as_view(),
         name='dossier-detail'
     ),
