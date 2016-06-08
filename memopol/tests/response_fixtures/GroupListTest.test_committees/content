@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/static/collected/img/favicon.ico" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+    <title>
+      Home
+      - The Political Memory of </title>
+    
+    
+    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.3c5ffeab3cbf.css" type="text/css" />
+    <script type="text/javascript" src="/static/collected/libs/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="/static/collected/libs/bootstrap/dist/js/bootstrap.js"></script>
+    
+  </head>
+  <body >
+    <!-- -load memopol_tags cache -->
+
+
+
+
+<div id='header' class='container-fluid'>
+  <a id='logo' href='/'>
+    <img src='/static/collected/images/logo.png' />
+  </a>
+  <h1>
+    <a id='header_banner' href='/'>
+      Political Memory
+    </a>
+  </h1>
+  <p class='organization'>
+    
+
+  </p>
+</div>
+<div id='nav' class='container-fluid'>
+  <ul class='nav'>
+    <li>
+      <a href='/legislature/representative/'>
+        Representatives
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/country/'>
+        Countries
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/chamber/'>
+        Chambers
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/group/'>
+        Parties
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/delegation/'>
+        Delegations
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/committee/'>
+        Committees
+      </a>
+    </li>
+    <li>
+      <a href='/votes/dossier/'>
+        Dossiers
+
+      </a>
+    </li>
+  </ul>
+</div>
+
+    <div class="container-fluid main-container">
+      
+  <table class='table'>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Agriculture%20and%20Rural%20Development/'>
+            
+              AGRI
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Agriculture%20and%20Rural%20Development/'>
+            
+              Committee on Agriculture and Rural Development
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Budgetary%20Control/'>
+            
+              CONT
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Budgetary%20Control/'>
+            
+              Committee on Budgetary Control
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Budgets/'>
+            
+              BUDG
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Budgets/'>
+            
+              Committee on Budgets
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Civil%20Liberties,%20Justice%20and%20Home%20Affairs/'>
+            
+              LIBE
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Civil%20Liberties,%20Justice%20and%20Home%20Affairs/'>
+            
+              Committee on Civil Liberties, Justice and Home Affairs
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Constitutional%20Affairs/'>
+            
+              AFCO
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Constitutional%20Affairs/'>
+            
+              Committee on Constitutional Affairs
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Culture%20and%20Education/'>
+            
+              CULT
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Culture%20and%20Education/'>
+            
+              Committee on Culture and Education
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Economic%20and%20Monetary%20Affairs/'>
+            
+              ECON
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Economic%20and%20Monetary%20Affairs/'>
+            
+              Committee on Economic and Monetary Affairs
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Employment%20and%20Social%20Affairs/'>
+            
+              EMPL
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Employment%20and%20Social%20Affairs/'>
+            
+              Committee on Employment and Social Affairs
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Fisheries/'>
+            
+              PECH
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Fisheries/'>
+            
+              Committee on Fisheries
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Foreign%20Affairs/'>
+            
+              AFET
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Foreign%20Affairs/'>
+            
+              Committee on Foreign Affairs
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Industry,%20Research%20and%20Energy/'>
+            
+              ITRE
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Industry,%20Research%20and%20Energy/'>
+            
+              Committee on Industry, Research and Energy
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20International%20Trade/'>
+            
+              INTA
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20International%20Trade/'>
+            
+              Committee on International Trade
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Legal%20Affairs/'>
+            
+              JURI
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Legal%20Affairs/'>
+            
+              Committee on Legal Affairs
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Petitions/'>
+            
+              PETI
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Petitions/'>
+            
+              Committee on Petitions
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Regional%20Development/'>
+            
+              REGI
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Regional%20Development/'>
+            
+              Committee on Regional Development
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Transport%20and%20Tourism/'>
+            
+              TRAN
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Transport%20and%20Tourism/'>
+            
+              Committee on Transport and Tourism
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Women&#39;s%20Rights%20and%20Gender%20Equality/'>
+            
+              FEMM
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Women&#39;s%20Rights%20and%20Gender%20Equality/'>
+            
+              Committee on Women&#39;s Rights and Gender Equality
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20the%20Environment,%20Public%20Health%20and%20Food%20Safety/'>
+            
+              ENVI
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20the%20Environment,%20Public%20Health%20and%20Food%20Safety/'>
+            
+              Committee on the Environment, Public Health and Food Safety
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20the%20Internal%20Market%20and%20Consumer%20Protection/'>
+            
+              IMCO
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20the%20Internal%20Market%20and%20Consumer%20Protection/'>
+            
+              Committee on the Internal Market and Consumer Protection
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Subcommittee%20on%20Human%20Rights/'>
+            
+              DROI
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/committee/European%20Parliament/Subcommittee%20on%20Human%20Rights/'>
+            
+              Subcommittee on Human Rights
+
+            
+          </a>
+        </td>
+      </tr>
+    
+  </table>
+
+    </div>
+    
+
+<div id='footer' class='container-fluid'>
+  
+    Memopol is free software
+    <a href="https://github.com/political-memory/political_memory">released</a>
+    under the terms of the
+    <a href="http://www.gnu.org/licenses/agpl.html">GNU aGPLV3+</a>
+  
+  <a href='https://github.com/political-memory/political_memory/issues'>
+    Bug tracking system
+  </a>
+  <a href='https://github.com/political-memory/political_memory/issues/new'>
+    Report a bug
+  </a>
+  <br />
+  Provided by <a href="http://www.laquadrature.net/">La Quadrature du Net</a>
+
+</div>
+
+  </body>
+</html>
