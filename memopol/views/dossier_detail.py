@@ -7,4 +7,7 @@ from representatives_votes.models import Dossier
 
 class DossierDetail(generic.DetailView):
 
-    model = Dossier
+    queryset = Dossier.objects.prefetch_related(
+        'proposals',
+        'proposals__recommendation'
+    )
