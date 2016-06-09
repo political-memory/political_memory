@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/static/collected/img/favicon.ico" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+    <title>
+      Home
+      - The Political Memory of </title>
+    
+    
+    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.3c5ffeab3cbf.css" type="text/css" />
+    <script type="text/javascript" src="/static/collected/libs/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="/static/collected/libs/bootstrap/dist/js/bootstrap.js"></script>
+    
+  </head>
+  <body >
+    <!-- -load memopol_tags cache -->
+
+
+
+
+<div id='header' class='container-fluid'>
+  <a id='logo' href='/'>
+    <img src='/static/collected/images/logo.png' />
+  </a>
+  <h1>
+    <a id='header_banner' href='/'>
+      Political Memory
+    </a>
+  </h1>
+  <p class='organization'>
+    
+
+  </p>
+</div>
+<div id='nav' class='container-fluid'>
+  <ul class='nav'>
+    <li>
+      <a href='/legislature/representative/'>
+        Representatives
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/country/'>
+        Countries
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/chamber/'>
+        Chambers
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/group/'>
+        Parties
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/delegation/'>
+        Delegations
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/committee/'>
+        Committees
+      </a>
+    </li>
+    <li>
+      <a href='/votes/dossier/'>
+        Dossiers
+
+      </a>
+    </li>
+  </ul>
+</div>
+
+    <div class="container-fluid main-container">
+      
+  <table class='table'>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Confederal%20Group%20of%20the%20European%20United%20Left/'>
+            
+              GUE/NGL
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Confederal%20Group%20of%20the%20European%20United%20Left/'>
+            
+              <span class="group-icon group-icon-guengl"></span> Confederal Group of the European United Left
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Confederal%20Group%20of%20the%20European%20United%20Left%20-%20Nordic%20Green%20Left/'>
+            
+              GUE/NGL
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Confederal%20Group%20of%20the%20European%20United%20Left%20-%20Nordic%20Green%20Left/'>
+            
+              <span class="group-icon group-icon-guengl"></span> Confederal Group of the European United Left - Nordic Green Left
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Europe%20of%20Freedom%20and%20Direct%20Democracy%20Group/'>
+            
+              EFDD
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Europe%20of%20Freedom%20and%20Direct%20Democracy%20Group/'>
+            
+              <span class="group-icon group-icon-efdd"></span> Europe of Freedom and Direct Democracy Group
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Europe%20of%20Nations%20and%20Freedom%20Group/'>
+            
+              ENF
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Europe%20of%20Nations%20and%20Freedom%20Group/'>
+            
+              <span class="group-icon group-icon-enf"></span> Europe of Nations and Freedom Group
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Europe%20of%20freedom%20and%20democracy%20Group/'>
+            
+              EFD
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Europe%20of%20freedom%20and%20democracy%20Group/'>
+            
+              <span class="group-icon group-icon-efd"></span> Europe of freedom and democracy Group
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/European%20Conservatives%20and%20Reformists%20Group/'>
+            
+              ECR
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/European%20Conservatives%20and%20Reformists%20Group/'>
+            
+              <span class="group-icon group-icon-ecr"></span> European Conservatives and Reformists Group
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Group%20Union%20for%20Europe/'>
+            
+              UFE
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Group%20Union%20for%20Europe/'>
+            
+              <span class="group-icon group-icon-ufe"></span> Group Union for Europe
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Group%20for%20a%20Europe%20of%20Democracies%20and%20Diversities/'>
+            
+              EDD
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Group%20for%20a%20Europe%20of%20Democracies%20and%20Diversities/'>
+            
+              <span class="group-icon group-icon-edd"></span> Group for a Europe of Democracies and Diversities
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Group%20of%20Independents%20for%20a%20Europe%20of%20Nations/'>
+            
+              ER
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Group%20of%20Independents%20for%20a%20Europe%20of%20Nations/'>
+            
+              <span class="group-icon group-icon-er"></span> Group of Independents for a Europe of Nations
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Alliance%20of%20Liberals%20and%20Democrats%20for%20Europe/'>
+            
+              ALDE
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Alliance%20of%20Liberals%20and%20Democrats%20for%20Europe/'>
+            
+              <span class="group-icon group-icon-alde"></span> Group of the Alliance of Liberals and Democrats for Europe
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20Democratic%20Alliance/'>
+            
+              EDA
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20Democratic%20Alliance/'>
+            
+              <span class="group-icon group-icon-eda"></span> Group of the European Democratic Alliance
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
+            
+              EPP
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
+            
+              <span class="group-icon group-icon-epp"></span> Group of the European People's Party (Christian Democrats)
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20Radical%20Alliance/'>
+            
+              ERA
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20Radical%20Alliance/'>
+            
+              <span class="group-icon group-icon-era"></span> Group of the European Radical Alliance
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Greens/European%20Free%20Alliance/'>
+            
+              Greens/EFA
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Greens/European%20Free%20Alliance/'>
+            
+              <span class="group-icon group-icon-greensefa"></span> Group of the Greens/European Free Alliance
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
+            
+              SD
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
+            
+              <span class="group-icon group-icon-sd"></span> Group of the Progressive Alliance of Socialists and Democrats in the European Parliament
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Independence/Democracy%20Group/'>
+            
+              IND/DEM
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Independence/Democracy%20Group/'>
+            
+              <span class="group-icon group-icon-inddem"></span> Independence/Democracy Group
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Liberal%20and%20Democratic%20Group/'>
+            
+              LD
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Liberal%20and%20Democratic%20Group/'>
+            
+              <span class="group-icon group-icon-ld"></span> Liberal and Democratic Group
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Liberal%20and%20Democratic%20Reformist%20Group/'>
+            
+              LDR
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Liberal%20and%20Democratic%20Reformist%20Group/'>
+            
+              <span class="group-icon group-icon-ldr"></span> Liberal and Democratic Reformist Group
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Non-attached%20Members/'>
+            
+              NI
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Non-attached%20Members/'>
+            
+              <span class="group-icon group-icon-ni"></span> Non-attached Members
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Socialist%20Group/'>
+            
+              SOC
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Socialist%20Group/'>
+            
+              <span class="group-icon group-icon-soc"></span> Socialist Group
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/The%20Green%20Group%20in%20the%20European%20Parliament/'>
+            
+              Greens/EFA
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/The%20Green%20Group%20in%20the%20European%20Parliament/'>
+            
+              <span class="group-icon group-icon-greensefa"></span> The Green Group in the European Parliament
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+          <td>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+            </a>
+          </td>
+        
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Union%20for%20Europe%20of%20the%20Nations%20Group/'>
+            
+              UEN
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/group/European%20Parliament/Union%20for%20Europe%20of%20the%20Nations%20Group/'>
+            
+              <span class="group-icon group-icon-uen"></span> Union for Europe of the Nations Group
+            
+          </a>
+        </td>
+      </tr>
+    
+  </table>
+
+    </div>
+    
+
+<div id='footer' class='container-fluid'>
+  
+    Memopol is free software
+    <a href="https://github.com/political-memory/political_memory">released</a>
+    under the terms of the
+    <a href="http://www.gnu.org/licenses/agpl.html">GNU aGPLV3+</a>
+  
+  <a href='https://github.com/political-memory/political_memory/issues'>
+    Bug tracking system
+  </a>
+  <a href='https://github.com/political-memory/political_memory/issues/new'>
+    Report a bug
+  </a>
+  <br />
+  Provided by <a href="http://www.laquadrature.net/">La Quadrature du Net</a>
+
+</div>
+
+  </body>
+</html>

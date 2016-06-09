@@ -11,6 +11,6 @@ class RecommendationForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'proposal': autocomplete.ModelSelect2(
-                url='representatives_votes:proposal-autocomplete',
+                url='proposal-autocomplete',
             )
         }

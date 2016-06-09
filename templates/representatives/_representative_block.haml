@@ -22,17 +22,17 @@
         %tr
           %th Chamber
           %td<
-            %a{'href': "{% url 'representatives:representative-list' group_kind='chamber' group=representative.chamber.name %}"}
+            %a{'href': "{% chamber_url representative.chamber %}"}
               = representative.chamber|chamber_icon
         %tr
           %th Country
           %td<
-            %a{:href => "{{ representative.country.get_absolute_url }}"}
+            %a{:href => "{% country_url representative.country %}"}
               = representative.country|country_flag
         %tr
           %th Party
           %td<
-            %a{:href => "{{ representative.main_mandate.group.get_absolute_url }}"}
+            %a{:href => "{% group_url representative.main_mandate.group %}"}
               = representative.main_mandate|mandate_icon
         %tr
           %th Biography

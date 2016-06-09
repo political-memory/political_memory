@@ -3,7 +3,14 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.views import generic
 
-import views
+from views.dossier_ac import DossierAutocomplete, ProposalAutocomplete
+from views.dossier_detail import DossierDetail
+from views.dossier_list import DossierList
+from views.group_list import GroupList
+from views.representative_detail import RepresentativeDetail
+from views.representative_list import RepresentativeList
+from views.redirects import RedirectGroupList
+
 import api
 
 admin.autodiscover()
@@ -13,30 +20,66 @@ urlpatterns = [
     url(
         r'^legislature/representative/(?P<group_kind>\w+)/(?P<chamber>.+)/' +
         r'(?P<group>.+)/$',
-        views.RepresentativeList.as_view(),
+        RepresentativeList.as_view(),
+        name='representative-list'
     ),
     url(
         r'^legislature/representative/(?P<group_kind>\w+)/(?P<group>.+)/$',
-        views.RepresentativeList.as_view(),
-    ),
-    url(
-        r'^legislature/representative/(?P<slug>[-\w]+)/$',
-        views.RepresentativeDetail.as_view(),
+        RepresentativeList.as_view(),
+        name='representative-list'
     ),
     url(
         r'^legislature/representative/$',
-        views.RepresentativeList.as_view(),
+        RepresentativeList.as_view(),
+        name='representative-list'
+    ),
+    url(
+        r'^legislature/representative/(?P<slug>[-\w]+)/$',
+        RepresentativeDetail.as_view(),
+        name='representative-detail'
+    ),
+    url(
+        r'^legislature/group/$',
+        GroupList.as_view(),
+        name='group-list'
+    ),
+    url(
+        r'^legislature/groups/$',
+        RedirectGroupList.as_view(),
+        name='group-list-redirect'
+    ),
+    url(
+        r'^legislature/group/(?P<kind>\w+)/$',
+        GroupList.as_view(),
+        name='group-list'
+    ),
+    url(
+        r'^legislature/groups/(?P<kind>\w+)/$',
+        RedirectGroupList.as_view(),
+        name='group-list-redirect'
     ),
     url(
         r'^votes/dossier/$',
-        views.DossierList.as_view(),
+        DossierList.as_view(),
+        name='dossier-list'
+    ),
+    url(
+        r'^votes/dossier/(?P<pk>\d+)/$',
+        DossierDetail.as_view(),
+        name='dossier-detail'
+    ),
+    url(
+        r'^votes/autocomplete/dossier/$',
+        DossierAutocomplete.as_view(),
+        name='dossier-autocomplete',
+    ),
+    url(
+        r'^votes/autocomplete/proposal/$',
+        ProposalAutocomplete.as_view(),
+        name='proposal-autocomplete',
     ),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^legislature/', include('representatives.urls',
-        namespace='representatives')),
-    url(r'^votes/', include('representatives_votes.urls',
-        namespace='representatives_votes')),
     url(r'^positions/', include('representatives_positions.urls',
         namespace='representatives_positions')),
     url(r'^api/', include(api.router.urls)),

@@ -29,7 +29,8 @@ class PositionTest(TestCase):
     def test_create_position(self):
         response = self.client.post(self.create_url, self.fixture)
         assert response.status_code == 302
-        expected = 'http://testserver%s' % self.mep.get_absolute_url()
+        mep_url = reverse('representative-detail', args=(self.mep.slug,))
+        expected = 'http://testserver%s' % mep_url
         assert response['Location'] == expected
 
         result = Position.objects.get(text='%stext' % self.id())

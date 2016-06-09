@@ -1,6 +1,7 @@
 - extends 'base.html'
 
 - load humanize
+- load memopol_tags
 - load representatives_tags
 - load representatives_votes_tags
 - load representatives_recommendations_tags
@@ -48,7 +49,7 @@
       %tr.mandate
         %td= mandate.role
         %td
-          %a{:href => "{{ mandate.group.get_absolute_url }}"}
+          %a{:href => "{% group_url mandate.group %}"}
             {{ mandate.group.name }}
             - if mandate.group.abbreviation
               {{ mandate.group.abbreviation }}
@@ -75,7 +76,7 @@
               %span.label.label-default
                 = tag
           %td
-            %a{:href => '{{position.link}}'}
+            %a{:href => '{{ position.link }}'}
               = position.link
 
     - include 'representatives_positions/_form.html' with form=position_form

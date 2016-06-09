@@ -43,27 +43,27 @@
       </a>
     </li>
     <li>
-      <a href='/legislature/groups/country/'>
+      <a href='/legislature/group/country/'>
         Countries
       </a>
     </li>
     <li>
-      <a href='/legislature/groups/chamber/'>
+      <a href='/legislature/group/chamber/'>
         Chambers
       </a>
     </li>
     <li>
-      <a href='/legislature/groups/group/'>
+      <a href='/legislature/group/group/'>
         Parties
       </a>
     </li>
     <li>
-      <a href='/legislature/groups/delegation/'>
+      <a href='/legislature/group/delegation/'>
         Delegations
       </a>
     </li>
     <li>
-      <a href='/legislature/groups/committee/'>
+      <a href='/legislature/group/committee/'>
         Committees
       </a>
     </li>

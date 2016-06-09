@@ -1,14 +1,35 @@
 # -*- coding: utf8 -*-
+
 from django.test import TestCase
 
 from responsediff.response import Response
 
+
 from .base import UrlGetTestMixin
+from representatives.models import Representative
+from ..views.representative_mixin import RepresentativeViewMixin
 
 
 class RepresentativeListTest(UrlGetTestMixin, TestCase):
     fixtures = ['smaller_sample.json']
     url = '/legislature/representative/'
+
+    def test_prefetch_profile(self):
+        test = RepresentativeViewMixin()
+        reps = test.prefetch_for_representative_country_and_main_mandate(
+            Representative.objects.order_by('pk'))
+
+        with self.assertNumQueries(2):
+            # Cast to list to avoid [index] to cast a select with an offset
+            # below !
+            reps = [test.add_representative_country_and_main_mandate(r)
+                    for r in reps]
+
+            assert reps[0].country.code == 'GB'
+            assert reps[0].main_mandate.pk == 3318
+
+            assert reps[1].country.code == 'FI'
+            assert reps[1].main_mandate.pk == 5545
 
     def functional_test(self, page, paginate_by, display, search=''):
         url = '%s?page=%s&search=%s' % (self.url, page, search)

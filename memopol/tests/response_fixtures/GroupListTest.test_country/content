@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/static/collected/img/favicon.ico" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+    <title>
+      Home
+      - The Political Memory of </title>
+    
+    
+    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.3c5ffeab3cbf.css" type="text/css" />
+    <script type="text/javascript" src="/static/collected/libs/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="/static/collected/libs/bootstrap/dist/js/bootstrap.js"></script>
+    
+  </head>
+  <body >
+    <!-- -load memopol_tags cache -->
+
+
+
+
+<div id='header' class='container-fluid'>
+  <a id='logo' href='/'>
+    <img src='/static/collected/images/logo.png' />
+  </a>
+  <h1>
+    <a id='header_banner' href='/'>
+      Political Memory
+    </a>
+  </h1>
+  <p class='organization'>
+    
+
+  </p>
+</div>
+<div id='nav' class='container-fluid'>
+  <ul class='nav'>
+    <li>
+      <a href='/legislature/representative/'>
+        Representatives
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/country/'>
+        Countries
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/chamber/'>
+        Chambers
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/group/'>
+        Parties
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/delegation/'>
+        Delegations
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/committee/'>
+        Committees
+      </a>
+    </li>
+    <li>
+      <a href='/votes/dossier/'>
+        Dossiers
+
+      </a>
+    </li>
+  </ul>
+</div>
+
+    <div class="container-fluid main-container">
+      
+  <table class='table'>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Austria/'>
+            
+              AT
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Austria/'>
+            
+              Austria
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Belgium/'>
+            
+              BE
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Belgium/'>
+            
+              Belgium
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Bulgaria/'>
+            
+              BG
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Bulgaria/'>
+            
+              Bulgaria
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Cyprus/'>
+            
+              CY
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Cyprus/'>
+            
+              Cyprus
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Czech%20Republic/'>
+            
+              CZ
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Czech%20Republic/'>
+            
+              Czech Republic
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Denmark/'>
+            
+              DK
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Denmark/'>
+            
+              Denmark
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Estonia/'>
+            
+              EE
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Estonia/'>
+            
+              Estonia
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Finland/'>
+            
+              FI
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Finland/'>
+            
+              Finland
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/France/'>
+            
+              FR
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/France/'>
+            
+              France
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Germany/'>
+            
+              DE
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Germany/'>
+            
+              Germany
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Greece/'>
+            
+              GR
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Greece/'>
+            
+              Greece
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Hungary/'>
+            
+              HU
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Hungary/'>
+            
+              Hungary
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Ireland/'>
+            
+              IE
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Ireland/'>
+            
+              Ireland
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Italy/'>
+            
+              IT
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Italy/'>
+            
+              Italy
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Latvia/'>
+            
+              LV
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Latvia/'>
+            
+              Latvia
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Lithuania/'>
+            
+              LT
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Lithuania/'>
+            
+              Lithuania
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Luxembourg/'>
+            
+              LU
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Luxembourg/'>
+            
+              Luxembourg
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Malta/'>
+            
+              MT
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Malta/'>
+            
+              Malta
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Netherlands/'>
+            
+              NL
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Netherlands/'>
+            
+              Netherlands
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Poland/'>
+            
+              PL
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Poland/'>
+            
+              Poland
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Portugal/'>
+            
+              PT
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Portugal/'>
+            
+              Portugal
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Romania/'>
+            
+              RO
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Romania/'>
+            
+              Romania
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Slovakia/'>
+            
+              SK
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Slovakia/'>
+            
+              Slovakia
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Slovenia/'>
+            
+              SI
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Slovenia/'>
+            
+              Slovenia
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Spain/'>
+            
+              ES
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Spain/'>
+            
+              Spain
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Sweden/'>
+            
+              SE
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/Sweden/'>
+            
+              Sweden
+
+            
+          </a>
+        </td>
+      </tr>
+    
+      <tr>
+        
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/United%20Kingdom/'>
+            
+              GB
+            
+          </a>
+        </td>
+        <td>
+          <a href='/legislature/representative/country/European%20Parliament/United%20Kingdom/'>
+            
+              United Kingdom
+
+            
+          </a>
+        </td>
+      </tr>
+    
+  </table>
+
+    </div>
+    
+
+<div id='footer' class='container-fluid'>
+  
+    Memopol is free software
+    <a href="https://github.com/political-memory/political_memory">released</a>
+    under the terms of the
+    <a href="http://www.gnu.org/licenses/agpl.html">GNU aGPLV3+</a>
+  
+  <a href='https://github.com/political-memory/political_memory/issues'>
+    Bug tracking system
+  </a>
+  <a href='https://github.com/political-memory/political_memory/issues/new'>
+    Report a bug
+  </a>
+  <br />
+  Provided by <a href="http://www.laquadrature.net/">La Quadrature du Net</a>
+
+</div>
+
+  </body>
+</html>

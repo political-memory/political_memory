@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/static/collected/img/favicon.ico" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+    <title>
+      Home
+      - The Political Memory of </title>
+    
+    
+    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.3c5ffeab3cbf.css" type="text/css" />
+    <script type="text/javascript" src="/static/collected/libs/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="/static/collected/libs/bootstrap/dist/js/bootstrap.js"></script>
+    
+  </head>
+  <body >
+    <!-- -load memopol_tags cache -->
+
+
+
+
+<div id='header' class='container-fluid'>
+  <a id='logo' href='/'>
+    <img src='/static/collected/images/logo.png' />
+  </a>
+  <h1>
+    <a id='header_banner' href='/'>
+      Political Memory
+    </a>
+  </h1>
+  <p class='organization'>
+    
+
+  </p>
+</div>
+<div id='nav' class='container-fluid'>
+  <ul class='nav'>
+    <li>
+      <a href='/legislature/representative/'>
+        Representatives
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/country/'>
+        Countries
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/chamber/'>
+        Chambers
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/group/'>
+        Parties
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/delegation/'>
+        Delegations
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/committee/'>
+        Committees
+      </a>
+    </li>
+    <li>
+      <a href='/votes/dossier/'>
+        Dossiers
+
+      </a>
+    </li>
+  </ul>
+</div>
+
+    <div class="container-fluid main-container">
+      
+
+  <h1> Resolution on the Anti-Counterfeiting Trade Agreement (ACTA)</h1>
+  <p>
+    <strong>2010/2935(RSP)</strong>
+
+  </p>
+  <h2>
+    Recommendations
+
+  </h2>
+  <table class='table'>
+    <tr>
+      <th>
+        Proposal
+      </th>
+      <th>
+        Title
+      </th>
+      <th>
+        Recommendation
+      </th>
+      <th>
+        Status
+      </th>
+      <th><i             aria-label="for"             class="fa fa-thumbs-up vote_positive"             title="for"             ></i></th>
+      <th><i             aria-label="against"             class="fa fa-thumbs-down vote_negative"             title="against"             ></i></th>
+      <th><i             aria-label="abstain"             class="fa fa-circle-o vote_abstain"             title="abstain"             ></i></th>
+
+    </tr>
+    
+      <tr>
+        <td>
+          RC-B7-0617/2010 - Accord commercial anti-contrefaçon (ACAC) - Considérant X
+          <br />
+          <small>
+            B7-0617/2010
+            Considérant X
+          </small>
+        </td>
+        <td>Stop acta !</td>
+        <td><i             aria-label="for"             class="fa fa-thumbs-up vote_positive"             title="for"             ></i></td>
+        <td>adopted</td>
+        <td>329</td>
+        <td>249</td>
+        <td>75</td>
+
+
+      </tr>
+    
+      <tr>
+        <td>
+          RC-B7-0617/2010 - Accord commercial anti-contrefaçon (ACAC) - Considérant CC
+          <br />
+          <small>
+            B7-0617/2010
+            Considérant CC
+          </small>
+        </td>
+        <td>Stop acta !</td>
+        <td><i             aria-label="for"             class="fa fa-thumbs-up vote_positive"             title="for"             ></i></td>
+        <td>adopted</td>
+        <td>315</td>
+        <td>312</td>
+        <td>14</td>
+
+
+      </tr>
+    
+      <tr>
+        <td>
+          RC-B7-0617/2010 - Accord commercial anti-contrefaçon (ACAC) - Résolution
+          <br />
+          <small>
+            B7-0617/2010
+            Résolution
+          </small>
+        </td>
+        <td>Stop acta !</td>
+        <td><i             aria-label="for"             class="fa fa-thumbs-up vote_positive"             title="for"             ></i></td>
+        <td>rejected</td>
+        <td>306</td>
+        <td>322</td>
+        <td>26</td>
+
+
+      </tr>
+    
+  </table>
+
+    </div>
+    
+
+<div id='footer' class='container-fluid'>
+  
+    Memopol is free software
+    <a href="https://github.com/political-memory/political_memory">released</a>
+    under the terms of the
+    <a href="http://www.gnu.org/licenses/agpl.html">GNU aGPLV3+</a>
+  
+  <a href='https://github.com/political-memory/political_memory/issues'>
+    Bug tracking system
+  </a>
+  <a href='https://github.com/political-memory/political_memory/issues/new'>
+    Report a bug
+  </a>
+  <br />
+  Provided by <a href="http://www.laquadrature.net/">La Quadrature du Net</a>
+
+</div>
+
+  </body>
+</html>

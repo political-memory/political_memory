@@ -78,147 +78,36 @@
 
     <div class="container-fluid main-container">
       
+  <h1>
+    Dossiers
 
-  
+  </h1>
+  <table class='table'>
+    <tr>
+      <th>
+        Title
+      </th>
+      <th>
+        Recommendations
+      </th>
+      <th>
+        Reference
 
-    <form action='' method='get'>
-      <label for='search'>
-        Search
-      </label>
-      <input id='search' type='text' name='search' />
-      <input type='submit' value='Go' />
-
-    </form>
-    <a href='?search=joly&csv'>
-      Download data as CSV
-
-    </a>
-  
-
-  <div class='pagination-block'>
-
-  <nav>
-    <ul class='pagination pagination-sm'>
-      
-      
-      
-    </ul>
-  </nav>
-  <div class='count'>
-    Number of results : 1
-    <br />
-    Number of displayed results :
-    12
-    (
+      </th>
+    </tr>
     
-      <a href='?paginate_by=12'>
-        12
-      </a>
-      
-        /
-      
-    
-      <a href='?paginate_by=24'>
-        24
-      </a>
-      
-        /
-      
-    
-      <a href='?paginate_by=48'>
-        48
-      </a>
-      
-        /
-      
-    
-      <a href='?paginate_by=96'>
-        96
-      </a>
-      
-    
-    )
-    
-      <span class='grid-list-selector'>
-  <a href='?display=grid'>
-    <i class="fa fa-th"></i>
-  </a>
-  <a href='?display=list'>
-    <i class="fa fa-th-list"></i>
-
-  </a>
-</span>
-
-
-    
-  </div>
-</div>
-
-
-  
-
-    <table class='table'>
       <tr>
-        <th>
-          Photo
-        </th>
-        <th>
-          Name
-        </th>
-        <th>
-          Chamber
-        </th>
-        <th>
-          Country
-        </th>
-        <th>
-          Group
-        </th>
-        <th>
-          Score
+        <td>
+          <a href='/votes/dossier/28147/'>
+            Resolution on the Anti-Counterfeiting Trade Agreement (ACTA)
+          </a>
+        </td>
+        <td>3</td>
+        <td>2010/2935(RSP)</td>
 
-        </th>
       </tr>
-      
-        <tr>
-          <td>
-            <a href='/legislature/representative/eva-joly/'>
-              <img src='http://www.europarl.europa.eu/mepphoto/96883.jpg' width='80' />
-
-            </a>
-          </td>
-          <td>
-            <a href='/legislature/representative/eva-joly/'>
-              Eva JOLY
-
-            </a>
-          </td>
-          <td>
-            <a href='/legislature/representative/chamber/European%20Parliament/'>
-              European Parliament [EP]
-
-            </a>
-          </td>
-          <td>
-            <a href='/legislature/representative/country/France/'>
-              France [FR]
-
-            </a>
-          </td>
-          <td>
-            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Greens/European%20Free%20Alliance/'>
-              <span class="group-icon group-icon-greensefa"></span> Greens/EFA
-            </a>
-          </td>
-          <td>
-            <span class="label label-success">15</span>
-
-          </td>
-        </tr>
-      
-    </table>
-  
-
+    
+  </table>
   <div class='pagination-block'>
 
   <nav>
@@ -262,18 +151,6 @@
       
     
     )
-    
-      <span class='grid-list-selector'>
-  <a href='?display=grid'>
-    <i class="fa fa-th"></i>
-  </a>
-  <a href='?display=list'>
-    <i class="fa fa-th-list"></i>
-
-  </a>
-</span>
-
-
     
   </div>
 </div>
