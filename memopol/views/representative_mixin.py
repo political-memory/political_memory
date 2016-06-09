@@ -1,7 +1,5 @@
 # coding: utf-8
 
-import datetime
-
 from django.db import models
 
 from representatives.models import Mandate
@@ -35,7 +33,6 @@ class RepresentativeViewMixin(object):
         Note that this will butcher your database if you don't use
         self.prefetch_related.
         """
-        today = datetime.date.today()
 
         representative.country = None
         representative.main_mandate = None
@@ -44,8 +41,7 @@ class RepresentativeViewMixin(object):
             if m.constituency.country_id and not representative.country:
                 representative.country = m.constituency.country
 
-            if ((m.end_date is None or m.end_date > today) and
-                    m.group.kind == 'group' and
+            if (m.group.kind == 'group' and
                     not representative.main_mandate):
 
                 representative.main_mandate = m
