@@ -8,7 +8,7 @@
 
   .representative_grid
     - for representative in object_list
-      .representative_item
+      .representative_item{'class': '{{ representative.active|yesno:"active,inactive" }}'}
         %p.photo
           %a{'href': "{% url 'representative-detail' representative.slug %}"}
             %img{'src': '={representative.photo}', 'width': '80'}/

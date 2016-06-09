@@ -38,8 +38,8 @@
           - trans 'Score'
 
       - for representative in object_list
-        %tr
-          %td
+        %tr.representative_item{'class': '{{ representative.active|yesno:"active,inactive" }}'}
+          %td.photo
             %a{'href': "{% url 'representative-detail' representative.slug %}"}
               %img{'src': '={representative.photo}', 'width': '80'}/
 

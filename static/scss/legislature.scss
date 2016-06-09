@@ -66,3 +66,16 @@
         }
     }
 }
+
+.representative_item.inactive,
+.representative.inactive {
+    .photo img {
+        -webkit-filter: greyscale(1);
+        -moz-filter: grayscale(1);
+        -ms-filter: grayscale(1);
+        -o-filter: grayscale(1);
+        filter: grayscale(1);
+
+        opacity: 0.5;
+    }
+}
