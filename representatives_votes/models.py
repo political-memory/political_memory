@@ -1,5 +1,4 @@
 # coding: utf-8
-from django.core.urlresolvers import reverse
 from django.db import models
 
 from representatives.models import (HashableModel, Representative,
@@ -17,9 +16,6 @@ class Dossier(HashableModel, TimeStampedModel):
 
     def __unicode__(self):
         return unicode(self.title)
-
-    def get_absolute_url(self):
-        return reverse('representatives_votes:dossier-detail', args=(self.pk,))
 
 
 class Proposal(HashableModel, TimeStampedModel):
