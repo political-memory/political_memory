@@ -15,6 +15,14 @@ class ActiveLegislatureMixin(object):
         self.set_active_only()
         return super(ActiveLegislatureMixin, self).get(*args, **kwargs)
 
+    def override_active_only(self):
+        """
+        Redefine this method to override active legislature selection
+        - return None to enable user choice
+        - return True or False to disable user choice and set active state
+        """
+        return None
+
     def set_active_only(self):
         if 'active_only' in self.request.GET:
             self.request.session['active_only'] = \
@@ -23,11 +31,16 @@ class ActiveLegislatureMixin(object):
             self.request.session['active_only'] = self.default_active_only
 
     def get_active_only(self):
-        return self.request.session['active_only']
+        overriden = self.override_active_only()
+        if overriden is None:
+            return self.request.session['active_only']
+        else:
+            return overriden
 
     def get_context_data(self, **kwargs):
         c = super(ActiveLegislatureMixin, self).get_context_data(**kwargs)
-        c['active_only'] = self.get_active_only()
+        if self.override_active_only() is None:
+            c['active_only'] = self.get_active_only()
         return c
 
 
