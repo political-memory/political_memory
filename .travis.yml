@@ -13,7 +13,6 @@ before_script:
 script:
 - flake8 . --exclude '*/migrations,docs,static' --ignore E128
 - py.test memopol representatives_positions representatives_recommendations
-- rm -rf db.sqlite
 - django-admin migrate
 after_success:
 - codecov
