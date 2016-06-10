@@ -10,7 +10,7 @@
       - The Political Memory of </title>
     
     
-    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.9880026c7b85.css" type="text/css" />
+    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.6cb1be2fbcdd.css" type="text/css" />
     <script type="text/javascript" src="/static/collected/libs/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="/static/collected/libs/bootstrap/dist/js/bootstrap.js"></script>
     
@@ -161,21 +161,32 @@
     
 
 <div id='footer' class='container-fluid'>
-  
-    Memopol is free software
-    <a href="https://github.com/political-memory/political_memory">released</a>
-    under the terms of the
-    <a href="http://www.gnu.org/licenses/agpl.html">GNU aGPLV3+</a>
-  
-  <a href='https://github.com/political-memory/political_memory/issues'>
-    Bug tracking system
-  </a>
-  <a href='https://github.com/political-memory/political_memory/issues/new'>
-    Report a bug
-  </a>
-  <br />
-  Provided by <a href="http://www.laquadrature.net/">La Quadrature du Net</a>
-
+  <div class='license-links'>
+    
+      Memopol is
+      <a href='https://github.com/political-memory/political_memory'>free software</a>
+      released under the terms of the
+      <a href='http://www.gnu.org/licenses/agpl.html'>GNU aGPLV3+</a>
+    
+  </div>
+  <div class='footer-link'>
+    <a href='https://github.com/political-memory/political_memory/issues/new'>Report a bug</a>
+  </div>
+  <div class='footer-link'>
+    <a href='http://www.memopol.org/'>Blog</a>
+  </div>
+  <div class='footer-link'>
+    <a href='http://memopol.readthedocs.io/en/master/'>Documentation</a>
+  </div>
+  <div class='footer-separator'></div>
+  <div class='footer-link'>
+    Developed by
+    <a href='http://www.laquadrature.net/'>La Quadrature du Net</a>
+  </div>
+  <div class='footer-link'>
+    EP data provided by
+    <a href='http://parltrack.euwiki.org/'>Parltrack</a>
+  </div>
 </div>
 
   </body>
