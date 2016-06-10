@@ -10,7 +10,7 @@
       - The Political Memory of </title>
     
     
-    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.6cb1be2fbcdd.css" type="text/css" />
+    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.c7d56d0a17c9.css" type="text/css" />
     <script type="text/javascript" src="/static/collected/libs/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="/static/collected/libs/bootstrap/dist/js/bootstrap.js"></script>
     
@@ -106,6 +106,19 @@
   </nav>
   <div class='count'>
     Number of results : 1
+
+    
+      <br />
+      Display :
+
+  current legislature only /
+  <a href='?active_only=0'>
+    all data
+  </a>
+
+
+
+    
     <br />
     Number of displayed results :
     12
@@ -180,8 +193,8 @@
         </th>
       </tr>
       
-        <tr>
-          <td>
+        <tr class='representative_item active'>
+          <td class='photo'>
             <a href='/legislature/representative/eva-joly/'>
               <img src='http://www.europarl.europa.eu/mepphoto/96883.jpg' width='80' />
 
@@ -230,6 +243,19 @@
   </nav>
   <div class='count'>
     Number of results : 1
+
+    
+      <br />
+      Display :
+
+  current legislature only /
+  <a href='?active_only=0'>
+    all data
+  </a>
+
+
+
+    
     <br />
     Number of displayed results :
     12

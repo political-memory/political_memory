@@ -31,12 +31,13 @@ class RepresentativeListTest(UrlGetTestMixin, TestCase):
             assert reps[1].country.code == 'FI'
             assert reps[1].main_mandate.pk == 5545
 
-    def functional_test(self, page, paginate_by, display, search=''):
+    def functional_test(self, page, paginate_by, active_only, display,
+                        search=''):
         url = '%s?page=%s&search=%s' % (self.url, page, search)
 
         # Cancel out one-time queries (session)
-        self.client.get('%s&paginate_by=%s&display=%s' %
-            (url, paginate_by, display))
+        self.client.get('%s&paginate_by=%s&display=%s&active_only=%s' %
+            (url, paginate_by, display, active_only))
 
         with self.assertNumQueries(3):
             """
@@ -49,17 +50,23 @@ class RepresentativeListTest(UrlGetTestMixin, TestCase):
         expected = Response.for_test(self)
         expected.assertNoDiff(self.response)
 
-    def test_page1_paginateby12_displaylist(self):
-        self.functional_test(1, 12, 'list')
+    def test_page1_paginateby12_active_displaylist(self):
+        self.functional_test(1, 12, 1, 'list')
 
-    def test_page1_paginateby24_displaygrid(self):
-        self.functional_test(1, 24, 'grid')
+    def test_page1_paginateby12_all_displaylist(self):
+        self.functional_test(1, 12, 0, 'list')
+
+    def test_page1_paginateby24_active_displaygrid(self):
+        self.functional_test(1, 24, 1, 'grid')
+
+    def test_page1_paginateby24_all_displaygrid(self):
+        self.functional_test(1, 24, 0, 'grid')
 
     def test_page2_paginateby24_displaylist(self):
-        self.functional_test(2, 24, 'list')
+        self.functional_test(2, 24, 1, 'list')
 
     def test_page1_paginateby12_displaylist_searchjoly(self):
-        self.functional_test(1, 12, 'list', 'joly')
+        self.functional_test(1, 12, 1, 'list', 'joly')
 
     def test_page2_paginateby12_displaylist(self):
-        self.functional_test(2, 12, 'list')
+        self.functional_test(2, 12, 1, 'list')
