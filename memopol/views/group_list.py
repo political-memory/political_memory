@@ -2,19 +2,24 @@
 
 import datetime
 
+from core.views import PaginationMixin, ActiveLegislatureMixin
+
 from django.db import models
 from django.views import generic
 
 from representatives.models import Group
 
 
-class GroupList(generic.ListView):
+class GroupList(PaginationMixin, ActiveLegislatureMixin, generic.ListView):
 
     def get_queryset(self):
-        qs = Group.objects.filter(
-            models.Q(mandates__end_date__gte=datetime.date.today()) |
-            models.Q(mandates__end_date__isnull=True)
-        )
+        qs = Group.objects.all()
+
+    	if self.get_active_only():
+	        qs = qs.filter(
+	            models.Q(mandates__end_date__gte=datetime.date.today()) |
+	            models.Q(mandates__end_date__isnull=True)
+	        )
 
         kind = self.kwargs.get('kind', None)
         if kind:
