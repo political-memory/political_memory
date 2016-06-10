@@ -754,15 +754,27 @@
     under the terms of the
     <a href="http://www.gnu.org/licenses/agpl.html">GNU aGPLV3+</a>
   
-  <a href='https://github.com/political-memory/political_memory/issues'>
-    Bug tracking system
-  </a>
+  &nbsp;
   <a href='https://github.com/political-memory/political_memory/issues/new'>
     Report a bug
   </a>
   <br />
   Provided by <a href="http://www.laquadrature.net/">La Quadrature du Net</a>
+  <br />
+  <hr />
+  <a href='http://parltrack.euwiki.org/'>
+    EP data provided by Parltrack
+  </a>
+  &nbsp;
+  <a href='http://www.memopol.org/'>
+    Blog
+  </a>
+  &nbsp;
+  <a href='http://memopol.readthedocs.io/en/master/'>
+    Documentation
 
+
+  </a>
 </div>
 
   </body>
