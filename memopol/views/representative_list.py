@@ -1,6 +1,7 @@
 # coding: utf-8
 
-from core.views import GridListMixin, PaginationMixin, CSVDownloadMixin
+from core.views import GridListMixin, PaginationMixin, CSVDownloadMixin, \
+    ActiveLegislatureMixin
 
 import datetime
 
@@ -14,11 +15,11 @@ from .representative_mixin import RepresentativeViewMixin
 
 
 class RepresentativeList(CSVDownloadMixin, GridListMixin, PaginationMixin,
-                         RepresentativeViewMixin, generic.ListView):
+                         RepresentativeViewMixin, ActiveLegislatureMixin,
+                         generic.ListView):
 
     csv_name = 'meps.csv'
-    queryset = Representative.objects.filter(
-        active=True).select_related('score')
+    queryset = Representative.objects.select_related('score')
 
     def get_context_data(self, **kwargs):
         c = super(RepresentativeList, self).get_context_data(**kwargs)
@@ -66,6 +67,8 @@ class RepresentativeList(CSVDownloadMixin, GridListMixin, PaginationMixin,
 
     def get_queryset(self):
         qs = super(RepresentativeList, self).get_queryset()
+        if self.get_active_only():
+            qs = qs.filter(active=True)
         qs = self.group_filter(qs)
         qs = self.search_filter(qs)
         qs = self.prefetch_for_representative_country_and_main_mandate(qs)
