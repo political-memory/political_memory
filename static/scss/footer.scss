@@ -1,10 +1,26 @@
 #footer {
-   background: #5B8EDC;
-   color: white;
-   text-align: center;
-   padding: 20px;
-   a {
-       color: white;
-       text-decoration: underline;
-   }
+    background: #5B8EDC;
+    color: white;
+    text-align: center;
+    padding: 20px;
+
+    a {
+        color: white;
+        text-decoration: underline;
+    }
+
+    .license-links,
+    .footer-link {
+        display: inline;
+
+        & + .footer-link:before {
+            content: '•';
+            padding: 0 .5em;
+        }
+    }
+
+    .footer-separator {
+        height: 1em;
+    }
 }
+

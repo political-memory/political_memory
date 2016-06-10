@@ -1,24 +1,33 @@
 - load i18n
 
 #footer.container-fluid
-  - blocktrans
-    Memopol is free software
-    <a href="https://github.com/political-memory/political_memory">released</a>
-    under the terms of the
-    <a href="http://www.gnu.org/licenses/agpl.html">GNU aGPLV3+</a>
-  &nbsp;
-  %a{href: "https://github.com/political-memory/political_memory/issues/new"}
-    - trans "Report a bug"
-  %br
-  {% trans "Provided by" %} <a href="http://www.laquadrature.net/">La Quadrature du Net</a>
-  %br
-  %hr
-  %a{href: "http://parltrack.euwiki.org/"}
-    - trans "EP data provided by Parltrack"
-  &nbsp;
-  %a{href: "http://www.memopol.org/"} 
-    - trans "Blog"
-  &nbsp;
-  %a{href: "http://memopol.readthedocs.io/en/master/"} 
-    - trans "Documentation"
+  .license-links
+    - blocktrans
+      Memopol is
+      %a{href: "https://github.com/political-memory/political_memory"}<
+        free software
+      released under the terms of the
+      %a{href: "http://www.gnu.org/licenses/agpl.html"}<
+        GNU aGPLV3+
+
+  .footer-link
+    %a{href: "https://github.com/political-memory/political_memory/issues/new"}<
+      - trans "Report a bug"
+  .footer-link
+    %a{href: "http://www.memopol.org/"}<
+      - trans "Blog"
+  .footer-link
+    %a{href: "http://memopol.readthedocs.io/en/master/"}<
+      - trans "Documentation"
+
+  .footer-separator
+
+  .footer-link
+    - trans "Developed by"
+    %a{href: "http://www.laquadrature.net/"}<
+      La Quadrature du Net
+  .footer-link
+    - trans "EP data provided by"
+    %a{href: "http://parltrack.euwiki.org/"}<
+      - trans "Parltrack"
 
