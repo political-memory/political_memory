@@ -11,7 +11,6 @@ install:
 before_script:
 - bin/install_client_deps.sh
 script:
-- bash -c '! lesscpy -N static/less/base.less 2>&1 | grep Error'
 - flake8 . --exclude '*/migrations,docs,static' --ignore E128
 - py.test memopol representatives_positions representatives_recommendations
 - rm -rf db.sqlite

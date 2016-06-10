@@ -1,4 +1,4 @@
-@quote-size: 1em;
+$quote-size: 1em;
 
 .quote {
     width: 70%;
@@ -15,13 +15,13 @@
     p:first-child:before {
         content: '« ';
         font-style: italic;
-        font-size: @quote-size;
+        font-size: $quote-size;
     }
 
     p:last-child:after {
         content: ' »';
         font-style: italic;
-        font-size: @quote-size;
+        font-size: $quote-size;
         text-align: right;
     }
 }
