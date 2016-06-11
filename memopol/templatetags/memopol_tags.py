@@ -21,6 +21,10 @@ def fix_url(url):
     return re.sub('^(https?://)?', 'https://', url.strip())
 
 
+def cssify(string):
+    return re.sub('[^a-z_-]', '', string.lower())
+
+
 @register.filter
 def twitter_link(url):
     furl = fix_url(url)
