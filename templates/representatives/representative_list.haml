@@ -9,9 +9,7 @@
   - block search
 
     %form{action:'', method:'get'}
-      %label{for:'search'}
-        - trans 'Search'
-      %input{id:"search", type:"text", name:"search"}
+      {{ filter.form.as_p }}
       %input{type:"submit", value:"Go"}
 
     %a{href:"?{% if request.GET.search %}search={{ request.GET.search }}&{% endif %}csv"}

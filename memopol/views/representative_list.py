@@ -11,6 +11,7 @@ from django.views import generic
 
 from representatives.models import Group, Representative
 
+from ..filters import RepresentativeFilter
 from .representative_mixin import RepresentativeViewMixin
 
 
@@ -20,10 +21,12 @@ class RepresentativeList(CSVDownloadMixin, GridListMixin, PaginationMixin,
 
     csv_name = 'representatives'
     queryset = Representative.objects.select_related('score')
+    current_filter = None
 
     def get_context_data(self, **kwargs):
         c = super(RepresentativeList, self).get_context_data(**kwargs)
 
+        c['filter'] = self.current_filter
         c['object_list'] = [
             self.add_representative_country_and_main_mandate(r)
             for r in c['object_list']
@@ -31,11 +34,10 @@ class RepresentativeList(CSVDownloadMixin, GridListMixin, PaginationMixin,
 
         return c
 
-    def search_filter(self, qs):
-        search = self.request.GET.get('search', None)
-        if search:
-            qs = qs.filter(slug__icontains=slugify(search))
-        return qs
+    def rep_filter(self, qs):
+        f = RepresentativeFilter(self.request.GET, queryset=qs)
+        self.current_filter = f
+        return f.qs
 
     def group_filter(self, qs):
         group_kind = self.kwargs.get('group_kind', None)
@@ -69,8 +71,7 @@ class RepresentativeList(CSVDownloadMixin, GridListMixin, PaginationMixin,
         qs = super(RepresentativeList, self).get_queryset()
         if self.get_active_only():
             qs = qs.filter(active=True)
-        qs = self.group_filter(qs)
-        qs = self.search_filter(qs)
+        qs = self.rep_filter(qs)
         qs = self.prefetch_for_representative_country_and_main_mandate(qs)
         return qs
 
