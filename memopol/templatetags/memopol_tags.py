@@ -3,12 +3,17 @@
 import re
 
 from django import template
+from django.contrib.humanize.templatetags.humanize import naturalday
 from django.core.urlresolvers import reverse
 from django.utils.safestring import mark_safe
 from django.utils.html import escape
 
 register = template.Library()
-link = '<a class="{network}-link" href="{url}" target="_blank">{label}</a>'
+link = u'<a class="{network}-link" href="{url}" target="_blank">{label}</a>'
+
+
+def cssify(string):
+    return re.sub('[^a-z_-]', '', string.lower())
 
 
 @register.filter
@@ -65,3 +70,83 @@ def country_url(country):
         'group_kind': 'country',
         'group': country.name
     }))
+
+
+@register.filter
+def country_flag(country):
+    # Enable using groups instead of countries
+    code = country.code if hasattr(country, 'code') else country.abbreviation
+    return mark_safe(
+        '<span class="flag-icon flag-icon-{code}"></span> {name}'.format(
+            name=country.name,
+            code=code.lower()))
+
+
+@register.filter
+def chamber_icon(chamber):
+    return mark_safe(
+        u'<span class="chamber-icon ' +
+        u'chamber-icon-{abbr}"></span> {name}'.format(
+            name=chamber.name,
+            abbr=cssify(chamber.abbreviation)))
+
+
+@register.filter
+def mandate_icon(main_mandate):
+    return mark_safe(
+        u'<span class="group-icon ' +
+        u'group-icon-{abbr}"></span> {role} of {name}'.format(
+            role=main_mandate.role,
+            name=main_mandate.group.name,
+            abbr=cssify(main_mandate.group.abbreviation)))
+
+
+@register.filter
+def group_icon(group):
+    return mark_safe(
+        u'<span class="group-icon ' +
+        u'group-icon-{abbr}"></span> {name}'.format(
+            abbr=cssify(group.abbreviation),
+            name=group.abbreviation))
+
+
+@register.filter
+def group_long_icon(group):
+    return mark_safe(
+        u'<span class="group-icon ' +
+        u'group-icon-{abbr}"></span> {name}'.format(
+            abbr=cssify(group.abbreviation),
+            name=group.name))
+
+
+@register.filter
+def mandate_date(date, arg=None):
+    if date is None or date.year == 9999:
+        return 'present'
+    else:
+        return naturalday(date, arg)
+
+
+@register.filter
+def position_icon(position):
+    if position == 'for':
+        return mark_safe(
+            '<i \
+            aria-label="for" \
+            class="fa fa-thumbs-up vote_positive" \
+            title="for" \
+            ></i>')
+    elif position == 'against':
+        return mark_safe(
+            '<i \
+            aria-label="against" \
+            class="fa fa-thumbs-down vote_negative" \
+            title="against" \
+            ></i>')
+    else:
+        return mark_safe(
+            '<i \
+            aria-label="abstain" \
+            class="fa fa-circle-o vote_abstain" \
+            title="abstain" \
+            ></i>')
