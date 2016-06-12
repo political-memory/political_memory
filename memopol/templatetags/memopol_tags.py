@@ -16,22 +16,32 @@ def cssify(string):
     return re.sub('[^a-z_-]', '', string.lower())
 
 
+def fix_url(url):
+    # Ensure we have a usable URL
+    return re.sub('^(https?://)?', 'https://', url.strip())
+
+
 @register.filter
 def twitter_link(url):
-    return mark_safe(link.format(network='twitter', url=url,
-        label=re.sub(r'.*/@?([^/]+)', '@\\1', re.sub(r'/$', '', url.strip()))))
+    furl = fix_url(url)
+    return mark_safe(link.format(network='twitter', url=furl,
+        label=re.sub(r'.*/@?([^/]+)', '@\\1', re.sub(r'/$', '', furl))))
 
 
 @register.filter
 def facebook_link(url):
-    return mark_safe(link.format(network='facebook', url=url,
-        label=re.sub(r'.*/([^/]+)', '\\1', re.sub(r'/$', '', url.strip()))))
+    furl = fix_url(url)
+    clean_url = re.sub(r'/$', '', re.sub(r'\?.*', '', furl))
+    m = re.search(r'/pages/([^/]+)', clean_url, re.I)
+    return mark_safe(link.format(network='facebook', url=furl,
+        label=m.group(1) if m else re.sub(r'.*/([^/]+)', '\\1', clean_url)))
 
 
 @register.filter
 def website_link(url):
-    short_url = re.sub(r'^https?://([^/]+).*', '\\1', url)
-    return mark_safe(link.format(network='website', url=url,
+    furl = fix_url(url)
+    short_url = re.sub(r'^https?://([^/]+).*', '\\1', furl)
+    return mark_safe(link.format(network='website', url=furl,
         label=short_url))
 
 
