@@ -4,6 +4,46 @@ from django import http
 import unicodecsv as csv
 
 
+class ActiveLegislatureMixin(object):
+    """
+    Mixin for views that can switch between active legislature and all data
+    """
+
+    default_active_only = True
+
+    def get(self, *args, **kwargs):
+        self.set_active_only()
+        return super(ActiveLegislatureMixin, self).get(*args, **kwargs)
+
+    def override_active_only(self):
+        """
+        Redefine this method to override active legislature selection
+        - return None to enable user choice
+        - return True or False to disable user choice and set active state
+        """
+        return None
+
+    def set_active_only(self):
+        if 'active_only' in self.request.GET:
+            self.request.session['active_only'] = \
+                self.request.GET['active_only'] == '1'
+        elif 'active_only' not in self.request.session:
+            self.request.session['active_only'] = self.default_active_only
+
+    def get_active_only(self):
+        overriden = self.override_active_only()
+        if overriden is None:
+            return self.request.session['active_only']
+        else:
+            return overriden
+
+    def get_context_data(self, **kwargs):
+        c = super(ActiveLegislatureMixin, self).get_context_data(**kwargs)
+        if self.override_active_only() is None:
+            c['active_only'] = self.get_active_only()
+        return c
+
+
 class PaginationMixin(object):
     pagination_limits = (12, 24, 48, 96)
 

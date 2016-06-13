@@ -3,7 +3,7 @@
 - load representatives_recommendations_tags
 - load humanize
 
-.representative
+.representative{'class': '{{ representative.active|yesno:"active,inactive" }}' }
 
   %h1.name<
     ={representative.full_name}

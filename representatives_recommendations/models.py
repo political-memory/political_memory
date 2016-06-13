@@ -3,8 +3,6 @@ from django.db import models
 
 from representatives_votes.contrib.parltrack.import_votes import \
     vote_pre_import
-from representatives.contrib.parltrack.import_representatives import \
-    representative_pre_import
 from representatives_votes.models import Dossier, Proposal, Vote
 from representatives.models import Representative
 
@@ -71,9 +69,3 @@ def skip_votes(sender, vote_data=None, **kwargs):
     if vote_data.get('epref', None) not in dossiers:
         return False
 vote_pre_import.connect(skip_votes)
-
-
-def skip_representatives(sender, representative_data=None, **kwargs):
-    if not representative_data.get('active', False):
-        return False
-representative_pre_import.connect(skip_representatives)

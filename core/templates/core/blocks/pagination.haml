@@ -37,6 +37,11 @@
 
   %div.count
     Number of results : {{ paginator.count }}
+
+    - if active_only != None
+      %br
+      - include 'core/blocks/active-filter.html'
+
     %br
     Number of displayed results :
     {{ paginator.per_page }}

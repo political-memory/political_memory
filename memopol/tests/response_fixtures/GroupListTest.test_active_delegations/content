@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/static/collected/img/favicon.ico" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+    <title>
+      Home
+      - The Political Memory of </title>
+    
+    
+    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.c7d56d0a17c9.css" type="text/css" />
+    <script type="text/javascript" src="/static/collected/libs/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="/static/collected/libs/bootstrap/dist/js/bootstrap.js"></script>
+    
+  </head>
+  <body >
+    <!-- -load memopol_tags cache -->
+
+
+
+
+<div id='header' class='container-fluid'>
+  <a id='logo' href='/'>
+    <img src='/static/collected/images/logo.png' />
+  </a>
+  <h1>
+    <a id='header_banner' href='/'>
+      Political Memory
+    </a>
+  </h1>
+  <p class='organization'>
+    
+
+  </p>
+</div>
+<div id='nav' class='container-fluid'>
+  <ul class='nav'>
+    <li>
+      <a href='/legislature/representative/'>
+        Representatives
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/country/'>
+        Countries
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/chamber/'>
+        Chambers
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/group/'>
+        Parties
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/delegation/'>
+        Delegations
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/committee/'>
+        Committees
+      </a>
+    </li>
+    <li>
+      <a href='/votes/dossier/'>
+        Dossiers
+
+      </a>
+    </li>
+  </ul>
+</div>
+
+    <div class="container-fluid main-container">
+      
+
+  <div class='pagination-block'>
+
+  <nav>
+    <ul class='pagination pagination-sm'>
+      
+      
+        
+          
+            <li class='active'>
+              <a href=''>
+                1
+              </a>
+            </li>
+          
+        
+      
+        
+          
+            <li>
+              <a href='?&page=2'>
+                2
+
+              </a>
+            </li>
+          
+        
+      
+        
+          
+            <li>
+              <a href='?&page=3'>
+                3
+
+              </a>
+            </li>
+          
+        
+      
+        
+          
+            <li>
+              <a href='?&page=4'>
+                4
+
+              </a>
+            </li>
+          
+        
+      
+      
+        <li>
+          <a aria-label='Next' href='?&page=2'>
+            <i aria-hidden="true" class="fa fa-chevron-right"></i>
+
+          </a>
+        </li>
+        <li>
+          <a aria-label='Last' href='?&page=7'>
+            <i aria-hidden="true" class="fa fa-chevron-circle-right"></i>
+
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <div class='count'>
+    Number of results : 78
+
+    
+      <br />
+      Display :
+
+  current legislature only /
+  <a href='?active_only=0'>
+    all data
+  </a>
+
+
+
+    
+    <br />
+    Number of displayed results :
+    12
+    (
+    
+      <a href='?paginate_by=12'>
+        12
+      </a>
+      
+        /
+      
+    
+      <a href='?paginate_by=24'>
+        24
+      </a>
+      
+        /
+      
+    
+      <a href='?paginate_by=48'>
+        48
+      </a>
+      
+        /
+      
+    
+      <a href='?paginate_by=96'>
+        96
+      </a>
+      
+    
+    )
+    
+  </div>
+</div>
+
+
+  
+
+    <table class='table'>
+      
+        <tr>
+          
+            <td>
+              <a href='/legislature/representative/chamber/European%20Parliament/'>
+                <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+              </a>
+            </td>
+          
+          <td>
+            <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20Afghanistan/'>
+              
+            </a>
+          </td>
+          <td>
+            <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20Afghanistan/'>
+              
+                Delegation for relations with Afghanistan
+
+              
+            </a>
+          </td>
+        </tr>
+      
+        <tr>
+          
+            <td>
+              <a href='/legislature/representative/chamber/European%20Parliament/'>
+                <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+              </a>
+            </td>
+          
+          <td>
+            <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20Albania,%20Bulgaria%20and%20Romania/'>
+              
+            </a>
+          </td>
+          <td>
+            <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20Albania,%20Bulgaria%20and%20Romania/'>
+              
+                Delegation for relations with Albania, Bulgaria and Romania
+
+              
+            </a>
+          </td>
+        </tr>
+      
+        <tr>
+          
+            <td>
+              <a href='/legislature/representative/chamber/European%20Parliament/'>
+                <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+              </a>
+            </td>
+          
+          <td>
+            <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20Bosnia%20and%20Herzegovina,%20and%20Kosovo/'>
+              
+            </a>
+          </td>
+          <td>
+            <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20Bosnia%20and%20Herzegovina,%20and%20Kosovo/'>
+              
+                Delegation for relations with Bosnia and Herzegovina, and Kosovo
+
+              
+            </a>
+          </td>
+        </tr>
+      
+        <tr>
+          
+            <td>
+              <a href='/legislature/representative/chamber/European%20Parliament/'>
+                <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+              </a>
+            </td>
+          
+          <td>
+            <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20Bulgaria%20and%20Romania/'>
+              
+            </a>
+          </td>
+          <td>
+            <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20Bulgaria%20and%20Romania/'>
+              
+                Delegation for relations with Bulgaria and Romania
+
+              
+            </a>
+          </td>
+        </tr>
+      
+        <tr>
+          
+            <td>
+              <a href='/legislature/representative/chamber/European%20Parliament/'>
+                <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+              </a>
+            </td>
+          
+          <td>
+            <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20Estonia/'>
+              
+            </a>
+          </td>
+          <td>
+            <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20Estonia/'>
+              
+                Delegation for relations with Estonia
+
+              
+            </a>
+          </td>
+        </tr>
+      
+        <tr>
+          
+            <td>
+              <a href='/legislature/representative/chamber/European%20Parliament/'>
+                <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+              </a>
+            </td>
+          
+          <td>
+            <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20Estonia,%20Lithuania%20and%20Latvia/'>
+              
+            </a>
+          </td>
+          <td>
+            <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20Estonia,%20Lithuania%20and%20Latvia/'>
+              
+                Delegation for relations with Estonia, Lithuania and Latvia
+
+              
+            </a>
+          </td>
+        </tr>
+      
+        <tr>
+          
+            <td>
+              <a href='/legislature/representative/chamber/European%20Parliament/'>
+                <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+              </a>
+            </td>
+          
+          <td>
+            <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20India/'>
+              
+            </a>
+          </td>
+          <td>
+            <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20India/'>
+              
+                Delegation for relations with India
+
+              
+            </a>
+          </td>
+        </tr>
+      
+        <tr>
+          
+            <td>
+              <a href='/legislature/representative/chamber/European%20Parliament/'>
+                <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+              </a>
+            </td>
+          
+          <td>
+            <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20Israel/'>
+              
+            </a>
+          </td>
+          <td>
+            <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20Israel/'>
+              
+                Delegation for relations with Israel
+
+              
+            </a>
+          </td>
+        </tr>
+      
+        <tr>
+          
+            <td>
+              <a href='/legislature/representative/chamber/European%20Parliament/'>
+                <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+              </a>
+            </td>
+          
+          <td>
+            <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20Lithuania/'>
+              
+            </a>
+          </td>
+          <td>
+            <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20Lithuania/'>
+              
+                Delegation for relations with Lithuania
+
+              
+            </a>
+          </td>
+        </tr>
+      
+        <tr>
+          
+            <td>
+              <a href='/legislature/representative/chamber/European%20Parliament/'>
+                <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+              </a>
+            </td>
+          
+          <td>
+            <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20Mercosur/'>
+              
+            </a>
+          </td>
+          <td>
+            <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20Mercosur/'>
+              
+                Delegation for relations with Mercosur
+
+              
+            </a>
+          </td>
+        </tr>
+      
+        <tr>
+          
+            <td>
+              <a href='/legislature/representative/chamber/European%20Parliament/'>
+                <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+              </a>
+            </td>
+          
+          <td>
+            <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20Palestine/'>
+              
+            </a>
+          </td>
+          <td>
+            <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20Palestine/'>
+              
+                Delegation for relations with Palestine
+
+              
+            </a>
+          </td>
+        </tr>
+      
+        <tr>
+          
+            <td>
+              <a href='/legislature/representative/chamber/European%20Parliament/'>
+                <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+              </a>
+            </td>
+          
+          <td>
+            <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20Russia/'>
+              
+            </a>
+          </td>
+          <td>
+            <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20Russia/'>
+              
+                Delegation for relations with Russia
+
+              
+            </a>
+          </td>
+        </tr>
+      
+    </table>
+  
+
+
+    </div>
+    
+
+<div id='footer' class='container-fluid'>
+  <div class='license-links'>
+    
+      Memopol is
+      <a href='https://github.com/political-memory/political_memory'>free software</a>
+      released under the terms of the
+      <a href='http://www.gnu.org/licenses/agpl.html'>GNU aGPLV3+</a>
+    
+  </div>
+  <div class='footer-link'>
+    <a href='https://github.com/political-memory/political_memory/issues/new'>Report a bug</a>
+  </div>
+  <div class='footer-link'>
+    <a href='http://www.memopol.org/'>Blog</a>
+  </div>
+  <div class='footer-link'>
+    <a href='http://memopol.readthedocs.io/en/master/'>Documentation</a>
+  </div>
+  <div class='footer-separator'></div>
+  <div class='footer-link'>
+    Developed by
+    <a href='http://www.laquadrature.net/'>La Quadrature du Net</a>
+  </div>
+  <div class='footer-link'>
+    EP data provided by
+    <a href='http://parltrack.euwiki.org/'>Parltrack</a>
+  </div>
+</div>
+
+  </body>
+</html>

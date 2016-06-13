@@ -42,9 +42,6 @@ class UrlGetTestMixin(object):
 class ResponseDiffMixin(object):
 
     def responsediff_test(self, url, numQueries):
-        # Setup session variables
-        self.client.get(url)
-
         with self.assertNumQueries(numQueries):
             response = self.client.get(url)
 

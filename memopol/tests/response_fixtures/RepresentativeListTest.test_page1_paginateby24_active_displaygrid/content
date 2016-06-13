@@ -10,7 +10,7 @@
       - The Political Memory of </title>
     
     
-    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.6cb1be2fbcdd.css" type="text/css" />
+    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.c7d56d0a17c9.css" type="text/css" />
     <script type="text/javascript" src="/static/collected/libs/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="/static/collected/libs/bootstrap/dist/js/bootstrap.js"></script>
     
@@ -140,6 +140,19 @@
   </nav>
   <div class='count'>
     Number of results : 36
+
+    
+      <br />
+      Display :
+
+  current legislature only /
+  <a href='?active_only=0'>
+    all data
+  </a>
+
+
+
+    
     <br />
     Number of displayed results :
     24
@@ -193,7 +206,7 @@
 
   <div class='representative_grid'>
     
-      <div class='representative_item'>
+      <div class='representative_item active'>
         <p class='photo'>
           <a href='/legislature/representative/zigmantas-balcytis/'>
             <img src='http://www.europarl.europa.eu/mepphoto/96680.jpg' width='80' />
@@ -227,7 +240,7 @@
         </ul>
       </div>
     
-      <div class='representative_item'>
+      <div class='representative_item active'>
         <p class='photo'>
           <a href='/legislature/representative/vilija-blinkeviciute/'>
             <img src='http://www.europarl.europa.eu/mepphoto/96681.jpg' width='80' />
@@ -261,7 +274,7 @@
         </ul>
       </div>
     
-      <div class='representative_item'>
+      <div class='representative_item active'>
         <p class='photo'>
           <a href='/legislature/representative/elmar-brok/'>
             <img src='http://www.europarl.europa.eu/mepphoto/1263.jpg' width='80' />
@@ -295,7 +308,7 @@
         </ul>
       </div>
     
-      <div class='representative_item'>
+      <div class='representative_item active'>
         <p class='photo'>
           <a href='/legislature/representative/cristian-silviu-busoi/'>
             <img src='http://www.europarl.europa.eu/mepphoto/38420.jpg' width='80' />
@@ -329,7 +342,7 @@
         </ul>
       </div>
     
-      <div class='representative_item'>
+      <div class='representative_item active'>
         <p class='photo'>
           <a href='/legislature/representative/david-casa/'>
             <img src='http://www.europarl.europa.eu/mepphoto/28122.jpg' width='80' />
@@ -363,7 +376,7 @@
         </ul>
       </div>
     
-      <div class='representative_item'>
+      <div class='representative_item active'>
         <p class='photo'>
           <a href='/legislature/representative/jean-marie-cavada/'>
             <img src='http://www.europarl.europa.eu/mepphoto/28206.jpg' width='80' />
@@ -397,7 +410,7 @@
         </ul>
       </div>
     
-      <div class='representative_item'>
+      <div class='representative_item active'>
         <p class='photo'>
           <a href='/legislature/representative/nikolaos-chountis/'>
             <img src='http://www.europarl.europa.eu/mepphoto/26851.jpg' width='80' />
@@ -431,7 +444,7 @@
         </ul>
       </div>
     
-      <div class='representative_item'>
+      <div class='representative_item active'>
         <p class='photo'>
           <a href='/legislature/representative/michael-cramer/'>
             <img src='http://www.europarl.europa.eu/mepphoto/28238.jpg' width='80' />
@@ -465,7 +478,7 @@
         </ul>
       </div>
     
-      <div class='representative_item'>
+      <div class='representative_item active'>
         <p class='photo'>
           <a href='/legislature/representative/michel-dantin/'>
             <img src='http://www.europarl.europa.eu/mepphoto/97296.jpg' width='80' />
@@ -499,7 +512,7 @@
         </ul>
       </div>
     
-      <div class='representative_item'>
+      <div class='representative_item active'>
         <p class='photo'>
           <a href='/legislature/representative/tamas-deutsch/'>
             <img src='http://www.europarl.europa.eu/mepphoto/96826.jpg' width='80' />
@@ -533,7 +546,7 @@
         </ul>
       </div>
     
-      <div class='representative_item'>
+      <div class='representative_item active'>
         <p class='photo'>
           <a href='/legislature/representative/viorica-dancila/'>
             <img src='http://www.europarl.europa.eu/mepphoto/95281.jpg' width='80' />
@@ -567,7 +580,7 @@
         </ul>
       </div>
     
-      <div class='representative_item'>
+      <div class='representative_item active'>
         <p class='photo'>
           <a href='/legislature/representative/bas-eickhout/'>
             <img src='http://www.europarl.europa.eu/mepphoto/96725.jpg' width='80' />
@@ -601,7 +614,7 @@
         </ul>
       </div>
     
-      <div class='representative_item'>
+      <div class='representative_item active'>
         <p class='photo'>
           <a href='/legislature/representative/ismail-ertug/'>
             <img src='http://www.europarl.europa.eu/mepphoto/96842.jpg' width='80' />
@@ -635,7 +648,7 @@
         </ul>
       </div>
     
-      <div class='representative_item'>
+      <div class='representative_item active'>
         <p class='photo'>
           <a href='/legislature/representative/jose-manuel-fernandes/'>
             <img src='http://www.europarl.europa.eu/mepphoto/96899.jpg' width='80' />
@@ -669,7 +682,7 @@
         </ul>
       </div>
     
-      <div class='representative_item'>
+      <div class='representative_item active'>
         <p class='photo'>
           <a href='/legislature/representative/monika-flasikova-benova/'>
             <img src='http://www.europarl.europa.eu/mepphoto/23868.jpg' width='80' />
@@ -703,7 +716,7 @@
         </ul>
       </div>
     
-      <div class='representative_item'>
+      <div class='representative_item active'>
         <p class='photo'>
           <a href='/legislature/representative/ashley-fox/'>
             <img src='http://www.europarl.europa.eu/mepphoto/96957.jpg' width='80' />
@@ -737,7 +750,7 @@
         </ul>
       </div>
     
-      <div class='representative_item'>
+      <div class='representative_item active'>
         <p class='photo'>
           <a href='/legislature/representative/eider-gardiazabal-rubial/'>
             <img src='http://www.europarl.europa.eu/mepphoto/96991.jpg' width='80' />
@@ -771,7 +784,7 @@
         </ul>
       </div>
     
-      <div class='representative_item'>
+      <div class='representative_item active'>
         <p class='photo'>
           <a href='/legislature/representative/kinga-gal/'>
             <img src='http://www.europarl.europa.eu/mepphoto/28150.jpg' width='80' />
@@ -805,7 +818,7 @@
         </ul>
       </div>
     
-      <div class='representative_item'>
+      <div class='representative_item active'>
         <p class='photo'>
           <a href='/legislature/representative/ildiko-gall-pelcz/'>
             <img src='http://www.europarl.europa.eu/mepphoto/102886.jpg' width='80' />
@@ -839,7 +852,7 @@
         </ul>
       </div>
     
-      <div class='representative_item'>
+      <div class='representative_item active'>
         <p class='photo'>
           <a href='/legislature/representative/marian-harkin/'>
             <img src='http://www.europarl.europa.eu/mepphoto/28116.jpg' width='80' />
@@ -873,7 +886,7 @@
         </ul>
       </div>
     
-      <div class='representative_item'>
+      <div class='representative_item active'>
         <p class='photo'>
           <a href='/legislature/representative/mary-honeyball/'>
             <img src='http://www.europarl.europa.eu/mepphoto/5846.jpg' width='80' />
@@ -907,7 +920,7 @@
         </ul>
       </div>
     
-      <div class='representative_item'>
+      <div class='representative_item active'>
         <p class='photo'>
           <a href='/legislature/representative/iliana-iotova/'>
             <img src='http://www.europarl.europa.eu/mepphoto/38605.jpg' width='80' />
@@ -941,7 +954,7 @@
         </ul>
       </div>
     
-      <div class='representative_item'>
+      <div class='representative_item active'>
         <p class='photo'>
           <a href='/legislature/representative/liisa-jaakonsaari/'>
             <img src='http://www.europarl.europa.eu/mepphoto/96684.jpg' width='80' />
@@ -975,7 +988,7 @@
         </ul>
       </div>
     
-      <div class='representative_item'>
+      <div class='representative_item active'>
         <p class='photo'>
           <a href='/legislature/representative/yannick-jadot/'>
             <img src='http://www.europarl.europa.eu/mepphoto/96740.jpg' width='80' />
@@ -1057,6 +1070,19 @@
   </nav>
   <div class='count'>
     Number of results : 36
+
+    
+      <br />
+      Display :
+
+  current legislature only /
+  <a href='?active_only=0'>
+    all data
+  </a>
+
+
+
+    
     <br />
     Number of displayed results :
     24

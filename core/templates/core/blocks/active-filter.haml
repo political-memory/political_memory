@@ -1,0 +1,9 @@
+Display :
+- if active_only
+  current legislature only /
+  %a{'href': '?active_only=0'}
+    all data
+- else
+  %a{'href': '?active_only=1'}
+    current legislature only
+  ="/ all data"
