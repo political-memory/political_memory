@@ -6,9 +6,22 @@ Local development tutorial
           decisions.
 
 This tutorial drives through a local installation of the project for
-development on Linux. It requires git, a fairly recent version of nodejs (see
-:file:`.openshift/action_hooks/deploy` for a way to install it), python2 and
+development on Linux. It requires git, a fairly recent version of python2 and
 virtualenv.
+
+Quickstart
+==========
+
+You can skip the instructions below and just use the quickstart script. To do
+so, first clone the repository, cd into the repository root and source the
+quickstart script:
+
+    $ git clone https://github.com/political-memory/political_memory.git
+    $ cd political_memory
+    $ source bin/quickstart.sh
+
+If you want more control, you can follow the steps below or have a look at what
+the quickstart script does.
 
 Make a virtual environment
 ==========================
