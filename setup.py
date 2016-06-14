@@ -12,13 +12,23 @@ setup(
     license='GPLv3',
     keywords='django government parliament',
     install_requires=[
-        'ijson',
+        'django>=1.8,<1.9',
+        'ijson>=2,<3',
     ],
     extras_require={
         'celery': 'celery',
         'api': [
-            'django-filter',
-            'djangorestframework',
+            'django-filter>=0.13,<0.14',
+            'djangorestframework>=3,<4',
+        ],
+        'testing': [
+            'codecov>=2,<3',
+            'flake8>=2,<3',
+            'pep8>=1,<2',
+            'pytest>=2,<3',
+            'pytest-django>=2,<3',
+            'pytest-cov>=2,<3',
+            'django-responsediff>=0.6,<0.7'
         ]
     },
     entry_points={
