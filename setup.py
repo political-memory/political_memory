@@ -12,15 +12,26 @@ setup(
     license='GPLv3',
     keywords='django government parliament votes',
     install_requires=[
-        'django-representatives>=0.0.15',
-        'py-dateutil',
-        'pytz',
-        'ijson',
+        'django>1.8,<1.9',
+        'django-representatives>=0.0.23',
+        'py-dateutil>=2,<3',
+        'ijson>=2,<3',
+        'pytz',  # Always use up-to-date TZ data
     ],
     extras_require={
         'api': [
-            'django-filter',
-            'djangorestframework',
+            'django-filter>=0.13,<0.14',
+            'djangorestframework>=3,<4',
+        ],
+        'testing': [
+            'codecov>=2,<3',
+            'flake8>=2,<3',
+            'mock>=2,<3',
+            'pep8>=1,<2',
+            'pytest>=2,<3',
+            'pytest-django>=2,<3',
+            'pytest-cov>=2,<3',
+            'django-responsediff>=0.6,<0.7'
         ]
     },
     entry_points={
