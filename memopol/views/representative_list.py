@@ -84,6 +84,6 @@ class RepresentativeList(CSVDownloadMixin, GridListMixin, PaginationMixin,
         return (
             obj.full_name,
             u', '.join([e.email for e in obj.email_set.all()]),
-            obj.main_mandate.group.abbreviation,
+            obj.main_mandate.group.abbreviation if obj.main_mandate else None,
             obj.country,
         )
