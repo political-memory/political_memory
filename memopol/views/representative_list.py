@@ -18,7 +18,7 @@ class RepresentativeList(CSVDownloadMixin, GridListMixin, PaginationMixin,
                          RepresentativeViewMixin, ActiveLegislatureMixin,
                          generic.ListView):
 
-    csv_name = 'meps.csv'
+    csv_name = 'representatives'
     queryset = Representative.objects.select_related('score')
 
     def get_context_data(self, **kwargs):
@@ -75,7 +75,7 @@ class RepresentativeList(CSVDownloadMixin, GridListMixin, PaginationMixin,
         return qs
 
     def get_csv_results(self, context, **kwargs):
-        qs = super(RepresentativeList, self).get_queryset()
+        qs = self.get_queryset()
         qs = qs.prefetch_related('email_set')
         return [self.add_representative_country_and_main_mandate(r)
                 for r in qs]
