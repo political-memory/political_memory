@@ -4,18 +4,16 @@
 - load memopol_tags
 - load representatives_recommendations_tags
 
+- block head
+
+  {{ filter.form.media }}
+
 - block content
 
   - block search
 
-    {{ filter.form.media }}
-
-    %form.filter-form{action:'', method:'get'}
-      {{ filter.form.as_p }}
-      %input{type:"submit", value:"Go"}
-
-    %a{href:"?{% if request.GET.search %}search={{ request.GET.search }}&{% endif %}csv"}
-      - trans 'Download data as CSV'
+    {% url 'representative-list' as action_url %}
+    - include 'representatives/_filter_form.html' with action=action_url form=filter.form qs=request.GET.urlencode
 
   - include 'core/blocks/pagination.html'
 

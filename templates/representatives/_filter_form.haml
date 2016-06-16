@@ -1,0 +1,15 @@
+- load bootstrap3
+
+%form.filter-form{'action': '{{action}}', 'method': 'get'}
+
+  - bootstrap_form form=form bound_css_class='filter-form-group'
+
+  - buttons
+    %button{'type': 'submit', 'class': 'btn btn-primary'}
+      {% bootstrap_icon "filter" %} Filter
+  - endbuttons
+
+  - buttons
+    %a{'href': '?{{ qs }}&csv', 'class': 'btn btn-primary'}
+      {% bootstrap_icon "download-alt" %} Download as CSV
+  - endbuttons
