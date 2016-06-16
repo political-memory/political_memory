@@ -55,3 +55,24 @@ class GroupListTest(ResponseDiffMixin, TestCase):
         # 1 query for committees
         # 1 query for pagination
         self.group_test('committee', 0, 2)
+
+    def group_ac_test(self, q, numQueries):
+        if q:
+            url = '/legislature/autocomplete/group/?q=%s' % q
+        else:
+            url = '/legislature/autocomplete/group/'
+
+        # setup session variables
+        self.client.get(url)
+
+        self.responsediff_test(url, numQueries)
+
+    def test_autocomplete(self):
+        # 1 query for count
+        # 1 query for groups
+        self.group_ac_test(None, 2)
+
+    def test_autocomplete_query(self):
+        # 1 query for count
+        # 1 query for groups
+        self.group_ac_test('development', 2)

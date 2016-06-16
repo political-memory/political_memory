@@ -52,6 +52,41 @@ class RepresentativeListTest(UrlGetTestMixin, TestCase):
         expected = Response.for_test(self)
         expected.assertNoDiff(self.response)
 
+    def filter_test(self, search='', country='', chamber='', group=''):
+        url = '%s?search=%s&country=%s&chamber=%s&group=%s' % (self.url,
+            search, country, chamber, group)
+
+        # Cancel out one-time queries (session)
+        self.client.get('%s&paginate_by=12&active_only=1' % url)
+
+        """
+        - A count for pagination
+        - One query for chambers (filters)
+        - One query for countries (filters)
+        - One query for representative + score
+        - One query for mandates (including country + main_mandate)
+        """
+        num_queries = 5
+
+        if chamber != '':
+            # One additional query for the selected chamber
+            num_queries = num_queries + 1
+
+        if country != '':
+            # One additional query for the selected country
+            num_queries = num_queries + 1
+
+        if group != '':
+            # One additional query for the selected group
+            # One additional query to fill the DAL select2 widget
+            num_queries = num_queries + 2
+
+        with self.assertNumQueries(num_queries):
+            self.response = self.client.get(url)
+
+        expected = Response.for_test(self)
+        expected.assertNoDiff(self.response)
+
     def test_page1_paginateby12_active_displaylist(self):
         self.functional_test(1, 12, 1, 'list')
 
@@ -72,3 +107,18 @@ class RepresentativeListTest(UrlGetTestMixin, TestCase):
 
     def test_page2_paginateby12_displaylist(self):
         self.functional_test(2, 12, 1, 'list')
+
+    def test_filter_search(self):
+        self.filter_test('am')
+
+    def test_filter_country(self):
+        self.filter_test('', 110)
+
+    def test_filter_chamber(self):
+        self.filter_test('', '', 1)
+
+    def test_filter_group(self):
+        self.filter_test('', '', '', 17)
+
+    def test_filter_multiple(self):
+        self.filter_test('e', 110, 1, 17)
