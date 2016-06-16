@@ -39,9 +39,11 @@ class RepresentativeListTest(UrlGetTestMixin, TestCase):
         self.client.get('%s&paginate_by=%s&display=%s&active_only=%s' %
             (url, paginate_by, display, active_only))
 
-        with self.assertNumQueries(3):
+        with self.assertNumQueries(5):
             """
             - A count for pagination
+            - One query for chambers (filters)
+            - One query for countries (filters)
             - One query for representative + score
             - One query for mandates (including country + main_mandate)
             """
