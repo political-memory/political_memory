@@ -39,34 +39,6 @@ class RepresentativeList(CSVDownloadMixin, GridListMixin, PaginationMixin,
         self.current_filter = f
         return f.qs
 
-    def group_filter(self, qs):
-        group_kind = self.kwargs.get('group_kind', None)
-        chamber = self.kwargs.get('chamber', None)
-        group = self.kwargs.get('group', None)
-        today = datetime.date.today()
-
-        if group_kind and group:
-            if group.isnumeric():
-                group_qs = Group.objects.filter(
-                    id=int(group)
-                )
-            else:
-                group_qs = Group.objects.filter(
-                    name=group,
-                    kind=group_kind
-                )
-
-            if chamber:
-                group_qs = group_qs.filter(chamber__name=chamber)
-
-            qs = qs.filter(
-                models.Q(mandates__end_date__gte=today) |
-                models.Q(mandates__end_date__isnull=True),
-                mandates__group__in=group_qs
-            )
-
-        return qs
-
     def get_queryset(self):
         qs = super(RepresentativeList, self).get_queryset()
         if self.get_active_only():

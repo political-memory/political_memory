@@ -8,7 +8,9 @@
 
   - block search
 
-    %form{action:'', method:'get'}
+    {{ filter.form.media }}
+
+    %form.filter-form{action:'', method:'get'}
       {{ filter.form.as_p }}
       %input{type:"submit", value:"Go"}
 

@@ -6,6 +6,7 @@ from django.views import generic
 from views.dossier_ac import DossierAutocomplete, ProposalAutocomplete
 from views.dossier_detail import DossierDetail
 from views.dossier_list import DossierList
+from views.group_ac import GroupAutocomplete
 from views.group_list import GroupList
 from views.representative_detail import RepresentativeDetail
 from views.representative_list import RepresentativeList
@@ -57,6 +58,11 @@ urlpatterns = [
         r'^legislature/groups/(?P<kind>\w+)/$',
         RedirectGroupList.as_view(),
         name='group-list-redirect'
+    ),
+    url(
+        r'^legislature/autocomplete/group/$',
+        GroupAutocomplete.as_view(),
+        name='group-autocomplete',
     ),
     url(
         r'^votes/dossier/$',
