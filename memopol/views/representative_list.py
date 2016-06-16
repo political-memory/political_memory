@@ -3,13 +3,9 @@
 from core.views import GridListMixin, PaginationMixin, CSVDownloadMixin, \
     ActiveLegislatureMixin
 
-import datetime
-
-from django.db import models
-from django.utils.text import slugify
 from django.views import generic
 
-from representatives.models import Group, Representative
+from representatives.models import Representative
 
 from ..filters import RepresentativeFilter
 from .representative_mixin import RepresentativeViewMixin

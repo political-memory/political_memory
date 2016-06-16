@@ -10,7 +10,7 @@ from views.group_ac import GroupAutocomplete
 from views.group_list import GroupList
 from views.representative_detail import RepresentativeDetail
 from views.representative_list import RepresentativeList
-from views.redirects import RedirectGroupList
+from views.redirects import RedirectGroupList, RedirectGroupRepresentativeList
 
 import api
 
@@ -21,12 +21,12 @@ urlpatterns = [
     url(
         r'^legislature/representative/(?P<group_kind>\w+)/(?P<chamber>.+)/' +
         r'(?P<group>.+)/$',
-        RepresentativeList.as_view(),
+        RedirectGroupRepresentativeList.as_view(),
         name='representative-list'
     ),
     url(
         r'^legislature/representative/(?P<group_kind>\w+)/(?P<group>.+)/$',
-        RepresentativeList.as_view(),
+        RedirectGroupRepresentativeList.as_view(),
         name='representative-list'
     ),
     url(
