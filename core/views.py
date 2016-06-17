@@ -36,7 +36,10 @@ class ActiveLegislatureMixin(object):
     def get_active_only(self):
         overriden = self.override_active_only()
         if overriden is None:
-            return self.request.session['active_only']
+            if 'active_only' in self.request.session:
+                return self.request.session['active_only']
+            else:
+                return self.default_active_only
         else:
             return overriden
 

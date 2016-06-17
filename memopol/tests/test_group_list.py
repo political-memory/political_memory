@@ -60,10 +60,10 @@ class GroupListTest(ResponseDiffMixin, TestCase):
         if q:
             url = '/legislature/autocomplete/group/?q=%s' % q
         else:
-            url = '/legislature/autocomplete/group/'
+            url = '/legislature/autocomplete/group/?'
 
         # setup session variables
-        self.client.get(url)
+        self.client.get('%s&active_only=0' % url)
 
         self.responsediff_test(url, numQueries)
 
