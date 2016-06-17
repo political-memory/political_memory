@@ -52,34 +52,13 @@ class RepresentativeListTest(UrlGetTestMixin, TestCase):
         expected = Response.for_test(self)
         expected.assertNoDiff(self.response)
 
-    def filter_test(self, search='', country='', chamber='', group=''):
+    def filter_test(self, num_queries, search='', country='', chamber='',
+                    group=''):
         url = '%s?search=%s&country=%s&chamber=%s&group=%s' % (self.url,
             search, country, chamber, group)
 
         # Cancel out one-time queries (session)
         self.client.get('%s&paginate_by=12&active_only=1' % url)
-
-        """
-        - A count for pagination
-        - One query for chambers (filters)
-        - One query for countries (filters)
-        - One query for representative + score
-        - One query for mandates (including country + main_mandate)
-        """
-        num_queries = 5
-
-        if chamber != '':
-            # One additional query for the selected chamber
-            num_queries = num_queries + 1
-
-        if country != '':
-            # One additional query for the selected country
-            num_queries = num_queries + 1
-
-        if group != '':
-            # One additional query for the selected group
-            # One additional query to fill the DAL select2 widget
-            num_queries = num_queries + 2
 
         with self.assertNumQueries(num_queries):
             self.response = self.client.get(url)
@@ -109,19 +88,52 @@ class RepresentativeListTest(UrlGetTestMixin, TestCase):
         self.functional_test(2, 12, 1, 'list')
 
     def test_filter_search(self):
-        self.filter_test('am')
+        """
+        - A count for pagination
+        - One query for representative + score
+        - One query for mandates (including country + main_mandate)
+        - One query for chambers (filters)
+        - One query for countries (filters)
+        """
+        self.filter_test(5, 'am')
 
     def test_filter_country(self):
-        self.filter_test('', 110)
+        """
+        5 same queries as test_filter_search plus:
+        - One query for the country
+        """
+        self.filter_test(6, '', 110)
 
     def test_filter_chamber(self):
-        self.filter_test('', '', 1)
+        """
+        5 same queries as test_filter_search plus:
+        - One query for the chamber
+        """
+        self.filter_test(6, '', '', 1)
 
     def test_filter_group(self):
-        self.filter_test('', '', '', 17)
+        """
+        5 same queries as test_filter_search plus:
+        - One query for the group
+        - One query to display the group name (DAL select2 widget)
+        """
+        self.filter_test(7, '', '', '', 17)
 
     def test_filter_multiple(self):
-        self.filter_test('e', 110, 1, 17)
+        """
+        5 same queries as test_filter_search plus:
+        - One query for the country
+        - One query for the chamber
+        - One query for the group
+        - One query to display the group name (DAL select2 widget)
+        """
+        self.filter_test(9, 'e', 110, 1, 17)
 
     def test_filter_notfound(self):
-        self.filter_test('non-existing-rep-name')
+        """
+        Same queries as test_filter_search minus those two :
+        - One query for representative + score
+        - One query for mandates (including country + main_mandate)
+        (as the first count query returns 0)
+        """
+        self.filter_test(3, 'non-existing-rep-name')
