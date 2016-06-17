@@ -47,7 +47,7 @@
     {{ paginator.per_page }}
     (
     - for limit in pagination_limits
-      %a{'href': '?paginate_by={{ limit }}'}
+      %a{'href': '?={queries.urlencode}&paginate_by={{ limit }}'}
         {{ limit }}
       - if not forloop.last
         \/

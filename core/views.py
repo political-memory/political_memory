@@ -1,4 +1,7 @@
 # coding: utf-8
+
+from copy import copy
+
 from django import http
 
 import unicodecsv as csv
@@ -77,6 +80,9 @@ class PaginationMixin(object):
         c['pagination_limits'] = self.pagination_limits
         c['paginate_by'] = self.request.session['paginate_by']
         c['page_range'] = self.get_page_range(c['page_obj'])
+        c['queries'] = copy(self.request.GET)
+        if 'page' in c['queries']:
+            del c['queries']['page']
         return c
 
 
