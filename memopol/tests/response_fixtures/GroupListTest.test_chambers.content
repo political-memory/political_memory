@@ -10,7 +10,7 @@
       - The Political Memory of </title>
     
     
-    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.c7d56d0a17c9.css" type="text/css" />
+    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.540ce621a9a1.css" type="text/css" />
     <script type="text/javascript" src="/static/collected/libs/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="/static/collected/libs/bootstrap/dist/js/bootstrap.js"></script>
     
@@ -97,28 +97,28 @@
     12
     (
     
-      <a href='?paginate_by=12'>
+      <a href='?&paginate_by=12'>
         12
       </a>
       
         /
       
     
-      <a href='?paginate_by=24'>
+      <a href='?&paginate_by=24'>
         24
       </a>
       
         /
       
     
-      <a href='?paginate_by=48'>
+      <a href='?&paginate_by=48'>
         48
       </a>
       
         /
       
     
-      <a href='?paginate_by=96'>
+      <a href='?&paginate_by=96'>
         96
       </a>
       

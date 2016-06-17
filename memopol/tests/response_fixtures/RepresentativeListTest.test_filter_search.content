@@ -95,7 +95,7 @@
 
 <form class='filter-form' action='/legislature/representative/' method='get'>
 
-  <div class="form-group has-success"><label class="control-label" for="id_search">Search</label><input class="form-control" id="id_search" name="search" placeholder="Search" title="Filter" type="text" value="joly" /><span class="help-block">Filter
+  <div class="form-group has-success"><label class="control-label" for="id_search">Search</label><input class="form-control" id="id_search" name="search" placeholder="Search" title="Filter" type="text" value="am" /><span class="help-block">Filter
 </span></div>
 <div class="form-group has-success"><label class="control-label" for="id_chamber">Chamber</label><select class="form-control" id="id_chamber" name="chamber" title="Filter">
 <option value="" selected="selected">---------</option>
@@ -167,14 +167,14 @@
     </ul>
   </nav>
   <div class='count'>
-    Number of results : 1
+    Number of results : 3
 
     
       <br />
       Display :
 
   current legislature only /
-  <a href='?search=joly&active_only=0'>
+  <a href='?country=&amp;search=am&amp;group=&amp;chamber=&active_only=0'>
     all data
   </a>
 
@@ -186,28 +186,28 @@
     12
     (
     
-      <a href='?search=joly&paginate_by=12'>
+      <a href='?country=&amp;search=am&amp;group=&amp;chamber=&paginate_by=12'>
         12
       </a>
       
         /
       
     
-      <a href='?search=joly&paginate_by=24'>
+      <a href='?country=&amp;search=am&amp;group=&amp;chamber=&paginate_by=24'>
         24
       </a>
       
         /
       
     
-      <a href='?search=joly&paginate_by=48'>
+      <a href='?country=&amp;search=am&amp;group=&amp;chamber=&paginate_by=48'>
         48
       </a>
       
         /
       
     
-      <a href='?search=joly&paginate_by=96'>
+      <a href='?country=&amp;search=am&amp;group=&amp;chamber=&paginate_by=96'>
         96
       </a>
       
@@ -215,10 +215,10 @@
     )
     
       <span class='grid-list-selector'>
-  <a href='?search=joly&display=grid'>
+  <a href='?country=&amp;search=am&amp;group=&amp;chamber=&display=grid'>
     <i class="fa fa-th"></i>
   </a>
-  <a href='?search=joly&display=list'>
+  <a href='?country=&amp;search=am&amp;group=&amp;chamber=&display=list'>
     <i class="fa fa-th-list"></i>
 
   </a>
@@ -232,67 +232,112 @@
 
     
 
-      <table class='table'>
-        <tr>
-          <th>
-            Photo
-          </th>
-          <th>
-            Name
-          </th>
-          <th>
-            Chamber
-          </th>
-          <th>
-            Country
-          </th>
-          <th>
-            Group
-          </th>
-          <th>
-            Score
-
-          </th>
-        </tr>
-        
-          <tr class='representative_item active'>
-            <td class='photo'>
-              <a href='/legislature/representative/eva-joly/'>
-                <img src='http://www.europarl.europa.eu/mepphoto/96883.jpg' width='80' />
-
-              </a>
-            </td>
-            <td>
-              <a href='/legislature/representative/eva-joly/'>
-                Eva JOLY
-
-              </a>
-            </td>
-            <td>
-              <a href='/legislature/representative/chamber/European%20Parliament/'>
-                European Parliament [EP]
-
-              </a>
-            </td>
-            <td>
-              <a href='/legislature/representative/country/France/'>
-                France [FR]
-
-              </a>
-            </td>
-            <td>
-              <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Greens/European%20Free%20Alliance/'>
-                <span class="group-icon group-icon-greensefa"></span> Greens/EFA
-              </a>
-            </td>
-            <td>
-              <span class="label label-success">15</span>
-
-            </td>
-          </tr>
-        
-      </table>
+  <div class='representative_grid'>
     
+      <div class='representative_item active'>
+        <p class='photo'>
+          <a href='/legislature/representative/michael-cramer/'>
+            <img src='http://www.europarl.europa.eu/mepphoto/28238.jpg' width='80' />
+          </a>
+        </p>
+        <ul>
+          <li class='name'>
+            <a href='/legislature/representative/michael-cramer/'>
+              Michael CRAMER
+            </a>
+          </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
+          <li class='country'>
+            <a href='/legislature/representative/country/Germany/'>
+              <span class="flag-icon flag-icon-de"></span> Germany
+            </a>
+          </li>
+          <li class='mandate'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Greens/European%20Free%20Alliance/'>
+              <span class="group-icon group-icon-greensefa"></span> Greens/EFA
+            </a>
+          </li>
+          <li class='score'>
+            <span class="label label-success">15</span>
+
+          </li>
+        </ul>
+      </div>
+    
+      <div class='representative_item active'>
+        <p class='photo'>
+          <a href='/legislature/representative/tamas-deutsch/'>
+            <img src='http://www.europarl.europa.eu/mepphoto/96826.jpg' width='80' />
+          </a>
+        </p>
+        <ul>
+          <li class='name'>
+            <a href='/legislature/representative/tamas-deutsch/'>
+              Tamás DEUTSCH
+            </a>
+          </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
+          <li class='country'>
+            <a href='/legislature/representative/country/Hungary/'>
+              <span class="flag-icon flag-icon-hu"></span> Hungary
+            </a>
+          </li>
+          <li class='mandate'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
+              <span class="group-icon group-icon-epp"></span> EPP
+            </a>
+          </li>
+          <li class='score'>
+            <span class="label label-danger">-15</span>
+
+          </li>
+        </ul>
+      </div>
+    
+      <div class='representative_item active'>
+        <p class='photo'>
+          <a href='/legislature/representative/ramon-tremosa-i-balcells/'>
+            <img src='http://www.europarl.europa.eu/mepphoto/97203.jpg' width='80' />
+          </a>
+        </p>
+        <ul>
+          <li class='name'>
+            <a href='/legislature/representative/ramon-tremosa-i-balcells/'>
+              Ramon TREMOSA i BALCELLS
+            </a>
+          </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+            </a>
+          </li>
+          <li class='country'>
+            <a href='/legislature/representative/country/Spain/'>
+              <span class="flag-icon flag-icon-es"></span> Spain
+            </a>
+          </li>
+          <li class='mandate'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Alliance%20of%20Liberals%20and%20Democrats%20for%20Europe/'>
+              <span class="group-icon group-icon-alde"></span> ALDE
+            </a>
+          </li>
+          <li class='score'>
+            <span class="label label-success">15</span>
+
+          </li>
+        </ul>
+      </div>
+    
+  </div>
+
 
     <div class='pagination-block'>
 
@@ -304,14 +349,14 @@
     </ul>
   </nav>
   <div class='count'>
-    Number of results : 1
+    Number of results : 3
 
     
       <br />
       Display :
 
   current legislature only /
-  <a href='?search=joly&active_only=0'>
+  <a href='?country=&amp;search=am&amp;group=&amp;chamber=&active_only=0'>
     all data
   </a>
 
@@ -323,28 +368,28 @@
     12
     (
     
-      <a href='?search=joly&paginate_by=12'>
+      <a href='?country=&amp;search=am&amp;group=&amp;chamber=&paginate_by=12'>
         12
       </a>
       
         /
       
     
-      <a href='?search=joly&paginate_by=24'>
+      <a href='?country=&amp;search=am&amp;group=&amp;chamber=&paginate_by=24'>
         24
       </a>
       
         /
       
     
-      <a href='?search=joly&paginate_by=48'>
+      <a href='?country=&amp;search=am&amp;group=&amp;chamber=&paginate_by=48'>
         48
       </a>
       
         /
       
     
-      <a href='?search=joly&paginate_by=96'>
+      <a href='?country=&amp;search=am&amp;group=&amp;chamber=&paginate_by=96'>
         96
       </a>
       
@@ -352,10 +397,10 @@
     )
     
       <span class='grid-list-selector'>
-  <a href='?search=joly&display=grid'>
+  <a href='?country=&amp;search=am&amp;group=&amp;chamber=&display=grid'>
     <i class="fa fa-th"></i>
   </a>
-  <a href='?search=joly&display=list'>
+  <a href='?country=&amp;search=am&amp;group=&amp;chamber=&display=list'>
     <i class="fa fa-th-list"></i>
 
   </a>

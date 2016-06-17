@@ -10,10 +10,19 @@
       - The Political Memory of </title>
     
     
-    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.c7d56d0a17c9.css" type="text/css" />
+    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.540ce621a9a1.css" type="text/css" />
     <script type="text/javascript" src="/static/collected/libs/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="/static/collected/libs/bootstrap/dist/js/bootstrap.js"></script>
     
+
+  <link href="/static/collected/autocomplete_light/vendor/select2/dist/css/select2.css" type="text/css" media="all" rel="stylesheet" />
+<link href="/static/collected/autocomplete_light/select2.css" type="text/css" media="all" rel="stylesheet" />
+<script type="text/javascript" src="/static/collected/autocomplete_light/jquery.init.js"></script>
+<script type="text/javascript" src="/static/collected/autocomplete_light/autocomplete.init.js"></script>
+<script type="text/javascript" src="/static/collected/autocomplete_light/vendor/select2/dist/js/select2.full.js"></script>
+<script type="text/javascript" src="/static/collected/autocomplete_light/select2.js"></script>
+
+
   </head>
   <body >
     <!-- -load memopol_tags cache -->
@@ -81,21 +90,74 @@
 
   
 
-    <form action='' method='get'>
-      <label for='search'>
-        Search
-      </label>
-      <input id='search' type='text' name='search' />
-      <input type='submit' value='Go' />
+    
+    
 
-    </form>
-    <a href='?csv'>
-      Download data as CSV
+<form class='filter-form' action='/legislature/representative/' method='get'>
 
-    </a>
+  <div class="form-group has-success"><label class="control-label" for="id_search">Search</label><input class="form-control" id="id_search" name="search" placeholder="Search" title="Filter" type="text" /><span class="help-block">Filter
+</span></div>
+<div class="form-group has-success"><label class="control-label" for="id_chamber">Chamber</label><select class="form-control" id="id_chamber" name="chamber" title="Filter">
+<option value="" selected="selected">---------</option>
+<option value="1">European Parliament [EP]</option>
+</select><span class="help-block">Filter
+</span></div>
+<div class="form-group has-success"><label class="control-label" for="id_country">Country</label><select class="form-control" id="id_country" name="country" title="Filter">
+<option value="" selected="selected">---------</option>
+<option value="106">Austria</option>
+<option value="98">Belgium</option>
+<option value="117">Bulgaria</option>
+<option value="184">Cyprus</option>
+<option value="88">Czech Republic</option>
+<option value="113">Denmark</option>
+<option value="126">Estonia</option>
+<option value="115">Finland</option>
+<option value="110">France</option>
+<option value="22">Germany</option>
+<option value="134">Greece</option>
+<option value="85">Hungary</option>
+<option value="182">Ireland</option>
+<option value="100">Italy</option>
+<option value="93">Latvia</option>
+<option value="145">Lithuania</option>
+<option value="112">Luxembourg</option>
+<option value="186">Malta</option>
+<option value="57">Netherlands</option>
+<option value="2">Poland</option>
+<option value="109">Portugal</option>
+<option value="19">Romania</option>
+<option value="169">Slovakia</option>
+<option value="120">Slovenia</option>
+<option value="91">Spain</option>
+<option value="140">Sweden</option>
+<option value="33">United Kingdom</option>
+</select><span class="help-block">Filter
+</span></div>
+<div class="form-group has-success"><label class="control-label" for="id_group">Party, committee or delegation</label><select class="form-control" data-autocomplete-light-function="select2" data-autocomplete-light-url="/legislature/autocomplete/group/" id="id_group" name="group" title="Filter">
+<option value="" selected="selected">---------</option>
+</select><span class="help-block">Filter
+</span></div>
+
+  <div class="form-group">
+    <button class='btn btn-primary' type='submit'>
+      <span class="glyphicon glyphicon-filter"></span> Filter
+    </button>
+  </div>
+
+  <div class="form-group">
+    <button class='btn btn-default' type='submit' name='csv'>
+      <span class="glyphicon glyphicon-download-alt"></span> Download as CSV
+    </button>
+  </div>
+
+</form>
+
+
   
 
-  <div class='pagination-block'>
+  
+
+    <div class='pagination-block'>
 
   <nav>
     <ul class='pagination pagination-sm'>
@@ -114,7 +176,7 @@
         
           
             <li>
-              <a href='?&page=2'>
+              <a href='?search=&page=2'>
                 2
 
               </a>
@@ -124,13 +186,13 @@
       
       
         <li>
-          <a aria-label='Next' href='?&page=2'>
+          <a aria-label='Next' href='?search=&page=2'>
             <i aria-hidden="true" class="fa fa-chevron-right"></i>
 
           </a>
         </li>
         <li>
-          <a aria-label='Last' href='?&page=2'>
+          <a aria-label='Last' href='?search=&page=2'>
             <i aria-hidden="true" class="fa fa-chevron-circle-right"></i>
 
           </a>
@@ -145,7 +207,7 @@
       <br />
       Display :
 
-  <a href='?active_only=1'>
+  <a href='?search=&active_only=1'>
     current legislature only
   </a>
   / all data
@@ -158,28 +220,28 @@
     24
     (
     
-      <a href='?paginate_by=12'>
+      <a href='?search=&paginate_by=12'>
         12
       </a>
       
         /
       
     
-      <a href='?paginate_by=24'>
+      <a href='?search=&paginate_by=24'>
         24
       </a>
       
         /
       
     
-      <a href='?paginate_by=48'>
+      <a href='?search=&paginate_by=48'>
         48
       </a>
       
         /
       
     
-      <a href='?paginate_by=96'>
+      <a href='?search=&paginate_by=96'>
         96
       </a>
       
@@ -187,10 +249,10 @@
     )
     
       <span class='grid-list-selector'>
-  <a href='?display=grid'>
+  <a href='?search=&display=grid'>
     <i class="fa fa-th"></i>
   </a>
-  <a href='?display=list'>
+  <a href='?search=&display=list'>
     <i class="fa fa-th-list"></i>
 
   </a>
@@ -202,7 +264,7 @@
 </div>
 
 
-  
+    
 
   <div class='representative_grid'>
     
@@ -1025,7 +1087,7 @@
   </div>
 
 
-  <div class='pagination-block'>
+    <div class='pagination-block'>
 
   <nav>
     <ul class='pagination pagination-sm'>
@@ -1044,7 +1106,7 @@
         
           
             <li>
-              <a href='?&page=2'>
+              <a href='?search=&page=2'>
                 2
 
               </a>
@@ -1054,13 +1116,13 @@
       
       
         <li>
-          <a aria-label='Next' href='?&page=2'>
+          <a aria-label='Next' href='?search=&page=2'>
             <i aria-hidden="true" class="fa fa-chevron-right"></i>
 
           </a>
         </li>
         <li>
-          <a aria-label='Last' href='?&page=2'>
+          <a aria-label='Last' href='?search=&page=2'>
             <i aria-hidden="true" class="fa fa-chevron-circle-right"></i>
 
           </a>
@@ -1075,7 +1137,7 @@
       <br />
       Display :
 
-  <a href='?active_only=1'>
+  <a href='?search=&active_only=1'>
     current legislature only
   </a>
   / all data
@@ -1088,28 +1150,28 @@
     24
     (
     
-      <a href='?paginate_by=12'>
+      <a href='?search=&paginate_by=12'>
         12
       </a>
       
         /
       
     
-      <a href='?paginate_by=24'>
+      <a href='?search=&paginate_by=24'>
         24
       </a>
       
         /
       
     
-      <a href='?paginate_by=48'>
+      <a href='?search=&paginate_by=48'>
         48
       </a>
       
         /
       
     
-      <a href='?paginate_by=96'>
+      <a href='?search=&paginate_by=96'>
         96
       </a>
       
@@ -1117,10 +1179,10 @@
     )
     
       <span class='grid-list-selector'>
-  <a href='?display=grid'>
+  <a href='?search=&display=grid'>
     <i class="fa fa-th"></i>
   </a>
-  <a href='?display=list'>
+  <a href='?search=&display=list'>
     <i class="fa fa-th-list"></i>
 
   </a>
@@ -1131,6 +1193,8 @@
   </div>
 </div>
 
+
+  
 
 
     </div>

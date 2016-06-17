@@ -1,4 +1,7 @@
 # coding: utf-8
+
+from copy import copy
+
 from django import http
 
 import unicodecsv as csv
@@ -33,7 +36,10 @@ class ActiveLegislatureMixin(object):
     def get_active_only(self):
         overriden = self.override_active_only()
         if overriden is None:
-            return self.request.session['active_only']
+            if 'active_only' in self.request.session:
+                return self.request.session['active_only']
+            else:
+                return self.default_active_only
         else:
             return overriden
 
@@ -77,6 +83,9 @@ class PaginationMixin(object):
         c['pagination_limits'] = self.pagination_limits
         c['paginate_by'] = self.request.session['paginate_by']
         c['page_range'] = self.get_page_range(c['page_obj'])
+        c['queries'] = copy(self.request.GET)
+        if 'page' in c['queries']:
+            del c['queries']['page']
         return c
 
 
