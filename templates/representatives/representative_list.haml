@@ -15,47 +15,53 @@
     {% url 'representative-list' as action_url %}
     - include 'representatives/_filter_form.html' with action=action_url form=filter.form qs=request.GET.urlencode
 
-  - include 'core/blocks/pagination.html'
+  - if object_list|length == 0
 
-  - block list
+      .no-results="No matching representatives found :("
 
-    %table.table
-      %tr
-        %th
-          - trans 'Photo'
-        %th
-          - trans 'Name'
-        %th
-          - trans 'Chamber'
-        %th
-          - trans 'Country'
-        %th
-          - trans 'Group'
-        %th
-          - trans 'Score'
+  - else
 
-      - for representative in object_list
-        %tr.representative_item{'class': '{{ representative.active|yesno:"active,inactive" }}'}
-          %td.photo
-            %a{'href': "{% url 'representative-detail' representative.slug %}"}
-              %img{'src': '={representative.photo}', 'width': '80'}/
+    - include 'core/blocks/pagination.html'
 
-          %td
-            %a{'href': "{% url 'representative-detail' representative.slug %}"}
-              = representative.full_name
+    - block list
 
-          %td
-            %a{'href': "{% chamber_url representative.chamber %}"}
-              = representative.chamber
+      %table.table
+        %tr
+          %th
+            - trans 'Photo'
+          %th
+            - trans 'Name'
+          %th
+            - trans 'Chamber'
+          %th
+            - trans 'Country'
+          %th
+            - trans 'Group'
+          %th
+            - trans 'Score'
 
-          %td
-            %a{'href': "{% country_url representative.country %}"}
-              = representative.country
+        - for representative in object_list
+          %tr.representative_item{'class': '{{ representative.active|yesno:"active,inactive" }}'}
+            %td.photo
+              %a{'href': "{% url 'representative-detail' representative.slug %}"}
+                %img{'src': '={representative.photo}', 'width': '80'}/
 
-          %td
-            %a{'href': "{% group_url representative.main_mandate.group %}"}
-              = representative.main_mandate.group|group_icon
-          %td
-            = representative.score.score|score_label
+            %td
+              %a{'href': "{% url 'representative-detail' representative.slug %}"}
+                = representative.full_name
 
-  - include 'core/blocks/pagination.html'
+            %td
+              %a{'href': "{% chamber_url representative.chamber %}"}
+                = representative.chamber
+
+            %td
+              %a{'href': "{% country_url representative.country %}"}
+                = representative.country
+
+            %td
+              %a{'href': "{% group_url representative.main_mandate.group %}"}
+                = representative.main_mandate.group|group_icon
+            %td
+              = representative.score.score|score_label
+
+    - include 'core/blocks/pagination.html'

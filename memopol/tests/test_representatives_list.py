@@ -122,3 +122,6 @@ class RepresentativeListTest(UrlGetTestMixin, TestCase):
 
     def test_filter_multiple(self):
         self.filter_test('e', 110, 1, 17)
+
+    def test_filter_notfound(self):
+        self.filter_test('non-existing-rep-name')
