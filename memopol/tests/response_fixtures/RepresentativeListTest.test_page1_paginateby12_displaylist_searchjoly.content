@@ -10,7 +10,7 @@
       - The Political Memory of </title>
     
     
-    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.9ff29455e5ae.css" type="text/css" />
+    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.540ce621a9a1.css" type="text/css" />
     <script type="text/javascript" src="/static/collected/libs/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="/static/collected/libs/bootstrap/dist/js/bootstrap.js"></script>
     
@@ -155,7 +155,9 @@
 
   
 
-  <div class='pagination-block'>
+  
+
+    <div class='pagination-block'>
 
   <nav>
     <ul class='pagination pagination-sm'>
@@ -172,7 +174,7 @@
       Display :
 
   current legislature only /
-  <a href='?active_only=0'>
+  <a href='?search=joly&active_only=0'>
     all data
   </a>
 
@@ -184,28 +186,28 @@
     12
     (
     
-      <a href='?paginate_by=12'>
+      <a href='?search=joly&paginate_by=12'>
         12
       </a>
       
         /
       
     
-      <a href='?paginate_by=24'>
+      <a href='?search=joly&paginate_by=24'>
         24
       </a>
       
         /
       
     
-      <a href='?paginate_by=48'>
+      <a href='?search=joly&paginate_by=48'>
         48
       </a>
       
         /
       
     
-      <a href='?paginate_by=96'>
+      <a href='?search=joly&paginate_by=96'>
         96
       </a>
       
@@ -213,10 +215,10 @@
     )
     
       <span class='grid-list-selector'>
-  <a href='?display=grid'>
+  <a href='?search=joly&display=grid'>
     <i class="fa fa-th"></i>
   </a>
-  <a href='?display=list'>
+  <a href='?search=joly&display=list'>
     <i class="fa fa-th-list"></i>
 
   </a>
@@ -228,71 +230,71 @@
 </div>
 
 
-  
+    
 
-    <table class='table'>
-      <tr>
-        <th>
-          Photo
-        </th>
-        <th>
-          Name
-        </th>
-        <th>
-          Chamber
-        </th>
-        <th>
-          Country
-        </th>
-        <th>
-          Group
-        </th>
-        <th>
-          Score
+      <table class='table'>
+        <tr>
+          <th>
+            Photo
+          </th>
+          <th>
+            Name
+          </th>
+          <th>
+            Chamber
+          </th>
+          <th>
+            Country
+          </th>
+          <th>
+            Group
+          </th>
+          <th>
+            Score
 
-        </th>
-      </tr>
-      
-        <tr class='representative_item active'>
-          <td class='photo'>
-            <a href='/legislature/representative/eva-joly/'>
-              <img src='http://www.europarl.europa.eu/mepphoto/96883.jpg' width='80' />
-
-            </a>
-          </td>
-          <td>
-            <a href='/legislature/representative/eva-joly/'>
-              Eva JOLY
-
-            </a>
-          </td>
-          <td>
-            <a href='/legislature/representative/chamber/European%20Parliament/'>
-              European Parliament [EP]
-
-            </a>
-          </td>
-          <td>
-            <a href='/legislature/representative/country/France/'>
-              France [FR]
-
-            </a>
-          </td>
-          <td>
-            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Greens/European%20Free%20Alliance/'>
-              <span class="group-icon group-icon-greensefa"></span> Greens/EFA
-            </a>
-          </td>
-          <td>
-            <span class="label label-success">15</span>
-
-          </td>
+          </th>
         </tr>
-      
-    </table>
-  
+        
+          <tr class='representative_item active'>
+            <td class='photo'>
+              <a href='/legislature/representative/eva-joly/'>
+                <img src='http://www.europarl.europa.eu/mepphoto/96883.jpg' width='80' />
 
-  <div class='pagination-block'>
+              </a>
+            </td>
+            <td>
+              <a href='/legislature/representative/eva-joly/'>
+                Eva JOLY
+
+              </a>
+            </td>
+            <td>
+              <a href='/legislature/representative/chamber/European%20Parliament/'>
+                European Parliament [EP]
+
+              </a>
+            </td>
+            <td>
+              <a href='/legislature/representative/country/France/'>
+                France [FR]
+
+              </a>
+            </td>
+            <td>
+              <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Greens/European%20Free%20Alliance/'>
+                <span class="group-icon group-icon-greensefa"></span> Greens/EFA
+              </a>
+            </td>
+            <td>
+              <span class="label label-success">15</span>
+
+            </td>
+          </tr>
+        
+      </table>
+    
+
+    <div class='pagination-block'>
 
   <nav>
     <ul class='pagination pagination-sm'>
@@ -309,7 +311,7 @@
       Display :
 
   current legislature only /
-  <a href='?active_only=0'>
+  <a href='?search=joly&active_only=0'>
     all data
   </a>
 
@@ -321,28 +323,28 @@
     12
     (
     
-      <a href='?paginate_by=12'>
+      <a href='?search=joly&paginate_by=12'>
         12
       </a>
       
         /
       
     
-      <a href='?paginate_by=24'>
+      <a href='?search=joly&paginate_by=24'>
         24
       </a>
       
         /
       
     
-      <a href='?paginate_by=48'>
+      <a href='?search=joly&paginate_by=48'>
         48
       </a>
       
         /
       
     
-      <a href='?paginate_by=96'>
+      <a href='?search=joly&paginate_by=96'>
         96
       </a>
       
@@ -350,10 +352,10 @@
     )
     
       <span class='grid-list-selector'>
-  <a href='?display=grid'>
+  <a href='?search=joly&display=grid'>
     <i class="fa fa-th"></i>
   </a>
-  <a href='?display=list'>
+  <a href='?search=joly&display=list'>
     <i class="fa fa-th-list"></i>
 
   </a>
@@ -364,6 +366,8 @@
   </div>
 </div>
 
+
+  
 
 
     </div>

@@ -10,7 +10,7 @@
       - The Political Memory of </title>
     
     
-    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.9ff29455e5ae.css" type="text/css" />
+    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.540ce621a9a1.css" type="text/css" />
     <script type="text/javascript" src="/static/collected/libs/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="/static/collected/libs/bootstrap/dist/js/bootstrap.js"></script>
     
@@ -155,7 +155,9 @@
 
   
 
-  <div class='pagination-block'>
+  
+
+    <div class='pagination-block'>
 
   <nav>
     <ul class='pagination pagination-sm'>
@@ -174,7 +176,7 @@
         
           
             <li>
-              <a href='?&page=2'>
+              <a href='?country=&amp;search=&amp;group=&amp;chamber=1&page=2'>
                 2
 
               </a>
@@ -185,7 +187,7 @@
         
           
             <li>
-              <a href='?&page=3'>
+              <a href='?country=&amp;search=&amp;group=&amp;chamber=1&page=3'>
                 3
 
               </a>
@@ -196,7 +198,7 @@
         
           
             <li>
-              <a href='?&page=4'>
+              <a href='?country=&amp;search=&amp;group=&amp;chamber=1&page=4'>
                 4
 
               </a>
@@ -206,13 +208,13 @@
       
       
         <li>
-          <a aria-label='Next' href='?&page=2'>
+          <a aria-label='Next' href='?country=&amp;search=&amp;group=&amp;chamber=1&page=2'>
             <i aria-hidden="true" class="fa fa-chevron-right"></i>
 
           </a>
         </li>
         <li>
-          <a aria-label='Last' href='?&page=21'>
+          <a aria-label='Last' href='?country=&amp;search=&amp;group=&amp;chamber=1&page=21'>
             <i aria-hidden="true" class="fa fa-chevron-circle-right"></i>
 
           </a>
@@ -228,7 +230,7 @@
       Display :
 
   current legislature only /
-  <a href='?active_only=0'>
+  <a href='?country=&amp;search=&amp;group=&amp;chamber=1&active_only=0'>
     all data
   </a>
 
@@ -240,28 +242,28 @@
     12
     (
     
-      <a href='?paginate_by=12'>
+      <a href='?country=&amp;search=&amp;group=&amp;chamber=1&paginate_by=12'>
         12
       </a>
       
         /
       
     
-      <a href='?paginate_by=24'>
+      <a href='?country=&amp;search=&amp;group=&amp;chamber=1&paginate_by=24'>
         24
       </a>
       
         /
       
     
-      <a href='?paginate_by=48'>
+      <a href='?country=&amp;search=&amp;group=&amp;chamber=1&paginate_by=48'>
         48
       </a>
       
         /
       
     
-      <a href='?paginate_by=96'>
+      <a href='?country=&amp;search=&amp;group=&amp;chamber=1&paginate_by=96'>
         96
       </a>
       
@@ -269,10 +271,10 @@
     )
     
       <span class='grid-list-selector'>
-  <a href='?display=grid'>
+  <a href='?country=&amp;search=&amp;group=&amp;chamber=1&display=grid'>
     <i class="fa fa-th"></i>
   </a>
-  <a href='?display=list'>
+  <a href='?country=&amp;search=&amp;group=&amp;chamber=1&display=list'>
     <i class="fa fa-th-list"></i>
 
   </a>
@@ -284,7 +286,7 @@
 </div>
 
 
-  
+    
 
   <div class='representative_grid'>
     
@@ -699,7 +701,7 @@
   </div>
 
 
-  <div class='pagination-block'>
+    <div class='pagination-block'>
 
   <nav>
     <ul class='pagination pagination-sm'>
@@ -718,7 +720,7 @@
         
           
             <li>
-              <a href='?&page=2'>
+              <a href='?country=&amp;search=&amp;group=&amp;chamber=1&page=2'>
                 2
 
               </a>
@@ -729,7 +731,7 @@
         
           
             <li>
-              <a href='?&page=3'>
+              <a href='?country=&amp;search=&amp;group=&amp;chamber=1&page=3'>
                 3
 
               </a>
@@ -740,7 +742,7 @@
         
           
             <li>
-              <a href='?&page=4'>
+              <a href='?country=&amp;search=&amp;group=&amp;chamber=1&page=4'>
                 4
 
               </a>
@@ -750,13 +752,13 @@
       
       
         <li>
-          <a aria-label='Next' href='?&page=2'>
+          <a aria-label='Next' href='?country=&amp;search=&amp;group=&amp;chamber=1&page=2'>
             <i aria-hidden="true" class="fa fa-chevron-right"></i>
 
           </a>
         </li>
         <li>
-          <a aria-label='Last' href='?&page=21'>
+          <a aria-label='Last' href='?country=&amp;search=&amp;group=&amp;chamber=1&page=21'>
             <i aria-hidden="true" class="fa fa-chevron-circle-right"></i>
 
           </a>
@@ -772,7 +774,7 @@
       Display :
 
   current legislature only /
-  <a href='?active_only=0'>
+  <a href='?country=&amp;search=&amp;group=&amp;chamber=1&active_only=0'>
     all data
   </a>
 
@@ -784,28 +786,28 @@
     12
     (
     
-      <a href='?paginate_by=12'>
+      <a href='?country=&amp;search=&amp;group=&amp;chamber=1&paginate_by=12'>
         12
       </a>
       
         /
       
     
-      <a href='?paginate_by=24'>
+      <a href='?country=&amp;search=&amp;group=&amp;chamber=1&paginate_by=24'>
         24
       </a>
       
         /
       
     
-      <a href='?paginate_by=48'>
+      <a href='?country=&amp;search=&amp;group=&amp;chamber=1&paginate_by=48'>
         48
       </a>
       
         /
       
     
-      <a href='?paginate_by=96'>
+      <a href='?country=&amp;search=&amp;group=&amp;chamber=1&paginate_by=96'>
         96
       </a>
       
@@ -813,10 +815,10 @@
     )
     
       <span class='grid-list-selector'>
-  <a href='?display=grid'>
+  <a href='?country=&amp;search=&amp;group=&amp;chamber=1&display=grid'>
     <i class="fa fa-th"></i>
   </a>
-  <a href='?display=list'>
+  <a href='?country=&amp;search=&amp;group=&amp;chamber=1&display=list'>
     <i class="fa fa-th-list"></i>
 
   </a>
@@ -827,6 +829,8 @@
   </div>
 </div>
 
+
+  
 
 
     </div>
