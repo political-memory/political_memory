@@ -146,9 +146,9 @@
   </div>
 
   <div class="form-group">
-    <a class='btn btn-primary' href='?country=&amp;search=&amp;group=17&amp;chamber=&csv'>
+    <button class='btn btn-default' type='submit' name='csv'>
       <span class="glyphicon glyphicon-download-alt"></span> Download as CSV
-    </a>
+    </button>
   </div>
 
 </form>
