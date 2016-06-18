@@ -41,7 +41,7 @@ class RepresentativeList(CSVDownloadMixin, GridListMixin, PaginationMixin,
             qs = qs.filter(active=True)
         qs = self.rep_filter(qs)
         qs = self.prefetch_for_representative_country_and_main_mandate(qs)
-        return qs
+        return qs.distinct()
 
     def get_csv_results(self, context, **kwargs):
         qs = self.get_queryset()
