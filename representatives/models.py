@@ -201,7 +201,7 @@ class Constituency(HashableModel, TimeStampedModel):
     country = models.ForeignKey('Country', null=True, blank=True,
         related_name='constituencies')
 
-    hashable_fields = ['name']
+    hashable_fields = ['name', 'country']
 
     @cached_property
     def active(self):
@@ -230,7 +230,7 @@ class Mandate(HashableModel, TimeStampedModel):
         Constituency, null=True, related_name='mandates')
     representative = models.ForeignKey(Representative, related_name='mandates')
     role = models.CharField(
-        max_length=25,
+        max_length=255,
         blank=True,
         default='',
         help_text="Eg.: president of a political group"
