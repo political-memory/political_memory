@@ -125,19 +125,15 @@ WSGI_APPLICATION = 'memopol.wsgi.application'
 
 DATABASES = {
     'default': {
-        'NAME': os.environ.get('DJANGO_DATABASE_DEFAULT_NAME', 'db.sqlite'),
-        'USER': os.environ.get('DJANGO_DATABASE_DEFAULT_USER', ''),
-        'PASSWORD': os.environ.get('DJANGO_DATABASE_DEFAULT_PASSWORD', ''),
-        'HOST': os.environ.get('DJANGO_DATABASE_DEFAULT_HOST', ''),
-        'PORT': os.environ.get('DJANGO_DATABASE_DEFAULT_PORT', ''),
-        'ENGINE': os.environ.get('DJANGO_DATABASE_DEFAULT_ENGINE',
-                                 'django.db.backends.sqlite3'),
-
+        'NAME': os.environ.get('MEMOPOL_DB_NAME', 'memopol'),
+        'USER': os.environ.get('MEMOPOL_DB_USER', 'memopol'),
+        'PASSWORD': os.environ.get('MEMOPOL_DB_PASSWORD', 'memopol'),
+        'HOST': os.environ.get('MEMOPOL_DB_HOST', 'localhost'),
+        'PORT': os.environ.get('MEMOPOL_DB_PORT', '5432'),
+        'ENGINE': os.environ.get('MEMOPOL_DB_ENGINE',
+                                 'django.db.backends.postgresql_psycopg2'),
     }
 }
-
-if 'OPENSHIFT_DATA_DIR' in os.environ:
-    DATABASES['default']['NAME'] = os.path.join(DATA_DIR, 'db.sqlite')
 
 if 'OPENSHIFT_POSTGRESQL_DB_HOST' in os.environ:
     DATABASES['default']['NAME'] = os.environ['OPENSHIFT_APP_NAME']
@@ -147,7 +143,6 @@ if 'OPENSHIFT_POSTGRESQL_DB_HOST' in os.environ:
         'OPENSHIFT_POSTGRESQL_DB_PASSWORD']
     DATABASES['default']['HOST'] = os.environ['OPENSHIFT_POSTGRESQL_DB_HOST']
     DATABASES['default']['PORT'] = os.environ['OPENSHIFT_POSTGRESQL_DB_PORT']
-    DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
