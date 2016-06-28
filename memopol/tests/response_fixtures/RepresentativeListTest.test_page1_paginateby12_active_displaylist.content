@@ -590,6 +590,42 @@
         
           <tr class='representative_item active'>
             <td class='photo'>
+              <a href='/legislature/representative/viorica-dancila/'>
+                <img src='http://www.europarl.europa.eu/mepphoto/95281.jpg' width='80' />
+
+              </a>
+            </td>
+            <td>
+              <a href='/legislature/representative/viorica-dancila/'>
+                Viorica DĂNCILĂ
+
+              </a>
+            </td>
+            <td>
+              <a href='/legislature/representative/chamber/European%20Parliament/'>
+                European Parliament [EP]
+
+              </a>
+            </td>
+            <td>
+              <a href='/legislature/representative/country/Romania/'>
+                Romania [RO]
+
+              </a>
+            </td>
+            <td>
+              <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
+                <span class="group-icon group-icon-sd"></span> SD
+              </a>
+            </td>
+            <td>
+              <span class="label label-success">15</span>
+
+            </td>
+          </tr>
+        
+          <tr class='representative_item active'>
+            <td class='photo'>
               <a href='/legislature/representative/michel-dantin/'>
                 <img src='http://www.europarl.europa.eu/mepphoto/97296.jpg' width='80' />
 
@@ -656,42 +692,6 @@
             </td>
             <td>
               <span class="label label-danger">-15</span>
-
-            </td>
-          </tr>
-        
-          <tr class='representative_item active'>
-            <td class='photo'>
-              <a href='/legislature/representative/viorica-dancila/'>
-                <img src='http://www.europarl.europa.eu/mepphoto/95281.jpg' width='80' />
-
-              </a>
-            </td>
-            <td>
-              <a href='/legislature/representative/viorica-dancila/'>
-                Viorica DĂNCILĂ
-
-              </a>
-            </td>
-            <td>
-              <a href='/legislature/representative/chamber/European%20Parliament/'>
-                European Parliament [EP]
-
-              </a>
-            </td>
-            <td>
-              <a href='/legislature/representative/country/Romania/'>
-                Romania [RO]
-
-              </a>
-            </td>
-            <td>
-              <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
-                <span class="group-icon group-icon-sd"></span> SD
-              </a>
-            </td>
-            <td>
-              <span class="label label-success">15</span>
 
             </td>
           </tr>
