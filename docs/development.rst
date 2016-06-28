@@ -101,38 +101,33 @@ the ``DJANGO_DEBUG`` variable in the current shell::
 
     $ export DJANGO_DEBUG=True
 
-Run the development server
-==========================
+Setup the database
+==================
 
-Run the development server::
+Memopol requires PostgreSQL 9.1 or higher.  It used to run with SQLite, too, but
+that is no longer the case.  Memopol uses the following environment variables
+for database access:
 
-    $ ./manage.py runserver
+* ``MEMOPOL_DB_NAME`` (defaults to 'memopol')
+* ``MEMOPOL_DB_USER`` (defaults to 'memopol')
+* ``MEMOPOL_DB_PASSWORD`` (defaults to 'memopol')
+* ``MEMOPOL_DB_HOST`` (defaults to 'localhost')
+* ``MEMOPOL_DB_PORT`` (defaults to '5432')
 
-    Performing system checks...
+Make sure the corresponding user and database exist on your system; the user
+will need the 'createdb' permission in order to be able to run tests.  To create
+them, you may use the following commands:
 
-    System check identified no issues (0 silenced).
-    December 09, 2015 - 21:26:47
-    Django version 1.8.7, using settings 'memopol.settings'
-    Starting development server at http://127.0.0.1:8000/
-    Quit the server with CONTROL-C.
-    [09/Dec/2015 21:26:48] "GET / HTTP/1.1" 200 13294
-
-The website is running on ``http://127.0.0.1:8000/``.
+    $ psql -c "create user memopol with password 'memopol';" -U postgres
+    $ psql -c "alter role memopol with createdb;" -U postgres
+    $ psql -c "create database memopol with owner memopol;" -U postgres
 
 Database migrations
 ===================
 
-The repo comes with a pre-configured SQLite db with sample data so that you can
-start hacking right away. However, if you were to use a local postgresql
-database ie. with this sort of environment::
-
-    export DJANGO_DATABASE_DEFAULT_NAME=memopol
-    export DJANGO_DATABASE_DEFAULT_USER=postgres
-    export DJANGO_DATABASE_DEFAULT_ENGINE=django.db.backends.postgresql_psycopg2
-    export DJANGO_DEBUG=1
-    export DJANGO_SETTINGS_MODULE=memopol.settings
-
-Then you could run database migrations::
+Database migrations ensure the database schema is up to date with the project.
+If you're not sure, you can run them anyway, they won't do any harm.  Use the
+following command::
 
     $ ./manage.py migrate
     Operations to perform:
@@ -153,13 +148,30 @@ Then you could run database migrations::
 Provision with data
 ===================
 
-Again, the repo comes with a pre-configured SQLite db with sample data so that
-you can start hacking right away. However, you could still reload sample data::
+You can load a small data sample for quick setup:
 
     $ ./manage.py loaddata memopol/fixtures/small_sample.json
 
 Or actual data (takes a while)::
 
     $ bin/update_all
+
+Run the development server
+==========================
+
+Run the development server::
+
+    $ ./manage.py runserver
+
+    Performing system checks...
+
+    System check identified no issues (0 silenced).
+    December 09, 2015 - 21:26:47
+    Django version 1.8.7, using settings 'memopol.settings'
+    Starting development server at http://127.0.0.1:8000/
+    Quit the server with CONTROL-C.
+    [09/Dec/2015 21:26:48] "GET / HTTP/1.1" 200 13294
+
+The website is running on ``http://127.0.0.1:8000/``.
 
 Continue to :doc:`administration`.

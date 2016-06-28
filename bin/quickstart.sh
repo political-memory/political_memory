@@ -22,6 +22,15 @@ pip install -e .[testing]
 # Install client dependencies
 bin/install_client_deps.sh
 
+# Create pg user and database
+if [ $(psql -c "select 'CNT=' || count(1) from pg_catalog.pg_user where usename='memopol';" -U postgres | grep CNT=1 | wc -l) -lt 1 ]; then
+	psql -c "create user memopol with password 'memopol';" -U postgres
+fi
+psql -c "alter role memopol with createdb;" -U postgres
+if [ $(psql -l -U postgres | egrep "^ memopol\W" | wc -l) -lt 1 ]; then
+	psql -c "create database memopol with owner memopol;" -U postgres
+fi
+
 # Setup environment
 export DJANGO_DEBUG=True
 export DJANGO_SETTINGS_MODULE=memopol.settings
