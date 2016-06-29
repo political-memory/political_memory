@@ -116,7 +116,7 @@ for database access:
 
 Make sure the corresponding user and database exist on your system; the user
 will need the 'createdb' permission in order to be able to run tests.  To create
-them, you may use the following commands:
+them, you may use the following commands::
 
     $ psql -c "create user memopol with password 'memopol';" -U postgres
     $ psql -c "alter role memopol with createdb;" -U postgres
