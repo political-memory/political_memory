@@ -1,13 +1,25 @@
 sudo: false
 env:
-- DJANGO_DEBUG=True DJANGO_SETTINGS_MODULE=memopol.settings
+  global:
+  - DJANGO_DEBUG=True
+  - DJANGO_SETTINGS_MODULE=memopol.settings
+  - MEMOPOL_DB_NAME=memopol
+  - MEMOPOL_DB_USER=memopol
+  - MEMOPOL_DB_PASSWORD=memopol
+  - MEMOPOL_DB_HOST=localhost
+  - MEMOPOL_DB_PORT=5432
+  - MEMOPOL_DB_ENGINE=django.db.backends.postgresql_psycopg2
 language: python
 python:
 - '2.7'
+services:
+- postgresql
 install:
 - pip install -e .[testing]
 before_script:
 - bin/install_client_deps.sh
+- psql -c "CREATE USER memopol WITH CREATEDB PASSWORD 'memopol';" -U postgres
+- psql -c "CREATE DATABASE memopol WITH OWNER memopol;" -U postgres
 script:
 - flake8 . --exclude '*/migrations,docs,static' --ignore E128
 - py.test memopol representatives_positions representatives_recommendations

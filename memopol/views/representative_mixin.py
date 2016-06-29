@@ -20,9 +20,9 @@ class RepresentativeViewMixin(object):
         """
         Prefetch Mandates with their Group and Constituency with Country.
         """
-        mandates = Mandate.objects.order_by(
-            '-end_date').select_related('constituency__country', 'group',
-            'group__chamber')
+        mandates = Mandate.objects.order_by('-end_date', '-begin_date',
+            'group__kind', 'group__name').select_related('group',
+            'group__chamber', 'constituency__country')
         return queryset.prefetch_related(
             models.Prefetch('mandates', queryset=mandates))
 

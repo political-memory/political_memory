@@ -274,41 +274,16 @@
             </td>
           
           <td>
-            <a href='/legislature/representative/group/European%20Parliament/Europe%20of%20Freedom%20and%20Direct%20Democracy%20Group/'>
+            <a href='/legislature/representative/group/European%20Parliament/European%20Conservatives%20and%20Reformists%20Group/'>
               
-                EFDD
-              
-            </a>
-          </td>
-          <td>
-            <a href='/legislature/representative/group/European%20Parliament/Europe%20of%20Freedom%20and%20Direct%20Democracy%20Group/'>
-              
-                <span class="group-icon group-icon-efdd"></span> Europe of Freedom and Direct Democracy Group
-              
-            </a>
-          </td>
-        </tr>
-      
-        <tr>
-          
-            <td>
-              <a href='/legislature/representative/chamber/European%20Parliament/'>
-                <span class="chamber-icon chamber-icon-ep"></span> European Parliament
-
-              </a>
-            </td>
-          
-          <td>
-            <a href='/legislature/representative/group/European%20Parliament/Europe%20of%20Nations%20and%20Freedom%20Group/'>
-              
-                ENF
+                ECR
               
             </a>
           </td>
           <td>
-            <a href='/legislature/representative/group/European%20Parliament/Europe%20of%20Nations%20and%20Freedom%20Group/'>
+            <a href='/legislature/representative/group/European%20Parliament/European%20Conservatives%20and%20Reformists%20Group/'>
               
-                <span class="group-icon group-icon-enf"></span> Europe of Nations and Freedom Group
+                <span class="group-icon group-icon-ecr"></span> European Conservatives and Reformists Group
               
             </a>
           </td>
@@ -349,16 +324,16 @@
             </td>
           
           <td>
-            <a href='/legislature/representative/group/European%20Parliament/European%20Conservatives%20and%20Reformists%20Group/'>
+            <a href='/legislature/representative/group/European%20Parliament/Europe%20of%20Freedom%20and%20Direct%20Democracy%20Group/'>
               
-                ECR
+                EFDD
               
             </a>
           </td>
           <td>
-            <a href='/legislature/representative/group/European%20Parliament/European%20Conservatives%20and%20Reformists%20Group/'>
+            <a href='/legislature/representative/group/European%20Parliament/Europe%20of%20Freedom%20and%20Direct%20Democracy%20Group/'>
               
-                <span class="group-icon group-icon-ecr"></span> European Conservatives and Reformists Group
+                <span class="group-icon group-icon-efdd"></span> Europe of Freedom and Direct Democracy Group
               
             </a>
           </td>
@@ -374,16 +349,16 @@
             </td>
           
           <td>
-            <a href='/legislature/representative/group/European%20Parliament/Group%20Union%20for%20Europe/'>
+            <a href='/legislature/representative/group/European%20Parliament/Europe%20of%20Nations%20and%20Freedom%20Group/'>
               
-                UFE
+                ENF
               
             </a>
           </td>
           <td>
-            <a href='/legislature/representative/group/European%20Parliament/Group%20Union%20for%20Europe/'>
+            <a href='/legislature/representative/group/European%20Parliament/Europe%20of%20Nations%20and%20Freedom%20Group/'>
               
-                <span class="group-icon group-icon-ufe"></span> Group Union for Europe
+                <span class="group-icon group-icon-enf"></span> Europe of Nations and Freedom Group
               
             </a>
           </td>
@@ -484,6 +459,31 @@
             <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20Democratic%20Alliance/'>
               
                 <span class="group-icon group-icon-eda"></span> Group of the European Democratic Alliance
+              
+            </a>
+          </td>
+        </tr>
+      
+        <tr>
+          
+            <td>
+              <a href='/legislature/representative/chamber/European%20Parliament/'>
+                <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+
+              </a>
+            </td>
+          
+          <td>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20Liberal,%20Democrat%20and%20Reform%20Party/'>
+              
+                ELDR
+              
+            </a>
+          </td>
+          <td>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20Liberal,%20Democrat%20and%20Reform%20Party/'>
+              
+                <span class="group-icon group-icon-eldr"></span> Group of the European Liberal, Democrat and Reform Party
               
             </a>
           </td>

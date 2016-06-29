@@ -34,7 +34,8 @@ class PositionTest(TestCase):
         assert response['Location'] == expected
 
         result = Position.objects.get(text='%stext' % self.id())
-        assert list(result.tags.values_list('name', flat=True)) == self.tags
+        assert list(result.tags.order_by('pk').values_list('name',
+            flat=True)) == self.tags
         assert result.datetime == datetime.date(2015, 12, 11)
         assert result.link == self.fixture['link']
         assert result.representative.pk == self.mep.pk
