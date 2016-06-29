@@ -12,7 +12,7 @@ class DossierScore(models.Model):
     representative = models.ForeignKey(Representative,
         on_delete=models.DO_NOTHING)
     dossier = models.ForeignKey(Dossier, on_delete=models.DO_NOTHING)
-    score = models.IntegerField(default=0)
+    score = models.FloatField(default=0)
 
     class Meta:
         managed = False
@@ -25,7 +25,7 @@ class VoteScore(models.Model):
     representative = models.ForeignKey(
         Representative, related_name='votescores', null=True)
     position = models.CharField(max_length=10)
-    score = models.IntegerField(default=0)
+    score = models.FloatField(default=0)
 
     class Meta:
         managed = False
@@ -36,7 +36,7 @@ class VoteScore(models.Model):
 class RepresentativeScore(models.Model):
     representative = models.OneToOneField('representatives.representative',
         primary_key=True, related_name='score')
-    score = models.IntegerField(default=0)
+    score = models.FloatField(default=0)
 
     class Meta:
         managed = False
@@ -52,7 +52,7 @@ class Recommendation(models.Model):
     recommendation = models.CharField(max_length=10, choices=Vote.VOTECHOICES)
     title = models.CharField(max_length=1000, blank=True)
     description = models.TextField(blank=True)
-    weight = models.IntegerField(default=0)
+    weight = models.FloatField(default=0)
 
     class Meta:
         ordering = ['proposal__datetime']
