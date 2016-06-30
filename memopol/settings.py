@@ -90,6 +90,7 @@ INSTALLED_APPS = (
     # ---
     'core',
     'memopol',
+    'memopol_settings',
     'representatives',
     'representatives_votes',
     'representatives_recommendations',

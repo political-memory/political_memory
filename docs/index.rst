@@ -14,6 +14,7 @@ Contents:
    usage
    deployment
    administration
+   scores
    api
    development
    hacker
