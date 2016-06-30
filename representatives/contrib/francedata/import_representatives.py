@@ -152,6 +152,10 @@ class FranceDataImporter(GenericImporter):
 
     def import_representative_details(self, representative, rep_json):
         representative.active = True
+        if rep_json.get("ancien_depute", 0) == 1:
+            representative.active = False
+        if rep_json.get("ancien_senateur", 0) == 1:
+            representative.active = False
 
         if rep_json.get("date_naissance"):
             representative.birth_date = _parse_date(rep_json["date_naissance"])
