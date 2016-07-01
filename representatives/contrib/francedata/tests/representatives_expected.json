@@ -7,6 +7,8 @@
         "cv": "",
         "active": true,
         "birth_place": "Lille (Nord)",
+        "first_name": "Bernard",
+        "last_name": "Roman",
         "full_name": "Bernard Roman",
         "birth_date": "1952-07-15",
         "slug": "bernard-roman"
@@ -22,6 +24,8 @@
         "cv": "",
         "active": true,
         "birth_place": "non disponible",
+        "first_name": "David",
+        "last_name": "Assouline",
         "full_name": "David Assouline",
         "birth_date": "1959-06-16",
         "slug": "david-assouline"
