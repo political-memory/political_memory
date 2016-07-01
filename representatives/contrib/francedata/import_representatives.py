@@ -163,6 +163,8 @@ class FranceDataImporter(GenericImporter):
             representative.birth_place = rep_json["lieu_naissance"]
 
         representative.photo = rep_json['photo_url']
+        representative.first_name = rep_json['prenom']
+        representative.last_name = rep_json['nom_de_famille']
         representative.full_name = rep_json["nom"]
 
         gender_convertion_dict = {
