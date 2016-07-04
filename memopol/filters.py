@@ -10,6 +10,7 @@ from django.utils.text import slugify
 from django_filters import FilterSet, MethodFilter, ModelChoiceFilter
 
 from representatives.models import Chamber, Group, Representative
+from representatives_votes.models import Dossier
 
 
 def chamber_filter(qs, value):
@@ -53,3 +54,19 @@ class RepresentativeFilter(FilterSet):
             return qs
 
         return qs.filter(slug__icontains=slugify(value))
+
+
+class DossierFilter(FilterSet):
+
+    search = MethodFilter(action='search_filter')
+
+    class Meta:
+        model = Dossier
+        fields = ['search']
+
+    def search_filter(self, qs, value):
+        if len(value) == 0:
+            return qs
+
+        return qs.filter(Q(title__icontains=value) |
+                         Q(reference__icontains=value))

@@ -90,7 +90,7 @@
 
 <form class='filter-form' action='/votes/dossier/' method='get'>
 
-  <div class="form-group has-success"><label class="control-label" for="id_search">Search</label><input class="form-control" id="id_search" name="search" placeholder="Search" title="Filter" type="text" /><span class="help-block">Filter
+  <div class="form-group has-success"><label class="control-label" for="id_search">Search</label><input class="form-control" id="id_search" name="search" placeholder="Search" title="Filter" type="text" value="acta" /><span class="help-block">Filter
 </span></div>
 
   <div class="form-group">
@@ -126,28 +126,28 @@
     12
     (
     
-      <a href='?&paginate_by=12'>
+      <a href='?search=acta&paginate_by=12'>
         12
       </a>
       
         /
       
     
-      <a href='?&paginate_by=24'>
+      <a href='?search=acta&paginate_by=24'>
         24
       </a>
       
         /
       
     
-      <a href='?&paginate_by=48'>
+      <a href='?search=acta&paginate_by=48'>
         48
       </a>
       
         /
       
     
-      <a href='?&paginate_by=96'>
+      <a href='?search=acta&paginate_by=96'>
         96
       </a>
       
@@ -206,28 +206,28 @@
     12
     (
     
-      <a href='?&paginate_by=12'>
+      <a href='?search=acta&paginate_by=12'>
         12
       </a>
       
         /
       
     
-      <a href='?&paginate_by=24'>
+      <a href='?search=acta&paginate_by=24'>
         24
       </a>
       
         /
       
     
-      <a href='?&paginate_by=48'>
+      <a href='?search=acta&paginate_by=48'>
         48
       </a>
       
         /
       
     
-      <a href='?&paginate_by=96'>
+      <a href='?search=acta&paginate_by=96'>
         96
       </a>
       

@@ -9,7 +9,9 @@
       {% bootstrap_icon "filter" %} Filter
   - endbuttons
 
-  - buttons
-    %button{'type': 'submit', 'name': 'csv', 'class': 'btn btn-default'}
-      {% bootstrap_icon "download-alt" %} Download as CSV
-  - endbuttons
+  - if csv
+
+    - buttons
+      %button{'type': 'submit', 'name': 'csv', 'class': 'btn btn-default'}
+        {% bootstrap_icon "download-alt" %} Download as CSV
+    - endbuttons

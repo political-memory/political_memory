@@ -144,11 +144,15 @@
     </button>
   </div>
 
-  <div class="form-group">
-    <button class='btn btn-default' type='submit' name='csv'>
-      <span class="glyphicon glyphicon-download-alt"></span> Download as CSV
-    </button>
-  </div>
+  
+
+    <div class="form-group">
+      <button class='btn btn-default' type='submit' name='csv'>
+        <span class="glyphicon glyphicon-download-alt"></span> Download as CSV
+      </button>
+    </div>
+
+  
 
 </form>
 
@@ -157,7 +161,7 @@
 
   
 
-      <div class='no-results'>No matching representatives found :(</div>
+    <div class='no-results'>No matching representatives found :(</div>
 
   
 
