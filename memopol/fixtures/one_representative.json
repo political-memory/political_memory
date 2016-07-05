@@ -20,7 +20,6 @@
         "active": true,
         "birth_place": "Weymouth",
         "full_name": "Mary HONEYBALL",
-        "fingerprint": "81d9de63359e216376592338ae2f1638dd41e45f",
         "birth_date": "1952-11-12",
         "slug": "mary-honeyball"
     },
@@ -88,7 +87,6 @@
         "created": "2015-12-27T16:03:31.046Z",
         "kind": "committee",
         "abbreviation": "EMPL",
-        "fingerprint": "7f0e6d2c3342dde2c6077e127a418a19e0e891bb",
         "chamber": 1
     },
     "model": "representatives.group",
@@ -101,7 +99,6 @@
         "created": "2015-12-27T16:03:31.100Z",
         "kind": "committee",
         "abbreviation": "JURI",
-        "fingerprint": "bc1a051072a9f2caf7c5c7105bccd13834b4d89d",
         "chamber": 1
     },
     "model": "representatives.group",
@@ -114,7 +111,6 @@
         "created": "2015-12-27T16:03:31.388Z",
         "kind": "committee",
         "abbreviation": "CULT",
-        "fingerprint": "a169e2d7e6009d3c089e4de43c0f3e0fc312fca4",
         "chamber": 1
     },
     "model": "representatives.group",
@@ -127,7 +123,6 @@
         "created": "2015-12-27T16:03:31.402Z",
         "kind": "group",
         "abbreviation": "SD",
-        "fingerprint": "729890eba3ce20f90808b32110871d1fe41b53b6",
         "chamber": 1
     },
     "model": "representatives.group",
@@ -140,7 +135,6 @@
         "created": "2015-12-27T16:03:31.510Z",
         "kind": "committee",
         "abbreviation": "ITRE",
-        "fingerprint": "17ff1a9fe036e400612c9153c1647a8258c34d63",
         "chamber": 1
     },
     "model": "representatives.group",
@@ -153,7 +147,6 @@
         "created": "2015-12-27T16:03:31.521Z",
         "kind": "committee",
         "abbreviation": "REGI",
-        "fingerprint": "7a2a03e6d40e5af34f3dc6bccd8e1900e2de3abf",
         "chamber": 1
     },
     "model": "representatives.group",
@@ -166,7 +159,6 @@
         "created": "2015-12-27T16:03:31.768Z",
         "kind": "committee",
         "abbreviation": "ECON",
-        "fingerprint": "2da973401cd76bb56b36f3a9162cda13d2f2d8f3",
         "chamber": 1
     },
     "model": "representatives.group",
@@ -178,8 +170,7 @@
         "name": "United Kingdom",
         "created": "2015-12-27T16:03:31.794Z",
         "kind": "country",
-        "abbreviation": "GB",
-        "fingerprint": "94e7f4c5dc6d7ca1c8ceade3f5bf782b56f0b0de"
+        "abbreviation": "GB"
     },
     "model": "representatives.group",
     "pk": 33
@@ -191,7 +182,6 @@
         "created": "2015-12-27T16:03:32.489Z",
         "kind": "group",
         "abbreviation": "PSE",
-        "fingerprint": "53961127dd190ceb0568d2290e195570ed907164",
         "chamber": 1
     },
     "model": "representatives.group",
@@ -204,7 +194,6 @@
         "created": "2015-12-27T16:03:33.606Z",
         "kind": "committee",
         "abbreviation": "ENVI",
-        "fingerprint": "9d81a89ff2836afbe40dc4109b085c00bf0b1fdd",
         "chamber": 1
     },
     "model": "representatives.group",
@@ -217,7 +206,6 @@
         "created": "2015-12-27T16:03:34.712Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "6482a4de9bdda2ae85fb71f78de0cfd49441a0e6",
         "chamber": 1
     },
     "model": "representatives.group",
@@ -230,7 +218,6 @@
         "created": "2015-12-27T16:03:34.756Z",
         "kind": "group",
         "abbreviation": "PSE",
-        "fingerprint": "bdcddf45a869f242e80961303a719a3e0f29d795",
         "chamber": 1
     },
     "model": "representatives.group",
@@ -243,7 +230,6 @@
         "created": "2015-12-27T16:03:36.124Z",
         "kind": "committee",
         "abbreviation": "FEMM",
-        "fingerprint": "07290c78bb6679e36a5413d2b8122ff4c1477889",
         "chamber": 1
     },
     "model": "representatives.group",
@@ -256,7 +242,6 @@
         "created": "2015-12-27T16:03:36.219Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "171567aaa5ebc7bbdcf3fa3b8a293f9ade40c03a",
         "chamber": 1
     },
     "model": "representatives.group",
@@ -269,7 +254,6 @@
         "created": "2015-12-27T16:03:37.137Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "e2ece7c8073aa5d8ed32a003ecb5989eb363fe95",
         "chamber": 1
     },
     "model": "representatives.group",
@@ -282,7 +266,6 @@
         "created": "2015-12-27T16:03:40.000Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "25ea9a5e8434c4c550c2fa4d7d8b79769f5eb8c0",
         "chamber": 1
     },
     "model": "representatives.group",
@@ -295,7 +278,6 @@
         "created": "2015-12-27T16:03:42.041Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "ae4f709686238bb59f0e8d3f1f1362d6c6777744",
         "chamber": 1
     },
     "model": "representatives.group",
@@ -308,7 +290,6 @@
         "created": "2015-12-27T16:03:47.768Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "fe7cabd2bfa99251e4f9bb2d700ec2a1898c312b",
         "chamber": 1
     },
     "model": "representatives.group",
@@ -321,7 +302,6 @@
         "created": "2015-12-27T16:03:58.940Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "6d1f6a5bcc43f05a7cfdee1d2bc7b0d0cc5db6dc",
         "chamber": 1
     },
     "model": "representatives.group",
@@ -334,7 +314,6 @@
         "created": "2015-12-27T16:04:34.387Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "920d936c976ee2b6fff4ce760dfb154d926dc2d1",
         "chamber": 1
     },
     "model": "representatives.group",
@@ -347,7 +326,6 @@
         "created": "2015-12-27T16:04:50.770Z",
         "kind": "delegation",
         "abbreviation": "",
-        "fingerprint": "35588fd232a2f314c16242334bad5f5190b4efae",
         "chamber": 1
     },
     "model": "representatives.group",
@@ -357,7 +335,6 @@
     "fields": {
         "country": null,
         "updated": "2015-12-27T16:03:05.604Z",
-        "fingerprint": "bc0c3668435accfa5da4479c80478fe68d15ddb1",
         "name": "European Parliament",
         "created": "2015-12-27T16:03:05.603Z"
     },
@@ -368,7 +345,6 @@
     "fields": {
         "country": 1218,
         "updated": "2015-12-27T16:11:32.621Z",
-        "fingerprint": "1fae044a475096192745808b5dfe00e8a04ce172",
         "name": "Labour Party",
         "created": "2015-12-27T16:03:38.998Z"
     },
@@ -383,7 +359,6 @@
         "created": "2015-12-27T16:05:08.213Z",
         "role": "Member",
         "representative": 160,
-        "fingerprint": "3e27ddc2a03ae3e46486559f18c6fa79f6f073fc",
         "link": "",
         "begin_date": "2014-07-01",
         "constituency": 1
@@ -399,7 +374,6 @@
         "created": "2015-12-27T16:05:08.218Z",
         "role": "Member",
         "representative": 160,
-        "fingerprint": "4f954af920af7bd2d2fcf4032a7bf17ad256cfd6",
         "link": "",
         "begin_date": "2014-07-01",
         "constituency": 1
@@ -415,7 +389,6 @@
         "created": "2015-12-27T16:05:08.223Z",
         "role": "Substitute",
         "representative": 160,
-        "fingerprint": "64725eafb08a172af88d6bfca27f1873e1e8e712",
         "link": "",
         "begin_date": "2014-07-08",
         "constituency": 1
@@ -431,7 +404,6 @@
         "created": "2015-12-27T16:05:08.228Z",
         "role": "Member",
         "representative": 160,
-        "fingerprint": "bba85aa92d24693bc71de5c8a39c6954913cbdec",
         "link": "",
         "begin_date": "2012-01-19",
         "constituency": 1
@@ -447,7 +419,6 @@
         "created": "2015-12-27T16:05:08.233Z",
         "role": "Member",
         "representative": 160,
-        "fingerprint": "87c6f21c59d89374f12671ea1eea7fb6f041bbce",
         "link": "",
         "begin_date": "2012-01-19",
         "constituency": 1
@@ -463,7 +434,6 @@
         "created": "2015-12-27T16:05:08.238Z",
         "role": "Substitute",
         "representative": 160,
-        "fingerprint": "7e407006eb3066ee67b55b4573d176daeb9aef6c",
         "link": "",
         "begin_date": "2012-01-19",
         "constituency": 1
@@ -479,7 +449,6 @@
         "created": "2015-12-27T16:05:08.244Z",
         "role": "Member",
         "representative": 160,
-        "fingerprint": "14e44f282c0e7c727e7d4d3419570c6cbbcde153",
         "link": "",
         "begin_date": "2009-07-16",
         "constituency": 1
@@ -495,7 +464,6 @@
         "created": "2015-12-27T16:05:08.248Z",
         "role": "Member",
         "representative": 160,
-        "fingerprint": "bdd2841c54da20685855881b0d5ab2a533a48824",
         "link": "",
         "begin_date": "2009-07-16",
         "constituency": 1
@@ -511,7 +479,6 @@
         "created": "2015-12-27T16:05:08.253Z",
         "role": "Substitute",
         "representative": 160,
-        "fingerprint": "b5dc7889c922b88d386d11cdb634c3858dd3ac27",
         "link": "",
         "begin_date": "2010-09-20",
         "constituency": 1
@@ -527,7 +494,6 @@
         "created": "2015-12-27T16:05:08.258Z",
         "role": "Substitute",
         "representative": 160,
-        "fingerprint": "984397862c0a64e995ce1a0194726543f56fa017",
         "link": "",
         "begin_date": "2009-07-16",
         "constituency": 1
@@ -543,7 +509,6 @@
         "created": "2015-12-27T16:05:08.263Z",
         "role": "Member",
         "representative": 160,
-        "fingerprint": "6c8e6e4b91cf18e09eca545a662d832f90238f86",
         "link": "",
         "begin_date": "2007-01-31",
         "constituency": 1
@@ -559,7 +524,6 @@
         "created": "2015-12-27T16:05:08.268Z",
         "role": "Substitute",
         "representative": 160,
-        "fingerprint": "59213d472d4022edafa03dbf0a0c8164ae37fad2",
         "link": "",
         "begin_date": "2007-01-31",
         "constituency": 1
@@ -575,7 +539,6 @@
         "created": "2015-12-27T16:05:08.274Z",
         "role": "Substitute",
         "representative": 160,
-        "fingerprint": "0e6f6ec034595c44a1e3404dd924215c8604c504",
         "link": "",
         "begin_date": "2007-01-31",
         "constituency": 1
@@ -591,7 +554,6 @@
         "created": "2015-12-27T16:05:08.279Z",
         "role": "Member",
         "representative": 160,
-        "fingerprint": "8ba5d46442df153c17a6d691e99339db92d178e0",
         "link": "",
         "begin_date": "2007-01-15",
         "constituency": 1
@@ -607,7 +569,6 @@
         "created": "2015-12-27T16:05:08.283Z",
         "role": "Substitute",
         "representative": 160,
-        "fingerprint": "b362be416369a5798a4f39e8c071ac5f6ad59ec1",
         "link": "",
         "begin_date": "2007-01-15",
         "constituency": 1
@@ -623,7 +584,6 @@
         "created": "2015-12-27T16:05:08.288Z",
         "role": "Substitute",
         "representative": 160,
-        "fingerprint": "ffbb2ab83dd43369215c2d79bf9be177dbe247f6",
         "link": "",
         "begin_date": "2007-01-15",
         "constituency": 1
@@ -639,7 +599,6 @@
         "created": "2015-12-27T16:05:08.293Z",
         "role": "Member",
         "representative": 160,
-        "fingerprint": "0cb7ee1883626dbd5228c279d5621327f271d786",
         "link": "",
         "begin_date": "2004-07-21",
         "constituency": 1
@@ -655,7 +614,6 @@
         "created": "2015-12-27T16:05:08.298Z",
         "role": "Substitute",
         "representative": 160,
-        "fingerprint": "9db1fc8d28feeee3f7dc14136426fe26f3df8d3a",
         "link": "",
         "begin_date": "2004-07-21",
         "constituency": 1
@@ -671,7 +629,6 @@
         "created": "2015-12-27T16:05:08.302Z",
         "role": "Substitute",
         "representative": 160,
-        "fingerprint": "a7ee142c48158483a12dc300e83e562f7552717f",
         "link": "",
         "begin_date": "2004-07-21",
         "constituency": 1
@@ -687,7 +644,6 @@
         "created": "2015-12-27T16:05:08.307Z",
         "role": "Member",
         "representative": 160,
-        "fingerprint": "f7ab1b25eed25a6f577886d7ce2a89c5da877fab",
         "link": "",
         "begin_date": "2002-01-17",
         "constituency": 1
@@ -703,7 +659,6 @@
         "created": "2015-12-27T16:05:08.313Z",
         "role": "Substitute",
         "representative": 160,
-        "fingerprint": "ed100b9f3db921cd180295391d416b49ed799641",
         "link": "",
         "begin_date": "2000-03-01",
         "constituency": 1
@@ -719,7 +674,6 @@
         "created": "2015-12-27T16:05:08.318Z",
         "role": "Member",
         "representative": 160,
-        "fingerprint": "b64dc41dd0d357720738c7efb46849caf60ec14d",
         "link": "",
         "begin_date": "2014-07-14",
         "constituency": 1
@@ -735,7 +689,6 @@
         "created": "2015-12-27T16:05:08.322Z",
         "role": "Member",
         "representative": 160,
-        "fingerprint": "c2b6824cf3b29f77da6fc7c02d29ff95f78c622c",
         "link": "",
         "begin_date": "2014-07-14",
         "constituency": 1
@@ -751,7 +704,6 @@
         "created": "2015-12-27T16:05:08.328Z",
         "role": "Substitute",
         "representative": 160,
-        "fingerprint": "77ea8b27c3aac210c2352d9469cb5e5dccda681f",
         "link": "",
         "begin_date": "2014-07-14",
         "constituency": 1
@@ -767,7 +719,6 @@
         "created": "2015-12-27T16:05:08.332Z",
         "role": "Substitute",
         "representative": 160,
-        "fingerprint": "f617bbbdcc14f0eb7e84fe80f63c9b127d8c6441",
         "link": "",
         "begin_date": "2009-09-16",
         "constituency": 1
@@ -783,7 +734,6 @@
         "created": "2015-12-27T16:05:08.337Z",
         "role": "Member",
         "representative": 160,
-        "fingerprint": "e4b7462f237417fb7654725e63dc8ff6306d6f06",
         "link": "",
         "begin_date": "2004-09-15",
         "constituency": 1
@@ -799,7 +749,6 @@
         "created": "2015-12-27T16:05:08.342Z",
         "role": "Substitute",
         "representative": 160,
-        "fingerprint": "76a4b0814908a0dc15fec2eadd18de8344902222",
         "link": "",
         "begin_date": "2004-09-15",
         "constituency": 1
@@ -815,7 +764,6 @@
         "created": "2015-12-27T16:05:08.348Z",
         "role": "Substitute",
         "representative": 160,
-        "fingerprint": "8cfe1ab42ee6b094fb26aecfad5ca68bee37c307",
         "link": "",
         "begin_date": "2004-09-15",
         "constituency": 1
@@ -831,7 +779,6 @@
         "created": "2015-12-27T16:05:08.352Z",
         "role": "Member",
         "representative": 160,
-        "fingerprint": "a3910f55303b76c08fdbb46be9707b71d20bc618",
         "link": "",
         "begin_date": "2002-02-07",
         "constituency": 1
@@ -847,7 +794,6 @@
         "created": "2015-12-27T16:05:08.357Z",
         "role": "Substitute",
         "representative": 160,
-        "fingerprint": "8ed925d938dd2196228db9e8bfe9635c81e9c563",
         "link": "",
         "begin_date": "2002-02-07",
         "constituency": 1
@@ -863,7 +809,6 @@
         "created": "2015-12-27T16:05:08.363Z",
         "role": "Member",
         "representative": 160,
-        "fingerprint": "e840b8192789f083b0ce07d04a850349ce3ce3fe",
         "link": "",
         "begin_date": "2000-04-11",
         "constituency": 1
@@ -879,7 +824,6 @@
         "created": "2015-12-27T16:05:08.368Z",
         "role": "Member",
         "representative": 160,
-        "fingerprint": "e1521b961d18f8b2ed5254a6bdd0e90f32bb4481",
         "link": "",
         "begin_date": "2014-07-01",
         "constituency": 1
@@ -895,7 +839,6 @@
         "created": "2015-12-27T16:05:08.373Z",
         "role": "Member",
         "representative": 160,
-        "fingerprint": "d97dfd44f2e19ea2a71af9c96c211db06fb1ff94",
         "link": "",
         "begin_date": "2009-07-14",
         "constituency": 1
@@ -911,7 +854,6 @@
         "created": "2015-12-27T16:05:08.378Z",
         "role": "Member",
         "representative": 160,
-        "fingerprint": "c6ff4291f008ae6636765819ce203b1068cb77f5",
         "link": "",
         "begin_date": "2004-07-20",
         "constituency": 1
@@ -927,7 +869,6 @@
         "created": "2015-12-27T16:05:08.383Z",
         "role": "Member",
         "representative": 160,
-        "fingerprint": "07e323ac8bfc7caf30b66966b9ffaf22104d02ad",
         "link": "",
         "begin_date": "2000-02-17",
         "constituency": 1
@@ -943,7 +884,6 @@
         "created": "2015-12-27T16:05:08.389Z",
         "role": "",
         "representative": 160,
-        "fingerprint": "73c6575b59a2b165f5bd921aa1ae9a08d4a5b980",
         "link": "",
         "begin_date": "2014-07-01",
         "constituency": 21
@@ -959,7 +899,6 @@
         "created": "2015-12-27T16:05:08.395Z",
         "role": "",
         "representative": 160,
-        "fingerprint": "1059f328912485c62db49fdc082d351dae775cea",
         "link": "",
         "begin_date": "2009-07-14",
         "constituency": 21
@@ -975,7 +914,6 @@
         "created": "2015-12-27T16:05:08.402Z",
         "role": "",
         "representative": 160,
-        "fingerprint": "aca5e73cc97f7b3726ded9cf8b3c0aa3ad303485",
         "link": "",
         "begin_date": "2004-07-20",
         "constituency": 21
@@ -991,7 +929,6 @@
         "created": "2015-12-27T16:05:08.408Z",
         "role": "",
         "representative": 160,
-        "fingerprint": "cca1fca42f5d43291fdc014126bc0b76f3c8ba14",
         "link": "",
         "begin_date": "2000-02-17",
         "constituency": 21
@@ -1006,8 +943,7 @@
         "title": "Resolution on the Anti-Counterfeiting Trade Agreement (ACTA)",
         "text": "",
         "created": "2015-12-27T17:40:18.700Z",
-        "link": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2010/2935(RSP)",
-        "fingerprint": "30ca011fd2991db0e6de50aef0d76e83530003a6"
+        "link": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2010/2935(RSP)"
     },
     "model": "representatives_votes.dossier",
     "pk": 28147
@@ -1024,7 +960,6 @@
         "kind": "Consid\u00e9rant X",
         "datetime": "2010-11-24T11:48:48Z",
         "total_against": 249,
-        "fingerprint": "d07e0a7f35d385a04fcff7ec08976bfa2d74a510",
         "total_abstain": 75
     },
     "model": "representatives_votes.proposal",
@@ -1042,7 +977,6 @@
         "kind": "Consid\u00e9rant CC",
         "datetime": "2010-11-24T11:49:01Z",
         "total_against": 312,
-        "fingerprint": "c32565895a10dd6c145d56593ecc6e5ee8e6c69e",
         "total_abstain": 14
     },
     "model": "representatives_votes.proposal",
@@ -1060,7 +994,6 @@
         "kind": "R\u00e9solution",
         "datetime": "2010-11-24T11:49:18Z",
         "total_against": 322,
-        "fingerprint": "be07f4680af54c8c43ea4ca19194fee88873c8cc",
         "total_abstain": 26
     },
     "model": "representatives_votes.proposal",

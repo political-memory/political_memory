@@ -17,6 +17,7 @@ class DossierList(PaginationMixin, generic.ListView):
         'proposals',
         'proposals__recommendation'
     ).annotate(
+        nb_proposals=Count('proposals'),
         nb_recomm=Count('proposals__recommendation')
     ).order_by('-nb_recomm', '-reference')
 

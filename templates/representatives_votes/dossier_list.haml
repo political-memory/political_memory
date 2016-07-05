@@ -30,6 +30,8 @@
         %th
           - trans "Recommendations"
         %th
+          - trans "Proposals"
+        %th
           - trans "Reference"
 
       - for dossier in object_list
@@ -38,6 +40,7 @@
             %a{'href': "{% url 'dossier-detail' dossier.pk %}"}
               {{ dossier.title }}
           %td= dossier.nb_recomm
+          %td= dossier.nb_proposals
           %td= dossier.reference
 
     - include "core/blocks/pagination.html"
