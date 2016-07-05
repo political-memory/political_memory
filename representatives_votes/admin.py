@@ -7,7 +7,7 @@ from .models import Dossier, Proposal, Vote
 
 class DossierAdmin(admin.ModelAdmin):
     list_display = ('id', 'fingerprint', 'reference', 'title', 'link')
-    search_fields = ('reference', 'title', 'fingerprint')
+    search_fields = ('reference', 'title')
 
 
 class ProposalAdmin(admin.ModelAdmin):
@@ -16,7 +16,7 @@ class ProposalAdmin(admin.ModelAdmin):
         'dossier_reference',
         'title',
         'kind')
-    search_fields = ('reference', 'dossier__reference', 'title', 'fingerprint')
+    search_fields = ('reference', 'dossier__reference', 'title')
 
     def dossier_reference(self, obj):
         return obj.dossier.reference
