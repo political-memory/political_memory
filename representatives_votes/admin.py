@@ -6,7 +6,7 @@ from .models import Dossier, Proposal, Vote
 
 
 class DossierAdmin(admin.ModelAdmin):
-    list_display = ('id', 'fingerprint', 'reference', 'title', 'link')
+    list_display = ('id', 'reference', 'title', 'link')
     search_fields = ('reference', 'title')
 
 
