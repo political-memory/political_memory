@@ -1,24 +1,24 @@
 # coding: utf-8
 from django.db import models
 
-from representatives.models import (HashableModel, Representative,
-                                    TimeStampedModel)
+from representatives.models import Representative, TimeStampedModel
 
 
-class Dossier(HashableModel, TimeStampedModel):
+class Dossier(TimeStampedModel):
     title = models.CharField(max_length=1000)
     reference = models.CharField(max_length=200, unique=True)
     text = models.TextField(blank=True, default='')
     link = models.URLField()
     ext_link = models.URLField(blank=True, default='')
 
-    hashable_fields = ['title', 'reference']
+    class Meta:
+        unique_together = (('title', 'reference'))
 
     def __unicode__(self):
         return unicode(self.title)
 
 
-class Proposal(HashableModel, TimeStampedModel):
+class Proposal(TimeStampedModel):
     dossier = models.ForeignKey(Dossier, related_name='proposals')
     title = models.CharField(max_length=1000, unique=True)
     description = models.TextField(blank=True, default='')
@@ -33,12 +33,11 @@ class Proposal(HashableModel, TimeStampedModel):
         Representative, through='Vote', related_name='proposals'
     )
 
-    hashable_fields = ['dossier', 'title', 'reference',
-                       'kind', 'total_abstain', 'total_against',
-                       'total_for']
-
     class Meta:
         ordering = ['datetime']
+        unique_together = (('dossier', 'title', 'reference',
+                            'kind', 'total_abstain', 'total_against',
+                            'total_for'))
 
     @property
     def status(self):

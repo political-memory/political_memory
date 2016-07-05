@@ -11,7 +11,6 @@
         "kind": "dossier",
         "datetime": "2013-12-04T23:00:00Z",
         "total_against": 0,
-        "fingerprint": "40bb927c36b00bb688c1d7e7f4be5b9a1aae4af3",
         "total_abstain": 0
     },
     "model": "representatives_votes.proposal",
@@ -29,7 +28,6 @@
         "kind": "dossier",
         "datetime": "2013-12-05T23:00:00Z",
         "total_against": 1,
-        "fingerprint": "a8709fb12e8e6e4a5f46931d855bf70453dd7fd2",
         "total_abstain": 0
     },
     "model": "representatives_votes.proposal",
@@ -47,7 +45,6 @@
         "kind": "dossier",
         "datetime": "2013-12-10T23:00:00Z",
         "total_against": 0,
-        "fingerprint": "abf1dbdff878fa750f6ffb33fb362cb734e553e3",
         "total_abstain": 1
     },
     "model": "representatives_votes.proposal",
@@ -65,7 +62,6 @@
         "kind": "dossier",
         "datetime": "2013-12-10T23:00:00Z",
         "total_against": 0,
-        "fingerprint": "3b75e49e1be0c8efc3706b9896cc1cb1f76dd9a7",
         "total_abstain": 0
     },
     "model": "representatives_votes.proposal",
