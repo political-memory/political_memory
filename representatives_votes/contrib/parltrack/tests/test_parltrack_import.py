@@ -64,7 +64,7 @@ class DossierTest(TestCase):
             representatives.__path__[0]), 'fixtures',
             'representatives_test.json'))
 
-        with self.assertNumQueries(16):
+        with self.assertNumQueries(15):
             _test_import('single', import_dossiers.import_single)
 
     def test_parltrack_sync_dossier(self):

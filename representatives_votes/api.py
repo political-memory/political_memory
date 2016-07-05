@@ -36,14 +36,12 @@ class DossierViewSet(viewsets.ReadOnlyModelViewSet):
     )
 
     filter_fields = {
-        'fingerprint': ['exact'],
         'title': ['exact', 'icontains'],
         'reference': ['exact', 'icontains'],
     }
 
     search_fields = (
         'title',
-        'fingerprint',
         'reference',
         'text',
         'proposals__title'
@@ -73,8 +71,6 @@ class ProposalViewSet(viewsets.ReadOnlyModelViewSet):
     )
 
     filter_fields = {
-        'fingerprint': ['exact'],
-        'dossier__fingerprint': ['exact'],
         'title': ['exact', 'icontains'],
         'description': ['icontains'],
         'reference': ['exact', 'icontains'],
@@ -84,8 +80,7 @@ class ProposalViewSet(viewsets.ReadOnlyModelViewSet):
 
     search_fields = (
         'title',
-        'fingerprint', 'reference',
-        'dossier__fingerprint',
+        'reference',
         'dossier__title',
         'dossier__reference'
     )
@@ -113,7 +108,6 @@ class VoteViewSet(viewsets.ReadOnlyModelViewSet):
     )
 
     filter_fields = {
-        'proposal__fingerprint': ['exact'],
         'position': ['exact'],
         'representative_name': ['exact', 'icontains'],
         'representative': ['exact']
