@@ -72,14 +72,14 @@ class ConstituencySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Constituency
-        fields = ('id', 'name', 'fingerprint')
+        fields = ('id', 'name')
 
 
 class GroupSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Group
-        fields = ('id', 'name', 'abbreviation', 'kind', 'fingerprint')
+        fields = ('id', 'name', 'abbreviation', 'kind')
 
 
 class MandateSerializer(serializers.ModelSerializer):
@@ -91,13 +91,13 @@ class MandateSerializer(serializers.ModelSerializer):
     # constituency = serializers.CharField(source='constituency.name')
 
     group = serializers.CharField(
-        source='group.fingerprint',
+        source='group.id',
     )
     constituency = serializers.CharField(
-        source='constituency.fingerprint'
+        source='constituency.id'
     )
     representative = serializers.CharField(
-        source='representative.fingerprint'
+        source='representative.id'
     )
 
     class Meta:
@@ -111,19 +111,18 @@ class MandateSerializer(serializers.ModelSerializer):
             'role',
             'begin_date',
             'end_date',
-            'fingerprint',
         )
 
     def to_internal_value(self, data):
         data = super(MandateSerializer, self).to_internal_value(data)
         data['group'] = models.Group.objects.get(
-            fingerprint=data['group']['fingerprint']
+            id=data['group']['id']
         )
         data['constituency'] = models.Constituency.objects.get(
-            fingerprint=data['constituency']['fingerprint']
+            id=data['constituency']['id']
         )
         data['representative'] = models.Representative.objects.get(
-            fingerprint=data['representative']['fingerprint']
+            id=data['representative']['id']
         )
         return data
 
@@ -140,7 +139,6 @@ class MandateDetailSerializer(MandateSerializer):
             'role',
             'begin_date',
             'end_date',
-            'fingerprint',
         )
 
 
@@ -163,7 +161,6 @@ class RepresentativeSerializer(serializers.ModelSerializer):
             'active',
             'cv',
             'contacts',
-            'fingerprint',
             'url',
         )
 

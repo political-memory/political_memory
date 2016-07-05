@@ -84,7 +84,6 @@
         "active": false,
         "birth_place": "Gries",
         "full_name": "Hubert PIRKER",
-        "fingerprint": "2a3c90346d40e9c540050534d832ceb3e0d25a49",
         "birth_date": "1948-10-03",
         "slug": "hubert-pirker"
     },
@@ -104,7 +103,6 @@
         "active": true,
         "birth_place": "H\u00e4ls\u00f6",
         "full_name": "Olle LUDVIGSSON",
-        "fingerprint": "314d0f4c25af31bfa2a6b286838367994b902615",
         "birth_date": "1948-10-28",
         "slug": "olle-ludvigsson"
     },
@@ -223,8 +221,7 @@
         "name": "Committee on Employment and Social Affairs",
         "created": "2015-12-13T02:07:23.996",
         "kind": "committee",
-        "abbreviation": "EMPL",
-        "fingerprint": "7f0e6d2c3342dde2c6077e127a418a19e0e891bb"
+        "abbreviation": "EMPL"
     },
     "model": "representatives.group",
     "pk": 1
@@ -235,8 +232,7 @@
         "name": "Delegation for relations with the countries of Southeast Asia and the Association of Southeast Asian Nations (ASEAN)",
         "created": "2015-12-13T02:07:24.002",
         "kind": "delegation",
-        "abbreviation": "",
-        "fingerprint": "23bb5f3e808b2ea6a02ddbe01705714ecfe7a82a"
+        "abbreviation": ""
     },
     "model": "representatives.group",
     "pk": 2
@@ -247,8 +243,7 @@
         "name": "Delegation for relations with the Member States of ASEAN, South-east Asia and the Republic of Korea",
         "created": "2015-12-13T02:07:24.005",
         "kind": "delegation",
-        "abbreviation": "",
-        "fingerprint": "3d0bc2c9506b90bb22e02e3866c1d14c9be1867e"
+        "abbreviation": ""
     },
     "model": "representatives.group",
     "pk": 3
@@ -259,8 +254,7 @@
         "name": "Group of the European People's Party (Christian Democrats) and European Democrats",
         "created": "2015-12-13T02:07:24.009",
         "kind": "group",
-        "abbreviation": "PPE-DE",
-        "fingerprint": "cab4a9a406aa114716967e6fd6e698dfd2421794"
+        "abbreviation": "PPE-DE"
     },
     "model": "representatives.group",
     "pk": 4
@@ -271,8 +265,7 @@
         "name": "Group of the European People's Party (Christian-Democratic Group)",
         "created": "2015-12-13T02:07:24.013",
         "kind": "group",
-        "abbreviation": "EPP",
-        "fingerprint": "669373eca233e4101a0af25debda58fdfd59741f"
+        "abbreviation": "EPP"
     },
     "model": "representatives.group",
     "pk": 5
@@ -283,8 +276,7 @@
         "name": "Austria",
         "created": "2015-12-13T02:07:24.017",
         "kind": "country",
-        "abbreviation": "AT",
-        "fingerprint": "7b37fb29f750421d82ee36539c2cb5bca9cef938"
+        "abbreviation": "AT"
     },
     "model": "representatives.group",
     "pk": 6
@@ -295,8 +287,7 @@
         "name": "Conference of Delegation Chairs",
         "created": "2015-12-13T02:07:24.024",
         "kind": "organization",
-        "abbreviation": "",
-        "fingerprint": "eb99949bb40fd2e906d738eef276a912c5412f67"
+        "abbreviation": ""
     },
     "model": "representatives.group",
     "pk": 7
@@ -307,8 +298,7 @@
         "name": "Committee on Economic and Monetary Affairs",
         "created": "2015-12-13T02:07:24.362",
         "kind": "committee",
-        "abbreviation": "ECON",
-        "fingerprint": "2da973401cd76bb56b36f3a9162cda13d2f2d8f3"
+        "abbreviation": "ECON"
     },
     "model": "representatives.group",
     "pk": 8
@@ -319,8 +309,7 @@
         "name": "Committee on Industry, Research and Energy",
         "created": "2015-12-13T02:07:24.366",
         "kind": "committee",
-        "abbreviation": "ITRE",
-        "fingerprint": "17ff1a9fe036e400612c9153c1647a8258c34d63"
+        "abbreviation": "ITRE"
     },
     "model": "representatives.group",
     "pk": 9
@@ -331,8 +320,7 @@
         "name": "Delegation to the EU-Serbia Stabilisation and Association Parliamentary Committee",
         "created": "2015-12-13T02:07:24.372",
         "kind": "delegation",
-        "abbreviation": "",
-        "fingerprint": "a24b4e184cf25f0e300c07a1402b65243f5ba93d"
+        "abbreviation": ""
     },
     "model": "representatives.group",
     "pk": 10
@@ -343,8 +331,7 @@
         "name": "Delegation for relations with Bosnia and Herzegovina, and Kosovo",
         "created": "2015-12-13T02:07:24.375",
         "kind": "delegation",
-        "abbreviation": "",
-        "fingerprint": "3d2d9370cc501b1208a4692baf69deeab1e65d0a"
+        "abbreviation": ""
     },
     "model": "representatives.group",
     "pk": 11
@@ -355,8 +342,7 @@
         "name": "Delegation for relations with Australia and New Zealand",
         "created": "2015-12-13T02:07:24.379",
         "kind": "delegation",
-        "abbreviation": "",
-        "fingerprint": "1e5d79317501c2fdf7f36846ad1d5491a244a103"
+        "abbreviation": ""
     },
     "model": "representatives.group",
     "pk": 12
@@ -367,8 +353,7 @@
         "name": "Group of the Progressive Alliance of Socialists and Democrats in the European Parliament",
         "created": "2015-12-13T02:07:24.383",
         "kind": "group",
-        "abbreviation": "SD",
-        "fingerprint": "729890eba3ce20f90808b32110871d1fe41b53b6"
+        "abbreviation": "SD"
     },
     "model": "representatives.group",
     "pk": 13
@@ -379,8 +364,7 @@
         "name": "Sweden",
         "created": "2015-12-13T02:07:24.389",
         "kind": "country",
-        "abbreviation": "SE",
-        "fingerprint": "ea4cacc64af470d01e5b4da150b8b9d3a9dc4bfe"
+        "abbreviation": "SE"
     },
     "model": "representatives.group",
     "pk": 14
@@ -388,7 +372,6 @@
 {
     "fields": {
         "updated": "2015-12-13T02:07:23.998",
-        "fingerprint": "bc0c3668435accfa5da4479c80478fe68d15ddb1",
         "name": "European Parliament",
         "created": "2015-12-13T02:07:23.998"
     },
@@ -398,7 +381,6 @@
 {
     "fields": {
         "updated": "2015-12-13T02:07:24.018",
-        "fingerprint": "74e9c77e0664716d098cb1194927b86f2aa55f7e",
         "name": "\u00d6sterreichische Volkspartei",
         "country": 1043,
         "created": "2015-12-13T02:07:24.018"
@@ -409,7 +391,6 @@
 {
     "fields": {
         "updated": "2015-12-13T02:07:24.390",
-        "fingerprint": "a8fa2ff595aedee63954c3b5ad6e1dcd5dfac910",
         "name": "Arbetarepartiet- Socialdemokraterna",
         "country": 1202,
         "created": "2015-12-13T02:07:24.390"
@@ -425,7 +406,6 @@
         "created": "2015-12-13T02:07:24.001",
         "role": "Substitute",
         "representative": 1,
-        "fingerprint": "9d2cdb45658e7b535e4b39de233b8e2f747bc1d1",
         "link": "",
         "begin_date": "1997-01-16",
         "constituency": 1
@@ -441,7 +421,6 @@
         "created": "2015-12-13T02:07:24.005",
         "role": "Member",
         "representative": 1,
-        "fingerprint": "18613b505dc43a9a3055bf7aed2b2651246838f8",
         "link": "",
         "begin_date": "2013-10-09",
         "constituency": 1
@@ -457,7 +436,6 @@
         "created": "2015-12-13T02:07:24.008",
         "role": "Member",
         "representative": 1,
-        "fingerprint": "fd6db1f22987be42ba290e1f8fbfda6cc109dd7e",
         "link": "",
         "begin_date": "1996-11-14",
         "constituency": 1
@@ -473,7 +451,6 @@
         "created": "2015-12-13T02:07:24.011",
         "role": "Member",
         "representative": 1,
-        "fingerprint": "1d054cac567dd5bc523ddf2063dd05971d7b9c88",
         "link": "",
         "begin_date": "1999-07-20",
         "constituency": 1
@@ -489,7 +466,6 @@
         "created": "2015-12-13T02:07:24.015",
         "role": "Member",
         "representative": 1,
-        "fingerprint": "0cfeaa28bfa4036f385bd7d81f29be83120fc985",
         "link": "",
         "begin_date": "1996-11-11",
         "constituency": 1
@@ -505,7 +481,6 @@
         "created": "2015-12-13T02:07:24.020",
         "role": "",
         "representative": 1,
-        "fingerprint": "d761586241fb47f9fae7035365f5253cd8a363fb",
         "link": "",
         "begin_date": "1999-07-20",
         "constituency": 2
@@ -521,7 +496,6 @@
         "created": "2015-12-13T02:07:24.023",
         "role": "",
         "representative": 1,
-        "fingerprint": "5e7d170fc24b161457a09baebcc388edcbddc954",
         "link": "",
         "begin_date": "1996-11-11",
         "constituency": 2
@@ -537,7 +511,6 @@
         "created": "2015-12-13T02:07:24.026",
         "role": "Member",
         "representative": 1,
-        "fingerprint": "0926a8c1dbc827362c3eabfdca87a5b595706120",
         "link": "",
         "begin_date": "2006-03-21",
         "constituency": 1
@@ -553,7 +526,6 @@
         "created": "2015-12-13T02:07:24.364",
         "role": "Member",
         "representative": 2,
-        "fingerprint": "5323fd311cf0cb24122be532666fabb7ef23fa0c",
         "link": "",
         "begin_date": "2014-07-01",
         "constituency": 1
@@ -569,7 +541,6 @@
         "created": "2015-12-13T02:07:24.368",
         "role": "Substitute",
         "representative": 2,
-        "fingerprint": "9d57bd7941ddda428728446908f8dd7aa642c764",
         "link": "",
         "begin_date": "2014-07-08",
         "constituency": 1
@@ -585,7 +556,6 @@
         "created": "2015-12-13T02:07:24.371",
         "role": "Substitute",
         "representative": 2,
-        "fingerprint": "5953eb229dd3c0993c1af3654fa7dfc052614002",
         "link": "",
         "begin_date": "2009-07-16",
         "constituency": 1
@@ -601,7 +571,6 @@
         "created": "2015-12-13T02:07:24.374",
         "role": "Member",
         "representative": 2,
-        "fingerprint": "20a93b100a172b29f9ec6c6f94a8faeb1754a075",
         "link": "",
         "begin_date": "2014-07-14",
         "constituency": 1
@@ -617,7 +586,6 @@
         "created": "2015-12-13T02:07:24.378",
         "role": "Substitute",
         "representative": 2,
-        "fingerprint": "b65a685d8e4144e36aff12b64bf6d835af1b95a5",
         "link": "",
         "begin_date": "2015-05-18",
         "constituency": 1
@@ -633,7 +601,6 @@
         "created": "2015-12-13T02:07:24.382",
         "role": "Substitute",
         "representative": 2,
-        "fingerprint": "681dac891286446feb02863db19826f079cfed12",
         "link": "",
         "begin_date": "2009-09-17",
         "constituency": 1
@@ -649,7 +616,6 @@
         "created": "2015-12-13T02:07:24.385",
         "role": "Member",
         "representative": 2,
-        "fingerprint": "f5c73825add38bb2c5f8de70d88b9effa6d6527f",
         "link": "",
         "begin_date": "2014-07-01",
         "constituency": 1
@@ -665,7 +631,6 @@
         "created": "2015-12-13T02:07:24.388",
         "role": "Member",
         "representative": 2,
-        "fingerprint": "5765a17282ede4b110bedd2af0b1e5cc87673e6e",
         "link": "",
         "begin_date": "2009-07-14",
         "constituency": 1
@@ -681,7 +646,6 @@
         "created": "2015-12-13T02:07:24.392",
         "role": "",
         "representative": 2,
-        "fingerprint": "6058eddb2a4542a23de70a2528993eba09b5817a",
         "link": "",
         "begin_date": "2014-07-01",
         "constituency": 3
@@ -697,7 +661,6 @@
         "created": "2015-12-13T02:07:24.395",
         "role": "",
         "representative": 2,
-        "fingerprint": "4d9c58327c6b94bdf8a01e5c4d1fbcf751abaf8f",
         "link": "",
         "begin_date": "2009-07-14",
         "constituency": 3

@@ -1,10 +1,9 @@
 # coding: utf-8
 
-import hashlib
 from datetime import datetime
 
 from django.db import models
-from django.utils.encoding import smart_str, smart_unicode
+from django.utils.encoding import smart_unicode
 from django.utils.functional import cached_property
 
 
@@ -21,68 +20,15 @@ class TimeStampedModel(models.Model):
         abstract = True
 
 
-class HashableModel(models.Model):
-    """
-    An abstract base class model that provides a fingerprint
-    field
-    """
-
-    fingerprint = models.CharField(
-        max_length=40,
-        unique=True,
-    )
-
-    class Meta:
-        abstract = True
-
-    def calculate_hash(self):
-        fingerprint = hashlib.sha1()
-        for field_name in self.hashable_fields:
-            field = self._meta.get_field(field_name)
-            if field.is_relation:
-                related = getattr(self, field_name)
-                if related is None:
-                    fingerprint.update(smart_str(related))
-                else:
-                    fingerprint.update(related.fingerprint)
-            else:
-                fingerprint.update(
-                    smart_str(getattr(self, field_name))
-                )
-        self.fingerprint = fingerprint.hexdigest()
-        return self.fingerprint
-
-    def get_hash_str(self):
-        string = ''
-        for field_name in self.hashable_fields:
-            field = self._meta.get_field(field_name)
-            if field.is_relation:
-                string += getattr(self, field_name).fingerprint
-            else:
-                string += smart_str(getattr(self, field_name))
-        return string
-
-    def save(self, *args, **kwargs):
-        self.calculate_hash()
-        super(HashableModel, self).save(*args, **kwargs)
-
-
 class Country(models.Model):
     name = models.CharField(max_length=255)
     code = models.CharField(max_length=2, unique=True)
-
-    @property
-    def fingerprint(self):
-        fingerprint = hashlib.sha1()
-        fingerprint.update(smart_str(self.name))
-        fingerprint.update(smart_str(self.code))
-        return fingerprint.hexdigest()
 
     def __unicode__(self):
         return u'{} [{}]'.format(self.name, self.code)
 
 
-class Representative(HashableModel, TimeStampedModel):
+class Representative(TimeStampedModel):
     """
     Base model for representatives
     """
@@ -155,7 +101,7 @@ class Phone(Contact):
     address = models.ForeignKey(Address, null=True, related_name='phones')
 
 
-class Chamber(HashableModel):
+class Chamber(models.Model):
     """
     A representative chamber
     """
@@ -170,7 +116,7 @@ class Chamber(HashableModel):
         return u'{} [{}]'.format(self.name, self.abbreviation)
 
 
-class Group(HashableModel, TimeStampedModel):
+class Group(TimeStampedModel):
     """
     An entity represented by a representative through a mandate
     """
@@ -193,7 +139,7 @@ class Group(HashableModel, TimeStampedModel):
         ordering = ('name',)
 
 
-class Constituency(HashableModel, TimeStampedModel):
+class Constituency(TimeStampedModel):
     """
     An authority for which a representative has a mandate
     """
@@ -221,7 +167,7 @@ class MandateManager(models.Manager):
             'constituency')
 
 
-class Mandate(HashableModel, TimeStampedModel):
+class Mandate(TimeStampedModel):
 
     objects = MandateManager()
 
