@@ -10,7 +10,7 @@
       - The Political Memory of </title>
     
     
-    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.540ce621a9a1.css" type="text/css" />
+    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.f51a71cd8fb2.css" type="text/css" />
     <script type="text/javascript" src="/static/collected/libs/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="/static/collected/libs/bootstrap/dist/js/bootstrap.js"></script>
     
@@ -115,10 +115,16 @@
           <small>
             B7-0617/2010
             Considérant X
+
           </small>
         </td>
-        <td>Stop acta !</td>
-        <td><i             aria-label="for"             class="fa fa-thumbs-up vote_positive"             title="for"             ></i></td>
+        
+
+          <td>Stop acta !</td>
+          <td><i             aria-label="for"             class="fa fa-thumbs-up vote_positive"             title="for"             ></i></td>
+
+        
+
         <td>adopted</td>
         <td>329</td>
         <td>249</td>
@@ -134,10 +140,16 @@
           <small>
             B7-0617/2010
             Considérant CC
+
           </small>
         </td>
-        <td>Stop acta !</td>
-        <td><i             aria-label="for"             class="fa fa-thumbs-up vote_positive"             title="for"             ></i></td>
+        
+
+          <td>Stop acta !</td>
+          <td><i             aria-label="for"             class="fa fa-thumbs-up vote_positive"             title="for"             ></i></td>
+
+        
+
         <td>adopted</td>
         <td>315</td>
         <td>312</td>
@@ -153,10 +165,16 @@
           <small>
             B7-0617/2010
             Résolution
+
           </small>
         </td>
-        <td>Stop acta !</td>
-        <td><i             aria-label="for"             class="fa fa-thumbs-up vote_positive"             title="for"             ></i></td>
+        
+
+          <td>Stop acta !</td>
+          <td><i             aria-label="for"             class="fa fa-thumbs-up vote_positive"             title="for"             ></i></td>
+
+        
+
         <td>rejected</td>
         <td>306</td>
         <td>322</td>
