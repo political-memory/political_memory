@@ -1,21 +1,27 @@
 # coding: utf-8
 from django.db import models
 
-from representatives.models import Representative, TimeStampedModel
+from representatives.models import Chamber, Representative, TimeStampedModel
 
 
 class Dossier(TimeStampedModel):
     title = models.CharField(max_length=1000)
     reference = models.CharField(max_length=200, unique=True)
     text = models.TextField(blank=True, default='')
-    link = models.URLField()
-    ext_link = models.URLField(blank=True, default='')
 
     class Meta:
         unique_together = (('title', 'reference'))
 
     def __unicode__(self):
         return unicode(self.title)
+
+
+class Document(TimeStampedModel):
+    dossier = models.ForeignKey(Dossier, related_name='documents')
+    chamber = models.ForeignKey(Chamber)
+    title = models.CharField(max_length=1000)
+    kind = models.CharField(max_length=255, blank=True, default='')
+    link = models.URLField(max_length=1000)
 
 
 class Proposal(TimeStampedModel):

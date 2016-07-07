@@ -2,12 +2,20 @@
 
 from django.contrib import admin
 
-from .models import Dossier, Proposal, Vote
+from .models import Dossier, Document, Proposal, Vote
 
 
 class DossierAdmin(admin.ModelAdmin):
-    list_display = ('id', 'reference', 'title', 'link')
+    list_display = ('id', 'reference', 'title')
     search_fields = ('reference', 'title')
+
+
+class DocumentAdmin(admin.ModelAdmin):
+    list_display = ('dossier_reference', 'kind', 'title', 'link')
+    search_fields = ('reference', 'dossier__reference', 'title')
+
+    def dossier_reference(self, obj):
+        return obj.dossier.reference
 
 
 class ProposalAdmin(admin.ModelAdmin):
@@ -49,5 +57,6 @@ class VoteAdmin(admin.ModelAdmin):
         return obj.proposal.reference
 
 admin.site.register(Dossier, DossierAdmin)
+admin.site.register(Document, DocumentAdmin)
 admin.site.register(Proposal, ProposalAdmin)
 admin.site.register(Vote, VoteAdmin)
