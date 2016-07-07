@@ -90,6 +90,18 @@ class GenericImporter(object):
         return (instance, created)
 
 
+def ensure_chambers():
+    """
+    Ensures chambers are created
+    """
+    france = Country.objects.get(name="France")
+    for key in ('AN', 'SEN'):
+        variant = FranceDataVariants[key]
+        Chamber.objects.get_or_create(name=variant['chamber'],
+                                      abbreviation=variant['abbreviation'],
+                                      country=france)
+
+
 class FranceDataImporter(GenericImporter):
     url = 'http://francedata.future/data/parlementaires.json'
 
@@ -99,9 +111,7 @@ class FranceDataImporter(GenericImporter):
     def __init__(self, variant):
         self.france = Country.objects.get(name="France")
         self.variant = FranceDataVariants[variant]
-        self.chamber, _ = Chamber.objects.get_or_create(
-            name=self.variant['chamber'],
-            abbreviation=self.variant['abbreviation'], country=self.france)
+        self.chamber = Chamber.objects.get(name=self.variant['chamber'])
         self.ch_constituency, _ = Constituency.objects.get_or_create(
             name=self.variant['chamber'], country=self.france)
 
@@ -310,6 +320,8 @@ class FranceDataImporter(GenericImporter):
 def main(stream=None):
     if not apps.ready:
         django.setup()
+
+    ensure_chambers()
 
     an_importer = FranceDataImporter('AN')
     GenericImporter.pre_import(an_importer)
