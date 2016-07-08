@@ -1,3 +1,9 @@
 *.sqlite3
 *.sqlite
 *.pyc
+.cache
+.coverage
+/dist
+*.egg-info
+representatives_votes/tests/test.db
+
