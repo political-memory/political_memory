@@ -9,6 +9,7 @@ from representatives_votes.api import (
 )
 
 from representatives.api import (
+    ChamberViewSet,
     ConstituencyViewSet,
     GroupViewSet,
     MandateViewSet,
@@ -16,6 +17,7 @@ from representatives.api import (
 )
 
 router = routers.DefaultRouter()
+router.register(r'chambers', ChamberViewSet)
 router.register(r'constituencies', ConstituencyViewSet)
 router.register(r'groups', GroupViewSet)
 router.register(r'mandates', MandateViewSet)
