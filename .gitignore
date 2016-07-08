@@ -1,1 +1,9 @@
 *.pyc
+.coverage
+.cache
+/data
+/dist
+/log
+*.egg-info
+representatives/db.sqlite3
+
