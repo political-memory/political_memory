@@ -8,6 +8,7 @@ from rest_framework import (
 )
 
 from representatives.serializers import (
+    ChamberSerializer,
     ConstituencySerializer,
     GroupSerializer,
     MandateSerializer,
@@ -17,6 +18,7 @@ from representatives.serializers import (
 
 from .models import (
     Address,
+    Chamber,
     Constituency,
     Group,
     Mandate,
@@ -122,3 +124,9 @@ class GroupViewSet(viewsets.ReadOnlyModelViewSet):
     pagination_class = DefaultWebPagination
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+
+class ChamberViewSet(viewsets.ReadOnlyModelViewSet):
+    pagination_class = DefaultWebPagination
+    queryset = Chamber.objects.all()
+    serializer_class = ChamberSerializer
