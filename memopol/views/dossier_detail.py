@@ -9,5 +9,7 @@ class DossierDetail(generic.DetailView):
 
     queryset = Dossier.objects.prefetch_related(
         'proposals',
-        'proposals__recommendation'
+        'proposals__recommendation',
+        'documents',
+        'documents__chamber',
     )
