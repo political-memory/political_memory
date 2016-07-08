@@ -13,6 +13,13 @@ class CountrySerializer(serializers.ModelSerializer):
         fields = ('name', 'code')
 
 
+class ChamberSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.Chamber
+        fields = ('name', 'abbreviation', 'country')
+
+
 class EmailSerializer(serializers.ModelSerializer):
 
     class Meta:

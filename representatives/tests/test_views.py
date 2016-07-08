@@ -20,6 +20,9 @@ class RepresentativeManagerTest(test.TestCase):
     def test_mandates_api(self):
         self.functional_test(1, '/api/mandates/?format=json')
 
+    def test_chambers_api(self):
+        self.functional_test(1, '/api/chambers/?format=json')
+
     def test_representatives_api(self):
         """
         Queries:
