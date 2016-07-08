@@ -15,8 +15,10 @@ class RepresentativeManagerTest(test.TestCase):
         Response.for_test(self).assertNoDiff(result)
 
     def test_dossier(self):
-        # One for dossier + 1 for proposals
-        self.functional_test(2, '/api/dossiers/1/')
+        # One for dossier
+        # One for proposals
+        # One for documents
+        self.functional_test(3, '/api/dossiers/1/')
 
     def test_dossiers(self):
         self.functional_test(1, '/api/dossiers/')

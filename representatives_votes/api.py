@@ -51,7 +51,8 @@ class DossierViewSet(viewsets.ReadOnlyModelViewSet):
 
     def retrieve(self, request, pk=None):
         self.serializer_class = DossierDetailSerializer
-        self.queryset = self.queryset.prefetch_related('proposals')
+        self.queryset = self.queryset.prefetch_related('proposals',
+                                                       'documents')
         return super(DossierViewSet, self).retrieve(request, pk)
 
 

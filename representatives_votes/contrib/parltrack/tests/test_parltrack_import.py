@@ -64,7 +64,7 @@ class DossierTest(TestCase):
             representatives.__path__[0]), 'fixtures',
             'representatives_test.json'))
 
-        with self.assertNumQueries(15):
+        with self.assertNumQueries(22):
             _test_import('single', import_dossiers.import_single)
 
     def test_parltrack_sync_dossier(self):
@@ -87,7 +87,7 @@ class DossierTest(TestCase):
             with open(mock_file, 'r') as mock_stream:
                 urlopen.return_value = mock_stream
 
-                with self.assertNumQueries(3):
+                with self.assertNumQueries(8):
                     _test_import('sync', callback)
 
             urlopen.assert_called_with(expected_url)

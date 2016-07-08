@@ -48,23 +48,16 @@ def _get_unique_title(proposal_pk, candidate):
 
 
 class ScrutinImporter:
-    dossiers_ref = None
-    dossiers_ext = None
+    dossiers = {}
 
     def get_dossier(self, url):
-        if self.dossiers_ref is None:
-            self.dossiers_ref = {
-                d[0]: d[1] for d in Dossier.objects.values_list('reference',
-                                                                'pk')
-            }
+        if url not in self.dossiers:
+            try:
+                self.dossiers[url] = Dossier.objects.get(documents__link=url)
+            except Dossier.DoesNotExist:
+                return None
 
-        if self.dossiers_ext is None:
-            self.dossiers_ext = {
-                d[0]: d[1] for d in Dossier.objects.exclude(ext_link='')
-                .values_list('ext_link', 'pk')
-            }
-
-        return self.dossiers_ref.get(url, self.dossiers_ext.get(url, None))
+        return self.dossiers[url]
 
     def parse_scrutin_data(self, data):
         ref = data['url']
@@ -91,7 +84,7 @@ class ScrutinImporter:
         values = dict(
             title=_get_unique_title(proposal.pk, data["objet"]),
             datetime=_parse_date(data["date"]),
-            dossier_id=dossier,
+            dossier_id=dossier.pk,
             kind='dossier'
         )
 
