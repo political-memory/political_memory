@@ -1,6 +1,7 @@
 from rest_framework import routers
 
 from representatives.api import (
+    ChamberViewSet,
     ConstituencyViewSet,
     GroupViewSet,
     MandateViewSet,
@@ -23,6 +24,7 @@ from representatives_recommendations.api import (
 
 router = routers.DefaultRouter()
 
+router.register(r'chambers', ChamberViewSet, 'api-chamber')
 router.register(r'constituencies', ConstituencyViewSet, 'api-constituency')
 router.register(r'dossiers', DossierViewSet, 'api-dossier')
 router.register(r'dossier_scores', DossierScoreViewSet, 'api-dossierscore')
