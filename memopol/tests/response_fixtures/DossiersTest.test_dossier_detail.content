@@ -85,6 +85,44 @@
 
   </p>
   <h2>
+    Documents
+
+  </h2>
+  <table class='table'>
+    <tr>
+      <th>
+        Chamber
+      </th>
+      <th>
+        Document type
+      </th>
+      <th>
+        Title
+
+      </th>
+    </tr>
+    
+      <tr>
+        <td>
+          <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+        </td>
+        <td>
+          <a class='external' href='http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2010/2935(RSP)' target='_blank'>
+            
+              Procedure file
+            
+          </a>
+        </td>
+        <td>
+          <a class='external' href='http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2010/2935(RSP)' target='_blank'>
+            
+
+          </a>
+        </td>
+      </tr>
+    
+  </table>
+  <h2>
     Recommendations
 
   </h2>

@@ -92,6 +92,11 @@
 
   <div class="form-group has-success"><label class="control-label" for="id_search">Search</label><input class="form-control" id="id_search" name="search" placeholder="Search" title="Filter" type="text" /><span class="help-block">Filter
 </span></div>
+<div class="form-group has-success"><label class="control-label" for="id_chamber">Chamber</label><select class="form-control" id="id_chamber" name="chamber" title="Filter">
+<option value="" selected="selected">---------</option>
+<option value="1">European Parliament [EP]</option>
+</select><span class="help-block">Filter
+</span></div>
 
   <div class="form-group">
     <button class='btn btn-primary' type='submit'>
@@ -165,6 +170,9 @@
     <table class='table'>
       <tr>
         <th>
+          Chambers
+        </th>
+        <th>
           Title
         </th>
         <th>
@@ -180,6 +188,11 @@
       </tr>
       
         <tr>
+          <td>
+            
+              <span class="chamber-icon chamber-icon-ep" title="European Parliament"></span>
+            
+          </td>
           <td>
             <a href='/votes/dossier/28147/'>
               Resolution on the Anti-Counterfeiting Trade Agreement (ACTA)
