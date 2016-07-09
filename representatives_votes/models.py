@@ -15,6 +15,16 @@ class Dossier(TimeStampedModel):
     def __unicode__(self):
         return unicode(self.title)
 
+    def chambers(self):
+        """
+        Return distinct chambers. You probably want to prefetch
+        documents__chamber before calling that.
+        """
+
+        # Use sorted() because using order_by will hit the database no matter
+        # what was prefetched
+        return set(sorted([d.chamber for d in self.documents.all()]))
+
 
 class Document(TimeStampedModel):
     dossier = models.ForeignKey(Dossier, related_name='documents')
