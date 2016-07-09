@@ -13,12 +13,16 @@ from representatives.models import Chamber, Group, Representative
 from representatives_votes.models import Dossier
 
 
-def chamber_filter(qs, value):
+def rep_chamber_filter(qs, value):
     today = datetime.date.today()
     return qs.filter(
         Q(mandates__end_date__gte=today) | Q(mandates__end_date__isnull=True),
         mandates__group__chamber=value
     )
+
+
+def dossier_chamber_filter(qs, value):
+    return qs.filter(documents__chamber=value)
 
 
 def group_filter(qs, value):
@@ -34,7 +38,7 @@ class RepresentativeFilter(FilterSet):
     search = MethodFilter(action='search_filter')
 
     chamber = ModelChoiceFilter(queryset=Chamber.objects.all(),
-                                action=chamber_filter)
+                                action=rep_chamber_filter)
 
     country = ModelChoiceFilter(queryset=Group.objects.filter(kind='country'),
                                 action=group_filter)
@@ -60,9 +64,12 @@ class DossierFilter(FilterSet):
 
     search = MethodFilter(action='search_filter')
 
+    chamber = ModelChoiceFilter(queryset=Chamber.objects.all(),
+                                action=dossier_chamber_filter)
+
     class Meta:
         model = Dossier
-        fields = ['search']
+        fields = ['search', 'chamber']
 
     def search_filter(self, qs, value):
         if len(value) == 0:
