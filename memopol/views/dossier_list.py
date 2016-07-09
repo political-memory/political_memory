@@ -15,7 +15,9 @@ class DossierList(PaginationMixin, generic.ListView):
     current_filter = None
     queryset = Dossier.objects.prefetch_related(
         'proposals',
-        'proposals__recommendation'
+        'proposals__recommendation',
+        'documents',
+        'documents__chamber'
     ).annotate(
         nb_proposals=Count('proposals'),
         nb_recomm=Count('proposals__recommendation')

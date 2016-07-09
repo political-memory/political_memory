@@ -102,6 +102,15 @@ def chamber_icon(chamber):
 
 
 @register.filter
+def chamber_small_icon(chamber):
+    return mark_safe(
+        u'<span class="chamber-icon ' +
+        u'chamber-icon-{abbr}" title="{name}"></span>'.format(
+            name=chamber.name,
+            abbr=cssify(chamber.abbreviation)))
+
+
+@register.filter
 def mandate_icon(main_mandate):
     return mark_safe(
         u'<span class="group-icon ' +
