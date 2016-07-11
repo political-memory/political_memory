@@ -10,6 +10,32 @@
     <strong>{{ dossier.reference }}</strong>
 
   %h2
+    - trans "Documents"
+
+  %table.table
+    %tr
+      %th
+        - trans "Chamber"
+      %th
+        - trans "Document type"
+      %th
+        - trans "Title"
+
+    - for document in dossier.documents.all
+      %tr
+        %td
+          = document.chamber | chamber_icon
+        %td
+          %a.external{'href': '{{ document.link }}', target:'_blank'}
+            - if document.kind == 'procedure-file'
+              - trans "Procedure file"
+            - else
+              = document.kind
+        %td
+          %a.external{'href': '{{ document.link }}', target:'_blank'}
+            = document.title
+
+  %h2
     - trans "Recommendations"
 
   %table.table

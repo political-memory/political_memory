@@ -1,5 +1,6 @@
 - extends "base.html"
 - load i18n
+- load memopol_tags
 
 - block head
 
@@ -26,6 +27,8 @@
     %table.table
       %tr
         %th
+          - trans "Chambers"
+        %th
           - trans "Title"
         %th
           - trans "Recommendations"
@@ -36,6 +39,9 @@
 
       - for dossier in object_list
         %tr
+          %td
+            - for chamber in dossier.chambers
+              = chamber | chamber_small_icon
           %td
             %a{'href': "{% url 'dossier-detail' dossier.pk %}"}
               {{ dossier.title }}

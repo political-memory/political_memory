@@ -14,31 +14,38 @@ class DossiersTest(ResponseDiffMixin, TestCase):
         # session setup
         self.client.get('/votes/dossier/')
 
+        # 1 query for chamber list (search form)
         # 1 query for dossier count
         # 1 query for dossiers
         # 1 query for proposals
         # 1 query for recommendations
-        self.responsediff_test('/votes/dossier/', 4)
+        # 1 query for documents
+        # 1 query for document chambers
+        self.responsediff_test('/votes/dossier/', 7)
 
     def test_dossier_search(self):
         # session setup
         self.client.get('/votes/dossier/')
 
+        # 1 query for chamber list (search form)
         # 1 query for dossier count
         # 1 query for dossiers
         # 1 query for proposals
         # 1 query for recommendations
+        # 1 query for documents
+        # 1 query for document chambers
         q = 'acta'
-        self.responsediff_test('/votes/dossier/?search=%s' % q, 4)
+        self.responsediff_test('/votes/dossier/?search=%s' % q, 7)
 
     def test_dossier_search_noresults(self):
         # session setup
         self.client.get('/votes/dossier/')
 
+        # 1 query for chamber list (search form)
         # 1 query for dossier count
         # nothing else since count = 0
         q = 'no-dossier-will-have-that-title-ever'
-        self.responsediff_test('/votes/dossier/?search=%s' % q, 1)
+        self.responsediff_test('/votes/dossier/?search=%s' % q, 2)
 
     def test_dossier_detail(self):
         # Get 1st dossier in dataset
@@ -50,4 +57,6 @@ class DossiersTest(ResponseDiffMixin, TestCase):
         # 1 query for the dossier
         # 1 query for proposals
         # 1 query for recommendations
-        self.responsediff_test('/votes/dossier/%s/' % dossier.pk, 3)
+        # 1 query for documents
+        # 1 query for document chambers
+        self.responsediff_test('/votes/dossier/%s/' % dossier.pk, 5)

@@ -942,11 +942,23 @@
         "reference": "2010/2935(RSP)",
         "title": "Resolution on the Anti-Counterfeiting Trade Agreement (ACTA)",
         "text": "",
-        "created": "2015-12-27T17:40:18.700Z",
-        "link": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2010/2935(RSP)"
+        "created": "2015-12-27T17:40:18.700Z"
     },
     "model": "representatives_votes.dossier",
     "pk": 28147
+},
+{
+    "fields": {
+        "updated": "2015-12-27T17:40:18.700Z",
+        "created": "2015-12-27T17:40:18.700Z",
+        "title": "",
+        "kind": "procedure-file",
+        "link": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2010/2935(RSP)",
+        "dossier": 28147,
+        "chamber": 1
+    },
+    "model": "representatives_votes.document",
+    "pk": 1
 },
 {
     "fields": {
@@ -1092,13 +1104,13 @@
         "app_label": "representatives_positions"
     },
     "model": "contenttypes.contenttype",
-    "pk": 28
+    "pk": 29
 },
 {
     "fields": {
         "tag": 1,
         "object_id": 1,
-        "content_type": 28
+        "content_type": 29
     },
     "model": "taggit.taggeditem",
     "pk": 1
@@ -1107,7 +1119,7 @@
     "fields": {
         "tag": 2,
         "object_id": 1,
-        "content_type": 28
+        "content_type": 29
     },
     "model": "taggit.taggeditem",
     "pk": 2
@@ -1116,7 +1128,7 @@
     "fields": {
         "tag": 1,
         "object_id": 3,
-        "content_type": 28
+        "content_type": 29
     },
     "model": "taggit.taggeditem",
     "pk": 5
@@ -1125,7 +1137,7 @@
     "fields": {
         "tag": 1,
         "object_id": 2,
-        "content_type": 28
+        "content_type": 29
     },
     "model": "taggit.taggeditem",
     "pk": 6
@@ -1134,7 +1146,7 @@
     "fields": {
         "tag": 3,
         "object_id": 2,
-        "content_type": 28
+        "content_type": 29
     },
     "model": "taggit.taggeditem",
     "pk": 7
