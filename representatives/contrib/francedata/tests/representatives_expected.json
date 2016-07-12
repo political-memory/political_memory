@@ -1,15 +1,15 @@
 [
 {
     "fields": {
-        "photo": "http://www.nosdeputes.fr/depute/photo/bernard-roman",
+        "last_name": "Roman",
         "gender": 2,
         "remote_id": "http://www2.assemblee-nationale.fr/deputes/fiche/OMC_PA2611",
+        "first_name": "Bernard",
         "cv": "",
         "active": true,
         "birth_place": "Lille (Nord)",
-        "first_name": "Bernard",
-        "last_name": "Roman",
         "full_name": "Bernard Roman",
+        "photo": "http://www.nosdeputes.fr/depute/photo/bernard-roman",
         "birth_date": "1952-07-15",
         "slug": "bernard-roman"
     },
@@ -18,15 +18,15 @@
 },
 {
     "fields": {
-        "photo": "http://www.nossenateurs.fr/senateur/photo/david-assouline",
+        "last_name": "Assouline",
         "gender": 2,
         "remote_id": "http://www.senat.fr/senateur/assouline_david04059m.html",
+        "first_name": "David",
         "cv": "",
         "active": true,
         "birth_place": "non disponible",
-        "first_name": "David",
-        "last_name": "Assouline",
         "full_name": "David Assouline",
+        "photo": "http://www.nossenateurs.fr/senateur/photo/david-assouline",
         "birth_date": "1959-06-16",
         "slug": "david-assouline"
     },
@@ -71,21 +71,12 @@
 },
 {
     "fields": {
-        "url": "https://twitter.com/bernardroman59",
-        "representative": 1,
-        "kind": ""
-    },
-    "model": "representatives.website",
-    "pk": 2
-},
-{
-    "fields": {
         "url": "http://twitter.com/bernardroman59",
         "representative": 1,
         "kind": "twitter"
     },
     "model": "representatives.website",
-    "pk": 3
+    "pk": 2
 },
 {
     "fields": {
@@ -94,25 +85,16 @@
         "kind": ""
     },
     "model": "representatives.website",
-    "pk": 4
-},
-{
-    "fields": {
-        "url": "https://twitter.com/dassouline",
-        "representative": 2,
-        "kind": ""
-    },
-    "model": "representatives.website",
-    "pk": 5
+    "pk": 3
 },
 {
     "fields": {
         "url": "https://www.facebook.com/DavAssouline",
         "representative": 2,
-        "kind": ""
+        "kind": "facebook"
     },
     "model": "representatives.website",
-    "pk": 6
+    "pk": 4
 },
 {
     "fields": {
@@ -121,7 +103,7 @@
         "kind": ""
     },
     "model": "representatives.website",
-    "pk": 7
+    "pk": 5
 },
 {
     "fields": {
@@ -130,7 +112,7 @@
         "kind": "twitter"
     },
     "model": "representatives.website",
-    "pk": 8
+    "pk": 6
 },
 {
     "fields": {

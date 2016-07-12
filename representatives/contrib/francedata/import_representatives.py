@@ -1,6 +1,7 @@
 # coding: utf-8
 
 import logging
+import re
 import sys
 from datetime import datetime
 
@@ -247,7 +248,13 @@ class FranceDataImporter(GenericImporter):
         # Websites
         websites = rep_json.get('sites_web', [])
         for site in websites:
-            if not site['site'].startswith('http://twitter.com/'):
+            if re.search(r'facebook\.com', site['site']):
+                self.touch_model(model=WebSite,
+                                 url=site['site'],
+                                 kind='facebook',
+                                 representative=representative
+                                 )
+            elif not re.search(r'twitter\.com', site['site']):
                 self.touch_model(model=WebSite,
                                  url=site['site'],
                                  representative=representative
