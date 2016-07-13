@@ -11,6 +11,7 @@ import django
 from django.apps import apps
 from django.db import transaction
 from django.utils import timezone
+from django.utils.text import slugify
 
 from representatives.models import (Country, Mandate, Email, Address, WebSite,
                                     Representative, Constituency, Phone, Group,
@@ -122,16 +123,6 @@ class FranceDataImporter(GenericImporter):
         Import a rep as a representative from the json dict fetched from
         FranceData (which comes from nosdeputes.fr)
         '''
-        remote_id = rep_json[self.variant['remote_id_field']]
-
-        if rep_json['num_circo'] == 'non disponible':
-            rep_json['num_circo'] = 'nd'
-
-        if not remote_id:
-            logger.warning('Skipping MEP without UID %s %s',
-                           rep_json['nom'],
-                           rep_json[self.variant['remote_id_field']])
-            return
 
         # Some versions of memopol will connect to this and skip inactive reps.
         responses = representative_pre_import.send(sender=self,
@@ -143,15 +134,23 @@ class FranceDataImporter(GenericImporter):
                     'Skipping MEP %s', rep_json['nom'])
                 return
 
+        changed = False
+        slug = slugify(
+            rep_json['nom'] if 'nom' in rep_json
+            else rep_json['prenom'] + " " + rep_json['nom_de_famille']
+        )
+
         try:
-            representative = Representative.objects.get(remote_id=remote_id)
+            representative = Representative.objects.get(slug=slug)
         except Representative.DoesNotExist:
-            representative = Representative(remote_id=remote_id)
+            representative = Representative(slug=slug)
+            changed = True
+
+        if rep_json['num_circo'] == 'non disponible':
+            rep_json['num_circo'] = 'nd'
 
         # Save representative attributes
-        self.import_representative_details(representative, rep_json)
-
-        representative.save()
+        self.import_representative_details(representative, rep_json, changed)
 
         self.add_mandates(representative, rep_json)
 
@@ -161,34 +160,59 @@ class FranceDataImporter(GenericImporter):
 
         return representative
 
-    def import_representative_details(self, representative, rep_json):
-        representative.active = True
+    def import_representative_details(self, representative, rep_json, changed):
+        active = True
         if rep_json.get("ancien_depute", 0) == 1:
-            representative.active = False
+            active = False
         if rep_json.get("ancien_senateur", 0) == 1:
-            representative.active = False
+            active = False
+        if representative.active != active:
+            representative.active = active
+            changed = True
 
         if rep_json.get("date_naissance"):
-            representative.birth_date = _parse_date(rep_json["date_naissance"])
+            birth_date = _parse_date(rep_json["date_naissance"])
+            if representative.birth_date != birth_date:
+                representative.birth_date = birth_date
+                changed = True
+
         if rep_json.get("lieu_naissance"):
-            representative.birth_place = rep_json["lieu_naissance"]
+            birth_place = rep_json["lieu_naissance"]
+            if representative.birth_place != birth_place:
+                representative.birth_place = birth_place
+                changed = True
 
-        representative.photo = rep_json['photo_url']
-        representative.first_name = rep_json['prenom']
-        representative.last_name = rep_json['nom_de_famille']
-        representative.full_name = rep_json["nom"]
+        photo = rep_json['photo_url']
+        if representative.photo != photo:
+            representative.photo = photo
+            changed = True
 
-        gender_convertion_dict = {
-            u"F": 1,
-            u"H": 2
-        }
+        first_name = rep_json['prenom']
+        if representative.first_name != first_name:
+            representative.first_name = first_name
+            changed = True
+
+        last_name = rep_json['nom_de_famille']
+        if representative.last_name != last_name:
+            representative.last_name = last_name
+            changed = True
+
+        full_name = rep_json["nom"]
+        if representative.full_name != full_name:
+            representative.full_name = full_name
+            changed = True
+
+        gender_convertion_dict = {u"F": 1, u"H": 2}
         if 'sexe' in rep_json:
-            representative.gender = gender_convertion_dict.get(rep_json[
-                                                               'sexe'], 0)
+            gender = gender_convertion_dict.get(rep_json['sexe'], 0)
         else:
-            representative.gender = 0
+            gender = 0
+        if representative.gender != gender:
+            representative.gender = gender
+            changed = True
 
-        representative.slug = rep_json['slug']
+        if changed:
+            representative.save()
 
     def add_mandates(self, representative, rep_json):
         '''
@@ -245,6 +269,23 @@ class FranceDataImporter(GenericImporter):
                     mdef['kind'], role, name, abbr, start, end))
 
     def add_contacts(self, representative, rep_json):
+        # Chamber page
+        changed = False
+        try:
+            site = WebSite.objects.get(kind=self.variant['abbreviation'],
+                                       representative=representative)
+        except WebSite.DoesNotExist:
+            site = WebSite(kind=self.variant['abbreviation'],
+                           representative=representative)
+            changed = True
+
+        if site.url != rep_json[self.variant['chamber_url_field']]:
+            site.url = rep_json[self.variant['chamber_url_field']]
+            changed = True
+
+        if changed:
+            site.save()
+
         # Websites
         websites = rep_json.get('sites_web', [])
         for site in websites:

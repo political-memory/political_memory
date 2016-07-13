@@ -33,8 +33,7 @@ class Representative(TimeStampedModel):
     Base model for representatives
     """
 
-    slug = models.SlugField(max_length=100)
-    remote_id = models.CharField(max_length=255, unique=True)
+    slug = models.SlugField(max_length=100, unique=True)
     first_name = models.CharField(max_length=255, blank=True, default='')
     last_name = models.CharField(max_length=255, blank=True, default='')
     full_name = models.CharField(max_length=255)
@@ -53,7 +52,7 @@ class Representative(TimeStampedModel):
     hashable_fields = ['remote_id']
 
     def __unicode__(self):
-        return u'{} ({})'.format(smart_unicode(self.full_name), self.remote_id)
+        return smart_unicode(self.full_name)
 
     def gender_as_str(self):
         genders = {0: 'N/A', 1: 'F', 2: 'M'}

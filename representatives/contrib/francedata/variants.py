@@ -131,7 +131,7 @@ FranceDataVariants = {
     "AN": {
         "chamber": u"Assemblée nationale",
         "abbreviation": "AN",
-        "remote_id_field": "url_an",
+        "chamber_url_field": "url_an",
         "mail_domain": "@assemblee-nationale.fr",
         "off_city": "Paris",
         "off_street": u"Rue de l'Université",
@@ -197,7 +197,7 @@ FranceDataVariants = {
     "SEN": {
         "chamber": u"Sénat",
         "abbreviation": "SEN",
-        "remote_id_field": "url_institution",
+        "chamber_url_field": "url_institution",
         "mail_domain": "@senat.fr",
         "off_city": "Paris",
         "off_street": u"Rue de Vaugirard",

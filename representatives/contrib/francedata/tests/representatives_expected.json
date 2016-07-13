@@ -3,7 +3,6 @@
     "fields": {
         "last_name": "Roman",
         "gender": 2,
-        "remote_id": "http://www2.assemblee-nationale.fr/deputes/fiche/OMC_PA2611",
         "first_name": "Bernard",
         "cv": "",
         "active": true,
@@ -20,7 +19,6 @@
     "fields": {
         "last_name": "Assouline",
         "gender": 2,
-        "remote_id": "http://www.senat.fr/senateur/assouline_david04059m.html",
         "first_name": "David",
         "cv": "",
         "active": true,
@@ -62,12 +60,21 @@
 },
 {
     "fields": {
+        "url": "http://www2.assemblee-nationale.fr/deputes/fiche/OMC_PA2611",
+        "representative": 1,
+        "kind": "AN"
+    },
+    "model": "representatives.website",
+    "pk": 1
+},
+{
+    "fields": {
         "url": "http://www.bernard-roman.net",
         "representative": 1,
         "kind": ""
     },
     "model": "representatives.website",
-    "pk": 1
+    "pk": 2
 },
 {
     "fields": {
@@ -76,7 +83,16 @@
         "kind": "twitter"
     },
     "model": "representatives.website",
-    "pk": 2
+    "pk": 3
+},
+{
+    "fields": {
+        "url": "http://www.senat.fr/senateur/assouline_david04059m.html",
+        "representative": 2,
+        "kind": "SEN"
+    },
+    "model": "representatives.website",
+    "pk": 4
 },
 {
     "fields": {
@@ -85,7 +101,7 @@
         "kind": ""
     },
     "model": "representatives.website",
-    "pk": 3
+    "pk": 5
 },
 {
     "fields": {
@@ -94,7 +110,7 @@
         "kind": "facebook"
     },
     "model": "representatives.website",
-    "pk": 4
+    "pk": 6
 },
 {
     "fields": {
@@ -103,7 +119,7 @@
         "kind": ""
     },
     "model": "representatives.website",
-    "pk": 5
+    "pk": 7
 },
 {
     "fields": {
@@ -112,7 +128,7 @@
         "kind": "twitter"
     },
     "model": "representatives.website",
-    "pk": 6
+    "pk": 8
 },
 {
     "fields": {

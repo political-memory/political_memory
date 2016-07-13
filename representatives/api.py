@@ -55,7 +55,6 @@ class RepresentativeViewSet(viewsets.ReadOnlyModelViewSet):
         'active': ['exact'],
         'slug': ['exact', 'icontains'],
         'id': ['exact'],
-        'remote_id': ['exact'],
         'first_name': ['exact', 'icontains'],
         'last_name': ['exact', 'icontains'],
         'full_name': ['exact', 'icontains'],

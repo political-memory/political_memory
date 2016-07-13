@@ -4,7 +4,6 @@
         "last_name": "PIRKER",
         "photo": "http://www.europarl.europa.eu/mepphoto/2307.jpg",
         "gender": 2,
-        "remote_id": "2307",
         "first_name": "Hubert",
         "cv": "Transport and security spokesman, \u00d6VP Delegation, European Parliament;\nsecurity spokesman, \u00d6VP Delegation, European Parliament (2006-2009); security spokesman (coordinator), EPP Group (1999-2004); Deputy Head of \u00d6VP Delegation, European Parliament (1996-2004);",
         "active": false,
@@ -21,7 +20,6 @@
         "last_name": "LUDVIGSSON",
         "photo": "http://www.europarl.europa.eu/mepphoto/96673.jpg",
         "gender": 2,
-        "remote_id": "96673",
         "first_name": "Olle",
         "cv": "",
         "active": true,
@@ -44,12 +42,30 @@
 },
 {
     "fields": {
+        "url": "http://www.europarl.europa.eu/meps/en/2307/_home.html",
+        "representative": 1,
+        "kind": "EP"
+    },
+    "model": "representatives.website",
+    "pk": 1
+},
+{
+    "fields": {
+        "url": "http://www.europarl.europa.eu/meps/en/96673/_home.html",
+        "representative": 2,
+        "kind": "EP"
+    },
+    "model": "representatives.website",
+    "pk": 2
+},
+{
+    "fields": {
         "url": "http://www.sap.se/olle",
         "representative": 2,
         "kind": ""
     },
     "model": "representatives.website",
-    "pk": 1
+    "pk": 3
 },
 {
     "fields": {
@@ -58,7 +74,7 @@
         "kind": "twitter"
     },
     "model": "representatives.website",
-    "pk": 2
+    "pk": 4
 },
 {
     "fields": {
@@ -67,7 +83,7 @@
         "kind": "facebook"
     },
     "model": "representatives.website",
-    "pk": 3
+    "pk": 5
 },
 {
     "fields": {

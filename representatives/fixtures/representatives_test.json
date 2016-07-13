@@ -78,7 +78,6 @@
         "photo": "http://www.europarl.europa.eu/mepphoto/2307.jpg",
         "created": "2015-12-13T02:07:23.995",
         "gender": 2,
-        "remote_id": "2307",
         "first_name": "Hubert",
         "cv": "Transport and security spokesman, \u00d6VP Delegation, European Parliament;\nsecurity spokesman, \u00d6VP Delegation, European Parliament (2006-2009); security spokesman (coordinator), EPP Group (1999-2004); Deputy Head of \u00d6VP Delegation, European Parliament (1996-2004);",
         "active": false,
@@ -97,7 +96,6 @@
         "photo": "http://www.europarl.europa.eu/mepphoto/96673.jpg",
         "created": "2015-12-13T02:07:24.361",
         "gender": 2,
-        "remote_id": "96673",
         "first_name": "Olle",
         "cv": "",
         "active": true,
@@ -152,6 +150,28 @@
     },
     "model": "representatives.website",
     "pk": 3
+},
+{
+    "fields": {
+        "url": "http://www.europarl.europa.eu/meps/en/2307/_home.html",
+        "updated": "2015-12-13T02:07:24.408",
+        "representative": 1,
+        "kind": "EP",
+        "created": "2015-12-13T02:07:24.408"
+    },
+    "model": "representatives.website",
+    "pk": 4
+},
+{
+    "fields": {
+        "url": "http://www.europarl.europa.eu/meps/en/96673/_home.html",
+        "updated": "2015-12-13T02:07:24.408",
+        "representative": 2,
+        "kind": "EP",
+        "created": "2015-12-13T02:07:24.408"
+    },
+    "model": "representatives.website",
+    "pk": 5
 },
 {
     "fields": {

@@ -9,8 +9,8 @@ import ijson
 import django
 from django.apps import apps
 from django.db import transaction
-from django.template.defaultfilters import slugify
 from django.utils import timezone
+from django.utils.text import slugify
 
 from representatives.models import (Address, Constituency, Country, Email,
                                     Group, Mandate, Phone, Representative,
@@ -79,12 +79,6 @@ class ParltrackImporter(GenericImporter):
         Import a mep as a representative from the json dict fetched from
         parltrack
         '''
-        remote_id = mep_json['UserID']
-
-        if not remote_id:
-            logger.warning('Skipping MEP without UID %s %s',
-                           mep_json['Name']['full'], mep_json['UserID'])
-            return
 
         # Some versions of memopol will connect to this and skip inactive meps.
         responses = representative_pre_import.send(sender=self,
@@ -96,15 +90,19 @@ class ParltrackImporter(GenericImporter):
                     'Skipping MEP %s', mep_json['Name']['full'])
                 return
 
+        changed = False
+        slug = slugify(
+            mep_json["Name"]["full"] if 'full' in mep_json["Name"]
+            else mep_json["Name"]["sur"] + " " + mep_json["Name"]["family"]
+        )
         try:
-            representative = Representative.objects.get(remote_id=remote_id)
+            representative = Representative.objects.get(slug=slug)
         except Representative.DoesNotExist:
-            representative = Representative(remote_id=remote_id)
+            representative = Representative(slug=slug)
+            changed = True
 
         # Save representative attributes
-        self.import_representative_details(representative, mep_json)
-
-        representative.save()
+        self.import_representative_details(representative, mep_json, changed)
 
         self.add_mandates(representative, mep_json)
 
@@ -114,19 +112,35 @@ class ParltrackImporter(GenericImporter):
 
         return representative
 
-    def import_representative_details(self, representative, mep_json):
-        representative.active = mep_json['active']
+    def import_representative_details(self, representative, mep_json, changed):
+        if representative.active != mep_json['active']:
+            representative.active = mep_json['active']
+            changed = True
 
         if mep_json.get("Birth"):
-            representative.birth_date = _parse_date(mep_json["Birth"]["date"])
+            birth_date = _parse_date(mep_json["Birth"]["date"])
+            if representative.birth_date != birth_date:
+                representative.birth_date = birth_date
+                changed = True
             if "place" in mep_json["Birth"]:
-                representative.birth_place = mep_json["Birth"]["place"]
+                birth_place = mep_json["Birth"]["place"]
+                if representative.birth_place != birth_place:
+                    representative.birth_place = birth_place
+                    changed = True
 
-        representative.first_name = mep_json["Name"]["sur"]
-        representative.last_name = mep_json["Name"]["family"]
-        representative.full_name = mep_json["Name"]["full"]
+        if representative.first_name != mep_json["Name"]["sur"]:
+            representative.first_name = mep_json["Name"]["sur"]
+            changed = True
 
-        representative.photo = mep_json["Photo"]
+        last_name = mep_json["Name"]["family"]
+
+        if representative.full_name != mep_json["Name"]["full"]:
+            representative.full_name = mep_json["Name"]["full"]
+            changed = True
+
+        if representative.photo != mep_json["Photo"]:
+            representative.photo = mep_json["Photo"]
+            changed = True
 
         fix_last_name_with_prefix = {
             "Esther de LANGE": "de LANGE",
@@ -161,28 +175,30 @@ class ParltrackImporter(GenericImporter):
         }
 
         if fix_last_name_with_prefix.get(representative.full_name):
-            representative.last_name = fix_last_name_with_prefix[
-                representative.full_name]
-        elif representative.last_name == "J.A.J. STASSEN":
-            representative.last_name_with_prefix = "STASSEN"
+            last_name = fix_last_name_with_prefix[representative.full_name]
+        elif last_name == "J.A.J. STASSEN":
+            last_name = "STASSEN"
 
-        gender_convertion_dict = {
-            u"F": 1,
-            u"M": 2
-        }
+        if representative.last_name != last_name:
+            representative.last_name = last_name
+            changed = True
+
+        gender_convertion_dict = {u"F": 1, u"M": 2}
         if 'Gender' in mep_json:
-            representative.gender = gender_convertion_dict.get(mep_json[
-                                                               'Gender'], 0)
+            gender = gender_convertion_dict.get(mep_json['Gender'], 0)
         else:
-            representative.gender = 0
+            gender = 0
+        if representative.gender != gender:
+            representative.gender = gender
+            changed = True
 
-        representative.cv = "\n".join(
-            [cv_title for cv_title in mep_json.get("CV", [])])
+        cv = "\n".join([cv_title for cv_title in mep_json.get("CV", [])])
+        if representative.cv != cv:
+            representative.cv = cv
+            changed = True
 
-        representative.slug = slugify(
-            representative.full_name if representative.full_name
-            else representative.first_name + " " + representative.last_name
-        )
+        if changed:
+            representative.save()
 
     def add_mandates(self, representative, mep_json):
         def create_mandate(mandate_data, representative, group, constituency):
@@ -353,6 +369,25 @@ class ParltrackImporter(GenericImporter):
                     kind=('official' if '@europarl.europa.eu' in mail
                         else 'other'),
                     email=mail)
+
+        # EP page
+        changed = False
+        try:
+            site = WebSite.objects.get(kind='EP',
+                                       representative=representative)
+        except WebSite.DoesNotExist:
+            site = WebSite(kind='EP', representative=representative)
+            changed = True
+
+        uid = mep_json['UserID']
+        url = 'http://www.europarl.europa.eu/meps/en/%s/_home.html' % uid
+        if site.url != url:
+            site.url = url
+            changed = True
+
+        if changed:
+            site.save()
+
         # WebSite
         websites = mep_json.get('Homepage', [])
         for url in websites:
