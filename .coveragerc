@@ -1,3 +1,6 @@
 [run]
-omit = representatives_votes/tests/*
-omit = representatives_votes/migrations/*
+omit =
+	representatives/tests/*
+	representatives/migrations/*
+	representatives/contrib/francedata/tests/*
+	representatives/contrib/parltrack/tests/*

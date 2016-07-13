@@ -157,7 +157,6 @@ class RepresentativeSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'slug',
-            'remote_id',
             'first_name',
             'last_name',
             'full_name',
