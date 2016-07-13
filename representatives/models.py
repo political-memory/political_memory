@@ -49,8 +49,6 @@ class Representative(TimeStampedModel):
     photo = models.CharField(max_length=512, null=True)
     active = models.BooleanField(default=False)
 
-    hashable_fields = ['remote_id']
-
     def __unicode__(self):
         return smart_unicode(self.full_name)
 
@@ -109,8 +107,6 @@ class Chamber(models.Model):
     abbreviation = models.CharField(max_length=10, blank=True, default='',
         db_index=True)
 
-    hashable_fields = ['name', 'country', 'abbreviation']
-
     def __unicode__(self):
         return u'{} [{}]'.format(self.name, self.abbreviation)
 
@@ -124,8 +120,6 @@ class Group(TimeStampedModel):
         db_index=True)
     kind = models.CharField(max_length=255, db_index=True)
     chamber = models.ForeignKey(Chamber, null=True, related_name='groups')
-
-    hashable_fields = ['name', 'abbreviation', 'kind', 'chamber']
 
     @cached_property
     def active(self):
@@ -145,8 +139,6 @@ class Constituency(TimeStampedModel):
     name = models.CharField(max_length=255)
     country = models.ForeignKey('Country', null=True, blank=True,
         related_name='constituencies')
-
-    hashable_fields = ['name', 'country']
 
     @cached_property
     def active(self):
@@ -183,9 +175,6 @@ class Mandate(TimeStampedModel):
     begin_date = models.DateField(blank=True, null=True)
     end_date = models.DateField(blank=True, null=True)
     link = models.URLField()
-
-    hashable_fields = ['group', 'constituency', 'role', 'begin_date',
-                       'end_date', 'representative']
 
     @property
     def active(self):
