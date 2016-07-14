@@ -135,10 +135,11 @@ class FranceDataImporter(GenericImporter):
                 return
 
         changed = False
-        slug = slugify(
+        slug = slugify('%s-%s' % (
             rep_json['nom'] if 'nom' in rep_json
-            else rep_json['prenom'] + " " + rep_json['nom_de_famille']
-        )
+            else rep_json['prenom'] + " " + rep_json['nom_de_famille'],
+            _parse_date(rep_json["date_naissance"])
+        ))
 
         try:
             representative = Representative.objects.get(slug=slug)

@@ -91,10 +91,11 @@ class ParltrackImporter(GenericImporter):
                 return
 
         changed = False
-        slug = slugify(
+        slug = slugify('%s-%s' % (
             mep_json["Name"]["full"] if 'full' in mep_json["Name"]
-            else mep_json["Name"]["sur"] + " " + mep_json["Name"]["family"]
-        )
+            else mep_json["Name"]["sur"] + " " + mep_json["Name"]["family"],
+            _parse_date(mep_json["Birth"]["date"])
+        ))
         try:
             representative = Representative.objects.get(slug=slug)
         except Representative.DoesNotExist:

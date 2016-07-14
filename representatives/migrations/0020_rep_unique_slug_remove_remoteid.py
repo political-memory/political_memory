@@ -6,6 +6,19 @@ import datetime
 from django.db import connection, migrations, models
 
 
+def update_slugs(apps, schema_editor):
+    """
+    Include birthdate in slugs
+    """
+
+    # Get model managers
+    Representative = apps.get_model("representatives", "Representative")
+
+    for rep in Representative.objects.all():
+        rep.slug = '%s-%s' % (rep.slug, rep.birth_date)
+        rep.save()
+
+
 def create_parl_websites(apps, schema_editor):
     """
     Prepare for remote_id removal by creating WebSite entities from it.
@@ -73,6 +86,8 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
+        migrations.RunPython(update_slugs),
+
         migrations.RunPython(create_parl_websites),
 
         migrations.RemoveField(

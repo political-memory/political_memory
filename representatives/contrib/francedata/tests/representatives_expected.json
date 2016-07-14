@@ -10,7 +10,7 @@
         "full_name": "Bernard Roman",
         "photo": "http://www.nosdeputes.fr/depute/photo/bernard-roman",
         "birth_date": "1952-07-15",
-        "slug": "bernard-roman"
+        "slug": "bernard-roman-1952-07-15"
     },
     "model": "representatives.representative",
     "pk": 1
@@ -26,7 +26,7 @@
         "full_name": "David Assouline",
         "photo": "http://www.nossenateurs.fr/senateur/photo/david-assouline",
         "birth_date": "1959-06-16",
-        "slug": "david-assouline"
+        "slug": "david-assouline-1959-06-16"
     },
     "model": "representatives.representative",
     "pk": 2
