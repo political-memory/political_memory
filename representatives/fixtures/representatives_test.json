@@ -84,7 +84,7 @@
         "birth_place": "Gries",
         "full_name": "Hubert PIRKER",
         "birth_date": "1948-10-03",
-        "slug": "hubert-pirker"
+        "slug": "hubert-pirker-1948-10-03"
     },
     "model": "representatives.representative",
     "pk": 1
@@ -102,7 +102,7 @@
         "birth_place": "H\u00e4ls\u00f6",
         "full_name": "Olle LUDVIGSSON",
         "birth_date": "1948-10-28",
-        "slug": "olle-ludvigsson"
+        "slug": "olle-ludvigsson-1948-10-28"
     },
     "model": "representatives.representative",
     "pk": 2
