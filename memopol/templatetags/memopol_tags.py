@@ -4,6 +4,7 @@ import re
 
 from django import template
 from django.contrib.humanize.templatetags.humanize import naturalday
+from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.core.urlresolvers import reverse
 from django.utils.safestring import mark_safe
 from django.utils.html import escape
@@ -94,48 +95,49 @@ def country_flag(country):
 
 @register.filter
 def chamber_icon(chamber):
+    url = static('images/chamber-%s.png' % cssify(chamber.abbreviation))
     return mark_safe(
-        u'<span class="chamber-icon ' +
-        u'chamber-icon-{abbr}"></span> {name}'.format(
-            name=chamber.name,
-            abbr=cssify(chamber.abbreviation)))
+        u'<span class="chamber-icon" style="background-image: url({url})">'
+        u'</span> {name}'.format(name=chamber.name, url=url))
 
 
 @register.filter
 def chamber_small_icon(chamber):
+    url = static('images/chamber-%s.png' % cssify(chamber.abbreviation))
     return mark_safe(
-        u'<span class="chamber-icon ' +
-        u'chamber-icon-{abbr}" title="{name}"></span>'.format(
-            name=chamber.name,
-            abbr=cssify(chamber.abbreviation)))
+        u'<span class="chamber-icon" style="background-image: url({url})" '
+        u'title="{name}"></span>'.format(name=chamber.name, url=url))
 
 
 @register.filter
 def mandate_icon(main_mandate):
+    group = main_mandate.group
+    url = static('images/group-%s.png' % cssify('%s-%s' % (
+        group.chamber.abbreviation, group.abbreviation)))
     return mark_safe(
-        u'<span class="group-icon ' +
-        u'group-icon-{abbr}"></span> {role} of {name}'.format(
+        u'<span class="group-icon" style="background-image: url({url})">'
+        u'</span> {role} of {name}'.format(
             role=main_mandate.role,
             name=main_mandate.group.name,
-            abbr=cssify(main_mandate.group.abbreviation)))
+            url=url))
 
 
 @register.filter
 def group_icon(group):
+    url = static('images/group-%s.png' % cssify('%s-%s' % (
+        group.chamber.abbreviation, group.abbreviation)))
     return mark_safe(
-        u'<span class="group-icon ' +
-        u'group-icon-{abbr}"></span> {name}'.format(
-            abbr=cssify(group.abbreviation),
-            name=group.abbreviation))
+        u'<span class="group-icon" style="background-image: url({url})">'
+        u'</span> {name}'.format(url=url, name=group.abbreviation))
 
 
 @register.filter
 def group_long_icon(group):
+    url = static('images/group-%s.png' % cssify('%s-%s' % (
+        group.chamber.abbreviation, group.abbreviation)))
     return mark_safe(
-        u'<span class="group-icon ' +
-        u'group-icon-{abbr}"></span> {name}'.format(
-            abbr=cssify(group.abbreviation),
-            name=group.name))
+        u'<span class="group-icon" style="background-image: url({url})">'
+        u'</span> {name}'.format(url=url, name=group.name))
 
 
 @register.filter
