@@ -21,7 +21,7 @@ setup(
     extras_require={
         'api': [
             'django-filter>=0.13,<0.14',
-            'djangorestframework>=3,<4',
+            'djangorestframework>=3.3,<3.4',
         ],
         'testing': [
             'codecov>=2,<3',
