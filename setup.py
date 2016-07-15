@@ -13,7 +13,7 @@ setup(
     keywords='django government parliament votes',
     install_requires=[
         'django>1.8,<1.9',
-        'django-representatives>=0.0.29',
+        'django-representatives>=0.0.32',
         'py-dateutil>=2,<3',
         'ijson>=2,<3',
         'pytz',  # Always use up-to-date TZ data
