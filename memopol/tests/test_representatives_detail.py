@@ -6,7 +6,7 @@ from .base import UrlGetTestMixin
 
 class RepresentativeDetailTest(UrlGetTestMixin, TestCase):
     fixtures = ['one_representative']
-    url = '/legislature/representative/mary-honeyball/'
+    url = '/legislature/representative/mary-honeyball-1952-11-12/'
 
     def test_num_queries(self):
         # Ensure one-time cached queries occur before the actual test
