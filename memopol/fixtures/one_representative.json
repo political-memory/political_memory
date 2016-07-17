@@ -14,14 +14,13 @@
         "photo": "http://www.europarl.europa.eu/mepphoto/5846.jpg",
         "created": "2015-12-27T16:05:08.207Z",
         "gender": 1,
-        "remote_id": "5846",
         "first_name": "Mary",
         "cv": "",
         "active": true,
         "birth_place": "Weymouth",
         "full_name": "Mary HONEYBALL",
         "birth_date": "1952-11-12",
-        "slug": "mary-honeyball"
+        "slug": "mary-honeyball-1952-11-12"
     },
     "model": "representatives.representative",
     "pk": 160
@@ -36,6 +35,17 @@
     },
     "model": "representatives.email",
     "pk": 160
+},
+{
+    "fields": {
+        "url": "http://www.europarl.europa.eu/meps/en/5846/_home.html",
+        "updated": "2015-12-13T02:07:24.408",
+        "representative": 160,
+        "kind": "EP",
+        "created": "2015-12-13T02:07:24.408"
+    },
+    "model": "representatives.website",
+    "pk": 295
 },
 {
     "fields": {
