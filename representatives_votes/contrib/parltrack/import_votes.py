@@ -1,5 +1,6 @@
 # coding: utf-8
 import logging
+import re
 import sys
 from os.path import join
 
@@ -166,8 +167,13 @@ class Command(object):
         return self.cache['dossiers'].get(reference, None)
 
     def index_representatives(self):
-        self.cache['meps'] = {int(l[0]): l[1] for l in
-            Representative.objects.values_list('remote_id', 'pk')}
+        epre = r'/meps/en/(\d+)/_home.html'
+        self.cache['meps'] = {
+            int(re.search(epre, l[0]).group(1)): l[1] for l in
+            Representative.objects.prefetch_related('website_set')
+            .filter(website__kind='EP')
+            .values_list('website__url', 'pk')
+        }
 
     def get_representative(self, vote_data):
         if vote_data.get('ep_id', None) is None:

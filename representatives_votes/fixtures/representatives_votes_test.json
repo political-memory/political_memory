@@ -282,14 +282,13 @@
         "photo": "http://www.europarl.europa.eu/mepphoto/2307.jpg",
         "created": "2015-12-13T02:07:23.995Z",
         "gender": 2,
-        "remote_id": "2307",
         "first_name": "Hubert",
         "cv": "Transport and security spokesman, \u00d6VP Delegation, European Parliament;\nsecurity spokesman, \u00d6VP Delegation, European Parliament (2006-2009); security spokesman (coordinator), EPP Group (1999-2004); Deputy Head of \u00d6VP Delegation, European Parliament (1996-2004);",
         "active": false,
         "birth_place": "Gries",
         "full_name": "Hubert PIRKER",
         "birth_date": "1948-10-03",
-        "slug": "hubert-pirker"
+        "slug": "hubert-pirker-1948-10-03"
     },
     "model": "representatives.representative",
     "pk": 1
@@ -301,14 +300,13 @@
         "photo": "http://www.europarl.europa.eu/mepphoto/96673.jpg",
         "created": "2015-12-13T02:07:24.361Z",
         "gender": 2,
-        "remote_id": "96673",
         "first_name": "Olle",
         "cv": "",
         "active": true,
         "birth_place": "H\u00e4ls\u00f6",
         "full_name": "Olle LUDVIGSSON",
         "birth_date": "1948-10-28",
-        "slug": "olle-ludvigsson"
+        "slug": "olle-ludvigsson-1948-10-03"
     },
     "model": "representatives.representative",
     "pk": 2
@@ -356,6 +354,28 @@
     },
     "model": "representatives.website",
     "pk": 3
+},
+{
+    "fields": {
+        "url": "http://www.europarl.europa.eu/meps/en/2307/_home.html",
+        "updated": "2015-12-13T02:07:24.406Z",
+        "representative": 1,
+        "kind": "EP",
+        "created": "2015-12-13T02:07:24.406Z"
+    },
+    "model": "representatives.website",
+    "pk": 4
+},
+{
+    "fields": {
+        "url": "http://www.europarl.europa.eu/meps/en/96673/_home.html",
+        "updated": "2015-12-13T02:07:24.406Z",
+        "representative": 2,
+        "kind": "EP",
+        "created": "2015-12-13T02:07:24.406Z"
+    },
+    "model": "representatives.website",
+    "pk": 5
 },
 {
     "fields": {

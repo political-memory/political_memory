@@ -39,7 +39,9 @@ class VotesImporter:
         if self.deputes_rid is None:
             self.deputes_rid = {
                 r[0]: r[1] for r in
-                Representative.objects.values_list('remote_id', 'pk')
+                Representative.objects.prefetch_related('website_set')
+                .filter(website__kind__in=['AN', 'SEN'])
+                .values_list('website__url', 'pk')
             }
 
         return self.deputes_rid.get(url, None)

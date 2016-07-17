@@ -13,7 +13,7 @@ setup(
     keywords='django government parliament votes',
     install_requires=[
         'django>1.8,<1.9',
-        'django-representatives>=0.0.29',
+        'django-representatives>=0.0.32',
         'py-dateutil>=2,<3',
         'ijson>=2,<3',
         'pytz',  # Always use up-to-date TZ data
@@ -21,7 +21,7 @@ setup(
     extras_require={
         'api': [
             'django-filter>=0.13,<0.14',
-            'djangorestframework>=3,<4',
+            'djangorestframework>=3.3,<3.4',
         ],
         'testing': [
             'codecov>=2,<3',
