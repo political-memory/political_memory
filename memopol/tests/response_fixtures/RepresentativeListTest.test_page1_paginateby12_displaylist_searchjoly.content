@@ -10,7 +10,7 @@
       - The Political Memory of </title>
     
     
-    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.f51a71cd8fb2.css" type="text/css" />
+    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.586b8f5e9bff.css" type="text/css" />
     <script type="text/javascript" src="/static/collected/libs/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="/static/collected/libs/bootstrap/dist/js/bootstrap.js"></script>
     
@@ -286,7 +286,7 @@
             </td>
             <td>
               <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Greens/European%20Free%20Alliance/'>
-                <span class="group-icon group-icon-greensefa"></span> Greens/EFA
+                <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-greensefa.png)"></span> Greens/EFA
               </a>
             </td>
             <td>

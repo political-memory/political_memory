@@ -10,7 +10,7 @@
       - The Political Memory of </title>
     
     
-    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.f51a71cd8fb2.css" type="text/css" />
+    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.586b8f5e9bff.css" type="text/css" />
     <script type="text/javascript" src="/static/collected/libs/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="/static/collected/libs/bootstrap/dist/js/bootstrap.js"></script>
     
@@ -104,7 +104,7 @@
     
       <tr>
         <td>
-          <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+          <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
         </td>
         <td>
           <a class='external' href='http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2010/2935(RSP)' target='_blank'>
