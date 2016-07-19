@@ -10,7 +10,7 @@
       - The Political Memory of </title>
     
     
-    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.f51a71cd8fb2.css" type="text/css" />
+    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.586b8f5e9bff.css" type="text/css" />
     <script type="text/javascript" src="/static/collected/libs/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="/static/collected/libs/bootstrap/dist/js/bootstrap.js"></script>
     
@@ -182,7 +182,7 @@
           
             <td>
               <a href='/legislature/representative/chamber/European%20Parliament/'>
-                <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+                <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
 
               </a>
             </td>
@@ -197,7 +197,7 @@
           <td>
             <a href='/legislature/representative/group/European%20Parliament/Confederal%20Group%20of%20the%20European%20United%20Left/'>
               
-                <span class="group-icon group-icon-guengl"></span> Confederal Group of the European United Left
+                <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-guengl.png)"></span> Confederal Group of the European United Left
               
             </a>
           </td>
@@ -207,7 +207,7 @@
           
             <td>
               <a href='/legislature/representative/chamber/European%20Parliament/'>
-                <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+                <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
 
               </a>
             </td>
@@ -222,7 +222,7 @@
           <td>
             <a href='/legislature/representative/group/European%20Parliament/Confederal%20Group%20of%20the%20European%20United%20Left%20-%20Nordic%20Green%20Left/'>
               
-                <span class="group-icon group-icon-guengl"></span> Confederal Group of the European United Left - Nordic Green Left
+                <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-guengl.png)"></span> Confederal Group of the European United Left - Nordic Green Left
               
             </a>
           </td>
@@ -232,7 +232,7 @@
           
             <td>
               <a href='/legislature/representative/chamber/European%20Parliament/'>
-                <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+                <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
 
               </a>
             </td>
@@ -247,7 +247,7 @@
           <td>
             <a href='/legislature/representative/group/European%20Parliament/European%20Conservatives%20and%20Reformists%20Group/'>
               
-                <span class="group-icon group-icon-ecr"></span> European Conservatives and Reformists Group
+                <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-ecr.png)"></span> European Conservatives and Reformists Group
               
             </a>
           </td>
@@ -257,7 +257,7 @@
           
             <td>
               <a href='/legislature/representative/chamber/European%20Parliament/'>
-                <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+                <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
 
               </a>
             </td>
@@ -272,7 +272,7 @@
           <td>
             <a href='/legislature/representative/group/European%20Parliament/Europe%20of%20freedom%20and%20democracy%20Group/'>
               
-                <span class="group-icon group-icon-efd"></span> Europe of freedom and democracy Group
+                <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-efd.png)"></span> Europe of freedom and democracy Group
               
             </a>
           </td>
@@ -282,7 +282,7 @@
           
             <td>
               <a href='/legislature/representative/chamber/European%20Parliament/'>
-                <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+                <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
 
               </a>
             </td>
@@ -297,7 +297,7 @@
           <td>
             <a href='/legislature/representative/group/European%20Parliament/Europe%20of%20Freedom%20and%20Direct%20Democracy%20Group/'>
               
-                <span class="group-icon group-icon-efdd"></span> Europe of Freedom and Direct Democracy Group
+                <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-efdd.png)"></span> Europe of Freedom and Direct Democracy Group
               
             </a>
           </td>
@@ -307,7 +307,7 @@
           
             <td>
               <a href='/legislature/representative/chamber/European%20Parliament/'>
-                <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+                <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
 
               </a>
             </td>
@@ -322,7 +322,7 @@
           <td>
             <a href='/legislature/representative/group/European%20Parliament/Europe%20of%20Nations%20and%20Freedom%20Group/'>
               
-                <span class="group-icon group-icon-enf"></span> Europe of Nations and Freedom Group
+                <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-enf.png)"></span> Europe of Nations and Freedom Group
               
             </a>
           </td>
@@ -332,7 +332,7 @@
           
             <td>
               <a href='/legislature/representative/chamber/European%20Parliament/'>
-                <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+                <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
 
               </a>
             </td>
@@ -347,7 +347,7 @@
           <td>
             <a href='/legislature/representative/group/European%20Parliament/Group%20for%20a%20Europe%20of%20Democracies%20and%20Diversities/'>
               
-                <span class="group-icon group-icon-edd"></span> Group for a Europe of Democracies and Diversities
+                <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-edd.png)"></span> Group for a Europe of Democracies and Diversities
               
             </a>
           </td>
@@ -357,7 +357,7 @@
           
             <td>
               <a href='/legislature/representative/chamber/European%20Parliament/'>
-                <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+                <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
 
               </a>
             </td>
@@ -372,7 +372,7 @@
           <td>
             <a href='/legislature/representative/group/European%20Parliament/Group%20of%20Independents%20for%20a%20Europe%20of%20Nations/'>
               
-                <span class="group-icon group-icon-er"></span> Group of Independents for a Europe of Nations
+                <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-er.png)"></span> Group of Independents for a Europe of Nations
               
             </a>
           </td>
@@ -382,7 +382,7 @@
           
             <td>
               <a href='/legislature/representative/chamber/European%20Parliament/'>
-                <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+                <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
 
               </a>
             </td>
@@ -397,7 +397,7 @@
           <td>
             <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Alliance%20of%20Liberals%20and%20Democrats%20for%20Europe/'>
               
-                <span class="group-icon group-icon-alde"></span> Group of the Alliance of Liberals and Democrats for Europe
+                <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-alde.png)"></span> Group of the Alliance of Liberals and Democrats for Europe
               
             </a>
           </td>
@@ -407,7 +407,7 @@
           
             <td>
               <a href='/legislature/representative/chamber/European%20Parliament/'>
-                <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+                <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
 
               </a>
             </td>
@@ -422,7 +422,7 @@
           <td>
             <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20Democratic%20Alliance/'>
               
-                <span class="group-icon group-icon-eda"></span> Group of the European Democratic Alliance
+                <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-eda.png)"></span> Group of the European Democratic Alliance
               
             </a>
           </td>
@@ -432,7 +432,7 @@
           
             <td>
               <a href='/legislature/representative/chamber/European%20Parliament/'>
-                <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+                <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
 
               </a>
             </td>
@@ -447,7 +447,7 @@
           <td>
             <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
               
-                <span class="group-icon group-icon-epp"></span> Group of the European People's Party (Christian Democrats)
+                <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-epp.png)"></span> Group of the European People's Party (Christian Democrats)
               
             </a>
           </td>
@@ -457,7 +457,7 @@
           
             <td>
               <a href='/legislature/representative/chamber/European%20Parliament/'>
-                <span class="chamber-icon chamber-icon-ep"></span> European Parliament
+                <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
 
               </a>
             </td>
@@ -472,7 +472,7 @@
           <td>
             <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20Radical%20Alliance/'>
               
-                <span class="group-icon group-icon-era"></span> Group of the European Radical Alliance
+                <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-era.png)"></span> Group of the European Radical Alliance
               
             </a>
           </td>
