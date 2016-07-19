@@ -109,6 +109,16 @@ def chamber_small_icon(chamber):
         u'title="{name}"></span>'.format(name=chamber.name, url=url))
 
 
+@register.simple_tag
+def chamber_page_link(site, name):
+    icon_url = static('images/chamber-%s.png' % cssify(site.kind))
+    site_url = fix_url(site.url)
+    return mark_safe(
+        u'<span class="chamber-icon" style="background-image: url({icon})" '
+        u'></span> <a href="{site}" target="_blank">{name}</a>'
+        .format(name=name, site=site_url, icon=icon_url))
+
+
 @register.filter
 def mandate_icon(main_mandate):
     group = main_mandate.group

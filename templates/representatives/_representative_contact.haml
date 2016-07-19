@@ -4,18 +4,54 @@
   .col-md-12
     %h2 Contact information
     %table.table.table-condensed.detail-view
+
+      - for site in representative.chamber_websites
+        %tr
+          - if forloop.first
+            %th{rowspan: '{{representative.chamber_websites|length}}'}
+              Parliamentary pages
+
+          %td
+            - chamber_page_link site representative.full_name
+
+      - for site in representative.social_websites
+        %tr
+          - if forloop.first
+            %th{rowspan: '{{representative.social_websites|length}}'}
+              Social networks
+
+          %td
+            - if site.kind == 'twitter'
+              = site.url|twitter_link
+            - elif site.kind == 'facebook'
+              = site.url|facebook_link
+
+      - for site in representative.other_websites
+        %tr
+          - if forloop.first
+            %th{rowspan: '{{representative.other_websites|length}}'}
+              Websites
+
+          %td
+              = site.url|website_link
+
       - for email in representative.email_set.all
         %tr
-          %th E-mail
+          - if forloop.first
+            %th{rowspan: '{{representative.email_set.all|length}}'}
+              E-mail
+
           %td
             = email.email|email_link
 
-      - if representative.phone_set.all|length > 0
+      - for phone in representative.phone_set.all
         %tr
-          %th Phone numbers
+          - if forloop.first
+            %th{rowspan: '{{representative.phone_set.all|length}}'}
+              Phone numbers
+
           %td
-            - for phone in representative.phone_set.all
-              .phone {{ phone.number }}
+            .phone {{ phone.number }}
 
       - for address in representative.address_set.all
         %tr
