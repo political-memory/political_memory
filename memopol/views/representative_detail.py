@@ -3,7 +3,8 @@
 from django.db import models
 from django.views import generic
 
-from representatives.models import Representative, Address, Phone, WebSite
+from representatives.models import Chamber, Representative, Address, Phone, \
+    WebSite
 from representatives_positions.forms import PositionForm
 from representatives_recommendations.models import VoteScore
 from representatives_votes.models import Proposal
@@ -21,6 +22,9 @@ class RepresentativeDetail(RepresentativeViewMixin, generic.DetailView):
         qs = self.prefetch_for_representative_country_and_main_mandate(qs)
 
         social = ['twitter', 'facebook']
+        chambers = [c['abbreviation']
+                    for c in Chamber.objects.values('abbreviation')]
+
         qs = qs.prefetch_related(
             'email_set',
             models.Prefetch(
@@ -30,7 +34,13 @@ class RepresentativeDetail(RepresentativeViewMixin, generic.DetailView):
             ),
             models.Prefetch(
                 'website_set',
-                queryset=WebSite.objects.exclude(kind__in=social),
+                queryset=WebSite.objects.filter(kind__in=chambers),
+                to_attr='chamber_websites'
+            ),
+            models.Prefetch(
+                'website_set',
+                queryset=WebSite.objects.exclude(kind__in=social)
+                                .exclude(kind__in=chambers),
                 to_attr='other_websites'
             ),
             models.Prefetch(
