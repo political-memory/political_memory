@@ -50,6 +50,61 @@ class ActiveLegislatureMixin(object):
         return c
 
 
+class SortMixin(object):
+    """
+    Mixin for views that allow sorting.
+    The sort_fields attribute should be defined to a {field: label} dict
+    containing all fields usable for sorting.
+    The sort_default and sort_default_dir attributes should contain the default
+    sorting settings.
+    """
+    sort_fields = {}
+    sort_default_field = None
+    sort_default_dir = 'asc'
+
+    def get(self, *args, **kwargs):
+        self.set_sorting()
+        return super(SortMixin, self).get(*args, **kwargs)
+
+    def set_sorting(self):
+        if 'sort_by' in self.request.GET:
+            self.request.session['sort_by'] = self.request.GET['sort_by']
+        elif 'sort_by' not in self.request.session:
+            self.request.session['sort_by'] = self.sort_default_field
+
+        if self.request.session['sort_by'] not in self.sort_fields:
+            self.request.session['sort_by'] = self.sort_default_field
+
+        if 'sort_dir' in self.request.GET:
+            self.request.session['sort_dir'] = self.request.GET['sort_dir']
+        elif 'sort_dir' not in self.request.session:
+            self.request.session['sort_dir'] = self.sort_default_dir
+
+    def get_context_data(self, **kwargs):
+        c = super(SortMixin, self).get_context_data(**kwargs)
+
+        c['queries'] = copy(self.request.GET)
+        if 'sort_by' in c['queries']:
+            del c['queries']['sort_by']
+        if 'sort_dir' in c['queries']:
+            del c['queries']['sort_dir']
+
+        c['sort'] = {
+            'fields': self.sort_fields,
+            'field': self.request.session['sort_by'],
+            'dir': self.request.session['sort_dir'],
+        }
+        return c
+
+    def get_queryset(self):
+        qs = super(SortMixin, self).get_queryset()
+        if self.request.session['sort_by']:
+            qs = qs.order_by('%s%s' % (
+                '-' if self.request.session['sort_dir'] == 'desc' else '',
+                self.request.session['sort_by']))
+        return qs
+
+
 class PaginationMixin(object):
     pagination_limits = (12, 24, 48, 96)
 

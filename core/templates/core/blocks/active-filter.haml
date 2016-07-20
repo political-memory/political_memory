@@ -1,9 +1,10 @@
-Display :
-- if active_only
-  current legislature only /
-  %a{'href': '?={queries.urlencode}&active_only=0'}
-    all data
-- else
-  %a{'href': '?={queries.urlencode}&active_only=1'}
-    current legislature only
-  ="/ all data"
+.active-block
+  Display :
+  - if active_only
+    current legislature only /
+    %a{'href': '?={queries.urlencode}&active_only=0'}
+      all data
+  - else
+    %a{'href': '?={queries.urlencode}&active_only=1'}
+      current legislature only
+    ="/ all data"

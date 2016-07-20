@@ -1,7 +1,7 @@
 # coding: utf-8
 
 from core.views import GridListMixin, PaginationMixin, CSVDownloadMixin, \
-    ActiveLegislatureMixin
+    ActiveLegislatureMixin, SortMixin
 
 from django.views import generic
 
@@ -13,11 +13,16 @@ from .representative_mixin import RepresentativeViewMixin
 
 class RepresentativeList(CSVDownloadMixin, GridListMixin, PaginationMixin,
                          RepresentativeViewMixin, ActiveLegislatureMixin,
-                         generic.ListView):
+                         SortMixin, generic.ListView):
 
     csv_name = 'representatives'
     queryset = Representative.objects.select_related('score')
     current_filter = None
+    sort_fields = {
+        'last_name': 'name',
+        'score__score': 'score',
+    }
+    sort_default_field = 'last_name'
 
     def get_context_data(self, **kwargs):
         c = super(RepresentativeList, self).get_context_data(**kwargs)
