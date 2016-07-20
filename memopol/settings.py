@@ -285,6 +285,7 @@ if DEBUG:
         logger['handlers'].append('debug')
 
 RAVEN_FILE = os.path.join(DATA_DIR, 'sentry')
+RAVEN_404_FILE = os.path.join(DATA_DIR, 'sentry.404')
 if os.path.exists(RAVEN_FILE):
     INSTALLED_APPS += ('raven.contrib.django.raven_compat',)
 
@@ -297,6 +298,13 @@ if os.path.exists(RAVEN_FILE):
         'handlers': ['console'],
         'propagate': False,
     }
+
+    if os.path.exists(RAVEN_404_FILE):
+        RAVEN_MIDDLEWARE = (
+            'raven.contrib.django.raven_compat.middleware.Sentry404CatchMiddleware',  # noqa
+        )
+
+        MIDDLEWARE_CLASSES = RAVEN_MIDDLEWARE + MIDDLEWARE_CLASSES
 
     with open(RAVEN_FILE, 'r') as f:
         RAVEN_CONFIG = {
