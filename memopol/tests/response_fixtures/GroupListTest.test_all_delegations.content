@@ -145,53 +145,50 @@
     </ul>
   </nav>
   <div class='count'>
-    Number of results : 105
+    <div class='count-block'>
+      Number of results : 105
+
+    </div>
+    
+      <div class='active-block'>
+  Display :
+  
+    <a href='?&active_only=1'>
+      current legislature only
+    </a>
+    / all data
+  
+</div>
+
 
     
-      <br />
-      Display :
-
-  <a href='?&active_only=1'>
-    current legislature only
-  </a>
-  / all data
-
-
-
     
-    <br />
-    Number of displayed results :
-    12
-    (
-    
-      <a href='?&paginate_by=12'>
-        12
-      </a>
+    <div class='page-size-block'>
+      Number of displayed results :
+      12
+      (
       
-        /
+        <a href='?&paginate_by=12'>12</a>
+        
+          /
+        
       
-    
-      <a href='?&paginate_by=24'>
-        24
-      </a>
+        <a href='?&paginate_by=24'>24</a>
+        
+          /
+        
       
-        /
+        <a href='?&paginate_by=48'>48</a>
+        
+          /
+        
       
-    
-      <a href='?&paginate_by=48'>
-        48
-      </a>
+        <a href='?&paginate_by=96'>96</a>
+        
       
-        /
+      )
       
-    
-      <a href='?&paginate_by=96'>
-        96
-      </a>
-      
-    
-    )
-    
+    </div>
   </div>
 </div>
 

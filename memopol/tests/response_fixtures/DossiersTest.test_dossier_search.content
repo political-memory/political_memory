@@ -123,42 +123,84 @@
     </ul>
   </nav>
   <div class='count'>
-    Number of results : 1
+    <div class='count-block'>
+      Number of results : 1
+
+    </div>
+    
+    
+      
+  <div class='sorting-block'>
+    Order by :
+
+      
+          
+            <a href='?search=acta&sort_by=nb_proposals'>proposals</a>
+          
+          
+             | 
+
+          
+      
+          
+            recommendations
+          
+          
+             | 
+
+          
+      
+          
+            <a href='?search=acta&sort_by=reference'>reference</a>
+          
+          
+             | 
+
+          
+      
+          
+            <a href='?search=acta&sort_by=title'>title</a>
+          
+          
+      
+      &ndash;
+
+      
+        <a href='?search=acta&sort_dir=asc'>ascending</a>
+        | descending
+
+      
+  </div>
+
+
 
     
-    <br />
-    Number of displayed results :
-    12
-    (
-    
-      <a href='?search=acta&paginate_by=12'>
-        12
-      </a>
+    <div class='page-size-block'>
+      Number of displayed results :
+      12
+      (
       
-        /
+        <a href='?search=acta&paginate_by=12'>12</a>
+        
+          /
+        
       
-    
-      <a href='?search=acta&paginate_by=24'>
-        24
-      </a>
+        <a href='?search=acta&paginate_by=24'>24</a>
+        
+          /
+        
       
-        /
+        <a href='?search=acta&paginate_by=48'>48</a>
+        
+          /
+        
       
-    
-      <a href='?search=acta&paginate_by=48'>
-        48
-      </a>
+        <a href='?search=acta&paginate_by=96'>96</a>
+        
       
-        /
+      )
       
-    
-      <a href='?search=acta&paginate_by=96'>
-        96
-      </a>
-      
-    
-    )
-    
+    </div>
   </div>
 </div>
 
@@ -215,42 +257,84 @@
     </ul>
   </nav>
   <div class='count'>
-    Number of results : 1
+    <div class='count-block'>
+      Number of results : 1
+
+    </div>
+    
+    
+      
+  <div class='sorting-block'>
+    Order by :
+
+      
+          
+            <a href='?search=acta&sort_by=nb_proposals'>proposals</a>
+          
+          
+             | 
+
+          
+      
+          
+            recommendations
+          
+          
+             | 
+
+          
+      
+          
+            <a href='?search=acta&sort_by=reference'>reference</a>
+          
+          
+             | 
+
+          
+      
+          
+            <a href='?search=acta&sort_by=title'>title</a>
+          
+          
+      
+      &ndash;
+
+      
+        <a href='?search=acta&sort_dir=asc'>ascending</a>
+        | descending
+
+      
+  </div>
+
+
 
     
-    <br />
-    Number of displayed results :
-    12
-    (
-    
-      <a href='?search=acta&paginate_by=12'>
-        12
-      </a>
+    <div class='page-size-block'>
+      Number of displayed results :
+      12
+      (
       
-        /
+        <a href='?search=acta&paginate_by=12'>12</a>
+        
+          /
+        
       
-    
-      <a href='?search=acta&paginate_by=24'>
-        24
-      </a>
+        <a href='?search=acta&paginate_by=24'>24</a>
+        
+          /
+        
       
-        /
+        <a href='?search=acta&paginate_by=48'>48</a>
+        
+          /
+        
       
-    
-      <a href='?search=acta&paginate_by=48'>
-        48
-      </a>
+        <a href='?search=acta&paginate_by=96'>96</a>
+        
       
-        /
+      )
       
-    
-      <a href='?search=acta&paginate_by=96'>
-        96
-      </a>
-      
-    
-    )
-    
+    </div>
   </div>
 </div>
 

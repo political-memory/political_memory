@@ -171,65 +171,86 @@
     </ul>
   </nav>
   <div class='count'>
-    Number of results : 4
+    <div class='count-block'>
+      Number of results : 4
+
+    </div>
+    
+      <div class='active-block'>
+  Display :
+  
+    current legislature only /
+    <a href='?country=110&amp;search=&amp;group=&amp;chamber=&active_only=0'>
+      all data
+    </a>
+  
+</div>
+
 
     
-      <br />
-      Display :
+    
+      
+  <div class='sorting-block'>
+    Order by :
 
-  current legislature only /
-  <a href='?country=110&amp;search=&amp;group=&amp;chamber=&active_only=0'>
-    all data
-  </a>
+      
+          
+            <a href='?country=110&amp;search=&amp;group=&amp;chamber=&sort_by=score__score'>score</a>
+          
+          
+             | 
+
+          
+      
+          
+            name
+          
+          
+      
+      &ndash;
+
+      
+        ascending |
+        <a href='?country=110&amp;search=&amp;group=&amp;chamber=&sort_dir=desc'>descending</a>
+      
+  </div>
 
 
 
     
-    <br />
-    Number of displayed results :
-    12
-    (
-    
-      <a href='?country=110&amp;search=&amp;group=&amp;chamber=&paginate_by=12'>
-        12
-      </a>
+    <div class='page-size-block'>
+      Number of displayed results :
+      12
+      (
       
-        /
+        <a href='?country=110&amp;search=&amp;group=&amp;chamber=&paginate_by=12'>12</a>
+        
+          /
+        
       
-    
-      <a href='?country=110&amp;search=&amp;group=&amp;chamber=&paginate_by=24'>
-        24
-      </a>
+        <a href='?country=110&amp;search=&amp;group=&amp;chamber=&paginate_by=24'>24</a>
+        
+          /
+        
       
-        /
+        <a href='?country=110&amp;search=&amp;group=&amp;chamber=&paginate_by=48'>48</a>
+        
+          /
+        
       
-    
-      <a href='?country=110&amp;search=&amp;group=&amp;chamber=&paginate_by=48'>
-        48
-      </a>
+        <a href='?country=110&amp;search=&amp;group=&amp;chamber=&paginate_by=96'>96</a>
+        
       
-        /
+      )
       
-    
-      <a href='?country=110&amp;search=&amp;group=&amp;chamber=&paginate_by=96'>
-        96
-      </a>
-      
-    
-    )
-    
-      <span class='grid-list-selector'>
-  <a href='?country=110&amp;search=&amp;group=&amp;chamber=&display=grid'>
-    <i class="fa fa-th"></i>
-  </a>
-  <a href='?country=110&amp;search=&amp;group=&amp;chamber=&display=list'>
-    <i class="fa fa-th-list"></i>
-
-  </a>
+        <span class='grid-list-selector'>
+  <a href='?country=110&amp;search=&amp;group=&amp;chamber=&display=grid'><i class="fa fa-th"></i></a>
+  <a href='?country=110&amp;search=&amp;group=&amp;chamber=&display=list'><i class="fa fa-th-list"></i></a>
 </span>
 
 
-    
+      
+    </div>
   </div>
 </div>
 
@@ -387,65 +408,86 @@
     </ul>
   </nav>
   <div class='count'>
-    Number of results : 4
+    <div class='count-block'>
+      Number of results : 4
+
+    </div>
+    
+      <div class='active-block'>
+  Display :
+  
+    current legislature only /
+    <a href='?country=110&amp;search=&amp;group=&amp;chamber=&active_only=0'>
+      all data
+    </a>
+  
+</div>
+
 
     
-      <br />
-      Display :
+    
+      
+  <div class='sorting-block'>
+    Order by :
 
-  current legislature only /
-  <a href='?country=110&amp;search=&amp;group=&amp;chamber=&active_only=0'>
-    all data
-  </a>
+      
+          
+            <a href='?country=110&amp;search=&amp;group=&amp;chamber=&sort_by=score__score'>score</a>
+          
+          
+             | 
+
+          
+      
+          
+            name
+          
+          
+      
+      &ndash;
+
+      
+        ascending |
+        <a href='?country=110&amp;search=&amp;group=&amp;chamber=&sort_dir=desc'>descending</a>
+      
+  </div>
 
 
 
     
-    <br />
-    Number of displayed results :
-    12
-    (
-    
-      <a href='?country=110&amp;search=&amp;group=&amp;chamber=&paginate_by=12'>
-        12
-      </a>
+    <div class='page-size-block'>
+      Number of displayed results :
+      12
+      (
       
-        /
+        <a href='?country=110&amp;search=&amp;group=&amp;chamber=&paginate_by=12'>12</a>
+        
+          /
+        
       
-    
-      <a href='?country=110&amp;search=&amp;group=&amp;chamber=&paginate_by=24'>
-        24
-      </a>
+        <a href='?country=110&amp;search=&amp;group=&amp;chamber=&paginate_by=24'>24</a>
+        
+          /
+        
       
-        /
+        <a href='?country=110&amp;search=&amp;group=&amp;chamber=&paginate_by=48'>48</a>
+        
+          /
+        
       
-    
-      <a href='?country=110&amp;search=&amp;group=&amp;chamber=&paginate_by=48'>
-        48
-      </a>
+        <a href='?country=110&amp;search=&amp;group=&amp;chamber=&paginate_by=96'>96</a>
+        
       
-        /
+      )
       
-    
-      <a href='?country=110&amp;search=&amp;group=&amp;chamber=&paginate_by=96'>
-        96
-      </a>
-      
-    
-    )
-    
-      <span class='grid-list-selector'>
-  <a href='?country=110&amp;search=&amp;group=&amp;chamber=&display=grid'>
-    <i class="fa fa-th"></i>
-  </a>
-  <a href='?country=110&amp;search=&amp;group=&amp;chamber=&display=list'>
-    <i class="fa fa-th-list"></i>
-
-  </a>
+        <span class='grid-list-selector'>
+  <a href='?country=110&amp;search=&amp;group=&amp;chamber=&display=grid'><i class="fa fa-th"></i></a>
+  <a href='?country=110&amp;search=&amp;group=&amp;chamber=&display=list'><i class="fa fa-th-list"></i></a>
 </span>
 
 
-    
+      
+    </div>
   </div>
 </div>
 
