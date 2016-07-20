@@ -66,6 +66,18 @@ class RepresentativeListTest(UrlGetTestMixin, TestCase):
         expected = Response.for_test(self)
         expected.assertNoDiff(self.response)
 
+    def sorting_test(self, num_queries, field='', dir=''):
+        url = '%s?sort_by=%s&sort_dir=%s' % (self.url, field, dir)
+
+        # Cancel out one-time queries (session)
+        self.client.get('%s&paginate_by=12&active_only=1' % url)
+
+        with self.assertNumQueries(num_queries):
+            self.response = self.client.get(self.url)
+
+        expected = Response.for_test(self)
+        expected.assertNoDiff(self.response)
+
     def test_page1_paginateby12_active_displaylist(self):
         self.functional_test(1, 12, 1, 'list')
 
@@ -137,3 +149,13 @@ class RepresentativeListTest(UrlGetTestMixin, TestCase):
         (as the first count query returns 0)
         """
         self.filter_test(3, 'non-existing-rep-name')
+
+    def test_sorting(self):
+        """
+        - A count for pagination
+        - One query for chambers (filters)
+        - One query for countries (filters)
+        - One query for representative + score
+        - One query for mandates (including country + main_mandate)
+        """
+        self.sorting_test(5, 'score', 'desc')

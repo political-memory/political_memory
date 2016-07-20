@@ -98,8 +98,8 @@
   <div class="form-group has-success"><label class="control-label" for="id_search">Search</label><input class="form-control" id="id_search" name="search" placeholder="Search" title="Filter" type="text" /><span class="help-block">Filter
 </span></div>
 <div class="form-group has-success"><label class="control-label" for="id_chamber">Chamber</label><select class="form-control" id="id_chamber" name="chamber" title="Filter">
-<option value="">---------</option>
-<option value="1" selected="selected">European Parliament [EP]</option>
+<option value="" selected="selected">---------</option>
+<option value="1">European Parliament [EP]</option>
 </select><span class="help-block">Filter
 </span></div>
 <div class="form-group has-success"><label class="control-label" for="id_country">Country</label><select class="form-control" id="id_country" name="country" title="Filter">
@@ -180,7 +180,7 @@
         
           
             <li>
-              <a href='?country=&amp;search=&amp;group=&amp;chamber=1&page=2'>
+              <a href='?&page=2'>
                 2
 
               </a>
@@ -191,7 +191,7 @@
         
           
             <li>
-              <a href='?country=&amp;search=&amp;group=&amp;chamber=1&page=3'>
+              <a href='?&page=3'>
                 3
 
               </a>
@@ -201,13 +201,13 @@
       
       
         <li>
-          <a aria-label='Next' href='?country=&amp;search=&amp;group=&amp;chamber=1&page=2'>
+          <a aria-label='Next' href='?&page=2'>
             <i aria-hidden="true" class="fa fa-chevron-right"></i>
 
           </a>
         </li>
         <li>
-          <a aria-label='Last' href='?country=&amp;search=&amp;group=&amp;chamber=1&page=3'>
+          <a aria-label='Last' href='?&page=3'>
             <i aria-hidden="true" class="fa fa-chevron-circle-right"></i>
 
           </a>
@@ -225,7 +225,7 @@
   Display :
   
     current legislature only /
-    <a href='?country=&amp;search=&amp;group=&amp;chamber=1&active_only=0'>
+    <a href='?&active_only=0'>
       all data
     </a>
   
@@ -240,7 +240,7 @@
 
       
           
-            <a href='?country=&amp;search=&amp;group=&amp;chamber=1&sort_by=score__score'>score</a>
+            <a href='?&sort_by=score__score'>score</a>
           
           
              | 
@@ -255,8 +255,9 @@
       &ndash;
 
       
-        ascending |
-        <a href='?country=&amp;search=&amp;group=&amp;chamber=1&sort_dir=desc'>descending</a>
+        <a href='?&sort_dir=asc'>ascending</a>
+        | descending
+
       
   </div>
 
@@ -268,29 +269,29 @@
       12
       (
       
-        <a href='?country=&amp;search=&amp;group=&amp;chamber=1&paginate_by=12'>12</a>
+        <a href='?&paginate_by=12'>12</a>
         
           /
         
       
-        <a href='?country=&amp;search=&amp;group=&amp;chamber=1&paginate_by=24'>24</a>
+        <a href='?&paginate_by=24'>24</a>
         
           /
         
       
-        <a href='?country=&amp;search=&amp;group=&amp;chamber=1&paginate_by=48'>48</a>
+        <a href='?&paginate_by=48'>48</a>
         
           /
         
       
-        <a href='?country=&amp;search=&amp;group=&amp;chamber=1&paginate_by=96'>96</a>
+        <a href='?&paginate_by=96'>96</a>
         
       
       )
       
         <span class='grid-list-selector'>
-  <a href='?country=&amp;search=&amp;group=&amp;chamber=1&display=grid'><i class="fa fa-th"></i></a>
-  <a href='?country=&amp;search=&amp;group=&amp;chamber=1&display=list'><i class="fa fa-th-list"></i></a>
+  <a href='?&display=grid'><i class="fa fa-th"></i></a>
+  <a href='?&display=list'><i class="fa fa-th-list"></i></a>
 </span>
 
 
@@ -306,14 +307,14 @@
     
       <div class='representative_item active'>
         <p class='photo'>
-          <a href='/legislature/representative/zigmantas-balcytis-1953-11-16/'>
-            <img src='http://www.europarl.europa.eu/mepphoto/96680.jpg' width='80' />
+          <a href='/legislature/representative/cecilia-wikstrom-1965-10-17/'>
+            <img src='http://www.europarl.europa.eu/mepphoto/96677.jpg' width='80' />
           </a>
         </p>
         <ul>
           <li class='name'>
-            <a href='/legislature/representative/zigmantas-balcytis-1953-11-16/'>
-              Zigmantas BALČYTIS
+            <a href='/legislature/representative/cecilia-wikstrom-1965-10-17/'>
+              Cecilia WIKSTRÖM
             </a>
           </li>
           <li class='chamber'>
@@ -322,178 +323,8 @@
             </a>
           </li>
           <li class='country'>
-            <a href='/legislature/representative/country/Lithuania/'>
-              <span class="flag-icon flag-icon-lt"></span> Lithuania
-            </a>
-          </li>
-          <li class='mandate'>
-            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
-              <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-sd.png)"></span> SD
-            </a>
-          </li>
-          <li class='score'>
-            <span class="label label-success">15</span>
-
-          </li>
-        </ul>
-      </div>
-    
-      <div class='representative_item active'>
-        <p class='photo'>
-          <a href='/legislature/representative/vilija-blinkeviciute-1960-03-03/'>
-            <img src='http://www.europarl.europa.eu/mepphoto/96681.jpg' width='80' />
-          </a>
-        </p>
-        <ul>
-          <li class='name'>
-            <a href='/legislature/representative/vilija-blinkeviciute-1960-03-03/'>
-              Vilija BLINKEVIČIŪTĖ
-            </a>
-          </li>
-          <li class='chamber'>
-            <a href='/legislature/representative/chamber/European%20Parliament/'>
-              <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
-            </a>
-          </li>
-          <li class='country'>
-            <a href='/legislature/representative/country/Lithuania/'>
-              <span class="flag-icon flag-icon-lt"></span> Lithuania
-            </a>
-          </li>
-          <li class='mandate'>
-            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
-              <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-sd.png)"></span> SD
-            </a>
-          </li>
-          <li class='score'>
-            <span class="label label-success">15</span>
-
-          </li>
-        </ul>
-      </div>
-    
-      <div class='representative_item active'>
-        <p class='photo'>
-          <a href='/legislature/representative/elmar-brok-1946-05-14/'>
-            <img src='http://www.europarl.europa.eu/mepphoto/1263.jpg' width='80' />
-          </a>
-        </p>
-        <ul>
-          <li class='name'>
-            <a href='/legislature/representative/elmar-brok-1946-05-14/'>
-              Elmar BROK
-            </a>
-          </li>
-          <li class='chamber'>
-            <a href='/legislature/representative/chamber/European%20Parliament/'>
-              <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
-            </a>
-          </li>
-          <li class='country'>
-            <a href='/legislature/representative/country/Germany/'>
-              <span class="flag-icon flag-icon-de"></span> Germany
-            </a>
-          </li>
-          <li class='mandate'>
-            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
-              <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-epp.png)"></span> EPP
-            </a>
-          </li>
-          <li class='score'>
-            <span class="label label-danger">-10</span>
-
-          </li>
-        </ul>
-      </div>
-    
-      <div class='representative_item active'>
-        <p class='photo'>
-          <a href='/legislature/representative/cristian-silviu-busoi-1978-03-01/'>
-            <img src='http://www.europarl.europa.eu/mepphoto/38420.jpg' width='80' />
-          </a>
-        </p>
-        <ul>
-          <li class='name'>
-            <a href='/legislature/representative/cristian-silviu-busoi-1978-03-01/'>
-              Cristian-Silviu BUŞOI
-            </a>
-          </li>
-          <li class='chamber'>
-            <a href='/legislature/representative/chamber/European%20Parliament/'>
-              <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
-            </a>
-          </li>
-          <li class='country'>
-            <a href='/legislature/representative/country/Romania/'>
-              <span class="flag-icon flag-icon-ro"></span> Romania
-            </a>
-          </li>
-          <li class='mandate'>
-            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
-              <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-epp.png)"></span> EPP
-            </a>
-          </li>
-          <li class='score'>
-            <span class="label label-success">15</span>
-
-          </li>
-        </ul>
-      </div>
-    
-      <div class='representative_item active'>
-        <p class='photo'>
-          <a href='/legislature/representative/david-casa-1968-11-16/'>
-            <img src='http://www.europarl.europa.eu/mepphoto/28122.jpg' width='80' />
-          </a>
-        </p>
-        <ul>
-          <li class='name'>
-            <a href='/legislature/representative/david-casa-1968-11-16/'>
-              David CASA
-            </a>
-          </li>
-          <li class='chamber'>
-            <a href='/legislature/representative/chamber/European%20Parliament/'>
-              <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
-            </a>
-          </li>
-          <li class='country'>
-            <a href='/legislature/representative/country/Malta/'>
-              <span class="flag-icon flag-icon-mt"></span> Malta
-            </a>
-          </li>
-          <li class='mandate'>
-            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
-              <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-epp.png)"></span> EPP
-            </a>
-          </li>
-          <li class='score'>
-            <span class="label label-danger">-15</span>
-
-          </li>
-        </ul>
-      </div>
-    
-      <div class='representative_item active'>
-        <p class='photo'>
-          <a href='/legislature/representative/jean-marie-cavada-1940-02-24/'>
-            <img src='http://www.europarl.europa.eu/mepphoto/28206.jpg' width='80' />
-          </a>
-        </p>
-        <ul>
-          <li class='name'>
-            <a href='/legislature/representative/jean-marie-cavada-1940-02-24/'>
-              Jean-Marie CAVADA
-            </a>
-          </li>
-          <li class='chamber'>
-            <a href='/legislature/representative/chamber/European%20Parliament/'>
-              <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
-            </a>
-          </li>
-          <li class='country'>
-            <a href='/legislature/representative/country/France/'>
-              <span class="flag-icon flag-icon-fr"></span> France
+            <a href='/legislature/representative/country/Sweden/'>
+              <span class="flag-icon flag-icon-se"></span> Sweden
             </a>
           </li>
           <li class='mandate'>
@@ -502,7 +333,7 @@
             </a>
           </li>
           <li class='score'>
-            <span class="label label-danger">-15</span>
+            <span class="label label-danger">-7</span>
 
           </li>
         </ul>
@@ -510,14 +341,14 @@
     
       <div class='representative_item active'>
         <p class='photo'>
-          <a href='/legislature/representative/nikolaos-chountis-1953-09-17/'>
-            <img src='http://www.europarl.europa.eu/mepphoto/26851.jpg' width='80' />
+          <a href='/legislature/representative/ivo-vajgl-1943-03-03/'>
+            <img src='http://www.europarl.europa.eu/mepphoto/97019.jpg' width='80' />
           </a>
         </p>
         <ul>
           <li class='name'>
-            <a href='/legislature/representative/nikolaos-chountis-1953-09-17/'>
-              Nikolaos CHOUNTIS
+            <a href='/legislature/representative/ivo-vajgl-1943-03-03/'>
+              Ivo VAJGL
             </a>
           </li>
           <li class='chamber'>
@@ -526,13 +357,13 @@
             </a>
           </li>
           <li class='country'>
-            <a href='/legislature/representative/country/Greece/'>
-              <span class="flag-icon flag-icon-gr"></span> Greece
+            <a href='/legislature/representative/country/Slovenia/'>
+              <span class="flag-icon flag-icon-si"></span> Slovenia
             </a>
           </li>
           <li class='mandate'>
-            <a href='/legislature/representative/group/European%20Parliament/Confederal%20Group%20of%20the%20European%20United%20Left%20-%20Nordic%20Green%20Left/'>
-              <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-guengl.png)"></span> GUE/NGL
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Alliance%20of%20Liberals%20and%20Democrats%20for%20Europe/'>
+              <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-alde.png)"></span> ALDE
             </a>
           </li>
           <li class='score'>
@@ -544,14 +375,116 @@
     
       <div class='representative_item active'>
         <p class='photo'>
-          <a href='/legislature/representative/michael-cramer-1949-06-16/'>
-            <img src='http://www.europarl.europa.eu/mepphoto/28238.jpg' width='80' />
+          <a href='/legislature/representative/vladimir-urutchev-1954-10-01/'>
+            <img src='http://www.europarl.europa.eu/mepphoto/38601.jpg' width='80' />
           </a>
         </p>
         <ul>
           <li class='name'>
-            <a href='/legislature/representative/michael-cramer-1949-06-16/'>
-              Michael CRAMER
+            <a href='/legislature/representative/vladimir-urutchev-1954-10-01/'>
+              Vladimir URUTCHEV
+            </a>
+          </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
+            </a>
+          </li>
+          <li class='country'>
+            <a href='/legislature/representative/country/Bulgaria/'>
+              <span class="flag-icon flag-icon-bg"></span> Bulgaria
+            </a>
+          </li>
+          <li class='mandate'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
+              <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-epp.png)"></span> EPP
+            </a>
+          </li>
+          <li class='score'>
+            <span class="label label-danger">-15</span>
+
+          </li>
+        </ul>
+      </div>
+    
+      <div class='representative_item active'>
+        <p class='photo'>
+          <a href='/legislature/representative/ramon-tremosa-i-balcells-1965-06-30/'>
+            <img src='http://www.europarl.europa.eu/mepphoto/97203.jpg' width='80' />
+          </a>
+        </p>
+        <ul>
+          <li class='name'>
+            <a href='/legislature/representative/ramon-tremosa-i-balcells-1965-06-30/'>
+              Ramon TREMOSA i BALCELLS
+            </a>
+          </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
+            </a>
+          </li>
+          <li class='country'>
+            <a href='/legislature/representative/country/Spain/'>
+              <span class="flag-icon flag-icon-es"></span> Spain
+            </a>
+          </li>
+          <li class='mandate'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Alliance%20of%20Liberals%20and%20Democrats%20for%20Europe/'>
+              <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-alde.png)"></span> ALDE
+            </a>
+          </li>
+          <li class='score'>
+            <span class="label label-success">15</span>
+
+          </li>
+        </ul>
+      </div>
+    
+      <div class='representative_item active'>
+        <p class='photo'>
+          <a href='/legislature/representative/charles-tannock-1957-09-25/'>
+            <img src='http://www.europarl.europa.eu/mepphoto/4521.jpg' width='80' />
+          </a>
+        </p>
+        <ul>
+          <li class='name'>
+            <a href='/legislature/representative/charles-tannock-1957-09-25/'>
+              Charles TANNOCK
+            </a>
+          </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
+            </a>
+          </li>
+          <li class='country'>
+            <a href='/legislature/representative/country/United%20Kingdom/'>
+              <span class="flag-icon flag-icon-gb"></span> United Kingdom
+            </a>
+          </li>
+          <li class='mandate'>
+            <a href='/legislature/representative/group/European%20Parliament/European%20Conservatives%20and%20Reformists%20Group/'>
+              <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-ecr.png)"></span> ECR
+            </a>
+          </li>
+          <li class='score'>
+            <span class="label label-danger">-15</span>
+
+          </li>
+        </ul>
+      </div>
+    
+      <div class='representative_item active'>
+        <p class='photo'>
+          <a href='/legislature/representative/birgit-sippel-1960-01-29/'>
+            <img src='http://www.europarl.europa.eu/mepphoto/96932.jpg' width='80' />
+          </a>
+        </p>
+        <ul>
+          <li class='name'>
+            <a href='/legislature/representative/birgit-sippel-1960-01-29/'>
+              Birgit SIPPEL
             </a>
           </li>
           <li class='chamber'>
@@ -562,40 +495,6 @@
           <li class='country'>
             <a href='/legislature/representative/country/Germany/'>
               <span class="flag-icon flag-icon-de"></span> Germany
-            </a>
-          </li>
-          <li class='mandate'>
-            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Greens/European%20Free%20Alliance/'>
-              <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-greensefa.png)"></span> Greens/EFA
-            </a>
-          </li>
-          <li class='score'>
-            <span class="label label-success">15</span>
-
-          </li>
-        </ul>
-      </div>
-    
-      <div class='representative_item active'>
-        <p class='photo'>
-          <a href='/legislature/representative/viorica-dancila-1963-12-16/'>
-            <img src='http://www.europarl.europa.eu/mepphoto/95281.jpg' width='80' />
-          </a>
-        </p>
-        <ul>
-          <li class='name'>
-            <a href='/legislature/representative/viorica-dancila-1963-12-16/'>
-              Viorica DĂNCILĂ
-            </a>
-          </li>
-          <li class='chamber'>
-            <a href='/legislature/representative/chamber/European%20Parliament/'>
-              <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
-            </a>
-          </li>
-          <li class='country'>
-            <a href='/legislature/representative/country/Romania/'>
-              <span class="flag-icon flag-icon-ro"></span> Romania
             </a>
           </li>
           <li class='mandate'>
@@ -612,14 +511,184 @@
     
       <div class='representative_item active'>
         <p class='photo'>
-          <a href='/legislature/representative/michel-dantin-1960-01-15/'>
-            <img src='http://www.europarl.europa.eu/mepphoto/97296.jpg' width='80' />
+          <a href='/legislature/representative/frederique-ries-1959-05-14/'>
+            <img src='http://www.europarl.europa.eu/mepphoto/4253.jpg' width='80' />
           </a>
         </p>
         <ul>
           <li class='name'>
-            <a href='/legislature/representative/michel-dantin-1960-01-15/'>
-              Michel DANTIN
+            <a href='/legislature/representative/frederique-ries-1959-05-14/'>
+              Frédérique RIES
+            </a>
+          </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
+            </a>
+          </li>
+          <li class='country'>
+            <a href='/legislature/representative/country/Belgium/'>
+              <span class="flag-icon flag-icon-be"></span> Belgium
+            </a>
+          </li>
+          <li class='mandate'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Alliance%20of%20Liberals%20and%20Democrats%20for%20Europe/'>
+              <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-alde.png)"></span> ALDE
+            </a>
+          </li>
+          <li class='score'>
+            <span class="label label-success">3</span>
+
+          </li>
+        </ul>
+      </div>
+    
+      <div class='representative_item active'>
+        <p class='photo'>
+          <a href='/legislature/representative/sirpa-pietikainen-1959-04-19/'>
+            <img src='http://www.europarl.europa.eu/mepphoto/40599.jpg' width='80' />
+          </a>
+        </p>
+        <ul>
+          <li class='name'>
+            <a href='/legislature/representative/sirpa-pietikainen-1959-04-19/'>
+              Sirpa PIETIKÄINEN
+            </a>
+          </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
+            </a>
+          </li>
+          <li class='country'>
+            <a href='/legislature/representative/country/Finland/'>
+              <span class="flag-icon flag-icon-fi"></span> Finland
+            </a>
+          </li>
+          <li class='mandate'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
+              <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-epp.png)"></span> EPP
+            </a>
+          </li>
+          <li class='score'>
+            <span class="label label-success">5</span>
+
+          </li>
+        </ul>
+      </div>
+    
+      <div class='representative_item active'>
+        <p class='photo'>
+          <a href='/legislature/representative/olle-ludvigsson-1948-10-28/'>
+            <img src='http://www.europarl.europa.eu/mepphoto/96673.jpg' width='80' />
+          </a>
+        </p>
+        <ul>
+          <li class='name'>
+            <a href='/legislature/representative/olle-ludvigsson-1948-10-28/'>
+              Olle LUDVIGSSON
+            </a>
+          </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
+            </a>
+          </li>
+          <li class='country'>
+            <a href='/legislature/representative/country/Sweden/'>
+              <span class="flag-icon flag-icon-se"></span> Sweden
+            </a>
+          </li>
+          <li class='mandate'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
+              <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-sd.png)"></span> SD
+            </a>
+          </li>
+          <li class='score'>
+            <span class="label label-success">15</span>
+
+          </li>
+        </ul>
+      </div>
+    
+      <div class='representative_item active'>
+        <p class='photo'>
+          <a href='/legislature/representative/andrey-kovatchev-1967-12-13/'>
+            <img src='http://www.europarl.europa.eu/mepphoto/97968.jpg' width='80' />
+          </a>
+        </p>
+        <ul>
+          <li class='name'>
+            <a href='/legislature/representative/andrey-kovatchev-1967-12-13/'>
+              Andrey KOVATCHEV
+            </a>
+          </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
+            </a>
+          </li>
+          <li class='country'>
+            <a href='/legislature/representative/country/Bulgaria/'>
+              <span class="flag-icon flag-icon-bg"></span> Bulgaria
+            </a>
+          </li>
+          <li class='mandate'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
+              <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-epp.png)"></span> EPP
+            </a>
+          </li>
+          <li class='score'>
+            <span class="label label-danger">-15</span>
+
+          </li>
+        </ul>
+      </div>
+    
+      <div class='representative_item active'>
+        <p class='photo'>
+          <a href='/legislature/representative/jarosaw-kalinowski-1962-04-12/'>
+            <img src='http://www.europarl.europa.eu/mepphoto/96771.jpg' width='80' />
+          </a>
+        </p>
+        <ul>
+          <li class='name'>
+            <a href='/legislature/representative/jarosaw-kalinowski-1962-04-12/'>
+              Jarosław KALINOWSKI
+            </a>
+          </li>
+          <li class='chamber'>
+            <a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
+            </a>
+          </li>
+          <li class='country'>
+            <a href='/legislature/representative/country/Poland/'>
+              <span class="flag-icon flag-icon-pl"></span> Poland
+            </a>
+          </li>
+          <li class='mandate'>
+            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
+              <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-epp.png)"></span> EPP
+            </a>
+          </li>
+          <li class='score'>
+            <span class="label label-danger">-15</span>
+
+          </li>
+        </ul>
+      </div>
+    
+      <div class='representative_item active'>
+        <p class='photo'>
+          <a href='/legislature/representative/eva-joly-1943-12-05/'>
+            <img src='http://www.europarl.europa.eu/mepphoto/96883.jpg' width='80' />
+          </a>
+        </p>
+        <ul>
+          <li class='name'>
+            <a href='/legislature/representative/eva-joly-1943-12-05/'>
+              Eva JOLY
             </a>
           </li>
           <li class='chamber'>
@@ -630,74 +699,6 @@
           <li class='country'>
             <a href='/legislature/representative/country/France/'>
               <span class="flag-icon flag-icon-fr"></span> France
-            </a>
-          </li>
-          <li class='mandate'>
-            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
-              <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-epp.png)"></span> EPP
-            </a>
-          </li>
-          <li class='score'>
-            <span class="label label-danger">-15</span>
-
-          </li>
-        </ul>
-      </div>
-    
-      <div class='representative_item active'>
-        <p class='photo'>
-          <a href='/legislature/representative/tamas-deutsch-1966-07-27/'>
-            <img src='http://www.europarl.europa.eu/mepphoto/96826.jpg' width='80' />
-          </a>
-        </p>
-        <ul>
-          <li class='name'>
-            <a href='/legislature/representative/tamas-deutsch-1966-07-27/'>
-              Tamás DEUTSCH
-            </a>
-          </li>
-          <li class='chamber'>
-            <a href='/legislature/representative/chamber/European%20Parliament/'>
-              <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
-            </a>
-          </li>
-          <li class='country'>
-            <a href='/legislature/representative/country/Hungary/'>
-              <span class="flag-icon flag-icon-hu"></span> Hungary
-            </a>
-          </li>
-          <li class='mandate'>
-            <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People&#39;s%20Party%20(Christian%20Democrats)/'>
-              <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-epp.png)"></span> EPP
-            </a>
-          </li>
-          <li class='score'>
-            <span class="label label-danger">-15</span>
-
-          </li>
-        </ul>
-      </div>
-    
-      <div class='representative_item active'>
-        <p class='photo'>
-          <a href='/legislature/representative/bas-eickhout-1976-10-08/'>
-            <img src='http://www.europarl.europa.eu/mepphoto/96725.jpg' width='80' />
-          </a>
-        </p>
-        <ul>
-          <li class='name'>
-            <a href='/legislature/representative/bas-eickhout-1976-10-08/'>
-              Bas EICKHOUT
-            </a>
-          </li>
-          <li class='chamber'>
-            <a href='/legislature/representative/chamber/European%20Parliament/'>
-              <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
-            </a>
-          </li>
-          <li class='country'>
-            <a href='/legislature/representative/country/Netherlands/'>
-              <span class="flag-icon flag-icon-nl"></span> Netherlands
             </a>
           </li>
           <li class='mandate'>
@@ -734,7 +735,7 @@
         
           
             <li>
-              <a href='?country=&amp;search=&amp;group=&amp;chamber=1&page=2'>
+              <a href='?&page=2'>
                 2
 
               </a>
@@ -745,7 +746,7 @@
         
           
             <li>
-              <a href='?country=&amp;search=&amp;group=&amp;chamber=1&page=3'>
+              <a href='?&page=3'>
                 3
 
               </a>
@@ -755,13 +756,13 @@
       
       
         <li>
-          <a aria-label='Next' href='?country=&amp;search=&amp;group=&amp;chamber=1&page=2'>
+          <a aria-label='Next' href='?&page=2'>
             <i aria-hidden="true" class="fa fa-chevron-right"></i>
 
           </a>
         </li>
         <li>
-          <a aria-label='Last' href='?country=&amp;search=&amp;group=&amp;chamber=1&page=3'>
+          <a aria-label='Last' href='?&page=3'>
             <i aria-hidden="true" class="fa fa-chevron-circle-right"></i>
 
           </a>
@@ -779,7 +780,7 @@
   Display :
   
     current legislature only /
-    <a href='?country=&amp;search=&amp;group=&amp;chamber=1&active_only=0'>
+    <a href='?&active_only=0'>
       all data
     </a>
   
@@ -794,7 +795,7 @@
 
       
           
-            <a href='?country=&amp;search=&amp;group=&amp;chamber=1&sort_by=score__score'>score</a>
+            <a href='?&sort_by=score__score'>score</a>
           
           
              | 
@@ -809,8 +810,9 @@
       &ndash;
 
       
-        ascending |
-        <a href='?country=&amp;search=&amp;group=&amp;chamber=1&sort_dir=desc'>descending</a>
+        <a href='?&sort_dir=asc'>ascending</a>
+        | descending
+
       
   </div>
 
@@ -822,29 +824,29 @@
       12
       (
       
-        <a href='?country=&amp;search=&amp;group=&amp;chamber=1&paginate_by=12'>12</a>
+        <a href='?&paginate_by=12'>12</a>
         
           /
         
       
-        <a href='?country=&amp;search=&amp;group=&amp;chamber=1&paginate_by=24'>24</a>
+        <a href='?&paginate_by=24'>24</a>
         
           /
         
       
-        <a href='?country=&amp;search=&amp;group=&amp;chamber=1&paginate_by=48'>48</a>
+        <a href='?&paginate_by=48'>48</a>
         
           /
         
       
-        <a href='?country=&amp;search=&amp;group=&amp;chamber=1&paginate_by=96'>96</a>
+        <a href='?&paginate_by=96'>96</a>
         
       
       )
       
         <span class='grid-list-selector'>
-  <a href='?country=&amp;search=&amp;group=&amp;chamber=1&display=grid'><i class="fa fa-th"></i></a>
-  <a href='?country=&amp;search=&amp;group=&amp;chamber=1&display=list'><i class="fa fa-th-list"></i></a>
+  <a href='?&display=grid'><i class="fa fa-th"></i></a>
+  <a href='?&display=list'><i class="fa fa-th-list"></i></a>
 </span>
 
 

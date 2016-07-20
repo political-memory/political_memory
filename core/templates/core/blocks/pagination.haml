@@ -36,21 +36,24 @@
             <i aria-hidden="true" class="fa fa-chevron-circle-right"></i>
 
   %div.count
-    Number of results : {{ paginator.count }}
+    .count-block
+      Number of results : {{ paginator.count }}
 
     - if active_only != None
-      %br
       - include 'core/blocks/active-filter.html'
 
-    %br
-    Number of displayed results :
-    {{ paginator.per_page }}
-    (
-    - for limit in pagination_limits
-      %a{'href': '?={queries.urlencode}&paginate_by={{ limit }}'}
-        {{ limit }}
-      - if not forloop.last
-        \/
-    )
-    - if grid_list
-      - include 'core/blocks/grid-list.html'
+    - if sort != None
+      - include 'core/blocks/sorting.html'
+
+    .page-size-block
+      Number of displayed results :
+      {{ paginator.per_page }}
+      (
+      - for limit in pagination_limits
+        %a{'href': '?={queries.urlencode}&paginate_by={{ limit }}'}<
+          {{ limit }}
+        - if not forloop.last
+          \/
+      )
+      - if grid_list
+        - include 'core/blocks/grid-list.html'

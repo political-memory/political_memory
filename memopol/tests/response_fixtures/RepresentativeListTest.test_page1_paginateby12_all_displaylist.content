@@ -216,65 +216,86 @@
     </ul>
   </nav>
   <div class='count'>
-    Number of results : 36
+    <div class='count-block'>
+      Number of results : 36
+
+    </div>
+    
+      <div class='active-block'>
+  Display :
+  
+    <a href='?search=&active_only=1'>
+      current legislature only
+    </a>
+    / all data
+  
+</div>
+
 
     
-      <br />
-      Display :
+    
+      
+  <div class='sorting-block'>
+    Order by :
 
-  <a href='?search=&active_only=1'>
-    current legislature only
-  </a>
-  / all data
+      
+          
+            <a href='?search=&sort_by=score__score'>score</a>
+          
+          
+             | 
+
+          
+      
+          
+            name
+          
+          
+      
+      &ndash;
+
+      
+        ascending |
+        <a href='?search=&sort_dir=desc'>descending</a>
+      
+  </div>
 
 
 
     
-    <br />
-    Number of displayed results :
-    12
-    (
-    
-      <a href='?search=&paginate_by=12'>
-        12
-      </a>
+    <div class='page-size-block'>
+      Number of displayed results :
+      12
+      (
       
-        /
+        <a href='?search=&paginate_by=12'>12</a>
+        
+          /
+        
       
-    
-      <a href='?search=&paginate_by=24'>
-        24
-      </a>
+        <a href='?search=&paginate_by=24'>24</a>
+        
+          /
+        
       
-        /
+        <a href='?search=&paginate_by=48'>48</a>
+        
+          /
+        
       
-    
-      <a href='?search=&paginate_by=48'>
-        48
-      </a>
+        <a href='?search=&paginate_by=96'>96</a>
+        
       
-        /
+      )
       
-    
-      <a href='?search=&paginate_by=96'>
-        96
-      </a>
-      
-    
-    )
-    
-      <span class='grid-list-selector'>
-  <a href='?search=&display=grid'>
-    <i class="fa fa-th"></i>
-  </a>
-  <a href='?search=&display=list'>
-    <i class="fa fa-th-list"></i>
-
-  </a>
+        <span class='grid-list-selector'>
+  <a href='?search=&display=grid'><i class="fa fa-th"></i></a>
+  <a href='?search=&display=list'><i class="fa fa-th-list"></i></a>
 </span>
 
 
-    
+      
+    </div>
   </div>
 </div>
 
@@ -794,65 +815,86 @@
     </ul>
   </nav>
   <div class='count'>
-    Number of results : 36
+    <div class='count-block'>
+      Number of results : 36
+
+    </div>
+    
+      <div class='active-block'>
+  Display :
+  
+    <a href='?search=&active_only=1'>
+      current legislature only
+    </a>
+    / all data
+  
+</div>
+
 
     
-      <br />
-      Display :
+    
+      
+  <div class='sorting-block'>
+    Order by :
 
-  <a href='?search=&active_only=1'>
-    current legislature only
-  </a>
-  / all data
+      
+          
+            <a href='?search=&sort_by=score__score'>score</a>
+          
+          
+             | 
+
+          
+      
+          
+            name
+          
+          
+      
+      &ndash;
+
+      
+        ascending |
+        <a href='?search=&sort_dir=desc'>descending</a>
+      
+  </div>
 
 
 
     
-    <br />
-    Number of displayed results :
-    12
-    (
-    
-      <a href='?search=&paginate_by=12'>
-        12
-      </a>
+    <div class='page-size-block'>
+      Number of displayed results :
+      12
+      (
       
-        /
+        <a href='?search=&paginate_by=12'>12</a>
+        
+          /
+        
       
-    
-      <a href='?search=&paginate_by=24'>
-        24
-      </a>
+        <a href='?search=&paginate_by=24'>24</a>
+        
+          /
+        
       
-        /
+        <a href='?search=&paginate_by=48'>48</a>
+        
+          /
+        
       
-    
-      <a href='?search=&paginate_by=48'>
-        48
-      </a>
+        <a href='?search=&paginate_by=96'>96</a>
+        
       
-        /
+      )
       
-    
-      <a href='?search=&paginate_by=96'>
-        96
-      </a>
-      
-    
-    )
-    
-      <span class='grid-list-selector'>
-  <a href='?search=&display=grid'>
-    <i class="fa fa-th"></i>
-  </a>
-  <a href='?search=&display=list'>
-    <i class="fa fa-th-list"></i>
-
-  </a>
+        <span class='grid-list-selector'>
+  <a href='?search=&display=grid'><i class="fa fa-th"></i></a>
+  <a href='?search=&display=list'><i class="fa fa-th-list"></i></a>
 </span>
 
 
-    
+      
+    </div>
   </div>
 </div>
 
