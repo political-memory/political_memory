@@ -2,67 +2,56 @@
     {
         "proposal": "http://testserver/api/proposals/1/",
         "representative": "http://testserver/api/representatives/2/",
-        "representative_name": "",
         "position": "abstain"
     },
     {
         "proposal": "http://testserver/api/proposals/1/",
         "representative": "http://testserver/api/representatives/1/",
-        "representative_name": "",
         "position": "abstain"
     },
     {
         "proposal": "http://testserver/api/proposals/2/",
         "representative": "http://testserver/api/representatives/2/",
-        "representative_name": "",
         "position": "for"
     },
     {
         "proposal": "http://testserver/api/proposals/2/",
         "representative": "http://testserver/api/representatives/1/",
-        "representative_name": "",
         "position": "for"
     },
     {
         "proposal": "http://testserver/api/proposals/3/",
         "representative": "http://testserver/api/representatives/2/",
-        "representative_name": "",
         "position": "against"
     },
     {
         "proposal": "http://testserver/api/proposals/3/",
         "representative": "http://testserver/api/representatives/1/",
-        "representative_name": "",
         "position": "against"
     },
     {
         "proposal": "http://testserver/api/proposals/4/",
         "representative": "http://testserver/api/representatives/1/",
-        "representative_name": "",
         "position": "for"
     },
     {
         "proposal": "http://testserver/api/proposals/4/",
         "representative": "http://testserver/api/representatives/2/",
-        "representative_name": "",
         "position": "against"
     },
     {
         "proposal": "http://testserver/api/proposals/5/",
         "representative": "http://testserver/api/representatives/1/",
-        "representative_name": "",
         "position": "abstain"
     },
     {
         "proposal": "http://testserver/api/proposals/5/",
         "representative": "http://testserver/api/representatives/2/",
-        "representative_name": "",
         "position": "against"
     },
     {
         "proposal": "http://testserver/api/proposals/6/",
         "representative": "http://testserver/api/representatives/1/",
-        "representative_name": "",
         "position": "for"
     }
 ]

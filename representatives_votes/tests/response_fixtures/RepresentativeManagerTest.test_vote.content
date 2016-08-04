@@ -1,6 +1,5 @@
 {
     "proposal": "http://testserver/api/proposals/1/",
     "representative": "http://testserver/api/representatives/2/",
-    "representative_name": "",
     "position": "abstain"
 }

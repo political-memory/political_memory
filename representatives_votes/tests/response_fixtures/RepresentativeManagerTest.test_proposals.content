@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "dossier": "http://testserver/api/dossiers/1/",
         "title": "A7-0234/2012 -  Charles Goerens - § 31",
         "description": "",
@@ -12,6 +13,7 @@
         "url": "http://testserver/api/proposals/1/"
     },
     {
+        "id": 2,
         "dossier": "http://testserver/api/dossiers/1/",
         "title": "A7-0234/2012 -  Charles Goerens - Résolution",
         "description": "",
@@ -24,6 +26,7 @@
         "url": "http://testserver/api/proposals/2/"
     },
     {
+        "id": 3,
         "dossier": "http://testserver/api/dossiers/2/",
         "title": "A8-0298/2015 -  José Manuel Fernandes et  Gérard Deprez - Am 4",
         "description": "",
@@ -36,6 +39,7 @@
         "url": "http://testserver/api/proposals/3/"
     },
     {
+        "id": 4,
         "dossier": "http://testserver/api/dossiers/2/",
         "title": "A8-0298/2015 -  José Manuel Fernandes et  Gérard Deprez - Am 29",
         "description": "",
@@ -48,6 +52,7 @@
         "url": "http://testserver/api/proposals/4/"
     },
     {
+        "id": 5,
         "dossier": "http://testserver/api/dossiers/2/",
         "title": "A8-0298/2015 -  José Manuel Fernandes et  Gérard Deprez - Am 31",
         "description": "",
@@ -60,6 +65,7 @@
         "url": "http://testserver/api/proposals/5/"
     },
     {
+        "id": 6,
         "dossier": "http://testserver/api/dossiers/2/",
         "title": "A8-0298/2015 -  José Manuel Fernandes et  Gérard Deprez - Am 30",
         "description": "",

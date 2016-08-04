@@ -1,4 +1,5 @@
 {
+    "id": 1,
     "dossier": "http://testserver/api/dossiers/1/",
     "title": "A7-0234/2012 -  Charles Goerens - § 31",
     "description": "",
@@ -13,13 +14,11 @@
         {
             "proposal": "http://testserver/api/proposals/1/",
             "representative": "http://testserver/api/representatives/2/",
-            "representative_name": "",
             "position": "abstain"
         },
         {
             "proposal": "http://testserver/api/proposals/1/",
             "representative": "http://testserver/api/representatives/1/",
-            "representative_name": "",
             "position": "abstain"
         }
     ]
