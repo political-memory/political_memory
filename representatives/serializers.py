@@ -1,26 +1,32 @@
 # coding: utf-8
 
-from django.db import transaction
 from rest_framework import serializers
 
 import representatives.models as models
 
 
-class CountrySerializer(serializers.ModelSerializer):
+class CountrySerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = models.Country
-        fields = ('name', 'code')
+        fields = ('id', 'url', 'name', 'code')
+        extra_kwargs = {
+            'url': {'view_name': 'api-country-detail'}
+        }
 
 
-class ChamberSerializer(serializers.ModelSerializer):
+class ChamberSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = models.Chamber
-        fields = ('name', 'abbreviation', 'country')
+        fields = ('id', 'url', 'name', 'abbreviation', 'country')
+        extra_kwargs = {
+            'url': {'view_name': 'api-chamber-detail'},
+            'country': {'view_name': 'api-country-detail'}
+        }
 
 
-class EmailSerializer(serializers.ModelSerializer):
+class EmailSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = models.Email
@@ -75,43 +81,33 @@ class ContactField(serializers.Serializer):
         }
 
 
-class ConstituencySerializer(serializers.ModelSerializer):
+class ConstituencySerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = models.Constituency
-        fields = ('id', 'name')
+        fields = ('id', 'url', 'name')
+        extra_kwargs = {
+            'url': {'view_name': 'api-constituency-detail'}
+        }
 
 
 class GroupSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Group
-        fields = ('id', 'name', 'abbreviation', 'kind')
+        fields = ('id', 'url', 'name', 'abbreviation', 'kind')
+        extra_kwargs = {
+            'url': {'view_name': 'api-group-detail'}
+        }
 
 
-class MandateSerializer(serializers.ModelSerializer):
-
-    # name = serializers.CharField(source='group.name')
-    # short_id = serializers.CharField(
-    #     source='group.abbreviation', allow_blank=True)
-    # kind = serializers.CharField(source='group.kind')
-    # constituency = serializers.CharField(source='constituency.name')
-
-    group = serializers.CharField(
-        source='group.id',
-    )
-    constituency = serializers.CharField(
-        source='constituency.id'
-    )
-    representative = serializers.CharField(
-        source='representative.id'
-    )
+class MandateSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
-        depth = 1
         model = models.Mandate
         fields = (
             'id',
+            'url',
             'representative',
             'group',
             'constituency',
@@ -119,6 +115,13 @@ class MandateSerializer(serializers.ModelSerializer):
             'begin_date',
             'end_date',
         )
+
+        extra_kwargs = {
+            'url': {'view_name': 'api-mandate-detail'},
+            'group': {'view_name': 'api-group-detail'},
+            'constituency': {'view_name': 'api-constituency-detail'},
+            'representative': {'view_name': 'api-representative-detail'}
+        }
 
     def to_internal_value(self, data):
         data = super(MandateSerializer, self).to_internal_value(data)
@@ -141,6 +144,7 @@ class MandateDetailSerializer(MandateSerializer):
     class Meta(MandateSerializer.Meta):
         fields = (
             'id',
+            'url',
             'group',
             'constituency',
             'role',
@@ -149,13 +153,14 @@ class MandateDetailSerializer(MandateSerializer):
         )
 
 
-class RepresentativeSerializer(serializers.ModelSerializer):
+class RepresentativeSerializer(serializers.HyperlinkedModelSerializer):
     contacts = ContactField()
 
     class Meta:
         model = models.Representative
         fields = (
             'id',
+            'url',
             'slug',
             'first_name',
             'last_name',
@@ -167,62 +172,10 @@ class RepresentativeSerializer(serializers.ModelSerializer):
             'active',
             'cv',
             'contacts',
-            'url',
         )
-
-    @transaction.atomic
-    def create(self, validated_data):
-        contacts_data = validated_data.pop('contacts')
-        representative = models.Representative.objects.create(
-            **validated_data
-        )
-        self._create_contacts(contacts_data, representative)
-        return representative
-
-    @transaction.atomic
-    def update(self, instance, validated_data):
-        contacts_data = validated_data.pop('contacts')
-        for attr, value in validated_data.iteritems():
-            setattr(instance, attr, value)
-        instance.save()
-        self._create_contacts(contacts_data, instance)
-        return instance
-
-    def touch_model(self, model, **data):
-        '''
-        This method create or look up a model with the given data
-        it saves the given model if it exists, updating its
-        updated field
-        '''
-        instance, created = model.objects.get_or_create(**data)
-
-        if not created:
-            instance.save()
-
-        return (instance, created)
-
-    def _create_contacts(self, contacts_data, representative):
-        for contact_data in contacts_data['emails']:
-            contact_data['representative'] = representative
-            self.touch_model(model=models.Email, **contact_data)
-
-        for contact_data in contacts_data['websites']:
-            contact_data['representative'] = representative
-            self.touch_model(model=models.WebSite, **contact_data)
-
-        for contact_data in contacts_data['address']:
-            country, _ = models.Country.objects.get_or_create(
-                **contact_data.pop('country')
-            )
-            phone_set = contact_data.pop('phones')
-            contact_data['representative'] = representative
-            contact_data['country'] = country
-            contact, _ = self.touch_model(model=models.Address, **contact_data)
-
-            for phone_data in phone_set:
-                phone_data['representative'] = representative
-                phone_data['address'] = contact
-                self.touch_model(model=models.Phone, **phone_data)
+        extra_kwargs = {
+            'url': {'view_name': 'api-representative-detail'},
+        }
 
 
 class RepresentativeDetailSerializer(RepresentativeSerializer):
