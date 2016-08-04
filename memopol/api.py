@@ -1,6 +1,7 @@
 from rest_framework import routers
 
 from representatives.api import (
+    CountryViewSet,
     ChamberViewSet,
     ConstituencyViewSet,
     GroupViewSet,
@@ -24,17 +25,16 @@ from representatives_recommendations.api import (
 
 router = routers.DefaultRouter()
 
-router.register(r'chambers', ChamberViewSet, 'api-chamber')
-router.register(r'constituencies', ConstituencyViewSet, 'api-constituency')
-router.register(r'dossiers', DossierViewSet, 'api-dossier')
-router.register(r'dossier_scores', DossierScoreViewSet, 'api-dossierscore')
-router.register(r'groups', GroupViewSet, 'api-group')
-router.register(r'mandates', MandateViewSet, 'api-mandate')
-router.register(r'proposals', ProposalViewSet, 'api-proposal')
-router.register(r'recommendations', RecommendationViewSet,
-    'api-recommendation')
-router.register(r'representatives', RepresentativeViewSet,
-    'api-representative')
-router.register(r'scores', RepresentativeScoreViewSet, 'api-score')
-router.register(r'vote_scores', VoteScoreViewSet, 'api-votescore')
-router.register(r'votes', VoteViewSet, 'api-vote')
+router.register('countries', CountryViewSet, 'api-country')
+router.register('chambers', ChamberViewSet, 'api-chamber')
+router.register('constituencies', ConstituencyViewSet, 'api-constituency')
+router.register('dossiers', DossierViewSet, 'api-dossier')
+router.register('dossier_scores', DossierScoreViewSet, 'api-dossierscore')
+router.register('groups', GroupViewSet, 'api-group')
+router.register('mandates', MandateViewSet, 'api-mandate')
+router.register('proposals', ProposalViewSet, 'api-proposal')
+router.register('recommendations', RecommendationViewSet, 'api-recommendation')
+router.register('representatives', RepresentativeViewSet, 'api-representative')
+router.register('scores', RepresentativeScoreViewSet, 'api-score')
+router.register('vote_scores', VoteScoreViewSet, 'api-votescore')
+router.register('votes', VoteViewSet, 'api-vote')
