@@ -10,6 +10,7 @@ from rest_framework import (
 from representatives.serializers import (
     ChamberSerializer,
     ConstituencySerializer,
+    CountrySerializer,
     GroupSerializer,
     MandateSerializer,
     RepresentativeDetailSerializer,
@@ -20,6 +21,7 @@ from .models import (
     Address,
     Chamber,
     Constituency,
+    Country,
     Group,
     Mandate,
     Phone,
@@ -129,3 +131,9 @@ class ChamberViewSet(viewsets.ReadOnlyModelViewSet):
     pagination_class = DefaultWebPagination
     queryset = Chamber.objects.all()
     serializer_class = ChamberSerializer
+
+
+class CountryViewSet(viewsets.ReadOnlyModelViewSet):
+    pagination_class = DefaultWebPagination
+    queryset = Country.objects.all()
+    serializer_class = CountrySerializer

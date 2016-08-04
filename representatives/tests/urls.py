@@ -5,18 +5,20 @@ from rest_framework import routers
 from representatives.api import (
     ChamberViewSet,
     ConstituencyViewSet,
+    CountryViewSet,
     GroupViewSet,
     MandateViewSet,
     RepresentativeViewSet,
 )
 
 router = routers.DefaultRouter()
-router.register(r'chambers', ChamberViewSet)
-router.register(r'constituencies', ConstituencyViewSet)
-router.register(r'groups', GroupViewSet)
-router.register(r'mandates', MandateViewSet)
-router.register(r'representatives', RepresentativeViewSet)
+router.register('countries', CountryViewSet, 'api-country')
+router.register('chambers', ChamberViewSet, 'api-chamber')
+router.register('constituencies', ConstituencyViewSet, 'api-constituency')
+router.register('groups', GroupViewSet, 'api-group')
+router.register('mandates', MandateViewSet, 'api-mandate')
+router.register('representatives', RepresentativeViewSet, 'api-representative')
 
 urlpatterns = [
-    url(r'api/', include(router.urls)),
+    url('api/', include(router.urls)),
 ]
