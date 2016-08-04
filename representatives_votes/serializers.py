@@ -14,15 +14,19 @@ class VoteSerializer(serializers.HyperlinkedModelSerializer):
         fields = (
             'proposal',
             'representative',
-            'representative_name',
             'position'
         )
+        extra_kwargs = {
+            'proposal': {'view_name': 'api-proposal-detail'},
+            'representative': {'view_name': 'api-representative-detail'}
+        }
 
 
 class ProposalSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Proposal
         fields = (
+            'id',
             'dossier',
             'title',
             'description',
@@ -35,14 +39,18 @@ class ProposalSerializer(serializers.HyperlinkedModelSerializer):
             'url',
         )
 
+        extra_kwargs = {
+            'dossier': {'view_name': 'api-dossier-detail'},
+            'url': {'view_name': 'api-proposal-detail'}
+        }
+
 
 class ProposalDetailSerializer(ProposalSerializer):
     """ Proposal serializer that includes votes """
 
     votes = VoteSerializer(many=True)
 
-    class Meta:
-        model = models.Proposal
+    class Meta(ProposalSerializer.Meta):
         fields = ProposalSerializer.Meta.fields + ('votes',)
 
 
@@ -52,11 +60,17 @@ class DocumentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Document
         fields = (
+            'id',
             'dossier',
             'chamber',
             'kind',
             'link'
         )
+
+        extra_kwargs = {
+            'dossier': {'view_name': 'api-dossier-detail'},
+            'chamber': {'view_name': 'api-chamber-detail'}
+        }
 
 
 class DossierSerializer(serializers.HyperlinkedModelSerializer):
@@ -65,11 +79,15 @@ class DossierSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Dossier
         fields = (
+            'id',
+            'url',
             'title',
             'reference',
             'text',
-            'url',
         )
+        extra_kwargs = {
+            'url': {'view_name': 'api-dossier-detail'}
+        }
 
 
 class DossierDetailSerializer(DossierSerializer):
@@ -80,6 +98,5 @@ class DossierDetailSerializer(DossierSerializer):
     proposals = ProposalSerializer(many=True)
     documents = DocumentSerializer(many=True)
 
-    class Meta:
-        model = models.Dossier
-        field = DossierSerializer.Meta.fields + ('proposals', 'documents')
+    class Meta(DossierSerializer.Meta):
+        fields = DossierSerializer.Meta.fields + ('proposals', 'documents')

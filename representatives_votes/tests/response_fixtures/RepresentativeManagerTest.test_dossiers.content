@@ -1,14 +1,16 @@
 [
     {
+        "id": 1,
+        "url": "http://testserver/api/dossiers/1/",
         "title": "Agenda for change: the future of EU development policy",
         "reference": "2012/2002(INI)",
-        "text": "",
-        "url": "http://testserver/api/dossiers/1/"
+        "text": ""
     },
     {
+        "id": 2,
+        "url": "http://testserver/api/dossiers/2/",
         "title": "2016 general budget: all sections",
         "reference": "2015/2132(BUD)",
-        "text": "",
-        "url": "http://testserver/api/dossiers/2/"
+        "text": ""
     }
 ]
