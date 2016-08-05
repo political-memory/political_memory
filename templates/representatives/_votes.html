@@ -1,0 +1,63 @@
+{% load i18n %}
+{% load representatives_votes_tags %}
+{% load representatives_recommendations_tags %}
+
+<div class="panel-group" id="accordion-Dossiers" role="tablist" aria-multiselectable="true">
+
+{% regroup votes by proposal.dossier as groups %}
+
+{% for group in groups %}
+{% with dossier=group.grouper %}
+{% with votes=group.list %}
+<div class="panel panel-default">
+  <div class="panel-heading" role="tab" id="Dossiers-heading-{{ dossier.pk }}">
+	<h4 class="panel-title">
+	  <a role="button" data-toggle="collapse" data-parent="#accordion-Dossiers" href="#Dossiers-{{ dossier.pk }}" aria-expanded="false" aria-controls="Dossiers-{{ dossier.pk }}">
+		{{ dossier.title }}
+	  </a>
+	</h4>
+  </div>
+  <div id="Dossiers-{{ dossier.pk }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="Dossiers-heading-{{ dossier.pk }}">
+	<div class="panel-body">
+	  {% if dossier.text %}<p>{{ dossier.text }}</p>{% endif %}
+	  {% if dossier.link %}<a class="btn btn-default" target="blank" href="{{ dossier.link }}">{% trans "En savoir plus" %} &raquo;</a>{% endif %}
+	  <br/><br/>
+	  
+	  <table class="table table-striped table-hover text-center">
+
+		<thead>
+		  <tr>
+			<th class="text-center">{% trans "Vote name" %}</th>
+			<th class="text-center">{% trans "MEP's vote" %}</th>
+            {% comment %}
+            <!-- we don't have this information yet -->
+			<th class="text-center">{% trans "Party's vote" %}</th>
+            {% endcomment %}
+			<th class="text-center">{% trans "Lqdn's recommendation" %}</th>
+			<th class="text-center">Points <a data-toggle="tooltip" data-placement="top" title="{% trans "Le score est une somme de points attribués suivant si le MEP vote dans notre sens (positif) ou non (négatif) multiplié par le poids (importance) de ce vote." %}"><span class="glyphicon glyphicon-info-sign"></span></a></th>
+		  </tr>
+		</thead>
+
+		<tbody>
+
+          {% for vote in votes %}
+		  <tr>
+			<th>{{ vote.proposal.title }}</th>
+			<td><span class="glyphicon {{ vote.position|vote_glyphicon}} {{ vote.position|vote_icon_color:vote.proposal.recommendation.recommendation }}"></span></td>
+			<td><span class="glyphicon {{ vote.proposal.recommendation.recommendation|vote_glyphicon }}"></span></td>
+			<td>{{ vote.absolute_score }}</td>
+		  </tr>
+          {% endfor %}
+
+		</tbody>
+
+	  </table>
+	  
+	</div>
+  </div>
+</div>
+
+{% endwith %}
+{% endwith %}
+{% endfor %}
+</div>

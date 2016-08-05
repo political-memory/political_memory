@@ -4,6 +4,7 @@ from django.contrib import admin
 from django.views import generic
 
 import views
+import api
 
 admin.autodiscover()
 
@@ -12,27 +13,36 @@ urlpatterns = [
     url(
         r'^legislature/representative/(?P<group_kind>\w+)/(?P<group>.+)/$',
         views.RepresentativeList.as_view(),
+        name='representative-list'
     ),
     url(
         r'^legislature/representative/(?P<slug>[-\w]+)/$',
         views.RepresentativeDetail.as_view(),
+        name='representative-detail'
     ),
     url(
-        r'legislature/representative/$',
+        r'^legislature/representative/$',
         views.RepresentativeList.as_view(),
+        name='representative-list'
     ),
     url(
-        r'votes/dossier/$',
+        r'^votes/dossier/$',
         views.DossierList.as_view(),
+        name='dossier-list'
+    ),
+    url(
+        r'^votes/dossier/(?P<pk>\d+)/$',
+        views.DossierDetail.as_view(),
+        name='dossier-detail'
     ),
 
-    url(r'^autocomplete/', include('autocomplete_light.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'legislature/', include('representatives.urls',
+    url(r'^legislature/', include('representatives.urls',
         namespace='representatives')),
-    url(r'votes/', include('representatives_votes.urls',
+    url(r'^votes/', include('representatives_votes.urls',
         namespace='representatives_votes')),
-    url(r'positions/', include('representatives_positions.urls',
+    url(r'^positions/', include('representatives_positions.urls',
         namespace='representatives_positions')),
+    url(r'^api/', include(api.router.urls, namespace='api')),
     url(r'^$', generic.TemplateView.as_view(template_name='home.html')),
 ]

@@ -1,38 +1,54 @@
 {% extends 'base.html' %}
+{% load i18n %}
+{% load representatives_tags %}
 
+{% block title %}{% trans "Members of the European Parliement" %}{% endblock %}
+
+{% block container-class %}custom-listMEP{% endblock %}
 {% block content %}
-<h1 class="text-center">Members of the European Parliement</h1>
-<p class="lead text-center">{number} MEP from {country}, members of {party}, working in {delegation} and on {committee}.</p>
+<h1 class="text-center">{% trans "Members of the European Parliement" %}</h1>
+<p class="lead text-center">
+{{ paginator.count }} {% trans "MEP" %}{% if search.country %} {% trans "from" %} {{ search.country }}{% endif %}{% if search.group %}, {% trans "members of" %} {{ search.group }}{% endif %}{% if search.delegation %}, {% trans "working in" %} {{ search.delegation }}{% endif %}{% if search.commitee %}, {% trans "on" %} {{ search.commitee }}{% endif %}.
+</p>
 
-<div class="btn-group" data-toggle="buttons">
+<div class="row">
+    <a href="?{{ searchparameters }}&csv" class="btn btn-default">
+      <span class="glyphicon glyphicon-file"> {% trans "Download as csv." %}</span>
+    </a>
+
+  {% comment %}
+  <!-- TODO: layout & ordering -->
+  <div class="btn-group" data-toggle="buttons">
     <label class="btn btn-default active">
-        <input type="radio" name="view" id="cards" autocomplete="off" checked>
-        <span class="glyphicon glyphicon-th"></span>
+      <input type="radio" name="view" id="cards" autocomplete="off" checked>
+      <span class="glyphicon glyphicon-th"></span>
     </label>
     <label class="btn btn-default">
-        <input type="radio" name="view" id="lists" autocomplete="off">
-        <span class="glyphicon glyphicon-list"></span>
+      <input type="radio" name="view" id="lists" autocomplete="off">
+      <span class="glyphicon glyphicon-list"></span>
     </label>
-</div>
 
+  </div>
 
-<div class="dropdown" style="display:inline-block;">
+  <div class="dropdown" style="display:inline-block;">
     Order by
 
     <button class="btn btn-default dropdown-toggle" type="button" id="orderby" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        Score
-        <span class="caret"></span>
+      Score
+      <span class="caret"></span>
     </button>
 
     <ul class="dropdown-menu" aria-labelledby="orderby">
-        <li class="disabled"><a href="#">Score</a></li>
-        <li><a href="#">Country</a></li>
-        <li><a href="#">Party</a></li>
-        <li><a href="#">Group</a></li>
+      <li class="disabled"><a href="#">Score</a></li>
+      <li><a href="#">Country</a></li>
+      <li><a href="#">Party</a></li>
+      <li><a href="#">Group</a></li>
     </ul>
+  </div>
+  {% endcomment %}
 </div>
 
-<br />
+<br/>
 
 <div class="row">
 {% for representative in object_list %}
@@ -41,28 +57,45 @@
             <a href="{{ representative.get_absolute_url }}" class="custom-thumbnail">
                 <div class="row">
                     <div class="col-xs-5">
-                        <img class="img-responsive" src="{{ representative.photo }}" width="80px">
+                        <img class="img-responsive" src="{{ representative.photo }}" width="158px">
                         <div class="custom-thumbnail-details">
                             <p>
-                                <span class="glyphicon glyphicon-flag"></span> Germany<br>
-                                <span class="glyphicon glyphicon-paperclip"></span> Greens/EFA<br>
-                                <span class="glyphicon glyphicon-briefcase "></span> Parti national
+                              <!-- Delegation -->
+                              {{ representative.country|country_flag }}<br>
+                              <!-- Group -->
+                              {{ representative.main_mandate }}<br>
+                              {% comment %}
+                              <!-- ? -->
+                              <span class="glyphicon glyphicon-briefcase "></span> {{ representative. }}
+                              {% endcomment %}
                             </p>
                         </div>
                     </div>
 
                     <div class="col-xs-7">
-                        <h4 class="text-center">Jan Philipp ALBRECHT</h4>
-                        <p class="text-center"><span class="label label-primary"><span class="glyphicon glyphicon-flag"></span></span>
+                        <h4 class="text-center">{{ representative.full_name }}</h4>
+                        <p class="text-center">
+                          {% if representative.country %}
+                            <span class="label label-primary"><span class="glyphicon glyphicon-flag"></span></span>
+                          {% endif %}
+                          {% if representative.main_mandate %}
                             <span class="label label-primary"><span class="glyphicon glyphicon-paperclip"></span></span>
+                          {% endif %}
+                          {% comment %}
+                          <!-- TODO: what is it ? -->
+                          {% if representative. %}
                             <span class="label label-primary"><span class="glyphicon glyphicon-briefcase "></span></span>
+                          {% endif %}
+                          {% endcomment %}
                         </p>
+                        {% comment %} ?
                         <p class="text-center small">
                             <span class="label label-primary"><span class="glyphicon glyphicon-pushpin "></span></span>
                             <span class="label label-primary"><span class="glyphicon glyphicon-pushpin "></span></span>
                             <span class="label label-primary"><span class="glyphicon glyphicon-pushpin "></span></span>
                         </p>
-                        <p class="text-right"><span class="badge">130</span></p>
+                        {% endcomment %}
+                        <p class="text-right"><span class="badge">{{ representative.score.score }}</span></p>
                     </div>
 
                 </div>
@@ -71,5 +104,7 @@
     </div>
     {% endfor %}
 </div>
+
+{% include "pagination.html" %}
 
 {% endblock %}

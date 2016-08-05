@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{{ representative.full_name }}{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-sm-3">
+	<img src="{{ representative.photo }}">
+  </div>
+
+  {% include "representatives/_representative_block.html" %}
+
+  {% comment %}
+  <!-- Design for future feature is ready, leaving it here until we develop the Piphone campaign system -->
+  <div class="col-sm-3 text-center">
+	<p>
+	  There is an ungoing &pi;Phone campaign, call this MEP for free to help La Quadrature!</p>
+	<div class="btn-group" role="group">
+	  <button class="btn btn-large btn-primary" data-toggle="tooltip" data-placement="bottom" title="Call this MEP with the &pi;Phone"><span class="glyphicon glyphicon-phone-alt"></span></button>
+	  <a class="btn btn-large btn-default"><span class="glyphicon glyphicon-plus"></span> info</a>
+	</div>
+  </div>
+  {% endcomment %}
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="nav nav-tabs nav-justified" role="tablist">
+      <li role="presentation" class="active">
+        <a href="#votes" aria-controls="votes" role="tab" data-toggle="tab">
+          <h3>{% trans "Votes" %}</h3>
+        </a>
+      </li>
+      <li role="presentation">
+        <a href="#mandates" aria-controls="mandates" role="tab" data-toggle="tab">
+          <h3>{% trans "Mandates" %}</h3>
+        </a>
+      </li>
+      <li role="presentation">
+        <a href="#positions" aria-controls="positions" role="tab" data-toggle="tab">
+          <h3>{% trans "Public positions" %}</h3>
+        </a>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="votes" role="tabpanel" class="tab-pane active">
+        {% include "representatives/_votes.html" %}
+      </div>
+      <div id="mandates" role="tabpanel" class="tab-pane">
+        {% include "representatives/_mandates.html" %}
+      </div>
+      <div id="positions" role="tabpanel" class="tab-pane">
+        {% include "representatives/_positions.html" %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

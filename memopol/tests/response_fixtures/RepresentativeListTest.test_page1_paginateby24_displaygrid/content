@@ -1,7 +1,80 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/static/collected/img/favicon.ico" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+    <title>
+      Home
+      - The Political Memory of </title>
+    
+    
+    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.53baf9815401.css" type="text/css" />
+    <script type="text/javascript" src="/static/collected/libs/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="/static/collected/libs/bootstrap/dist/js/bootstrap.js"></script>
+    
+  </head>
+  <body >
+    <!-- -load memopol_tags cache -->
+
+
+
+
+<div id='header' class='container-fluid'>
+  <a id='logo' href='/'>
+    <img src='/static/collected/images/logo.png' />
+  </a>
+  <h1>
+    <a id='header_banner' href='/'>
+      Political Memory
+    </a>
+  </h1>
+  <p class='organization'>
+    
+
+  </p>
+</div>
+<div id='nav' class='container-fluid'>
+  <ul class='nav'>
+    <li>
+      <a href='/legislature/representative/'>
+        Representatives
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/groups/country/'>
+        Countries
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/groups/group/'>
+        Parties
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/groups/delegation/'>
+        Delegations
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/groups/committee/'>
+        Committees
+      </a>
+    </li>
+    <li>
+      <a href='/votes/dossier/'>
+        Votes
+
+      </a>
+    </li>
+  </ul>
+</div>
+
     <div class="container-fluid main-container">
+      
 
-
-
+  
 
     <form action='' method='get'>
       <label for='search'>
@@ -11,36 +84,40 @@
       <input type='submit' value='Go' />
 
     </form>
+    <a href='?csv'>
+      Download data as CSV
 
+    </a>
+  
 
   <div class='pagination-block'>
 
   <nav>
     <ul class='pagination pagination-sm'>
-
-
-
-
+      
+      
+        
+          
             <li class='active'>
               <a href=''>
                 1
               </a>
             </li>
-
-
-
-
-
+          
+        
+      
+        
+          
             <li>
               <a href='?&page=2'>
                 2
 
               </a>
             </li>
-
-
-
-
+          
+        
+      
+      
         <li>
           <a aria-label='Next' href='?&page=2'>
             <i aria-hidden="true" class="fa fa-chevron-right"></i>
@@ -53,7 +130,7 @@
 
           </a>
         </li>
-
+      
     </ul>
   </nav>
   <div class='count'>
@@ -62,35 +139,35 @@
     Number of displayed results :
     24
     (
-
+    
       <a href='?paginate_by=12'>
         12
       </a>
-
+      
         /
-
-
+      
+    
       <a href='?paginate_by=24'>
         24
       </a>
-
+      
         /
-
-
+      
+    
       <a href='?paginate_by=48'>
         48
       </a>
-
+      
         /
-
-
+      
+    
       <a href='?paginate_by=96'>
         96
       </a>
-
-
+      
+    
     )
-
+    
       <span class='grid-list-selector'>
   <a href='?display=grid'>
     <i class="fa fa-th"></i>
@@ -102,15 +179,15 @@
 </span>
 
 
-
+    
   </div>
 </div>
 
 
-
+  
 
   <div class='representative_grid'>
-
+    
       <div class='representative_item'>
         <p class='photo'>
           <a href='/legislature/representative/zigmantas-balcytis/'>
@@ -124,7 +201,7 @@
             </a>
           </li>
           <li class='country'>
-            <a href='/legislature/representative/country/LT/'>
+            <a href='/legislature/representative/country/Lithuania/'>
               <span class="flag-icon flag-icon-lt"></span> Lithuania
             </a>
           </li>
@@ -139,7 +216,7 @@
           </li>
         </ul>
       </div>
-
+    
       <div class='representative_item'>
         <p class='photo'>
           <a href='/legislature/representative/vilija-blinkeviciute/'>
@@ -153,7 +230,7 @@
             </a>
           </li>
           <li class='country'>
-            <a href='/legislature/representative/country/LT/'>
+            <a href='/legislature/representative/country/Lithuania/'>
               <span class="flag-icon flag-icon-lt"></span> Lithuania
             </a>
           </li>
@@ -168,7 +245,7 @@
           </li>
         </ul>
       </div>
-
+    
       <div class='representative_item'>
         <p class='photo'>
           <a href='/legislature/representative/elmar-brok/'>
@@ -182,7 +259,7 @@
             </a>
           </li>
           <li class='country'>
-            <a href='/legislature/representative/country/DE/'>
+            <a href='/legislature/representative/country/Germany/'>
               <span class="flag-icon flag-icon-de"></span> Germany
             </a>
           </li>
@@ -197,7 +274,7 @@
           </li>
         </ul>
       </div>
-
+    
       <div class='representative_item'>
         <p class='photo'>
           <a href='/legislature/representative/cristian-silviu-busoi/'>
@@ -211,7 +288,7 @@
             </a>
           </li>
           <li class='country'>
-            <a href='/legislature/representative/country/RO/'>
+            <a href='/legislature/representative/country/Romania/'>
               <span class="flag-icon flag-icon-ro"></span> Romania
             </a>
           </li>
@@ -226,7 +303,7 @@
           </li>
         </ul>
       </div>
-
+    
       <div class='representative_item'>
         <p class='photo'>
           <a href='/legislature/representative/david-casa/'>
@@ -240,7 +317,7 @@
             </a>
           </li>
           <li class='country'>
-            <a href='/legislature/representative/country/MT/'>
+            <a href='/legislature/representative/country/Malta/'>
               <span class="flag-icon flag-icon-mt"></span> Malta
             </a>
           </li>
@@ -255,7 +332,7 @@
           </li>
         </ul>
       </div>
-
+    
       <div class='representative_item'>
         <p class='photo'>
           <a href='/legislature/representative/jean-marie-cavada/'>
@@ -269,7 +346,7 @@
             </a>
           </li>
           <li class='country'>
-            <a href='/legislature/representative/country/FR/'>
+            <a href='/legislature/representative/country/France/'>
               <span class="flag-icon flag-icon-fr"></span> France
             </a>
           </li>
@@ -284,7 +361,7 @@
           </li>
         </ul>
       </div>
-
+    
       <div class='representative_item'>
         <p class='photo'>
           <a href='/legislature/representative/nikolaos-chountis/'>
@@ -298,7 +375,7 @@
             </a>
           </li>
           <li class='country'>
-            <a href='/legislature/representative/country/GR/'>
+            <a href='/legislature/representative/country/Greece/'>
               <span class="flag-icon flag-icon-gr"></span> Greece
             </a>
           </li>
@@ -313,7 +390,7 @@
           </li>
         </ul>
       </div>
-
+    
       <div class='representative_item'>
         <p class='photo'>
           <a href='/legislature/representative/michael-cramer/'>
@@ -327,7 +404,7 @@
             </a>
           </li>
           <li class='country'>
-            <a href='/legislature/representative/country/DE/'>
+            <a href='/legislature/representative/country/Germany/'>
               <span class="flag-icon flag-icon-de"></span> Germany
             </a>
           </li>
@@ -342,7 +419,7 @@
           </li>
         </ul>
       </div>
-
+    
       <div class='representative_item'>
         <p class='photo'>
           <a href='/legislature/representative/michel-dantin/'>
@@ -356,7 +433,7 @@
             </a>
           </li>
           <li class='country'>
-            <a href='/legislature/representative/country/FR/'>
+            <a href='/legislature/representative/country/France/'>
               <span class="flag-icon flag-icon-fr"></span> France
             </a>
           </li>
@@ -371,7 +448,7 @@
           </li>
         </ul>
       </div>
-
+    
       <div class='representative_item'>
         <p class='photo'>
           <a href='/legislature/representative/tamas-deutsch/'>
@@ -385,7 +462,7 @@
             </a>
           </li>
           <li class='country'>
-            <a href='/legislature/representative/country/HU/'>
+            <a href='/legislature/representative/country/Hungary/'>
               <span class="flag-icon flag-icon-hu"></span> Hungary
             </a>
           </li>
@@ -400,7 +477,7 @@
           </li>
         </ul>
       </div>
-
+    
       <div class='representative_item'>
         <p class='photo'>
           <a href='/legislature/representative/viorica-dancila/'>
@@ -414,7 +491,7 @@
             </a>
           </li>
           <li class='country'>
-            <a href='/legislature/representative/country/RO/'>
+            <a href='/legislature/representative/country/Romania/'>
               <span class="flag-icon flag-icon-ro"></span> Romania
             </a>
           </li>
@@ -429,7 +506,7 @@
           </li>
         </ul>
       </div>
-
+    
       <div class='representative_item'>
         <p class='photo'>
           <a href='/legislature/representative/bas-eickhout/'>
@@ -443,7 +520,7 @@
             </a>
           </li>
           <li class='country'>
-            <a href='/legislature/representative/country/NL/'>
+            <a href='/legislature/representative/country/Netherlands/'>
               <span class="flag-icon flag-icon-nl"></span> Netherlands
             </a>
           </li>
@@ -458,7 +535,7 @@
           </li>
         </ul>
       </div>
-
+    
       <div class='representative_item'>
         <p class='photo'>
           <a href='/legislature/representative/ismail-ertug/'>
@@ -472,7 +549,7 @@
             </a>
           </li>
           <li class='country'>
-            <a href='/legislature/representative/country/DE/'>
+            <a href='/legislature/representative/country/Germany/'>
               <span class="flag-icon flag-icon-de"></span> Germany
             </a>
           </li>
@@ -487,7 +564,7 @@
           </li>
         </ul>
       </div>
-
+    
       <div class='representative_item'>
         <p class='photo'>
           <a href='/legislature/representative/jose-manuel-fernandes/'>
@@ -501,7 +578,7 @@
             </a>
           </li>
           <li class='country'>
-            <a href='/legislature/representative/country/PT/'>
+            <a href='/legislature/representative/country/Portugal/'>
               <span class="flag-icon flag-icon-pt"></span> Portugal
             </a>
           </li>
@@ -516,7 +593,7 @@
           </li>
         </ul>
       </div>
-
+    
       <div class='representative_item'>
         <p class='photo'>
           <a href='/legislature/representative/monika-flasikova-benova/'>
@@ -530,7 +607,7 @@
             </a>
           </li>
           <li class='country'>
-            <a href='/legislature/representative/country/SK/'>
+            <a href='/legislature/representative/country/Slovakia/'>
               <span class="flag-icon flag-icon-sk"></span> Slovakia
             </a>
           </li>
@@ -545,7 +622,7 @@
           </li>
         </ul>
       </div>
-
+    
       <div class='representative_item'>
         <p class='photo'>
           <a href='/legislature/representative/ashley-fox/'>
@@ -559,7 +636,7 @@
             </a>
           </li>
           <li class='country'>
-            <a href='/legislature/representative/country/GB/'>
+            <a href='/legislature/representative/country/United%20Kingdom/'>
               <span class="flag-icon flag-icon-gb"></span> United Kingdom
             </a>
           </li>
@@ -574,7 +651,7 @@
           </li>
         </ul>
       </div>
-
+    
       <div class='representative_item'>
         <p class='photo'>
           <a href='/legislature/representative/eider-gardiazabal-rubial/'>
@@ -588,7 +665,7 @@
             </a>
           </li>
           <li class='country'>
-            <a href='/legislature/representative/country/ES/'>
+            <a href='/legislature/representative/country/Spain/'>
               <span class="flag-icon flag-icon-es"></span> Spain
             </a>
           </li>
@@ -603,7 +680,7 @@
           </li>
         </ul>
       </div>
-
+    
       <div class='representative_item'>
         <p class='photo'>
           <a href='/legislature/representative/kinga-gal/'>
@@ -617,7 +694,7 @@
             </a>
           </li>
           <li class='country'>
-            <a href='/legislature/representative/country/HU/'>
+            <a href='/legislature/representative/country/Hungary/'>
               <span class="flag-icon flag-icon-hu"></span> Hungary
             </a>
           </li>
@@ -632,7 +709,7 @@
           </li>
         </ul>
       </div>
-
+    
       <div class='representative_item'>
         <p class='photo'>
           <a href='/legislature/representative/ildiko-gall-pelcz/'>
@@ -646,7 +723,7 @@
             </a>
           </li>
           <li class='country'>
-            <a href='/legislature/representative/country/HU/'>
+            <a href='/legislature/representative/country/Hungary/'>
               <span class="flag-icon flag-icon-hu"></span> Hungary
             </a>
           </li>
@@ -661,7 +738,7 @@
           </li>
         </ul>
       </div>
-
+    
       <div class='representative_item'>
         <p class='photo'>
           <a href='/legislature/representative/marian-harkin/'>
@@ -675,7 +752,7 @@
             </a>
           </li>
           <li class='country'>
-            <a href='/legislature/representative/country/IE/'>
+            <a href='/legislature/representative/country/Ireland/'>
               <span class="flag-icon flag-icon-ie"></span> Ireland
             </a>
           </li>
@@ -690,7 +767,7 @@
           </li>
         </ul>
       </div>
-
+    
       <div class='representative_item'>
         <p class='photo'>
           <a href='/legislature/representative/mary-honeyball/'>
@@ -704,7 +781,7 @@
             </a>
           </li>
           <li class='country'>
-            <a href='/legislature/representative/country/GB/'>
+            <a href='/legislature/representative/country/United%20Kingdom/'>
               <span class="flag-icon flag-icon-gb"></span> United Kingdom
             </a>
           </li>
@@ -719,7 +796,7 @@
           </li>
         </ul>
       </div>
-
+    
       <div class='representative_item'>
         <p class='photo'>
           <a href='/legislature/representative/iliana-iotova/'>
@@ -733,7 +810,7 @@
             </a>
           </li>
           <li class='country'>
-            <a href='/legislature/representative/country/BG/'>
+            <a href='/legislature/representative/country/Bulgaria/'>
               <span class="flag-icon flag-icon-bg"></span> Bulgaria
             </a>
           </li>
@@ -748,7 +825,7 @@
           </li>
         </ul>
       </div>
-
+    
       <div class='representative_item'>
         <p class='photo'>
           <a href='/legislature/representative/liisa-jaakonsaari/'>
@@ -762,7 +839,7 @@
             </a>
           </li>
           <li class='country'>
-            <a href='/legislature/representative/country/FI/'>
+            <a href='/legislature/representative/country/Finland/'>
               <span class="flag-icon flag-icon-fi"></span> Finland
             </a>
           </li>
@@ -777,7 +854,7 @@
           </li>
         </ul>
       </div>
-
+    
       <div class='representative_item'>
         <p class='photo'>
           <a href='/legislature/representative/yannick-jadot/'>
@@ -791,7 +868,7 @@
             </a>
           </li>
           <li class='country'>
-            <a href='/legislature/representative/country/FR/'>
+            <a href='/legislature/representative/country/France/'>
               <span class="flag-icon flag-icon-fr"></span> France
             </a>
           </li>
@@ -806,7 +883,7 @@
           </li>
         </ul>
       </div>
-
+    
   </div>
 
 
@@ -814,30 +891,30 @@
 
   <nav>
     <ul class='pagination pagination-sm'>
-
-
-
-
+      
+      
+        
+          
             <li class='active'>
               <a href=''>
                 1
               </a>
             </li>
-
-
-
-
-
+          
+        
+      
+        
+          
             <li>
               <a href='?&page=2'>
                 2
 
               </a>
             </li>
-
-
-
-
+          
+        
+      
+      
         <li>
           <a aria-label='Next' href='?&page=2'>
             <i aria-hidden="true" class="fa fa-chevron-right"></i>
@@ -850,7 +927,7 @@
 
           </a>
         </li>
-
+      
     </ul>
   </nav>
   <div class='count'>
@@ -859,35 +936,35 @@
     Number of displayed results :
     24
     (
-
+    
       <a href='?paginate_by=12'>
         12
       </a>
-
+      
         /
-
-
+      
+    
       <a href='?paginate_by=24'>
         24
       </a>
-
+      
         /
-
-
+      
+    
       <a href='?paginate_by=48'>
         48
       </a>
-
+      
         /
-
-
+      
+    
       <a href='?paginate_by=96'>
         96
       </a>
-
-
+      
+    
     )
-
+    
       <span class='grid-list-selector'>
   <a href='?display=grid'>
     <i class="fa fa-th"></i>
@@ -899,6 +976,32 @@
 </span>
 
 
-
+    
   </div>
 </div>
+
+
+
+    </div>
+    
+
+<div id='footer' class='container-fluid'>
+  
+    Memopol is free software
+    <a href="https://github.com/political-memory/political_memory">released</a>
+    under the terms of the
+    <a href="http://www.gnu.org/licenses/agpl.html">GNU aGPLV3+</a>
+  
+  <a href='https://github.com/political-memory/political_memory/issues'>
+    Bug tracking system
+  </a>
+  <a href='https://github.com/political-memory/political_memory/issues/new'>
+    Report a bug
+  </a>
+  <br />
+  Provided by <a href="http://www.laquadrature.net/">La Quadrature du Net</a>
+
+</div>
+
+  </body>
+</html>

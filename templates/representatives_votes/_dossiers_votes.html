@@ -1,0 +1,76 @@
+{% load i18n %}
+{% load representatives_votes_tags %}
+{% load representatives_recommendations_tags %}
+
+<div class="panel-group" id="accordion-proposals" role="tablist" aria-multiselectable="true">
+
+  <table class="table table-hover text-center">
+    <colgroup>
+      {# justifies first col all at once #}
+      <col class="col-md-2">
+    </colgroup>
+
+	<thead>
+	  <tr>
+		<th class="text-center"></th>
+        {% for proposal in proposals %}
+		<th class="text-center">{{ proposal.reference }}</th>
+        {% endfor %}
+	  </tr>
+	</thead>
+
+	<tbody>
+
+	  <tr class="small">
+		<td>{% trans "Date" %}</td>
+        {% for proposal in proposals %}
+		<td>{{ proposal.datetime|date }}</td>
+        {% endfor %}
+	  </tr>
+
+      {% comment %}
+      <!-- TODO: ask what this is about -->
+	  <tr>
+		<td>{% trans "Points" %} <a data-toggle="tooltip" data-placement="top" title="Le score est une somme de points attribués suivant si le MEP vote dans notre sens (positif) ou non (négatif) multiplié par le poids (importance) de ce vote."><span class="glyphicon glyphicon-info-sign"></span></a></td>
+        {% for proposal in proposals %}
+		<td>20</td>
+        {% endfor %}
+	  </tr>
+      {% endcomment %}
+
+	  <tr>
+		<th>{% trans "Lqdn's recommendation" %}</th>
+        {% for proposal in proposals %}
+		<td><span class="glyphicon {{ proposal.recommendation.recommendation|vote_glyphicon }}"></span></td>
+        {% endfor %}
+	  </tr>
+
+      {% comment %}
+      <!-- TODO: regroup by representative.main_mandate but might be very query heavy -->
+	  <tr>
+		<th>
+		  <a class="btn btn-sm btn-default" role="button" data-toggle="collapse" href="#collapse-PartyChose" aria-expanded="false" aria-controls="collapse-PartyChose">Party chose <span class="caret"></span></a>
+		</th>
+	  </tr>
+      {% endcomment %}
+
+      {% for representative in representatives %}
+      <tr>
+		<th>{{ representative.full_name }}</th>
+        {% for proposal in proposals %}
+        {# Note: the manager has been fed with only the relevant data #}
+        {# so representative.votes.all only contains votes from the relevant proposals #}
+        {% for vote in representative.votes.all %}
+        {% if vote.proposal == proposal %}
+		<td>
+          <span class="glyphicon glyphicon-ok {{vote.position|vote_glyphicon}} {{ vote.position|vote_icon_color:proposal.recommendation.recommendation }}"></span>
+        </td>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+	  </tr>
+      {% endfor %}
+
+	</tbody>
+  </table>
+</div>

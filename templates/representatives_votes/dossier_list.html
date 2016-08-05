@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load humanize %}
+
+{% block title %}{% trans "Dosssiers" %}{% endblock %}
+
+{% block content %}
+<h1 class="text-center">{% trans "Dossiers" %}</h1>
+<p class="lead text-center">
+{% blocktrans count counter=paginator.count %}{{ counter }} dossier{% plural %}{{ counter }} dossier{% endblocktrans %}{% if search %}{% blocktrans %}on {{ search }}{% endblocktrans %}{% endif %}.
+</p>
+
+{% comment %}
+<!-- TODO: ordering -->
+<br/>
+<p>
+  <div class="dropdown" style="display:inline-block;">
+	Order by
+	<button class="btn btn-default dropdown-toggle" type="button" id="orderby" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+	  Name
+	  <span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu" aria-labelledby="orderby">
+	  <li class="disabled"><a href="#">Name</a></li>
+	  <li><a href="#">Recent</a></li>
+	</ul>
+  </div>
+</p>
+{% endcomment %}
+
+<div class="col-xs-12 col-md-4">
+{% for dossier in object_list %}
+<div class="thumbnail">
+  <a href="{{ dossier.get_absolute_url }}" class="custom-thumbnail custom-invisible">
+	<div class="row">
+
+	  <div class="col-xs-12">
+		<h4 class="text-center">{{ dossier.title }}</h4>
+		<p class="text-center">{% trans "Last updated" %} {{ dossier.updated|naturalday }}</p>
+
+		<p class="text-center lead">
+          {% comment %}
+          <!-- We don't have this data -->
+		  <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Upcoming envents"><span class="glyphicon glyphicon-calendar"></span>
+            <span class="badge">5</span>
+          </span>
+          {% endcomment %}
+          <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Votes"><span class="glyphicon glyphicon-check"></span>
+            <span class="badge">{{ dossier.votes_count }}</span>
+          </span>
+          {% comment %}
+          <!-- We don't have this data -->
+		  <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Public positions"><span class="glyphicon glyphicon-comment"></span>
+            <span class="badge">42</span>
+          </span>
+          {% endcomment %}
+		</p>
+
+        {% comment %}
+        <!-- TODO -->
+		<div class="alert alert-info text-center" role="alert"><span class="glyphicon glyphicon-alert"></span> A campaign is currently ongoing with La Quadrature. <a href="#" class="alert-link">Check it out!</a> </div>
+		{% endcomment %}
+	  </div>
+	</div>
+  </a>
+</div>
+
+{% if forloop.counter|divisibleby:3 %}</div><div class="col-xs-12 col-md-4">{% endif %}
+{% endfor %}
+</div>
+
+{% include "pagination.html" %}
+
+{% endblock %}

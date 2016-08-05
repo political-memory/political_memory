@@ -69,7 +69,8 @@ ORGANIZATION_NAME = os.environ.get('ORGANIZATION', 'Memopol Demo')
 
 INSTALLED_APPS = (
     # 'django.contrib.admin',
-    'autocomplete_light',
+    'dal',
+    'dal_select2',
     'suit',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -84,6 +85,7 @@ INSTALLED_APPS = (
     'bootstrap3',
     'datetimewidget',
     'django_filters',
+    'rest_framework',
     'taggit',
     # ---
     'core',
@@ -101,6 +103,20 @@ if DEBUG:
         pass
     else:
         INSTALLED_APPS += ('debug_toolbar',)
+
+    try:
+        import django_extensions  # noqa
+    except:
+        pass
+    else:
+        INSTALLED_APPS += ('django_extensions',)
+
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+        }
+    }
+
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -202,6 +218,7 @@ TEMPLATE_LOADERS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     'django.template.context_processors.request',
+    'memopol.context_processors.search_form_options'
 )
 
 # Static files finders

@@ -1,0 +1,38 @@
+{% load i18n %}
+{% load humanize %}
+{% load representatives_tags %}
+{% load representatives_recommendations_tags %}
+
+<div class="col-sm-9">
+  <h1 class="text-left">{{ representative.full_name }}</h1>
+  
+  <div class="col-sm-9">
+	<dl class="dl-horizontal">
+	  <dt>{% trans "Score" %}</dt>
+      <dd>
+        <span class="badge" data-toggle="tooltip" data-placement="right" title="{% trans "Le score est une somme de points attribués suivant si le MEP vote dans notre sens (positif) ou non (négatif) multiplié par le poids (importance) de ce vote." %}">{{ representative.score.score }}</span>&nbsp;&nbsp;{{ representative.score.score|score_arrow }}
+      </dd>
+
+	  <dt>{% trans "Country" %}</dt>
+      <dd>
+        {{ representative.country|country_flag }}
+      </dd>
+
+	  <dt>{% trans "Party" %}</dt>
+      <dd>
+        {% with mandate=representative.main_mandate %}
+        <a href="{{ mandate.group.get_absolute_url }}">
+          {% blocktrans with role=representative.main_mandate.role group_name=mandate.group.name %}
+          {{ role }} of {{ group_name }}{% endblocktrans %}</a>
+        {% if mandate.group.abbreviation %}&nbsp;({{ mandate.group.abbreviation }}){% endif %}
+        {% endwith %}
+      </dd>
+
+	  <dt>{% trans "Biography" %}</dt>
+      <dd>{% blocktrans with birth_place=representative.birth_place birth_date=representative.birth_date|naturalday:'d/m/Y' %}Born in {{ birth_place }} the {{ birth_date }}{% endblocktrans %} ({{ representative.get_gender_display }})
+      </dd>
+	  
+      {# <dt>More infos</dt><dd><a><span class="label label-primary"><span class="glyphicon glyphicon-grain"></span> Facebook</span></a> <a><span class="label label-primary"><span class="glyphicon glyphicon-plane"></span> Twitter</span></a> <a><span class="label label-primary"><span class="glyphicon glyphicon-tree-conifer"></span> Parliement</span></a></dd> #}
+	</dl>
+  </div>
+</div>

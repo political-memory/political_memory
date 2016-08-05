@@ -1,0 +1,21 @@
+{% load representatives_tags %}
+<br/>
+<div class="row">
+{% for mandate in mandates %}
+    <div class="col-sm-6 col-md-4">
+	  <div class="thumbnail">
+	    <div class="caption">
+		  <h3 class="text-center">
+            <a href="{{ mandate.group.get_absolute_url }}">{{ mandate.group.name }}
+              {% if mandate.group.abreviation %}{{ mandate.group.abreviation }}{% endif %}
+            </a>
+          </h3>
+		  <hr>
+          {# mandate.constituency.name - #}
+		  <p><span class="lead">{{ mandate.role }}</span> from {{ mandate.begin_date|mandate_date:'d/m/Y' }} to {{ mandate.end_date|mandate_date:'d/m/Y' }}</p>
+	    </div>
+	  </div>
+    </div>
+    {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
+{% endfor %}
+</div>

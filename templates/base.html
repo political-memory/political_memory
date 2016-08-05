@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{% load cache %}{% load i18n %}<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -10,7 +10,7 @@
 
     <title>
         {% block title %}Home{% endblock %}
-        - The Political Memory of {{ request.site.SITE_NAME }}</title>
+        - {% blocktrans with site_name=request.site.SITE_NAME %}The Political Memory of {{ site_name }}{% endblocktrans %}</title>
 
     {% load compress %}
     {% load staticfiles %}
@@ -38,34 +38,28 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-3 custom-nav">
+            {% block sidebar %}
                 {% include '_base_intro.html' %}
                 <hr/>
+                {% get_current_language as LANGUAGE_CODE %}
+                {% cache 3600 LANGUAGE_CODE %} {# 1 hour #}
                 {% include '_base_search.html' %}
+                {% endcache %}
                 <hr />
-                <a href="listMEP.html" class="btn btn-primary btn-block">Check out all MEPs</a>
-                <a href="listDossiers.html" class="btn btn-primary btn-block">Check out all Dossiers</a>
+                <a href="{% url "representative-list" %}" class="btn btn-primary btn-block">
+                  {% trans "Check out all MEPs" %}</a>
+                <a href="{% url "dossier-list" %}" class="btn btn-primary btn-block">
+                  {% trans "Check out all Dossiers" %}</a>
                 <br />
                 {% include '_base_position.html' %}
-            </div>
-
-            <div class="col-sm-9 col-sm-offset-3 custom-listMEP">
-            {% block content %}
-                <h1 class="text-center">Members of the European Parliement</h1>
-                <p class="lead text-center">{number} MEP from {country}, members of {party}, working in {delegation} and on {committee}.</p>
-
-                <div class="btn-group" data-toggle="buttons">
-                    <label class="btn btn-default active">
-                        <input type="radio" name="view" id="cards" autocomplete="off" checked>
-                        <span class="glyphicon glyphicon-th"></span>
-                    </label>
-                    <label class="btn btn-default">
-                        <input type="radio" name="view" id="lists" autocomplete="off">
-                        <span class="glyphicon glyphicon-list"></span>
-                    </label>
-                </div>
             {% endblock %}
             </div>
 
+            <div class="col-sm-9 col-sm-offset-3 {% block container-class %}{% endblock %}">
+            {% block content %}
+            <div class="text-danger">This template is empty !</div>
+            {% endblock %}
+            </div>
         </div>
     </div>
 
@@ -75,11 +69,12 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./js/ie10-viewport-bug-workaround.js"></script>
 
+    {% include '_base_search_form_script.html' %}
+
     <script>
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
     })
     </script>
-
 </body>
 </html>
