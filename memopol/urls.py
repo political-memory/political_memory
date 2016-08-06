@@ -11,6 +11,8 @@ from views.group_list import GroupList
 from views.representative_detail import RepresentativeDetail
 from views.representative_list import RepresentativeList
 from views.redirects import RedirectGroupList, RedirectGroupRepresentativeList
+from views.theme_detail import ThemeDetail
+from views.theme_list import ThemeList
 
 import api
 
@@ -83,6 +85,16 @@ urlpatterns = [
         r'^votes/autocomplete/proposal/$',
         ProposalAutocomplete.as_view(),
         name='proposal-autocomplete',
+    ),
+    url(
+        r'^theme/$',
+        ThemeList.as_view(),
+        name='theme-list'
+    ),
+    url(
+        r'^theme/(?P<slug>[-\w]+)/$',
+        ThemeDetail.as_view(),
+        name='theme-detail'
     ),
 
     url(r'^admin/', include(admin.site.urls)),

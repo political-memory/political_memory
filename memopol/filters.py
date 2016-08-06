@@ -11,6 +11,7 @@ from django_filters import FilterSet, MethodFilter, ModelChoiceFilter
 
 from representatives.models import Chamber, Group, Representative
 from representatives_votes.models import Dossier
+from memopol_themes.models import Theme
 
 
 def rep_chamber_filter(qs, value):
@@ -77,3 +78,19 @@ class DossierFilter(FilterSet):
 
         return qs.filter(Q(title__icontains=value) |
                          Q(reference__icontains=value))
+
+
+class ThemeFilter(FilterSet):
+
+    search = MethodFilter(action='search_filter')
+
+    class Meta:
+        model = Theme
+        fields = ['search']
+
+    def search_filter(self, qs, value):
+        if len(value) == 0:
+            return qs
+
+        return qs.filter(Q(name__icontains=value) |
+                         Q(description__icontains=value))

@@ -82,55 +82,86 @@
     <div class="container-fluid main-container">
       
 
-  <h1> Resolution on the Anti-Counterfeiting Trade Agreement (ACTA)</h1>
-  <p>
-    <strong>2010/2935(RSP)</strong>
+  <h1>acta</h1>
+
+  <h2>
+    Description
+
+  </h2>
+  <p class='description'>
+    The Anti-Counterfeiting Trade agreement is a really bad thing, we would like to kill it with fire.
 
   </p>
   <h2>
-    Documents
+    Links
+
+  </h2>
+  <table class='table'>
+
+    
+      <tr>
+        <td>
+          <a class='external' href='http://www.laquadrature.net' target='_blank'>
+              Press release on ACTA from La Quadrature du Net
+          </a>
+        </td>
+        <td>
+          Jan. 1, 2008
+
+        </td>
+      </tr>
+    
+  </table>
+  <h2>
+    Dossiers
 
   </h2>
   <table class='table'>
     <tr>
       <th>
-        Chamber
+        Chambers
       </th>
       <th>
-        Document type
+        Dossier
       </th>
       <th>
-        Title
+        Reference
 
       </th>
     </tr>
     
       <tr>
         <td>
-          <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
+          
+            <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)" title="European Parliament"></span>
+          
         </td>
         <td>
-          <a class='external' href='http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2010/2935(RSP)' target='_blank'>
-            
-              Procedure file
-            
-          </a>
-        </td>
-        <td>
-          <a class='external' href='http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2010/2935(RSP)' target='_blank'>
-            
+          <a href='/votes/dossier/28147/'>
+            Resolution on the Anti-Counterfeiting Trade Agreement (ACTA)
 
           </a>
         </td>
+        <td>2010/2935(RSP)</td>
+
       </tr>
     
   </table>
   <h2>
-    Recommendations
+    Proposals
 
   </h2>
   <table class='table'>
     <tr>
+      <th>
+        Chambers
+      </th>
+      <th>
+        Dossier
+      </th>
+      <th>
+        Reference
+      </th>
       <th>
         Proposal
       </th>
@@ -149,13 +180,26 @@
 
     </tr>
     
+
       <tr>
+        <td>
+          
+            <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)" title="European Parliament"></span>
+          
+        </td>
+        <td>
+          <a href='/votes/dossier/28147/'>
+            Resolution on the Anti-Counterfeiting Trade Agreement (ACTA)
+
+          </a>
+        </td>
+        <td>2010/2935(RSP)</td>
+
         <td>
           RC-B7-0617/2010 - Accord commercial anti-contrefaçon (ACAC) - Considérant X
           <br />
           <small>
             B7-0617/2010
-            Considérant X
 
           </small>
         </td>
@@ -174,13 +218,26 @@
 
       </tr>
     
+
       <tr>
+        <td>
+          
+            <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)" title="European Parliament"></span>
+          
+        </td>
+        <td>
+          <a href='/votes/dossier/28147/'>
+            Resolution on the Anti-Counterfeiting Trade Agreement (ACTA)
+
+          </a>
+        </td>
+        <td>2010/2935(RSP)</td>
+
         <td>
           RC-B7-0617/2010 - Accord commercial anti-contrefaçon (ACAC) - Considérant CC
           <br />
           <small>
             B7-0617/2010
-            Considérant CC
 
           </small>
         </td>
@@ -199,13 +256,26 @@
 
       </tr>
     
+
       <tr>
+        <td>
+          
+            <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)" title="European Parliament"></span>
+          
+        </td>
+        <td>
+          <a href='/votes/dossier/28147/'>
+            Resolution on the Anti-Counterfeiting Trade Agreement (ACTA)
+
+          </a>
+        </td>
+        <td>2010/2935(RSP)</td>
+
         <td>
           RC-B7-0617/2010 - Accord commercial anti-contrefaçon (ACAC) - Résolution
           <br />
           <small>
             B7-0617/2010
-            Résolution
 
           </small>
         </td>
@@ -224,6 +294,30 @@
 
       </tr>
     
+
+  </table>
+  <h2>
+    Positions
+
+  </h2>
+  <table class='table'>
+    <tr>
+      <th>
+        Representative
+      </th>
+      <th>
+        Date
+      </th>
+      <th>
+        Position
+      </th>
+      <th>
+        Link
+
+      </th>
+      
+
+    </tr>
   </table>
 
     </div>

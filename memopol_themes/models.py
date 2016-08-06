@@ -1,12 +1,15 @@
 from django.db import models
 from django.utils.encoding import smart_unicode
 
+from autoslug import AutoSlugField
+
 from representatives_votes.models import Dossier, Proposal
 from representatives_positions.models import Position
 
 
 class Theme(models.Model):
     name = models.CharField(max_length=255, unique=True)
+    slug = AutoSlugField(populate_from='name')
     description = models.TextField()
 
     dossiers = models.ManyToManyField(Dossier, related_name='themes')

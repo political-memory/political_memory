@@ -23200,5 +23200,32 @@
     },
     "model": "representatives_recommendations.recommendation",
     "pk": 47
+},
+{
+    "fields": {
+        "description": "The Anti-Counterfeiting Trade agreement is a really bad thing, we would like to kill it with fire.",
+        "positions": [
+        ],
+        "proposals": [
+            5744, 5745, 5746
+        ],
+        "dossiers": [
+            28147
+        ],
+        "slug": "acta",
+        "name": "acta"
+    },
+    "model": "memopol_themes.theme",
+    "pk": 1
+},
+{
+    "fields": {
+        "theme": 1,
+        "datetime": "2008-01-01",
+        "link": "http://www.laquadrature.net",
+        "title": "Press release on ACTA from La Quadrature du Net"
+    },
+    "model": "memopol_themes.themelink",
+    "pk": 1
 }
 ]
