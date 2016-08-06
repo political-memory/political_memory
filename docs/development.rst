@@ -14,7 +14,7 @@ Quickstart
 
 You can skip the instructions below and just use the quickstart script. To do
 so, first clone the repository, cd into the repository root and source the
-quickstart script:
+quickstart script::
 
     $ git clone https://github.com/political-memory/political_memory.git
     $ cd political_memory
