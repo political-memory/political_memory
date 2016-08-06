@@ -5,6 +5,8 @@
 # Usage: from repo root, `source bin/quickstart.sh`
 #
 
+set -x
+
 REPOROOT=$(dirname $(dirname $0))
 
 # Ensure we're at the root of the memopol repository
