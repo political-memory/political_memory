@@ -5,9 +5,7 @@
     <link rel="icon" type="image/png" href="{{ STATIC_URL }}img/favicon.ico" />
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width" />
-    <title>
-      {% block title %}Home{% endblock %}
-      - The Political Memory of {{ request.site.SITE_NAME }}</title>
+      <title>{% block title %}Home - Political Memory{% endblock %}</title>
     {% load compress %}
     {% load staticfiles %}
     {% compress css %}

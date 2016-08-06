@@ -5,9 +5,7 @@
     <link rel="icon" type="image/png" href="/static/collected/img/favicon.ico" />
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width" />
-    <title>
-      Home
-      - The Political Memory of </title>
+      <title>Home - Political Memory</title>
     
     
     <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.586b8f5e9bff.css" type="text/css" />
