@@ -5,7 +5,7 @@
 # Usage: from repo root, `source bin/quickstart.sh`
 #
 
-set -e
+set -x
 
 REPOROOT=$(dirname $(dirname $0))
 

@@ -12,16 +12,19 @@ virtualenv.
 Quickstart
 ==========
 
-You can skip the instructions below and just use the quickstart script. To do
-so, first clone the repository, cd into the repository root and source the
-quickstart script::
+There is a quickstart script used and tested manually by some of the
+developers. Feel free to try it, but don't worry if it doesn't work for you
+then you can do each install step manually, which is recommended because well
+that's how you will learn most.
+
+Here's how to try it::
 
     $ git clone https://github.com/political-memory/political_memory.git
     $ cd political_memory
     $ source bin/quickstart.sh
 
-If you want more control, you can follow the steps below or have a look at what
-the quickstart script does.
+If you want more control or if it doesn't work for you, then follow the steps
+below or have a look at what the quickstart script does.
 
 Make a virtual environment
 ==========================
