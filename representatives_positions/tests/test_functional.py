@@ -13,13 +13,11 @@ class PositionTest(TestCase):
 
     def setUp(self):
         self.client = Client()
-        self.tags = [u'foo', u'bar']
         self.create_url = reverse('representatives_positions:position-create')
 
         self.mep = Representative.objects.get(pk=160)
 
         self.fixture = {
-            'tags': ','.join(self.tags),
             'datetime': '2015-12-11',
             'text': '%stext' % self.id(),
             'link': 'http://example.com/%slink' % self.id(),
@@ -34,8 +32,6 @@ class PositionTest(TestCase):
         assert response['Location'] == expected
 
         result = Position.objects.get(text='%stext' % self.id())
-        assert list(result.tags.order_by('pk').values_list('name',
-            flat=True)) == self.tags
         assert result.datetime == datetime.date(2015, 12, 11)
         assert result.link == self.fixture['link']
         assert result.representative.pk == self.mep.pk
@@ -73,20 +69,16 @@ class PositionTest(TestCase):
             representative=self.mep
         )
 
-        position.tags.add('%stag' % self.id())
-
         # Trigger irrelevant queries that happen only once ie. constance before
         # testing actual page queries.
         self.client.get(position.get_absolute_url())
-        with self.assertNumQueries(4):
+        with self.assertNumQueries(3):
             # One for position and rep and score
             # One for rep mandates
             # One for rep chamber
-            # One for position tags
             response = self.client.get(position.get_absolute_url())
 
         assert 'Dec. 11, 2015' in response.content
-        assert '%stag' % self.id() in response.content
         assert self.fixture['link'] in response.content
         assert self.fixture['text'] in response.content
         assert self.mep.full_name in response.content

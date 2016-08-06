@@ -1086,80 +1086,11 @@
 },
 {
     "fields": {
-        "name": "acta",
-        "slug": "acta"
-    },
-    "model": "taggit.tag",
-    "pk": 1
-},
-{
-    "fields": {
-        "name": "foo",
-        "slug": "foo"
-    },
-    "model": "taggit.tag",
-    "pk": 2
-},
-{
-    "fields": {
-        "name": "bar",
-        "slug": "bar"
-    },
-    "model": "taggit.tag",
-    "pk": 3
-},
-{
-    "fields": {
         "model": "position",
         "app_label": "representatives_positions"
     },
     "model": "contenttypes.contenttype",
-    "pk": 29
-},
-{
-    "fields": {
-        "tag": 1,
-        "object_id": 1,
-        "content_type": 29
-    },
-    "model": "taggit.taggeditem",
-    "pk": 1
-},
-{
-    "fields": {
-        "tag": 2,
-        "object_id": 1,
-        "content_type": 29
-    },
-    "model": "taggit.taggeditem",
-    "pk": 2
-},
-{
-    "fields": {
-        "tag": 1,
-        "object_id": 3,
-        "content_type": 29
-    },
-    "model": "taggit.taggeditem",
-    "pk": 5
-},
-{
-    "fields": {
-        "tag": 1,
-        "object_id": 2,
-        "content_type": 29
-    },
-    "model": "taggit.taggeditem",
-    "pk": 6
-},
-{
-    "fields": {
-        "tag": 3,
-        "object_id": 2,
-        "content_type": 29
-    },
-    "model": "taggit.taggeditem",
-    "pk": 7
+    "pk": 31
 },
 {
     "fields": {

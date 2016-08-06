@@ -70,10 +70,6 @@
             %a{:href => '{{ position.get_absolute_url }}'}
               =position.text|truncatewords:8
           %td
-            - for tag in position.tags.all
-              %span.label.label-default
-                = tag
-          %td
             %a{:href => '{{ position.link }}'}
               = position.link
 
