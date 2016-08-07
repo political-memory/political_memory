@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<div class=".row">
+    <div class=".col-md-8">
+        <p>
+            Memopol is reachable only in <b>reduced functionality mode</b>.
+            By the way, you could access to
+            <a href="{% url 'representative-list' %}">the list of MEPs</a>.
+        </p>
+        <p>
+            You can help on building the new Memopol by <a href="https://wiki.laquadrature.net/Projects/Memopol/Roadmap">coding, translating, de    signing, funding, etc...</a>.
+        </p>
+        <div class="col-md-4">
+            <div class="panel.panel-default">
+                <div class="panel-body">
+                    <p>
+                        <a href="http://memopol.org">Memopol Blog</a> is available as well as the new
+                        <a href="http://github.com/political-memory/political_memory">
+                            bugtracking system</a>
+                    </p>
+                    <h3>
+                            What is memopol?
+                    </h3>
+                    <p>
+                        Political  Memory is a tool designed by La Quadrature du Net to help
+                        European citizens to reach members of European Parliament (MEPs) and
+                        track their voting records on issues related to fundamental
+                        freedoms online.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
