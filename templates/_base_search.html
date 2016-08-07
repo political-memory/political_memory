@@ -1,11 +1,11 @@
 {% load i18n %}
 
-<form class="form-horizontal" target="{% url "representative-list" %}">
+<form class="form-horizontal" method="GET" action="{% url "representative-list" %}">
     <div class="input-group">
         <label class="sr-only" for="rechercher">{% trans "Search" %}</label>
         <input type="text" class="form-control" name="search" placeholder="{% trans "Search" %}" id="rechercher">
         <span class="input-group-btn">
-            <button class="btn btn-primary" type="button">
+            <button class="btn btn-primary" type="submit">
                 <span class="glyphicon glyphicon-search"></span>
             </button>
         </span>
