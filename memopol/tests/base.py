@@ -42,6 +42,7 @@ class UrlGetTestMixin(object):
 class ResponseDiffMixin(object):
 
     def responsediff_test(self, url, numQueries):
+        self.client.cookies['csrftoken'] = 'csrftoken'
         with self.assertNumQueries(numQueries):
             response = self.client.get(url)
 

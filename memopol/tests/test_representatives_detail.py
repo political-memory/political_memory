@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 from django.test import TestCase
 
-from .base import UrlGetTestMixin
+from .base import UrlGetTestMixin, ResponseDiffMixin
 
 
-class RepresentativeDetailTest(UrlGetTestMixin, TestCase):
+class RepresentativeDetailTest(UrlGetTestMixin, TestCase, ResponseDiffMixin):
     fixtures = ['one_representative']
     url = '/legislature/representative/mary-honeyball-1952-11-12/'
 
@@ -12,7 +12,7 @@ class RepresentativeDetailTest(UrlGetTestMixin, TestCase):
         # Ensure one-time cached queries occur before the actual test
         self.client.get(self.url)
 
-        with self.assertNumQueries(11):
+        with self.assertNumQueries(9):
             """
             - One query for chambers
             - One query for the rep details and foreign key (profile)
@@ -21,9 +21,7 @@ class RepresentativeDetailTest(UrlGetTestMixin, TestCase):
             - One query for reverse relation on emails
             - Three queries for reverse relation on websites (parliament,
               social and other)
-            - One query for reverse relation on votes
             - One query for reverse relation on mandates
-            - One query for reverse relation positions
             """
             self.client.get(self.url)
 
@@ -51,10 +49,24 @@ class RepresentativeDetailTest(UrlGetTestMixin, TestCase):
         self.assertHtmlInResult('Born in Weymouth the 12/11/1952 (F)')
 
     def test_votes_display(self):
-        self.assertExpectedHtmlInResult()
+        self.responsediff_test(self.url + 'votes/', 3)
+        """
+        - One query for chambers
+        - One query for the rep details and foreign key (profile)
+        - One query for reverse relation on votes
+        """
 
     def test_mandates_display(self):
-        self.assertExpectedHtmlInResult()
+        self.responsediff_test(self.url + 'mandates/', 2)
+        """
+        - One query for the rep details and foreign key (profile)
+        - One query for reverse relation on mandates
+        """
 
     def test_positions_display(self):
-        self.assertExpectedHtmlInResult()
+        self.responsediff_test(self.url + 'positions/', 3)
+        """
+        - One query for chambers
+        - One query for the rep details and foreign key (profile)
+        - One query for reverse relation on positions
+        """

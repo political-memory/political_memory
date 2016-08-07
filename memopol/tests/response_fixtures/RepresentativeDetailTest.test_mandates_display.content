@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/static/collected/img/favicon.ico" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+      <title>Home - Political Memory</title>
+    
+    
+    <link rel="stylesheet" href="/static/collected/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/fontawesome/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/libs/flag-icon-css/css/flag-icon.min.css" type="text/css" /><link rel="stylesheet" href="/static/collected/CACHE/css/base.586b8f5e9bff.css" type="text/css" />
+    <script type="text/javascript" src="/static/collected/libs/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="/static/collected/libs/bootstrap/dist/js/bootstrap.js"></script>
+    
+  
+
+
+  </head>
+  <body >
+    <!-- -load memopol_tags cache -->
+
+
+
+
+<div id='header' class='container-fluid'>
+  <a id='logo' href='/'>
+    <img src='/static/collected/images/logo.png' />
+  </a>
+  <h1>
+    <a id='header_banner' href='/'>
+      Political Memory
+    </a>
+  </h1>
+  <p class='organization'>
+    
+
+  </p>
+</div>
+<div id='nav' class='container-fluid'>
+  <ul class='nav'>
+    <li>
+      <a href='/legislature/representative/'>
+        Representatives
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/country/'>
+        Countries
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/chamber/'>
+        Chambers
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/group/'>
+        Parties
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/delegation/'>
+        Delegations
+      </a>
+    </li>
+    <li>
+      <a href='/legislature/group/committee/'>
+        Committees
+      </a>
+    </li>
+    <li>
+      <a href='/theme/'>
+        Themes
+      </a>
+    </li>
+    <li>
+      <a href='/votes/dossier/'>
+        Dossiers
+
+      </a>
+    </li>
+  </ul>
+</div>
+
+    <div class="container-fluid main-container">
+      
+  <div class='row'>
+    
+
+
+
+<div class='representative active'>
+
+  <h1 class='name'>Mary HONEYBALL</h1>
+  <div class='row'>
+    <div class='col-md-4'>
+      <p class='photo'><img src='http://www.europarl.europa.eu/mepphoto/5846.jpg' /></p>
+    </div>
+    <div class='col-md-8'>
+      <table class='table table-condensed detail-view'>
+        <tr class='score'>
+          <th>Score</th>
+          <td>
+            <span class="label label-danger">-7</span>
+          </td>
+        </tr>
+        <tr>
+          <th>Chamber</th>
+          <td><a href='/legislature/representative/chamber/European%20Parliament/'>
+              <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament
+            </a></td>
+        </tr>
+        <tr>
+          <th>Country</th>
+          <td><a href='/legislature/representative/country/United%20Kingdom/'>
+              <span class="flag-icon flag-icon-gb"></span> United Kingdom
+            </a></td>
+        </tr>
+        <tr>
+          <th>Party</th>
+          <td><a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
+              <span class="group-icon" style="background-image: url(/static/collected/images/group-ep-sd.png)"></span> Member of Group of the Progressive Alliance of Socialists and Democrats in the European Parliament
+            </a></td>
+        </tr>
+        <tr>
+          <th>Biography</th>
+          <td>Born in Weymouth the
+            12/11/1952
+            (F)</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+  <div class='row'>
+    
+
+<ul class='nav nav-pills'>
+  <li>
+    <a href='/legislature/representative/mary-honeyball-1952-11-12/'>
+      Contact details
+    </a>
+  </li>
+  <li>
+    <a href='/legislature/representative/mary-honeyball-1952-11-12/votes/'>
+      Votes
+    </a>
+  </li>
+  <li>
+    <a href='/legislature/representative/mary-honeyball-1952-11-12/mandates/'>
+      Mandates
+    </a>
+  </li>
+  <li>
+    <a href='/legislature/representative/mary-honeyball-1952-11-12/positions/'>
+      Public positions
+
+    </a>
+  </li>
+</ul>
+
+
+    <div class='col-md-6'>
+      <h2>Mandates</h2>
+
+      <table class='table table-condensed mandates'>
+        
+          <tr class='mandate'>
+            <td>Substitute</td>
+            <td>
+              <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20Palestine/'>
+                Delegation for relations with Palestine
+                
+              </a>
+            </td>
+            <td>
+              
+                14/07/2014
+              
+            </td>
+            <td>
+              
+                present
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Member</td>
+            <td>
+              <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20South%20Africa/'>
+                Delegation for relations with South Africa
+                
+              </a>
+            </td>
+            <td>
+              
+                14/07/2014
+              
+            </td>
+            <td>
+              
+                present
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Member</td>
+            <td>
+              <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20to%20the%20Parliamentary%20Assembly%20of%20the%20Union%20for%20the%20Mediterranean/'>
+                Delegation to the Parliamentary Assembly of the Union for the Mediterranean
+                
+              </a>
+            </td>
+            <td>
+              
+                14/07/2014
+              
+            </td>
+            <td>
+              
+                present
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Substitute</td>
+            <td>
+              <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Culture%20and%20Education/'>
+                Committee on Culture and Education
+                
+                  CULT
+                
+              </a>
+            </td>
+            <td>
+              
+                08/07/2014
+              
+            </td>
+            <td>
+              
+                present
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Member</td>
+            <td>
+              <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Legal%20Affairs/'>
+                Committee on Legal Affairs
+                
+                  JURI
+                
+              </a>
+            </td>
+            <td>
+              
+                01/07/2014
+              
+            </td>
+            <td>
+              
+                present
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Member</td>
+            <td>
+              <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Women&#39;s%20Rights%20and%20Gender%20Equality/'>
+                Committee on Women&#39;s Rights and Gender Equality
+                
+                  FEMM
+                
+              </a>
+            </td>
+            <td>
+              
+                01/07/2014
+              
+            </td>
+            <td>
+              
+                present
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td></td>
+            <td>
+              <a href='/legislature/representative/country/United%20Kingdom/'>
+                United Kingdom
+                
+                  GB
+                
+              </a>
+            </td>
+            <td>
+              
+                01/07/2014
+              
+            </td>
+            <td>
+              
+                present
+              
+            </td>
+            <td>Labour Party</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Member</td>
+            <td>
+              <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
+                Group of the Progressive Alliance of Socialists and Democrats in the European Parliament
+                
+                  SD
+                
+              </a>
+            </td>
+            <td>
+              
+                01/07/2014
+              
+            </td>
+            <td>
+              
+                present
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Member</td>
+            <td>
+              <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Culture%20and%20Education/'>
+                Committee on Culture and Education
+                
+                  CULT
+                
+              </a>
+            </td>
+            <td>
+              
+                19/01/2012
+              
+            </td>
+            <td>
+              
+                30/06/2014
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Substitute</td>
+            <td>
+              <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Legal%20Affairs/'>
+                Committee on Legal Affairs
+                
+                  JURI
+                
+              </a>
+            </td>
+            <td>
+              
+                19/01/2012
+              
+            </td>
+            <td>
+              
+                30/06/2014
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Member</td>
+            <td>
+              <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Women&#39;s%20Rights%20and%20Gender%20Equality/'>
+                Committee on Women&#39;s Rights and Gender Equality
+                
+                  FEMM
+                
+              </a>
+            </td>
+            <td>
+              
+                19/01/2012
+              
+            </td>
+            <td>
+              
+                30/06/2014
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Substitute</td>
+            <td>
+              <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20for%20relations%20with%20Canada/'>
+                Delegation for relations with Canada
+                
+              </a>
+            </td>
+            <td>
+              
+                16/09/2009
+              
+            </td>
+            <td>
+              
+                30/06/2014
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td></td>
+            <td>
+              <a href='/legislature/representative/country/United%20Kingdom/'>
+                United Kingdom
+                
+                  GB
+                
+              </a>
+            </td>
+            <td>
+              
+                14/07/2009
+              
+            </td>
+            <td>
+              
+                30/06/2014
+              
+            </td>
+            <td>Labour Party</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Member</td>
+            <td>
+              <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>
+                Group of the Progressive Alliance of Socialists and Democrats in the European Parliament
+                
+                  SD
+                
+              </a>
+            </td>
+            <td>
+              
+                14/07/2009
+              
+            </td>
+            <td>
+              
+                30/06/2014
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Substitute</td>
+            <td>
+              <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Legal%20Affairs/'>
+                Committee on Legal Affairs
+                
+                  JURI
+                
+              </a>
+            </td>
+            <td>
+              
+                20/09/2010
+              
+            </td>
+            <td>
+              
+                18/01/2012
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Member</td>
+            <td>
+              <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Culture%20and%20Education/'>
+                Committee on Culture and Education
+                
+                  CULT
+                
+              </a>
+            </td>
+            <td>
+              
+                16/07/2009
+              
+            </td>
+            <td>
+              
+                18/01/2012
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Member</td>
+            <td>
+              <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Women&#39;s%20Rights%20and%20Gender%20Equality/'>
+                Committee on Women&#39;s Rights and Gender Equality
+                
+                  FEMM
+                
+              </a>
+            </td>
+            <td>
+              
+                16/07/2009
+              
+            </td>
+            <td>
+              
+                18/01/2012
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Substitute</td>
+            <td>
+              <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Regional%20Development/'>
+                Committee on Regional Development
+                
+                  REGI
+                
+              </a>
+            </td>
+            <td>
+              
+                16/07/2009
+              
+            </td>
+            <td>
+              
+                19/09/2010
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Substitute</td>
+            <td>
+              <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Culture%20and%20Education/'>
+                Committee on Culture and Education
+                
+                  CULT
+                
+              </a>
+            </td>
+            <td>
+              
+                31/01/2007
+              
+            </td>
+            <td>
+              
+                13/07/2009
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Member</td>
+            <td>
+              <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Industry,%20Research%20and%20Energy/'>
+                Committee on Industry, Research and Energy
+                
+                  ITRE
+                
+              </a>
+            </td>
+            <td>
+              
+                31/01/2007
+              
+            </td>
+            <td>
+              
+                13/07/2009
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Substitute</td>
+            <td>
+              <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Women&#39;s%20Rights%20and%20Gender%20Equality/'>
+                Committee on Women&#39;s Rights and Gender Equality
+                
+                  FEMM
+                
+              </a>
+            </td>
+            <td>
+              
+                31/01/2007
+              
+            </td>
+            <td>
+              
+                13/07/2009
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Member</td>
+            <td>
+              <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20to%20the%20EU-Former%20Yugoslav%20Republic%20of%20Macedonia%20Joint%20Parliamentary%20Committee/'>
+                Delegation to the EU-Former Yugoslav Republic of Macedonia Joint Parliamentary Committee
+                
+              </a>
+            </td>
+            <td>
+              
+                15/09/2004
+              
+            </td>
+            <td>
+              
+                13/07/2009
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Substitute</td>
+            <td>
+              <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20to%20the%20Euro-Mediterranean%20Parliamentary%20Assembly/'>
+                Delegation to the Euro-Mediterranean Parliamentary Assembly
+                
+              </a>
+            </td>
+            <td>
+              
+                15/09/2004
+              
+            </td>
+            <td>
+              
+                13/07/2009
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Substitute</td>
+            <td>
+              <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20to%20the%20EU-Turkey%20Joint%20Parliamentary%20Committee/'>
+                Delegation to the EU-Turkey Joint Parliamentary Committee
+                
+              </a>
+            </td>
+            <td>
+              
+                15/09/2004
+              
+            </td>
+            <td>
+              
+                13/07/2009
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td></td>
+            <td>
+              <a href='/legislature/representative/country/United%20Kingdom/'>
+                United Kingdom
+                
+                  GB
+                
+              </a>
+            </td>
+            <td>
+              
+                20/07/2004
+              
+            </td>
+            <td>
+              
+                13/07/2009
+              
+            </td>
+            <td>Labour Party</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Member</td>
+            <td>
+              <a href='/legislature/representative/group/European%20Parliament/Socialist%20Group%20in%20the%20European%20Parliament/'>
+                Socialist Group in the European Parliament
+                
+                  PSE
+                
+              </a>
+            </td>
+            <td>
+              
+                20/07/2004
+              
+            </td>
+            <td>
+              
+                13/07/2009
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Substitute</td>
+            <td>
+              <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Culture%20and%20Education/'>
+                Committee on Culture and Education
+                
+                  CULT
+                
+              </a>
+            </td>
+            <td>
+              
+                15/01/2007
+              
+            </td>
+            <td>
+              
+                30/01/2007
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Member</td>
+            <td>
+              <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20the%20Environment,%20Public%20Health%20and%20Food%20Safety/'>
+                Committee on the Environment, Public Health and Food Safety
+                
+                  ENVI
+                
+              </a>
+            </td>
+            <td>
+              
+                15/01/2007
+              
+            </td>
+            <td>
+              
+                30/01/2007
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Substitute</td>
+            <td>
+              <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Women&#39;s%20Rights%20and%20Gender%20Equality/'>
+                Committee on Women&#39;s Rights and Gender Equality
+                
+                  FEMM
+                
+              </a>
+            </td>
+            <td>
+              
+                15/01/2007
+              
+            </td>
+            <td>
+              
+                30/01/2007
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Substitute</td>
+            <td>
+              <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Culture%20and%20Education/'>
+                Committee on Culture and Education
+                
+                  CULT
+                
+              </a>
+            </td>
+            <td>
+              
+                21/07/2004
+              
+            </td>
+            <td>
+              
+                14/01/2007
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Member</td>
+            <td>
+              <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20the%20Environment,%20Public%20Health%20and%20Food%20Safety/'>
+                Committee on the Environment, Public Health and Food Safety
+                
+                  ENVI
+                
+              </a>
+            </td>
+            <td>
+              
+                21/07/2004
+              
+            </td>
+            <td>
+              
+                14/01/2007
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Substitute</td>
+            <td>
+              <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Women&#39;s%20Rights%20and%20Gender%20Equality/'>
+                Committee on Women&#39;s Rights and Gender Equality
+                
+                  FEMM
+                
+              </a>
+            </td>
+            <td>
+              
+                21/07/2004
+              
+            </td>
+            <td>
+              
+                14/01/2007
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Member</td>
+            <td>
+              <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Economic%20and%20Monetary%20Affairs/'>
+                Committee on Economic and Monetary Affairs
+                
+                  ECON
+                
+              </a>
+            </td>
+            <td>
+              
+                17/01/2002
+              
+            </td>
+            <td>
+              
+                19/07/2004
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td></td>
+            <td>
+              <a href='/legislature/representative/country/United%20Kingdom/'>
+                United Kingdom
+                
+                  GB
+                
+              </a>
+            </td>
+            <td>
+              
+                17/02/2000
+              
+            </td>
+            <td>
+              
+                19/07/2004
+              
+            </td>
+            <td>Labour Party</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Member</td>
+            <td>
+              <a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Party%20of%20European%20Socialists/'>
+                Group of the Party of European Socialists
+                
+                  PSE
+                
+              </a>
+            </td>
+            <td>
+              
+                17/02/2000
+              
+            </td>
+            <td>
+              
+                19/07/2004
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Member</td>
+            <td>
+              <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20to%20the%20EU-Cyprus%20Joint%20Parliamentary%20Committee/'>
+                Delegation to the EU-Cyprus Joint Parliamentary Committee
+                
+              </a>
+            </td>
+            <td>
+              
+                07/02/2002
+              
+            </td>
+            <td>
+              
+                30/04/2004
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Substitute</td>
+            <td>
+              <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20to%20the%20EU-Malta%20Joint%20Parliamentary%20Committee/'>
+                Delegation to the EU-Malta Joint Parliamentary Committee
+                
+              </a>
+            </td>
+            <td>
+              
+                07/02/2002
+              
+            </td>
+            <td>
+              
+                30/04/2004
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Member</td>
+            <td>
+              <a href='/legislature/representative/delegation/European%20Parliament/Delegation%20to%20the%20EU-Cyprus%20Joint%20Parliamentary%20Committee/'>
+                Delegation to the EU-Cyprus Joint Parliamentary Committee
+                
+              </a>
+            </td>
+            <td>
+              
+                11/04/2000
+              
+            </td>
+            <td>
+              
+                14/01/2002
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+          <tr class='mandate'>
+            <td>Substitute</td>
+            <td>
+              <a href='/legislature/representative/committee/European%20Parliament/Committee%20on%20Employment%20and%20Social%20Affairs/'>
+                Committee on Employment and Social Affairs
+                
+                  EMPL
+                
+              </a>
+            </td>
+            <td>
+              
+                01/03/2000
+              
+            </td>
+            <td>
+              
+                14/01/2002
+              
+            </td>
+            <td>European Parliament</td>
+          </tr>
+        
+      </table>
+    </div>
+  </div>
+
+    </div>
+    
+
+<div id='footer' class='container-fluid'>
+  <div class='license-links'>
+    
+      Memopol is
+      <a href='https://github.com/political-memory/political_memory'>free software</a>
+      released under the terms of the
+      <a href='http://www.gnu.org/licenses/agpl.html'>GNU aGPLV3+</a>
+    
+  </div>
+  <div class='footer-link'>
+    <a href='https://github.com/political-memory/political_memory/issues/new'>Report a bug</a>
+  </div>
+  <div class='footer-link'>
+    <a href='http://www.memopol.org/'>Blog</a>
+  </div>
+  <div class='footer-link'>
+    <a href='http://memopol.readthedocs.io/en/master/'>Documentation</a>
+  </div>
+  <div class='footer-separator'></div>
+  <div class='footer-link'>
+    Developed by
+    <a href='http://www.laquadrature.net/'>La Quadrature du Net</a>
+  </div>
+  <div class='footer-link'>
+    EP data provided by
+    <a href='http://parltrack.euwiki.org/'>Parltrack</a>
+  </div>
+</div>
+
+  </body>
+</html>

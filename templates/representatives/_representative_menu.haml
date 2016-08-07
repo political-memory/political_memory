@@ -1,0 +1,15 @@
+- load i18n
+
+%ul.nav.nav-pills
+  %li
+    %a{href: "{% url 'representative-detail' slug=representative.slug %}"}
+      - trans 'Contact details'
+  %li 
+    %a{href: "{% url 'representative-votes' slug=representative.slug %}"}
+      - trans 'Votes'
+  %li 
+    %a{href: "{% url 'representative-mandates' slug=representative.slug %}"}
+      - trans 'Mandates'
+  %li 
+    %a{href: "{% url 'representative-positions' slug=representative.slug %}"}
+      - trans 'Public positions'
