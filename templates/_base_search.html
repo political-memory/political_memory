@@ -1,11 +1,10 @@
 {% load i18n %}
-
-<form class="form-horizontal" target="{% url "representative-list" %}">
+<form class="form-horizontal  hidden-print" method="GET" action="{% url "representative-list" %}">
     <div class="input-group">
         <label class="sr-only" for="rechercher">{% trans "Search" %}</label>
         <input type="text" class="form-control" name="search" placeholder="{% trans "Search" %}" id="rechercher">
         <span class="input-group-btn">
-            <button class="btn btn-primary" type="button">
+            <button class="btn btn-primary" type="submit">
                 <span class="glyphicon glyphicon-search"></span>
             </button>
         </span>
@@ -24,7 +23,7 @@
         <select class="form-control" id="country">
           <option>{% trans "All" %}</option>
           {% for country in countries %}
-          <option value="{{ country.id }}" data-url="{% url "representative-list" group_kind="country" group=country.name %}">
+          <option value="{{ country.id }}" data-url="{% url "representative-list" %}?country={{ country.pk }}">
             {{ country.name }}
           </option>
           {% endfor %}
@@ -38,7 +37,7 @@
         <select class="form-control" id="party">
           <option>{% trans "All" %}</option>
           {% for party in parties %}
-          <option value="{{ party.pk }}" data-url="{% url "representative-list" group_kind="group" group=party.name %}">
+          <option value="{{ party.pk }}" data-url="{% url "representative-list" %}?group={{ party.pk }}">
             {{ party.name }}
           </option>
           {% endfor %}
@@ -52,7 +51,7 @@
         <select class="form-control" id="delegation">
           <option>{% trans "All" %}</option>
           {% for delegation in delegations %}
-          <option value="{{ delegation.pk }}" data-url="{% url "representative-list" group_kind="delegation" group=delegation.name %}">
+          <option value="{{ delegation.pk }}" data-url="{% url "representative-list" %}?group={{ delegation.pk }}">
             {{ delegation.name }}
           </option>
           {% endfor %}
@@ -66,7 +65,7 @@
         <select class="form-control" id="committee">
           <option>{% trans "All" %}</option>
           {% for commitee in committees %}
-          <option value="{{ commitee.pk }}" data-url="{% url "representative-list" group_kind="commitee" group=commitee.name %}">
+          <option value="{{ commitee.pk }}" data-url="{% url "representative-list" %}?group={{ commitee.pk }}">
             {{ commitee.name }}
           </option>
           {% endfor %}
@@ -82,7 +81,7 @@
 <!-- i don't know what is this list supposed to contain since we already have a 2 click to dossier detail btn -->
 
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#formDossiers" aria-expanded="false" aria-controls="formDossiers">
-  {% trans "Explore the dossiers" %}
+  {% trans "Explore the themes" %}
 </button>
 
 <div class="collapse" id="formDossiers">

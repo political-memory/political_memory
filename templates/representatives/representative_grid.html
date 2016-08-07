@@ -51,23 +51,22 @@
 <br/>
 
 <div class="row">
-{% for representative in object_list %}
+    {% for representative in object_list %}
     <div class="col-xs-12 col-md-4">
         <div class="thumbnail">
-            <a href="{{ representative.get_absolute_url }}" class="custom-thumbnail">
+            <a href="{{ representative.get_absolute_url }}" class="custom-thumbnail custom-invisible">
                 <div class="row">
                     <div class="col-xs-5">
                         <img class="img-responsive" src="{{ representative.photo }}" width="158px">
                         <div class="custom-thumbnail-details">
                             <p>
-                              <!-- Delegation -->
-                              {{ representative.country|country_flag }}<br>
+                                {{ representative.country|country_flag }} {{ representative.country.name }}<br>
                               <!-- Group -->
-                              {{ representative.main_mandate }}<br>
-                              {% comment %}
-                              <!-- ? -->
-                              <span class="glyphicon glyphicon-briefcase "></span> {{ representative. }}
-                              {% endcomment %}
+                                {{ representative.main_mandate }}<br>
+                                {% comment %}
+                                <!-- ? -->
+                                <span class="glyphicon glyphicon-briefcase "></span> {{ representative. }}
+                                {% endcomment %}
                             </p>
                         </div>
                     </div>
@@ -76,17 +75,20 @@
                         <h4 class="text-center">{{ representative.full_name }}</h4>
                         <p class="text-center">
                           {% if representative.country %}
-                            <span class="label label-primary"><span class="glyphicon glyphicon-flag"></span></span>
+                            <a href="{% country_url representative.country %}" title="{{ representative.country.name }}">
+                                {{ representative.country|country_flag }}
+                            </a>
                           {% endif %}
-                          {% if representative.main_mandate %}
-                            <span class="label label-primary"><span class="glyphicon glyphicon-paperclip"></span></span>
+                          {% if representative.chamber %}
+                            <a href="{% chamber_url representative.chamber %}" title="{{ representative.chamber.name }}">
+                                {{ representative.chamber|chamber_icon }}
+                            </a>
                           {% endif %}
-                          {% comment %}
-                          <!-- TODO: what is it ? -->
-                          {% if representative. %}
-                            <span class="label label-primary"><span class="glyphicon glyphicon-briefcase "></span></span>
+                          {% if representative.main_mandate.group %}
+                            <a href="{% group_url representative.main_mandate.group %}" title="{{ representative.main_mandate.group.name }}">
+                                {{ representative.main_mandate.group|group_icon }}
+                            </a>
                           {% endif %}
-                          {% endcomment %}
                         </p>
                         {% comment %} ?
                         <p class="text-center small">
@@ -102,6 +104,8 @@
             </a>
         </div>
     </div>
+    {% empty %}
+    {% trans "No MEPs found !" %}
     {% endfor %}
 </div>
 
