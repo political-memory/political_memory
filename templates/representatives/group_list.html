@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load memopol_tags %}
+
+{% block content %}
+  {% include 'core/blocks/pagination.html' %}
+
+  {% block list %}
+    <table>
+      {% for group in object_list %}
+        <tr>
+            {% if group.kind != 'country' and group.kind != 'chamber' %}
+            <td>
+              <a href="{% chamber_url group.chamber %}">
+                {{ group.chamber|chamber_icon }}
+              </a>
+            </td>
+            {% endif %}
+            <td>
+                <a href="{% group_url group %}">
+                    {{ group.abbreviation }}
+                </a>
+            </td>
+            <td>
+                <a href="{% group_url group %}">
+                    {% if group.kind == 'chamber' %}
+                    {{ group|chamber_icon }}
+                    {% elif group.kind == 'country' %}
+                    {{ group|country_flag }}
+                    {% elif group.kind == 'group' %}
+                    {{ group|group_long_icon }}
+                    {% else %}
+                    {{ group.name }}
+                    {% endif %}
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
+{% endblock %}
