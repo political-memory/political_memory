@@ -7,6 +7,8 @@ from rest_framework import (
     viewsets,
 )
 
+from rql_filter.backend import RQLFilterBackend
+
 from representatives.serializers import (
     ChamberSerializer,
     ConstituencySerializer,
@@ -51,7 +53,8 @@ class RepresentativeViewSet(viewsets.ReadOnlyModelViewSet):
     filter_backends = (
         filters.DjangoFilterBackend,
         filters.SearchFilter,
-        filters.OrderingFilter
+        filters.OrderingFilter,
+        RQLFilterBackend
     )
     filter_fields = {
         'active': ['exact'],
@@ -105,7 +108,8 @@ class MandateViewSet(viewsets.ReadOnlyModelViewSet):
     filter_backends = (
         filters.DjangoFilterBackend,
         filters.SearchFilter,
-        filters.OrderingFilter
+        filters.OrderingFilter,
+        RQLFilterBackend
     )
     filter_fields = {
         'id': ['exact'],
@@ -120,11 +124,19 @@ class ConstituencyViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Constituency.objects.all()
     serializer_class = ConstituencySerializer
 
+    filter_backends = (
+        RQLFilterBackend,
+    )
+
 
 class GroupViewSet(viewsets.ReadOnlyModelViewSet):
     pagination_class = DefaultWebPagination
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+    filter_backends = (
+        RQLFilterBackend,
+    )
 
 
 class ChamberViewSet(viewsets.ReadOnlyModelViewSet):
@@ -132,8 +144,16 @@ class ChamberViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Chamber.objects.all()
     serializer_class = ChamberSerializer
 
+    filter_backends = (
+        RQLFilterBackend,
+    )
+
 
 class CountryViewSet(viewsets.ReadOnlyModelViewSet):
     pagination_class = DefaultWebPagination
     queryset = Country.objects.all()
     serializer_class = CountrySerializer
+
+    filter_backends = (
+        RQLFilterBackend,
+    )

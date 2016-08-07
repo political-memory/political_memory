@@ -19,6 +19,7 @@ setup(
         'celery': 'celery',
         'api': [
             'django-filter>=0.13,<0.14',
+            'django-rql-filter>=0.1.3,<0.2',
             'djangorestframework>=3,<4',
         ],
         'testing': [
