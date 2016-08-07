@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load memopol_tags %}
+
+{% block head %}
+  {{ filter.form.media }}
+{% endblock %}
+
+{% block content %}
+
+  {% block search %}
+    {% url 'theme-list' as action_url %}
+    {% include '_filter_form.html' with action=action_url form=filter.form qs=request.GET.urlencode %}
+  {% endblock %}
+
+  {% if object_list|length == 0 %}
+
+    <div class="no-results">
+        No matching themes found :(
+    </div>
+
+  {% else %}
+
+    {% include 'core/blocks/pagination.html' %}
+
+    <h1>
+      {% trans "Themes" %}
+    </h1>
+    
+    <table>
+      <tr>
+        <th>
+            {% trans "Name" %}
+        </th>
+      </tr>
+
+      {% for theme in object_list %}
+      <tr>
+          <td>
+              <a href="{% url 'theme-detail' theme.slug %}">
+                  {{ theme.name }}
+              </a>
+          </td>
+      </tr>
+      {% endfor %}
+    </table>
+    
+    {% include "core/blocks/pagination.html" %}
+  {% endif %}
+    
+{% endblock %}
