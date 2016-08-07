@@ -88,8 +88,7 @@ def country_flag(country):
     # Enable using groups instead of countries
     code = country.code if hasattr(country, 'code') else country.abbreviation
     return mark_safe(
-        '<span class="flag-icon flag-icon-{code}"></span> {name}'.format(
-            name=country.name,
+        '<span class="flag-icon flag-icon-{code}"></span>'.format(
             code=code.lower()))
 
 
@@ -97,8 +96,8 @@ def country_flag(country):
 def chamber_icon(chamber):
     url = static('images/chamber-%s.png' % cssify(chamber.abbreviation))
     return mark_safe(
-        u'<span class="chamber-icon" style="background-image: url({url})">'
-        u'</span> {name}'.format(name=chamber.name, url=url))
+        u'<span class="chamber-icon" style="background-image: url({url})">&nbsp;'
+        u'</span>'.format(name=chamber.name, url=url))
 
 
 @register.filter
@@ -137,8 +136,8 @@ def group_icon(group):
     url = static('images/group-%s.png' % cssify('%s-%s' % (
         group.chamber.abbreviation, group.abbreviation)))
     return mark_safe(
-        u'<span class="group-icon" style="background-image: url({url})">'
-        u'</span> {name}'.format(url=url, name=group.abbreviation))
+        u'<span class="group-icon" style="background-image: url({url})">&nbsp;'
+        u'</span>'.format(url=url, name=group.abbreviation))
 
 
 @register.filter
