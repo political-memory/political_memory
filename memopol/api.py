@@ -1,5 +1,7 @@
 from rest_framework import routers
 
+from rql_filter.backend import RQLFilterBackend as RQLBackend
+
 from representatives.api import (
     CountryViewSet,
     ChamberViewSet,
@@ -23,18 +25,55 @@ from representatives_recommendations.api import (
 )
 
 
+class RQLCountryViewSet(CountryViewSet):
+    filter_backends = CountryViewSet.filter_backends + [RQLBackend]
+
+
+class RQLChamberViewSet(ChamberViewSet):
+    filter_backends = ChamberViewSet.filter_backends + [RQLBackend]
+
+
+class RQLConstituencyViewSet(ConstituencyViewSet):
+    filter_backends = ConstituencyViewSet.filter_backends + [RQLBackend]
+
+
+class RQLGroupViewSet(GroupViewSet):
+    filter_backends = GroupViewSet.filter_backends + [RQLBackend]
+
+
+class RQLMandateViewSet(MandateViewSet):
+    filter_backends = MandateViewSet.filter_backends + (RQLBackend,)
+
+
+class RQLRepresentativeViewSet(RepresentativeViewSet):
+    filter_backends = RepresentativeViewSet.filter_backends + (RQLBackend,)
+
+
+class RQLDossierViewSet(DossierViewSet):
+    filter_backends = DossierViewSet.filter_backends + (RQLBackend,)
+
+
+class RQLProposalViewSet(ProposalViewSet):
+    filter_backends = ProposalViewSet.filter_backends + (RQLBackend,)
+
+
+class RQLVoteViewSet(VoteViewSet):
+    filter_backends = VoteViewSet.filter_backends + (RQLBackend,)
+
+
 router = routers.DefaultRouter()
 
-router.register('countries', CountryViewSet, 'api-country')
-router.register('chambers', ChamberViewSet, 'api-chamber')
-router.register('constituencies', ConstituencyViewSet, 'api-constituency')
-router.register('dossiers', DossierViewSet, 'api-dossier')
+router.register('countries', RQLCountryViewSet, 'api-country')
+router.register('chambers', RQLChamberViewSet, 'api-chamber')
+router.register('constituencies', RQLConstituencyViewSet, 'api-constituency')
+router.register('dossiers', RQLDossierViewSet, 'api-dossier')
 router.register('dossier_scores', DossierScoreViewSet, 'api-dossierscore')
-router.register('groups', GroupViewSet, 'api-group')
-router.register('mandates', MandateViewSet, 'api-mandate')
-router.register('proposals', ProposalViewSet, 'api-proposal')
+router.register('groups', RQLGroupViewSet, 'api-group')
+router.register('mandates', RQLMandateViewSet, 'api-mandate')
+router.register('proposals', RQLProposalViewSet, 'api-proposal')
 router.register('recommendations', RecommendationViewSet, 'api-recommendation')
-router.register('representatives', RepresentativeViewSet, 'api-representative')
+router.register('representatives', RQLRepresentativeViewSet,
+                'api-representative')
 router.register('scores', RepresentativeScoreViewSet, 'api-score')
 router.register('vote_scores', VoteScoreViewSet, 'api-votescore')
-router.register('votes', VoteViewSet, 'api-vote')
+router.register('votes', RQLVoteViewSet, 'api-vote')

@@ -3,6 +3,8 @@ from rest_framework import (
     viewsets,
 )
 
+from rql_filter.backend import RQLFilterBackend
+
 from representatives.api import DefaultWebPagination
 
 from .models import (
@@ -28,7 +30,8 @@ class DossierScoreViewSet(viewsets.ReadOnlyModelViewSet):
     filter_backends = (
         filters.DjangoFilterBackend,
         filters.SearchFilter,
-        filters.OrderingFilter
+        filters.OrderingFilter,
+        RQLFilterBackend
     )
     filter_fields = {
         'id': ['exact'],
@@ -50,7 +53,8 @@ class RecommendationViewSet(viewsets.ReadOnlyModelViewSet):
     filter_backends = (
         filters.DjangoFilterBackend,
         filters.SearchFilter,
-        filters.OrderingFilter
+        filters.OrderingFilter,
+        RQLFilterBackend
     )
     filter_fields = {
         'id': ['exact'],
@@ -73,7 +77,8 @@ class RepresentativeScoreViewSet(viewsets.ReadOnlyModelViewSet):
     filter_backends = (
         filters.DjangoFilterBackend,
         filters.SearchFilter,
-        filters.OrderingFilter
+        filters.OrderingFilter,
+        RQLFilterBackend
     )
     filter_fields = {
         'representative': ['exact'],
@@ -102,7 +107,8 @@ class VoteScoreViewSet(viewsets.ReadOnlyModelViewSet):
     filter_backends = (
         filters.DjangoFilterBackend,
         filters.SearchFilter,
-        filters.OrderingFilter
+        filters.OrderingFilter,
+        RQLFilterBackend
     )
 
     filter_fields = {
