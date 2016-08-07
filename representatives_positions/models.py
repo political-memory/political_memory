@@ -1,18 +1,16 @@
 from django.db import models
 from django.core.urlresolvers import reverse
 from django.template.defaultfilters import truncatewords
-from taggit.managers import TaggableManager
 from representatives.models import Representative
 
 
 class Position(models.Model):
     representative = models.ForeignKey(Representative,
-        related_name='positions')
+                                       related_name='positions')
     datetime = models.DateField()
     text = models.TextField()
     link = models.URLField(max_length=500)
     published = models.BooleanField(default=False)
-    tags = TaggableManager()
 
     @property
     def short_text(self):
@@ -26,4 +24,4 @@ class Position(models.Model):
 
     def get_absolute_url(self):
         return reverse('representatives_positions:position-detail',
-                args=(self.pk,))
+                       args=(self.pk,))

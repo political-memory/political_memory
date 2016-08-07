@@ -70,7 +70,6 @@ class RepresentativeDetail(RepresentativeViewMixin, generic.DetailView):
         c['votes'] = c['object'].votes.all()
         c['mandates'] = c['object'].mandates.all()
         c['positions'] = c['object'].positions.filter(published=True) \
-            .prefetch_related('tags') \
             .order_by('-datetime', 'pk')
 
         c['position_form'] = PositionForm(

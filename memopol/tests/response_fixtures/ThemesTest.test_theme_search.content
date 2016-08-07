@@ -91,14 +91,9 @@
     
     
 
-<form class='filter-form' action='/votes/dossier/' method='get'>
+<form class='filter-form' action='/theme/' method='get'>
 
-  <div class="form-group has-success"><label class="control-label" for="id_search">Search</label><input class="form-control" id="id_search" name="search" placeholder="Search" title="Filter" type="text" /><span class="help-block">Filter
-</span></div>
-<div class="form-group has-success"><label class="control-label" for="id_chamber">Chamber</label><select class="form-control" id="id_chamber" name="chamber" title="Filter">
-<option value="" selected="selected">---------</option>
-<option value="1">European Parliament [EP]</option>
-</select><span class="help-block">Filter
+  <div class="form-group has-success"><label class="control-label" for="id_search">Search</label><input class="form-control" id="id_search" name="search" placeholder="Search" title="Filter" type="text" value="acta" /><span class="help-block">Filter
 </span></div>
 
   <div class="form-group">
@@ -132,73 +127,27 @@
     </div>
     
     
-      
-  <div class='sorting-block'>
-    Order by :
-
-      
-          
-            <a href='?&sort_by=nb_proposals'>proposals</a>
-          
-          
-             | 
-
-          
-      
-          
-            recommendations
-          
-          
-             | 
-
-          
-      
-          
-            <a href='?&sort_by=reference'>reference</a>
-          
-          
-             | 
-
-          
-      
-          
-            <a href='?&sort_by=title'>title</a>
-          
-          
-      
-      &ndash;
-
-      
-        <a href='?&sort_dir=asc'>ascending</a>
-        | descending
-
-      
-  </div>
-
-
-
-    
     <div class='page-size-block'>
       Number of displayed results :
       12
       (
       
-        <a href='?&paginate_by=12'>12</a>
+        <a href='?search=acta&paginate_by=12'>12</a>
         
           /
         
       
-        <a href='?&paginate_by=24'>24</a>
+        <a href='?search=acta&paginate_by=24'>24</a>
         
           /
         
       
-        <a href='?&paginate_by=48'>48</a>
+        <a href='?search=acta&paginate_by=48'>48</a>
         
           /
         
       
-        <a href='?&paginate_by=96'>96</a>
+        <a href='?search=acta&paginate_by=96'>96</a>
         
       
       )
@@ -209,44 +158,24 @@
 
 
     <h1>
-      Dossiers
+      Themes
 
     </h1>
     <table class='table'>
       <tr>
         <th>
-          Chambers
-        </th>
-        <th>
-          Title
-        </th>
-        <th>
-          Recommendations
-        </th>
-        <th>
-          Proposals
-        </th>
-        <th>
-          Reference
+          Name
 
         </th>
       </tr>
       
         <tr>
           <td>
-            
-              <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)" title="European Parliament"></span>
-            
-          </td>
-          <td>
-            <a href='/votes/dossier/28147/'>
-              Resolution on the Anti-Counterfeiting Trade Agreement (ACTA)
+            <a href='/theme/acta/'>
+              acta
+
             </a>
           </td>
-          <td>3</td>
-          <td>3</td>
-          <td>2010/2935(RSP)</td>
-
         </tr>
       
     </table>
@@ -266,73 +195,27 @@
     </div>
     
     
-      
-  <div class='sorting-block'>
-    Order by :
-
-      
-          
-            <a href='?&sort_by=nb_proposals'>proposals</a>
-          
-          
-             | 
-
-          
-      
-          
-            recommendations
-          
-          
-             | 
-
-          
-      
-          
-            <a href='?&sort_by=reference'>reference</a>
-          
-          
-             | 
-
-          
-      
-          
-            <a href='?&sort_by=title'>title</a>
-          
-          
-      
-      &ndash;
-
-      
-        <a href='?&sort_dir=asc'>ascending</a>
-        | descending
-
-      
-  </div>
-
-
-
-    
     <div class='page-size-block'>
       Number of displayed results :
       12
       (
       
-        <a href='?&paginate_by=12'>12</a>
+        <a href='?search=acta&paginate_by=12'>12</a>
         
           /
         
       
-        <a href='?&paginate_by=24'>24</a>
+        <a href='?search=acta&paginate_by=24'>24</a>
         
           /
         
       
-        <a href='?&paginate_by=48'>48</a>
+        <a href='?search=acta&paginate_by=48'>48</a>
         
           /
         
       
-        <a href='?&paginate_by=96'>96</a>
+        <a href='?search=acta&paginate_by=96'>96</a>
         
       
       )

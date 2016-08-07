@@ -10,6 +10,7 @@ setup(name='political-memory',
     url='http://github.com/political-memory/political_memory/',
     install_requires=[
         'django-autocomplete-light>=3.0,<4.0',
+        'django-autoslug>=1.9,<1.10',
         'django-bootstrap3>=6,<7',
         'django-coffeescript>=0.7,<0.8',
         'django-compressor>=1,<2',

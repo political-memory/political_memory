@@ -8,7 +8,7 @@ from .models import Position
 class PositionForm(forms.ModelForm):
     class Meta:
         model = Position
-        fields = ['tags', 'datetime', 'text', 'link', 'representative']
+        fields = ['datetime', 'text', 'link', 'representative']
         widgets = {
             # Use localization and bootstrap 3
             'datetime': DateWidget(
