@@ -1,0 +1,32 @@
+- extends 'base.html'
+
+- load humanize
+- load memopol_tags
+- load representatives_recommendations_tags
+
+- block head
+  {{ position_form.media }}
+
+- block content
+  .row
+    - include 'representatives/_representative_block.html' with representative=representative
+
+  .row
+    - include 'representatives/_representative_menu.html' with representative=representative
+
+    .col-md-6
+      .positions
+        %h2 Public positions
+
+        %table.table.table-condensed
+          - for position in representative.positions.all
+            %tr.position
+              %td= position.datetime|naturalday:'d/m/Y'
+              %td
+                %a{:href => '{{ position.get_absolute_url }}'}
+                  =position.text|truncatewords:8
+              %td
+                %a{:href => '{{ position.link }}'}
+                  = position.link
+
+        - include 'representatives_positions/_form.html' with form=position_form
