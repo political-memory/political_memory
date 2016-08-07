@@ -156,6 +156,8 @@ class MandateDetailSerializer(MandateSerializer):
 class RepresentativeSerializer(serializers.HyperlinkedModelSerializer):
     contacts = ContactField()
 
+    mandates = MandateDetailSerializer(many=True)
+
     class Meta:
         model = models.Representative
         fields = (
@@ -172,6 +174,7 @@ class RepresentativeSerializer(serializers.HyperlinkedModelSerializer):
             'active',
             'cv',
             'contacts',
+            'mandates'
         )
         extra_kwargs = {
             'url': {'view_name': 'api-representative-detail'},
@@ -179,10 +182,4 @@ class RepresentativeSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class RepresentativeDetailSerializer(RepresentativeSerializer):
-
-    mandates = MandateDetailSerializer(many=True)
-
-    class Meta(RepresentativeSerializer.Meta):
-        fields = RepresentativeSerializer.Meta.fields + (
-            'mandates',
-        )
+    pass
