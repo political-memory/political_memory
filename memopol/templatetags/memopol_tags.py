@@ -180,3 +180,9 @@ def position_icon(position):
             class="fa fa-circle-o vote_abstain" \
             title="abstain" \
             ></i>')
+
+
+@register.filter
+def cast_str(val):
+    return str(val)
+

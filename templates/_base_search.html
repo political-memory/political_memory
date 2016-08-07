@@ -1,4 +1,4 @@
-{% load i18n %}
+{% load i18n memopol_tags %}
 <form class="form-horizontal  hidden-print" method="GET" action="{% url "representative-list" %}">
     <div class="input-group">
         <label class="sr-only" for="rechercher">{% trans "Search" %}</label>
@@ -15,7 +15,7 @@
     {% trans "More search options" %}
 </button>
 
-<div class="collapse" id="formMEP">
+<div {% if not filter.data %}class="collapse"{% endif %} id="formMEP">
   <form id="search-form" class="form-horizontal">
     <div class="form-group">
       <label class="col-sm-3" for="country">{% trans "Country" %}</label>
@@ -23,7 +23,7 @@
         <select class="form-control" id="country">
           <option>{% trans "All" %}</option>
           {% for country in countries %}
-          <option value="{{ country.id }}" data-url="{% url "representative-list" %}?country={{ country.pk }}">
+          <option {% if filter.data.country = country.id|cast_str %}selected{% endif %} value="{{ country.id }}" data-url="{% url "representative-list" %}?country={{ country.pk }}">
             {{ country.name }}
           </option>
           {% endfor %}
@@ -37,7 +37,7 @@
         <select class="form-control" id="party">
           <option>{% trans "All" %}</option>
           {% for party in parties %}
-          <option value="{{ party.pk }}" data-url="{% url "representative-list" %}?group={{ party.pk }}">
+          <option {% if filter.data.party = party.pk|cast_str %}selected{% endif %} value="{{ party.pk }}" data-url="{% url "representative-list" %}?party={{ party.pk }}">
             {{ party.name }}
           </option>
           {% endfor %}
@@ -51,7 +51,7 @@
         <select class="form-control" id="delegation">
           <option>{% trans "All" %}</option>
           {% for delegation in delegations %}
-          <option value="{{ delegation.pk }}" data-url="{% url "representative-list" %}?group={{ delegation.pk }}">
+          <option {% if filter.data.delegation = delegation.pk|cast_str %}selected{% endif %} value="{{ delegation.pk }}" data-url="{% url "representative-list" %}?delegation={{ delegation.pk }}">
             {{ delegation.name }}
           </option>
           {% endfor %}
@@ -65,7 +65,7 @@
         <select class="form-control" id="committee">
           <option>{% trans "All" %}</option>
           {% for commitee in committees %}
-          <option value="{{ commitee.pk }}" data-url="{% url "representative-list" %}?group={{ commitee.pk }}">
+          <option {% if filter.data.committee = commitee.pk|cast_str %}selected{% endif %} value="{{ commitee.pk }}" data-url="{% url "representative-list" %}?committee={{ commitee.pk }}">
             {{ commitee.name }}
           </option>
           {% endfor %}

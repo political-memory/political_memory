@@ -44,6 +44,17 @@ class RepresentativeFilter(FilterSet):
     country = ModelChoiceFilter(queryset=Group.objects.filter(kind='country'),
                                 action=group_filter)
 
+    party = ModelChoiceFilter(queryset=Group.objects.filter(kind='party'),
+                              action=group_filter)
+
+    delegation = ModelChoiceFilter(
+        queryset=Group.objects.filter(kind='delegation'),
+        action=group_filter)
+
+    committee = ModelChoiceFilter(
+        queryset=Group.objects.filter(kind='committee'),
+        action=group_filter)
+
     group = ModelChoiceFilter(queryset=Group.objects.exclude(
                               kind__in=['chamber', 'country']),
                               action=group_filter,
@@ -52,7 +63,7 @@ class RepresentativeFilter(FilterSet):
 
     class Meta:
         model = Representative
-        fields = ['search', 'chamber', 'country']
+        fields = ['search', 'chamber', 'country', 'party', 'delegation', 'committee']
 
     def search_filter(self, qs, value):
         if len(value) == 0:
