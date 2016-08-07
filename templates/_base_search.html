@@ -2,7 +2,7 @@
 <form class="form-horizontal  hidden-print" method="GET" action="{% url "representative-list" %}">
     <div class="input-group">
         <label class="sr-only" for="rechercher">{% trans "Search" %}</label>
-        <input type="text" class="form-control" name="search" placeholder="{% trans "Search" %}" id="rechercher">
+        <input type="text" class="form-control" name="search" placeholder="{% trans "Search" %}" id="rechercher" value="{{ filter.data.search }}">
         <span class="input-group-btn">
             <button class="btn btn-primary" type="submit">
                 <span class="glyphicon glyphicon-search"></span>
