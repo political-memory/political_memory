@@ -54,7 +54,7 @@
     {% for representative in object_list %}
     <div class="col-xs-12 col-md-4">
         <div class="thumbnail">
-            <a href="{{ representative.get_absolute_url }}" class="custom-thumbnail custom-invisible">
+            <a href="{% url "representative-detail" slug=representative.slug %}" class="custom-thumbnail custom-invisible">
                 <div class="row">
                     <div class="col-xs-5">
                         <img class="img-responsive" src="{{ representative.photo }}" width="158px">

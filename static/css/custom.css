@@ -262,6 +262,12 @@ thead th {
 					MEPs
 ***************************************************************/
 
+.dl-horizontal dt {
+    width: 100px;
+}
+.dl-horizontal dd {
+    margin-left: 120px;
+}
 
 iframe {
 	border: none;
@@ -282,6 +288,16 @@ iframe {
     box-shadow: inset 0 -2px 0 #487ED6;
 	border: none;
 }
+
+.thumbnail.mandat-fini {
+  background:#eee;
+}
+
+.thumbnail.mandat-fini hr {
+  border-color:#ddd;
+}
+
+
 
 /***************************************************************
 					Dossiers
