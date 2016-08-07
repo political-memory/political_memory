@@ -1,0 +1,14 @@
+{% block active %}
+  Display :
+  {% if active_only %}
+    current legislature only /
+    <a href="{queries.urlencode}&active_only=0">
+        all data
+    </a>
+  {% else %}
+    <a href="{queries.urlencode}&active_only=1">
+        current legislature only
+    </a>
+    / all data
+  {% endif %}
+{% endblock %}

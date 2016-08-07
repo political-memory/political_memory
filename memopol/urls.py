@@ -20,6 +20,12 @@ admin.autodiscover()
 
 urlpatterns = [
     url(
+        r'^legislature/representative/(?P<group_kind>\w+)/(?P<chamber>.+)/' +
+        r'(?P<group>.+)/$',
+        RedirectGroupRepresentativeList.as_view(),
+        name='representative-list'
+    ),
+    url(
         r'^legislature/representative/(?P<group_kind>\w+)/(?P<group>.+)/$',
         RepresentativeList.as_view(),
         name='representative-list'
