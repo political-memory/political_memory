@@ -22,10 +22,10 @@ class DossierDetailTest(UrlGetTestMixin, TestCase):
             self.client.get(self.url)
 
     def test_title_display(self):
-        self.assertHtmlInResult("<h1 class='text-center'>Dossier Resolution on the Anti-Counterfeiting Trade Agreement (ACTA)</h1>")
+        self.assertHtmlInResult("<h1 class='text-center'>Dossier Resolution on the Anti-Counterfeiting Trade Agreement (ACTA)</h1>")  # noqa
 
     def test_date_display(self):
-        self.assertHtmlInResult("<p class='lead text-center'>Last updated Dec. 27, 2015</p>")
+        self.assertHtmlInResult("<p class='lead text-center'>Last updated Dec. 27, 2015</p>")  # noqa
 
     def test_description_display(self):
         self.assertExpectedHtmlInResult()

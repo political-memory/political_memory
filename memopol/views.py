@@ -6,7 +6,7 @@ from django.utils.http import urlencode
 from core.views import GridListMixin, PaginationMixin, CSVDownloadMixin
 from representatives import views as representatives_views
 from representatives.models import Representative
-from representatives_votes import views as representatives_votes_views
+from representatives_votes import views as votes_views
 from representatives_votes.models import Dossier, Proposal
 from representatives_positions.forms import PositionForm
 from representatives_recommendations.models import ScoredVote
@@ -15,11 +15,13 @@ from representatives_recommendations.models import ScoredVote
 class PaginationFormMixin(PaginationMixin):
     """
     Only add an searchparameters to the context to make it easy to paginate
-    without duplicating the 'page' parameter and keeping the form's GET parameters.
+    without duplicating the 'page' parameter and keeping the form's GET
+    parameters.
     """
     def get_context_data(self, **kwargs):
         c = super(PaginationFormMixin, self).get_context_data(**kwargs)
-        params = [(k,v) for k, v in self.request.GET.iteritems() if k != 'page']
+        params = [(k, v) for k, v in self.request.GET.iteritems()
+                  if k != 'page']
         c['searchparameters'] = urlencode(dict(params))
         return c
 
@@ -28,7 +30,8 @@ class RepresentativeList(CSVDownloadMixin,
                          GridListMixin,
                          PaginationFormMixin,
                          representatives_views.RepresentativeList):
-    queryset = Representative.objects.filter(active=True).select_related('score')
+    queryset = Representative.objects.filter(active=True).select_related(
+        'score')
     csv_name = 'meps.csv'
 
     def get_csv_results(self, context, **kwargs):
@@ -63,8 +66,8 @@ class RepresentativeDetail(representatives_views.RepresentativeDetail):
         qs = super(RepresentativeDetail, self).get_queryset()
         votes = (ScoredVote.objects.filter(
             proposal__in=Proposal.objects.exclude(recommendation=None))
-                 .select_related('proposal__recommendation')
-                 .select_related('proposal__dossier'))
+            .select_related('proposal__recommendation')
+            .select_related('proposal__dossier'))
 
         qs = qs.prefetch_related(models.Prefetch('votes', queryset=votes))
         return qs
@@ -77,7 +80,7 @@ class RepresentativeDetail(representatives_views.RepresentativeDetail):
         return c
 
 
-class DossierList(PaginationFormMixin, representatives_votes_views.DossierList):
+class DossierList(PaginationFormMixin, votes_views.DossierList):
     queryset = Dossier.objects.filter(proposals__recommendation__isnull=False)
 
     def get_queryset(self):
@@ -85,12 +88,12 @@ class DossierList(PaginationFormMixin, representatives_votes_views.DossierList):
         return qs.annotate(votes_count=Count('proposals__votes'))
 
 
-class DossierDetail(representatives_votes_views.DossierDetail):
+class DossierDetail(votes_views.DossierDetail):
 
     def get_context_data(self, **kwargs):
         c = super(DossierDetail, self).get_context_data(**kwargs)
-        c['proposals'] = (c['dossier'].proposals.filter(recommendation__isnull=False)
-                                                .select_related('recommendation'))
+        c['proposals'] = c['dossier'].proposals.filter(
+            recommendation__isnull=False).select_related('recommendation')
 
         # Note: this is a bit of a hack, we feed the RelatedManager with
         # the prefetch_related with a clause, so that representative.votes.all
@@ -101,6 +104,7 @@ class DossierDetail(representatives_votes_views.DossierDetail):
         c['representatives'] = (Representative.objects
                                 .filter(votes__proposal__in=c['proposals'])
                                 .distinct()
-                                .prefetch_related(models.Prefetch('votes', queryset=votes)))
+                                .prefetch_related(models.Prefetch('votes',
+                                                  queryset=votes)))
 
         return c

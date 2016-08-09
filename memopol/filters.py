@@ -63,7 +63,8 @@ class RepresentativeFilter(FilterSet):
 
     class Meta:
         model = Representative
-        fields = ['search', 'chamber', 'country', 'party', 'delegation', 'committee']
+        fields = ['search', 'chamber', 'country', 'party', 'delegation',
+                  'committee']
 
     def search_filter(self, qs, value):
         if len(value) == 0:

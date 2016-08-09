@@ -17,12 +17,12 @@ def regroup_by_age(positions):
                   []]  # This month
     for position in positions:
         index = 0
-        if position.datetime +timedelta(30) >= date.today():
-            index=3
+        if position.datetime + timedelta(30) >= date.today():
+            index = 3
         elif position.datetime + timedelta(180) >= date.today():
-            index=2
+            index = 2
         elif position.datetime + timedelta(365) >= date.today():
-            index=1
+            index = 1
 
         timeframes[index].append(position)
 

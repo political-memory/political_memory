@@ -96,7 +96,7 @@ def country_flag(country):
 def chamber_icon(chamber):
     url = static('images/chamber-%s.png' % cssify(chamber.abbreviation))
     return mark_safe(
-        u'<span class="chamber-icon" style="background-image: url({url})">&nbsp;'
+        u'<span class="chamber-icon" style="background-image: url({url})">'
         u'</span>'.format(name=chamber.name, url=url))
 
 
@@ -185,4 +185,3 @@ def position_icon(position):
 @register.filter
 def cast_str(val):
     return str(val)
-

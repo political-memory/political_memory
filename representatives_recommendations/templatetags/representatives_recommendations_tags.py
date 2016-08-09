@@ -26,6 +26,7 @@ def vote_glyphicon(position):
     else:
         return ''
 
+
 @register.filter
 def vote_icon_color(position, recommendation):
     if recommendation:
@@ -35,4 +36,3 @@ def vote_icon_color(position, recommendation):
             return 'text-danger'
     else:
         return ''
-
