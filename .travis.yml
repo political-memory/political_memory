@@ -34,7 +34,7 @@ deploy:
     secure: atDq1NEkHXOsV2gZKeXAIn+PvbL3jduz3WK1qIs7BSHyNbrZMT1OUmvoXXrM8+i5eqW3TNsvp23w0RuD06wxSjHkPl+ZCEXP1Ao98p85UZNCgixxiwZHEhL6Amz5vqueGhv+47VOIKNgNFb9NAtRrWyIdA9xDUiK2oWkMSDmHas=
   app: v3
   domain: memopol
-  deployment_branch: v3laux
+  deployment_branch: v3
   on:
     repo: political-memory/political_memory
-    branch: v3laux
+    branch: v3
