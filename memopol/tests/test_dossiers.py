@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import pytest
+
 from django.test import TestCase
 
 from representatives_votes.models import Dossier
@@ -10,6 +12,7 @@ from .base import ResponseDiffMixin
 class DossiersTest(ResponseDiffMixin, TestCase):
     fixtures = ['smaller_sample.json']
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_dossier_list(self):
         # session setup
         self.client.get('/votes/dossier/')
@@ -23,6 +26,7 @@ class DossiersTest(ResponseDiffMixin, TestCase):
         # 1 query for document chambers
         self.responsediff_test('/votes/dossier/', 7)
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_dossier_search(self):
         # session setup
         self.client.get('/votes/dossier/')
@@ -37,6 +41,7 @@ class DossiersTest(ResponseDiffMixin, TestCase):
         q = 'acta'
         self.responsediff_test('/votes/dossier/?search=%s' % q, 7)
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_dossier_search_noresults(self):
         # session setup
         self.client.get('/votes/dossier/')
@@ -47,6 +52,7 @@ class DossiersTest(ResponseDiffMixin, TestCase):
         q = 'no-dossier-will-have-that-title-ever'
         self.responsediff_test('/votes/dossier/?search=%s' % q, 2)
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_dossier_sorting(self):
         # session setup
         self.client.get('/votes/dossier/?sort_by=title&sort_dir=desc')
@@ -60,6 +66,7 @@ class DossiersTest(ResponseDiffMixin, TestCase):
         # 1 query for document chambers
         self.responsediff_test('/votes/dossier/', 7)
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_dossier_detail(self):
         # Get 1st dossier in dataset
         dossier = Dossier.objects.order_by('pk')[0]

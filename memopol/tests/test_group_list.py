@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import pytest
+
 from django.test import TestCase
 
 from .base import ResponseDiffMixin
@@ -16,41 +18,49 @@ class GroupListTest(ResponseDiffMixin, TestCase):
 
         self.responsediff_test(url, numQueries)
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_chambers(self):
         # 1 query for chambers
         # 1 query for pagination
         self.group_test('chamber', 1, 2)
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_country(self):
         # 1 query for countries
         # 1 query for pagination
         self.group_test('country', 1, 2)
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_active_parties(self):
         # 1 query for political groups
         # 1 query for pagination
         self.group_test('group', 1, 2)
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_all_parties(self):
         # 1 query for political groups
         # 1 query for pagination
         self.group_test('group', 0, 2)
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_active_delegations(self):
         # 1 query for delegations
         # 1 query for pagination
         self.group_test('delegation', 1, 2)
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_all_delegations(self):
         # 1 query for delegations
         # 1 query for pagination
         self.group_test('delegation', 0, 2)
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_active_committees(self):
         # 1 query for committees
         # 1 query for pagination
         self.group_test('committee', 1, 2)
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_all_committees(self):
         # 1 query for committees
         # 1 query for pagination

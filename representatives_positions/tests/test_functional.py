@@ -1,5 +1,6 @@
 import datetime
 import copy
+import pytest
 
 from django.core.urlresolvers import reverse
 from django.test import TestCase, Client
@@ -37,6 +38,7 @@ class PositionTest(TestCase):
         assert result.representative.pk == self.mep.pk
         assert result.published is False
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_position_publishing(self):
         response = self.client.post(self.create_url, self.fixture)
         assert response.status_code == 302
@@ -51,6 +53,7 @@ class PositionTest(TestCase):
         get_response = self.client.get(position.get_absolute_url())
         assert get_response.status_code == 200
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_create_position_without_field(self):
         for key in self.fixture.keys():
             fixture = copy.copy(self.fixture)
@@ -60,6 +63,7 @@ class PositionTest(TestCase):
             assert response.context['form'].is_valid() is False, \
                 'Could submit form without %s' % key
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_position_detail(self):
         position = Position.objects.create(
             published=True,

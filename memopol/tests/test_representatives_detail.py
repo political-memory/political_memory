@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+
+import pytest
+
 from django.test import TestCase
 
 from .base import UrlGetTestMixin
@@ -8,6 +11,7 @@ class RepresentativeDetailTest(UrlGetTestMixin, TestCase):
     fixtures = ['one_representative']
     url = '/legislature/representative/mary-honeyball-1952-11-12/'
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_num_queries(self):
         # Ensure one-time cached queries occur before the actual test
         self.client.get(self.url)
@@ -34,10 +38,12 @@ class RepresentativeDetailTest(UrlGetTestMixin, TestCase):
     def test_score_display(self):
         self.assertExpectedHtmlInResult()
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_country_display(self):
         self.assertHtmlInResult(
             '<span class="flag-icon flag-icon-gb"></span> United Kingdom')
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_current_mandate_display(self):
         expected = ''.join((
             "<a href='/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/'>",  # noqa
@@ -50,11 +56,14 @@ class RepresentativeDetailTest(UrlGetTestMixin, TestCase):
     def test_biography_display(self):
         self.assertHtmlInResult('Born in Weymouth the 12/11/1952 (F)')
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_votes_display(self):
         self.assertExpectedHtmlInResult()
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_mandates_display(self):
         self.assertExpectedHtmlInResult()
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_positions_display(self):
         self.assertExpectedHtmlInResult()

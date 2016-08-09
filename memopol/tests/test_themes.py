@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import pytest
+
 from django.test import TestCase
 
 from memopol_themes.models import Theme
@@ -10,6 +12,7 @@ from .base import ResponseDiffMixin
 class ThemesTest(ResponseDiffMixin, TestCase):
     fixtures = ['smaller_sample.json']
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_theme_list(self):
         # session setup
         self.client.get('/theme/')
@@ -18,6 +21,7 @@ class ThemesTest(ResponseDiffMixin, TestCase):
         # 1 query for themes
         self.responsediff_test('/theme/', 2)
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_theme_search(self):
         # session setup
         self.client.get('/theme/')
@@ -27,6 +31,7 @@ class ThemesTest(ResponseDiffMixin, TestCase):
         q = 'acta'
         self.responsediff_test('/theme/?search=%s' % q, 2)
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_theme_search_noresults(self):
         # session setup
         self.client.get('/theme/')
@@ -36,6 +41,7 @@ class ThemesTest(ResponseDiffMixin, TestCase):
         q = 'no-theme-will-have-that-title-ever'
         self.responsediff_test('/theme/?search=%s' % q, 1)
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_theme_detail(self):
         # Get 1st theme in dataset
         theme = Theme.objects.order_by('pk')[0]

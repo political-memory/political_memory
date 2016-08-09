@@ -1,3 +1,5 @@
+import pytest
+
 from django.test import TestCase
 
 from .base import UrlGetTestMixin
@@ -7,6 +9,7 @@ class DossiersListTest(UrlGetTestMixin, TestCase):
     fixtures = ['smaller_sample.json']
     url = '/votes/dossier/'
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_num_queries(self):
         """
         1) fetch the total dossiers count for the paginator
@@ -27,5 +30,6 @@ class DossiersListTest(UrlGetTestMixin, TestCase):
     def test_dossier_age(self):
         self.assertHtmlInResult('<p class="text-center">Last updated Dec. 27, 2015</p>')  # noqa
 
+    @pytest.mark.skip(reason="pending design v3 migration")
     def test_dossier_votes(self):
         self.assertHtmlInResult('<span class="badge">106</span>')
