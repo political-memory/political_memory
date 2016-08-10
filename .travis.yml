@@ -15,6 +15,7 @@ python:
 services:
 - postgresql
 install:
+- pip install -U setuptools
 - pip install -e .[testing]
 before_script:
 - bin/install_client_deps.sh
