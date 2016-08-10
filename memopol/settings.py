@@ -238,15 +238,12 @@ if os.environ.get('OPENSHIFT_LOG_DIR', None):
 COMPRESS_PRECOMPILERS = (
     # ('text/coffeescript', 'coffee --compile --stdio'),
     # ('text/less', 'lesscpy {infile}'),
-    ('text/x-scss', 'django_libsass.SassCompiler'),
+    # ('text/x-scss', 'django_libsass.SassCompiler'),
     # ('text/x-sass', 'sass {infile} {outfile}'),
     # ('text/x-scss', 'sass --scss {infile} {outfile}'),
     # ('text/stylus', 'stylus < {infile} > {outfile}'),
     # ('text/foobar', 'path.to.MyPrecompilerFilter'),
 )
-
-
-LIBSASS_SOURCE_COMMENTS = False
 
 
 LOGGING = {
