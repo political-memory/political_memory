@@ -38,7 +38,7 @@ setup(name='political-memory',
         'testing': [
             'codecov>=2,<3',
             'flake8>=2,<3',
-            'django-responsediff>=0.6,<0.7',
+            'django-responsediff>=0.7,<0.8',
             'pep8>=1,<2',
             'pytest>=2,<3',
             'pytest-django>=2,<3',
