@@ -9,7 +9,7 @@ setup(name='political-memory',
     author_email='cortex@worlddomination.be',
     url='http://github.com/political-memory/political_memory/',
     install_requires=[
-        'django-autocomplete-light>=3.0,<4.0',
+        'django-autocomplete-light==3.1.6',
         'django-autoslug>=1.9,<1.10',
         'django-bootstrap3>=6,<7',
         'django-coffeescript>=0.7,<0.8',
