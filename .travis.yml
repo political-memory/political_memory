@@ -16,6 +16,7 @@ services:
 - postgresql
 install:
 - pip install -U setuptools
+- pip install git+https://github.com/njoyard/django-responsediff.git@fix-selectors-encoding
 - pip install -e .[testing]
 before_script:
 - bin/install_client_deps.sh
