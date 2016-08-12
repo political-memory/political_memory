@@ -28,6 +28,7 @@ class RepresentativeList(CSVDownloadMixin, GridListMixin, PaginationMixin,
         c = super(RepresentativeList, self).get_context_data(**kwargs)
 
         c['filter'] = self.current_filter
+        c['view'] = 'representative_list'
         c['object_list'] = [
             self.add_representative_country_and_main_mandate(r)
             for r in c['object_list']

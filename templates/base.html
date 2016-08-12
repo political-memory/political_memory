@@ -46,9 +46,11 @@
                 {% endcache %}
                 <hr class="hidden-xs"/>
                 <a href="{% url "representative-list" %}" class="btn btn-primary btn-block">
-                  {% trans "Find a representative" %}</a>
+                  {% trans "Check out all representatives" %}</a>
                 <a href="{% url "theme-list" %}" class="btn btn-primary btn-block">
                   {% trans "Explore themes" %}</a>
+                <a href="{% url "dossier-list" %}" class="btn btn-primary btn-block">
+                  {% trans "Browse all dossiers" %}</a>
                 <br />
             {% endblock %}
             </div>

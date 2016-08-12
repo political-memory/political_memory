@@ -1,8 +1,8 @@
 {% load i18n memopol_tags %}
 <form class="form-horizontal  hidden-print" method="GET" action="{% url "representative-list" %}">
     <div class="input-group">
-        <label class="sr-only" for="rechercher">{% trans "Search" %}</label>
-        <input type="text" class="form-control" name="search" placeholder="{% trans "Search" %}" id="rechercher" value="{{ filter.data.search }}">
+        <label class="sr-only" for="search">{% trans "Search for representatives" %}</label>
+        <input type="text" class="form-control" name="search" placeholder="{% trans "Search for representatives" %}" id="search" value="{{ filter.data.search }}">
         <span class="input-group-btn">
             <button class="btn btn-primary" type="submit">
                 <span class="glyphicon glyphicon-search"></span>
@@ -11,93 +11,132 @@
     </div>
 </form>
 
-<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#formMEP" aria-expanded="false" aria-controls="formMEP">
+<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#search-options" aria-expanded="false" aria-controls="search-options">
     {% trans "More search options" %}
 </button>
 
-<div {% if not filter.data %}class="collapse"{% endif %} id="formMEP">
-  <form id="search-form" class="form-horizontal">
-    <div class="form-group">
-      <label class="col-sm-3" for="country">{% trans "Country" %}</label>
-      <div class="col-sm-9">
-        <select class="form-control" id="country">
-          <option>{% trans "All" %}</option>
-          {% for country in countries %}
-          <option {% if filter.data.country = country.id|cast_str %}selected{% endif %} value="{{ country.id }}" data-url="{% url "representative-list" %}?country={{ country.pk }}">
-            {{ country.name }}
-          </option>
-          {% endfor %}
-        </select>
-      </div>
-    </div>
+<div {% if filter.data %}{% else %}class="collapse"{% endif %} id="search-options">
 
-    <div class="form-group">
-      <label class="col-sm-3" for="party">{% trans "Party" %}</label>
-      <div class="col-sm-9">
-        <select class="form-control" id="party">
-          <option>{% trans "All" %}</option>
-          {% for party in parties %}
-          <option {% if filter.data.party = party.pk|cast_str %}selected{% endif %} value="{{ party.pk }}" data-url="{% url "representative-list" %}?party={{ party.pk }}">
-            {{ party.name }}
-          </option>
-          {% endfor %}
-        </select>
-      </div>
-    </div>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#form-rep" aria-expanded="false" aria-controls="form-rep">
+      {% trans "Find a representative" %}
+  </button>
 
-    <div class="form-group">
-      <label class="col-sm-3" for="delegation">Delegation</label>
-      <div class="col-sm-9">
-        <select class="form-control" id="delegation">
-          <option>{% trans "All" %}</option>
-          {% for delegation in delegations %}
-          <option {% if filter.data.delegation = delegation.pk|cast_str %}selected{% endif %} value="{{ delegation.pk }}" data-url="{% url "representative-list" %}?delegation={{ delegation.pk }}">
-            {{ delegation.name }}
-          </option>
-          {% endfor %}
-        </select>
-      </div>
-    </div>
+  <div {% if view != 'representative_list' %}class="collapse"{% endif %} id="form-rep">
 
-    <div class="form-group">
-      <label class="col-sm-3" for="committee">Committee</label>
-      <div class="col-sm-9">
-        <select class="form-control" id="committee">
-          <option>{% trans "All" %}</option>
-          {% for commitee in committees %}
-          <option {% if filter.data.committee = commitee.pk|cast_str %}selected{% endif %} value="{{ commitee.pk }}" data-url="{% url "representative-list" %}?committee={{ commitee.pk }}">
-            {{ commitee.name }}
-          </option>
-          {% endfor %}
-        </select>
+    <form id="rep-search-form" class="form-horizontal" method="GET" action="{% url "representative-list" %}">
+      <div class="form-group">
+        <label class="col-sm-3" for="search-rep">{% trans "Name" %}</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" name="search" id="search-rep" value="{{ filter.data.search }}">
+        </div>
       </div>
-    </div>
 
-    {% comment %}<button type="submit" class="btn btn-default">{% trans "Search" %}</button>{% endcomment %}
-  </form>
+      <div class="form-group">
+        <label class="col-sm-3" for="chamber-rep">{% trans "Chamber" %}</label>
+        <div class="col-sm-9">
+          <select class="form-control" id="chamber-rep" name="chamber">
+            <option value="">{% trans "All" %}</option>
+            {% for chamber in chambers %}
+            <option {% if filter.data.chamber = chamber.id|cast_str %}selected{% endif %} value="{{ chamber.id }}">
+              {{ chamber.name }}
+            </option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3" for="country">{% trans "Country" %}</label>
+        <div class="col-sm-9">
+          <select class="form-control" id="country" name="country">
+            <option value="">{% trans "All" %}</option>
+            {% for country in countries %}
+            <option {% if filter.data.country = country.id|cast_str %}selected{% endif %} value="{{ country.id }}">
+              {% if country.abbreviation %}{{ country.abbreviation }} &ndash;{% endif %}
+              {{ country.name }}
+            </option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3" for="party">{% trans "Party" %}</label>
+        <div class="col-sm-9">
+          <select class="form-control" id="party" name="party">
+            <option value="">{% trans "All" %}</option>
+            {% for party in parties %}
+            <option {% if filter.data.party = party.pk|cast_str %}selected{% endif %} value="{{ party.pk }}">
+              {% if party.abbreviation %}{{ party.abbreviation }} &ndash;{% endif %}
+              {{ party.name }}
+            </option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3" for="committee">{% trans "Committee" %}</label>
+        <div class="col-sm-9">
+          <select class="form-control" id="committee" name="committee">
+            <option value="">{% trans "All" %}</option>
+            {% for committee in committees %}
+            <option {% if filter.data.committee = committee.pk|cast_str %}selected{% endif %} value="{{ committee.pk }}" data-url="{% url "representative-list" %}?committee={{ committee.pk }}">
+              {% if committee.abbreviation %}{{ committee.abbreviation }} &ndash;{% endif %}
+              {{ committee.name }}
+            </option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3" for="delegation">{% trans "Delegation" %}</label>
+        <div class="col-sm-9">
+          <select class="form-control" id="delegation" name="delegation">
+            <option value="">{% trans "All" %}</option>
+            {% for delegation in delegations %}
+            <option {% if filter.data.delegation = delegation.pk|cast_str %}selected{% endif %} value="{{ delegation.pk }}" data-url="{% url "representative-list" %}?delegation={{ delegation.pk }}">
+              {{ delegation.name }}
+            </option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-default">{% trans "Search" %}</button>
+    </form>
+  </div>
+
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#form-dossier" aria-expanded="false" aria-controls="form-dossier">
+      {% trans "Find a dossier" %}
+  </button>
+
+  <div {% if view != 'dossier_list' %}class="collapse"{% endif %} id="form-dossier">
+    <form id="dossier-search-form" class="form-horizontal" method="GET" action="{% url "dossier-list" %}">
+      <div class="form-group">
+        <label class="col-sm-3" for="search-dossier">{% trans "Name" %}</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" name="search" id="search-dossier" value="{{ filter.data.search }}">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3" for="chamber-dossier">{% trans "Chamber" %}</label>
+        <div class="col-sm-9">
+          <select class="form-control" name="chamber" id="chamber-dossier">
+            <option value="">{% trans "All" %}</option>
+            {% for chamber in chambers %}
+            <option {% if filter.data.chamber = chamber.id|cast_str %}selected{% endif %} value="{{ chamber.id }}">
+              {{ chamber.name }}
+            </option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-default">{% trans "Search" %}</button>
+    </form>
+  </div>
+
 </div>
-
-{% comment %}
-<!-- i don't know what is this list supposed to contain since we already have a 2 click to dossier detail btn -->
-
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#formDossiers" aria-expanded="false" aria-controls="formDossiers">
-  {% trans "Explore the themes" %}
-</button>
-
-<div class="collapse" id="formDossiers">
-  <form class="form-horizontal">
-
-    <div class="form-group">
-      <div class="col-sm-12">
-        <select class="form-control" id="dossiers">
-          <option>All</option>
-          <option>Personal data protection: processing of data for the purposes of prevention, investigation, detection or prosecution of criminal offences or execution of criminal penalties, and free movement of data </option>
-          <option>ACTA </option>
-          <option>Personal data protection: processing and free movement of data </option>
-        </select>
-      </div>
-    </div>
-    <button type="submit" class="btn btn-default">Search</button>
-  </form>
-</div>
-{% endcomment %}

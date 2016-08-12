@@ -43,5 +43,6 @@ class DossierList(PaginationMixin, SortMixin, generic.ListView):
 
     def get_context_data(self, **kwargs):
         c = super(DossierList, self).get_context_data(**kwargs)
+        c['view'] = 'dossier_list'
         c['filter'] = self.current_filter
         return c

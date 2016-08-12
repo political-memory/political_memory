@@ -1,4 +1,4 @@
-from representatives.models import Group
+from representatives.models import Chamber, Group
 
 
 def search_form_options(request):
@@ -6,6 +6,7 @@ def search_form_options(request):
     # Note: Those queries needs to be eval in the template so that we can cache
     # it efficiently
 
+    d['chambers'] = Chamber.objects.all()
     d['countries'] = Group.objects.filter(kind='country')
     d['parties'] = Group.objects.filter(kind='group')
     d['delegations'] = Group.objects.filter(kind='delegation')
