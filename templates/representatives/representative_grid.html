@@ -8,7 +8,7 @@
 {% block content %}
 <h1 class="text-center">{% trans "Representatives" %}</h1>
 <p class="lead text-center">
-{{ paginator.count }} {% trans "representatives" %}{% if search.country %} {% trans "from" %} {{ search.country }}{% endif %}{% if search.group %}, {% trans "members of" %} {{ search.group }}{% endif %}{% if search.delegation %}, {% trans "working in" %} {{ search.delegation }}{% endif %}{% if search.commitee %}, {% trans "on" %} {{ search.commitee }}{% endif %}.
+  Found {{ paginator.count }} {% trans "representatives" %}.
 </p>
 
 <div class="row">
