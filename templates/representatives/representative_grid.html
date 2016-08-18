@@ -12,9 +12,9 @@
 </p>
 
 <div class="row">
-    <a href="?{{ searchparameters }}&csv" class="btn btn-default">
-      <span class="glyphicon glyphicon-file"> {% trans "Download as CSV." %}</span>
-    </a>
+  <a href="?{{ searchparameters }}&csv" class="btn btn-default">
+    <span class="glyphicon glyphicon-file"> {% trans "Download as CSV." %}</span>
+  </a>
 
   {% comment %}
   <!-- TODO: layout & ordering -->
@@ -48,65 +48,50 @@
   {% endcomment %}
 </div>
 
-<br/>
-
 <div class="row">
-    {% for representative in object_list %}
-    <div class="col-xs-12 col-md-4">
-        <div class="thumbnail">
-            <a href="{% url "representative-detail" slug=representative.slug %}" class="custom-thumbnail custom-invisible">
-                <div class="row">
-                    <div class="col-xs-5">
-                        <img class="img-responsive" src="{{ representative.photo }}" width="158px">
-                        <div class="custom-thumbnail-details">
-                            <p>
-                                {{ representative.country|country_flag }} {{ representative.country.name }}<br>
-                              <!-- Group -->
-                                {{ representative.main_mandate }}<br>
-                                {% comment %}
-                                <!-- ? -->
-                                <span class="glyphicon glyphicon-briefcase "></span> {{ representative. }}
-                                {% endcomment %}
-                            </p>
-                        </div>
-                    </div>
+  {% for representative in object_list %}
+  <div class="col-xs-12 col-md-4 representative-card">
+    <div class="thumbnail">
+      <a href="{% url 'representative-detail' slug=representative.slug %}" class="custom-thumbnail custom-invisible">
+        <div class="row">
+          <div class="col-xs-5">
+            <img class="img-responsive" src="{{ representative.photo }}" width="158">
+            <div class="custom-thumbnail-details">
+              {% if representative.country %}
+              <div class="icon-badge-detail">{{ representative.country|country_flag }} {{ representative.country.name }}</div>
+              {% endif %}
+              {% if representative.chamber %}
+              <div class="icon-badge-detail">{{ representative.chamber|chamber_icon }} {{ representative.chamber.name }}</div>
+              {% endif %}
+              {% if representative.main_mandate.group %}
+              <div class="icon-badge-detail">{{ representative.main_mandate.group|group_icon }} {{ representative.main_mandate.group.abbreviation }}</div>
+              {% endif %}
+            </div>
+          </div>
 
-                    <div class="col-xs-7">
-                        <h4 class="text-center">{{ representative.full_name }}</h4>
-                        <p class="text-center">
-                          {% if representative.country %}
-                            <a href="{% country_url representative.country %}" title="{{ representative.country.name }}">
-                                {{ representative.country|country_flag }}
-                            </a>
-                          {% endif %}
-                          {% if representative.chamber %}
-                            <a href="{% chamber_url representative.chamber %}" title="{{ representative.chamber.name }}">
-                                {{ representative.chamber|chamber_icon }}
-                            </a>
-                          {% endif %}
-                          {% if representative.main_mandate.group %}
-                            <a href="{% group_url representative.main_mandate.group %}" title="{{ representative.main_mandate.group.name }}">
-                                {{ representative.main_mandate.group|group_icon }}
-                            </a>
-                          {% endif %}
-                        </p>
-                        {% comment %} ?
-                        <p class="text-center small">
-                            <span class="label label-primary"><span class="glyphicon glyphicon-pushpin "></span></span>
-                            <span class="label label-primary"><span class="glyphicon glyphicon-pushpin "></span></span>
-                            <span class="label label-primary"><span class="glyphicon glyphicon-pushpin "></span></span>
-                        </p>
-                        {% endcomment %}
-                        <p class="text-right"><span class="badge">{{ representative.score.score }}</span></p>
-                    </div>
+          <div class="col-xs-7">
+            <h4 class="text-center">{{ representative.full_name }}</h4>
+            <p class="text-center">
+              {% if representative.country %}
+              <a class="icon-badge" href="{% country_url representative.country %}" title="{{ representative.country.name }}">{{ representative.country|country_flag }}</a>
+              {% endif %}
+              {% if representative.chamber %}
+              <a class="icon-badge" href="{% chamber_url representative.chamber %}" title="{{ representative.chamber.name }}">{{ representative.chamber|chamber_icon }}</a>
+              {% endif %}
+              {% if representative.main_mandate.group %}
+              <a class="icon-badge" href="{% group_url representative.main_mandate.group %}" title="{{ representative.main_mandate.group.name }}">{{ representative.main_mandate.group|group_icon }}</a>
+              {% endif %}
+            </p>
+            <p class="text-right"><span class="badge">{{ representative.score.score }}</span></p>
+          </div>
 
-                </div>
-            </a>
         </div>
+      </a>
     </div>
-    {% empty %}
+  </div>
+  {% empty %}
     {% trans "No representatives found !" %}
-    {% endfor %}
+  {% endfor %}
 </div>
 
 {% include "pagination.html" %}

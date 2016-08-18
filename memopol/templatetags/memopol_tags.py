@@ -136,7 +136,7 @@ def group_icon(group):
     url = static('images/group-%s.png' % cssify('%s-%s' % (
         group.chamber.abbreviation, group.abbreviation)))
     return mark_safe(
-        u'<span class="group-icon" style="background-image: url({url})">&nbsp;'
+        u'<span class="group-icon" style="background-image: url({url})">'
         u'</span>'.format(url=url, name=group.abbreviation))
 
 

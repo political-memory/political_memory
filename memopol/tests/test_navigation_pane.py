@@ -1,27 +1,16 @@
 from django import test
-from responsediff.test import ResponseDiffTestMixin
+from .base import BaseTest
 
 
-class NavigationPaneTest(ResponseDiffTestMixin, test.TestCase):
+class NavigationPaneTest(BaseTest):
     url = '/'
-    fixtures = ['smaller_sample.json']
-
-    """
-    Common queries
-    - One for chambers
-    - One for countries
-    - One for parties
-    - One for committees
-    - One for delegations
-    """
-    queries = 5
-
-    def selector_test(self, selector):
-        self.assertResponseDiffEmpty(test.Client().get(self.url), selector)
 
     def test_queries(self):
-        with self.assertNumQueries(self.queries):
-            test.Client().get(self.url)
+        # First query to set session variables
+        self.client.get(self.url)
+
+        with self.assertNumQueries(self.left_pane_queries):
+            self.client.get(self.url)
 
     def test_rep_search_chambers(self):
         self.selector_test('#form-rep #chamber-rep option')
