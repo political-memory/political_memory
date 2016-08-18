@@ -1,4 +1,3 @@
-from django import test
 from .base import BaseTest
 
 
