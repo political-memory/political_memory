@@ -14,7 +14,7 @@
   <ul class="dropdown-menu" aria-labelledby="orderby-button">
     {% for field, label in sort.fields.items %}
       <li {% if sort.field == field %}class="disabled"{% endif %}>
-        <a href="?{{ sort_querystring.urlencode }}&sort_by={{ field }}">{% trans label %}</a>
+        <a href="?{{ sort_by_querystring.urlencode }}&sort_by={{ field }}">{% trans label %}</a>
       </li>
     {% endfor %}
   </ul>
@@ -28,10 +28,10 @@
 
   <ul class="dropdown-menu" aria-labelledby="orderdir-button">
     <li {% if sort.dir == 'asc' %}class="disabled"{% endif %}>
-      <a href="?{{ sort_querystring.urlencode }}&sort_dir=asc">{% trans "ascending" %}</a>
+      <a href="?{{ sort_dir_querystring.urlencode }}&sort_dir=asc">{% trans "ascending" %}</a>
     </li>
     <li {% if sort.dir == 'desc' %}class="disabled"{% endif %}>
-      <a href="?{{ sort_querystring.urlencode }}&sort_dir=asc">{% trans "descending" %}</a>
+      <a href="?{{ sort_dir_querystring.urlencode }}&sort_dir=desc">{% trans "descending" %}</a>
     </li>
   </ul>
 </div>

@@ -9,7 +9,7 @@
       {% endif %}
     </div>
     <div class="col-sm-4 text-right">
-      {% if csv or  1 %}
+      {% if csv %}
         <a class="btn btn-default" role="button" href="?{{ csv_querystring.urlencode }}&csv">
           {% bootstrap_icon "download-alt" %}
           {% trans "Download CSV" %}

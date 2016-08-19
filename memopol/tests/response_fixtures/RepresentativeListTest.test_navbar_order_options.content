@@ -11,5 +11,5 @@
     </li>
 ---
 <li>
-      <a href="?&amp;sort_dir=asc">descending</a>
+      <a href="?&amp;sort_dir=desc">descending</a>
     </li>

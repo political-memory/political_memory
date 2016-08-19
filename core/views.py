@@ -83,11 +83,13 @@ class SortMixin(object):
     def get_context_data(self, **kwargs):
         c = super(SortMixin, self).get_context_data(**kwargs)
 
-        c['sort_querystring'] = copy(self.request.GET)
-        if 'sort_by' in c['sort_querystring']:
-            del c['sort_querystring']['sort_by']
-        if 'sort_dir' in c['sort_querystring']:
-            del c['sort_querystring']['sort_dir']
+        c['sort_by_querystring'] = copy(self.request.GET)
+        if 'sort_by' in c['sort_by_querystring']:
+            del c['sort_by_querystring']['sort_by']
+
+        c['sort_dir_querystring'] = copy(self.request.GET)
+        if 'sort_dir' in c['sort_dir_querystring']:
+            del c['sort_dir_querystring']['sort_dir']
 
         c['sort'] = {
             'fields': self.sort_fields,
