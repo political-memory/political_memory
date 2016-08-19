@@ -48,3 +48,11 @@ class RepresentativeListTest(BaseTest):
     def test_search_by_delegation(self):
         self.selector_test('.representative-card h4',
                            '%s?delegation=95' % self.url)
+
+    def test_search_by_min_score(self):
+        self.selector_test('.representative-card h4',
+                           '%s?scoremin=10' % self.url)
+
+    def test_search_by_max_score(self):
+        self.selector_test('.representative-card h4',
+                           '%s?scoremax=0' % self.url)

@@ -15,6 +15,8 @@ from memopol_themes.models import Theme
 class RepresentativeFilter(FilterSet):
 
     search = MethodFilter(action='search_filter')
+    scoremin = MethodFilter(action='score_min_filter')
+    scoremax = MethodFilter(action='score_max_filter')
     chamber = MethodFilter(action='chamber_filter')
     country = MethodFilter(action='group_filter')
     party = MethodFilter(action='group_filter')
@@ -53,6 +55,24 @@ class RepresentativeFilter(FilterSet):
             Q(mandates__end_date__isnull=True),
             mandates__group=value
         )
+
+    def score_min_filter(self, qs, value):
+        if len(value) == 0:
+            return qs
+
+        try:
+            return qs.filter(score__score__gte=int(value))
+        except ValueError:
+            return qs
+
+    def score_max_filter(self, qs, value):
+        if len(value) == 0:
+            return qs
+
+        try:
+            return qs.filter(score__score__lte=int(value))
+        except ValueError:
+            return qs
 
 
 class DossierFilter(FilterSet):

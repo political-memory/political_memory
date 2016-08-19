@@ -32,6 +32,17 @@
       </div>
 
       <div class="form-group">
+        <label class="col-sm-3" for="score-min">{% trans "Score between" %}</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" name="scoremin" id="score-min" value="{{ filter.data.scoremin }}">
+        </div>
+        <label class="col-sm-1" for="score-max">{% trans "and" %}</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" name="scoremax" id="score-max" value="{{ filter.data.scoremax }}">
+        </div>
+      </div>
+
+      <div class="form-group">
         <label class="col-sm-3" for="chamber-rep">{% trans "Chamber" %}</label>
         <div class="col-sm-9">
           <select class="form-control" id="chamber-rep" name="chamber">
