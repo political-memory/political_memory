@@ -1,0 +1,28 @@
+{% load bootstrap3 %}
+{% load i18n %}
+
+<div class="container-fluid" id="listheader">
+  <div class="row">
+    <div class="col-sm-8">
+      {% if sort.fields|length > 0 %}
+        {% include "blocks/_sorting.html" %}
+      {% endif %}
+    </div>
+    <div class="col-sm-4 text-right">
+      {% if csv or  1 %}
+        <a class="btn btn-default" role="button" href="?{{ csv_querystring.urlencode }}&csv">
+          {% bootstrap_icon "download-alt" %}
+          {% trans "Download CSV" %}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% if paginator and paginator.num_pages > 1 %}
+  <div class="container-fluid">
+    <div class="row">
+      {% include "blocks/_pagination.html" %}
+    </div>
+  </div>
+{% endif %}

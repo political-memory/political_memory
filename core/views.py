@@ -83,11 +83,11 @@ class SortMixin(object):
     def get_context_data(self, **kwargs):
         c = super(SortMixin, self).get_context_data(**kwargs)
 
-        c['queries'] = copy(self.request.GET)
-        if 'sort_by' in c['queries']:
-            del c['queries']['sort_by']
-        if 'sort_dir' in c['queries']:
-            del c['queries']['sort_dir']
+        c['sort_querystring'] = copy(self.request.GET)
+        if 'sort_by' in c['sort_querystring']:
+            del c['sort_querystring']['sort_by']
+        if 'sort_dir' in c['sort_querystring']:
+            del c['sort_querystring']['sort_dir']
 
         c['sort'] = {
             'fields': self.sort_fields,
@@ -138,9 +138,9 @@ class PaginationMixin(object):
         c['pagination_limits'] = self.pagination_limits
         c['paginate_by'] = self.request.session['paginate_by']
         c['page_range'] = self.get_page_range(c['page_obj'])
-        c['queries'] = copy(self.request.GET)
-        if 'page' in c['queries']:
-            del c['queries']['page']
+        c['pagination_querystring'] = copy(self.request.GET)
+        if 'page' in c['pagination_querystring']:
+            del c['pagination_querystring']['page']
         return c
 
 
@@ -167,6 +167,12 @@ class GridListMixin(object):
 
 
 class CSVDownloadMixin(object):
+    def get_context_data(self, **kwargs):
+        c = super(CSVDownloadMixin, self).get_context_data(**kwargs)
+        c['csv'] = True
+        c['csv_querystring'] = copy(self.request.GET)
+        return c
+
     def get_paginate_by(self, queryset):
         if self.request.GET.get('csv', None) is None:
             return super(CSVDownloadMixin, self).get_paginate_by(queryset)

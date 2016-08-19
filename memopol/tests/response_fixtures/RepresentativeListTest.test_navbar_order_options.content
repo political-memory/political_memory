@@ -1,0 +1,15 @@
+<li>
+        <a href="?&amp;sort_by=score__score">score</a>
+      </li>
+---
+<li class="disabled">
+        <a href="?&amp;sort_by=last_name">name</a>
+      </li>
+---
+<li class="disabled">
+      <a href="?&amp;sort_dir=asc">ascending</a>
+    </li>
+---
+<li>
+      <a href="?&amp;sort_dir=asc">descending</a>
+    </li>

@@ -6,47 +6,13 @@
 
 {% block container-class %}custom-listMEP{% endblock %}
 {% block content %}
+
 <h1 class="text-center">{% trans "Representatives" %}</h1>
 <p class="lead text-center">
   Found {{ paginator.count }} {% trans "representatives" %}.
 </p>
 
-<div class="row">
-  <a href="?{{ searchparameters }}&csv" class="btn btn-default">
-    <span class="glyphicon glyphicon-file"> {% trans "Download as CSV." %}</span>
-  </a>
-
-  {% comment %}
-  <!-- TODO: layout & ordering -->
-  <div class="btn-group" data-toggle="buttons">
-    <label class="btn btn-default active">
-      <input type="radio" name="view" id="cards" autocomplete="off" checked>
-      <span class="glyphicon glyphicon-th"></span>
-    </label>
-    <label class="btn btn-default">
-      <input type="radio" name="view" id="lists" autocomplete="off">
-      <span class="glyphicon glyphicon-list"></span>
-    </label>
-
-  </div>
-
-  <div class="dropdown" style="display:inline-block;">
-    Order by
-
-    <button class="btn btn-default dropdown-toggle" type="button" id="orderby" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      Score
-      <span class="caret"></span>
-    </button>
-
-    <ul class="dropdown-menu" aria-labelledby="orderby">
-      <li class="disabled"><a href="#">Score</a></li>
-      <li><a href="#">Country</a></li>
-      <li><a href="#">Party</a></li>
-      <li><a href="#">Group</a></li>
-    </ul>
-  </div>
-  {% endcomment %}
-</div>
+{% include "blocks/listheader.html" %}
 
 <div class="row">
   {% for representative in object_list %}
@@ -94,6 +60,6 @@
   {% endfor %}
 </div>
 
-{% include "pagination.html" %}
+{% include "blocks/listfooter.html" %}
 
 {% endblock %}

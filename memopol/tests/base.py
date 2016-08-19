@@ -15,6 +15,9 @@ class BaseTest(ResponseDiffTestMixin, test.TestCase):
     """
     left_pane_queries = 5
 
+    def request_test(self, url=None):
+        self.assertResponseDiffEmpty(self.client.get(url or self.url))
+
     def selector_test(self, selector, url=None):
         self.assertResponseDiffEmpty(self.client.get(url or self.url),
                                      selector)
