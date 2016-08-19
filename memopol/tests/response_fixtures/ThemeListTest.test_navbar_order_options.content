@@ -1,0 +1,11 @@
+<li class="disabled">
+        <a href="?&amp;sort_by=name">name</a>
+      </li>
+---
+<li class="disabled">
+      <a href="?&amp;sort_dir=asc">ascending</a>
+    </li>
+---
+<li>
+      <a href="?&amp;sort_dir=desc">descending</a>
+    </li>

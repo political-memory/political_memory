@@ -1,51 +1,70 @@
 {% extends "base.html" %}
-{% load i18n %}
-{% load memopol_tags %}
 
-{% block head %}
-  {{ filter.form.media }}
-{% endblock %}
+{% load bootstrap3 %}
+{% load i18n %}
+{% load humanize %}
+
+{% block title %}{% trans "Themes" %}{% endblock %}
 
 {% block content %}
+<h1 class="text-center">{% trans "Themes" %}</h1>
+<p class="lead text-center">
+{% blocktrans count counter=paginator.count %}{{ counter }} theme{% plural %}{{ counter }} themes{% endblocktrans %}.
+</p>
 
-  {% block search %}
-    {% url 'theme-list' as action_url %}
-    {% include '_filter_form.html' with action=action_url form=filter.form qs=request.GET.urlencode %}
-  {% endblock %}
+{% include "blocks/listheader.html" %}
 
-  {% if object_list|length == 0 %}
+<div class="row card-list">
+  {% for theme in object_list %}
+    <div class="col-xs-12 col-md-4 theme-card">
+      <div class="thumbnail">
+        <a href="{% url 'theme-detail' slug=theme.slug %}" class="custom-thumbnail custom-invisible">
+        <div class="row">
 
-    <div class="no-results">
-        No matching themes found :(
+          <div class="col-xs-12">
+            <h4 class="text-center">{{ theme.name }}</h4>
+
+            <p class="text-center lead">
+              &nbsp;
+
+              {% if theme.nb_links > 0 %}
+                <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Links' %}">
+                  {% bootstrap_icon "link" %}
+                  <span class="badge">{{ theme.nb_links }}</span>
+                </span>
+              {% endif %}
+
+              {% if theme.nb_dossiers > 0 %}
+                <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Dossiers' %}">
+                  {% bootstrap_icon "book" %}
+                  <span class="badge">{{ theme.nb_dossiers }}</span>
+                </span>
+              {% endif %}
+
+              {% if theme.nb_proposals > 0 %}
+                <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Proposals' %}">
+                  {% bootstrap_icon "file" %}
+                  <span class="badge">{{ theme.nb_proposals }}</span>
+                </span>
+              {% endif %}
+
+              {% if theme.nb_positions > 0 %}
+                <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Public positions' %}">
+                  {% bootstrap_icon "comment" %}
+                  <span class="badge">{{ theme.nb_positions }}</span>
+                </span>
+              {% endif %}
+
+              &nbsp;
+            </p>
+          </div>
+        </div>
+        </a>
+      </div>
     </div>
+  {% endfor %}
+</div>
 
-  {% else %}
+{% include "blocks/listfooter.html" %}
 
-    {% include 'core/blocks/pagination.html' %}
-
-    <h1>
-      {% trans "Themes" %}
-    </h1>
-    
-    <table>
-      <tr>
-        <th>
-            {% trans "Name" %}
-        </th>
-      </tr>
-
-      {% for theme in object_list %}
-      <tr>
-          <td>
-              <a href="{% url 'theme-detail' theme.slug %}">
-                  {{ theme.name }}
-              </a>
-          </td>
-      </tr>
-      {% endfor %}
-    </table>
-    
-    {% include "core/blocks/pagination.html" %}
-  {% endif %}
-    
 {% endblock %}

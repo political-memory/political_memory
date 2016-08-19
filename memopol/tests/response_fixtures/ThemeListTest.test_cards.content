@@ -1,0 +1,68 @@
+<div class="col-xs-12 col-md-4 theme-card">
+      <div class="thumbnail">
+        <a class="custom-thumbnail custom-invisible" href="/theme/acta/">
+        <div class="row">
+
+          <div class="col-xs-12">
+            <h4 class="text-center">ACTA</h4>
+
+            <p class="text-center lead">
+               
+
+              
+                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Links">
+                  <span class="glyphicon glyphicon-link"></span>
+                  <span class="badge">1</span>
+                </span>
+              
+
+              
+                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Dossiers">
+                  <span class="glyphicon glyphicon-book"></span>
+                  <span class="badge">1</span>
+                </span>
+              
+
+              
+                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Proposals">
+                  <span class="glyphicon glyphicon-file"></span>
+                  <span class="badge">3</span>
+                </span>
+              
+
+              
+
+               
+            </p>
+          </div>
+        </div>
+        </a>
+      </div>
+    </div>
+---
+<div class="col-xs-12 col-md-4 theme-card">
+      <div class="thumbnail">
+        <a class="custom-thumbnail custom-invisible" href="/theme/etat-durgence/">
+        <div class="row">
+
+          <div class="col-xs-12">
+            <h4 class="text-center">État d'urgence</h4>
+
+            <p class="text-center lead">
+               
+
+              
+
+              
+
+              
+
+              
+
+               
+            </p>
+          </div>
+        </div>
+        </a>
+      </div>
+    </div>

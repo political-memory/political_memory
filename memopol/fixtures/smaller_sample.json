@@ -23213,10 +23213,25 @@
             28147
         ],
         "slug": "acta",
-        "name": "acta"
+        "name": "ACTA"
     },
     "model": "memopol_themes.theme",
     "pk": 1
+},
+{
+    "fields": {
+        "description": "None yet.",
+        "positions": [
+        ],
+        "proposals": [
+        ],
+        "dossiers": [
+        ],
+        "slug": "etat-durgence",
+        "name": "État d'urgence"
+    },
+    "model": "memopol_themes.theme",
+    "pk": 2
 },
 {
     "fields": {
