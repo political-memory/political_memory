@@ -10,24 +10,14 @@
                
 
               
-                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Links">
-                  <span class="glyphicon glyphicon-link"></span>
-                  <span class="badge">1</span>
-                </span>
-              
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Dossiers">
                   <span class="glyphicon glyphicon-book"></span>
-                  <span class="badge">1</span>
+                  <span class="badge">3</span>
                 </span>
               
 
-              
-                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Proposals">
-                  <span class="glyphicon glyphicon-pencil"></span>
-                  <span class="badge">3</span>
-                </span>
               
 
               
@@ -46,15 +36,30 @@
         <div class="row">
 
           <div class="col-xs-12">
-            <h4 class="text-center">État d'urgence</h4>
+            <h4 class="text-center">Etat d'urgence</h4>
 
             <p class="text-center lead">
                
 
               
-
+                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Links">
+                  <span class="glyphicon glyphicon-link"></span>
+                  <span class="badge">2</span>
+                </span>
               
 
+              
+                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Dossiers">
+                  <span class="glyphicon glyphicon-book"></span>
+                  <span class="badge">4</span>
+                </span>
+              
+
+              
+                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Proposals">
+                  <span class="glyphicon glyphicon-pencil"></span>
+                  <span class="badge">13</span>
+                </span>
               
 
               

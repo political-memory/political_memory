@@ -1,6 +1,6 @@
 <div class="col-xs-12 col-md-4 dossier-card">
       <div class="thumbnail">
-        <a class="custom-thumbnail custom-invisible" href="/votes/dossier/28147/">
+        <a class="custom-thumbnail custom-invisible" href="/votes/dossier/1237/">
         <div class="row">
 
           <div class="col-xs-12">
@@ -12,14 +12,14 @@
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Proposals">
                   <span class="glyphicon glyphicon-pencil"></span>
-                  <span class="badge">3</span>
+                  <span class="badge">45</span>
                 </span>
               
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Recommendations">
                   <span class="glyphicon glyphicon-eye-open"></span>
-                  <span class="badge">3</span>
+                  <span class="badge">45</span>
                 </span>
               
 
@@ -42,6 +42,489 @@
 
               
                 <span class="tag">ACTA</span>
+              
+
+               
+            </p>
+          </div>
+        </div>
+        </a>
+      </div>
+    </div>
+---
+<div class="col-xs-12 col-md-4 dossier-card">
+      <div class="thumbnail">
+        <a class="custom-thumbnail custom-invisible" href="/votes/dossier/15409/">
+        <div class="row">
+
+          <div class="col-xs-12">
+            <h4 class="text-center">Pouvoirs publics : prorogation de l'application de la loi sur l'état d'urgence</h4>
+
+            <p class="text-center lead">
+               
+
+              
+                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Proposals">
+                  <span class="glyphicon glyphicon-pencil"></span>
+                  <span class="badge">13</span>
+                </span>
+              
+
+              
+                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Recommendations">
+                  <span class="glyphicon glyphicon-eye-open"></span>
+                  <span class="badge">13</span>
+                </span>
+              
+
+              
+                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Documents">
+                  <span class="glyphicon glyphicon-file"></span>
+                  <span class="badge">1</span>
+                </span>
+              
+
+               
+            </p>
+
+            <p class="text-center">
+               
+
+              
+                <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)"></span>
+              
+
+              
+                <span class="tag">Etat d'urgence</span>
+              
+
+               
+            </p>
+          </div>
+        </div>
+        </a>
+      </div>
+    </div>
+---
+<div class="col-xs-12 col-md-4 dossier-card">
+      <div class="thumbnail">
+        <a class="custom-thumbnail custom-invisible" href="/votes/dossier/15407/">
+        <div class="row">
+
+          <div class="col-xs-12">
+            <h4 class="text-center">Pouvoirs publics : prorogation de l'état d'urgence</h4>
+
+            <p class="text-center lead">
+               
+
+              
+                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Proposals">
+                  <span class="glyphicon glyphicon-pencil"></span>
+                  <span class="badge">2</span>
+                </span>
+              
+
+              
+                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Recommendations">
+                  <span class="glyphicon glyphicon-eye-open"></span>
+                  <span class="badge">2</span>
+                </span>
+              
+
+              
+                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Documents">
+                  <span class="glyphicon glyphicon-file"></span>
+                  <span class="badge">2</span>
+                </span>
+              
+
+               
+            </p>
+
+            <p class="text-center">
+               
+
+              
+                <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)"></span>
+              
+                <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-sen.png)"></span>
+              
+
+              
+                <span class="tag">Etat d'urgence</span>
+              
+
+               
+            </p>
+          </div>
+        </div>
+        </a>
+      </div>
+    </div>
+---
+<div class="col-xs-12 col-md-4 dossier-card">
+      <div class="thumbnail">
+        <a class="custom-thumbnail custom-invisible" href="/votes/dossier/15426/">
+        <div class="row">
+
+          <div class="col-xs-12">
+            <h4 class="text-center">Pouvoirs publics :  prorogation de l'application de la loi relative à l'état d'urgence</h4>
+
+            <p class="text-center lead">
+               
+
+              
+                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Proposals">
+                  <span class="glyphicon glyphicon-pencil"></span>
+                  <span class="badge">2</span>
+                </span>
+              
+
+              
+                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Recommendations">
+                  <span class="glyphicon glyphicon-eye-open"></span>
+                  <span class="badge">2</span>
+                </span>
+              
+
+              
+                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Documents">
+                  <span class="glyphicon glyphicon-file"></span>
+                  <span class="badge">2</span>
+                </span>
+              
+
+               
+            </p>
+
+            <p class="text-center">
+               
+
+              
+                <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)"></span>
+              
+                <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-sen.png)"></span>
+              
+
+              
+                <span class="tag">Etat d'urgence</span>
+              
+
+               
+            </p>
+          </div>
+        </div>
+        </a>
+      </div>
+    </div>
+---
+<div class="col-xs-12 col-md-4 dossier-card">
+      <div class="thumbnail">
+        <a class="custom-thumbnail custom-invisible" href="/votes/dossier/15424/">
+        <div class="row">
+
+          <div class="col-xs-12">
+            <h4 class="text-center">Pouvoirs publics : application de la loi relative à l’état d’urgence</h4>
+
+            <p class="text-center lead">
+               
+
+              
+                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Proposals">
+                  <span class="glyphicon glyphicon-pencil"></span>
+                  <span class="badge">1</span>
+                </span>
+              
+
+              
+                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Recommendations">
+                  <span class="glyphicon glyphicon-eye-open"></span>
+                  <span class="badge">1</span>
+                </span>
+              
+
+              
+                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Documents">
+                  <span class="glyphicon glyphicon-file"></span>
+                  <span class="badge">2</span>
+                </span>
+              
+
+               
+            </p>
+
+            <p class="text-center">
+               
+
+              
+                <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)"></span>
+              
+                <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-sen.png)"></span>
+              
+
+              
+                <span class="tag">Etat d'urgence</span>
+              
+
+               
+            </p>
+          </div>
+        </div>
+        </a>
+      </div>
+    </div>
+---
+<div class="col-xs-12 col-md-4 dossier-card">
+      <div class="thumbnail">
+        <a class="custom-thumbnail custom-invisible" href="/votes/dossier/1430/">
+        <div class="row">
+
+          <div class="col-xs-12">
+            <h4 class="text-center">Declaration on the lack of a transparent process for the Anti-Counterfeiting Trade Agreement (ACTA) and potentially objectionable content</h4>
+
+            <p class="text-center lead">
+               
+
+              
+
+              
+
+              
+                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Documents">
+                  <span class="glyphicon glyphicon-file"></span>
+                  <span class="badge">1</span>
+                </span>
+              
+
+               
+            </p>
+
+            <p class="text-center">
+               
+
+              
+                <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span>
+              
+
+              
+                <span class="tag">ACTA</span>
+              
+
+               
+            </p>
+          </div>
+        </div>
+        </a>
+      </div>
+    </div>
+---
+<div class="col-xs-12 col-md-4 dossier-card">
+      <div class="thumbnail">
+        <a class="custom-thumbnail custom-invisible" href="/votes/dossier/1393/">
+        <div class="row">
+
+          <div class="col-xs-12">
+            <h4 class="text-center">Resolution on the transparency and state of play of the Anti-Counterfeiting Trade Agreement ACTA negotiations</h4>
+
+            <p class="text-center lead">
+               
+
+              
+
+              
+
+              
+                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Documents">
+                  <span class="glyphicon glyphicon-file"></span>
+                  <span class="badge">1</span>
+                </span>
+              
+
+               
+            </p>
+
+            <p class="text-center">
+               
+
+              
+                <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span>
+              
+
+              
+                <span class="tag">ACTA</span>
+              
+
+               
+            </p>
+          </div>
+        </div>
+        </a>
+      </div>
+    </div>
+---
+<div class="col-xs-12 col-md-4 dossier-card">
+      <div class="thumbnail">
+        <a class="custom-thumbnail custom-invisible" href="/votes/dossier/2/">
+        <div class="row">
+
+          <div class="col-xs-12">
+            <h4 class="text-center">Classification, packaging and labelling of dangerous preparations</h4>
+
+            <p class="text-center lead">
+               
+
+              
+
+              
+
+              
+                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Documents">
+                  <span class="glyphicon glyphicon-file"></span>
+                  <span class="badge">1</span>
+                </span>
+              
+
+               
+            </p>
+
+            <p class="text-center">
+               
+
+              
+                <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span>
+              
+
+              
+
+               
+            </p>
+          </div>
+        </div>
+        </a>
+      </div>
+    </div>
+---
+<div class="col-xs-12 col-md-4 dossier-card">
+      <div class="thumbnail">
+        <a class="custom-thumbnail custom-invisible" href="/votes/dossier/3/">
+        <div class="row">
+
+          <div class="col-xs-12">
+            <h4 class="text-center">Health and safety at work: exposure of workers to electromagnetic fields; transposition of Directive</h4>
+
+            <p class="text-center lead">
+               
+
+              
+
+              
+
+              
+                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Documents">
+                  <span class="glyphicon glyphicon-file"></span>
+                  <span class="badge">1</span>
+                </span>
+              
+
+               
+            </p>
+
+            <p class="text-center">
+               
+
+              
+                <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span>
+              
+
+              
+
+               
+            </p>
+          </div>
+        </div>
+        </a>
+      </div>
+    </div>
+---
+<div class="col-xs-12 col-md-4 dossier-card">
+      <div class="thumbnail">
+        <a class="custom-thumbnail custom-invisible" href="/votes/dossier/4/">
+        <div class="row">
+
+          <div class="col-xs-12">
+            <h4 class="text-center">Court of Auditors: appointment of a member, Baudilio Tomé Muguruza - ES</h4>
+
+            <p class="text-center lead">
+               
+
+              
+
+              
+
+              
+                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Documents">
+                  <span class="glyphicon glyphicon-file"></span>
+                  <span class="badge">1</span>
+                </span>
+              
+
+               
+            </p>
+
+            <p class="text-center">
+               
+
+              
+                <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span>
+              
+
+              
+
+               
+            </p>
+          </div>
+        </div>
+        </a>
+      </div>
+    </div>
+---
+<div class="col-xs-12 col-md-4 dossier-card">
+      <div class="thumbnail">
+        <a class="custom-thumbnail custom-invisible" href="/votes/dossier/1/">
+        <div class="row">
+
+          <div class="col-xs-12">
+            <h4 class="text-center">Personal data protection: processing of data for the purposes of prevention, investigation, detection or prosecution of criminal offences or execution of criminal penalties, and free movement of data</h4>
+
+            <p class="text-center lead">
+               
+
+              
+                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Proposals">
+                  <span class="glyphicon glyphicon-pencil"></span>
+                  <span class="badge">1</span>
+                </span>
+              
+
+              
+
+              
+                <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Documents">
+                  <span class="glyphicon glyphicon-file"></span>
+                  <span class="badge">1</span>
+                </span>
+              
+
+               
+            </p>
+
+            <p class="text-center">
+               
+
+              
+                <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span>
+              
+
               
 
                

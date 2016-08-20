@@ -3,7 +3,7 @@ from responsediff.test import ResponseDiffTestMixin
 
 
 class BaseTest(ResponseDiffTestMixin, test.TestCase):
-    fixtures = ['smaller_sample.json']
+    fixtures = ['data_sample.json']
 
     """
     Common queries

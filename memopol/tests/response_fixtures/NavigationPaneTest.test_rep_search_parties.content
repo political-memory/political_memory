@@ -1,10 +1,5 @@
 <option value="">All</option>
 ---
-<option value="199">
-              GUE/NGL –
-              Confederal Group of the European United Left
-            </option>
----
 <option value="42">
               GUE/NGL –
               Confederal Group of the European United Left - Nordic Green Left
@@ -30,34 +25,14 @@
               Europe of Freedom and Direct Democracy Group
             </option>
 ---
-<option value="128">
-              ENF –
-              Europe of Nations and Freedom Group
-            </option>
----
-<option value="171">
-              EDD –
-              Group for a Europe of Democracies and Diversities
-            </option>
----
-<option value="174">
-              ER –
-              Group of Independents for a Europe of Nations
+<option value="1035">
+              GDR –
+              Gauche démocrate et républicaine
             </option>
 ---
 <option value="17">
               ALDE –
               Group of the Alliance of Liberals and Democrats for Europe
-            </option>
----
-<option value="162">
-              EDA –
-              Group of the European Democratic Alliance
-            </option>
----
-<option value="144">
-              ELDR –
-              Group of the European Liberal, Democrat and Reform Party
             </option>
 ---
 <option value="104">
@@ -75,11 +50,6 @@
               Group of the European People's Party (Christian Democrats) and European Democrats
             </option>
 ---
-<option value="177">
-              ERA –
-              Group of the European Radical Alliance
-            </option>
----
 <option value="84">
               Greens/EFA –
               Group of the Greens/European Free Alliance
@@ -95,24 +65,19 @@
               Group of the Progressive Alliance of Socialists and Democrats in the European Parliament
             </option>
 ---
-<option value="181">
-              UFE –
-              Group Union for Europe
-            </option>
----
 <option value="76">
               IND/DEM –
               Independence/Democracy Group
             </option>
 ---
-<option value="176">
-              LD –
-              Liberal and Democratic Group
+<option value="44">
+              LU –
+              Left Unity
             </option>
 ---
-<option value="153">
-              LDR –
-              Liberal and Democratic Reformist Group
+<option value="271">
+              LR –
+              Les républicains
             </option>
 ---
 <option value="32">
@@ -120,9 +85,14 @@
               Non-attached Members
             </option>
 ---
-<option value="168">
-              SOC –
-              Socialist Group
+<option value="332">
+              SER –
+              Socialiste, écologiste et républicain
+            </option>
+---
+<option value="282">
+              
+              Socialiste, républicain et citoyen
             </option>
 ---
 <option value="41">
@@ -130,12 +100,17 @@
               Socialist Group in the European Parliament
             </option>
 ---
-<option value="200">
-              Greens/EFA –
-              The Green Group in the European Parliament
+<option value="398">
+              UDI –
+              Union des démocrates et indépendants
             </option>
 ---
 <option value="75">
               UEN –
               Union for Europe of the Nations Group
+            </option>
+---
+<option value="1620">
+              
+              Union pour la démocratie française-alliance
             </option>
