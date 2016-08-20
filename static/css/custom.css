@@ -22,12 +22,19 @@ body {
     margin-top: 1em;
 }
 
+.tag {
+    border: 1px solid #487ed6;
+    color: #487ed6;
+    padding: .2em .6em;
+    border-radius: .25em;
+}
+
 /***************************************************************
 					Typographie
 ***************************************************************/
 
 @font-face {
-    font-family: Propaganda;
+    font-family: Propaganda, fixed;
     src: url(../fonts/PROPAGAN.ttf);
 }
 
@@ -36,7 +43,7 @@ body, .panel-title {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: Propaganda;
+	font-family: Propaganda, fixed;
 }
 
 h1 {
@@ -344,6 +351,7 @@ iframe {
     width: 1.75em;
     height: 1.75em;
     line-height: initial;
+    vertical-align: bottom;
 }
 
 .flag-icon:before {

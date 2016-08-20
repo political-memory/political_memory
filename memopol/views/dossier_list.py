@@ -14,21 +14,19 @@ class DossierList(PaginationMixin, SortMixin, generic.ListView):
 
     current_filter = None
     queryset = Dossier.objects.prefetch_related(
-        'proposals',
-        'proposals__recommendation',
-        'documents',
-        'documents__chamber'
+        'documents__chamber',
+        'themes'
     ).annotate(
-        nb_proposals=Count('proposals'),
-        nb_recomm=Count('proposals__recommendation')
+        nb_proposals=Count('proposals', distinct=True),
+        nb_recommendations=Count('proposals__recommendation', distinct=True),
+        nb_documents=Count('documents', distinct=True)
     )
     sort_fields = {
         'title': 'title',
-        'reference': 'reference',
-        'nb_recomm': 'recommendations',
+        'nb_recommendations': 'recommendations',
         'nb_proposals': 'proposals',
     }
-    sort_default_field = 'nb_recomm'
+    sort_default_field = 'nb_recommendations'
     sort_default_dir = 'desc'
 
     def dossier_filter(self, qs):

@@ -1,0 +1,19 @@
+<li>
+        <a href="?&amp;sort_by=nb_proposals">proposals</a>
+      </li>
+---
+<li class="disabled">
+        <a href="?&amp;sort_by=nb_recommendations">recommendations</a>
+      </li>
+---
+<li>
+        <a href="?&amp;sort_by=title">title</a>
+      </li>
+---
+<li>
+      <a href="?&amp;sort_dir=asc">ascending</a>
+    </li>
+---
+<li class="disabled">
+      <a href="?&amp;sort_dir=desc">descending</a>
+    </li>

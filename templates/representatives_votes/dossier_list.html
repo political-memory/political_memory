@@ -1,74 +1,78 @@
 {% extends "base.html" %}
+
+{% load bootstrap3 %}
 {% load i18n %}
+{% load memopol_tags %}
 {% load humanize %}
 
-{% block title %}{% trans "Dosssiers" %}{% endblock %}
+{% block title %}{% trans "Dossiers" %}{% endblock %}
 
 {% block content %}
 <h1 class="text-center">{% trans "Dossiers" %}</h1>
 <p class="lead text-center">
-{% blocktrans count counter=paginator.count %}{{ counter }} dossier{% plural %}{{ counter }} dossier{% endblocktrans %}{% if search %}{% blocktrans %}on {{ search }}{% endblocktrans %}{% endif %}.
+{% blocktrans count counter=paginator.count %}{{ counter }} dossier{% plural %}{{ counter }} dossiers{% endblocktrans %}.
 </p>
 
-{% comment %}
-<!-- TODO: ordering -->
-<br/>
-<p>
-  <div class="dropdown" style="display:inline-block;">
-	Order by
-	<button class="btn btn-default dropdown-toggle" type="button" id="orderby" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-	  Name
-	  <span class="caret"></span>
-	</button>
-	<ul class="dropdown-menu" aria-labelledby="orderby">
-	  <li class="disabled"><a href="#">Name</a></li>
-	  <li><a href="#">Recent</a></li>
-	</ul>
-  </div>
-</p>
-{% endcomment %}
+{% include "blocks/listheader.html" %}
 
-<div class="col-xs-12 col-md-4">
-{% for dossier in object_list %}
-<div class="thumbnail">
-  <a href="{{ dossier.get_absolute_url }}" class="custom-thumbnail custom-invisible">
-	<div class="row">
+<div class="row card-list">
+  {% for dossier in object_list %}
+    <div class="col-xs-12 col-md-4 dossier-card">
+      <div class="thumbnail">
+        <a href="{% url 'dossier-detail' dossier.pk %}" class="custom-thumbnail custom-invisible">
+        <div class="row">
 
-	  <div class="col-xs-12">
-		<h4 class="text-center">{{ dossier.title }}</h4>
-		<p class="text-center">{% trans "Last updated" %} {{ dossier.updated|naturalday }}</p>
+          <div class="col-xs-12">
+            <h4 class="text-center">{{ dossier.title }}</h4>
 
-		<p class="text-center lead">
-          {% comment %}
-          <!-- We don't have this data -->
-		  <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Upcoming envents"><span class="glyphicon glyphicon-calendar"></span>
-            <span class="badge">5</span>
-          </span>
-          {% endcomment %}
-          <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Votes"><span class="glyphicon glyphicon-check"></span>
-            <span class="badge">{{ dossier.votes_count }}</span>
-          </span>
-          {% comment %}
-          <!-- We don't have this data -->
-		  <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Public positions"><span class="glyphicon glyphicon-comment"></span>
-            <span class="badge">42</span>
-          </span>
-          {% endcomment %}
-		</p>
+            <p class="text-center lead">
+              &nbsp;
 
-        {% comment %}
-        <!-- TODO -->
-		<div class="alert alert-info text-center" role="alert"><span class="glyphicon glyphicon-alert"></span> A campaign is currently ongoing with La Quadrature. <a href="#" class="alert-link">Check it out!</a> </div>
-		{% endcomment %}
-	  </div>
-	</div>
-  </a>
+              {% if dossier.nb_proposals > 0 %}
+                <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Proposals' %}">
+                  {% bootstrap_icon "file" %}
+                  <span class="badge">{{ dossier.nb_proposals }}</span>
+                </span>
+              {% endif %}
+
+              {% if dossier.nb_recommendations > 0 %}
+                <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Recommendations' %}">
+                  {% bootstrap_icon "eye-open" %}
+                  <span class="badge">{{ dossier.nb_recommendations }}</span>
+                </span>
+              {% endif %}
+
+              {% if dossier.nb_documents > 0 %}
+                <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Documents' %}">
+                  {% bootstrap_icon "file" %}
+                  <span class="badge">{{ dossier.nb_documents }}</span>
+                </span>
+              {% endif %}
+
+              &nbsp;
+            </p>
+
+            <p class="text-center">
+              &nbsp;
+
+              {% for chamber in dossier.chambers %}
+                {{ chamber|chamber_icon }}
+              {% endfor %}
+
+              {% for theme in dossier.themes.all %}
+                <span class="tag">{{ theme.name }}</span>
+              {% endfor %}
+
+              &nbsp;
+            </p>
+          </div>
+        </div>
+        </a>
+      </div>
+    </div>
+  {% endfor %}
 </div>
 
-{% if forloop.counter|divisibleby:3 %}</div><div class="col-xs-12 col-md-4">{% endif %}
-{% endfor %}
-</div>
-
-{% include "blocks/_pagination.html" %}
+{% include "blocks/listfooter.html" %}
 
 {% endblock %}
