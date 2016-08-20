@@ -11,7 +11,7 @@
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Proposals">
-                  <span class="glyphicon glyphicon-file"></span>
+                  <span class="glyphicon glyphicon-pencil"></span>
                   <span class="badge">3</span>
                 </span>
               
