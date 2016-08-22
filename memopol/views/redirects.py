@@ -28,3 +28,8 @@ class RedirectGroupRepresentativeList(RedirectView):
             group = Group.objects.get(kind=kwargs['group_kind'],
                                       name=kwargs['group'])
             return '%s?group=%s' % (reverse('representative-list'), group.pk)
+
+
+class RedirectRepresentativeDetail(RedirectView):
+    permanent = True
+    pattern_name = 'representative-votes'
