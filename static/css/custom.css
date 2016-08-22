@@ -347,6 +347,11 @@ iframe {
                     Icones
 ***************************************************************/
 
+#logo {
+    width: 2em;
+    height: 2em;
+}
+
 .chamber-icon, .group-icon, .flag-icon {
     width: 1.75em;
     height: 1.75em;
