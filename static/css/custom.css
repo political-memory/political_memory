@@ -370,7 +370,13 @@ iframe {
     margin-left: .5em;
 }
 
+.social-icon {
+    width: 1.1em;
+    height: 1.1em;
 
+    display: inline-block;
+    vertical-align: sub;
+}
 
 
 
