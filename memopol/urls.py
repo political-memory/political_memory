@@ -6,16 +6,28 @@ from django.views import generic
 from views.dossier_ac import DossierAutocomplete, ProposalAutocomplete
 from views.dossier_detail import DossierDetail
 from views.dossier_list import DossierList
+
 from views.group_ac import GroupAutocomplete
 from views.group_list import GroupList
+
 from views.representative_detail_base import RepresentativeDetailBase
 from views.representative_detail_votes import RepresentativeDetailVotes
 from views.representative_detail_mandates import RepresentativeDetailMandates
 from views.representative_detail_positions import RepresentativeDetailPositions
 from views.representative_list import RepresentativeList
-from views.redirects import (RedirectGroupList, RedirectRepresentativeDetail,
-                             RedirectGroupRepresentativeList)
-from views.theme_detail import ThemeDetail
+
+from views.redirects import (
+    RedirectGroupList,
+    RedirectRepresentativeDetail,
+    RedirectThemeDetail,
+    RedirectGroupRepresentativeList
+)
+
+from views.theme_detail_base import ThemeDetailBase
+from views.theme_detail_links import ThemeDetailLinks
+from views.theme_detail_dossiers import ThemeDetailDossiers
+from views.theme_detail_proposals import ThemeDetailProposals
+from views.theme_detail_positions import ThemeDetailPositions
 from views.theme_list import ThemeList
 
 import api
@@ -118,13 +130,33 @@ urlpatterns = [
     ),
     url(
         r'^theme/(?P<slug>[-\w]+)/$',
-        ThemeDetail.as_view(),
+        RedirectThemeDetail.as_view(),
         name='theme-detail'
     ),
     url(
-        r'^votes/dossier/(?P<pk>\d+)/$',
-        DossierDetail.as_view(),
-        name='dossier-detail'
+        r'^theme/(?P<slug>[-\w]+)/none/$',
+        ThemeDetailBase.as_view(),
+        name='theme-none'
+    ),
+    url(
+        r'^theme/(?P<slug>[-\w]+)/links/$',
+        ThemeDetailLinks.as_view(),
+        name='theme-links'
+    ),
+    url(
+        r'^theme/(?P<slug>[-\w]+)/dossiers/$',
+        ThemeDetailDossiers.as_view(),
+        name='theme-dossiers'
+    ),
+    url(
+        r'^theme/(?P<slug>[-\w]+)/proposals/$',
+        ThemeDetailProposals.as_view(),
+        name='theme-proposals'
+    ),
+    url(
+        r'^theme/(?P<slug>[-\w]+)/positions/$',
+        ThemeDetailPositions.as_view(),
+        name='theme-positions'
     ),
 
     url(r'^admin/', include(admin.site.urls)),

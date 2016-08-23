@@ -1,0 +1,21 @@
+{% extends 'memopol_themes/theme_detail.html' %}
+
+{% load i18n %}
+{% load memopol_tags %}
+
+{% block theme_content %}
+
+  <table class="table table-responsive">
+    {% for link in links %}
+      <tr class="link">
+        <td>
+          <a class="external" href="{{ link.link }}" target="_blank">
+            {{ link.title }}
+          </a>
+        </td>
+        <td>{{ link.datetime }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
+{% endblock %}

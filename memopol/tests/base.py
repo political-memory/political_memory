@@ -51,3 +51,25 @@ class RepresentativeBaseTest(BaseTest):
 
         with self.assertNumQueries(self.queries):
             self.client.get(self.url)
+
+
+class ThemeBaseTest(BaseTest):
+    tab = 'none'
+    base_url = '/theme/etat-durgence/%s/'
+
+    """
+    Common queries plus:
+    - 1 for the theme
+    """
+    queries = BaseTest.left_pane_queries + 1
+
+    @property
+    def url(self):
+        return self.base_url % self.tab
+
+    def do_query_test(self):
+        # First query to set session variables
+        self.client.get(self.url)
+
+        with self.assertNumQueries(self.queries):
+            self.client.get(self.url)

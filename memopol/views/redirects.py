@@ -33,3 +33,8 @@ class RedirectGroupRepresentativeList(RedirectView):
 class RedirectRepresentativeDetail(RedirectView):
     permanent = True
     pattern_name = 'representative-votes'
+
+
+class RedirectThemeDetail(RedirectView):
+    permanent = True
+    pattern_name = 'theme-links'

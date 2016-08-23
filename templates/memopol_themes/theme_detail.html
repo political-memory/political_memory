@@ -1,178 +1,53 @@
 {% extends "base.html" %}
+
 {% load i18n %}
 {% load memopol_tags %}
 
-{% block content %}
+{% with theme=object %}
 
-<h1>{{ theme.name }}</h1>
+  {% block title %}{{ theme.name }}{% endblock %}
 
-  <h2>
-    {% trans "Description" %}
-  </h2>
-  
-  <p class="description">
-      {{ theme.description }}
-  </p>
+  {% block content %}
+  <div class="row" id="theme-detail">
+    <div class="col-sm-12">
+      <h1 class="text-center">{{ theme.name }}</h1>
 
-  <h2>
-    {% trans "Links" %}
-  </h2>
-      
-  <table>
-    {% for link in theme.links.all %}
-      <tr>
-        <td>
-          <a class="external" href="{{ link.link }}" target="_blank">
-              {{ link.title }}
+      <div class="text-left" id="description">
+        {{ theme.description }}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <ul class="nav nav-tabs nav-justified" role="tablist">
+        <li role="presentation" {% if tab == 'links' %}class="active"{% endif %}>
+          <a href="{% url 'theme-links' slug=theme.slug %}" role="tab">
+            <h3>{% trans "Links" %}</h3>
           </a>
-        </td>
-        <td>
-            {{ link.datetime }}
-        </td>
-      </tr>
-    {% endfor %}
-  </table>
-      
-  <h2>
-    {% trans "Dossiers" %}
-  </h2>
-
-  <table>
-    <tr>
-      <th>
-          {% trans "Chambers" %}
-      </th>
-      <th>
-          {% trans "Dossier" %}
-      </th>
-      <th>
-          {% trans "Reference" %}
-      </th>
-    </tr>
-    {% for dossier in theme.dossiers.all %}
-      <tr>
-        <td>
-          {% for chamber in dossier.chambers %}
-            {{ chamber|chamber_small_icon }}
-          {% endfor %}
-        </td>
-        <td>
-          <a href="{% url 'dossier-detail' dossier.pk %}">
-              {{ dossier.title }}
+        </li>
+        <li role="presentation" {% if tab == 'dossiers' %}class="active"{% endif %}>
+          <a href="{% url 'theme-dossiers' slug=theme.slug %}" role="tab">
+            <h3>{% trans "Dossiers" %}</h3>
           </a>
-        </td>
-        <td>
-            {{ dossier.reference }}
-        </td>
-      </tr>
-    {% endfor %}
-  </table>
-  
-  <h2>
-      {% trans "Proposals" %}
-  </h2>
-
-  <table>
-    <tr>
-      <th>
-          {% trans "Chambers" %}
-      </th>
-      <th>
-          {% trans "Dossier" %}
-      </th>
-      <th>
-        {% trans "Reference" %}
-      <th>
-          {% trans "Proposal" %}
-      </th>
-      <th>
-          {% trans "Title" %}
-      </th>
-      <th>
-          {% trans "Recommendation" %}
-      </th>
-      <th>
-          {% trans "Status" %}
-      </th>
-      <th>{{ "for"|position_icon }}</th>
-      <th>{{ "against"|position_icon }}</th>
-      <th>{{"abstain"|position_icon }}</th>
-
-    </tr>
-     
-    {% for proposal in theme.proposals.all %}
-      <tr>
-        <td>
-          {% for chamber in proposal.dossier.chambers %}
-            {{ chamber | chamber_small_icon }}
-          {% endfor %}
-        </td>
-        <td>
-          <a href="{% url 'dossier-detail' proposal.dossier.pk %}">
-              {{ proposal.dossier.title }}
+        </li>
+        <li role="presentation" {% if tab == 'proposals' %}class="active"{% endif %}>
+          <a href="{% url 'theme-proposals' slug=theme.slug %}" role="tab">
+            <h3>{% trans "Proposals" %}</h3>
           </a>
+        </li>
+        <li role="presentation" {% if tab == 'positions' %}class="active"{% endif %}>
+          <a href="{% url 'theme-positions' slug=theme.slug %}" role="tab">
+            <h3>{% trans "Public positions" %}</h3>
+          </a>
+        </li>
+      </ul>
 
-          <td>
-              {{ proposal.dossier.reference }}
-          </td>
+      <div class="tab-content">
+        {% block theme_content %}{% endblock %}
+      </div>
+    </div>
+  </div>
+  {% endblock %}
 
-        <td>
-          {{ proposal.title }}
-          <br>
-          <small>
-            {{ proposal.reference }}
-          </small>
-        </td>
-
-        {% if proposal.recommendation %}
-          <td>{{ proposal.recommendation.title }}</td>
-          <td>{{ proposal.recommendation.recommendation|position_icon }}</td>
-        {% else %}
-          <td class="no-recommendation" colspan="2">No recommendation</td>
-          <td>{{ proposal.status }}</td>
-          <td>{{ proposal.total_for }}</td>
-          <td>{{ proposal.total_against }}</td>
-          <td>{{ proposal.total_abstain }}</td>
-          {% endif %}
-      </tr>
-      {% endfor %}
-  </table>
-  <h2>
-      {% trans "Positions" %}
-  </h2>
-
-  <table>
-    <tr>
-      <th>
-          {% trans "Representative" %}
-      </th>
-      <th>
-          {% trans "Date" %}
-      </th>
-      <th>
-          {% trans "Position" %}
-      </th>
-      <th>
-        {% trans "Link" %}
-      </th>
-    </tr>
-    {% for position in theme.positions.all %}
-    <tr class="position">
-        <td>
-            {{ position.representative }}
-        </td>
-        <td>{{ position.datetime }}</td>
-        <td>
-            <a href="{{ position.get_absolute_url }}">
-                {{ position.text|truncatewords:8 }}
-            </a>
-        </td>
-        <td>
-            <a href="{{ position.link }}">
-                {{ position.link }}
-            </a>
-        </td>
-    </tr>
-    {% endfor %}
-  </table>
-{% endblock %}
+{% endwith %}

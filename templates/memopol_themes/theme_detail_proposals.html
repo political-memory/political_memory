@@ -1,0 +1,71 @@
+{% extends 'memopol_themes/theme_detail.html' %}
+
+{% load i18n %}
+{% load memopol_tags %}
+
+{% block theme_content %}
+
+  <table class="table table-responsive">
+    <tr>
+      <th>
+          {% trans "Chambers" %}
+      </th>
+      <th>
+          {% trans "Dossier" %}
+      </th>
+      <th>
+        {% trans "Reference" %}
+      <th>
+          {% trans "Proposal" %}
+      </th>
+      <th>
+          {% trans "Title" %}
+      </th>
+      <th>
+          {% trans "Recommendation" %}
+      </th>
+      <th>
+          {% trans "Status" %}
+      </th>
+      <th>{{ "for"|position_icon }}</th>
+      <th>{{ "against"|position_icon }}</th>
+      <th>{{"abstain"|position_icon }}</th>
+    </tr>
+
+    {% for proposal in proposals %}
+      <tr class="proposal">
+        <td>
+          {% for chamber in proposal.dossier.chambers %}
+            {{ chamber | chamber_small_icon }}
+          {% endfor %}
+        </td>
+        <td>
+          <a href="{% url 'dossier-detail' proposal.dossier.pk %}">
+            {{ proposal.dossier.title }}
+          </a>
+
+        <td>{{ proposal.dossier.reference }}</td>
+
+        <td>
+          {{ proposal.title }}
+          <br>
+          <small>
+            {{ proposal.reference }}
+          </small>
+        </td>
+
+        {% if proposal.recommendation %}
+          <td>{{ proposal.recommendation.title }}</td>
+          <td>{{ proposal.recommendation.recommendation|position_icon }}</td>
+        {% else %}
+          <td class="no-recommendation" colspan="2">No recommendation</td>
+        {% endif %}
+        <td>{{ proposal.status }}</td>
+        <td>{{ proposal.total_for }}</td>
+        <td>{{ proposal.total_against }}</td>
+        <td>{{ proposal.total_abstain }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
+{% endblock %}
