@@ -1,9 +1,5 @@
 # coding: utf-8
 
-from django.views import generic
-
-from representatives.models import Representative
-
 from .representative_detail_base import RepresentativeDetailBase
 
 

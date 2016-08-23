@@ -12,9 +12,9 @@
   {% block title %}{{ representative.full_name }}{% endblock %}
 
   {% block content %}
-  <div class="row">
+  <div class="row" id="representative-detail">
     <div class="col-sm-3">
-      <img src="{{ representative.photo }}">
+      <img id="representative-photo" src="{{ representative.photo }}">
     </div>
 
     <div class="col-sm-9">

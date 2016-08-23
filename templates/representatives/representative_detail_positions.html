@@ -26,7 +26,7 @@
           {% for timeframe in positions|regroup_by_age %}
             <td>
               {% for position in timeframe %}
-                <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#collapsePosition-{{ position.pk }}" aria-expanded="false" aria-controls="collapsePosition-{{ position.pk }}">
+                <button class="btn btn-default position-button" type="button" data-toggle="collapse" data-target="#collapsePosition-{{ position.pk }}" aria-expanded="false" aria-controls="collapsePosition-{{ position.pk }}">
                       {{ position.datetime|naturalday }}
                 </button>
               {% endfor %}
@@ -37,7 +37,7 @@
     </table>
 
     {% for position in positions %}
-      <div class="collapse" id="collapsePosition-{{ position.pk }}">
+      <div class="collapse position-details" id="collapsePosition-{{ position.pk }}">
         <div class="panel panel-default">
           <div class="panel-body text-justify">
             <blockquote>

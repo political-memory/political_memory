@@ -8,6 +8,7 @@ from views.dossier_detail import DossierDetail
 from views.dossier_list import DossierList
 from views.group_ac import GroupAutocomplete
 from views.group_list import GroupList
+from views.representative_detail_base import RepresentativeDetailBase
 from views.representative_detail_votes import RepresentativeDetailVotes
 from views.representative_detail_mandates import RepresentativeDetailMandates
 from views.representative_detail_positions import RepresentativeDetailPositions
@@ -42,6 +43,12 @@ urlpatterns = [
         r'^legislature/representative/(?P<slug>[-\w]+)/$',
         RedirectRepresentativeDetail.as_view(),
         name='representative-detail'
+    ),
+    # URL used for testing only
+    url(
+        r'^legislature/representative/(?P<slug>[-\w]+)/none/$',
+        RepresentativeDetailBase.as_view(),
+        name='representative-none'
     ),
     url(
         r'^legislature/representative/(?P<slug>[-\w]+)/votes/$',

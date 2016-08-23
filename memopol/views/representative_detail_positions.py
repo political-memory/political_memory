@@ -1,10 +1,7 @@
 # coding: utf-8
 
 from django.db import models
-from django.views import generic
 
-from representatives.models import Representative
-from representatives_positions.forms import PositionForm
 from representatives_positions.models import Position
 
 from .representative_detail_base import RepresentativeDetailBase

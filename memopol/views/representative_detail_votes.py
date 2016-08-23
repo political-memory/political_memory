@@ -1,9 +1,7 @@
 # coding: utf-8
 
 from django.db import models
-from django.views import generic
 
-from representatives.models import Representative
 from representatives_recommendations.models import VoteScore
 from representatives_votes.models import Proposal
 
@@ -21,8 +19,10 @@ class RepresentativeDetailVotes(RepresentativeDetailBase):
                 'votes',
                 queryset=VoteScore.objects.filter(
                     proposal__in=Proposal.objects.exclude(recommendation=None),
-                ).select_related('proposal__recommendation').order_by(
-                    '-proposal__datetime')
+                ).select_related(
+                    'proposal__dossier',
+                    'proposal__recommendation'
+                ).order_by('-proposal__datetime')
             )
         )
 
