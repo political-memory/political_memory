@@ -77,7 +77,7 @@ class ThemeBaseTest(BaseTest):
 
 class DossierBaseTest(BaseTest):
     tab = 'none'
-    base_url = '/votes/dossier/15407/%s/'
+    base_url = '/votes/dossier/15409/%s/'
 
     """
     Common queries plus:

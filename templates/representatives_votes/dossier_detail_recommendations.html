@@ -9,6 +9,7 @@
     <tr>
       <th>{% trans "Chamber" %}</th>
       <th>{% trans "Proposal" %}</th>
+      <th colspan="2">{% trans "Recommendation" %}</th>
       <th>{% trans "Status" %}</th>
       <th>{{ "for"|position_icon }}</th>
       <th>{{ "against"|position_icon }}</th>
@@ -20,7 +21,6 @@
         <td>
           TODO
         </td>
-
         <td>
           {{ proposal.title }}
           <br>
@@ -28,6 +28,9 @@
             {{ proposal.reference }}
           </small>
         </td>
+
+        <td>{{ proposal.recommendation.title }}</td>
+        <td>{{ proposal.recommendation.recommendation|position_icon }}</td>
 
         <td>{{ proposal.status }}</td>
         <td>{{ proposal.total_for }}</td>

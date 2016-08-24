@@ -144,8 +144,7 @@
         </td>
 
         
-          <td>Prorogation de l'État d'Urgence - Première lecture</td>
-          <td><i aria-label="against" class="fa fa-thumbs-down vote_negative" title="against"></i></td>
+          <td class="no-recommendation" colspan="2">No recommendation</td>
         
         <td>adopted</td>
         <td>488</td>
@@ -175,8 +174,7 @@
         </td>
 
         
-          <td>Prorogation de l'État d'Urgence - Amdt 32</td>
-          <td><i aria-label="against" class="fa fa-thumbs-down vote_negative" title="against"></i></td>
+          <td class="no-recommendation" colspan="2">No recommendation</td>
         
         <td>adopted</td>
         <td>255</td>

@@ -5,6 +5,7 @@ from django.views import generic
 
 from views.dossier_ac import DossierAutocomplete, ProposalAutocomplete
 from views.dossier_detail_base import DossierDetailBase
+from views.dossier_detail_recommendations import DossierDetailRecommendations
 from views.dossier_detail_proposals import DossierDetailProposals
 from views.dossier_detail_documents import DossierDetailDocuments
 from views.dossier_list import DossierList
@@ -120,6 +121,11 @@ urlpatterns = [
         r'^votes/dossier/(?P<pk>\d+)/none/$',
         DossierDetailBase.as_view(),
         name='dossier-none'
+    ),
+    url(
+        r'^votes/dossier/(?P<pk>\d+)/recommendations/$',
+        DossierDetailRecommendations.as_view(),
+        name='dossier-recommendations'
     ),
     url(
         r'^votes/dossier/(?P<pk>\d+)/proposals/$',

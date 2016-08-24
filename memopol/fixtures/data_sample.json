@@ -41579,17 +41579,6 @@
 },
 {
     "fields": {
-        "proposal": 6807,
-        "title": "Prorogation de l'\u00c9tat d'Urgence - Premi\u00e8re lecture",
-        "description": "",
-        "weight": 50.0,
-        "recommendation": "against"
-    },
-    "model": "representatives_recommendations.recommendation",
-    "pk": 79
-},
-{
-    "fields": {
         "proposal": 6806,
         "title": "Prorogation de l'\u00c9tat d'Urgence - CMP",
         "description": "",
@@ -41631,17 +41620,6 @@
     },
     "model": "representatives_recommendations.recommendation",
     "pk": 83
-},
-{
-    "fields": {
-        "proposal": 6808,
-        "title": "Prorogation de l'\u00c9tat d'Urgence - Amdt 32",
-        "description": "",
-        "weight": 10.0,
-        "recommendation": "against"
-    },
-    "model": "representatives_recommendations.recommendation",
-    "pk": 84
 },
 {
     "fields": {

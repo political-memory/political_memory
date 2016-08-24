@@ -1,34 +1,16 @@
 <tr class="document">
         <td>
-          <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-sen.png)"></span>
-        </td>
-        <td>
-          <a class="external" href="http://www.senat.fr/dossier-legislatif/pjl15-176.html" target="_blank">
-            
-              Procedure file
-            
-          </a>
-        </td>
-        <td>
-          <a class="external" href="http://www.senat.fr/dossier-legislatif/pjl15-176.html" target="_blank">
-            
-          </a>
-        </td>
-      </tr>
----
-<tr class="document">
-        <td>
           <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)"></span>
         </td>
         <td>
-          <a class="external" href="http://www.assemblee-nationale.fr/14/dossiers/prorogation_loi_55-385.asp" target="_blank">
+          <a class="external" href="http://www.assemblee-nationale.fr/14/dossiers/loi_55-385_prorogation_application.asp" target="_blank">
             
               Procedure file
             
           </a>
         </td>
         <td>
-          <a class="external" href="http://www.assemblee-nationale.fr/14/dossiers/prorogation_loi_55-385.asp" target="_blank">
+          <a class="external" href="http://www.assemblee-nationale.fr/14/dossiers/loi_55-385_prorogation_application.asp" target="_blank">
             
           </a>
         </td>

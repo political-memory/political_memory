@@ -1,12 +1,12 @@
 from .base import DossierBaseTest
 
 
-class DossierProposalsTest(DossierBaseTest):
-    tab = 'proposals'
+class DossierRecommendationsTest(DossierBaseTest):
+    tab = 'recommendations'
 
     """
     Dossier base queries plus
-    - 1 for proposals
+    - 1 for proposals and related recommendation
     """
     queries = DossierBaseTest.queries + 1
 

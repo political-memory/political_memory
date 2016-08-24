@@ -42,4 +42,4 @@ class RedirectThemeDetail(RedirectView):
 
 class RedirectDossierDetail(RedirectView):
     permanent = True
-    pattern_name = 'dossier-proposals'
+    pattern_name = 'dossier-recommendations'

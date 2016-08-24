@@ -28,9 +28,14 @@
   <div class="row">
     <div class="col-xs-12">
       <ul class="nav nav-tabs nav-justified" role="tablist">
+        <li role="presentation" {% if tab == 'recommendations' %}class="active"{% endif %}>
+          <a href="{% url 'dossier-recommendations' pk=dossier.pk %}" role="tab">
+            <h3>{% trans "Recommendations" %}</h3>
+          </a>
+        </li>
         <li role="presentation" {% if tab == 'proposals' %}class="active"{% endif %}>
           <a href="{% url 'dossier-proposals' pk=dossier.pk %}" role="tab">
-            <h3>{% trans "Proposals" %}</h3>
+            <h3>{% trans "Other proposals" %}</h3>
           </a>
         </li>
         <li role="presentation" {% if tab == 'documents' %}class="active"{% endif %}>
