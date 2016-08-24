@@ -11,7 +11,7 @@
 
     {% for group in groups %}
     {% with dossier=group.grouper %}
-    {% with votes=group.list %}
+    {% with votes=group.list|dictsortreversed:"proposal.datetime" %}
 
       <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="dossier-heading-{{ dossier.pk }}">
