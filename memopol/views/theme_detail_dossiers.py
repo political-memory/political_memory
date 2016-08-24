@@ -1,5 +1,9 @@
 # coding: utf-8
 
+from django.db import models
+
+from representatives_votes.models import Dossier
+
 from .theme_detail_base import ThemeDetailBase
 
 
@@ -8,7 +12,13 @@ class ThemeDetailDossiers(ThemeDetailBase):
 
     def get_queryset(self):
         qs = super(ThemeDetailDossiers, self).get_queryset()
-        qs = qs.prefetch_related('dossiers__documents__chamber')
+        qs = qs.prefetch_related(
+            models.Prefetch(
+                'dossiers',
+                Dossier.objects.order_by('-pk')
+                .prefetch_related('documents__chamber')
+            )
+        )
         return qs
 
     def get_context_data(self, **kwargs):

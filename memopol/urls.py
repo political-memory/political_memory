@@ -4,7 +4,9 @@ from django.contrib import admin
 from django.views import generic
 
 from views.dossier_ac import DossierAutocomplete, ProposalAutocomplete
-from views.dossier_detail import DossierDetail
+from views.dossier_detail_base import DossierDetailBase
+from views.dossier_detail_proposals import DossierDetailProposals
+from views.dossier_detail_documents import DossierDetailDocuments
 from views.dossier_list import DossierList
 
 from views.group_ac import GroupAutocomplete
@@ -20,7 +22,8 @@ from views.redirects import (
     RedirectGroupList,
     RedirectRepresentativeDetail,
     RedirectThemeDetail,
-    RedirectGroupRepresentativeList
+    RedirectGroupRepresentativeList,
+    RedirectDossierDetail
 )
 
 from views.theme_detail_base import ThemeDetailBase
@@ -110,8 +113,23 @@ urlpatterns = [
     ),
     url(
         r'^votes/dossier/(?P<pk>\d+)/$',
-        DossierDetail.as_view(),
+        RedirectDossierDetail.as_view(),
         name='dossier-detail'
+    ),
+    url(
+        r'^votes/dossier/(?P<pk>\d+)/none/$',
+        DossierDetailBase.as_view(),
+        name='dossier-none'
+    ),
+    url(
+        r'^votes/dossier/(?P<pk>\d+)/proposals/$',
+        DossierDetailProposals.as_view(),
+        name='dossier-proposals'
+    ),
+    url(
+        r'^votes/dossier/(?P<pk>\d+)/documents/$',
+        DossierDetailDocuments.as_view(),
+        name='dossier-documents'
     ),
     url(
         r'^votes/autocomplete/dossier/$',

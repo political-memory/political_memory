@@ -73,3 +73,26 @@ class ThemeBaseTest(BaseTest):
 
         with self.assertNumQueries(self.queries):
             self.client.get(self.url)
+
+
+class DossierBaseTest(BaseTest):
+    tab = 'none'
+    base_url = '/votes/dossier/15407/%s/'
+
+    """
+    Common queries plus:
+    - 1 for the dossier
+    - 1 for related themes
+    """
+    queries = BaseTest.left_pane_queries + 2
+
+    @property
+    def url(self):
+        return self.base_url % self.tab
+
+    def do_query_test(self):
+        # First query to set session variables
+        self.client.get(self.url)
+
+        with self.assertNumQueries(self.queries):
+            self.client.get(self.url)

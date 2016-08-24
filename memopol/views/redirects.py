@@ -38,3 +38,8 @@ class RedirectRepresentativeDetail(RedirectView):
 class RedirectThemeDetail(RedirectView):
     permanent = True
     pattern_name = 'theme-links'
+
+
+class RedirectDossierDetail(RedirectView):
+    permanent = True
+    pattern_name = 'dossier-proposals'

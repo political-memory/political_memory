@@ -1,0 +1,65 @@
+<tr class="proposal">
+        <td>
+          
+            <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
+          
+            <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-sen.png)" title="Sénat"></span>
+          
+        </td>
+        <td>
+          <a href="/votes/dossier/15407/">
+            Pouvoirs publics : prorogation de l'état d'urgence
+          </a>
+
+        </td><td>14/prorogation_loi_55-385</td>
+
+        <td>
+          L'amendement n° 46 de m. estrosi à l'article 4 du projet de loi prorogeant l'application de la loi n° 55-385 du 3 avril 1955 relative à l'état d'urgence et renforçant l'efficacité de ses dispositions (première lecture).
+          <br/>
+          <small>
+            http://www2.assemblee-nationale.fr/scrutins/detail/(legislature)/14/(num)/1190
+          </small>
+        </td>
+
+        
+          <td>Prorogation de l'État d'Urgence - amendement 46</td>
+          <td><i aria-label="against" class="fa fa-thumbs-down vote_negative" title="against"></i></td>
+        
+        <td>rejected</td>
+        <td>128</td>
+        <td>198</td>
+        <td>0</td>
+      </tr>
+---
+<tr class="proposal">
+        <td>
+          
+            <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
+          
+            <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-sen.png)" title="Sénat"></span>
+          
+        </td>
+        <td>
+          <a href="/votes/dossier/15407/">
+            Pouvoirs publics : prorogation de l'état d'urgence
+          </a>
+
+        </td><td>14/prorogation_loi_55-385</td>
+
+        <td>
+          L'ensemble du projet de loi prorogeant l'application de la loi n° 55-385 du 3 avril 1955 relative à l'état d'urgence et renforçant l'efficacité de ses dispositions (première lecture).
+          <br/>
+          <small>
+            http://www2.assemblee-nationale.fr/scrutins/detail/(legislature)/14/(num)/1191
+          </small>
+        </td>
+
+        
+          <td>Prorogation de l'état d'urgence - première lecture</td>
+          <td><i aria-label="against" class="fa fa-thumbs-down vote_negative" title="against"></i></td>
+        
+        <td>adopted</td>
+        <td>550</td>
+        <td>6</td>
+        <td>1</td>
+      </tr>
