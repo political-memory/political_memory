@@ -22,7 +22,7 @@ class RepresentativeDetailVotes(RepresentativeDetailBase):
                 ).select_related(
                     'proposal__dossier',
                     'proposal__recommendation'
-                ).order_by('-proposal__datetime')
+                ).order_by('-proposal__datetime', 'proposal__title')
             )
         )
 

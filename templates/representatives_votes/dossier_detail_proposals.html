@@ -5,7 +5,7 @@
 
 {% block dossier_content %}
 
-  <table class="table table-responsive">
+  <table class="table table-responsive table-striped">
     <tr>
       <th>{% trans "Proposal" %}</th>
       <th>{% trans "Status" %}</th>
@@ -25,7 +25,7 @@
           </small>
         </td>
 
-        <td>{{ proposal.status }}</td>
+        <td>{{ proposal.status|proposal_status_label }}</td>
         <td>{{ proposal.total_for }}</td>
         <td>{{ proposal.total_against }}</td>
         <td>{{ proposal.total_abstain }}</td>

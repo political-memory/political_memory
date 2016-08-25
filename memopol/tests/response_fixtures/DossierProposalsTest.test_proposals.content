@@ -7,7 +7,7 @@
           </small>
         </td>
 
-        <td>adopted</td>
+        <td><span class="label label-default">adopted</span></td>
         <td>255</td>
         <td>37</td>
         <td>3</td>
@@ -27,7 +27,7 @@
           </small>
         </td>
 
-        <td>adopted</td>
+        <td><span class="label label-default">adopted</span></td>
         <td>488</td>
         <td>26</td>
         <td>4</td>

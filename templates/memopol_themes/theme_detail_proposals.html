@@ -1,6 +1,7 @@
 {% extends 'memopol_themes/theme_detail.html' %}
 
 {% load i18n %}
+{% load bootstrap3 %}
 {% load memopol_tags %}
 
 {% block theme_content %}
@@ -11,8 +12,7 @@
       <th>{% trans "Dossier" %}</th>
       <th>{% trans "Reference" %}</th>
       <th>{% trans "Proposal" %}</th>
-      <th>{% trans "Title" %}</th>
-      <th>{% trans "Recommendation" %}</th>
+      <th colspan="2">{% trans "Recommendation" %}</th>
       <th>{% trans "Status" %}</th>
       <th>{{ "for"|position_icon }}</th>
       <th>{{ "against"|position_icon }}</th>
@@ -42,12 +42,14 @@
         </td>
 
         {% if proposal.recommendation %}
-          <td>{{ proposal.recommendation.title }}</td>
-          <td>{{ proposal.recommendation.recommendation|position_icon }}</td>
+          <td class="text-center">{{ proposal.recommendation.recommendation|position_icon }}</td>
+          <td class="text-center">
+            {{ proposal.recommendation.weight }}&nbsp;<a data-toggle="tooltip" data-placement="top" title="{{ proposal.recommendation.title }}">{% bootstrap_icon "info-sign" %}</a>
+          </td>
         {% else %}
-          <td class="no-recommendation" colspan="2">No recommendation</td>
+          <td class="text-center" colspan="2">None</td>
         {% endif %}
-        <td>{{ proposal.status }}</td>
+        <td>{{ proposal.status|proposal_status_label:proposal.recommendation }}</td>
         <td>{{ proposal.total_for }}</td>
         <td>{{ proposal.total_against }}</td>
         <td>{{ proposal.total_abstain }}</td>

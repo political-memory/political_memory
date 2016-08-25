@@ -158,28 +158,40 @@ def mandate_date(date, arg=None):
 
 
 @register.filter
-def position_icon(position):
+def position_icon(position, recommendation=None):
+    color = 'default'
+    if recommendation:
+        if position == recommendation:
+            color = 'success'
+        else:
+            color = 'danger'
+
     if position == 'for':
-        return mark_safe(
-            '<i \
-            aria-label="for" \
-            class="fa fa-thumbs-up vote_positive" \
-            title="for" \
-            ></i>')
+        icon = "thumbs-up"
     elif position == 'against':
-        return mark_safe(
-            '<i \
-            aria-label="against" \
-            class="fa fa-thumbs-down vote_negative" \
-            title="against" \
-            ></i>')
+        icon = "thumbs-down"
     else:
-        return mark_safe(
-            '<i \
-            aria-label="abstain" \
-            class="fa fa-circle-o vote_abstain" \
-            title="abstain" \
-            ></i>')
+        icon = "circle-o"
+
+    pattern = '<i class="fa fa-%s text-%s" title="%s"></i>'
+    return mark_safe(pattern % (icon, color, position))
+
+
+@register.filter
+def proposal_status_label(status, recommendation=None):
+    color = 'default'
+    if recommendation:
+        reco = recommendation.recommendation
+
+        if (reco == 'for' and status == 'adopted' or
+           reco == 'against' and status == 'rejected'):
+            color = 'success'
+        elif (reco == 'for' and status == 'rejected' or
+              reco == 'against' and status == 'adopted'):
+            color = 'danger'
+
+    pattern = '<span class="label label-%s">%s</span>'
+    return mark_safe(pattern % (color, status))
 
 
 @register.filter

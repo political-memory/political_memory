@@ -4,7 +4,6 @@
 {% load i18n %}
 {% load humanize %}
 {% load memopol_tags %}
-{% load representatives_recommendations_tags %}
 {% load staticfiles %}
 
 {% with representative=object %}
@@ -24,7 +23,7 @@
         <dl class="dl-horizontal">
           <dt>{% trans "Score" %}</dt>
           <dd>
-            <span class="badge" data-toggle="tooltip" data-placement="right" title="{% trans "Le score est une somme de points attribués suivant si le MEP vote dans notre sens (positif) ou non (négatif) multiplié par le poids (importance) de ce vote." %}">{{ representative.score.score }}</span>&nbsp;&nbsp;{{ representative.score.score|score_arrow }}
+            <span class="badge" data-toggle="tooltip" data-placement="right" title="{% trans "Total score is the sum of score contributions for each of this representatives votes" %}">{{ representative.score.score }}</span>
           </dd>
 
           <dt>{% trans "Country" %}</dt>

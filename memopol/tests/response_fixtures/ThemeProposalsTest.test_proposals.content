@@ -20,10 +20,12 @@
         </td>
 
         
-          <td>Prorogation de l'État d'Urgence - Amdt 52</td>
-          <td><i aria-label="against" class="fa fa-thumbs-down vote_negative" title="against"></i></td>
+          <td class="text-center"><i class="fa fa-thumbs-down text-default" title="against"></i></td>
+          <td class="text-center">
+            10.0 <a data-placement="top" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Amdt 52"><span class="glyphicon glyphicon-info-sign"></span></a>
+          </td>
         
-        <td>rejected</td>
+        <td><span class="label label-success">rejected</span></td>
         <td>114</td>
         <td>180</td>
         <td>5</td>
@@ -51,10 +53,12 @@
         </td>
 
         
-          <td>Prorogation de l'État d'Urgence - Amdt 8 et 89</td>
-          <td><i aria-label="against" class="fa fa-thumbs-down vote_negative" title="against"></i></td>
+          <td class="text-center"><i class="fa fa-thumbs-down text-default" title="against"></i></td>
+          <td class="text-center">
+            10.0 <a data-placement="top" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Amdt 8 et 89"><span class="glyphicon glyphicon-info-sign"></span></a>
+          </td>
         
-        <td>rejected</td>
+        <td><span class="label label-success">rejected</span></td>
         <td>139</td>
         <td>163</td>
         <td>3</td>
@@ -82,10 +86,12 @@
         </td>
 
         
-          <td>Prorogation de l'État d'Urgence - Renvoi en comission</td>
-          <td><i aria-label="against" class="fa fa-thumbs-down vote_negative" title="against"></i></td>
+          <td class="text-center"><i class="fa fa-thumbs-down text-default" title="against"></i></td>
+          <td class="text-center">
+            5.0 <a data-placement="top" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Renvoi en comission"><span class="glyphicon glyphicon-info-sign"></span></a>
+          </td>
         
-        <td>rejected</td>
+        <td><span class="label label-success">rejected</span></td>
         <td>145</td>
         <td>218</td>
         <td>4</td>
@@ -113,10 +119,12 @@
         </td>
 
         
-          <td>Prorogation de l'État d'Urgence - Amdt 7 et 88</td>
-          <td><i aria-label="against" class="fa fa-thumbs-down vote_negative" title="against"></i></td>
+          <td class="text-center"><i class="fa fa-thumbs-down text-default" title="against"></i></td>
+          <td class="text-center">
+            10.0 <a data-placement="top" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Amdt 7 et 88"><span class="glyphicon glyphicon-info-sign"></span></a>
+          </td>
         
-        <td>rejected</td>
+        <td><span class="label label-success">rejected</span></td>
         <td>121</td>
         <td>191</td>
         <td>5</td>
@@ -144,9 +152,9 @@
         </td>
 
         
-          <td class="no-recommendation" colspan="2">No recommendation</td>
+          <td class="text-center" colspan="2">None</td>
         
-        <td>adopted</td>
+        <td><span class="label label-default">adopted</span></td>
         <td>488</td>
         <td>26</td>
         <td>4</td>
@@ -174,9 +182,9 @@
         </td>
 
         
-          <td class="no-recommendation" colspan="2">No recommendation</td>
+          <td class="text-center" colspan="2">None</td>
         
-        <td>adopted</td>
+        <td><span class="label label-default">adopted</span></td>
         <td>255</td>
         <td>37</td>
         <td>3</td>
@@ -204,10 +212,12 @@
         </td>
 
         
-          <td>Prorogation de l'État d'Urgence - Amdt 10 et 90</td>
-          <td><i aria-label="against" class="fa fa-thumbs-down vote_negative" title="against"></i></td>
+          <td class="text-center"><i class="fa fa-thumbs-down text-default" title="against"></i></td>
+          <td class="text-center">
+            10.0 <a data-placement="top" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Amdt 10 et 90"><span class="glyphicon glyphicon-info-sign"></span></a>
+          </td>
         
-        <td>rejected</td>
+        <td><span class="label label-success">rejected</span></td>
         <td>127</td>
         <td>167</td>
         <td>4</td>
@@ -235,10 +245,12 @@
         </td>
 
         
-          <td>Prorogation État d'Urgence - Amdt 97</td>
-          <td><i aria-label="against" class="fa fa-thumbs-down vote_negative" title="against"></i></td>
+          <td class="text-center"><i class="fa fa-thumbs-down text-default" title="against"></i></td>
+          <td class="text-center">
+            10.0 <a data-placement="top" data-toggle="tooltip" title="Prorogation État d'Urgence - Amdt 97"><span class="glyphicon glyphicon-info-sign"></span></a>
+          </td>
         
-        <td>rejected</td>
+        <td><span class="label label-success">rejected</span></td>
         <td>123</td>
         <td>179</td>
         <td>0</td>
@@ -266,10 +278,12 @@
         </td>
 
         
-          <td>Prorogation de l'État d'Urgence - Amdt 108(rect) et 109(rect)</td>
-          <td><i aria-label="against" class="fa fa-thumbs-down vote_negative" title="against"></i></td>
+          <td class="text-center"><i class="fa fa-thumbs-down text-default" title="against"></i></td>
+          <td class="text-center">
+            10.0 <a data-placement="top" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Amdt 108(rect) et 109(rect)"><span class="glyphicon glyphicon-info-sign"></span></a>
+          </td>
         
-        <td>adopted</td>
+        <td><span class="label label-danger">adopted</span></td>
         <td>278</td>
         <td>9</td>
         <td>3</td>
@@ -297,10 +311,12 @@
         </td>
 
         
-          <td>Prorogation de l'État d'Urgence - Amdt 92</td>
-          <td><i aria-label="against" class="fa fa-thumbs-down vote_negative" title="against"></i></td>
+          <td class="text-center"><i class="fa fa-thumbs-down text-default" title="against"></i></td>
+          <td class="text-center">
+            10.0 <a data-placement="top" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Amdt 92"><span class="glyphicon glyphicon-info-sign"></span></a>
+          </td>
         
-        <td>rejected</td>
+        <td><span class="label label-success">rejected</span></td>
         <td>118</td>
         <td>167</td>
         <td>2</td>
@@ -328,10 +344,12 @@
         </td>
 
         
-          <td>Prorogation de l'État d'Urgence - Amdt 83</td>
-          <td><i aria-label="against" class="fa fa-thumbs-down vote_negative" title="against"></i></td>
+          <td class="text-center"><i class="fa fa-thumbs-down text-default" title="against"></i></td>
+          <td class="text-center">
+            10.0 <a data-placement="top" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Amdt 83"><span class="glyphicon glyphicon-info-sign"></span></a>
+          </td>
         
-        <td>rejected</td>
+        <td><span class="label label-success">rejected</span></td>
         <td>123</td>
         <td>184</td>
         <td>0</td>
@@ -359,10 +377,12 @@
         </td>
 
         
-          <td>Prorogation de l'État d'Urgence - Amdt 30</td>
-          <td><i aria-label="against" class="fa fa-thumbs-down vote_negative" title="against"></i></td>
+          <td class="text-center"><i class="fa fa-thumbs-down text-default" title="against"></i></td>
+          <td class="text-center">
+            10.0 <a data-placement="top" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Amdt 30"><span class="glyphicon glyphicon-info-sign"></span></a>
+          </td>
         
-        <td>rejected</td>
+        <td><span class="label label-success">rejected</span></td>
         <td>123</td>
         <td>179</td>
         <td>3</td>
@@ -390,10 +410,12 @@
         </td>
 
         
-          <td>Prorogation de l'État d'Urgence - CMP</td>
-          <td><i aria-label="against" class="fa fa-thumbs-down vote_negative" title="against"></i></td>
+          <td class="text-center"><i class="fa fa-thumbs-down text-default" title="against"></i></td>
+          <td class="text-center">
+            100.0 <a data-placement="top" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - CMP"><span class="glyphicon glyphicon-info-sign"></span></a>
+          </td>
         
-        <td>adopted</td>
+        <td><span class="label label-danger">adopted</span></td>
         <td>87</td>
         <td>5</td>
         <td>0</td>

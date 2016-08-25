@@ -6,7 +6,7 @@
 
 {% block dossier_content %}
 
-  <table class="table table-responsive">
+  <table class="table table-responsive table-striped">
     <tr>
       <th>{% trans "Proposal" %}</th>
       <th>{% trans "Recommendation" %}</th>
@@ -33,7 +33,7 @@
           {{ proposal.recommendation.weight }}&nbsp;<a data-toggle="tooltip" data-placement="top" title="{{ proposal.recommendation.title }}">{% bootstrap_icon "info-sign" %}</a>
         </td>
 
-        <td>{{ proposal.status }}</td>
+        <td>{{ proposal.status|proposal_status_label:proposal.recommendation }}</td>
         <td>{{ proposal.total_for }}</td>
         <td>{{ proposal.total_against }}</td>
         <td>{{ proposal.total_abstain }}</td>
