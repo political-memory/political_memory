@@ -1,9 +1,5 @@
 # coding: utf-8
 
-from django.db import models
-
-from representatives_votes.models import Proposal
-
 from .dossier_detail_base import DossierDetailBase
 
 
