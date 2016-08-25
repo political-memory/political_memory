@@ -1,4 +1,5 @@
 {% load i18n %}
+{% load bootstrap3 %}
 {% load staticfiles %}
 
 <div id="intro">
@@ -11,7 +12,14 @@
     <p class="text-justify hidden-xs">{% trans "Political Memory is a tool designed by La Quadrature du Net to help citizens reach their representative and track their voting records on issues related to fundamental freedoms online." %}</p>
     <div class="container-fluid hidden-xs">
         <div class="row">
-            <div class="pull-right">
+            <div class="col-sm-6">
+                <a class="btn btn-primary hidden-print" data-toggle="modal" data-target="#addposition" aria-expanded="false" aria-controls="addposition">
+                    {% bootstrap_icon "bullhorn" %}
+                    Add a public position
+                </a>
+
+            </div>
+            <div class="col-sm-6 text-right">
                 <a class="btn btn-default">{% trans "More on our blog" %}</a>
             </div>
         </div>

@@ -199,28 +199,6 @@ select:focus, select.form-control:focus {
 
 
 /***************************************************************
-					Add a position
-***************************************************************/
-#btn-position {
-  position: fixed;
-  z-index: 5;
-}
-
-@media (min-width: 768px) {
-  #btn-position {
-    bottom: 2em;
-    right: 2em;
-  }
-}
-
-@media (max-width: 768px) {
-  #btn-position {
-    bottom: 1em;
-    right: 1em;
-  }
-}
-
-/***************************************************************
 					Index
 ***************************************************************/
 
