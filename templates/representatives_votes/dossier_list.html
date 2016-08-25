@@ -59,9 +59,7 @@
                 {{ chamber|chamber_icon }}
               {% endfor %}
 
-              {% for theme in dossier.themes.all %}
-                <span class="tag">{{ theme.name }}</span>
-              {% endfor %}
+              {% include "blocks/_themetags.html" with themes=dossier.themes.all %}
 
               &nbsp;
             </p>

@@ -7,20 +7,16 @@
 
   <table class="table table-responsive">
     <tr>
-      <th>{% trans "Chamber" %}</th>
       <th>{% trans "Proposal" %}</th>
       <th>{% trans "Status" %}</th>
       <th>{{ "for"|position_icon }}</th>
       <th>{{ "against"|position_icon }}</th>
       <th>{{ "abstain"|position_icon }}</th>
+      <th>{% trans "Themes" %}</th>
     </tr>
 
     {% for proposal in proposals %}
       <tr class="proposal">
-        <td>
-          TODO
-        </td>
-
         <td>
           {{ proposal.title }}
           <br>
@@ -33,6 +29,9 @@
         <td>{{ proposal.total_for }}</td>
         <td>{{ proposal.total_against }}</td>
         <td>{{ proposal.total_abstain }}</td>
+        <td>
+          {% include "blocks/_themetags.html" with themes=proposal.themes.all %}
+        </td>
       </tr>
     {% endfor %}
   </table>

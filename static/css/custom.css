@@ -27,6 +27,13 @@ body {
     color: #487ed6;
     padding: .2em .6em;
     border-radius: .25em;
+    white-space: nowrap;
+}
+
+a.tag:hover {
+    color: white;
+    background-color: #487ed6;
+    text-decoration: none;
 }
 
 /***************************************************************
@@ -383,8 +390,13 @@ iframe {
     vertical-align: sub;
 }
 
+.vote_positive {
+    color: green;
+}
 
-
+.vote_negative {
+    color: red;
+}
 
 
 

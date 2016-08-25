@@ -7,8 +7,9 @@ class DossierProposalsTest(DossierBaseTest):
     """
     Dossier base queries plus
     - 1 for proposals
+    - 1 for related themes
     """
-    queries = DossierBaseTest.queries + 1
+    queries = DossierBaseTest.queries + 2
 
     def test_queries(self):
         self.do_query_test()
