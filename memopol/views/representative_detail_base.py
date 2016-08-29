@@ -8,8 +8,11 @@ from representatives.models import Chamber, Representative, Address, Phone, \
 
 from .representative_mixin import RepresentativeViewMixin
 
+from representatives_positions.views import PositionFormMixin
 
-class RepresentativeDetailBase(RepresentativeViewMixin, generic.DetailView):
+
+class RepresentativeDetailBase(RepresentativeViewMixin, PositionFormMixin,
+                               generic.DetailView):
 
     queryset = Representative.objects.select_related('score')
 
@@ -56,5 +59,6 @@ class RepresentativeDetailBase(RepresentativeViewMixin, generic.DetailView):
         c = super(RepresentativeDetailBase, self).get_context_data(**kwargs)
 
         self.add_representative_country_and_main_mandate(c['object'])
+        c['position_form'].fields['representative'].initial = c['object'].pk
 
         return c

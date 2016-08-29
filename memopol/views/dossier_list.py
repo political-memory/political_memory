@@ -9,8 +9,11 @@ from representatives_votes.models import Dossier
 
 from ..filters import DossierFilter
 
+from representatives_positions.views import PositionFormMixin
 
-class DossierList(PaginationMixin, SortMixin, generic.ListView):
+
+class DossierList(PaginationMixin, SortMixin, PositionFormMixin,
+                  generic.ListView):
 
     current_filter = None
     queryset = Dossier.objects.prefetch_related(

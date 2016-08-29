@@ -1,5 +1,4 @@
 from django.db import models
-from django.core.urlresolvers import reverse
 from django.template.defaultfilters import truncatewords
 from representatives.models import Representative
 
@@ -21,7 +20,3 @@ class Position(models.Model):
 
     def unpublish(self):
         self.published = False
-
-    def get_absolute_url(self):
-        return reverse('representatives_positions:position-detail',
-                       args=(self.pk,))

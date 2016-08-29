@@ -1,7 +1,8 @@
 # coding: utf-8
 from django.conf.urls import include, url
 from django.contrib import admin
-from django.views import generic
+
+from views.home import HomeView
 
 from views.dossier_ac import DossierAutocomplete, ProposalAutocomplete
 from views.dossier_detail_base import DossierDetailBase
@@ -184,8 +185,6 @@ urlpatterns = [
     ),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^positions/', include('representatives_positions.urls',
-        namespace='representatives_positions')),
     url(r'^api/', include(api.router.urls)),
-    url(r'^$', generic.TemplateView.as_view(template_name='home.html')),
+    url(r'^$', HomeView.as_view()),
 ]

@@ -10,10 +10,12 @@ from representatives.models import Representative
 from ..filters import RepresentativeFilter
 from .representative_mixin import RepresentativeViewMixin
 
+from representatives_positions.views import PositionFormMixin
+
 
 class RepresentativeList(CSVDownloadMixin, GridListMixin, PaginationMixin,
                          RepresentativeViewMixin, ActiveLegislatureMixin,
-                         SortMixin, generic.ListView):
+                         SortMixin, PositionFormMixin, generic.ListView):
 
     csv_name = 'representatives'
     queryset = Representative.objects.select_related('score')

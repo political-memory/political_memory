@@ -9,8 +9,11 @@ from memopol_themes.models import Theme
 
 from ..filters import ThemeFilter
 
+from representatives_positions.views import PositionFormMixin
 
-class ThemeList(PaginationMixin, SortMixin, generic.ListView):
+
+class ThemeList(PaginationMixin, SortMixin, PositionFormMixin,
+                generic.ListView):
 
     current_filter = None
     queryset = Theme.objects.all().annotate(

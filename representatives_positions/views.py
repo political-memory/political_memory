@@ -1,36 +1,35 @@
 from django.views import generic
-from django.db import models
-from django.core.urlresolvers import reverse
 
-from memopol.views.representative_mixin import RepresentativeViewMixin
-from representatives.models import Mandate
-
-from .models import Position
 from .forms import PositionForm
 
 
-class PositionCreate(generic.CreateView):
-    model = Position
-    form_class = PositionForm
+class PositionFormMixin(generic.View):
+    """
+    Mixin for class views that handle a position form (should be all full-page
+    views, ie. all template views that use a templates that extends base.html).
 
-    def get_success_url(self):
-        return reverse('representative-detail',
-            args=(self.object.representative.slug,))
+    We don't use a FormView here to allow usage of this mixin in views that
+    have their own form.
+    """
 
+    position_form = None
+    position_created = False
 
-class PositionDetail(RepresentativeViewMixin, generic.DetailView):
-    queryset = Position.objects.filter(published=True).select_related(
-        'representative__score')
+    def post(self, request, *args, **kwargs):
+        if 'position-representative' in request.POST:
+            self.position_form = PositionForm(request.POST, prefix='position')
+            if self.position_form.is_valid():
+                self.position_form.save()
+                self.position_form = None
+                self.position_created = True
 
-    def get_queryset(self):
-        qs = super(PositionDetail, self).get_queryset()
-        qs = qs.prefetch_related(models.Prefetch(
-            'representative__mandates',
-            Mandate.objects.select_related('constituency__country', 'group')
-        ))
-        return qs
+        return self.get(request, args, kwargs)
 
-    def get_object(self):
-        obj = super(PositionDetail, self).get_object()
-        self.add_representative_country_and_main_mandate(obj.representative)
-        return obj
+    def get_context_data(self, **kwargs):
+        c = super(PositionFormMixin, self).get_context_data(**kwargs)
+
+        c['position_form'] = \
+            self.position_form or PositionForm(prefix='position')
+        c['position_created'] = self.position_created
+
+        return c

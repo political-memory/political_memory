@@ -7,13 +7,17 @@ class BaseTest(ResponseDiffTestMixin, test.TestCase):
 
     """
     Common queries
-    - 1 for chambers
-    - 1 for countries
-    - 1 for parties
-    - 1 for committees
-    - 1 for delegations
+    - 5 for search forms
+        - 1 for chambers
+        - 1 for countries
+        - 1 for parties
+        - 1 for committees
+        - 1 for delegations
+    - 2 for the position form
+        - 1 for representatives
+        - 1 for themes
     """
-    left_pane_queries = 5
+    left_pane_queries = 7
 
     def request_test(self, url=None):
         self.assertResponseDiffEmpty(self.client.get(url or self.url))

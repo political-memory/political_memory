@@ -26,6 +26,9 @@
     <script type="text/javascript" src="{% static 'libs/jquery/dist/jquery.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
     {% endcompress %}
+
+    {{ position_form.media }}
+
     {% block head %}{% endblock %}
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -36,15 +39,16 @@
 </head>
 
 <body>
+    {% get_current_language as LANGUAGE_CODE %}
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-3 custom-nav">
             {% block sidebar %}
                 {% include '_base_intro.html' %}
                 <hr class="hidden-xs"/>
-                {% get_current_language as LANGUAGE_CODE %}
                 {% cache 3600 LANGUAGE_CODE %} {# 1 hour #}
-                {% include '_base_search.html' %}
+                    {% include '_base_search.html' %}
                 {% endcache %}
                 <hr class="hidden-xs"/>
                 <a href="{% url "representative-list" %}" class="btn btn-primary btn-block">
@@ -57,11 +61,13 @@
             {% endblock %}
             </div>
 
-            {% include '_position_form_modal.html' %}
+            {% cache 3600 LANGUAGE_CODE %}
+                {% include '_position_form_modal.html' %}
+            {% endcache %}
 
             <div class="col-sm-9 col-sm-offset-3 {% block container-class %}{% endblock %}">
                 {% block content %}
-                    <div class="text-danger">This template is empty !</div>
+                    <div class="text-danger">{% trans "This template is empty !" %}</div>
                 {% endblock %}
             </div>
         </div>
