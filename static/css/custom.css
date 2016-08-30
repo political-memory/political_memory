@@ -206,7 +206,10 @@ select:focus, select.form-control:focus {
 					Index
 ***************************************************************/
 
-
+#intro h1 a {
+    color: black;
+    text-decoration: none;
+}
 
 /***************************************************************
 					Cards / Résultats de la recherche

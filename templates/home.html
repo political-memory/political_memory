@@ -1,35 +1,67 @@
 {% extends "base.html" %}
+
+{% load i18n %}
+{% load bootstrap3 %}
+{% load staticfiles %}
+
 {% block content %}
-<div class=".row">
-    <div class=".col-md-8">
-        <p>
-            Memopol is reachable only in <b>reduced functionality mode</b>.
-            By the way, you could access to
-            <a href="{% url 'representative-list' %}">the list of MEPs</a>.
-        </p>
-        <p>
-            You can help on building the new Memopol by <a href="https://wiki.laquadrature.net/Projects/Memopol/Roadmap">coding, translating, de    signing, funding, etc...</a>.
-        </p>
-        <div class="col-md-4">
-            <div class="panel.panel-default">
-                <div class="panel-body">
-                    <p>
-                        <a href="http://memopol.org">Memopol Blog</a> is available as well as the new
-                        <a href="http://github.com/political-memory/political_memory">
-                            bugtracking system</a>
-                    </p>
-                    <h3>
-                            What is memopol?
-                    </h3>
-                    <p>
-                        Political  Memory is a tool designed by La Quadrature du Net to help
-                        European citizens to reach members of European Parliament (MEPs) and
-                        track their voting records on issues related to fundamental
-                        freedoms online.
-                    </p>
-                </div>
-            </div>
-        </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h1>{% trans "Welcome to Memopol" %}</h1>
     </div>
-</div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <p>
+        {% include "text/short_description.html" %}
+      </p>
+      <p>
+        {% include "text/license.html" %}
+      </p>
+    </div>
+
+    <div class="col-md-4">
+      <h3>More information</h3>
+      <div class="btn-group">
+        <a class="btn btn-primary" target="_blank" href="http://www.memopol.org/">
+          {% bootstrap_icon "bookmark" %}
+          {% trans "Memopol blog" %}
+        </a>
+        <a class="btn btn-primary" target="_blank" href="http://memopol.rtfd.org/">
+          {% bootstrap_icon "info-sign" %}
+          {% trans "Documentation" %}
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <h3>Contact us</h3>
+      <div class="btn-group">
+        <a class="btn btn-primary" target="_blank" href="https://twitter.com/memopol2">
+          <img class="social-icon" src="{% static 'images' %}/social-twitter.png">
+          {% trans "Twitter" %}
+        </a>
+        <a class="btn btn-primary" target="_blank" href="https://webchat.freenode.net/?nick=memopol-user-...&channels=lqdn-memopol&prompt=1">
+          {% bootstrap_icon "comment" %}
+          {% trans "IRC Channel" %}
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <h3>Contributing</h3>
+      <div class="btn-group">
+        <a class="btn btn-default" target="_blank" href="https://github.com/political-memory/political_memory">
+          {% bootstrap_icon "cog" %}
+          {% trans "Code repository" %}
+        </a>
+        <a class="btn btn-default" target="_blank" href="https://github.com/political-memory/political_memory/issues/new">
+          {% bootstrap_icon "warning-sign" %}
+          {% trans "Report an issue" %}
+        </a>
+      </div>
+    </div>
+  </div>
+
 {% endblock %}
