@@ -371,7 +371,9 @@ iframe {
     color: red;
 }
 
-
+.panel.panel-default .badge {
+    background-color: #487ED6;
+}
 
 
 

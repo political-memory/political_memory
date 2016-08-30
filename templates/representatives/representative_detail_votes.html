@@ -8,58 +8,57 @@
 
   <div class="panel-group" id="accordion-dossier" role="tablist" aria-multiselectable="true">
 
-    {% regroup votes by proposal.dossier as groups %}
+    {% for pk, d in dossiers.items %}
+      {% with dossier=d.dossier %}
 
-    {% for group in groups %}
-    {% with dossier=group.grouper %}
-    {% with votes=group.list|dictsortreversed:"proposal.datetime" %}
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="dossier-heading-{{ pk }}">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion-dossier" href="#dossier-{{ pk }}" aria-expanded="false" aria-controls="dossier-{{ pk }}">
+                {{ dossier.title }}
+                <span class="pull-right">
+                  <span class="badge" data-toggle="tooltip" data-placement="left" title="{% trans "Score for the representative on this specific dossier" %}">{{ d.score }}</span>
+                </span>
+              </a>
+            </h4>
+          </div>
+          <div id="dossier-{{ pk }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="dossier-heading-{{ pk }}">
+            <div class="panel-body">
 
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab" id="dossier-heading-{{ dossier.pk }}">
-          <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" data-parent="#accordion-dossier" href="#dossier-{{ dossier.pk }}" aria-expanded="false" aria-controls="dossier-{{ dossier.pk }}">
-              {{ dossier.title }}
-            </a>
-          </h4>
-        </div>
-        <div id="dossier-{{ dossier.pk }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="dossier-heading-{{ dossier.pk }}">
-          <div class="panel-body">
+              <table class="table table-striped table-responsive text-center">
 
-            <table class="table table-striped table-responsive text-center">
-
-              <thead>
-                <tr>
-                  <th class="text-center">{% trans "Proposal" %}</th>
-                  <th class="text-center">{% trans "Recommendation" %}</th>
-                  <th class="text-center">{% trans "Vote" %}</th>
-                  <th class="text-center nowrap">Points&nbsp;<a data-toggle="tooltip" data-placement="top" title="{% trans "Score is negative or positive depending on whether the representative voted as recommended" %}">{% bootstrap_icon "info-sign" %}</a>
-                  </th>
-                </tr>
-              </thead>
-
-              <tbody>
-
-                {% for vote in votes %}
+                <thead>
                   <tr>
-                    <th>{{ vote.proposal.title }}</th>
-                    <td>{{ vote.proposal.recommendation.recommendation|position_icon }}</td>
-                    <td>{{ vote.position|position_icon:vote.proposal.recommendation.recommendation }}</td>
-                    <td>
-                      {{ vote.score }}&nbsp;<a data-toggle="tooltip" data-placement="top" title="{{ vote.proposal.recommendation.title }}">{% bootstrap_icon "info-sign" %}</a>
-                    </td>
+                    <th class="text-center">{% trans "Proposal" %}</th>
+                    <th class="text-center">{% trans "Recommendation" %}</th>
+                    <th class="text-center">{% trans "Vote" %}</th>
+                    <th class="text-center nowrap">Points&nbsp;<a data-toggle="tooltip" data-placement="top" title="{% trans "Score is negative or positive depending on whether the representative voted as recommended" %}">{% bootstrap_icon "info-sign" %}</a>
+                    </th>
                   </tr>
-                {% endfor %}
+                </thead>
 
-              </tbody>
+                <tbody>
 
-            </table>
+                  {% for vote in d.votes %}
+                    <tr>
+                      <th>{{ vote.proposal.title }}</th>
+                      <td>{{ vote.proposal.recommendation.recommendation|position_icon }}</td>
+                      <td>{{ vote.position|position_icon:vote.proposal.recommendation.recommendation }}</td>
+                      <td>
+                        <span class="badge" data-toggle="tooltip" data-placement="left" title="{{ vote.proposal.recommendation.title }}">{{vote.score }}</span>
+                      </td>
+                    </tr>
+                  {% endfor %}
 
+                </tbody>
+
+              </table>
+
+            </div>
           </div>
         </div>
-      </div>
 
-    {% endwith %}
-    {% endwith %}
+      {% endwith %}
     {% endfor %}
 
   </div>

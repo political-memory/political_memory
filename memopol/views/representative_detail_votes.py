@@ -23,7 +23,8 @@ class RepresentativeDetailVotes(RepresentativeDetailBase):
                     'proposal__dossier',
                     'proposal__recommendation'
                 ).order_by('-proposal__datetime', 'proposal__title')
-            )
+            ),
+            'dossierscores'
         )
 
         return qs
@@ -31,7 +32,21 @@ class RepresentativeDetailVotes(RepresentativeDetailBase):
     def get_context_data(self, **kwargs):
         c = super(RepresentativeDetailVotes, self).get_context_data(**kwargs)
 
+        ds = c['object'].dossierscores.all()
+
+        dossiers = {}
+        for vote in c['object'].votes.all():
+            dossier = vote.proposal.dossier
+            pk = dossier.pk
+            if pk not in dossiers:
+                dossiers[pk] = {
+                    'dossier': dossier,
+                    'votes': [],
+                    'score': [s.score for s in ds if s.dossier_id == pk][0]
+                }
+            dossiers[pk]['votes'].append(vote)
+
+        c['dossiers'] = dossiers
         c['tab'] = 'votes'
-        c['votes'] = c['object'].votes.all()
 
         return c
