@@ -386,8 +386,20 @@ iframe {
     color: red;
 }
 
-.panel.panel-default .badge {
-    background-color: #487ED6
+.badge {
+    font-weight: bold;
+}
+
+.badge {
+    background-color: #487ED6 !important;
+}
+
+.badge-success {
+    background-color: #76c979 !important;
+}
+
+.badge-danger {
+    background-color: #ab181d !important;
 }
 
 

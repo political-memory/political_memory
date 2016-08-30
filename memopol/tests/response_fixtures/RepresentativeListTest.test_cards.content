@@ -30,7 +30,7 @@
               <a class="icon-badge" href="/legislature/representative/group/Assembl%C3%A9e%20nationale/Gauche%20d%C3%A9mocrate%20et%20r%C3%A9publicaine/" title="Gauche démocrate et républicaine"><span class="group-icon" style="background-image: url(/static/collected/images/group-an-gdr.png)"></span></a>
               
             </p>
-            <p class="text-right"><span class="badge">35</span></p>
+            <p class="text-right"><span class="badge badge-success">35</span></p>
           </div>
 
         </div>
@@ -70,7 +70,7 @@
               <a class="icon-badge" href="/legislature/representative/group/Assembl%C3%A9e%20nationale/Union%20des%20d%C3%A9mocrates%20et%20ind%C3%A9pendants/" title="Union des démocrates et indépendants"><span class="group-icon" style="background-image: url(/static/collected/images/group-an-udi.png)"></span></a>
               
             </p>
-            <p class="text-right"><span class="badge">-305</span></p>
+            <p class="text-right"><span class="badge badge-danger">-305</span></p>
           </div>
 
         </div>
@@ -110,7 +110,7 @@
               <a class="icon-badge" href="/legislature/representative/group/Assembl%C3%A9e%20nationale/Les%20r%C3%A9publicains/" title="Les républicains"><span class="group-icon" style="background-image: url(/static/collected/images/group-an-lr.png)"></span></a>
               
             </p>
-            <p class="text-right"><span class="badge">-205</span></p>
+            <p class="text-right"><span class="badge badge-danger">-205</span></p>
           </div>
 
         </div>
@@ -150,7 +150,7 @@
               <a class="icon-badge" href="/legislature/representative/group/Assembl%C3%A9e%20nationale/Les%20r%C3%A9publicains/" title="Les républicains"><span class="group-icon" style="background-image: url(/static/collected/images/group-an-lr.png)"></span></a>
               
             </p>
-            <p class="text-right"><span class="badge">-110</span></p>
+            <p class="text-right"><span class="badge badge-danger">-110</span></p>
           </div>
 
         </div>
@@ -190,7 +190,7 @@
               <a class="icon-badge" href="/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/" title="Group of the Progressive Alliance of Socialists and Democrats in the European Parliament"><span class="group-icon" style="background-image: url(/static/collected/images/group-ep-sd.png)"></span></a>
               
             </p>
-            <p class="text-right"><span class="badge">0</span></p>
+            <p class="text-right"><span class="badge badge-primary">0</span></p>
           </div>
 
         </div>
@@ -230,7 +230,7 @@
               <a class="icon-badge" href="/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/" title="Group of the Progressive Alliance of Socialists and Democrats in the European Parliament"><span class="group-icon" style="background-image: url(/static/collected/images/group-ep-sd.png)"></span></a>
               
             </p>
-            <p class="text-right"><span class="badge">1480</span></p>
+            <p class="text-right"><span class="badge badge-success">1480</span></p>
           </div>
 
         </div>
@@ -270,7 +270,7 @@
               <a class="icon-badge" href="/legislature/representative/group/Assembl%C3%A9e%20nationale/Socialiste,%20%C3%A9cologiste%20et%20r%C3%A9publicain/" title="Socialiste, écologiste et républicain"><span class="group-icon" style="background-image: url(/static/collected/images/group-an-ser.png)"></span></a>
               
             </p>
-            <p class="text-right"><span class="badge">0</span></p>
+            <p class="text-right"><span class="badge badge-primary">0</span></p>
           </div>
 
         </div>
@@ -310,7 +310,7 @@
               <a class="icon-badge" href="/legislature/representative/group/Assembl%C3%A9e%20nationale/Les%20r%C3%A9publicains/" title="Les républicains"><span class="group-icon" style="background-image: url(/static/collected/images/group-an-lr.png)"></span></a>
               
             </p>
-            <p class="text-right"><span class="badge">-135</span></p>
+            <p class="text-right"><span class="badge badge-danger">-135</span></p>
           </div>
 
         </div>
@@ -350,7 +350,7 @@
               <a class="icon-badge" href="/legislature/representative/group/Assembl%C3%A9e%20nationale/Les%20r%C3%A9publicains/" title="Les républicains"><span class="group-icon" style="background-image: url(/static/collected/images/group-an-lr.png)"></span></a>
               
             </p>
-            <p class="text-right"><span class="badge">-195</span></p>
+            <p class="text-right"><span class="badge badge-danger">-195</span></p>
           </div>
 
         </div>
@@ -390,7 +390,7 @@
               <a class="icon-badge" href="/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People's%20Party%20(Christian%20Democrats)/" title="Group of the European People's Party (Christian Democrats)"><span class="group-icon" style="background-image: url(/static/collected/images/group-ep-epp.png)"></span></a>
               
             </p>
-            <p class="text-right"><span class="badge">-1216</span></p>
+            <p class="text-right"><span class="badge badge-danger">-1216</span></p>
           </div>
 
         </div>
@@ -430,7 +430,7 @@
               <a class="icon-badge" href="/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People's%20Party%20(Christian%20Democrats)/" title="Group of the European People's Party (Christian Democrats)"><span class="group-icon" style="background-image: url(/static/collected/images/group-ep-epp.png)"></span></a>
               
             </p>
-            <p class="text-right"><span class="badge">-1216</span></p>
+            <p class="text-right"><span class="badge badge-danger">-1216</span></p>
           </div>
 
         </div>
@@ -470,7 +470,7 @@
               <a class="icon-badge" href="/legislature/representative/group/Assembl%C3%A9e%20nationale/Gauche%20d%C3%A9mocrate%20et%20r%C3%A9publicaine/" title="Gauche démocrate et républicaine"><span class="group-icon" style="background-image: url(/static/collected/images/group-an-gdr.png)"></span></a>
               
             </p>
-            <p class="text-right"><span class="badge">-235</span></p>
+            <p class="text-right"><span class="badge badge-danger">-235</span></p>
           </div>
 
         </div>

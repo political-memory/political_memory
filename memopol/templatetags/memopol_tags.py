@@ -195,5 +195,23 @@ def proposal_status_label(status, recommendation=None):
 
 
 @register.filter
+def score_badge(score, tooltip=None):
+    if score > 0:
+        color = 'success'
+    elif score < 0:
+        color = 'danger'
+    else:
+        color = 'primary'
+
+    attrs = ''
+    if tooltip:
+        attrs = 'data-toggle="tooltip" data-placement="%s" title="%s"'
+        attrs = attrs % ('left', tooltip)
+
+    pattern = '<span class="badge badge-%s" %s>%s</span>'
+    return mark_safe(pattern % (color, attrs, score))
+
+
+@register.filter
 def cast_str(val):
     return str(val)

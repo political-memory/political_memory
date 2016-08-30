@@ -22,7 +22,8 @@
         <dl class="dl-horizontal">
           <dt>{% trans "Score" %}</dt>
           <dd>
-            <span class="badge" data-toggle="tooltip" data-placement="right" title="{% trans "Total score is the sum of score contributions for each of this representatives votes" %}">{{ representative.score.score }}</span>
+            {% trans "Total score is the sum of score contributions for each of this representatives votes" as tooltip%}
+            {{ representative.score.score|score_badge:tooltip }}
           </dd>
 
           <dt>{% trans "Country" %}</dt>

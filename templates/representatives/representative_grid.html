@@ -48,7 +48,7 @@
               <a class="icon-badge" href="{% group_url representative.main_mandate.group %}" title="{{ representative.main_mandate.group.name }}">{{ representative.main_mandate.group|group_icon }}</a>
               {% endif %}
             </p>
-            <p class="text-right"><span class="badge">{{ representative.score.score }}</span></p>
+            <p class="text-right">{{ representative.score.score|score_badge }}</p>
           </div>
 
         </div>

@@ -17,7 +17,8 @@
               <a role="button" data-toggle="collapse" data-parent="#accordion-dossier" href="#dossier-{{ pk }}" aria-expanded="false" aria-controls="dossier-{{ pk }}">
                 {{ dossier.title }}
                 <span class="pull-right">
-                  <span class="badge" data-toggle="tooltip" data-placement="left" title="{% trans "Score for the representative on this specific dossier" %}">{{ d.score }}</span>
+                  {% trans "Score for the representative on this specific dossier" as tooltip %}
+                  {{ d.score|score_badge:tooltip }}
                 </span>
               </a>
             </h4>
@@ -45,7 +46,7 @@
                       <td>{{ vote.proposal.recommendation.recommendation|position_icon }}</td>
                       <td>{{ vote.position|position_icon:vote.proposal.recommendation.recommendation }}</td>
                       <td>
-                        <span class="badge" data-toggle="tooltip" data-placement="left" title="{{ vote.proposal.recommendation.title }}">{{vote.score }}</span>
+                        {{ vote.score|score_badge:vote.proposal.recommendation.title }}
                       </td>
                     </tr>
                   {% endfor %}

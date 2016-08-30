@@ -1,5 +1,6 @@
 <dd>
-            <span class="badge" data-placement="right" data-toggle="tooltip" title="Total score is the sum of score contributions for each of this representatives votes">-115</span>
+            
+            <span class="badge badge-danger" data-placement="left" data-toggle="tooltip" title="Total score is the sum of score contributions for each of this representatives votes">-115</span>
           </dd>
 ---
 <dd>

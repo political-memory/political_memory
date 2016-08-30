@@ -11,7 +11,7 @@
                       <td><i class="fa fa-thumbs-down text-default" title="against"></i></td>
                       <td><i class="fa fa-thumbs-up text-danger" title="for"></i></td>
                       <td>
-                        <span class="badge" data-placement="left" data-toggle="tooltip" title="Prorogation de l'état d'urgence - Première lecture">-100</span>
+                        <span class="badge badge-danger" data-placement="left" data-toggle="tooltip" title="Prorogation de l'état d'urgence - Première lecture">-100</span>
                       </td>
                     </tr>
 ---
@@ -28,7 +28,7 @@
                       <td><i class="fa fa-thumbs-down text-default" title="against"></i></td>
                       <td><i class="fa fa-thumbs-up text-danger" title="for"></i></td>
                       <td>
-                        <span class="badge" data-placement="left" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Amdt 108(rect) et 109(rect)">-10</span>
+                        <span class="badge badge-danger" data-placement="left" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Amdt 108(rect) et 109(rect)">-10</span>
                       </td>
                     </tr>
 ---
@@ -37,7 +37,7 @@
                       <td><i class="fa fa-thumbs-down text-default" title="against"></i></td>
                       <td><i class="fa fa-thumbs-down text-success" title="against"></i></td>
                       <td>
-                        <span class="badge" data-placement="left" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Amdt 10 et 90">10</span>
+                        <span class="badge badge-success" data-placement="left" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Amdt 10 et 90">10</span>
                       </td>
                     </tr>
 ---
@@ -46,7 +46,7 @@
                       <td><i class="fa fa-thumbs-down text-default" title="against"></i></td>
                       <td><i class="fa fa-thumbs-down text-success" title="against"></i></td>
                       <td>
-                        <span class="badge" data-placement="left" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Amdt 30">10</span>
+                        <span class="badge badge-success" data-placement="left" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Amdt 30">10</span>
                       </td>
                     </tr>
 ---
@@ -55,7 +55,7 @@
                       <td><i class="fa fa-thumbs-down text-default" title="against"></i></td>
                       <td><i class="fa fa-thumbs-down text-success" title="against"></i></td>
                       <td>
-                        <span class="badge" data-placement="left" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Amdt 52">10</span>
+                        <span class="badge badge-success" data-placement="left" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Amdt 52">10</span>
                       </td>
                     </tr>
 ---
@@ -64,7 +64,7 @@
                       <td><i class="fa fa-thumbs-down text-default" title="against"></i></td>
                       <td><i class="fa fa-thumbs-down text-success" title="against"></i></td>
                       <td>
-                        <span class="badge" data-placement="left" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Amdt 7 et 88">10</span>
+                        <span class="badge badge-success" data-placement="left" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Amdt 7 et 88">10</span>
                       </td>
                     </tr>
 ---
@@ -73,7 +73,7 @@
                       <td><i class="fa fa-thumbs-down text-default" title="against"></i></td>
                       <td><i class="fa fa-thumbs-down text-success" title="against"></i></td>
                       <td>
-                        <span class="badge" data-placement="left" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Amdt 83">10</span>
+                        <span class="badge badge-success" data-placement="left" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Amdt 83">10</span>
                       </td>
                     </tr>
 ---
@@ -82,7 +82,7 @@
                       <td><i class="fa fa-thumbs-down text-default" title="against"></i></td>
                       <td><i class="fa fa-thumbs-down text-success" title="against"></i></td>
                       <td>
-                        <span class="badge" data-placement="left" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Amdt 8 et 89">10</span>
+                        <span class="badge badge-success" data-placement="left" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Amdt 8 et 89">10</span>
                       </td>
                     </tr>
 ---
@@ -91,7 +91,7 @@
                       <td><i class="fa fa-thumbs-down text-default" title="against"></i></td>
                       <td><i class="fa fa-thumbs-down text-success" title="against"></i></td>
                       <td>
-                        <span class="badge" data-placement="left" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Amdt 92">10</span>
+                        <span class="badge badge-success" data-placement="left" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Amdt 92">10</span>
                       </td>
                     </tr>
 ---
@@ -100,7 +100,7 @@
                       <td><i class="fa fa-thumbs-down text-default" title="against"></i></td>
                       <td><i class="fa fa-thumbs-down text-success" title="against"></i></td>
                       <td>
-                        <span class="badge" data-placement="left" data-toggle="tooltip" title="Prorogation État d'Urgence - Amdt 97">10</span>
+                        <span class="badge badge-success" data-placement="left" data-toggle="tooltip" title="Prorogation État d'Urgence - Amdt 97">10</span>
                       </td>
                     </tr>
 ---
@@ -109,7 +109,7 @@
                       <td><i class="fa fa-thumbs-down text-default" title="against"></i></td>
                       <td><i class="fa fa-thumbs-down text-success" title="against"></i></td>
                       <td>
-                        <span class="badge" data-placement="left" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Renvoi en comission">5</span>
+                        <span class="badge badge-success" data-placement="left" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - Renvoi en comission">5</span>
                       </td>
                     </tr>
 ---
@@ -126,7 +126,7 @@
                       <td><i class="fa fa-thumbs-down text-default" title="against"></i></td>
                       <td><i class="fa fa-thumbs-down text-success" title="against"></i></td>
                       <td>
-                        <span class="badge" data-placement="left" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - amendement 46">10</span>
+                        <span class="badge badge-success" data-placement="left" data-toggle="tooltip" title="Prorogation de l'État d'Urgence - amendement 46">10</span>
                       </td>
                     </tr>
 ---
@@ -135,6 +135,6 @@
                       <td><i class="fa fa-thumbs-down text-default" title="against"></i></td>
                       <td><i class="fa fa-thumbs-up text-danger" title="for"></i></td>
                       <td>
-                        <span class="badge" data-placement="left" data-toggle="tooltip" title="Prorogation de l'état d'urgence - première lecture">-100</span>
+                        <span class="badge badge-danger" data-placement="left" data-toggle="tooltip" title="Prorogation de l'état d'urgence - première lecture">-100</span>
                       </td>
                     </tr>
