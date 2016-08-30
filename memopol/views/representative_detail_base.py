@@ -3,8 +3,7 @@
 from django.db import models
 from django.views import generic
 
-from representatives.models import Chamber, Representative, Address, Phone, \
-    WebSite
+from representatives.models import Chamber, Representative, Phone, WebSite
 
 from .representative_mixin import RepresentativeViewMixin
 
@@ -43,13 +42,11 @@ class RepresentativeDetailBase(RepresentativeViewMixin, PositionFormMixin,
                                 .exclude(kind__in=chambers),
                 to_attr='other_websites'
             ),
-            models.Prefetch(
-                'address_set',
-                queryset=Address.objects.select_related('country')
-            ),
+            'address_set__country',
+            'address_set__phones',
             models.Prefetch(
                 'phone_set',
-                queryset=Phone.objects.select_related('address__country')
+                queryset=Phone.objects.filter(address__isnull=True)
             )
         )
 

@@ -3,40 +3,69 @@
           </dd>
 ---
 <dd>
-            <span class="flag-icon flag-icon-fr"></span>
+            <span class="flag-icon flag-icon-fr"></span> France
           </dd>
 ---
 <dd>
-            
-            <a href="">
+              <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)"></span> Assemblée nationale
+            </dd>
+---
+<dd>
+              <span class="group-icon" style="background-image: url(/static/collected/images/group-an-ser.png)"></span> Socialiste, écologiste et républicain
+              (SER)
+            </dd>
+---
+<dd>Born on 16/08/1978 in Annonay (Ardèche)
+          </dd>
+---
+<dd>
               
-              membre of Socialiste, écologiste et républicain</a>
-             (SER)
-            
-          </dd>
----
-<dd>Born in Annonay (Ardèche) the 16/08/1978 (M)
-          </dd>
+                <a class="label label-primary" href="http://twitter.com/olivierdussopt" target="_blank">
+                  <img class="social-icon" src="/static/collected/images/social-twitter.png"/>
+                  
+                    Twitter
+                  
+                </a>
+              
+              
+                <a class="label label-primary" href="http://www2.assemblee-nationale.fr/deputes/fiche/OMC_PA330357" target="_blank">
+                  <span class="glyphicon glyphicon-user"></span>
+                  Parliament page
+                </a>
+              
+              
+                <a class="label label-primary" href="http://www.olivierdussopt.fr" target="_blank">
+                  <span class="glyphicon glyphicon-link"></span>
+                  Website
+                </a>
+              
+
+              
+                <a class="label label-primary" href="mailto:odussopt@assemblee-nationale.fr">
+                  <b>@</b>
+                  E-mail
+                </a>
+              
+            </dd>
 ---
 <dd>
-            
-              <a class="label label-primary" href="http://twitter.com/olivierdussopt" target="_blank">
-                <img class="social-icon" src="/static/collected/images/social-twitter.png"/>
+              
+
+              
+                <span class="label label-primary" data-placement="bottom" data-toggle="tooltip" title="1 Rue Sadi Carnot – Annonay 07100, France">
+                  <span class="glyphicon glyphicon-envelope"></span>
+                  Other address
+                </span>
+
                 
-                  Twitter
+              
+                <span class="label label-primary" data-placement="bottom" data-toggle="tooltip" title="126 Rue de l'Université – Paris 75355, France">
+                  <span class="glyphicon glyphicon-envelope"></span>
+                  Assemblée nationale
+                </span>
+
                 
-              </a>
-            
-            
-              <a class="label label-primary" href="http://www2.assemblee-nationale.fr/deputes/fiche/OMC_PA330357" target="_blank">
-                <span class="glyphicon glyphicon-user"></span>
-                Parliament page
-              </a>
-            
-            
-              <a class="label label-primary" href="http://www.olivierdussopt.fr" target="_blank">
-                <span class="glyphicon glyphicon-link"></span>
-                Website
-              </a>
-            
-          </dd>
+              
+
+              
+            </dd>

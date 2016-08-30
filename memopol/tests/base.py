@@ -41,9 +41,11 @@ class RepresentativeBaseTest(BaseTest):
     - 1 for chamber websites
     - 1 for other websites
     - 1 for addresses
-    - 1 for phone numbers
+    - 1 for address country
+    - 1 for phone numbers related to addresses
+    - 1 for other phone numbers
     """
-    queries = BaseTest.left_pane_queries + 9
+    queries = BaseTest.left_pane_queries + 11
 
     @property
     def url(self):

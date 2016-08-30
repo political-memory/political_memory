@@ -72,10 +72,8 @@ h3 {
 
 .label {
 	font-weight: 400;
-}
-
-.label + .label {
-    margin-left: .25em;
+    display: inline-block;
+    line-height: 1.5em;
 }
 
 a.custom-invisible, a.custom-invisible:hover, a.custom-invisible:focus {
@@ -260,6 +258,19 @@ a:hover .custom-thumbnail-details {
 					MEPs
 ***************************************************************/
 
+#representative-detail {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+}
+
+#representative-photo {
+    margin: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
 .dl-horizontal dt {
     width: 100px;
 }
@@ -372,7 +383,7 @@ iframe {
 }
 
 .panel.panel-default .badge {
-    background-color: #487ED6;
+    background-color: #487ED6
 }
 
 

@@ -12,11 +12,10 @@
 
   {% block content %}
   <div class="row" id="representative-detail">
-    <div class="col-sm-3">
-      <img id="representative-photo" src="{{ representative.photo }}">
+    <div class="col-sm-3" id="representative-photo" style="background-image:url({{ representative.photo }});">
     </div>
 
-    <div class="col-sm-9">
+    <div class="col-sm-9" id="representative-info">
       <h1 class="text-center">{{ representative.full_name }}</h1>
 
       <div class="col-sm-9">
@@ -28,46 +27,90 @@
 
           <dt>{% trans "Country" %}</dt>
           <dd>
-            {{ representative.country|country_flag }}
+            {{ representative.country|country_flag }} {{ representative.country.name }}
           </dd>
 
-          <dt>{% trans "Party" %}</dt>
-          <dd>
-            {% with mandate=representative.main_mandate %}
-            <a href="{{ mandate.group.get_absolute_url }}">
-              {% blocktrans with role=representative.main_mandate.role group_name=mandate.group.name %}
-              {{ role }} of {{ group_name }}{% endblocktrans %}</a>
-            {% if mandate.group.abbreviation %}&nbsp;({{ mandate.group.abbreviation }}){% endif %}
-            {% endwith %}
-          </dd>
+          {% with mandate=representative.main_mandate %}
+
+            <dt>{% trans "Chamber" %}</dt>
+            <dd>
+              {{ mandate.group.chamber|chamber_icon }} {{ mandate.group.chamber.name }}
+            </dd>
+
+            <dt>{% trans "Party" %}</dt>
+            <dd>
+              {{ mandate.group|group_icon }} {{ mandate.group.name }}
+              {% if mandate.group.abbreviation %}({{ mandate.group.abbreviation }}){% endif %}
+            </dd>
+
+          {% endwith %}
 
           <dt>{% trans "Biography" %}</dt>
-          <dd>{% blocktrans with birth_place=representative.birth_place birth_date=representative.birth_date|naturalday:'d/m/Y' %}Born in {{ birth_place }} the {{ birth_date }}{% endblocktrans %} ({{ representative.get_gender_display }})
+          <dd>{% blocktrans with birth_place=representative.birth_place birth_date=representative.birth_date|naturalday:'d/m/Y' %}Born on {{ birth_date }} in {{ birth_place }}{% endblocktrans %}
           </dd>
 
-          <dt>{% trans "Links" %}</dt>
-          <dd>
-            {% for site in representative.social_websites %}
-              <a class="label label-primary" href="{{ site.url }}" target="_blank">
-                <img class="social-icon" src="{% static 'images' %}/social-{{ site.kind }}.png">
-                {% with kind=site.kind|capfirst %}
-                  {% trans kind %}
-                {% endwith %}
-              </a>
-            {% endfor %}
-            {% for site in representative.chamber_websites %}
-              <a class="label label-primary" href="{{ site.url }}" target="_blank">
-                {% bootstrap_icon "user" %}
-                {% trans "Parliament page" %}
-              </a>
-            {% endfor %}
-            {% for site in representative.other_websites %}
-              <a class="label label-primary" href="{{ site.url }}" target="_blank">
-                {% bootstrap_icon "link" %}
-                {% trans "Website" %}
-              </a>
-            {% endfor %}
-          </dd>
+          {% if representative.social_websites|length or representative.chamber_websites|length or representative.other_websites|length %}
+            <dt>{% trans "Links" %}</dt>
+            <dd>
+              {% for site in representative.social_websites %}
+                <a class="label label-primary" href="{{ site.url }}" target="_blank">
+                  <img class="social-icon" src="{% static 'images' %}/social-{{ site.kind }}.png">
+                  {% with kind=site.kind|capfirst %}
+                    {% trans kind %}
+                  {% endwith %}
+                </a>
+              {% endfor %}
+              {% for site in representative.chamber_websites %}
+                <a class="label label-primary" href="{{ site.url }}" target="_blank">
+                  {% bootstrap_icon "user" %}
+                  {% trans "Parliament page" %}
+                </a>
+              {% endfor %}
+              {% for site in representative.other_websites %}
+                <a class="label label-primary" href="{{ site.url }}" target="_blank">
+                  {% bootstrap_icon "link" %}
+                  {% trans "Website" %}
+                </a>
+              {% endfor %}
+
+              {% for email in representative.email_set.all %}
+                <a class="label label-primary" href="mailto:{{ email.email }}">
+                  <b>@</b>
+                  {% trans "E-mail" %}
+                </a>
+              {% endfor %}
+            </dd>
+          {% endif %}
+
+          {% if representative.address_set.all|length or representative.phone_set.all|length %}
+            <dt>{% trans "Contact" %}</dt>
+            <dd>
+              {% trans "Other address" as default_label %}
+
+              {% for address in representative.address_set.all %}
+                <span class="label label-primary" data-toggle="tooltip" data-placement="bottom" title="{% if address.floor and address.office_number %}Floor {{ address.floor }} &ndash; office {{ address.office_number }} &ndash; {% endif %}{{ address.number }} {{ address.street }} &ndash; {{ address.city }} {{ address.postcode }}, {{ address.country.name }}">
+                  {% bootstrap_icon "envelope" %}
+                  {{ address.name|default:default_label }}
+                </span>
+
+                {% for phone in address.phones.all %}
+                  <span class="label label-primary" data-toggle="tooltip" data-placement="bottom" title="{{ phone.number }}">
+                    {% bootstrap_icon "earphone" %}
+                    {{ address.name }}
+                  </span>
+
+                {% endfor %}
+              {% endfor %}
+
+              {% for phone in representative.phone_set.all %}
+                <span class="label label-primary">
+                  {% bootstrap_icon "earphone" %}
+                  {{ phone.number }}
+                </span>
+
+              {% endfor %}
+            </dd>
+          {% endif %}
 
           {# <dt>More infos</dt><dd><a><span class="label label-primary"><span class="glyphicon glyphicon-grain"></span> Facebook</span></a> <a><span class="label label-primary"><span class="glyphicon glyphicon-plane"></span> Twitter</span></a> <a><span class="label label-primary"><span class="glyphicon glyphicon-tree-conifer"></span> Parliement</span></a></dd> #}
         </dl>
