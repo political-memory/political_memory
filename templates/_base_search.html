@@ -11,17 +11,21 @@
     </div>
 </form>
 
-<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#search-options" aria-expanded="false" aria-controls="search-options">
+<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#search-options"
+  aria-expanded="{% if filter.data %}true{% else %}false{% endif %}" aria-controls="search-options">
     {% trans "More search options" %}
 </button>
 
-<div {% if filter.data %}{% else %}class="collapse"{% endif %} id="search-options">
+<div class="collapse{% if filter.data %} in{% endif %}" id="search-options"
+  aria-expanded="{% if filter.data %}true{% else %}false{% endif %}">
 
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#form-rep" aria-expanded="false" aria-controls="form-rep">
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#form-rep"
+    aria-expanded="{% if view == 'representative_list' and filter.data %}true{% else %}false{% endif %}" aria-controls="form-rep">
       {% trans "Find a representative" %}
   </button>
 
-  <div {% if view != 'representative_list' %}class="collapse"{% endif %} id="form-rep">
+  <div class="collapse{% if view == 'representative_list' and filter.data %} in{% endif %}"
+    aria-expanded="{% if view == 'representative_list' and filter.data %}true{% else %}false{% endif %}" id="form-rep">
 
     <form id="rep-search-form" class="form-horizontal" method="GET" action="{% url "representative-list" %}">
       <div class="form-group">
@@ -119,11 +123,13 @@
     </form>
   </div>
 
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#form-dossier" aria-expanded="false" aria-controls="form-dossier">
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#form-dossier"
+    aria-expanded="{% if view == 'dossier_list' and filter.data %}true{% else %}false{% endif %}" aria-controls="form-dossier">
       {% trans "Find a dossier" %}
   </button>
 
-  <div {% if view != 'dossier_list' %}class="collapse"{% endif %} id="form-dossier">
+  <div class="collapse{% if view == 'dossier_list' and filter.data %} in{% endif %}"
+    aria-expanded="{% if view == 'dossier_list' and filter.data %}true{% else %}false{% endif %}" id="form-dossier">
     <form id="dossier-search-form" class="form-horizontal" method="GET" action="{% url "dossier-list" %}">
       <div class="form-group">
         <label class="col-sm-3" for="search-dossier">{% trans "Name" %}</label>
