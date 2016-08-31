@@ -13,14 +13,14 @@
     <div class="col-sm-6 current-mandates">
       {% for mandate in mandates %}
         {% if mandate.end_date|mandate_date:'d/m/Y' == 'present' %}
-          {% include "representatives/_mandate_block.html" %}
+          {% include "representatives/_mandate_block.html" with weight_threshold=100 %}
         {% endif %}
       {% endfor %}
     </div>
     <div class="col-sm-6 past-mandates" >
       {% for mandate in mandates %}
         {% if mandate.end_date|mandate_date:'d/m/Y' != 'present' %}
-          {% include "representatives/_mandate_block.html" %}
+          {% include "representatives/_mandate_block.html" with weight_threshold=0 %}
         {% endif %}
       {% endfor %}
     </div>

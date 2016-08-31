@@ -4,6 +4,9 @@ from .base import RepresentativeBaseTest
 class RepresentativeMandatesTest(RepresentativeBaseTest):
     tab = 'mandates'
 
+    # Switch to a MEP with more mandates for this test
+    base_url = '/legislature/representative/renate-weber-1955-08-03/%s/'
+
     """
     Representative queries plus
     - 1 for mandates

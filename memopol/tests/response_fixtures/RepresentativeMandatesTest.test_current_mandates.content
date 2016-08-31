@@ -1,17 +1,17 @@
 <div class="col-sm-12 col-md-6 mandate ">
   <div class="thumbnail">
     
-      <span class="mandate-badge"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)"></span></span>
+      <span class="mandate-badge"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span></span>
     
     <h4 class="text-center">
-      Assemblée nationale
+      European Parliament
     </h4>
     
       <hr/>
     
     <div class="text-center desc">
-      <b>Député</b>
-      from 20/06/2012
+      <b></b>
+      from 10/09/2015
       to present
     </div>
   </div>
@@ -20,17 +20,17 @@
 <div class="col-sm-12 col-md-6 mandate ">
   <div class="thumbnail">
     
-      <span class="mandate-badge"><span class="flag-icon flag-icon-fr"></span></span>
+      <span class="mandate-badge"><span class="flag-icon flag-icon-ie"></span></span>
     
     <h4 class="text-center">
-      France
+      Romania
     </h4>
     
       <hr/>
     
     <div class="text-center desc">
-      <b>membre</b>
-      from present
+      <b></b>
+      from 10/09/2015
       to present
     </div>
   </div>
@@ -39,17 +39,17 @@
 <div class="col-sm-12 col-md-6 mandate ">
   <div class="thumbnail">
     
-      <span class="mandate-badge"><span class="group-icon" style="background-image: url(/static/collected/images/group-an-ser.png)"></span></span>
+      <span class="mandate-badge"><span class="group-icon" style="background-image: url(/static/collected/images/group-ep-alde.png)"></span></span>
     
     <h4 class="text-center">
-      Socialiste, écologiste et républicain
+      Group of the Alliance of Liberals and Democrats for Europe
     </h4>
     
       <hr/>
     
     <div class="text-center desc">
-      <b>membre</b>
-      from 20/06/2012
+      <b>Member</b>
+      from 17/11/2014
       to present
     </div>
   </div>
@@ -58,17 +58,17 @@
 <div class="col-sm-12 col-md-6 mandate ">
   <div class="thumbnail">
     
-      <span class="badge mandate-badge">AnComLois</span>
+      <span class="badge mandate-badge">EMPL</span>
     
     <h4 class="text-center">
-      Commission des lois constitutionnelles, de la législation et de l'administration générale de la république
+      Committee on Employment and Social Affairs
     </h4>
     
       <hr/>
     
     <div class="text-center desc">
-      <b>membre</b>
-      from 20/06/2012
+      <b>Member</b>
+      from 01/07/2014
       to present
     </div>
   </div>
@@ -77,15 +77,17 @@
 <div class="col-sm-12 col-md-6 mandate ">
   <div class="thumbnail">
     
+      <span class="badge mandate-badge">DROI</span>
+    
     <h4 class="text-center">
-      Commission d'enquête visant à évaluer les conséquences sur l'investissement public et les services publics de proximité de la baisse des dotations de l'État aux communes et aux epci
+      Subcommittee on Human Rights
     </h4>
     
       <hr/>
     
     <div class="text-center desc">
-      <b>membre</b>
-      from 20/06/2012
+      <b>Substitute</b>
+      from 09/01/2015
       to present
     </div>
   </div>
@@ -95,12 +97,12 @@
   <div class="thumbnail">
     
     <h4 class="text-center">
-      Groupe d'études papier et imprimés
+      Delegation to the EU-Chile Joint Parliamentary Committee
     </h4>
     
     <div class="text-center desc">
-      <b>membre</b>
-      from 20/06/2012
+      <b>Vice-Chair</b>
+      from 13/10/2014
       to present
     </div>
   </div>
@@ -110,12 +112,12 @@
   <div class="thumbnail">
     
     <h4 class="text-center">
-      Groupe d'études gaz de schiste
+      Delegation to the Euro-Latin American Parliamentary Assembly
     </h4>
     
     <div class="text-center desc">
-      <b>membre</b>
-      from 20/06/2012
+      <b>Member</b>
+      from 14/07/2014
       to present
     </div>
   </div>
@@ -125,12 +127,12 @@
   <div class="thumbnail">
     
     <h4 class="text-center">
-      Groupe d'études sida
+      Delegation for relations with the United States
     </h4>
     
     <div class="text-center desc">
-      <b>membre</b>
-      from 20/06/2012
+      <b>Substitute</b>
+      from 28/10/2015
       to present
     </div>
   </div>
@@ -140,121 +142,12 @@
   <div class="thumbnail">
     
     <h4 class="text-center">
-      Groupe d'études amiante
+      Delegation for relations with Israel
     </h4>
     
     <div class="text-center desc">
-      <b>membre</b>
-      from 20/06/2012
-      to present
-    </div>
-  </div>
-</div>
----
-<div class="col-sm-12 col-md-6 mandate mandate-secondary">
-  <div class="thumbnail">
-    
-      <span class="badge mandate-badge">07-2</span>
-    
-    <h4 class="text-center">
-      Ardèche (2ème circonscription)
-    </h4>
-    
-    <div class="text-center desc">
-      <b>membre</b>
-      from 20/06/2012
-      to present
-    </div>
-  </div>
-</div>
----
-<div class="col-sm-12 col-md-6 mandate mandate-secondary">
-  <div class="thumbnail">
-    
-      <span class="badge mandate-badge">07</span>
-    
-    <h4 class="text-center">
-      Ardèche
-    </h4>
-    
-    <div class="text-center desc">
-      <b>membre</b>
-      from 20/06/2012
-      to present
-    </div>
-  </div>
-</div>
----
-<div class="col-sm-12 col-md-6 mandate mandate-secondary">
-  <div class="thumbnail">
-    
-    <h4 class="text-center">
-      Groupe d'études textile et industries de main d'oeuvre
-    </h4>
-    
-    <div class="text-center desc">
-      <b>membre</b>
-      from 20/06/2012
-      to present
-    </div>
-  </div>
-</div>
----
-<div class="col-sm-12 col-md-6 mandate mandate-secondary">
-  <div class="thumbnail">
-    
-    <h4 class="text-center">
-      Groupe d'études plasturgie
-    </h4>
-    
-    <div class="text-center desc">
-      <b>membre</b>
-      from 20/06/2012
-      to present
-    </div>
-  </div>
-</div>
----
-<div class="col-sm-12 col-md-6 mandate mandate-secondary">
-  <div class="thumbnail">
-    
-    <h4 class="text-center">
-      Groupe d'études automobile
-    </h4>
-    
-    <div class="text-center desc">
-      <b>membre</b>
-      from 20/06/2012
-      to present
-    </div>
-  </div>
-</div>
----
-<div class="col-sm-12 col-md-6 mandate mandate-secondary">
-  <div class="thumbnail">
-    
-    <h4 class="text-center">
-      Groupe d'études chataigneraie
-    </h4>
-    
-    <div class="text-center desc">
-      <b>membre</b>
-      from 20/06/2012
-      to present
-    </div>
-  </div>
-</div>
----
-<div class="col-sm-12 col-md-6 mandate mandate-secondary">
-  <div class="thumbnail">
-    
-    <h4 class="text-center">
-      Groupe d'études fillière véhicules industriels
-    </h4>
-    
-    <div class="text-center desc">
-      <b>membre</b>
-      from 20/06/2012
+      <b>Substitute</b>
+      from 08/05/2015
       to present
     </div>
   </div>

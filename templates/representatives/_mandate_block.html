@@ -1,7 +1,7 @@
 {% load i18n %}
 {% load memopol_tags %}
 
-<div class="col-sm-12 col-md-6 mandate {% if mandate.weight >= 100 %}mandate-secondary{% endif %}">
+<div class="col-sm-12 col-md-6 mandate {% if mandate.weight >= weight_threshold %}mandate-secondary{% endif %}">
   <div class="thumbnail">
     {% if mandate.group.kind == 'chamber' %}
       <span class="mandate-badge">{{ mandate.group.chamber|chamber_icon }}</span>
@@ -15,7 +15,7 @@
     <h4 class="text-center">
       {{ mandate.group.name }}
     </h4>
-    {% if mandate.weight < 100 %}
+    {% if mandate.weight < weight_threshold %}
       <hr>
     {% endif %}
     <div class="text-center desc">
