@@ -8,6 +8,7 @@
   <table class="table table-responsive table-striped">
     <tr>
       <th>{% trans "Proposal" %}</th>
+      {% if user and user.is_staff %}<th></th>{% endif %}
       <th>{% trans "Status" %}</th>
       <th>{{ "for"|position_icon }}</th>
       <th>{{ "against"|position_icon }}</th>
@@ -24,6 +25,14 @@
             {{ proposal.reference }}
           </small>
         </td>
+
+        {% if user and user.is_staff %}
+          <td>
+            <a class="btn btn-default btn-sm" href="{% url 'admin:representatives_recommendations_recommendation_add' %}?proposal={{ proposal.pk }}">
+              {% trans "Add recommendation" %}
+            </a>
+          </td>
+        {% endif %}
 
         <td>{{ proposal.status|proposal_status_label }}</td>
         <td>{{ proposal.total_for }}</td>
