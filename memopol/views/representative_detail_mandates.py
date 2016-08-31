@@ -24,6 +24,7 @@ class RepresentativeDetailMandates(RepresentativeDetailBase):
                 default=Value(100),
                 output_field=IntegerField()
             )
-        ).select_related('group__chamber').order_by('-end_date', 'weight')
+        ).select_related('group__chamber').order_by('-end_date', 'weight',
+                                                    'group__name')
 
         return c
