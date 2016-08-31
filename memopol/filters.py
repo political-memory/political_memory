@@ -89,7 +89,8 @@ class DossierFilter(FilterSet):
             return qs
 
         return qs.filter(Q(title__icontains=value) |
-                         Q(reference__icontains=value))
+                         Q(reference__icontains=value) |
+                         Q(documents__link__icontains=value))
 
     def chamber_filter(self, qs, value):
         if len(value) == 0:
