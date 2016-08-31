@@ -27,6 +27,7 @@ class ThemeList(PaginationMixin, SortMixin, PositionFormMixin,
         'name': 'name',
     }
     sort_default_field = 'name'
+    sort_session_prefix = 'theme_list'
 
     def theme_filter(self, qs):
         f = ThemeFilter(self.request.GET, queryset=qs)

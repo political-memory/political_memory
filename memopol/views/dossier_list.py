@@ -31,6 +31,7 @@ class DossierList(PaginationMixin, SortMixin, PositionFormMixin,
     }
     sort_default_field = 'nb_recommendations'
     sort_default_dir = 'desc'
+    sort_session_prefix = 'dossier_list'
 
     def dossier_filter(self, qs):
         f = DossierFilter(self.request.GET, queryset=qs)

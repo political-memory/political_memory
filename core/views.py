@@ -61,24 +61,37 @@ class SortMixin(object):
     sort_fields = {}
     sort_default_field = None
     sort_default_dir = 'asc'
+    sort_session_prefix = ''
 
     def get(self, *args, **kwargs):
         self.set_sorting()
         return super(SortMixin, self).get(*args, **kwargs)
 
+    def _session_get(self, key):
+        k = '%s_%s' % (self.sort_session_prefix, key)
+        return self.request.session[k]
+
+    def _session_set(self, key, value):
+        k = '%s_%s' % (self.sort_session_prefix, key)
+        self.request.session[k] = value
+
+    def _session_exists(self, key):
+        k = '%s_%s' % (self.sort_session_prefix, key)
+        return k in self.request.session
+
     def set_sorting(self):
         if 'sort_by' in self.request.GET:
-            self.request.session['sort_by'] = self.request.GET['sort_by']
-        elif 'sort_by' not in self.request.session:
-            self.request.session['sort_by'] = self.sort_default_field
+            self._session_set('sort_by', self.request.GET['sort_by'])
+        elif not self._session_exists('sort_by'):
+            self._session_set('sort_by', self.sort_default_field)
 
-        if self.request.session['sort_by'] not in self.sort_fields:
-            self.request.session['sort_by'] = self.sort_default_field
+        if self._session_get('sort_by') not in self.sort_fields:
+            self._session_set('sort_by', self.sort_default_field)
 
         if 'sort_dir' in self.request.GET:
-            self.request.session['sort_dir'] = self.request.GET['sort_dir']
-        elif 'sort_dir' not in self.request.session:
-            self.request.session['sort_dir'] = self.sort_default_dir
+            self._session_set('sort_dir', self.request.GET['sort_dir'])
+        elif not self._session_exists('sort_dir'):
+            self._session_set('sort_dir', self.sort_default_dir)
 
     def get_context_data(self, **kwargs):
         c = super(SortMixin, self).get_context_data(**kwargs)
@@ -93,17 +106,17 @@ class SortMixin(object):
 
         c['sort'] = {
             'fields': self.sort_fields,
-            'field': self.request.session['sort_by'],
-            'dir': self.request.session['sort_dir'],
+            'field': self._session_get('sort_by'),
+            'dir': self._session_get('sort_dir'),
         }
         return c
 
     def get_queryset(self):
         qs = super(SortMixin, self).get_queryset()
-        if self.request.session['sort_by']:
+        if self._session_get('sort_by'):
             qs = qs.order_by('%s%s' % (
-                '-' if self.request.session['sort_dir'] == 'desc' else '',
-                self.request.session['sort_by']))
+                '-' if self._session_get('sort_dir') == 'desc' else '',
+                self._session_get('sort_by')))
         return qs
 
 

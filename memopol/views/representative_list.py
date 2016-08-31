@@ -25,6 +25,7 @@ class RepresentativeList(CSVDownloadMixin, GridListMixin, PaginationMixin,
         'score__score': 'score',
     }
     sort_default_field = 'last_name'
+    sort_session_prefix = 'representative_list'
 
     def get_context_data(self, **kwargs):
         c = super(RepresentativeList, self).get_context_data(**kwargs)
