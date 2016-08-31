@@ -5,12 +5,16 @@ class RepresentativeMandatesTest(RepresentativeBaseTest):
     tab = 'mandates'
 
     """
-    No additional queries (mandates already prefetched for rep header box)
+    Representative queries plus
+    - 1 for mandates
     """
-    queries = RepresentativeBaseTest.queries
+    queries = RepresentativeBaseTest.queries + 1
 
     def test_queries(self):
         self.do_query_test()
 
-    def test_mandates(self):
-        self.selector_test('.mandate')
+    def test_current_mandates(self):
+        self.selector_test('.current-mandates .mandate')
+
+    def test_past_mandates(self):
+        self.selector_test('.past-mandates .mandate')

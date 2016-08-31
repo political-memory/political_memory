@@ -313,7 +313,35 @@ iframe {
 
 
 /***************************************************************
-					Dossiers
+                    Mandates
+***************************************************************/
+
+.mandate hr {
+    margin: 5px 0;
+}
+
+.mandate .desc {
+    margin-bottom: 5px;
+}
+
+.mandate-secondary h4 {
+    font-size: .8em;
+    color: #666;
+}
+
+.mandate-secondary .desc {
+    font-size: .8em;
+    color: #666;
+}
+
+.mandate-badge {
+    position: absolute;
+    top: -0.5em;
+    right: 0.5em;
+}
+
+/***************************************************************
+                    Dossiers
 ***************************************************************/
 
 
