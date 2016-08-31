@@ -426,8 +426,16 @@ iframe {
     background-color: #76c979 !important;
 }
 
+.text-success {
+    color: #76c979 !important;
+}
+
 .badge-danger {
     background-color: #ab181d !important;
+}
+
+.text-danger {
+    color: #ab181d !important;
 }
 
 
