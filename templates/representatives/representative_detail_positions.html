@@ -1,6 +1,7 @@
 {% extends 'representatives/representative_detail.html' %}
 
 {% load i18n %}
+{% load bootstrap3 %}
 {% load humanize %}
 {% load representatives_positions_tags %}
 
@@ -8,7 +9,14 @@
 
   {% if not positions %}
     {# TODO: link #}
-    <p>No public position has been recorded. You can always <a>add a public position</a>.</p>
+    <p class="no-positions text-center">
+      {% trans "No public position has been recorded yet." %}
+      <br><br>
+      <a class="btn btn-primary hidden-print" data-toggle="modal" data-target="#add-position-form" aria-expanded="false" aria-controls="add-position-form">
+        {% bootstrap_icon "bullhorn" %}
+        {% trans "Add a public position" %}
+      </a>
+    </p>
   {% else %}
 
     <table class="table table-responsive custom-timeline text-center">

@@ -17,3 +17,7 @@ class RepresentativePositionsTest(RepresentativeBaseTest):
 
     def test_position_details(self):
         self.selector_test('.position-details')
+
+    def test_no_positions(self):
+        url = '/legislature/representative/francois-asensi-1945-06-01/%s/'
+        self.selector_test('.no-positions', url % self.tab)
