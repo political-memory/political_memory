@@ -21,7 +21,7 @@
       <a href="{% url 'representative-detail' slug=representative.slug %}" class="custom-thumbnail custom-invisible">
         <div class="row">
           <div class="col-xs-5">
-            <img class="img-responsive" src="{{ representative.photo }}" width="158">
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="img-responsive" style="background-image: url({{ representative.photo }});">
             <div class="custom-thumbnail-details">
               {% if representative.country %}
               <div class="icon-badge-detail">{{ representative.country|country_flag }} {{ representative.country.name }}</div>

@@ -310,7 +310,17 @@ iframe {
   border-color:#ddd;
 }
 
+.representative-card .img-responsive {
+    width: 150px;
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
+.representative-card h4 {
+    margin-top: 15px;
+}
 
 /***************************************************************
                     Mandates
