@@ -1,5 +1,5 @@
 {% load i18n %}
-{% load bootstrap3 %}
+{% load fontawesome %}
 {% load memopol_tags %}
 
 <div class="row card-list">
@@ -17,21 +17,21 @@
 
               {% if dossier.nb_proposals > 0 %}
                 <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Proposals' %}">
-                  {% bootstrap_icon "pencil" %}
+                  {% fontawesome_icon "pencil" %}
                   <span class="badge">{{ dossier.nb_proposals }}</span>
                 </span>
               {% endif %}
 
               {% if dossier.nb_recommendations > 0 %}
                 <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Recommendations' %}">
-                  {% bootstrap_icon "eye-open" %}
+                  {% fontawesome_icon "eye" %}
                   <span class="badge">{{ dossier.nb_recommendations }}</span>
                 </span>
               {% endif %}
 
               {% if dossier.nb_documents > 0 %}
                 <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Documents' %}">
-                  {% bootstrap_icon "file" %}
+                  {% fontawesome_icon "file" %}
                   <span class="badge">{{ dossier.nb_documents }}</span>
                 </span>
               {% endif %}

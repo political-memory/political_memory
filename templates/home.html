@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% load i18n %}
-{% load bootstrap3 %}
+{% load fontawesome %}
 {% load staticfiles %}
 
 {% block content %}
@@ -25,11 +25,11 @@
       <h3>{% trans "More information" %}</h3>
       <div class="btn-group">
         <a class="btn btn-primary" target="_blank" href="http://www.memopol.org/">
-          {% bootstrap_icon "bookmark" %}
+          {% fontawesome_icon "bookmark" %}
           {% trans "Memopol blog" %}
         </a>
         <a class="btn btn-primary" target="_blank" href="http://memopol.rtfd.org/">
-          {% bootstrap_icon "info-sign" %}
+          {% fontawesome_icon "info-circle" %}
           {% trans "Documentation" %}
         </a>
       </div>
@@ -39,11 +39,11 @@
       <h3>{% trans "Contact us" %}</h3>
       <div class="btn-group">
         <a class="btn btn-primary" target="_blank" href="https://twitter.com/memopol2">
-          <img class="social-icon" src="{% static 'images' %}/social-twitter.png">
+          {% fontawesome_icon "twitter" %}
           {% trans "Twitter" %}
         </a>
         <a class="btn btn-primary" target="_blank" href="https://webchat.freenode.net/?nick=memopol-user-...&channels=lqdn-memopol&prompt=1">
-          {% bootstrap_icon "comment" %}
+          {% fontawesome_icon "commenting" %}
           {% trans "IRC Channel" %}
         </a>
       </div>
@@ -53,11 +53,11 @@
       <h3>{% trans "Contributing" %}</h3>
       <div class="btn-group">
         <a class="btn btn-default" target="_blank" href="https://github.com/political-memory/political_memory">
-          {% bootstrap_icon "cog" %}
+          {% fontawesome_icon "git" %}
           {% trans "Code repository" %}
         </a>
         <a class="btn btn-default" target="_blank" href="https://github.com/political-memory/political_memory/issues/new">
-          {% bootstrap_icon "warning-sign" %}
+          {% fontawesome_icon "bug" %}
           {% trans "Report an issue" %}
         </a>
       </div>

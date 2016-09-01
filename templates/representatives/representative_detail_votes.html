@@ -1,7 +1,7 @@
 {% extends 'representatives/representative_detail.html' %}
 
 {% load i18n %}
-{% load bootstrap3 %}
+{% load fontawesome %}
 {% load memopol_tags %}
 
 {% block representative_content %}
@@ -33,7 +33,7 @@
                     <th class="text-center">{% trans "Proposal" %}</th>
                     <th class="text-center">{% trans "Recommendation" %}</th>
                     <th class="text-center">{% trans "Vote" %}</th>
-                    <th class="text-center nowrap">Points&nbsp;<a data-toggle="tooltip" data-placement="top" title="{% trans "Score is negative or positive depending on whether the representative voted as recommended" %}">{% bootstrap_icon "info-sign" %}</a>
+                    <th class="text-center nowrap">Points&nbsp;<a data-toggle="tooltip" data-placement="top" title="{% trans "Score is negative or positive depending on whether the representative voted as recommended" %}">{% fontawesome_icon "info-circle" %}</a>
                     </th>
                   </tr>
                 </thead>

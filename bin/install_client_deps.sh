@@ -37,7 +37,6 @@ set -e
 mkdir -p ${DEST}
 
 downloadFromGithub jquery jquery/jquery 2.1.4
-downloadFromGithub fontawesome FortAwesome/Font-Awesome v4.3.0
 downloadFromGithub flag-icon-css lipis/flag-icon-css 0.7.1
 
 echo "* Done."

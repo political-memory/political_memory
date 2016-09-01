@@ -1,5 +1,5 @@
 {% load i18n %}
-{% load bootstrap3 %}
+{% load fontawesome %}
 {% load memopol_tags %}
 
 {% comment %}
@@ -55,7 +55,7 @@
         {% if proposal.recommendation %}
           <td class="text-center">{{ proposal.recommendation.recommendation|position_icon }}</td>
           <td class="text-center">
-            {{ proposal.recommendation.weight }}&nbsp;<a data-toggle="tooltip" data-placement="top" title="{{ proposal.recommendation.title }}">{% bootstrap_icon "info-sign" %}</a>
+            {{ proposal.recommendation.weight }}&nbsp;<a data-toggle="tooltip" data-placement="top" title="{{ proposal.recommendation.title }}">{% fontawesome_icon "info-circle" %}</a>
           </td>
         {% else %}
           <td class="text-center" colspan="2">

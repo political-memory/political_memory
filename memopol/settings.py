@@ -85,6 +85,7 @@ INSTALLED_APPS = (
     'bootstrap3',
     'datetimewidget',
     'django_filters',
+    'fontawesome',
     'rest_framework',
     'taggit',
     # ---

@@ -13,7 +13,7 @@
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Dossiers">
-                  <span class="glyphicon glyphicon-book"></span>
+                  <i class="fa fa-book" title=""></i>
                   <span class="badge">3</span>
                 </span>
               
@@ -43,21 +43,21 @@
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Links">
-                  <span class="glyphicon glyphicon-link"></span>
+                  <i class="fa fa-link" title=""></i>
                   <span class="badge">2</span>
                 </span>
               
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Dossiers">
-                  <span class="glyphicon glyphicon-book"></span>
+                  <i class="fa fa-book" title=""></i>
                   <span class="badge">4</span>
                 </span>
               
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Proposals">
-                  <span class="glyphicon glyphicon-pencil"></span>
+                  <i class="fa fa-pencil" title=""></i>
                   <span class="badge">13</span>
                 </span>
               

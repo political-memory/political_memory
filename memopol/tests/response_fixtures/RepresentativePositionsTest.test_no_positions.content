@@ -2,7 +2,7 @@
     No public position has been recorded yet.
     <br/><br/>
     <a aria-controls="add-position-form" aria-expanded="false" class="btn btn-primary hidden-print" data-target="#add-position-form" data-toggle="modal">
-      <span class="glyphicon glyphicon-bullhorn"></span>
+      <i class="fa fa-bullhorn" title=""></i>
       Add a public position
     </a>
   </p>

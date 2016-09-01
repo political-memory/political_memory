@@ -11,21 +11,21 @@
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Proposals">
-                  <span class="glyphicon glyphicon-pencil"></span>
+                  <i class="fa fa-pencil" title=""></i>
                   <span class="badge">45</span>
                 </span>
               
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Recommendations">
-                  <span class="glyphicon glyphicon-eye-open"></span>
+                  <i class="fa fa-eye" title=""></i>
                   <span class="badge">45</span>
                 </span>
               
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Documents">
-                  <span class="glyphicon glyphicon-file"></span>
+                  <i class="fa fa-file" title=""></i>
                   <span class="badge">1</span>
                 </span>
               
@@ -65,21 +65,21 @@
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Proposals">
-                  <span class="glyphicon glyphicon-pencil"></span>
+                  <i class="fa fa-pencil" title=""></i>
                   <span class="badge">13</span>
                 </span>
               
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Recommendations">
-                  <span class="glyphicon glyphicon-eye-open"></span>
+                  <i class="fa fa-eye" title=""></i>
                   <span class="badge">11</span>
                 </span>
               
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Documents">
-                  <span class="glyphicon glyphicon-file"></span>
+                  <i class="fa fa-file" title=""></i>
                   <span class="badge">1</span>
                 </span>
               
@@ -119,21 +119,21 @@
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Proposals">
-                  <span class="glyphicon glyphicon-pencil"></span>
+                  <i class="fa fa-pencil" title=""></i>
                   <span class="badge">2</span>
                 </span>
               
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Recommendations">
-                  <span class="glyphicon glyphicon-eye-open"></span>
+                  <i class="fa fa-eye" title=""></i>
                   <span class="badge">2</span>
                 </span>
               
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Documents">
-                  <span class="glyphicon glyphicon-file"></span>
+                  <i class="fa fa-file" title=""></i>
                   <span class="badge">2</span>
                 </span>
               
@@ -175,21 +175,21 @@
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Proposals">
-                  <span class="glyphicon glyphicon-pencil"></span>
+                  <i class="fa fa-pencil" title=""></i>
                   <span class="badge">2</span>
                 </span>
               
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Recommendations">
-                  <span class="glyphicon glyphicon-eye-open"></span>
+                  <i class="fa fa-eye" title=""></i>
                   <span class="badge">2</span>
                 </span>
               
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Documents">
-                  <span class="glyphicon glyphicon-file"></span>
+                  <i class="fa fa-file" title=""></i>
                   <span class="badge">2</span>
                 </span>
               
@@ -231,21 +231,21 @@
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Proposals">
-                  <span class="glyphicon glyphicon-pencil"></span>
+                  <i class="fa fa-pencil" title=""></i>
                   <span class="badge">1</span>
                 </span>
               
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Recommendations">
-                  <span class="glyphicon glyphicon-eye-open"></span>
+                  <i class="fa fa-eye" title=""></i>
                   <span class="badge">1</span>
                 </span>
               
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Documents">
-                  <span class="glyphicon glyphicon-file"></span>
+                  <i class="fa fa-file" title=""></i>
                   <span class="badge">2</span>
                 </span>
               
@@ -291,7 +291,7 @@
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Documents">
-                  <span class="glyphicon glyphicon-file"></span>
+                  <i class="fa fa-file" title=""></i>
                   <span class="badge">1</span>
                 </span>
               
@@ -335,7 +335,7 @@
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Documents">
-                  <span class="glyphicon glyphicon-file"></span>
+                  <i class="fa fa-file" title=""></i>
                   <span class="badge">1</span>
                 </span>
               
@@ -379,7 +379,7 @@
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Documents">
-                  <span class="glyphicon glyphicon-file"></span>
+                  <i class="fa fa-file" title=""></i>
                   <span class="badge">1</span>
                 </span>
               
@@ -421,7 +421,7 @@
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Documents">
-                  <span class="glyphicon glyphicon-file"></span>
+                  <i class="fa fa-file" title=""></i>
                   <span class="badge">1</span>
                 </span>
               
@@ -463,7 +463,7 @@
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Documents">
-                  <span class="glyphicon glyphicon-file"></span>
+                  <i class="fa fa-file" title=""></i>
                   <span class="badge">1</span>
                 </span>
               
@@ -501,7 +501,7 @@
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Proposals">
-                  <span class="glyphicon glyphicon-pencil"></span>
+                  <i class="fa fa-pencil" title=""></i>
                   <span class="badge">1</span>
                 </span>
               
@@ -510,7 +510,7 @@
 
               
                 <span class="label label-default" data-placement="bottom" data-toggle="tooltip" title="Documents">
-                  <span class="glyphicon glyphicon-file"></span>
+                  <i class="fa fa-file" title=""></i>
                   <span class="badge">1</span>
                 </span>
               

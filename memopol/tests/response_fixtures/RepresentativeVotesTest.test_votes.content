@@ -2,7 +2,7 @@
                     <th class="text-center">Proposal</th>
                     <th class="text-center">Recommendation</th>
                     <th class="text-center">Vote</th>
-                    <th class="text-center nowrap">Points <a data-placement="top" data-toggle="tooltip" title="Score is negative or positive depending on whether the representative voted as recommended"><span class="glyphicon glyphicon-info-sign"></span></a>
+                    <th class="text-center nowrap">Points <a data-placement="top" data-toggle="tooltip" title="Score is negative or positive depending on whether the representative voted as recommended"><i class="fa fa-info-circle" title=""></i></a>
                     </th>
                   </tr>
 ---
@@ -19,7 +19,7 @@
                     <th class="text-center">Proposal</th>
                     <th class="text-center">Recommendation</th>
                     <th class="text-center">Vote</th>
-                    <th class="text-center nowrap">Points <a data-placement="top" data-toggle="tooltip" title="Score is negative or positive depending on whether the representative voted as recommended"><span class="glyphicon glyphicon-info-sign"></span></a>
+                    <th class="text-center nowrap">Points <a data-placement="top" data-toggle="tooltip" title="Score is negative or positive depending on whether the representative voted as recommended"><i class="fa fa-info-circle" title=""></i></a>
                     </th>
                   </tr>
 ---
@@ -117,7 +117,7 @@
                     <th class="text-center">Proposal</th>
                     <th class="text-center">Recommendation</th>
                     <th class="text-center">Vote</th>
-                    <th class="text-center nowrap">Points <a data-placement="top" data-toggle="tooltip" title="Score is negative or positive depending on whether the representative voted as recommended"><span class="glyphicon glyphicon-info-sign"></span></a>
+                    <th class="text-center nowrap">Points <a data-placement="top" data-toggle="tooltip" title="Score is negative or positive depending on whether the representative voted as recommended"><i class="fa fa-info-circle" title=""></i></a>
                     </th>
                   </tr>
 ---

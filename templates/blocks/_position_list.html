@@ -1,5 +1,5 @@
 {% load i18n %}
-{% load bootstrap3 %}
+{% load fontawesome %}
 {% load humanize %}
 {% load representatives_positions_tags %}
 
@@ -13,7 +13,7 @@
     {% trans "No public position has been recorded yet." %}
     <br><br>
     <a class="btn btn-primary hidden-print" data-toggle="modal" data-target="#add-position-form" aria-expanded="false" aria-controls="add-position-form">
-      {% bootstrap_icon "bullhorn" %}
+      {% fontawesome_icon "bullhorn" %}
       {% trans "Add a public position" %}
     </a>
   </p>

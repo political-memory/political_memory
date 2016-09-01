@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% load cache %}
 {% load i18n %}
+{% load fontawesome %}
 {% load staticfiles %}
 <html lang="en">
 <head>
@@ -14,10 +15,11 @@
     <meta name="viewport" content="width=device-width" />
       <title>{% block title %}Home - Political Memory{% endblock %}</title>
 
+    {% fontawesome_stylesheet %}
+
     {% load compress %}
     {% compress css %}
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css" />
-    <link rel="stylesheet" href="{% static 'libs/fontawesome/css/font-awesome.min.css' %}" type="text/css" />
     <link rel="stylesheet" href="{% static 'libs/flag-icon-css/css/flag-icon.min.css' %}" type="text/css" />
     <link rel="stylesheet" href="{% static 'css/custom.css' %}" type="text/css" />
     {% endcompress %}

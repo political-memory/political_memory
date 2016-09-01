@@ -30,20 +30,20 @@
               
               
                 <a class="label label-primary" href="http://www2.assemblee-nationale.fr/deputes/fiche/OMC_PA330357" target="_blank">
-                  <span class="glyphicon glyphicon-user"></span>
+                  <i class="fa fa-institution" title=""></i>
                   Parliament page
                 </a>
               
               
                 <a class="label label-primary" href="http://www.olivierdussopt.fr" target="_blank">
-                  <span class="glyphicon glyphicon-link"></span>
+                  <i class="fa fa-link" title=""></i>
                   Website
                 </a>
               
 
               
                 <a class="label label-primary" href="mailto:odussopt@assemblee-nationale.fr">
-                  <b>@</b>
+                  <i class="fa fa-at" title=""></i>
                   E-mail
                 </a>
               
@@ -54,14 +54,14 @@
 
               
                 <span class="label label-primary" data-placement="bottom" data-toggle="tooltip" title="1 Rue Sadi Carnot – Annonay 07100, France">
-                  <span class="glyphicon glyphicon-envelope"></span>
+                  <i class="fa fa-envelope" title=""></i>
                   Other address
                 </span>
 
                 
               
                 <span class="label label-primary" data-placement="bottom" data-toggle="tooltip" title="126 Rue de l'Université – Paris 75355, France">
-                  <span class="glyphicon glyphicon-envelope"></span>
+                  <i class="fa fa-envelope" title=""></i>
                   Assemblée nationale
                 </span>
 

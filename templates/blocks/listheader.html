@@ -1,4 +1,4 @@
-{% load bootstrap3 %}
+{% load fontawesome %}
 {% load i18n %}
 
 <div class="container-fluid" id="listheader">
@@ -11,7 +11,7 @@
     <div class="col-sm-4 text-right">
       {% if csv %}
         <a class="btn btn-default" role="button" href="?{{ csv_querystring.urlencode }}&csv">
-          {% bootstrap_icon "download-alt" %}
+          {% fontawesome_icon "download" %}
           {% trans "Download CSV" %}
         </a>
       {% endif %}
