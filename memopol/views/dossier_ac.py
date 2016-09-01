@@ -4,7 +4,7 @@ from dal import autocomplete
 
 from django.db.models import Q
 
-from representatives_votes.models import Dossier, Proposal
+from representatives_votes.models import Proposal
 
 
 class ProposalAutocomplete(autocomplete.Select2QuerySetView):
