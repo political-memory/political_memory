@@ -4,15 +4,12 @@ from django.contrib import admin
 
 from views.home import HomeView
 
-from views.dossier_ac import DossierAutocomplete, ProposalAutocomplete
+from views.dossier_ac import ProposalAutocomplete
 from views.dossier_detail_base import DossierDetailBase
 from views.dossier_detail_recommendations import DossierDetailRecommendations
 from views.dossier_detail_proposals import DossierDetailProposals
 from views.dossier_detail_documents import DossierDetailDocuments
 from views.dossier_list import DossierList
-
-from views.group_ac import GroupAutocomplete
-from views.group_list import GroupList
 
 from views.representative_detail_base import RepresentativeDetailBase
 from views.representative_detail_votes import RepresentativeDetailVotes
@@ -82,31 +79,10 @@ urlpatterns = [
         RepresentativeDetailPositions.as_view(),
         name='representative-positions'
     ),
-
-    url(
-        r'^legislature/group/$',
-        GroupList.as_view(),
-        name='group-list'
-    ),
-    url(
-        r'^legislature/groups/$',
-        RedirectGroupList.as_view(),
-        name='group-list-redirect'
-    ),
-    url(
-        r'^legislature/group/(?P<kind>\w+)/$',
-        GroupList.as_view(),
-        name='group-list'
-    ),
     url(
         r'^legislature/groups/(?P<kind>\w+)/$',
         RedirectGroupList.as_view(),
         name='group-list-redirect'
-    ),
-    url(
-        r'^legislature/autocomplete/group/$',
-        GroupAutocomplete.as_view(),
-        name='group-autocomplete',
     ),
     url(
         r'^votes/dossier/$',
@@ -137,11 +113,6 @@ urlpatterns = [
         r'^votes/dossier/(?P<pk>\d+)/documents/$',
         DossierDetailDocuments.as_view(),
         name='dossier-documents'
-    ),
-    url(
-        r'^votes/autocomplete/dossier/$',
-        DossierAutocomplete.as_view(),
-        name='dossier-autocomplete',
     ),
     url(
         r'^votes/autocomplete/proposal/$',
