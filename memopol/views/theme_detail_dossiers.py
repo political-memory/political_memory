@@ -16,7 +16,7 @@ class ThemeDetailDossiers(ThemeDetailBase):
             models.Prefetch(
                 'dossiers',
                 Dossier.objects.order_by('-pk')
-                .prefetch_related('documents__chamber')
+                .prefetch_related('documents__chamber', 'themes')
             )
         )
         return qs

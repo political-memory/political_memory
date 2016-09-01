@@ -1,0 +1,59 @@
+{% load i18n %}
+{% load bootstrap3 %}
+{% load memopol_tags %}
+
+<div class="row card-list">
+  {% for dossier in dossiers %}
+    <div class="col-xs-12 col-md-4 dossier-card">
+      <div class="thumbnail">
+        <a href="{% url 'dossier-detail' dossier.pk %}" class="custom-thumbnail custom-invisible">
+        <div class="row">
+
+          <div class="col-xs-12">
+            <h4 class="text-center">{{ dossier.title }}</h4>
+
+            <p class="text-center lead">
+              &nbsp;
+
+              {% if dossier.nb_proposals > 0 %}
+                <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Proposals' %}">
+                  {% bootstrap_icon "pencil" %}
+                  <span class="badge">{{ dossier.nb_proposals }}</span>
+                </span>
+              {% endif %}
+
+              {% if dossier.nb_recommendations > 0 %}
+                <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Recommendations' %}">
+                  {% bootstrap_icon "eye-open" %}
+                  <span class="badge">{{ dossier.nb_recommendations }}</span>
+                </span>
+              {% endif %}
+
+              {% if dossier.nb_documents > 0 %}
+                <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Documents' %}">
+                  {% bootstrap_icon "file" %}
+                  <span class="badge">{{ dossier.nb_documents }}</span>
+                </span>
+              {% endif %}
+
+              &nbsp;
+            </p>
+
+            <p class="text-center">
+              &nbsp;
+
+              {% for chamber in dossier.chambers %}
+                {{ chamber|chamber_icon }}
+              {% endfor %}
+
+              {% include "blocks/_themetags.html" with themes=dossier.themes.all %}
+
+              &nbsp;
+            </p>
+          </div>
+        </div>
+        </a>
+      </div>
+    </div>
+  {% endfor %}
+</div>

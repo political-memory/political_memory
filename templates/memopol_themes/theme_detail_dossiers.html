@@ -5,33 +5,6 @@
 
 {% block theme_content %}
 
-  <table class="table table-responsive">
-    <tr>
-      <th>
-          {% trans "Chambers" %}
-      </th>
-      <th>
-          {% trans "Dossier" %}
-      </th>
-      <th>
-          {% trans "Reference" %}
-      </th>
-    </tr>
-    {% for dossier in dossiers %}
-      <tr class="dossier">
-        <td>
-          {% for chamber in dossier.chambers %}
-            {{ chamber|chamber_small_icon }}
-          {% endfor %}
-        </td>
-        <td>
-          <a href="{% url 'dossier-detail' dossier.pk %}">
-            {{ dossier.title }}
-          </a>
-        </td>
-        <td>{{ dossier.reference }}</td>
-      </tr>
-    {% endfor %}
-  </table>
+  {% include "blocks/_dossier_blocks.html" %}
 
 {% endblock %}

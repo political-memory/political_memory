@@ -8,69 +8,16 @@
 {% block title %}{% trans "Dossiers" %}{% endblock %}
 
 {% block content %}
-<h1 class="text-center">{% trans "Dossiers" %}</h1>
-<p class="lead text-center">
-{% blocktrans count counter=paginator.count %}{{ counter }} dossier{% plural %}{{ counter }} dossiers{% endblocktrans %}.
-</p>
 
-{% include "blocks/listheader.html" %}
+  <h1 class="text-center">{% trans "Dossiers" %}</h1>
+  <p class="lead text-center">
+    {% blocktrans count counter=paginator.count %}{{ counter }} dossier{% plural %}{{ counter }} dossiers{% endblocktrans %}.
+  </p>
 
-<div class="row card-list">
-  {% for dossier in object_list %}
-    <div class="col-xs-12 col-md-4 dossier-card">
-      <div class="thumbnail">
-        <a href="{% url 'dossier-detail' dossier.pk %}" class="custom-thumbnail custom-invisible">
-        <div class="row">
+  {% include "blocks/listheader.html" %}
 
-          <div class="col-xs-12">
-            <h4 class="text-center">{{ dossier.title }}</h4>
+  {% include "blocks/_dossier_blocks.html" with dossiers=object_list %}
 
-            <p class="text-center lead">
-              &nbsp;
-
-              {% if dossier.nb_proposals > 0 %}
-                <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Proposals' %}">
-                  {% bootstrap_icon "pencil" %}
-                  <span class="badge">{{ dossier.nb_proposals }}</span>
-                </span>
-              {% endif %}
-
-              {% if dossier.nb_recommendations > 0 %}
-                <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Recommendations' %}">
-                  {% bootstrap_icon "eye-open" %}
-                  <span class="badge">{{ dossier.nb_recommendations }}</span>
-                </span>
-              {% endif %}
-
-              {% if dossier.nb_documents > 0 %}
-                <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Documents' %}">
-                  {% bootstrap_icon "file" %}
-                  <span class="badge">{{ dossier.nb_documents }}</span>
-                </span>
-              {% endif %}
-
-              &nbsp;
-            </p>
-
-            <p class="text-center">
-              &nbsp;
-
-              {% for chamber in dossier.chambers %}
-                {{ chamber|chamber_icon }}
-              {% endfor %}
-
-              {% include "blocks/_themetags.html" with themes=dossier.themes.all %}
-
-              &nbsp;
-            </p>
-          </div>
-        </div>
-        </a>
-      </div>
-    </div>
-  {% endfor %}
-</div>
-
-{% include "blocks/listfooter.html" %}
+  {% include "blocks/listfooter.html" %}
 
 {% endblock %}
