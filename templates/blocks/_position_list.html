@@ -1,0 +1,75 @@
+{% load i18n %}
+{% load bootstrap3 %}
+{% load humanize %}
+{% load representatives_positions_tags %}
+
+{% comment %}
+  Expected variables
+  - 'positions': positions list
+{% endcomment %}
+
+{% if not positions %}
+  <p class="no-positions text-center">
+    {% trans "No public position has been recorded yet." %}
+    <br><br>
+    <a class="btn btn-primary hidden-print" data-toggle="modal" data-target="#add-position-form" aria-expanded="false" aria-controls="add-position-form">
+      {% bootstrap_icon "bullhorn" %}
+      {% trans "Add a public position" %}
+    </a>
+  </p>
+{% else %}
+
+  <table class="table table-responsive custom-timeline text-center">
+    <thead>
+      <tr>
+        <th class="text-center">{% trans "Before" %}</th>
+        <th class="text-center">{% trans "Last year" %}</th>
+        <th class="text-center">{% trans "Last 6 months" %}</th>
+        <th class="text-center">{% trans "This month" %}</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        {% for timeframe in positions|regroup_by_age %}
+          <td>
+            {% for position in timeframe %}
+              <button class="btn btn-default position-button" id="position-button-{{ position.pk }}" type="button" data-toggle="modal" data-target="#position-modal-{{ position.pk }}" aria-expanded="false" aria-controls="position-modal-{{ position.pk }}">
+                {{ position.datetime|naturalday }}
+              </button>
+
+              <div class="modal fade" id="position-modal-{{ position.pk }}" tabindex="-1" role="dialog" aria-labelledby="position-button-{{ position.pk }}">
+                <div class="modal-dialog modal-lg position-details" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="{% trans 'Close' %}"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title">{% trans "Public position" %}</h4>
+                    </div>
+
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-sm-12 text-justify">
+                          <blockquote>
+                            <p>{{ position.text }}</p>
+                          </blockquote>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      {% if position.link %}
+                        <a class="btn btn-primary" href="{{ position.link }}" target="_blank">Check the source &raquo;</a>
+                      {% endif %}
+
+                      <button type="button" class="btn btn-default" data-dismiss="modal">{% trans "Close" %}</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </td>
+        {% endfor %}
+      </tr>
+    </tbody>
+  </table>
+
+{% endif %}

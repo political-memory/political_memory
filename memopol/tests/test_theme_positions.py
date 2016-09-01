@@ -13,5 +13,8 @@ class ThemePositionsTest(ThemeBaseTest):
     def test_queries(self):
         self.do_query_test()
 
-    def test_positions(self):
-        self.selector_test('.position')
+    def test_position_buttons(self):
+        self.selector_test('.position-button')
+
+    def test_position_details(self):
+        self.selector_test('.position-details')

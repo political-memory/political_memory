@@ -1,8 +1,15 @@
-<div class="collapse position-details" id="collapsePosition-566">
-        <div class="panel panel-default">
-          <div class="panel-body text-justify">
-            <blockquote>
-              <p>Billet sur blog expliquant la position du groupe socialiste
+<div class="modal-dialog modal-lg position-details" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
+                      <h4 class="modal-title">Public position</h4>
+                    </div>
+
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-sm-12 text-justify">
+                          <blockquote>
+                            <p>Billet sur blog expliquant la position du groupe socialiste
 Projet de loi Hadopi, craintes et menaces
 Le Gouvernement a présenté son projet de loi dit Hadopi "Création et Internet" au sujet de l'encadrement des téléchargements sur internet et de l'accès à l'information.
 Avec mon groupe à l'Assemblée, nous considérons ce projet comme présentant trois inconvénients majeurs. D'une part, il divise les concitoyens en opposant créateurs et usagers. D'autre part, il nous semble qu'il sera aussi inefficace que le precédent texte (dit DADVSI) du fait de l'évolution permanente des usages du net. Enfin, ce projet ne rapportera pas un euro de plus à la création.
@@ -11,19 +18,32 @@ Il porte en lui un caractère très répressif pour les internautes. Il introdui
 Cette opposition au projet présenté ne doit pas clore la réflexion quant au financement de la création culturelle. Nous regrettons que la taxe sur les fournisseurs d'accès à internet et les télecoms de la création ait été détournée pour financer la suppression de la publicité sur la télévision publique. Nous souhaitons toujours qu'une part de l'abonnement internet soit consacrée au financement de la création. Ce serait une forme de "contribution créative" et c'est le sens de l'amendement défendu par notre groupe et par la voix de Patrick Bloche, Député de Paris.
 Enfin, la méthode nous interroge aussi. Ce projet n'a été précédé d'aucune étude d'impact et la loi DADVSI adoptée en 2006 prévoyait une étude de bilan après 18 mois qui n'a pas été faite. De plus, la directive européenne 2002/58/CE relative au traitement des données personnelles et à la protection de la vie privée n'est pas totalement respectée, de même que les articles 17 et 47 de la Charte des Droits Fondamentaux, et l'article 8 de la CEDH.
 Olivier Dussopt n'a pas fait de réponse aux commentaires sur son blog.</p>
-            </blockquote>
-            
-              <p class="text-right"><a class="btn btn-primary" href="http://www.olivierdussopt.fr/blog/2009/03/projet-de-loi-hadopi-craintes-et-menaces.html" target="blank">Check the source »</a></p>
-            
-          </div>
-        </div>
-      </div>
+                          </blockquote>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      
+                        <a class="btn btn-primary" href="http://www.olivierdussopt.fr/blog/2009/03/projet-de-loi-hadopi-craintes-et-menaces.html" target="_blank">Check the source »</a>
+                      
+
+                      <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+                    </div>
+                  </div>
+                </div>
 ---
-<div class="collapse position-details" id="collapsePosition-567">
-        <div class="panel panel-default">
-          <div class="panel-body text-justify">
-            <blockquote>
-              <p>Billet signalant un appel de parlementaires socialistes contre le projet de loi Hadopi
+<div class="modal-dialog modal-lg position-details" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
+                      <h4 class="modal-title">Public position</h4>
+                    </div>
+
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-sm-12 text-justify">
+                          <blockquote>
+                            <p>Billet signalant un appel de parlementaires socialistes contre le projet de loi Hadopi
 Avec quelques uns de mes collègues, nous avons publié dans l'édition internet de Libération des 17 et 18 juin un appel contre le projet de loi proposé par le Gouvernement. Vous le trouverez ci-après et dans la suite de cet article.
 Cet appel a été signé par Didier Migaud, Député de l'Isère, Christian Paul, Député de la Nièvre, Patrick Bloche, Député de Paris, Jean-Marie Le Guen, Député de Paris, Sandrine Mazetier, Députée de Paris, Manuels Valls, Député de l'Essonne, Christophe Caresche, Député de Paris, François Lamy, Député de l'Essonne, Guy Bono, Député Européen, Nicole Bircq, Sénatrice des Yvelines, Bariza Khiari, Sénatrice de Paris, et moi-même.
 L'appel contre une loi d'exception pour l'Internet
@@ -44,10 +64,16 @@ Ces solutions sont d'autant plus faisables techniquement que les modèles écono
 Socialistes, nous nous dressons donc aujourd'hui contre ce projet disproportionné et dangereux, relevant d'une vision rétrograde et conservatrice de la société de l'information. Nous refusons de voir ouvrir, avec HADOPI, une nouvelle chasse aux internautes. Nous refusons que l'argent public soit dilapidé dans un dispositif voué une nouvelle fois à l'échec. Nous appelons à la mise en place d'une juste rémunération apportant une véritable garantie aux créateurs.
 La France, pays des droits de l'Homme et des Lumières, ne peut pas entrer dans le millénaire du numérique avec les habits de l'Ancien Régime.
 Olivier Dussopt n'a fait aucune réponse aux commentaires sur son blog.</p>
-            </blockquote>
-            
-              <p class="text-right"><a class="btn btn-primary" href="http://www.olivierdussopt.fr/blog/2008/06/appel-contre-un.html" target="blank">Check the source »</a></p>
-            
-          </div>
-        </div>
-      </div>
+                          </blockquote>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      
+                        <a class="btn btn-primary" href="http://www.olivierdussopt.fr/blog/2008/06/appel-contre-un.html" target="_blank">Check the source »</a>
+                      
+
+                      <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+                    </div>
+                  </div>
+                </div>
