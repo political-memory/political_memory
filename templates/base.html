@@ -61,9 +61,7 @@
             {% endblock %}
             </div>
 
-            {% cache 3600 LANGUAGE_CODE %}
-                {% include '_position_form_modal.html' %}
-            {% endcache %}
+            {% include '_position_form_modal.html' %}
 
             <div class="col-sm-9 col-sm-offset-3 {% block container-class %}{% endblock %}">
                 {% block content %}
