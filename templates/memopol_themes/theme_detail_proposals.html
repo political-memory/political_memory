@@ -6,55 +6,6 @@
 
 {% block theme_content %}
 
-  <table class="table table-responsive">
-    <tr>
-      <th>{% trans "Chambers" %}</th>
-      <th>{% trans "Dossier" %}</th>
-      <th>{% trans "Reference" %}</th>
-      <th>{% trans "Proposal" %}</th>
-      <th colspan="2">{% trans "Recommendation" %}</th>
-      <th>{% trans "Status" %}</th>
-      <th>{{ "for"|position_icon }}</th>
-      <th>{{ "against"|position_icon }}</th>
-      <th>{{ "abstain"|position_icon }}</th>
-    </tr>
-
-    {% for proposal in proposals %}
-      <tr class="proposal">
-        <td>
-          {% for chamber in proposal.dossier.chambers %}
-            {{ chamber | chamber_small_icon }}
-          {% endfor %}
-        </td>
-        <td>
-          <a href="{% url 'dossier-detail' proposal.dossier.pk %}">
-            {{ proposal.dossier.title }}
-          </a>
-
-        <td>{{ proposal.dossier.reference }}</td>
-
-        <td>
-          {{ proposal.title }}
-          <br>
-          <small>
-            {{ proposal.reference }}
-          </small>
-        </td>
-
-        {% if proposal.recommendation %}
-          <td class="text-center">{{ proposal.recommendation.recommendation|position_icon }}</td>
-          <td class="text-center">
-            {{ proposal.recommendation.weight }}&nbsp;<a data-toggle="tooltip" data-placement="top" title="{{ proposal.recommendation.title }}">{% bootstrap_icon "info-sign" %}</a>
-          </td>
-        {% else %}
-          <td class="text-center" colspan="2">None</td>
-        {% endif %}
-        <td>{{ proposal.status|proposal_status_label:proposal.recommendation }}</td>
-        <td>{{ proposal.total_for }}</td>
-        <td>{{ proposal.total_against }}</td>
-        <td>{{ proposal.total_abstain }}</td>
-      </tr>
-    {% endfor %}
-  </table>
+  {% include "blocks/_proposal_list.html" with show_recommendations=True show_dossier=True %}
 
 {% endblock %}

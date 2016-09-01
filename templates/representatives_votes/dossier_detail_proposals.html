@@ -5,44 +5,6 @@
 
 {% block dossier_content %}
 
-  <table class="table table-responsive table-striped">
-    <tr>
-      <th>{% trans "Proposal" %}</th>
-      {% if user and user.is_staff %}<th></th>{% endif %}
-      <th>{% trans "Status" %}</th>
-      <th>{{ "for"|position_icon }}</th>
-      <th>{{ "against"|position_icon }}</th>
-      <th>{{ "abstain"|position_icon }}</th>
-      <th>{% trans "Themes" %}</th>
-    </tr>
-
-    {% for proposal in proposals %}
-      <tr class="proposal">
-        <td>
-          {{ proposal.title }}
-          <br>
-          <small>
-            {{ proposal.reference }}
-          </small>
-        </td>
-
-        {% if user and user.is_staff %}
-          <td>
-            <a class="btn btn-default btn-sm" href="{% url 'admin:representatives_recommendations_recommendation_add' %}?proposal={{ proposal.pk }}">
-              {% trans "Add recommendation" %}
-            </a>
-          </td>
-        {% endif %}
-
-        <td>{{ proposal.status|proposal_status_label }}</td>
-        <td>{{ proposal.total_for }}</td>
-        <td>{{ proposal.total_against }}</td>
-        <td>{{ proposal.total_abstain }}</td>
-        <td>
-          {% include "blocks/_themetags.html" with themes=proposal.themes.all %}
-        </td>
-      </tr>
-    {% endfor %}
-  </table>
+  {% include "blocks/_proposal_list.html" with show_recommendations=False %}
 
 {% endblock %}
