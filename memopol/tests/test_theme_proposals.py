@@ -6,13 +6,11 @@ class ThemeProposalsTest(ThemeBaseTest):
 
     """
     Theme base queries plus
-    - 1 for proposals
-    - 1 for related recommendations
-    - 1 for related dossiers
+    - 1 for proposals, dossiers and recommendations
     - 1 for related dossiers/documents
     - 1 for related dossiers/documents/chambers
     """
-    queries = ThemeBaseTest.queries + 5
+    queries = ThemeBaseTest.queries + 3
 
     def test_queries(self):
         self.do_query_test()

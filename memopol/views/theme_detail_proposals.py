@@ -1,5 +1,9 @@
 # coding: utf-8
 
+from django.db import models
+
+from representatives_votes.models import Proposal
+
 from .theme_detail_base import ThemeDetailBase
 
 
@@ -9,8 +13,14 @@ class ThemeDetailProposals(ThemeDetailBase):
     def get_queryset(self):
         qs = super(ThemeDetailProposals, self).get_queryset()
         qs = qs.prefetch_related(
-            'proposals__recommendation',
-            'proposals__dossier__documents__chamber',
+            models.Prefetch(
+                'proposals',
+                Proposal.objects.select_related(
+                    'recommendation', 'dossier'
+                ).prefetch_related(
+                    'dossier__documents__chamber'
+                ).order_by('-datetime', 'title')
+            )
         )
         return qs
 

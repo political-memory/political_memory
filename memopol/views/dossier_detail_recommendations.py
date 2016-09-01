@@ -13,7 +13,7 @@ class DossierDetailRecommendations(DossierDetailBase):
         c['tab'] = 'recommendations'
         c['proposals'] = c['object'].proposals.filter(
             recommendation__isnull=False).select_related(
-            'recommendation').prefetch_related(
-            'themes')
+            'recommendation').prefetch_related('themes').order_by(
+            '-datetime', 'title')
 
         return c
