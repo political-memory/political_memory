@@ -1,8 +1,8 @@
 <tr class="proposal">
       
-        <td>
+        <td class="lead">
           
-            <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
+            <span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
           
         </td>
 
@@ -41,9 +41,9 @@
 ---
 <tr class="proposal">
       
-        <td>
+        <td class="lead">
           
-            <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
+            <span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
           
         </td>
 
@@ -82,9 +82,9 @@
 ---
 <tr class="proposal">
       
-        <td>
+        <td class="lead">
           
-            <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
+            <span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
           
         </td>
 
@@ -123,9 +123,9 @@
 ---
 <tr class="proposal">
       
-        <td>
+        <td class="lead">
           
-            <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
+            <span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
           
         </td>
 
@@ -164,9 +164,9 @@
 ---
 <tr class="proposal">
       
-        <td>
+        <td class="lead">
           
-            <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
+            <span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
           
         </td>
 
@@ -206,9 +206,9 @@
 ---
 <tr class="proposal">
       
-        <td>
+        <td class="lead">
           
-            <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
+            <span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
           
         </td>
 
@@ -247,9 +247,9 @@
 ---
 <tr class="proposal">
       
-        <td>
+        <td class="lead">
           
-            <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
+            <span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
           
         </td>
 
@@ -288,9 +288,9 @@
 ---
 <tr class="proposal">
       
-        <td>
+        <td class="lead">
           
-            <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
+            <span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
           
         </td>
 
@@ -329,9 +329,9 @@
 ---
 <tr class="proposal">
       
-        <td>
+        <td class="lead">
           
-            <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
+            <span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
           
         </td>
 
@@ -370,9 +370,9 @@
 ---
 <tr class="proposal">
       
-        <td>
+        <td class="lead">
           
-            <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
+            <span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
           
         </td>
 
@@ -411,9 +411,9 @@
 ---
 <tr class="proposal">
       
-        <td>
+        <td class="lead">
           
-            <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
+            <span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
           
         </td>
 
@@ -452,9 +452,9 @@
 ---
 <tr class="proposal">
       
-        <td>
+        <td class="lead">
           
-            <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
+            <span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
           
         </td>
 
@@ -493,9 +493,9 @@
 ---
 <tr class="proposal">
       
-        <td>
+        <td class="lead">
           
-            <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
+            <span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span>
           
         </td>
 

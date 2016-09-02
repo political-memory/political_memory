@@ -9,7 +9,7 @@
               <div class="icon-badge-detail"><span class="flag-icon flag-icon-fr"></span> France</div>
               
               
-              <div class="icon-badge-detail"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)"></span> Assemblée nationale</div>
+              <div class="icon-badge-detail"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span> Assemblée nationale</div>
               
               
               <div class="icon-badge-detail"><span class="group-icon" style="background-image: url(/static/collected/images/group-an-gdr.png)"></span> GDR</div>
@@ -19,12 +19,13 @@
 
           </a><div class="col-xs-7"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/francois-asensi-1945-06-01/">
             <h4 class="text-center">François Asensi</h4>
-            </a><p class="text-center"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/francois-asensi-1945-06-01/">
+            </a><p class="text-center lead"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/francois-asensi-1945-06-01/">
+              <br/>
               
               </a><a class="icon-badge" href="/legislature/representative/country/France/" title="France"><span class="flag-icon flag-icon-fr"></span></a>
               
               
-              <a class="icon-badge" href="/legislature/representative/chamber/Assembl%C3%A9e%20nationale/" title="Assemblée nationale"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)"></span></a>
+              <a class="icon-badge" href="/legislature/representative/chamber/Assembl%C3%A9e%20nationale/" title="Assemblée nationale"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span></a>
               
               
               <a class="icon-badge" href="/legislature/representative/group/Assembl%C3%A9e%20nationale/Gauche%20d%C3%A9mocrate%20et%20r%C3%A9publicaine/" title="Gauche démocrate et républicaine"><span class="group-icon" style="background-image: url(/static/collected/images/group-an-gdr.png)"></span></a>
@@ -49,7 +50,7 @@
               <div class="icon-badge-detail"><span class="flag-icon flag-icon-fr"></span> France</div>
               
               
-              <div class="icon-badge-detail"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)"></span> Assemblée nationale</div>
+              <div class="icon-badge-detail"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span> Assemblée nationale</div>
               
               
               <div class="icon-badge-detail"><span class="group-icon" style="background-image: url(/static/collected/images/group-an-udi.png)"></span> UDI</div>
@@ -59,12 +60,13 @@
 
           </a><div class="col-xs-7"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/thierry-benoit-1966-09-13/">
             <h4 class="text-center">Thierry Benoit</h4>
-            </a><p class="text-center"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/thierry-benoit-1966-09-13/">
+            </a><p class="text-center lead"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/thierry-benoit-1966-09-13/">
+              <br/>
               
               </a><a class="icon-badge" href="/legislature/representative/country/France/" title="France"><span class="flag-icon flag-icon-fr"></span></a>
               
               
-              <a class="icon-badge" href="/legislature/representative/chamber/Assembl%C3%A9e%20nationale/" title="Assemblée nationale"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)"></span></a>
+              <a class="icon-badge" href="/legislature/representative/chamber/Assembl%C3%A9e%20nationale/" title="Assemblée nationale"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span></a>
               
               
               <a class="icon-badge" href="/legislature/representative/group/Assembl%C3%A9e%20nationale/Union%20des%20d%C3%A9mocrates%20et%20ind%C3%A9pendants/" title="Union des démocrates et indépendants"><span class="group-icon" style="background-image: url(/static/collected/images/group-an-udi.png)"></span></a>
@@ -89,7 +91,7 @@
               <div class="icon-badge-detail"><span class="flag-icon flag-icon-fr"></span> France</div>
               
               
-              <div class="icon-badge-detail"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)"></span> Assemblée nationale</div>
+              <div class="icon-badge-detail"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span> Assemblée nationale</div>
               
               
               <div class="icon-badge-detail"><span class="group-icon" style="background-image: url(/static/collected/images/group-an-lr.png)"></span> LR</div>
@@ -99,12 +101,13 @@
 
           </a><div class="col-xs-7"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/marcel-bonnot-1946-05-24/">
             <h4 class="text-center">Marcel Bonnot</h4>
-            </a><p class="text-center"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/marcel-bonnot-1946-05-24/">
+            </a><p class="text-center lead"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/marcel-bonnot-1946-05-24/">
+              <br/>
               
               </a><a class="icon-badge" href="/legislature/representative/country/France/" title="France"><span class="flag-icon flag-icon-fr"></span></a>
               
               
-              <a class="icon-badge" href="/legislature/representative/chamber/Assembl%C3%A9e%20nationale/" title="Assemblée nationale"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)"></span></a>
+              <a class="icon-badge" href="/legislature/representative/chamber/Assembl%C3%A9e%20nationale/" title="Assemblée nationale"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span></a>
               
               
               <a class="icon-badge" href="/legislature/representative/group/Assembl%C3%A9e%20nationale/Les%20r%C3%A9publicains/" title="Les républicains"><span class="group-icon" style="background-image: url(/static/collected/images/group-an-lr.png)"></span></a>
@@ -129,7 +132,7 @@
               <div class="icon-badge-detail"><span class="flag-icon flag-icon-fr"></span> France</div>
               
               
-              <div class="icon-badge-detail"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)"></span> Assemblée nationale</div>
+              <div class="icon-badge-detail"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span> Assemblée nationale</div>
               
               
               <div class="icon-badge-detail"><span class="group-icon" style="background-image: url(/static/collected/images/group-an-lr.png)"></span> LR</div>
@@ -139,12 +142,13 @@
 
           </a><div class="col-xs-7"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/jean-claude-bouchet-1957-05-02/">
             <h4 class="text-center">Jean-Claude Bouchet</h4>
-            </a><p class="text-center"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/jean-claude-bouchet-1957-05-02/">
+            </a><p class="text-center lead"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/jean-claude-bouchet-1957-05-02/">
+              <br/>
               
               </a><a class="icon-badge" href="/legislature/representative/country/France/" title="France"><span class="flag-icon flag-icon-fr"></span></a>
               
               
-              <a class="icon-badge" href="/legislature/representative/chamber/Assembl%C3%A9e%20nationale/" title="Assemblée nationale"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)"></span></a>
+              <a class="icon-badge" href="/legislature/representative/chamber/Assembl%C3%A9e%20nationale/" title="Assemblée nationale"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span></a>
               
               
               <a class="icon-badge" href="/legislature/representative/group/Assembl%C3%A9e%20nationale/Les%20r%C3%A9publicains/" title="Les républicains"><span class="group-icon" style="background-image: url(/static/collected/images/group-an-lr.png)"></span></a>
@@ -169,7 +173,7 @@
               <div class="icon-badge-detail"><span class="flag-icon flag-icon-gb"></span> United Kingdom</div>
               
               
-              <div class="icon-badge-detail"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament</div>
+              <div class="icon-badge-detail"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-ep.png)" title="European Parliament"></span> European Parliament</div>
               
               
               <div class="icon-badge-detail"><span class="group-icon" style="background-image: url(/static/collected/images/group-ep-sd.png)"></span> SD</div>
@@ -179,12 +183,13 @@
 
           </a><div class="col-xs-7"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/paul-brannen-1962-09-13/">
             <h4 class="text-center">Paul BRANNEN</h4>
-            </a><p class="text-center"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/paul-brannen-1962-09-13/">
+            </a><p class="text-center lead"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/paul-brannen-1962-09-13/">
+              <br/>
               
               </a><a class="icon-badge" href="/legislature/representative/country/United%20Kingdom/" title="United Kingdom"><span class="flag-icon flag-icon-gb"></span></a>
               
               
-              <a class="icon-badge" href="/legislature/representative/chamber/European%20Parliament/" title="European Parliament"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span></a>
+              <a class="icon-badge" href="/legislature/representative/chamber/European%20Parliament/" title="European Parliament"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-ep.png)" title="European Parliament"></span></a>
               
               
               <a class="icon-badge" href="/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/" title="Group of the Progressive Alliance of Socialists and Democrats in the European Parliament"><span class="group-icon" style="background-image: url(/static/collected/images/group-ep-sd.png)"></span></a>
@@ -209,7 +214,7 @@
               <div class="icon-badge-detail"><span class="flag-icon flag-icon-de"></span> Germany</div>
               
               
-              <div class="icon-badge-detail"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament</div>
+              <div class="icon-badge-detail"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-ep.png)" title="European Parliament"></span> European Parliament</div>
               
               
               <div class="icon-badge-detail"><span class="group-icon" style="background-image: url(/static/collected/images/group-ep-sd.png)"></span> SD</div>
@@ -219,12 +224,13 @@
 
           </a><div class="col-xs-7"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/udo-bullmann-1956-06-08/">
             <h4 class="text-center">Udo BULLMANN</h4>
-            </a><p class="text-center"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/udo-bullmann-1956-06-08/">
+            </a><p class="text-center lead"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/udo-bullmann-1956-06-08/">
+              <br/>
               
               </a><a class="icon-badge" href="/legislature/representative/country/Germany/" title="Germany"><span class="flag-icon flag-icon-de"></span></a>
               
               
-              <a class="icon-badge" href="/legislature/representative/chamber/European%20Parliament/" title="European Parliament"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span></a>
+              <a class="icon-badge" href="/legislature/representative/chamber/European%20Parliament/" title="European Parliament"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-ep.png)" title="European Parliament"></span></a>
               
               
               <a class="icon-badge" href="/legislature/representative/group/European%20Parliament/Group%20of%20the%20Progressive%20Alliance%20of%20Socialists%20and%20Democrats%20in%20the%20European%20Parliament/" title="Group of the Progressive Alliance of Socialists and Democrats in the European Parliament"><span class="group-icon" style="background-image: url(/static/collected/images/group-ep-sd.png)"></span></a>
@@ -249,7 +255,7 @@
               <div class="icon-badge-detail"><span class="flag-icon flag-icon-fr"></span> France</div>
               
               
-              <div class="icon-badge-detail"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)"></span> Assemblée nationale</div>
+              <div class="icon-badge-detail"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span> Assemblée nationale</div>
               
               
               <div class="icon-badge-detail"><span class="group-icon" style="background-image: url(/static/collected/images/group-an-ser.png)"></span> SER</div>
@@ -259,12 +265,13 @@
 
           </a><div class="col-xs-7"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/jean-paul-chanteguet-1949-12-09/">
             <h4 class="text-center">Jean-Paul Chanteguet</h4>
-            </a><p class="text-center"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/jean-paul-chanteguet-1949-12-09/">
+            </a><p class="text-center lead"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/jean-paul-chanteguet-1949-12-09/">
+              <br/>
               
               </a><a class="icon-badge" href="/legislature/representative/country/France/" title="France"><span class="flag-icon flag-icon-fr"></span></a>
               
               
-              <a class="icon-badge" href="/legislature/representative/chamber/Assembl%C3%A9e%20nationale/" title="Assemblée nationale"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)"></span></a>
+              <a class="icon-badge" href="/legislature/representative/chamber/Assembl%C3%A9e%20nationale/" title="Assemblée nationale"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span></a>
               
               
               <a class="icon-badge" href="/legislature/representative/group/Assembl%C3%A9e%20nationale/Socialiste,%20%C3%A9cologiste%20et%20r%C3%A9publicain/" title="Socialiste, écologiste et républicain"><span class="group-icon" style="background-image: url(/static/collected/images/group-an-ser.png)"></span></a>
@@ -289,7 +296,7 @@
               <div class="icon-badge-detail"><span class="flag-icon flag-icon-fr"></span> France</div>
               
               
-              <div class="icon-badge-detail"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)"></span> Assemblée nationale</div>
+              <div class="icon-badge-detail"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span> Assemblée nationale</div>
               
               
               <div class="icon-badge-detail"><span class="group-icon" style="background-image: url(/static/collected/images/group-an-lr.png)"></span> LR</div>
@@ -299,12 +306,13 @@
 
           </a><div class="col-xs-7"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/jean-louis-christ-1951-01-24/">
             <h4 class="text-center">Jean-Louis Christ</h4>
-            </a><p class="text-center"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/jean-louis-christ-1951-01-24/">
+            </a><p class="text-center lead"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/jean-louis-christ-1951-01-24/">
+              <br/>
               
               </a><a class="icon-badge" href="/legislature/representative/country/France/" title="France"><span class="flag-icon flag-icon-fr"></span></a>
               
               
-              <a class="icon-badge" href="/legislature/representative/chamber/Assembl%C3%A9e%20nationale/" title="Assemblée nationale"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)"></span></a>
+              <a class="icon-badge" href="/legislature/representative/chamber/Assembl%C3%A9e%20nationale/" title="Assemblée nationale"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span></a>
               
               
               <a class="icon-badge" href="/legislature/representative/group/Assembl%C3%A9e%20nationale/Les%20r%C3%A9publicains/" title="Les républicains"><span class="group-icon" style="background-image: url(/static/collected/images/group-an-lr.png)"></span></a>
@@ -329,7 +337,7 @@
               <div class="icon-badge-detail"><span class="flag-icon flag-icon-fr"></span> France</div>
               
               
-              <div class="icon-badge-detail"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)"></span> Assemblée nationale</div>
+              <div class="icon-badge-detail"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span> Assemblée nationale</div>
               
               
               <div class="icon-badge-detail"><span class="group-icon" style="background-image: url(/static/collected/images/group-an-lr.png)"></span> LR</div>
@@ -339,12 +347,13 @@
 
           </a><div class="col-xs-7"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/jean-michel-couve-1940-01-03/">
             <h4 class="text-center">Jean-Michel Couve</h4>
-            </a><p class="text-center"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/jean-michel-couve-1940-01-03/">
+            </a><p class="text-center lead"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/jean-michel-couve-1940-01-03/">
+              <br/>
               
               </a><a class="icon-badge" href="/legislature/representative/country/France/" title="France"><span class="flag-icon flag-icon-fr"></span></a>
               
               
-              <a class="icon-badge" href="/legislature/representative/chamber/Assembl%C3%A9e%20nationale/" title="Assemblée nationale"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)"></span></a>
+              <a class="icon-badge" href="/legislature/representative/chamber/Assembl%C3%A9e%20nationale/" title="Assemblée nationale"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span></a>
               
               
               <a class="icon-badge" href="/legislature/representative/group/Assembl%C3%A9e%20nationale/Les%20r%C3%A9publicains/" title="Les républicains"><span class="group-icon" style="background-image: url(/static/collected/images/group-an-lr.png)"></span></a>
@@ -369,7 +378,7 @@
               <div class="icon-badge-detail"><span class="flag-icon flag-icon-nl"></span> Netherlands</div>
               
               
-              <div class="icon-badge-detail"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament</div>
+              <div class="icon-badge-detail"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-ep.png)" title="European Parliament"></span> European Parliament</div>
               
               
               <div class="icon-badge-detail"><span class="group-icon" style="background-image: url(/static/collected/images/group-ep-epp.png)"></span> EPP</div>
@@ -379,12 +388,13 @@
 
           </a><div class="col-xs-7"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/esther-de-lange-1975-02-19/">
             <h4 class="text-center">Esther de LANGE</h4>
-            </a><p class="text-center"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/esther-de-lange-1975-02-19/">
+            </a><p class="text-center lead"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/esther-de-lange-1975-02-19/">
+              <br/>
               
               </a><a class="icon-badge" href="/legislature/representative/country/Netherlands/" title="Netherlands"><span class="flag-icon flag-icon-nl"></span></a>
               
               
-              <a class="icon-badge" href="/legislature/representative/chamber/European%20Parliament/" title="European Parliament"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span></a>
+              <a class="icon-badge" href="/legislature/representative/chamber/European%20Parliament/" title="European Parliament"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-ep.png)" title="European Parliament"></span></a>
               
               
               <a class="icon-badge" href="/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People's%20Party%20(Christian%20Democrats)/" title="Group of the European People's Party (Christian Democrats)"><span class="group-icon" style="background-image: url(/static/collected/images/group-ep-epp.png)"></span></a>
@@ -409,7 +419,7 @@
               <div class="icon-badge-detail"><span class="flag-icon flag-icon-de"></span> Germany</div>
               
               
-              <div class="icon-badge-detail"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span> European Parliament</div>
+              <div class="icon-badge-detail"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-ep.png)" title="European Parliament"></span> European Parliament</div>
               
               
               <div class="icon-badge-detail"><span class="group-icon" style="background-image: url(/static/collected/images/group-ep-epp.png)"></span> EPP</div>
@@ -419,12 +429,13 @@
 
           </a><div class="col-xs-7"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/albert-dess-1947-04-17/">
             <h4 class="text-center">Albert DESS</h4>
-            </a><p class="text-center"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/albert-dess-1947-04-17/">
+            </a><p class="text-center lead"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/albert-dess-1947-04-17/">
+              <br/>
               
               </a><a class="icon-badge" href="/legislature/representative/country/Germany/" title="Germany"><span class="flag-icon flag-icon-de"></span></a>
               
               
-              <a class="icon-badge" href="/legislature/representative/chamber/European%20Parliament/" title="European Parliament"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span></a>
+              <a class="icon-badge" href="/legislature/representative/chamber/European%20Parliament/" title="European Parliament"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-ep.png)" title="European Parliament"></span></a>
               
               
               <a class="icon-badge" href="/legislature/representative/group/European%20Parliament/Group%20of%20the%20European%20People's%20Party%20(Christian%20Democrats)/" title="Group of the European People's Party (Christian Democrats)"><span class="group-icon" style="background-image: url(/static/collected/images/group-ep-epp.png)"></span></a>
@@ -449,7 +460,7 @@
               <div class="icon-badge-detail"><span class="flag-icon flag-icon-fr"></span> France</div>
               
               
-              <div class="icon-badge-detail"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)"></span> Assemblée nationale</div>
+              <div class="icon-badge-detail"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span> Assemblée nationale</div>
               
               
               <div class="icon-badge-detail"><span class="group-icon" style="background-image: url(/static/collected/images/group-an-gdr.png)"></span> GDR</div>
@@ -459,12 +470,13 @@
 
           </a><div class="col-xs-7"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/marc-dolez-1952-10-21/">
             <h4 class="text-center">Marc Dolez</h4>
-            </a><p class="text-center"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/marc-dolez-1952-10-21/">
+            </a><p class="text-center lead"><a class="custom-thumbnail custom-invisible" href="/legislature/representative/marc-dolez-1952-10-21/">
+              <br/>
               
               </a><a class="icon-badge" href="/legislature/representative/country/France/" title="France"><span class="flag-icon flag-icon-fr"></span></a>
               
               
-              <a class="icon-badge" href="/legislature/representative/chamber/Assembl%C3%A9e%20nationale/" title="Assemblée nationale"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)"></span></a>
+              <a class="icon-badge" href="/legislature/representative/chamber/Assembl%C3%A9e%20nationale/" title="Assemblée nationale"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span></a>
               
               
               <a class="icon-badge" href="/legislature/representative/group/Assembl%C3%A9e%20nationale/Gauche%20d%C3%A9mocrate%20et%20r%C3%A9publicaine/" title="Gauche démocrate et républicaine"><span class="group-icon" style="background-image: url(/static/collected/images/group-an-gdr.png)"></span></a>

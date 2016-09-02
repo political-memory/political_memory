@@ -20,6 +20,8 @@ body {
 
 .card-list {
     margin-top: 1em;
+    display: flex;
+    flex-flow: row wrap;
 }
 
 .tag {
@@ -374,6 +376,9 @@ iframe {
 	margin-bottom: 1em;
 }
 
+.dossier-card div.lead {
+    margin-bottom: 5px;
+}
 
 
 /***************************************************************
@@ -386,10 +391,15 @@ iframe {
 }
 
 .chamber-icon, .group-icon, .flag-icon {
-    width: 1.75em;
-    height: 1.75em;
+    width: 2em;
+    height: 2em;
     line-height: initial;
     vertical-align: bottom;
+}
+
+.lead .chamber-icon, .lead .group-icon, .lead .flag-icon {
+    width: 1.75em;
+    height: 1.75em;
 }
 
 .flag-icon:before {
@@ -406,14 +416,6 @@ iframe {
 
 .icon-badge + .icon-badge {
     margin-left: .5em;
-}
-
-.social-icon {
-    width: 1.1em;
-    height: 1.1em;
-
-    display: inline-block;
-    vertical-align: sub;
 }
 
 .vote_positive {

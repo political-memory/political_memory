@@ -30,9 +30,9 @@
   {% for proposal in proposals %}
     <tr class="proposal">
       {% if show_dossier %}
-        <td>
+        <td class="lead">
           {% for chamber in proposal.dossier.chambers %}
-            {{ chamber | chamber_small_icon }}
+            {{ chamber | chamber_icon }}
           {% endfor %}
         </td>
 

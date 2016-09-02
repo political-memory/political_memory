@@ -93,19 +93,17 @@ def country_flag(country):
 
 
 @register.filter
-def chamber_icon(chamber):
+def chamber_icon(chamber, tplace='bottom'):
     url = static('images/chamber-%s.png' % cssify(chamber.abbreviation))
     return mark_safe(
-        u'<span class="chamber-icon" style="background-image: url({url})">'
-        u'</span>'.format(name=chamber.name, url=url))
-
-
-@register.filter
-def chamber_small_icon(chamber):
-    url = static('images/chamber-%s.png' % cssify(chamber.abbreviation))
-    return mark_safe(
-        u'<span class="chamber-icon" style="background-image: url({url})" '
-        u'title="{name}"></span>'.format(name=chamber.name, url=url))
+        u'<span class="chamber-icon" style="background-image: url({url})"'
+        u' data-toggle="tooltip" data-placement="{place}"'
+        u' title="{name}"></span>'.format(
+            name=chamber.name,
+            url=url,
+            place=tplace
+        )
+    )
 
 
 @register.simple_tag

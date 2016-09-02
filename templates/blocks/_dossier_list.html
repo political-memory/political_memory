@@ -12,44 +12,47 @@
           <div class="col-xs-12">
             <h4 class="text-center">{{ dossier.title }}</h4>
 
-            <p class="text-center lead">
-              &nbsp;
+            <div class="lead">
+              <div class="pull-right">
+                {% if dossier.nb_proposals > 0 %}
+                  <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Proposals' %}">
+                    {% fontawesome_icon "pencil" %}
+                    <span class="badge">{{ dossier.nb_proposals }}</span>
+                  </span>
+                {% endif %}
 
-              {% if dossier.nb_proposals > 0 %}
-                <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Proposals' %}">
-                  {% fontawesome_icon "pencil" %}
-                  <span class="badge">{{ dossier.nb_proposals }}</span>
-                </span>
-              {% endif %}
+                {% if dossier.nb_recommendations > 0 %}
+                  <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Recommendations' %}">
+                    {% fontawesome_icon "eye" %}
+                    <span class="badge">{{ dossier.nb_recommendations }}</span>
+                  </span>
+                {% endif %}
 
-              {% if dossier.nb_recommendations > 0 %}
-                <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Recommendations' %}">
-                  {% fontawesome_icon "eye" %}
-                  <span class="badge">{{ dossier.nb_recommendations }}</span>
-                </span>
-              {% endif %}
+                {% if dossier.nb_documents > 0 %}
+                  <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Documents' %}">
+                    {% fontawesome_icon "file" %}
+                    <span class="badge">{{ dossier.nb_documents }}</span>
+                  </span>
+                {% endif %}
 
-              {% if dossier.nb_documents > 0 %}
-                <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Documents' %}">
-                  {% fontawesome_icon "file" %}
-                  <span class="badge">{{ dossier.nb_documents }}</span>
-                </span>
-              {% endif %}
+                &nbsp;
+              </div>
 
-              &nbsp;
-            </p>
-
-            <p class="text-center">
               &nbsp;
 
               {% for chamber in dossier.chambers %}
                 {{ chamber|chamber_icon }}
               {% endfor %}
 
-              {% include "blocks/_themetags.html" with themes=dossier.themes.all %}
+            </div>
 
-              &nbsp;
-            </p>
+            {% if dossier.themes.all|length %}
+              <p class="text-right">
+                &nbsp;
+                {% include "blocks/_themetags.html" with themes=dossier.themes.all %}
+                &nbsp;
+              </p>
+            {% endif %}
           </div>
         </div>
         </a>

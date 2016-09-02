@@ -8,7 +8,7 @@
           </dd>
 ---
 <dd>
-              <span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-an.png)"></span> Assemblée nationale
+              <span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-an.png)" title="Assemblée nationale"></span> Assemblée nationale
             </dd>
 ---
 <dd>
@@ -22,7 +22,7 @@
 <dd>
               
                 <a class="label label-primary" href="http://twitter.com/olivierdussopt" target="_blank">
-                  <img class="social-icon" src="/static/collected/images/social-twitter.png"/>
+                  <i class="fa fa-twitter" title=""></i>
                   
                     Twitter
                   

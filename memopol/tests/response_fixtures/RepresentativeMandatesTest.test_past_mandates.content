@@ -1,7 +1,7 @@
 <div class="col-sm-12 col-md-6 mandate mandate-secondary">
   <div class="thumbnail">
     
-      <span class="mandate-badge"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span></span>
+      <span class="mandate-badge"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-ep.png)" title="European Parliament"></span></span>
     
     <h4 class="text-center">
       European Parliament
@@ -133,7 +133,7 @@
 <div class="col-sm-12 col-md-6 mandate mandate-secondary">
   <div class="thumbnail">
     
-      <span class="mandate-badge"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span></span>
+      <span class="mandate-badge"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-ep.png)" title="European Parliament"></span></span>
     
     <h4 class="text-center">
       European Parliament
@@ -327,7 +327,7 @@
 <div class="col-sm-12 col-md-6 mandate mandate-secondary">
   <div class="thumbnail">
     
-      <span class="mandate-badge"><span class="chamber-icon" style="background-image: url(/static/collected/images/chamber-ep.png)"></span></span>
+      <span class="mandate-badge"><span class="chamber-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/chamber-ep.png)" title="European Parliament"></span></span>
     
     <h4 class="text-center">
       European Parliament

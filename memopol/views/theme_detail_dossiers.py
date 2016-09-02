@@ -17,6 +17,12 @@ class ThemeDetailDossiers(ThemeDetailBase):
                 'dossiers',
                 Dossier.objects.order_by('-pk')
                 .prefetch_related('documents__chamber', 'themes')
+                .annotate(
+                    nb_proposals=models.Count('proposals', distinct=True),
+                    nb_recommendations=models.Count(
+                        'proposals__recommendation', distinct=True),
+                    nb_documents=models.Count('documents', distinct=True)
+                )
             )
         )
         return qs

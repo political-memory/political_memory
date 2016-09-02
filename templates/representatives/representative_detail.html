@@ -55,7 +55,7 @@
             <dd>
               {% for site in representative.social_websites %}
                 <a class="label label-primary" href="{{ site.url }}" target="_blank">
-                  <img class="social-icon" src="{% static 'images' %}/social-{{ site.kind }}.png">
+                  {% fontawesome_icon site.kind %}
                   {% with kind=site.kind|capfirst %}
                     {% trans kind %}
                   {% endwith %}
