@@ -53,70 +53,66 @@ class ActiveLegislatureMixin(object):
 class SortMixin(object):
     """
     Mixin for views that allow sorting.
-    The sort_fields attribute should be defined to a {field: label} dict
-    containing all fields usable for sorting.
-    The sort_default and sort_default_dir attributes should contain the default
-    sorting settings.
+    The sort_modes attribute should be defined to a dict as such:
+    {
+        'mode1': {
+            'order': 42,
+            'label': 'mode label',
+            'fields': ['-field1', 'field2', ...]
+        },
+        ...
+    }
+
+    The sort_default attribute should contain the default sorting mode.
     """
-    sort_fields = {}
-    sort_default_field = None
-    sort_default_dir = 'asc'
+    sort_modes = {}
+    sort_default = None
     sort_session_prefix = ''
 
     def get(self, *args, **kwargs):
         self.set_sorting()
         return super(SortMixin, self).get(*args, **kwargs)
 
-    def _session_get(self, key):
-        k = '%s_%s' % (self.sort_session_prefix, key)
+    def _session_get_sort(self):
+        k = '%s_sort' % self.sort_session_prefix
         return self.request.session[k]
 
-    def _session_set(self, key, value):
-        k = '%s_%s' % (self.sort_session_prefix, key)
+    def _session_set_sort(self, value):
+        k = '%s_sort' % self.sort_session_prefix
         self.request.session[k] = value
 
-    def _session_exists(self, key):
-        k = '%s_%s' % (self.sort_session_prefix, key)
+    def _session_sort_exists(self):
+        k = '%s_sort' % self.sort_session_prefix
         return k in self.request.session
 
     def set_sorting(self):
-        if 'sort_by' in self.request.GET:
-            self._session_set('sort_by', self.request.GET['sort_by'])
-        elif not self._session_exists('sort_by'):
-            self._session_set('sort_by', self.sort_default_field)
+        if 'sort' in self.request.GET:
+            self._session_set_sort(self.request.GET['sort'])
+        elif not self._session_sort_exists():
+            self._session_set_sort(self.sort_default)
 
-        if self._session_get('sort_by') not in self.sort_fields:
-            self._session_set('sort_by', self.sort_default_field)
-
-        if 'sort_dir' in self.request.GET:
-            self._session_set('sort_dir', self.request.GET['sort_dir'])
-        elif not self._session_exists('sort_dir'):
-            self._session_set('sort_dir', self.sort_default_dir)
+        if self._session_get_sort() not in self.sort_modes:
+            self._session_set_sort(self.sort_default)
 
     def get_context_data(self, **kwargs):
         c = super(SortMixin, self).get_context_data(**kwargs)
 
-        c['sort_by_querystring'] = copy(self.request.GET)
-        if 'sort_by' in c['sort_by_querystring']:
-            del c['sort_by_querystring']['sort_by']
-
-        c['sort_dir_querystring'] = copy(self.request.GET)
-        if 'sort_dir' in c['sort_dir_querystring']:
-            del c['sort_dir_querystring']['sort_dir']
+        c['sort_querystring'] = copy(self.request.GET)
+        if 'sort' in c['sort_querystring']:
+            del c['sort_querystring']['sort']
 
         c['sort'] = {
-            'fields': self.sort_fields,
-            'field': self._session_get('sort_by'),
-            'dir': self._session_get('sort_dir'),
+            'modes': [{'id': k, 'label': v['label'], 'order': v['order']}
+                      for k, v in self.sort_modes.iteritems()],
+            'mode': self._session_get_sort()
         }
         return c
 
     def get_queryset(self):
         qs = super(SortMixin, self).get_queryset()
-        if self._session_get('sort_by'):
-            qs = qs.order_by('%s%s' % (
-                '-' if self._session_get('sort_dir') == 'desc' else '',
-                self._session_get('sort_by')))
+        if self._session_get_sort() in self.sort_modes:
+            mode = self.sort_modes[self._session_get_sort()]
+            qs = qs.order_by(*mode['fields'])
         return qs
 
 

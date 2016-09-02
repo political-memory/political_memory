@@ -24,28 +24,20 @@ class DossierListTest(BaseTest):
         self.selector_test('.dossier-card')
 
     def test_navbar_order_options(self):
-        self.selector_test('#listheader #orderby li, #listheader #orderdir li')
+        self.selector_test('#listheader #sort-menu li')
 
-    def test_navbar_order_title_asc(self):
+    def test_order_by_title_asc(self):
         self.selector_test('.dossier-card h4',
-                           '%s?sort_by=title&sort_dir=asc' % self.url)
+                           '%s?sort=title-asc' % self.url)
 
-    def test_navbar_order_title_desc(self):
+    def test_order_by_title_desc(self):
         self.selector_test('.dossier-card h4',
-                           '%s?sort_by=title&sort_dir=desc' % self.url)
+                           '%s?sort=title-desc' % self.url)
 
-    def test_navbar_order_nb_proposals_asc(self):
+    def test_order_by_recommendations(self):
         self.selector_test('.dossier-card h4',
-                           '%s?sort_by=nb_proposals&sort_dir=asc' % self.url)
+                           '%s?sort=recommendations' % self.url)
 
-    def test_navbar_order_nb_proposals_desc(self):
+    def test_order_by_proposals(self):
         self.selector_test('.dossier-card h4',
-                           '%s?sort_by=nb_proposals&sort_dir=desc' % self.url)
-
-    def test_navbar_order_nb_recommendations_asc(self):
-        self.selector_test('.dossier-card h4',
-            '%s?sort_by=nb_recommendations&sort_dir=asc' % self.url)
-
-    def test_navbar_order_nb_recommendations_desc(self):
-        self.selector_test('.dossier-card h4',
-            '%s?sort_by=nb_recommendations&sort_dir=desc' % self.url)
+                           '%s?sort=proposals' % self.url)

@@ -24,13 +24,29 @@ class DossierList(PaginationMixin, SortMixin, PositionFormMixin,
         nb_recommendations=Count('proposals__recommendation', distinct=True),
         nb_documents=Count('documents', distinct=True)
     )
-    sort_fields = {
-        'title': 'title',
-        'nb_recommendations': 'recommendations',
-        'nb_proposals': 'proposals',
+    sort_modes = {
+        'title-asc': {
+            'order': 0,
+            'label': 'Title A-Z',
+            'fields': ['title']
+        },
+        'title-desc': {
+            'order': 1,
+            'label': 'Title Z-A',
+            'fields': ['-title']
+        },
+        'recommendations': {
+            'order': 2,
+            'label': 'Most recommendations',
+            'fields': ['-nb_recommendations']
+        },
+        'proposals': {
+            'order': 3,
+            'label': 'Most proposals',
+            'fields': ['-nb_proposals']
+        }
     }
-    sort_default_field = 'nb_recommendations'
-    sort_default_dir = 'desc'
+    sort_default = 'recommendations'
     sort_session_prefix = 'dossier_list'
 
     def dossier_filter(self, qs):

@@ -2,36 +2,20 @@
 
 {% trans "Order by" %}
 
-<div class="btn-group" id="orderby">
-  <button class="btn btn-default dropdown-toggle" type="button" id="orderby-button" data-toggle="dropdown"
+<div class="btn-group" id="sort-menu">
+  <button class="btn btn-default dropdown-toggle" type="button" id="sort-button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="true">
-    {% for field, label in sort.fields.items %}
-      {% if sort.field == field %}{% trans label %}{% endif %}
+    {% for mode in sort.modes %}
+      {% if sort.mode == mode.id %}{% trans mode.label %}{% endif %}
     {% endfor %}
     <span class="caret"></span>
   </button>
 
-  <ul class="dropdown-menu" aria-labelledby="orderby-button">
-    {% for field, label in sort.fields.items %}
-      <li {% if sort.field == field %}class="disabled"{% endif %}>
-        <a href="?{{ sort_by_querystring.urlencode }}&sort_by={{ field }}">{% trans label %}</a>
+  <ul class="dropdown-menu" aria-labelledby="sort-button">
+    {% for mode in sort.modes|dictsort:'order' %}
+      <li {% if sort.mode == mode.id %}class="disabled"{% endif %}>
+        <a href="?{{ sort_querystring.urlencode }}&sort={{ mode.id }}">{% trans mode.label %}</a>
       </li>
     {% endfor %}
-  </ul>
-</div>
-<div class="btn-group" id="orderdir">
-  <button class="btn btn-default dropdown-toggle" type="button" id="orderdir-button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="true">
-    {% if sort.dir == 'asc' %}{% trans "ascending" %}{% else %}{% trans "descending" %}{% endif %}
-    <span class="caret"></span>
-  </button>
-
-  <ul class="dropdown-menu" aria-labelledby="orderdir-button">
-    <li {% if sort.dir == 'asc' %}class="disabled"{% endif %}>
-      <a href="?{{ sort_dir_querystring.urlencode }}&sort_dir=asc">{% trans "ascending" %}</a>
-    </li>
-    <li {% if sort.dir == 'desc' %}class="disabled"{% endif %}>
-      <a href="?{{ sort_dir_querystring.urlencode }}&sort_dir=desc">{% trans "descending" %}</a>
-    </li>
   </ul>
 </div>

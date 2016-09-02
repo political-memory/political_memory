@@ -1,15 +1,15 @@
-<li>
-        <a href="?&amp;sort_by=score__score">score</a>
+<li class="disabled">
+        <a href="?&amp;sort=name-asc">Name A-Z</a>
       </li>
 ---
-<li class="disabled">
-        <a href="?&amp;sort_by=last_name">name</a>
+<li>
+        <a href="?&amp;sort=name-desc">Name Z-A</a>
       </li>
 ---
-<li class="disabled">
-      <a href="?&amp;sort_dir=asc">ascending</a>
-    </li>
+<li>
+        <a href="?&amp;sort=score-desc">Worst score</a>
+      </li>
 ---
 <li>
-      <a href="?&amp;sort_dir=desc">descending</a>
-    </li>
+        <a href="?&amp;sort=score-asc">Best score</a>
+      </li>

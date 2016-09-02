@@ -22,23 +22,23 @@ class RepresentativeListTest(BaseTest):
         self.selector_test('.representative-card')
 
     def test_navbar_order_options(self):
-        self.selector_test('#listheader #orderby li, #listheader #orderdir li')
+        self.selector_test('#listheader #sort-menu li')
 
-    def test_navbar_order_name_asc(self):
+    def test_order_by_name_asc(self):
         self.selector_test('.representative-card h4',
-                           '%s?sort_by=last_name&sort_dir=asc' % self.url)
+                           '%s?sort=name-asc' % self.url)
 
-    def test_navbar_order_name_desc(self):
+    def test_order_by_name_desc(self):
         self.selector_test('.representative-card h4',
-                           '%s?sort_by=last_name&sort_dir=desc' % self.url)
+                           '%s?sort=name-desc' % self.url)
 
-    def test_navbar_order_score_asc(self):
+    def test_order_by_score_asc(self):
         self.selector_test('.representative-card h4',
-                           '%s?sort_by=score__score&sort_dir=asc' % self.url)
+                           '%s?sort=score-asc' % self.url)
 
-    def test_navbar_order_score_desc(self):
+    def test_order_by_score_desc(self):
         self.selector_test('.representative-card h4',
-                           '%s?sort_by=score__score&sort_dir=desc' % self.url)
+                           '%s?sort=score-desc' % self.url)
 
     def test_search_no_results(self):
         self.selector_test('.representative-card h4',
@@ -83,4 +83,4 @@ class RepresentativeListTest(BaseTest):
         self.request_test('%s?search=ma&csv' % self.url)
 
     def test_order_csv(self):
-        self.request_test('%s?sort_by=last_name&sort_dir=desc&csv' % self.url)
+        self.request_test('%s?sort=score-desc&csv' % self.url)

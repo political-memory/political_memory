@@ -21,12 +21,12 @@ class ThemeListTest(BaseTest):
         self.selector_test('.theme-card')
 
     def test_navbar_order_options(self):
-        self.selector_test('#listheader #orderby li, #listheader #orderdir li')
+        self.selector_test('#listheader #sort-menu li')
 
-    def test_navbar_order_name_asc(self):
+    def test_order_by_name_asc(self):
         self.selector_test('.theme-card h4',
-                           '%s?sort_by=name&sort_dir=asc' % self.url)
+                           '%s?sort=name-asc' % self.url)
 
-    def test_navbar_order_name_desc(self):
+    def test_order_by_name_desc(self):
         self.selector_test('.theme-card h4',
-                           '%s?sort_by=name&sort_dir=desc' % self.url)
+                           '%s?sort=name-desc' % self.url)

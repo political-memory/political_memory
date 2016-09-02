@@ -23,10 +23,19 @@ class ThemeList(PaginationMixin, SortMixin, PositionFormMixin,
         nb_positions=Count('positions', distinct=True)
     )
 
-    sort_fields = {
-        'name': 'name',
+    sort_modes = {
+        'name-asc': {
+            'order': 0,
+            'label': 'Name A-Z',
+            'fields': ['name']
+        },
+        'name-desc': {
+            'order': 0,
+            'label': 'Name Z-A',
+            'fields': ['-name']
+        }
     }
-    sort_default_field = 'name'
+    sort_default = 'name-asc'
     sort_session_prefix = 'theme_list'
 
     def theme_filter(self, qs):
