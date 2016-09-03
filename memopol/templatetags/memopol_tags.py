@@ -84,12 +84,13 @@ def country_url(country):
 
 
 @register.filter
-def country_flag(country):
+def country_flag(country, tplace='bottom'):
     # Enable using groups instead of countries
     code = country.code if hasattr(country, 'code') else country.abbreviation
     return mark_safe(
-        '<span class="flag-icon flag-icon-{code}"></span>'.format(
-            code=code.lower()))
+        u'<span class="flag-icon flag-icon-{code}" title="{name}"'
+        u' data-toggle="tooltip" data-placement="{place}"></span>'.format(
+            code=code.lower(), place=tplace, name=country.name))
 
 
 @register.filter
@@ -130,12 +131,13 @@ def mandate_icon(main_mandate):
 
 
 @register.filter
-def group_icon(group):
+def group_icon(group, tplace='bottom'):
     url = static('images/group-%s.png' % cssify('%s-%s' % (
         group.chamber.abbreviation, group.abbreviation)))
     return mark_safe(
-        u'<span class="group-icon" style="background-image: url({url})">'
-        u'</span>'.format(url=url, name=group.abbreviation))
+        u'<span class="group-icon" style="background-image: url({url})"'
+        u' data-toggle="tooltip" data-placement="{place}" title="{name}">'
+        u'</span>'.format(url=url, name=group.name, place=tplace))
 
 
 @register.filter
