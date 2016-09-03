@@ -49,7 +49,7 @@
             {% block sidebar %}
                 {% include '_base_intro.html' %}
                 <hr class="hidden-xs"/>
-                {% cache 3600 LANGUAGE_CODE %} {# 1 hour #}
+                {% cache 3600 search_form LANGUAGE_CODE %}
                     {% include '_base_search.html' %}
                 {% endcache %}
                 <hr class="hidden-xs"/>
@@ -63,7 +63,9 @@
             {% endblock %}
             </div>
 
-            {% include '_position_form_modal.html' %}
+            {% cache 3600 position_form LANGUAGE_CODE %}
+                {% include '_position_form_modal.html' %}
+            {% endcache %}
 
             <div class="col-sm-9 col-sm-offset-3 {% block container-class %}{% endblock %}">
                 {% block content %}
