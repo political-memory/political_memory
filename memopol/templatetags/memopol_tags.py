@@ -22,36 +22,6 @@ def fix_url(url):
     return re.sub('^(https?://)?', 'https://', url.strip())
 
 
-@register.filter
-def twitter_link(url):
-    furl = fix_url(url)
-    return mark_safe(link.format(network='twitter', url=furl,
-        label=re.sub(r'.*/@?([^/]+)', '@\\1', re.sub(r'/$', '', furl))))
-
-
-@register.filter
-def facebook_link(url):
-    furl = fix_url(url)
-    clean_url = re.sub(r'/$', '', re.sub(r'\?.*', '', furl))
-    m = re.search(r'/pages/([^/]+)', clean_url, re.I)
-    return mark_safe(link.format(network='facebook', url=furl,
-        label=m.group(1) if m else re.sub(r'.*/([^/]+)', '\\1', clean_url)))
-
-
-@register.filter
-def website_link(url):
-    furl = fix_url(url)
-    short_url = re.sub(r'^https?://([^/]+).*', '\\1', furl)
-    return mark_safe(link.format(network='website', url=furl,
-        label=short_url))
-
-
-@register.filter
-def email_link(address):
-    return mark_safe(link.format(network='email', url='mailto:%s' % address,
-        label=address))
-
-
 @register.simple_tag
 def group_url(group):
     if group.kind == 'chamber' or group.chamber is None:
@@ -107,29 +77,6 @@ def chamber_icon(chamber, tplace='bottom'):
     )
 
 
-@register.simple_tag
-def chamber_page_link(site, name):
-    icon_url = static('images/chamber-%s.png' % cssify(site.kind))
-    site_url = fix_url(site.url)
-    return mark_safe(
-        u'<span class="chamber-icon" style="background-image: url({icon})" '
-        u'></span> <a href="{site}" target="_blank">{name}</a>'
-        .format(name=name, site=site_url, icon=icon_url))
-
-
-@register.filter
-def mandate_icon(main_mandate):
-    group = main_mandate.group
-    url = static('images/group-%s.png' % cssify('%s-%s' % (
-        group.chamber.abbreviation, group.abbreviation)))
-    return mark_safe(
-        u'<span class="group-icon" style="background-image: url({url})">'
-        u'</span> {role} of {name}'.format(
-            role=main_mandate.role,
-            name=main_mandate.group.name,
-            url=url))
-
-
 @register.filter
 def group_icon(group, tplace='bottom'):
     url = static('images/group-%s.png' % cssify('%s-%s' % (
@@ -138,15 +85,6 @@ def group_icon(group, tplace='bottom'):
         u'<span class="group-icon" style="background-image: url({url})"'
         u' data-toggle="tooltip" data-placement="{place}" title="{name}">'
         u'</span>'.format(url=url, name=group.name, place=tplace))
-
-
-@register.filter
-def group_long_icon(group):
-    url = static('images/group-%s.png' % cssify('%s-%s' % (
-        group.chamber.abbreviation, group.abbreviation)))
-    return mark_safe(
-        u'<span class="group-icon" style="background-image: url({url})">'
-        u'</span> {name}'.format(url=url, name=group.name))
 
 
 @register.filter
