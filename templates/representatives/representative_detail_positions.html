@@ -2,6 +2,6 @@
 
 {% block representative_content %}
 
-  {% include "blocks/_position_list.html" %}
+  {% include "blocks/_position_list.html" with positions=representative.positions.all %}
 
 {% endblock %}

@@ -1,3 +1,5 @@
 {% for theme in themes %}
-  <a class="tag" href="{% url 'theme-detail' slug=theme.slug %}">{{ theme.name }}</a>
+  {% if theme.pk != exclude %}
+  	<a class="tag" href="{% url 'theme-detail' slug=theme.slug %}">{{ theme.name }}</a>
+  {% endif %}
 {% endfor %}
