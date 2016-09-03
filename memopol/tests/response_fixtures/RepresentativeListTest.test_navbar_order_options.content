@@ -1,0 +1,15 @@
+<li class="disabled">
+        <a href="?&amp;sort=name-asc">Name A-Z</a>
+      </li>
+---
+<li>
+        <a href="?&amp;sort=name-desc">Name Z-A</a>
+      </li>
+---
+<li>
+        <a href="?&amp;sort=score-desc">Worst score</a>
+      </li>
+---
+<li>
+        <a href="?&amp;sort=score-asc">Best score</a>
+      </li>

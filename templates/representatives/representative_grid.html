@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load memopol_tags %}
+
+{% block title %}{% trans "Members of the European Parliement" %}{% endblock %}
+
+{% block container-class %}custom-listMEP{% endblock %}
+{% block content %}
+
+<h1 class="text-center">{% trans "Representatives" %}</h1>
+<p class="lead text-center">
+  Found {{ paginator.count }} {% trans "representatives" %}.
+</p>
+
+{% include "blocks/listheader.html" %}
+
+<div class="row card-list">
+  {% for representative in object_list %}
+  <div class="col-xs-12 col-md-4 representative-card">
+    <div class="thumbnail">
+      <a href="{% url 'representative-detail' slug=representative.slug %}" class="custom-thumbnail custom-invisible">
+        <div class="row">
+          <div class="col-xs-5">
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="img-responsive" style="background-image: url({{ representative.photo }});">
+            <div class="custom-thumbnail-details">
+              {% if representative.country %}
+              <div class="icon-badge-detail">{{ representative.country|country_flag }} {{ representative.country.name }}</div>
+              {% endif %}
+              {% if representative.chamber %}
+              <div class="icon-badge-detail">{{ representative.chamber|chamber_icon }} {{ representative.chamber.name }}</div>
+              {% endif %}
+              {% if representative.main_mandate.group %}
+              <div class="icon-badge-detail">{{ representative.main_mandate.group|group_icon }} {{ representative.main_mandate.group.abbreviation }}</div>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="col-xs-7">
+            <h4 class="text-center">{{ representative.full_name }}</h4>
+            <p class="text-center">
+              <br>
+              {% if representative.country %}
+              <a class="icon-badge" href="{% country_url representative.country %}" title="{{ representative.country.name }}">{{ representative.country|country_flag }}</a>
+              {% endif %}
+              {% if representative.chamber %}
+              <a class="icon-badge" href="{% chamber_url representative.chamber %}" title="{{ representative.chamber.name }}">{{ representative.chamber|chamber_icon }}</a>
+              {% endif %}
+              {% if representative.main_mandate.group %}
+              <a class="icon-badge" href="{% group_url representative.main_mandate.group %}" title="{{ representative.main_mandate.group.name }}">{{ representative.main_mandate.group|group_icon }}</a>
+              {% endif %}
+            </p>
+            <p class="text-right">{{ representative.score.score|score_badge }}</p>
+          </div>
+
+        </div>
+      </a>
+    </div>
+  </div>
+  {% empty %}
+    {% trans "No representatives found !" %}
+  {% endfor %}
+</div>
+
+{% include "blocks/listfooter.html" %}
+
+{% endblock %}

@@ -10,7 +10,7 @@ from representatives.models import Representative
 class DossierScore(models.Model):
     id = models.CharField(max_length=255, primary_key=True)
     representative = models.ForeignKey(Representative,
-        on_delete=models.DO_NOTHING)
+        related_name='dossierscores', on_delete=models.DO_NOTHING)
     dossier = models.ForeignKey(Dossier, on_delete=models.DO_NOTHING)
     score = models.FloatField(default=0)
 

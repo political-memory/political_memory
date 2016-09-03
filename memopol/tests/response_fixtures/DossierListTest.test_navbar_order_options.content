@@ -1,0 +1,15 @@
+<li>
+        <a href="?&amp;sort=title-asc">Title A-Z</a>
+      </li>
+---
+<li>
+        <a href="?&amp;sort=title-desc">Title Z-A</a>
+      </li>
+---
+<li class="disabled">
+        <a href="?&amp;sort=recommendations">Most recommendations</a>
+      </li>
+---
+<li>
+        <a href="?&amp;sort=proposals">Most proposals</a>
+      </li>

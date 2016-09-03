@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load memopol_tags %}
+{% load humanize %}
+
+{% block title %}{% trans "Dossiers" %}{% endblock %}
+
+{% block content %}
+
+  <h1 class="text-center">{% trans "Dossiers" %}</h1>
+  <p class="lead text-center">
+    {% blocktrans count counter=paginator.count %}{{ counter }} dossier{% plural %}{{ counter }} dossiers{% endblocktrans %}.
+  </p>
+
+  {% include "blocks/listheader.html" %}
+
+  {% include "blocks/_dossier_list.html" with dossiers=object_list %}
+
+  {% include "blocks/listfooter.html" %}
+
+{% endblock %}

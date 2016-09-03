@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load memopol_tags %}
+
+{% with dossier=object %}
+
+  {% block title %}{{ dossier.title }}{% endblock %}
+
+  {% block content %}
+  <div class="row" id="dossier-detail">
+    <div class="col-sm-12">
+      <h1 class="text-center">{{ dossier.title }}</h1>
+
+      <div class="col-sm-12">
+        <dl class="dl-horizontal">
+          <dt>{% trans "Themes" %}</dt>
+          <dd>
+            {% include "blocks/_themetags.html" with themes=dossier.themes.all %}
+            {% if not dossier.themes.all|length %}{% trans "None" %}{% endif %}
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <ul class="nav nav-tabs nav-justified" role="tablist">
+        <li role="presentation" {% if tab == 'recommendations' %}class="active"{% endif %}>
+          <a href="{% url 'dossier-recommendations' pk=dossier.pk %}" role="tab">
+            <h3>{% trans "Recommendations" %}</h3>
+          </a>
+        </li>
+        <li role="presentation" {% if tab == 'proposals' %}class="active"{% endif %}>
+          <a href="{% url 'dossier-proposals' pk=dossier.pk %}" role="tab">
+            <h3>{% trans "Other proposals" %}</h3>
+          </a>
+        </li>
+        <li role="presentation" {% if tab == 'documents' %}class="active"{% endif %}>
+          <a href="{% url 'dossier-documents' pk=dossier.pk %}" role="tab">
+            <h3>{% trans "Documents" %}</h3>
+          </a>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        {% block dossier_content %}{% endblock %}
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+
+{% endwith %}

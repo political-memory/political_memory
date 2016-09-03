@@ -1,0 +1,23 @@
+<a aria-controls="dossier-15424" aria-expanded="false" data-parent="#accordion-dossier" data-toggle="collapse" href="#dossier-15424" role="button">
+                  Pouvoirs publics : application de la loi relative à l’état d’urgence
+                  <span class="pull-right">
+                    
+                    <span class="badge badge-danger" data-placement="left" data-toggle="tooltip" title="Score for the representative on this specific dossier">-100</span>
+                  </span>
+                </a>
+---
+<a aria-controls="dossier-15409" aria-expanded="false" data-parent="#accordion-dossier" data-toggle="collapse" href="#dossier-15409" role="button">
+                  Pouvoirs publics : prorogation de l'application de la loi sur l'état d'urgence
+                  <span class="pull-right">
+                    
+                    <span class="badge badge-success" data-placement="left" data-toggle="tooltip" title="Score for the representative on this specific dossier">75</span>
+                  </span>
+                </a>
+---
+<a aria-controls="dossier-15407" aria-expanded="false" data-parent="#accordion-dossier" data-toggle="collapse" href="#dossier-15407" role="button">
+                  Pouvoirs publics : prorogation de l'état d'urgence
+                  <span class="pull-right">
+                    
+                    <span class="badge badge-danger" data-placement="left" data-toggle="tooltip" title="Score for the representative on this specific dossier">-90</span>
+                  </span>
+                </a>

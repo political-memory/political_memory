@@ -9,27 +9,45 @@ from representatives_votes.models import Dossier
 
 from ..filters import DossierFilter
 
+from representatives_positions.views import PositionFormMixin
 
-class DossierList(PaginationMixin, SortMixin, generic.ListView):
+
+class DossierList(PaginationMixin, SortMixin, PositionFormMixin,
+                  generic.ListView):
 
     current_filter = None
     queryset = Dossier.objects.prefetch_related(
-        'proposals',
-        'proposals__recommendation',
-        'documents',
-        'documents__chamber'
+        'documents__chamber',
+        'themes'
     ).annotate(
-        nb_proposals=Count('proposals'),
-        nb_recomm=Count('proposals__recommendation')
+        nb_proposals=Count('proposals', distinct=True),
+        nb_recommendations=Count('proposals__recommendation', distinct=True),
+        nb_documents=Count('documents', distinct=True)
     )
-    sort_fields = {
-        'title': 'title',
-        'reference': 'reference',
-        'nb_recomm': 'recommendations',
-        'nb_proposals': 'proposals',
+    sort_modes = {
+        'title-asc': {
+            'order': 0,
+            'label': 'Title A-Z',
+            'fields': ['title']
+        },
+        'title-desc': {
+            'order': 1,
+            'label': 'Title Z-A',
+            'fields': ['-title']
+        },
+        'recommendations': {
+            'order': 2,
+            'label': 'Most recommendations',
+            'fields': ['-nb_recommendations']
+        },
+        'proposals': {
+            'order': 3,
+            'label': 'Most proposals',
+            'fields': ['-nb_proposals']
+        }
     }
-    sort_default_field = 'nb_recomm'
-    sort_default_dir = 'desc'
+    sort_default = 'recommendations'
+    sort_session_prefix = 'dossier_list'
 
     def dossier_filter(self, qs):
         f = DossierFilter(self.request.GET, queryset=qs)
@@ -43,5 +61,6 @@ class DossierList(PaginationMixin, SortMixin, generic.ListView):
 
     def get_context_data(self, **kwargs):
         c = super(DossierList, self).get_context_data(**kwargs)
+        c['view'] = 'dossier_list'
         c['filter'] = self.current_filter
         return c

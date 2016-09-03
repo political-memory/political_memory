@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load memopol_tags %}
+
+{% with theme=object %}
+
+  {% block title %}{{ theme.name }}{% endblock %}
+
+  {% block content %}
+  <div class="row" id="theme-detail">
+    <div class="col-sm-12">
+      <h1 class="text-center">{{ theme.name }}</h1>
+
+      <div class="text-left" id="description">
+        {{ theme.description }}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <ul class="nav nav-tabs nav-justified" role="tablist">
+        <li role="presentation" {% if tab == 'links' %}class="active"{% endif %}>
+          <a href="{% url 'theme-links' slug=theme.slug %}" role="tab">
+            <h3>{% trans "Links" %}</h3>
+          </a>
+        </li>
+        <li role="presentation" {% if tab == 'dossiers' %}class="active"{% endif %}>
+          <a href="{% url 'theme-dossiers' slug=theme.slug %}" role="tab">
+            <h3>{% trans "Dossiers" %}</h3>
+          </a>
+        </li>
+        <li role="presentation" {% if tab == 'proposals' %}class="active"{% endif %}>
+          <a href="{% url 'theme-proposals' slug=theme.slug %}" role="tab">
+            <h3>{% trans "Proposals" %}</h3>
+          </a>
+        </li>
+        <li role="presentation" {% if tab == 'positions' %}class="active"{% endif %}>
+          <a href="{% url 'theme-positions' slug=theme.slug %}" role="tab">
+            <h3>{% trans "Public positions" %}</h3>
+          </a>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        {% block theme_content %}{% endblock %}
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+
+{% endwith %}

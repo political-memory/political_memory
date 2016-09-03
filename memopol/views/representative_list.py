@@ -10,24 +10,46 @@ from representatives.models import Representative
 from ..filters import RepresentativeFilter
 from .representative_mixin import RepresentativeViewMixin
 
+from representatives_positions.views import PositionFormMixin
+
 
 class RepresentativeList(CSVDownloadMixin, GridListMixin, PaginationMixin,
                          RepresentativeViewMixin, ActiveLegislatureMixin,
-                         SortMixin, generic.ListView):
+                         SortMixin, PositionFormMixin, generic.ListView):
 
     csv_name = 'representatives'
     queryset = Representative.objects.select_related('score')
     current_filter = None
-    sort_fields = {
-        'last_name': 'name',
-        'score__score': 'score',
+    sort_modes = {
+        'name-asc': {
+            'order': 0,
+            'label': 'Name A-Z',
+            'fields': ['last_name']
+        },
+        'name-desc': {
+            'order': 1,
+            'label': 'Name Z-A',
+            'fields': ['-last_name']
+        },
+        'score-asc': {
+            'order': 2,
+            'label': 'Best score',
+            'fields': ['-score__score']
+        },
+        'score-desc': {
+            'order': 2,
+            'label': 'Worst score',
+            'fields': ['score__score']
+        }
     }
-    sort_default_field = 'last_name'
+    sort_default = 'name-asc'
+    sort_session_prefix = 'representative_list'
 
     def get_context_data(self, **kwargs):
         c = super(RepresentativeList, self).get_context_data(**kwargs)
 
         c['filter'] = self.current_filter
+        c['view'] = 'representative_list'
         c['object_list'] = [
             self.add_representative_country_and_main_mandate(r)
             for r in c['object_list']

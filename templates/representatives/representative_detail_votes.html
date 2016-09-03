@@ -1,0 +1,75 @@
+{% extends 'representatives/representative_detail.html' %}
+
+{% load i18n %}
+{% load fontawesome %}
+{% load memopol_tags %}
+
+{% block representative_content %}
+
+  {% if not dossiers %}
+    <p class="no-votes empty text-center">
+      {% trans "No vote has been recorded for this representative yet." %}
+    </p>
+  {% else %}
+
+    <div class="panel-group" id="accordion-dossier" role="tablist" aria-multiselectable="true">
+
+      {% for pk, d in dossiers.items %}
+        {% with dossier=d.dossier %}
+
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="dossier-heading-{{ pk }}">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion-dossier" href="#dossier-{{ pk }}" aria-expanded="false" aria-controls="dossier-{{ pk }}">
+                  {{ dossier.title }}
+                  <span class="pull-right">
+                    {% trans "Score for the representative on this specific dossier" as tooltip %}
+                    {{ d.score|score_badge:tooltip }}
+                  </span>
+                </a>
+              </h4>
+            </div>
+            <div id="dossier-{{ pk }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="dossier-heading-{{ pk }}">
+              <div class="panel-body">
+
+                <table class="table table-striped table-responsive text-center">
+
+                  <thead>
+                    <tr>
+                      <th class="text-center">{% trans "Proposal" %}</th>
+                      <th class="text-center">{% trans "Recommendation" %}</th>
+                      <th class="text-center">{% trans "Vote" %}</th>
+                      <th class="text-center nowrap">Points&nbsp;<a data-toggle="tooltip" data-placement="top" title="{% trans "Score is negative or positive depending on whether the representative voted as recommended" %}">{% fontawesome_icon "info-circle" %}</a>
+                      </th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+
+                    {% for vote in d.votes %}
+                      <tr>
+                        <th>{{ vote.proposal.title }}</th>
+                        <td>{{ vote.proposal.recommendation.recommendation|position_icon }}</td>
+                        <td>{{ vote.position|position_icon:vote.proposal.recommendation.recommendation }}</td>
+                        <td>
+                          {{ vote.score|score_badge:vote.proposal.recommendation.title }}
+                        </td>
+                      </tr>
+                    {% endfor %}
+
+                  </tbody>
+
+                </table>
+
+              </div>
+            </div>
+          </div>
+
+        {% endwith %}
+      {% endfor %}
+
+    </div>
+
+  {% endif %}
+
+{% endblock %}

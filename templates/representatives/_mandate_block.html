@@ -1,0 +1,27 @@
+{% load i18n %}
+{% load memopol_tags %}
+
+<div class="col-sm-12 col-md-6 mandate {% if mandate.weight >= weight_threshold %}mandate-secondary{% endif %}">
+  <div class="thumbnail">
+    {% if mandate.group.kind == 'chamber' %}
+      <span class="mandate-badge">{{ mandate.group.chamber|chamber_icon }}</span>
+    {% elif mandate.group.kind == 'group' %}
+      <span class="mandate-badge">{{ mandate.group|group_icon }}</span>
+    {% elif mandate.group.kind == 'country' %}
+      <span class="mandate-badge">{{ representative.country|country_flag }}</span>
+    {% elif mandate.group.abbreviation %}
+      <span class="badge mandate-badge">{{ mandate.group.abbreviation }}</span>
+    {% endif %}
+    <h4 class="text-center">
+      {{ mandate.group.name }}
+    </h4>
+    {% if mandate.weight < weight_threshold %}
+      <hr>
+    {% endif %}
+    <div class="text-center desc">
+      <b>{% trans mandate.role %}</b>
+      {% trans "from" %} {{ mandate.begin_date|mandate_date:'d/m/Y' }}
+      {% trans "to" %} {{ mandate.end_date|mandate_date:'d/m/Y' }}
+    </div>
+  </div>
+</div>

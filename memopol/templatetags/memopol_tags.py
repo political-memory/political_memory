@@ -88,25 +88,22 @@ def country_flag(country):
     # Enable using groups instead of countries
     code = country.code if hasattr(country, 'code') else country.abbreviation
     return mark_safe(
-        '<span class="flag-icon flag-icon-{code}"></span> {name}'.format(
-            name=country.name,
+        '<span class="flag-icon flag-icon-{code}"></span>'.format(
             code=code.lower()))
 
 
 @register.filter
-def chamber_icon(chamber):
+def chamber_icon(chamber, tplace='bottom'):
     url = static('images/chamber-%s.png' % cssify(chamber.abbreviation))
     return mark_safe(
-        u'<span class="chamber-icon" style="background-image: url({url})">'
-        u'</span> {name}'.format(name=chamber.name, url=url))
-
-
-@register.filter
-def chamber_small_icon(chamber):
-    url = static('images/chamber-%s.png' % cssify(chamber.abbreviation))
-    return mark_safe(
-        u'<span class="chamber-icon" style="background-image: url({url})" '
-        u'title="{name}"></span>'.format(name=chamber.name, url=url))
+        u'<span class="chamber-icon" style="background-image: url({url})"'
+        u' data-toggle="tooltip" data-placement="{place}"'
+        u' title="{name}"></span>'.format(
+            name=chamber.name,
+            url=url,
+            place=tplace
+        )
+    )
 
 
 @register.simple_tag
@@ -138,7 +135,7 @@ def group_icon(group):
         group.chamber.abbreviation, group.abbreviation)))
     return mark_safe(
         u'<span class="group-icon" style="background-image: url({url})">'
-        u'</span> {name}'.format(url=url, name=group.abbreviation))
+        u'</span>'.format(url=url, name=group.abbreviation))
 
 
 @register.filter
@@ -159,25 +156,60 @@ def mandate_date(date, arg=None):
 
 
 @register.filter
-def position_icon(position):
+def position_icon(position, recommendation=None):
+    color = 'default'
+    if recommendation:
+        if position == recommendation:
+            color = 'success'
+        else:
+            color = 'danger'
+
     if position == 'for':
-        return mark_safe(
-            '<i \
-            aria-label="for" \
-            class="fa fa-thumbs-up vote_positive" \
-            title="for" \
-            ></i>')
+        icon = "thumbs-up"
     elif position == 'against':
-        return mark_safe(
-            '<i \
-            aria-label="against" \
-            class="fa fa-thumbs-down vote_negative" \
-            title="against" \
-            ></i>')
+        icon = "thumbs-down"
     else:
-        return mark_safe(
-            '<i \
-            aria-label="abstain" \
-            class="fa fa-circle-o vote_abstain" \
-            title="abstain" \
-            ></i>')
+        icon = "circle-o"
+
+    pattern = '<i class="fa fa-%s text-%s" title="%s"></i>'
+    return mark_safe(pattern % (icon, color, position))
+
+
+@register.filter
+def proposal_status_label(status, recommendation=None):
+    color = 'default'
+    if recommendation:
+        reco = recommendation.recommendation
+
+        if (reco == 'for' and status == 'adopted' or
+           reco == 'against' and status == 'rejected'):
+            color = 'success'
+        elif (reco == 'for' and status == 'rejected' or
+              reco == 'against' and status == 'adopted'):
+            color = 'danger'
+
+    pattern = '<span class="label label-%s">%s</span>'
+    return mark_safe(pattern % (color, status))
+
+
+@register.filter
+def score_badge(score, tooltip=None):
+    if score > 0:
+        color = 'success'
+    elif score < 0:
+        color = 'danger'
+    else:
+        color = 'primary'
+
+    attrs = ''
+    if tooltip:
+        attrs = 'data-toggle="tooltip" data-placement="%s" title="%s"'
+        attrs = attrs % ('left', tooltip)
+
+    pattern = '<span class="badge badge-%s" %s>%s</span>'
+    return mark_safe(pattern % (color, attrs, score))
+
+
+@register.filter
+def cast_str(val):
+    return str(val)

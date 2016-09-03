@@ -39,7 +39,7 @@ export DJANGO_SETTINGS_MODULE=memopol.settings
 ./manage.py migrate
 
 # Import sample data
-./manage.py loaddata memopol/fixtures/smaller_sample.json
+./manage.py loaddata memopol/fixtures/data_sample.json
 
 echo
 echo "You're all set!"

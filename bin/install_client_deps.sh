@@ -8,7 +8,7 @@
 # starting with 'downloadFromGithub' at the bottom.
 # The last argument is expected to be a git ref (ie
 # a branch name, tag or commit-ish).
-# 
+#
 
 set -e
 
@@ -37,8 +37,6 @@ set -e
 mkdir -p ${DEST}
 
 downloadFromGithub jquery jquery/jquery 2.1.4
-downloadFromGithub fontawesome FortAwesome/Font-Awesome v4.3.0
 downloadFromGithub flag-icon-css lipis/flag-icon-css 0.7.1
-downloadFromGithub bootstrap twbs/bootstrap v3.3.5
 
 echo "* Done."

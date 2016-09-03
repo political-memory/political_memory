@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load fontawesome %}
+{% load staticfiles %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-12">
+      <h1>{% trans "Welcome to Memopol" %}</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <p>
+        {% include "text/short_description.html" %}
+      </p>
+      <p>
+        {% include "text/license.html" %}
+      </p>
+    </div>
+
+    <div class="col-md-4">
+      <h3>{% trans "More information" %}</h3>
+      <div class="btn-group">
+        <a class="btn btn-primary" target="_blank" href="http://www.memopol.org/">
+          {% fontawesome_icon "bookmark" %}
+          {% trans "Memopol blog" %}
+        </a>
+        <a class="btn btn-primary" target="_blank" href="http://memopol.rtfd.org/">
+          {% fontawesome_icon "info-circle" %}
+          {% trans "Documentation" %}
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <h3>{% trans "Contact us" %}</h3>
+      <div class="btn-group">
+        <a class="btn btn-primary" target="_blank" href="https://twitter.com/memopol2">
+          {% fontawesome_icon "twitter" %}
+          {% trans "Twitter" %}
+        </a>
+        <a class="btn btn-primary" target="_blank" href="https://webchat.freenode.net/?nick=memopol-user-...&channels=lqdn-memopol&prompt=1">
+          {% fontawesome_icon "commenting" %}
+          {% trans "IRC Channel" %}
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <h3>{% trans "Contributing" %}</h3>
+      <div class="btn-group">
+        <a class="btn btn-default" target="_blank" href="https://github.com/political-memory/political_memory">
+          {% fontawesome_icon "git" %}
+          {% trans "Code repository" %}
+        </a>
+        <a class="btn btn-default" target="_blank" href="https://github.com/political-memory/political_memory/issues/new">
+          {% fontawesome_icon "bug" %}
+          {% trans "Report an issue" %}
+        </a>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

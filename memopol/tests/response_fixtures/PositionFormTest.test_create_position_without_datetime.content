@@ -1,0 +1,15 @@
+<div class="form-group has-error"><label class="col-md-3 control-label" for="id_position-datetime">Datetime</label><div class="col-md-9">
+       <div class="input-group date" id="id_position-datetime">
+           <input class="form-control" id="id_position-datetime" name="position-datetime" placeholder="Datetime" readonly="" required="required" title="" type="text"/>
+           <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+           <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+       </div>
+       <script type="text/javascript">
+           $("#id_position-datetime").datetimepicker({minView: 2,
+autoclose: true,
+language: 'en',
+startView: 2,
+format: 'yyyy-mm-dd'}).find('input').addClass("form-control");
+       </script>
+       <span class="help-block">This field is required.
+</span></div></div>

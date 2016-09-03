@@ -53,55 +53,66 @@ class ActiveLegislatureMixin(object):
 class SortMixin(object):
     """
     Mixin for views that allow sorting.
-    The sort_fields attribute should be defined to a {field: label} dict
-    containing all fields usable for sorting.
-    The sort_default and sort_default_dir attributes should contain the default
-    sorting settings.
+    The sort_modes attribute should be defined to a dict as such:
+    {
+        'mode1': {
+            'order': 42,
+            'label': 'mode label',
+            'fields': ['-field1', 'field2', ...]
+        },
+        ...
+    }
+
+    The sort_default attribute should contain the default sorting mode.
     """
-    sort_fields = {}
-    sort_default_field = None
-    sort_default_dir = 'asc'
+    sort_modes = {}
+    sort_default = None
+    sort_session_prefix = ''
 
     def get(self, *args, **kwargs):
         self.set_sorting()
         return super(SortMixin, self).get(*args, **kwargs)
 
+    def _session_get_sort(self):
+        k = '%s_sort' % self.sort_session_prefix
+        return self.request.session[k]
+
+    def _session_set_sort(self, value):
+        k = '%s_sort' % self.sort_session_prefix
+        self.request.session[k] = value
+
+    def _session_sort_exists(self):
+        k = '%s_sort' % self.sort_session_prefix
+        return k in self.request.session
+
     def set_sorting(self):
-        if 'sort_by' in self.request.GET:
-            self.request.session['sort_by'] = self.request.GET['sort_by']
-        elif 'sort_by' not in self.request.session:
-            self.request.session['sort_by'] = self.sort_default_field
+        if 'sort' in self.request.GET:
+            self._session_set_sort(self.request.GET['sort'])
+        elif not self._session_sort_exists():
+            self._session_set_sort(self.sort_default)
 
-        if self.request.session['sort_by'] not in self.sort_fields:
-            self.request.session['sort_by'] = self.sort_default_field
-
-        if 'sort_dir' in self.request.GET:
-            self.request.session['sort_dir'] = self.request.GET['sort_dir']
-        elif 'sort_dir' not in self.request.session:
-            self.request.session['sort_dir'] = self.sort_default_dir
+        if self._session_get_sort() not in self.sort_modes:
+            self._session_set_sort(self.sort_default)
 
     def get_context_data(self, **kwargs):
         c = super(SortMixin, self).get_context_data(**kwargs)
 
-        c['queries'] = copy(self.request.GET)
-        if 'sort_by' in c['queries']:
-            del c['queries']['sort_by']
-        if 'sort_dir' in c['queries']:
-            del c['queries']['sort_dir']
+        c['sort_querystring'] = copy(self.request.GET)
+        if 'sort' in c['sort_querystring']:
+            del c['sort_querystring']['sort']
 
         c['sort'] = {
-            'fields': self.sort_fields,
-            'field': self.request.session['sort_by'],
-            'dir': self.request.session['sort_dir'],
+            'modes': [{'id': k, 'label': v['label'], 'order': v['order']}
+                      for k, v in self.sort_modes.iteritems()],
+            'mode': self._session_get_sort()
         }
         return c
 
     def get_queryset(self):
         qs = super(SortMixin, self).get_queryset()
-        if self.request.session['sort_by']:
-            qs = qs.order_by('%s%s' % (
-                '-' if self.request.session['sort_dir'] == 'desc' else '',
-                self.request.session['sort_by']))
+        if self._session_get_sort() in self.sort_modes:
+            mode = self.sort_modes[self._session_get_sort()]
+            qs = qs.order_by(*mode['fields'])
         return qs
 
 
@@ -138,9 +149,9 @@ class PaginationMixin(object):
         c['pagination_limits'] = self.pagination_limits
         c['paginate_by'] = self.request.session['paginate_by']
         c['page_range'] = self.get_page_range(c['page_obj'])
-        c['queries'] = copy(self.request.GET)
-        if 'page' in c['queries']:
-            del c['queries']['page']
+        c['pagination_querystring'] = copy(self.request.GET)
+        if 'page' in c['pagination_querystring']:
+            del c['pagination_querystring']['page']
         return c
 
 
@@ -167,6 +178,12 @@ class GridListMixin(object):
 
 
 class CSVDownloadMixin(object):
+    def get_context_data(self, **kwargs):
+        c = super(CSVDownloadMixin, self).get_context_data(**kwargs)
+        c['csv'] = True
+        c['csv_querystring'] = copy(self.request.GET)
+        return c
+
     def get_paginate_by(self, queryset):
         if self.request.GET.get('csv', None) is None:
             return super(CSVDownloadMixin, self).get_paginate_by(queryset)

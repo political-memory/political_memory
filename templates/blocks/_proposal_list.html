@@ -1,0 +1,102 @@
+{% load i18n %}
+{% load fontawesome %}
+{% load memopol_tags %}
+
+{% comment %}
+  Expected variables
+  - 'proposals': proposal list
+  - 'show_recommendations': display recommendations in the list
+  - 'show_dossier': include a "dossier" column in the list
+{% endcomment %}
+
+{% if not proposals %}
+
+  <p class="no-links empty text-center">
+    {% trans "No proposal has been recorded yet." %}
+  </p>
+
+{% else %}
+
+  <table class="table table-responsive table-striped">
+    <tr>
+      {% if show_dossier %}
+        <th>{% trans "Chambers" %}</th>
+        <th>{% trans "Dossier" %}</th>
+      {% endif %}
+      <th>{% trans "Proposal" %}</th>
+      {% if show_recommendations %}
+        <th colspan="2">{% trans "Recommendation" %}</th>
+      {% else %}
+        {% if user and user.is_staff %}<th></th>{% endif %}
+      {% endif %}
+      <th>{% trans "Status" %}</th>
+      <th>{{ "for"|position_icon }}</th>
+      <th>{{ "against"|position_icon }}</th>
+      <th>{{ "abstain"|position_icon }}</th>
+    </tr>
+
+    {% for proposal in proposals %}
+      <tr class="proposal">
+        {% if show_dossier %}
+          <td class="lead">
+            {% for chamber in proposal.dossier.chambers %}
+              {{ chamber | chamber_icon }}
+            {% endfor %}
+          </td>
+
+          <td>
+            <a href="{% url 'dossier-detail' proposal.dossier.pk %}">
+              {{ proposal.dossier.title }}
+            </a>
+          </td>
+        {% endif %}
+
+        <td>
+          {{ proposal.title }}
+          <br>
+          <small>
+            {{ proposal.reference }}
+          </small>
+        </td>
+
+        {% if show_recommendations %}
+          {% if proposal.recommendation %}
+            <td class="text-center">{{ proposal.recommendation.recommendation|position_icon }}</td>
+            <td class="text-center">
+              {{ proposal.recommendation.weight }}&nbsp;<a data-toggle="tooltip" data-placement="top" title="{{ proposal.recommendation.title }}">{% fontawesome_icon "info-circle" %}</a>
+            </td>
+          {% else %}
+            <td class="text-center" colspan="2">
+              {% if user and user.is_staff %}
+                <a class="btn btn-default btn-sm" href="{% url 'admin:representatives_recommendations_recommendation_add' %}?proposal={{ proposal.pk }}">
+                  {% trans "Add recommendation" %}
+                </a>
+              {% else %}
+                {% trans "None" %}
+              {% endif %}
+            </td>
+          {% endif %}
+        {% else %}
+          {% if user and user.is_staff %}
+            <td>
+              <a class="btn btn-default btn-sm" href="{% url 'admin:representatives_recommendations_recommendation_add' %}?proposal={{ proposal.pk }}">
+                {% trans "Add recommendation" %}
+              </a>
+            </td>
+          {% endif %}
+        {% endif %}
+
+        {% if show_recommendations %}
+          <td>{{ proposal.status|proposal_status_label:proposal.recommendation }}</td>
+        {% else %}
+          <td>{{ proposal.status|proposal_status_label }}</td>
+        {% endif %}
+
+        <td>{{ proposal.total_for }}</td>
+        <td>{{ proposal.total_against }}</td>
+        <td>{{ proposal.total_abstain }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
+{% endif %}

@@ -1,58 +1,32 @@
 # coding: utf-8
 
-from dal.autocomplete import ModelSelect2
-
 import datetime
 
 from django.db.models import Q
 from django.utils.text import slugify
 
-from django_filters import FilterSet, MethodFilter, ModelChoiceFilter
+from django_filters import FilterSet, MethodFilter
 
-from representatives.models import Chamber, Group, Representative
+from representatives.models import Representative
 from representatives_votes.models import Dossier
 from memopol_themes.models import Theme
-
-
-def rep_chamber_filter(qs, value):
-    today = datetime.date.today()
-    return qs.filter(
-        Q(mandates__end_date__gte=today) | Q(mandates__end_date__isnull=True),
-        mandates__group__chamber=value
-    )
-
-
-def dossier_chamber_filter(qs, value):
-    return qs.filter(documents__chamber=value)
-
-
-def group_filter(qs, value):
-    today = datetime.date.today()
-    return qs.filter(
-        Q(mandates__end_date__gte=today) | Q(mandates__end_date__isnull=True),
-        mandates__group=value
-    )
 
 
 class RepresentativeFilter(FilterSet):
 
     search = MethodFilter(action='search_filter')
-
-    chamber = ModelChoiceFilter(queryset=Chamber.objects.all(),
-                                action=rep_chamber_filter)
-
-    country = ModelChoiceFilter(queryset=Group.objects.filter(kind='country'),
-                                action=group_filter)
-
-    group = ModelChoiceFilter(queryset=Group.objects.exclude(
-                              kind__in=['chamber', 'country']),
-                              action=group_filter,
-                              widget=ModelSelect2(url='group-autocomplete'),
-                              label='Party, committee or delegation')
+    scoremin = MethodFilter(action='score_min_filter')
+    scoremax = MethodFilter(action='score_max_filter')
+    chamber = MethodFilter(action='chamber_filter')
+    country = MethodFilter(action='group_filter')
+    party = MethodFilter(action='group_filter')
+    delegation = MethodFilter(action='group_filter')
+    committee = MethodFilter(action='group_filter')
 
     class Meta:
         model = Representative
-        fields = ['search', 'chamber', 'country']
+        fields = ['search', 'chamber', 'country', 'party', 'delegation',
+                  'committee']
 
     def search_filter(self, qs, value):
         if len(value) == 0:
@@ -60,13 +34,51 @@ class RepresentativeFilter(FilterSet):
 
         return qs.filter(slug__icontains=slugify(value))
 
+    def chamber_filter(self, qs, value):
+        if len(value) == 0:
+            return qs
+
+        today = datetime.date.today()
+        return qs.filter(
+            Q(mandates__end_date__gte=today) |
+            Q(mandates__end_date__isnull=True),
+            mandates__group__chamber=value
+        )
+
+    def group_filter(self, qs, value):
+        if len(value) == 0:
+            return qs
+
+        today = datetime.date.today()
+        return qs.filter(
+            Q(mandates__end_date__gte=today) |
+            Q(mandates__end_date__isnull=True),
+            mandates__group=value
+        )
+
+    def score_min_filter(self, qs, value):
+        if len(value) == 0:
+            return qs
+
+        try:
+            return qs.filter(score__score__gte=int(value))
+        except ValueError:
+            return qs
+
+    def score_max_filter(self, qs, value):
+        if len(value) == 0:
+            return qs
+
+        try:
+            return qs.filter(score__score__lte=int(value))
+        except ValueError:
+            return qs
+
 
 class DossierFilter(FilterSet):
 
     search = MethodFilter(action='search_filter')
-
-    chamber = ModelChoiceFilter(queryset=Chamber.objects.all(),
-                                action=dossier_chamber_filter)
+    chamber = MethodFilter(action='chamber_filter')
 
     class Meta:
         model = Dossier
@@ -77,7 +89,14 @@ class DossierFilter(FilterSet):
             return qs
 
         return qs.filter(Q(title__icontains=value) |
-                         Q(reference__icontains=value))
+                         Q(reference__icontains=value) |
+                         Q(documents__link__icontains=value))
+
+    def chamber_filter(self, qs, value):
+        if len(value) == 0:
+            return qs
+
+        return qs.filter(documents__chamber=value)
 
 
 class ThemeFilter(FilterSet):

@@ -1,0 +1,44 @@
+{% extends 'representatives_votes/dossier_detail.html' %}
+
+{% load i18n %}
+{% load memopol_tags %}
+
+{% block dossier_content %}
+
+  <table class="table table-responsive table-striped">
+    <tr>
+      <th>
+          {% trans "Chamber" %}
+      </th>
+      <th>
+          {% trans "Document type" %}
+      </th>
+      <th>
+          {% trans "Title" %}
+      </th>
+    </tr>
+
+    {% for document in documents %}
+      <tr class="document">
+        <td>
+          {{ document.chamber|chamber_icon }}
+        </td>
+        <td>
+          <a class="external" href="{{ document.link }}" target="_blank">
+            {% if document.kind == 'procedure-file' %}
+              {% trans "Procedure file" %}
+            {% else %}
+              {% trans document.kind %}
+            {% endif %}
+          </a>
+        </td>
+        <td>
+          <a class="external" href="{{ document.link }}" target="_blank">
+            {{ document.title }}
+          </a>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+
+{% endblock %}

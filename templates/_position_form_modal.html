@@ -1,0 +1,96 @@
+{% load i18n %}
+{% load bootstrap3 %}
+
+<div class="modal fade" id="add-position-form" tabindex="-1" role="dialog" aria-labelledby="btn-position">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <form method="post" action="">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="{% trans 'Close' %}"><span aria-hidden="true">&times;</span></button>
+
+          <h4 class="modal-title">{% trans "Add a representative public position" %}</h4>
+
+        </div>
+
+        <div class="modal-body">
+
+          {% csrf_token %}
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="well well-sm text-justify">{% include "text/position_info.html" %}</div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6">
+              {% bootstrap_field position_form.representative layout='horizontal' %}
+              {% bootstrap_field position_form.datetime layout='horizontal' %}
+              {% bootstrap_field position_form.link layout='horizontal' %}
+            </div>
+
+            <div class="col-sm-6">
+              {% bootstrap_field position_form.themes layout='horizontal' %}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="col-sm-12">
+                {% bootstrap_field position_form.text %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          {% bootstrap_form_errors position_form %}
+
+          <button type="button" class="btn btn-default" data-dismiss="modal">{% trans "Close" %}</button>
+          <button type="submit" class="btn btn-primary">{% trans "Submit public position" %}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% if position_form.errors %}
+  <script>
+    $(function() {
+       $("#add-position-form").modal("show");
+    });
+  </script>
+{% endif %}
+
+{% if position_created %}
+  <div class="modal fade" id="add-position-success" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="{% trans 'Close' %}"><span aria-hidden="true">&times;</span></button>
+
+          <h4 class="modal-title">{% trans "Add a representative public position" %}</h4>
+        </div>
+
+        <div class="modal-body">
+        </div>
+
+        <div class="modal-footer">
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div role="alert" class="alert alert-success text-justify">{% trans "Thanks! The position was submitted and will be reviewed shortly." %}</div>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-default" data-dismiss="modal">{% trans "Close" %}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(function() {
+       $("#add-position-success").modal("show");
+    });
+  </script>
+{% endif %}

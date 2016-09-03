@@ -15,6 +15,8 @@ python:
 services:
 - postgresql
 install:
+- pip install -U setuptools
+- pip install git+https://github.com/njoyard/django-responsediff.git@fix-selectors-encoding
 - pip install -e .[testing]
 before_script:
 - bin/install_client_deps.sh
@@ -39,12 +41,3 @@ deploy:
     repo: political-memory/political_memory
     branch: master
 - provider: openshift
-  user: memopol@laquadrature.net
-  password:
-    secure: atDq1NEkHXOsV2gZKeXAIn+PvbL3jduz3WK1qIs7BSHyNbrZMT1OUmvoXXrM8+i5eqW3TNsvp23w0RuD06wxSjHkPl+ZCEXP1Ao98p85UZNCgixxiwZHEhL6Amz5vqueGhv+47VOIKNgNFb9NAtRrWyIdA9xDUiK2oWkMSDmHas=
-  app: v3
-  domain: memopol
-  deployment_branch: v3
-  on:
-    repo: political-memory/political_memory
-    branch: v3

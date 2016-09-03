@@ -1,0 +1,21 @@
+{% load i18n %}
+
+{% trans "Order by" %}
+
+<div class="btn-group" id="sort-menu">
+  <button class="btn btn-default dropdown-toggle" type="button" id="sort-button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="true">
+    {% for mode in sort.modes %}
+      {% if sort.mode == mode.id %}{% trans mode.label %}{% endif %}
+    {% endfor %}
+    <span class="caret"></span>
+  </button>
+
+  <ul class="dropdown-menu" aria-labelledby="sort-button">
+    {% for mode in sort.modes|dictsort:'order' %}
+      <li {% if sort.mode == mode.id %}class="disabled"{% endif %}>
+        <a href="?{{ sort_querystring.urlencode }}&sort={{ mode.id }}">{% trans mode.label %}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

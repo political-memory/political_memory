@@ -22,7 +22,12 @@ memopol_env
 pip-log.txt
 pip-delete-this-directory.txt
 .dpl
-db.sqlite
+*.sqlite
+*.json.xz
 log/
 
 /data
+data/
+
+# editors
+*~
