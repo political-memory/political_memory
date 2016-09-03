@@ -5,17 +5,27 @@
 
 {% block theme_content %}
 
-  <table class="table table-responsive">
-    {% for link in links %}
-      <tr class="link">
-        <td>
-          <a class="external" href="{{ link.link }}" target="_blank">
-            {{ link.title }}
-          </a>
-        </td>
-        <td>{{ link.datetime }}</td>
-      </tr>
-    {% endfor %}
-  </table>
+  {% if not links %}
+
+    <p class="no-links empty text-center">
+      {% trans "No link has been recorded for this theme yet." %}
+    </p>
+
+  {% else %}
+
+    <table class="table table-responsive">
+      {% for link in links %}
+        <tr class="link">
+          <td>
+            <a class="external" href="{{ link.link }}" target="_blank">
+              {{ link.title }}
+            </a>
+          </td>
+          <td>{{ link.datetime }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+
+  {% endif %}
 
 {% endblock %}

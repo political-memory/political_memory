@@ -17,6 +17,7 @@
           <dt>{% trans "Themes" %}</dt>
           <dd>
             {% include "blocks/_themetags.html" with themes=dossier.themes.all %}
+            {% if not dossier.themes.all|length %}{% trans "None" %}{% endif %}
           </dd>
         </dl>
       </div>

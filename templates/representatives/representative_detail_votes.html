@@ -6,62 +6,70 @@
 
 {% block representative_content %}
 
-  <div class="panel-group" id="accordion-dossier" role="tablist" aria-multiselectable="true">
+  {% if not dossiers %}
+    <p class="no-votes empty text-center">
+      {% trans "No vote has been recorded for this representative yet." %}
+    </p>
+  {% else %}
 
-    {% for pk, d in dossiers.items %}
-      {% with dossier=d.dossier %}
+    <div class="panel-group" id="accordion-dossier" role="tablist" aria-multiselectable="true">
 
-        <div class="panel panel-default">
-          <div class="panel-heading" role="tab" id="dossier-heading-{{ pk }}">
-            <h4 class="panel-title">
-              <a role="button" data-toggle="collapse" data-parent="#accordion-dossier" href="#dossier-{{ pk }}" aria-expanded="false" aria-controls="dossier-{{ pk }}">
-                {{ dossier.title }}
-                <span class="pull-right">
-                  {% trans "Score for the representative on this specific dossier" as tooltip %}
-                  {{ d.score|score_badge:tooltip }}
-                </span>
-              </a>
-            </h4>
-          </div>
-          <div id="dossier-{{ pk }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="dossier-heading-{{ pk }}">
-            <div class="panel-body">
+      {% for pk, d in dossiers.items %}
+        {% with dossier=d.dossier %}
 
-              <table class="table table-striped table-responsive text-center">
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="dossier-heading-{{ pk }}">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion-dossier" href="#dossier-{{ pk }}" aria-expanded="false" aria-controls="dossier-{{ pk }}">
+                  {{ dossier.title }}
+                  <span class="pull-right">
+                    {% trans "Score for the representative on this specific dossier" as tooltip %}
+                    {{ d.score|score_badge:tooltip }}
+                  </span>
+                </a>
+              </h4>
+            </div>
+            <div id="dossier-{{ pk }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="dossier-heading-{{ pk }}">
+              <div class="panel-body">
 
-                <thead>
-                  <tr>
-                    <th class="text-center">{% trans "Proposal" %}</th>
-                    <th class="text-center">{% trans "Recommendation" %}</th>
-                    <th class="text-center">{% trans "Vote" %}</th>
-                    <th class="text-center nowrap">Points&nbsp;<a data-toggle="tooltip" data-placement="top" title="{% trans "Score is negative or positive depending on whether the representative voted as recommended" %}">{% fontawesome_icon "info-circle" %}</a>
-                    </th>
-                  </tr>
-                </thead>
+                <table class="table table-striped table-responsive text-center">
 
-                <tbody>
-
-                  {% for vote in d.votes %}
+                  <thead>
                     <tr>
-                      <th>{{ vote.proposal.title }}</th>
-                      <td>{{ vote.proposal.recommendation.recommendation|position_icon }}</td>
-                      <td>{{ vote.position|position_icon:vote.proposal.recommendation.recommendation }}</td>
-                      <td>
-                        {{ vote.score|score_badge:vote.proposal.recommendation.title }}
-                      </td>
+                      <th class="text-center">{% trans "Proposal" %}</th>
+                      <th class="text-center">{% trans "Recommendation" %}</th>
+                      <th class="text-center">{% trans "Vote" %}</th>
+                      <th class="text-center nowrap">Points&nbsp;<a data-toggle="tooltip" data-placement="top" title="{% trans "Score is negative or positive depending on whether the representative voted as recommended" %}">{% fontawesome_icon "info-circle" %}</a>
+                      </th>
                     </tr>
-                  {% endfor %}
+                  </thead>
 
-                </tbody>
+                  <tbody>
 
-              </table>
+                    {% for vote in d.votes %}
+                      <tr>
+                        <th>{{ vote.proposal.title }}</th>
+                        <td>{{ vote.proposal.recommendation.recommendation|position_icon }}</td>
+                        <td>{{ vote.position|position_icon:vote.proposal.recommendation.recommendation }}</td>
+                        <td>
+                          {{ vote.score|score_badge:vote.proposal.recommendation.title }}
+                        </td>
+                      </tr>
+                    {% endfor %}
 
+                  </tbody>
+
+                </table>
+
+              </div>
             </div>
           </div>
-        </div>
 
-      {% endwith %}
-    {% endfor %}
+        {% endwith %}
+      {% endfor %}
 
-  </div>
+    </div>
+
+  {% endif %}
 
 {% endblock %}
