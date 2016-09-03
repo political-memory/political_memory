@@ -2,7 +2,13 @@
                   <div class="modal-content">
                     <div class="modal-header">
                       <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
-                      <h4 class="modal-title">Public position</h4>
+                      <h4 class="modal-title">
+                        
+                          
+                            Public position by Olivier Dussopt
+                          
+                        
+                      </h4>
                     </div>
 
                     <div class="modal-body">
@@ -36,7 +42,13 @@ Olivier Dussopt n'a pas fait de réponse aux commentaires sur son blog.</p>
                   <div class="modal-content">
                     <div class="modal-header">
                       <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
-                      <h4 class="modal-title">Public position</h4>
+                      <h4 class="modal-title">
+                        
+                          
+                            Public position by Olivier Dussopt
+                          
+                        
+                      </h4>
                     </div>
 
                     <div class="modal-body">

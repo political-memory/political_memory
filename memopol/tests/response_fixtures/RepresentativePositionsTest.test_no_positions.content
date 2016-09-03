@@ -1,4 +1,4 @@
-<p class="no-positions text-center">
+<p class="no-positions empty text-center">
     No public position has been recorded yet.
     <br/><br/>
     <a aria-controls="add-position-form" aria-expanded="false" class="btn btn-primary hidden-print" data-target="#add-position-form" data-toggle="modal">

@@ -18,7 +18,8 @@ class RepresentativeDetailPositions(RepresentativeDetailBase):
                 'positions',
                 queryset=Position.objects.filter(published=True)
                 .order_by('-datetime', 'pk')
-            )
+            ),
+            'positions__themes'
         )
 
         return qs
