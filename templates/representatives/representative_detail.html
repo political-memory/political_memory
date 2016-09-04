@@ -28,20 +28,25 @@
 
           <dt>{% trans "Country" %}</dt>
           <dd>
-            {{ representative.country|country_flag }} {{ representative.country.name }}
+            {{ representative.country|country_flag }}
+            <a href="{% url 'representative-list' %}?country={{ representative.country_group.pk }}">{{ representative.country.name }}</a>
           </dd>
 
           {% with mandate=representative.main_mandate %}
 
             <dt>{% trans "Chamber" %}</dt>
             <dd>
-              {{ mandate.group.chamber|chamber_icon }} {{ mandate.group.chamber.name }}
+              {{ mandate.group.chamber|chamber_icon }}
+              <a href="{% url 'representative-list' %}?chamber={{ mandate.group.chamber.pk }}">{{ mandate.group.chamber.name }}</a>
             </dd>
 
             <dt>{% trans "Party" %}</dt>
             <dd>
-              {{ mandate.group|group_icon }} {{ mandate.group.name }}
-              {% if mandate.group.abbreviation %}({{ mandate.group.abbreviation }}){% endif %}
+              {{ mandate.group|group_icon }}
+              <a href="{% url 'representative-list' %}?party={{ mandate.group.pk }}">
+                {{ mandate.group.name }}
+                {% if mandate.group.abbreviation %}({{ mandate.group.abbreviation }}){% endif %}
+              </a>
             </dd>
 
           {% endwith %}

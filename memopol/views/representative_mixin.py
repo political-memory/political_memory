@@ -35,11 +35,13 @@ class RepresentativeViewMixin(object):
         """
 
         representative.country = None
+        representative.country_group = None
         representative.main_mandate = None
 
         for m in representative.mandates.all():
             if m.constituency.country_id and not representative.country:
                 representative.country = m.constituency.country
+                representative.country_group = m.group
 
             if (m.group.kind == 'group' and
                     not representative.main_mandate):
