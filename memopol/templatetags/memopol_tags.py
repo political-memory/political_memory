@@ -5,9 +5,8 @@ import re
 from django import template
 from django.contrib.humanize.templatetags.humanize import naturalday
 from django.contrib.staticfiles.templatetags.staticfiles import static
-from django.core.urlresolvers import reverse
 from django.utils.safestring import mark_safe
-from django.utils.html import escape
+
 
 register = template.Library()
 link = u'<a class="{network}-link" href="{url}" target="_blank">{label}</a>'
@@ -15,42 +14,6 @@ link = u'<a class="{network}-link" href="{url}" target="_blank">{label}</a>'
 
 def cssify(string):
     return re.sub('[^a-z_-]', '', string.lower())
-
-
-def fix_url(url):
-    # Ensure we have a usable URL
-    return re.sub('^(https?://)?', 'https://', url.strip())
-
-
-@register.simple_tag
-def group_url(group):
-    if group.kind == 'chamber' or group.chamber is None:
-        return escape(reverse('representative-list', kwargs={
-            'group_kind': group.kind,
-            'group': group.name
-        }))
-    else:
-        return escape(reverse('representative-list', kwargs={
-            'group_kind': group.kind,
-            'chamber': group.chamber.name,
-            'group': group.name
-        }))
-
-
-@register.simple_tag
-def chamber_url(chamber):
-    return escape(reverse('representative-list', kwargs={
-        'group_kind': 'chamber',
-        'group': chamber.name
-    }))
-
-
-@register.simple_tag
-def country_url(country):
-    return escape(reverse('representative-list', kwargs={
-        'group_kind': 'country',
-        'group': country.name
-    }))
 
 
 @register.filter

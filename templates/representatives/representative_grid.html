@@ -40,13 +40,13 @@
             <p class="text-center">
               <br>
               {% if representative.country %}
-              <a class="icon-badge" href="{% country_url representative.country %}" title="{{ representative.country.name }}">{{ representative.country|country_flag }}</a>
+              {{ representative.country|country_flag }}
               {% endif %}
               {% if representative.chamber %}
-              <a class="icon-badge" href="{% chamber_url representative.chamber %}" title="{{ representative.chamber.name }}">{{ representative.chamber|chamber_icon }}</a>
+              {{ representative.chamber|chamber_icon }}
               {% endif %}
               {% if representative.main_mandate.group %}
-              <a class="icon-badge" href="{% group_url representative.main_mandate.group %}" title="{{ representative.main_mandate.group.name }}">{{ representative.main_mandate.group|group_icon }}</a>
+              {{ representative.main_mandate.group|group_icon }}
               {% endif %}
             </p>
             <p class="text-right">{{ representative.score.score|score_badge }}</p>
