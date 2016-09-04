@@ -2,7 +2,7 @@ from .base import BaseTest
 
 
 class ThemeListTest(BaseTest):
-    url = '/theme/'
+    url = '/themes/'
 
     def test_queries(self):
         # First query to set session variables

@@ -2,7 +2,7 @@ from .base import BaseTest
 
 
 class RepresentativeListTest(BaseTest):
-    url = '/legislature/representative/'
+    url = '/representatives/'
 
     def test_queries(self):
         # First query to set session variables

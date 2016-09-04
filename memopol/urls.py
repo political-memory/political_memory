@@ -19,7 +19,6 @@ from views.representative_detail_positions import RepresentativeDetailPositions
 from views.representative_list import RepresentativeList
 
 from views.redirects import (
-    RedirectGroupList,
     RedirectRepresentativeDetail,
     RedirectThemeDetail,
     RedirectGroupRepresentativeList,

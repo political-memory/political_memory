@@ -5,7 +5,7 @@ class RepresentativeMandatesTest(RepresentativeBaseTest):
     tab = 'mandates'
 
     # Switch to a MEP with more mandates for this test
-    base_url = '/legislature/representative/renate-weber-1955-08-03/%s/'
+    base_url = '/representatives/renate-weber-1955-08-03/%s/'
 
     """
     Representative queries plus

@@ -2,7 +2,7 @@ from .base import BaseTest
 
 
 class DossierListTest(BaseTest):
-    url = '/votes/dossier/'
+    url = '/dossiers/'
 
     def test_queries(self):
         # First query to set session variables

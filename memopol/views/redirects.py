@@ -6,12 +6,6 @@ from django.views.generic.base import RedirectView
 from representatives.models import Group
 
 
-class RedirectGroupList(RedirectView):
-    permanent = True
-    query_string = True
-    pattern_name = 'group-list'
-
-
 class RedirectGroupRepresentativeList(RedirectView):
     permanent = True
 

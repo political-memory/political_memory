@@ -29,7 +29,7 @@ class BaseTest(ResponseDiffTestMixin, test.TestCase):
 
 class RepresentativeBaseTest(BaseTest):
     tab = 'none'
-    base_url = '/legislature/representative/olivier-dussopt-1978-08-16/%s/'
+    base_url = '/representatives/olivier-dussopt-1978-08-16/%s/'
 
     """
     Common queries plus:
@@ -61,7 +61,7 @@ class RepresentativeBaseTest(BaseTest):
 
 class ThemeBaseTest(BaseTest):
     tab = 'none'
-    base_url = '/theme/etat-durgence/%s/'
+    base_url = '/themes/etat-durgence/%s/'
 
     """
     Common queries plus:
@@ -83,7 +83,7 @@ class ThemeBaseTest(BaseTest):
 
 class DossierBaseTest(BaseTest):
     tab = 'none'
-    base_url = '/votes/dossier/15409/%s/'
+    base_url = '/dossiers/15409/%s/'
 
     """
     Common queries plus:

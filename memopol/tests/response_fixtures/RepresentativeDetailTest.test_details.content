@@ -4,7 +4,7 @@
           </dd>
 ---
 <dd>
-            <span class="flag-icon flag-icon-fr"></span> France
+            <span class="flag-icon flag-icon-fr" data-placement="bottom" data-toggle="tooltip" title="France"></span> France
           </dd>
 ---
 <dd>
@@ -12,7 +12,7 @@
             </dd>
 ---
 <dd>
-              <span class="group-icon" style="background-image: url(/static/collected/images/group-an-ser.png)"></span> Socialiste, écologiste et républicain
+              <span class="group-icon" data-placement="bottom" data-toggle="tooltip" style="background-image: url(/static/collected/images/group-an-ser.png)" title="Socialiste, écologiste et républicain"></span> Socialiste, écologiste et républicain
               (SER)
             </dd>
 ---
