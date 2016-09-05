@@ -3,6 +3,7 @@ from django.utils.encoding import smart_unicode
 
 from autoslug import AutoSlugField
 
+from representatives.models import Representative
 from representatives_votes.models import Dossier, Proposal
 from representatives_positions.models import Position
 
@@ -28,3 +29,15 @@ class ThemeLink(models.Model):
 
     def __unicode__(self):
         return smart_unicode('%s (%s)' % (self.title, self.link))
+
+
+class ThemeScore(models.Model):
+    representative = models.ForeignKey(Representative,
+                                       related_name='themescores')
+    theme = models.ForeignKey(Theme, related_name='themescores')
+    score = models.FloatField(default=0)
+
+    class Meta:
+        managed = False
+        ordering = ['theme__slug']
+        db_table = 'memopol_themes_themescore'
