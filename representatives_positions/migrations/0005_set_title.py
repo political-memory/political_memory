@@ -14,7 +14,7 @@ def set_titles(apps, schema_editor):
     for pos in Position.objects.all():
         lines = pos.text.split('\n')
         if len(lines) > 1:
-            pos.title = lines[0]
+            pos.title = lines[0][0:500]
             pos.save()
 
 
