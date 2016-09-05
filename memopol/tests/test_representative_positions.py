@@ -6,9 +6,10 @@ class RepresentativePositionsTest(RepresentativeBaseTest):
 
     """
     - One for positions
-    - One for related themes
+    - One for position scores
+    - One for position themes
     """
-    queries = RepresentativeBaseTest.queries + 2
+    queries = RepresentativeBaseTest.queries + 3
 
     def test_queries(self):
         self.do_query_test()

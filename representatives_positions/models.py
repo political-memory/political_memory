@@ -37,3 +37,15 @@ class Position(models.Model):
 
     def unpublish(self):
         self.published = False
+
+
+class PositionScore(models.Model):
+    position = models.OneToOneField(Position, related_name='positionscore',
+                                    on_delete=models.DO_NOTHING)
+    representative = models.ForeignKey(Representative,
+                                       related_name='positionscores')
+    score = models.FloatField(default=0)
+
+    class Meta:
+        managed = False
+        db_table = 'representatives_positions_positionscore'

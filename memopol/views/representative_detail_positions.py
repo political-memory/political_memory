@@ -19,7 +19,8 @@ class RepresentativeDetailPositions(RepresentativeDetailBase):
                 queryset=Position.objects.filter(published=True)
                 .order_by('-datetime', 'pk')
             ),
-            'positions__themes'
+            'positions__themes',
+            'positions__positionscore'
         )
 
         return qs

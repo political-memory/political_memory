@@ -45,7 +45,7 @@
                 <div class="text-center">{{ position.datetime|naturalday }}</div>
                 {% include "blocks/_themetags.html" with themes=position.themes.all exclude=theme.pk %}
 
-                {{ position.score|score_badge }}
+                {{ position.positionscore.score|score_badge }}
               </button>
 
               <div class="modal fade" id="position-modal-{{ position.pk }}" tabindex="-1" role="dialog" aria-labelledby="position-button-{{ position.pk }}">
@@ -90,7 +90,7 @@
 
                           <dt>{% trans "Score" %}</dt>
                           <dd>
-                            {{ position.score|score_badge }}
+                            {{ position.positionscore.score|score_badge }}
                           </dd>
                         </dl>
                       </div>

@@ -8,7 +8,8 @@ class ThemeDetailPositions(ThemeDetailBase):
 
     def get_queryset(self):
         qs = super(ThemeDetailPositions, self).get_queryset()
-        qs = qs.prefetch_related('positions__representative')
+        qs = qs.prefetch_related('positions__representative',
+                                 'positions__positionscore')
         return qs
 
     def get_context_data(self, **kwargs):
