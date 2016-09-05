@@ -30,6 +30,7 @@ body {
     padding: .2em .6em;
     border-radius: .25em;
     white-space: nowrap;
+    text-transform: none;
 }
 
 a.tag:hover {
