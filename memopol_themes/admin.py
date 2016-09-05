@@ -77,8 +77,8 @@ class ThemedProposalAdminForm(ThemedAdminForm):
 class ThemedPositionAdminForm(ThemedAdminForm):
     class Meta:
         model = Position
-        fields = ('representative', 'datetime', 'text', 'link', 'published',
-                  'themes')
+        fields = ('representative', 'datetime', 'kind', 'title', 'score',
+                  'text', 'link', 'published', 'themes')
 
 
 class ThemedDossierAdmin(DossierAdmin):

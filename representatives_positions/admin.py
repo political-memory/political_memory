@@ -20,11 +20,14 @@ unpublish_positions.short_description = 'Unpublish selected positions'
 class PositionAdmin(admin.ModelAdmin):
     list_display = (
         'representative',
+        'kind',
+        'short_title',
         'short_text',
+        'score',
         'datetime',
         'link',
         'published')
-    list_display_links = ('short_text',)
+    list_display_links = ('short_title', 'short_text')
     list_editable = ('published',)
     list_filter = ('published',)
     actions = (publish_positions, unpublish_positions)

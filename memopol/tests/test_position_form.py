@@ -13,6 +13,9 @@ class PositionFormTest(BaseTest):
         'position-representative': 1,
         'position-datetime': '2016-09-01',
         'position-link': 'http://example.com/test',
+        'position-kind': 'other',
+        'position-score': '0',
+        'position-title': 'position test title',
         'position-text': 'position test text',
         'position-themes': '1'
     }

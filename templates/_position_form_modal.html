@@ -27,15 +27,18 @@
               {% bootstrap_field position_form.representative layout='horizontal' %}
               {% bootstrap_field position_form.datetime layout='horizontal' %}
               {% bootstrap_field position_form.link layout='horizontal' %}
+              {% bootstrap_field position_form.title layout='horizontal'  %}
             </div>
 
             <div class="col-sm-6">
+              {% bootstrap_field position_form.kind layout='horizontal' %}
               {% bootstrap_field position_form.themes layout='horizontal' %}
             </div>
           </div>
 
           <div class="row">
             <div class="col-sm-12">
+
               <div class="col-sm-12">
                 {% bootstrap_field position_form.text %}
               </div>

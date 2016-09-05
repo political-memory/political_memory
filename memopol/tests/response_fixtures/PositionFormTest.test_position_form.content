@@ -112,9 +112,17 @@ format: 'yyyy-mm-dd'}).find('input').addClass("form-control");
        </script>
        </div></div>
               <div class="form-group"><label class="col-md-3 control-label" for="id_position-link">Link</label><div class="col-md-9"><input class="form-control" id="id_position-link" maxlength="500" name="position-link" placeholder="Link" required="required" title="" type="url"/></div></div>
+              <div class="form-group"><label class="col-md-3 control-label" for="id_position-title">Title</label><div class="col-md-9"><input class="form-control" id="id_position-title" maxlength="500" name="position-title" placeholder="Title" required="required" title="" type="text"/></div></div>
             </div>
 
             <div class="col-sm-6">
+              <div class="form-group"><label class="col-md-3 control-label" for="id_position-kind">Kind</label><div class="col-md-9"><select class="form-control" id="id_position-kind" name="position-kind" required="required" title="">
+<option selected="selected" value="other">Other</option>
+<option value="blog">Blog post</option>
+<option value="social">Social network</option>
+<option value="press">Press interview</option>
+<option value="parliament">Parliament debate</option>
+</select></div></div>
               <div class="form-group"><label class="col-md-3 control-label" for="id_position-themes_0">Themes</label><div class="col-md-9"><div id="id_position-themes"><div class="checkbox"><label for="id_position-themes_0"><input class="" id="id_position-themes_0" name="position-themes" title="" type="checkbox" value="1"/> Etat d'urgence</label></div>
 <div class="checkbox"><label for="id_position-themes_1"><input class="" id="id_position-themes_1" name="position-themes" title="" type="checkbox" value="2"/> ACTA</label></div></div></div></div>
             </div>
@@ -122,6 +130,7 @@ format: 'yyyy-mm-dd'}).find('input').addClass("form-control");
 
           <div class="row">
             <div class="col-sm-12">
+
               <div class="col-sm-12">
                 <div class="form-group"><label class="control-label" for="id_position-text">Text</label><textarea class="form-control" cols="40" id="id_position-text" name="position-text" placeholder="Text" required="required" rows="10" title=""></textarea></div>
               </div>

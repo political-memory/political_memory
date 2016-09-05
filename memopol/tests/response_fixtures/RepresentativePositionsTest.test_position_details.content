@@ -2,6 +2,7 @@
                   <div class="modal-content">
                     <div class="modal-header">
                       <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
+                      
                       <h4 class="modal-title">
                         
                           
@@ -12,6 +13,30 @@
                     </div>
 
                     <div class="modal-body">
+                      <div class="row">
+                        <dl class="dl-horizontal col-sm-6 text-left">
+                          <dt>Date</dt>
+                          <dd>
+                            Oct. 3, 2009
+                          </dd>
+
+                          <dt>Kind</dt>
+                          <dd>
+                            other
+                          </dd>
+                        </dl>
+                        <dl class="dl-horizontal col-sm-6 text-left">
+                          <dt>Themes</dt>
+                          <dd>
+                            
+                          </dd>
+
+                          <dt>Score</dt>
+                          <dd>
+                            <span class="badge badge-primary">0</span>
+                          </dd>
+                        </dl>
+                      </div>
                       <div class="row">
                         <div class="col-sm-12 text-justify">
                           <blockquote>
@@ -42,6 +67,7 @@ Olivier Dussopt n'a pas fait de réponse aux commentaires sur son blog.</p>
                   <div class="modal-content">
                     <div class="modal-header">
                       <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
+                      
                       <h4 class="modal-title">
                         
                           
@@ -52,6 +78,30 @@ Olivier Dussopt n'a pas fait de réponse aux commentaires sur son blog.</p>
                     </div>
 
                     <div class="modal-body">
+                      <div class="row">
+                        <dl class="dl-horizontal col-sm-6 text-left">
+                          <dt>Date</dt>
+                          <dd>
+                            June 17, 2008
+                          </dd>
+
+                          <dt>Kind</dt>
+                          <dd>
+                            other
+                          </dd>
+                        </dl>
+                        <dl class="dl-horizontal col-sm-6 text-left">
+                          <dt>Themes</dt>
+                          <dd>
+                            
+                          </dd>
+
+                          <dt>Score</dt>
+                          <dd>
+                            <span class="badge badge-primary">0</span>
+                          </dd>
+                        </dl>
+                      </div>
                       <div class="row">
                         <div class="col-sm-12 text-justify">
                           <blockquote>

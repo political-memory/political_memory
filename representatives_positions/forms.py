@@ -15,7 +15,8 @@ class PositionForm(forms.ModelForm):
 
     class Meta:
         model = Position
-        fields = ['representative', 'link', 'datetime', 'themes', 'text']
+        fields = ['representative', 'link', 'datetime', 'themes', 'title',
+                  'kind', 'text']
 
         widgets = {
             'datetime': DateWidget(

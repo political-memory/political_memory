@@ -1,6 +1,7 @@
 {% load i18n %}
 {% load fontawesome %}
 {% load humanize %}
+{% load memopol_tags %}
 {% load representatives_positions_tags %}
 
 {% comment %}
@@ -32,6 +33,7 @@
 
     <tbody>
       <tr>
+        {% trans "Untitled" as untitled %}
         {% for timeframe in positions|regroup_by_age %}
           <td>
             {% for position in timeframe %}
@@ -42,6 +44,8 @@
 
                 <div class="text-center">{{ position.datetime|naturalday }}</div>
                 {% include "blocks/_themetags.html" with themes=position.themes.all exclude=theme.pk %}
+
+                {{ position.score|score_badge }}
               </button>
 
               <div class="modal fade" id="position-modal-{{ position.pk }}" tabindex="-1" role="dialog" aria-labelledby="position-button-{{ position.pk }}">
@@ -49,7 +53,12 @@
                   <div class="modal-content">
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-label="{% trans 'Close' %}"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title">
+                      {% if position.title %}
+                        <h4>
+                          <div class="col-sm-12">{{ position.title|default:untitled }}</div>
+                        </h4>
+                      {% endif %}
+                      <{% if position.title %}h5{% else %}h4{% endif %} class="modal-title">
                         {% if show_representative %}
                           {% trans "Public position" %}
                         {% else %}
@@ -57,10 +66,34 @@
                             Public position by {{ rep }}
                           {% endblocktrans %}
                         {% endif %}
-                      </h4>
+                      </{% if position.title %}h5{% else %}h4{% endif %}>
                     </div>
 
                     <div class="modal-body">
+                      <div class="row">
+                        <dl class="dl-horizontal col-sm-6 text-left">
+                          <dt>{% trans "Date" %}</dt>
+                          <dd>
+                            {{ position.datetime|naturalday }}
+                          </dd>
+
+                          <dt>{% trans "Kind" %}</dt>
+                          <dd>
+                            {{ position.kind }}
+                          </dd>
+                        </dl>
+                        <dl class="dl-horizontal col-sm-6 text-left">
+                          <dt>{% trans "Themes" %}</dt>
+                          <dd>
+                            {% include "blocks/_themetags.html" with themes=position.themes.all %}
+                          </dd>
+
+                          <dt>{% trans "Score" %}</dt>
+                          <dd>
+                            {{ position.score|score_badge }}
+                          </dd>
+                        </dl>
+                      </div>
                       <div class="row">
                         <div class="col-sm-12 text-justify">
                           <blockquote>
