@@ -1,4 +1,6 @@
+from django.contrib import admin
 from django.db import connection, models
+from django.http import HttpResponseRedirect
 
 from representatives.models import Representative
 from representatives_votes.models import Dossier, Vote
@@ -46,3 +48,12 @@ class RepresentativeScore(models.Model):
     def refresh(cls):
         with connection.cursor() as cursor:
             cursor.execute('SELECT refresh_representative_scores();')
+
+
+def refresh_scores(modeladmin, request, queryset):
+    RepresentativeScore.refresh()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
+refresh_scores.short_description = 'Refresh representative scores'
+admin.site.add_action(refresh_scores, 'refresh_scores')
