@@ -8,6 +8,8 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('representatives_recommendations', '0005_representativescore'),
+        ('representatives_positions', '0004_add_kind_score_title'),
+        ('memopol_settings', '0002_score_settings'),
     ]
 
     operations = [

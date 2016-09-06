@@ -2,8 +2,7 @@
 
 from django.db import models
 
-from representatives_recommendations.models import VoteScore
-from representatives_votes.models import Proposal
+from representatives_votes.models import Vote
 
 from .representative_detail_base import RepresentativeDetailBase
 
@@ -17,14 +16,15 @@ class RepresentativeDetailVotes(RepresentativeDetailBase):
         qs = qs.prefetch_related(
             models.Prefetch(
                 'votes',
-                queryset=VoteScore.objects.filter(
-                    proposal__in=Proposal.objects.exclude(recommendation=None),
+                queryset=Vote.objects.exclude(
+                    proposal__recommendation=None
                 ).select_related(
+                    'vote_score',
                     'proposal__dossier',
                     'proposal__recommendation'
                 ).order_by('-proposal__datetime', 'proposal__title')
             ),
-            'dossierscores'
+            'dossier_scores'
         )
 
         return qs
@@ -32,7 +32,7 @@ class RepresentativeDetailVotes(RepresentativeDetailBase):
     def get_context_data(self, **kwargs):
         c = super(RepresentativeDetailVotes, self).get_context_data(**kwargs)
 
-        ds = c['object'].dossierscores.all()
+        ds = c['object'].dossier_scores.all()
 
         dossiers = {}
         for vote in c['object'].votes.all():

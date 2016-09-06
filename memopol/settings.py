@@ -91,6 +91,7 @@ INSTALLED_APPS = (
     # ---
     'core',
     'memopol',
+    'memopol_scores',
     'memopol_settings',
     'memopol_themes',
     'representatives',

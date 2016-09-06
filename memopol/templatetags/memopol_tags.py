@@ -97,6 +97,8 @@ def proposal_status_label(status, recommendation=None):
 
 @register.filter
 def score_badge(score, tooltip=None):
+    score = int(score or 0)
+
     if score > 0:
         color = 'success'
     elif score < 0:

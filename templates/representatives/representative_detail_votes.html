@@ -52,7 +52,7 @@
                         <td>{{ vote.proposal.recommendation.recommendation|position_icon }}</td>
                         <td>{{ vote.position|position_icon:vote.proposal.recommendation.recommendation }}</td>
                         <td>
-                          {{ vote.score|score_badge:vote.proposal.recommendation.title }}
+                          {{ vote.vote_score.score|score_badge:vote.proposal.recommendation.title }}
                         </td>
                       </tr>
                     {% endfor %}

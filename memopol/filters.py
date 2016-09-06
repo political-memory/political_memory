@@ -61,7 +61,7 @@ class RepresentativeFilter(FilterSet):
             return qs
 
         try:
-            return qs.filter(score__score__gte=int(value))
+            return qs.filter(representative_score__score__gte=int(value))
         except ValueError:
             return qs
 
@@ -70,7 +70,7 @@ class RepresentativeFilter(FilterSet):
             return qs
 
         try:
-            return qs.filter(score__score__lte=int(value))
+            return qs.filter(representative_score__score__lte=int(value))
         except ValueError:
             return qs
 

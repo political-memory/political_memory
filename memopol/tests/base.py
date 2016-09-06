@@ -1,5 +1,6 @@
 from django import test
 from responsediff.test import ResponseDiffTestMixin
+from memopol_scores.models import RepresentativeScore
 
 
 class BaseTest(ResponseDiffTestMixin, test.TestCase):
@@ -18,6 +19,9 @@ class BaseTest(ResponseDiffTestMixin, test.TestCase):
         - 1 for themes
     """
     left_pane_queries = 7
+
+    def setUp(self):
+        RepresentativeScore.refresh()
 
     def request_test(self, url=None):
         self.assertResponseDiffEmpty(self.client.get(url or self.url))

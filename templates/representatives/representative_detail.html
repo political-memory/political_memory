@@ -23,7 +23,7 @@
           <dt>{% trans "Score" %}</dt>
           <dd>
             {% trans "Total score is the sum of score contributions for each of this representatives votes" as tooltip%}
-            {{ representative.score.score|score_badge:tooltip }}
+            {{ representative.representative_score.score|score_badge:tooltip }}
           </dd>
 
           <dt>{% trans "Country" %}</dt>

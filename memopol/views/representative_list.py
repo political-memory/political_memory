@@ -18,7 +18,7 @@ class RepresentativeList(CSVDownloadMixin, GridListMixin, PaginationMixin,
                          SortMixin, PositionFormMixin, generic.ListView):
 
     csv_name = 'representatives'
-    queryset = Representative.objects.select_related('score')
+    queryset = Representative.objects.select_related('representative_score')
     current_filter = None
     sort_modes = {
         'name-asc': {
@@ -34,12 +34,12 @@ class RepresentativeList(CSVDownloadMixin, GridListMixin, PaginationMixin,
         'score-asc': {
             'order': 2,
             'label': 'Best score',
-            'fields': ['-score__score']
+            'fields': ['-representative_score__score']
         },
         'score-desc': {
             'order': 2,
             'label': 'Worst score',
-            'fields': ['score__score']
+            'fields': ['representative_score__score']
         }
     }
     sort_default = 'name-asc'

@@ -13,7 +13,7 @@ from representatives_positions.views import PositionFormMixin
 class RepresentativeDetailBase(RepresentativeViewMixin, PositionFormMixin,
                                generic.DetailView):
 
-    queryset = Representative.objects.select_related('score')
+    queryset = Representative.objects.select_related('representative_score')
 
     def get_queryset(self):
         qs = super(RepresentativeDetailBase, self).get_queryset()

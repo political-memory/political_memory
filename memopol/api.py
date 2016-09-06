@@ -18,8 +18,11 @@ from representatives_votes.api import (
 )
 
 from representatives_recommendations.api import (
+    RecommendationViewSet
+)
+
+from memopol_scores.api import (
     DossierScoreViewSet,
-    RecommendationViewSet,
     RepresentativeScoreViewSet,
     VoteScoreViewSet
 )

@@ -20,7 +20,7 @@ class RepresentativeDetailPositions(RepresentativeDetailBase):
                 .order_by('-datetime', 'pk')
             ),
             'positions__themes',
-            'positions__positionscore'
+            'positions__position_score'
         )
 
         return qs
