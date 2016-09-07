@@ -5,16 +5,12 @@ from django.http import HttpResponseRedirect
 from representatives.models import Representative
 from representatives_votes.models import Dossier, Vote
 from representatives_positions.models import Position
+from memopol_themes.models import Theme
 
 
 class VoteScore(models.Model):
     vote = models.OneToOneField(Vote, related_name='vote_score')
     score = models.FloatField()
-
-    @classmethod
-    def refresh(cls):
-        with connection.cursor() as cursor:
-            cursor.execute('SELECT refresh_vote_scores();')
 
 
 class DossierScore(models.Model):
@@ -23,20 +19,10 @@ class DossierScore(models.Model):
     dossier = models.ForeignKey(Dossier)
     score = models.FloatField()
 
-    @classmethod
-    def refresh(cls):
-        with connection.cursor() as cursor:
-            cursor.execute('SELECT refresh_dossier_scores();')
-
 
 class PositionScore(models.Model):
     position = models.OneToOneField(Position, related_name='position_score')
     score = models.FloatField()
-
-    @classmethod
-    def refresh(cls):
-        with connection.cursor() as cursor:
-            cursor.execute('SELECT refresh_position_scores();')
 
 
 class RepresentativeScore(models.Model):
@@ -47,7 +33,14 @@ class RepresentativeScore(models.Model):
     @classmethod
     def refresh(cls):
         with connection.cursor() as cursor:
-            cursor.execute('SELECT refresh_representative_scores();')
+            cursor.execute('SELECT refresh_scores();')
+
+
+class ThemeScore(models.Model):
+    representative = models.ForeignKey(Representative,
+                                       related_name='theme_scores')
+    theme = models.ForeignKey(Theme)
+    score = models.FloatField()
 
 
 def refresh_scores(modeladmin, request, queryset):
