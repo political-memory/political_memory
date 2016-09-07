@@ -7,8 +7,9 @@ class RepresentativeVotesTest(RepresentativeBaseTest):
     """
     - One for votes
     - One for dossier scores
+    - Two for dossier themes (?? should be one according to the queryset !)
     """
-    queries = RepresentativeBaseTest.queries + 2
+    queries = RepresentativeBaseTest.queries + 4
 
     def test_queries(self):
         self.do_query_test()

@@ -387,6 +387,13 @@ iframe {
     margin-bottom: 5px;
 }
 
+#accordion-dossier h4.panel-title {
+    display: inline;
+}
+
+#accordion-dossier .panel-heading .badge {
+    margin-left: 1em;
+}
 
 /***************************************************************
                     Icones

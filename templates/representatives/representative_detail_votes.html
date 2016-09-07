@@ -22,12 +22,14 @@
               <h4 class="panel-title">
                 <a role="button" data-toggle="collapse" data-parent="#accordion-dossier" href="#dossier-{{ pk }}" aria-expanded="false" aria-controls="dossier-{{ pk }}">
                   {{ dossier.title }}
-                  <span class="pull-right">
-                    {% trans "Score for the representative on this specific dossier" as tooltip %}
-                    {{ d.score|score_badge:tooltip }}
-                  </span>
                 </a>
               </h4>
+
+              <span class="pull-right">
+                {% include "blocks/_themetags.html" with themes=dossier.themes.all %}
+                {% trans "Score for the representative on this specific dossier" as tooltip %}
+                {{ d.score|score_badge:tooltip }}
+              </span>
             </div>
             <div id="dossier-{{ pk }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="dossier-heading-{{ pk }}">
               <div class="panel-body">

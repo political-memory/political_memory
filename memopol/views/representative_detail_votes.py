@@ -22,6 +22,8 @@ class RepresentativeDetailVotes(RepresentativeDetailBase):
                     'vote_score',
                     'proposal__dossier',
                     'proposal__recommendation'
+                ).prefetch_related(
+                    'proposal__dossier__themes'
                 ).order_by('-proposal__datetime', 'proposal__title')
             ),
             'dossier_scores'
@@ -39,10 +41,11 @@ class RepresentativeDetailVotes(RepresentativeDetailBase):
             dossier = vote.proposal.dossier
             pk = dossier.pk
             if pk not in dossiers:
+                scores = [s.score for s in ds if s.dossier_id == pk]
                 dossiers[pk] = {
                     'dossier': dossier,
                     'votes': [],
-                    'score': [s.score for s in ds if s.dossier_id == pk][0]
+                    'score': scores[0] if len(scores) else 0
                 }
             dossiers[pk]['votes'].append(vote)
 
