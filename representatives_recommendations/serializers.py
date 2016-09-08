@@ -9,3 +9,6 @@ class RecommendationSerializer(serializers.HyperlinkedModelSerializer):
         model = Recommendation
         fields = ('recommendation', 'title', 'description', 'weight',
                   'proposal')
+        extra_kwargs = {
+            'proposal': {'view_name': 'api-proposal-detail'},
+        }
