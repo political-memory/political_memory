@@ -37,6 +37,7 @@ class RepresentativeBaseTest(BaseTest):
 
     """
     Common queries plus:
+    - 1 for session key
     - 1 for chamber abbreviations (helper for chamber websites)
     - 1 for the representative
     - 1 for the main mandate
@@ -48,8 +49,9 @@ class RepresentativeBaseTest(BaseTest):
     - 1 for address country
     - 1 for phone numbers related to addresses
     - 1 for other phone numbers
+    - 2 for themes and theme scores
     """
-    queries = BaseTest.left_pane_queries + 11
+    queries = BaseTest.left_pane_queries + 14
 
     @property
     def url(self):

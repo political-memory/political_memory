@@ -7,6 +7,38 @@ from django import http
 import unicodecsv as csv
 
 
+class ThemeSelectionMixin(object):
+    """
+    Mixin for views that allow selecting a theme
+    """
+
+    def get(self, *args, **kwargs):
+        self.set_selected_theme()
+        return super(ThemeSelectionMixin, self).get(*args, **kwargs)
+
+    def set_selected_theme(self):
+        if 'selected_theme' in self.request.GET:
+            theme = self.request.GET['selected_theme']
+            self.request.session['selected_theme'] = \
+                theme if len(theme) else None
+        elif 'selected_theme' not in self.request.session:
+            self.request.session['selected_theme'] = None
+
+    def get_selected_theme(self):
+        if 'selected_theme' in self.request.session:
+            return self.request.session['selected_theme']
+        else:
+            return None
+
+    def get_context_data(self, **kwargs):
+        c = super(ThemeSelectionMixin, self).get_context_data(**kwargs)
+        c['selected_theme'] = self.get_selected_theme()
+        c['theme_querystring'] = copy(self.request.GET)
+        if 'selected_theme' in c['theme_querystring']:
+            del c['theme_querystring']['selected_theme']
+        return c
+
+
 class ActiveLegislatureMixin(object):
     """
     Mixin for views that can switch between active legislature and all data

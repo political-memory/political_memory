@@ -13,12 +13,17 @@ class RepresentativeDetailVotes(RepresentativeDetailBase):
     def get_queryset(self):
         qs = super(RepresentativeDetailVotes, self).get_queryset()
 
+        vote_qs = Vote.objects.exclude(proposal__recommendation=None)
+        theme = self.get_selected_theme()
+        if theme:
+            vote_qs = vote_qs.filter(
+                models.Q(proposal__dossier__themes__slug=theme)
+            )
+
         qs = qs.prefetch_related(
             models.Prefetch(
                 'votes',
-                queryset=Vote.objects.exclude(
-                    proposal__recommendation=None
-                ).select_related(
+                queryset=vote_qs.select_related(
                     'vote_score',
                     'proposal__dossier',
                     'proposal__recommendation'

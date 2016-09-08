@@ -13,11 +13,15 @@ class RepresentativeDetailPositions(RepresentativeDetailBase):
     def get_queryset(self):
         qs = super(RepresentativeDetailPositions, self).get_queryset()
 
+        positions_qs = Position.objects.filter(published=True)
+        theme = self.get_selected_theme()
+        if theme:
+            positions_qs = positions_qs.filter(themes__slug=theme)
+
         qs = qs.prefetch_related(
             models.Prefetch(
                 'positions',
-                queryset=Position.objects.filter(published=True)
-                .order_by('-datetime', 'pk')
+                queryset=positions_qs.order_by('-datetime', 'pk')
             ),
             'positions__themes',
             'positions__position_score'

@@ -1,0 +1,33 @@
+{% load i18n %}
+{% load memopol_tags %}
+
+<div class="btn-group" id="theme-menu">
+  <button class="btn {% if selected_theme %}btn-primary{% else %}btn-default{% endif %} dropdown-toggle"
+  		  type="button" id="theme-button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="true">
+    {% if selected_theme %}
+      {% for theme_score in theme_scores %}
+        {% if theme_score.theme.slug == selected_theme %}
+          {{ theme_score.theme.name }}
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      {% trans "All themes" %}
+    {% endif %}
+    <span class="caret"></span>
+  </button>
+
+  <ul class="dropdown-menu" aria-labelledby="theme-button">
+    <li {% if not selected_theme %}class="disabled"{% endif %}>
+      <a href="?{{ theme_querystring.urlencode }}&selected_theme=">{% trans "All themes" %}</a>
+    </li>
+    {% for theme_score in theme_scores %}
+      <li {% if theme_score.theme.slug == selected_theme %}class="disabled"{% endif %}>
+        <a href="?{{ theme_querystring.urlencode }}&selected_theme={{ theme_score.theme.slug }}">
+          {{ theme_score.theme.name }}
+          {{ theme_score.score|score_badge }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

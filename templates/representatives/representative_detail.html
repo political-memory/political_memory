@@ -123,6 +123,13 @@
   </div>
 
   <div class="row">
+    <div class="col-sm-3 text-center">
+      {% include "blocks/_themescore_dropdown.html" with theme_scores=representative.theme_scores.all %}
+    </div>
+  </div>
+
+
+  <div class="row">
     <div class="col-xs-12">
       <ul class="nav nav-tabs nav-justified" role="tablist">
         <li role="presentation" {% if tab == 'votes' %}class="active"{% endif %}>

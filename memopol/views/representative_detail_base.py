@@ -9,9 +9,11 @@ from .representative_mixin import RepresentativeViewMixin
 
 from representatives_positions.views import PositionFormMixin
 
+from core.views import ThemeSelectionMixin
+
 
 class RepresentativeDetailBase(RepresentativeViewMixin, PositionFormMixin,
-                               generic.DetailView):
+                               ThemeSelectionMixin, generic.DetailView):
 
     queryset = Representative.objects.select_related('representative_score')
 
@@ -47,7 +49,8 @@ class RepresentativeDetailBase(RepresentativeViewMixin, PositionFormMixin,
             models.Prefetch(
                 'phone_set',
                 queryset=Phone.objects.filter(address__isnull=True)
-            )
+            ),
+            'theme_scores__theme'
         )
 
         return qs
