@@ -299,7 +299,7 @@
     "fields": {
         "name": "Commission des lois constitutionnelles, de la l\u00e9gislation et de l'administration g\u00e9n\u00e9rale de la r\u00e9publique",
         "kind": "committee",
-        "abbreviation": "AnComLois",
+        "abbreviation": "Lois",
         "chamber": 2
     },
     "model": "representatives.group",
@@ -389,7 +389,7 @@
     "fields": {
         "name": "Commission de la culture, de l'\u00e9ducation et de la communication",
         "kind": "committee",
-        "abbreviation": "SenComCult",
+        "abbreviation": "Culture",
         "chamber": 3
     },
     "model": "representatives.group",
