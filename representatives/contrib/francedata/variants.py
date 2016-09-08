@@ -27,7 +27,12 @@ class DelegationHelper:
             orga = g['organisme']
             role = g['fonction']
 
-            if self.committees != orga.lower().startswith('commission'):
+            is_committee = orga.lower().startswith('commission') and not (
+                orga.lower().startswith(u'commission spéciale') or
+                orga.lower().startswith(u'commission d\'enquête')
+            )
+
+            if self.committees != is_committee:
                 continue
 
             if orga in self.equivs:
@@ -67,37 +72,29 @@ _get_sen_committees = DelegationHelper({
             u"l'équipement et de l'aménagement du territoire")
 }, {
     u"Commission de la culture, de l'éducation et de la communication":
-        "SenComCult",
-    u"Commission des affaires économiques": "SenComEco",
+        "Culture",
+    u"Commission des affaires économiques": "Économie",
     u"Commission des affaires étrangères, de la défense et des forces armées":
-        "SenComDef",
-    u"Commission des affaires européennes": "SenComEU",
-    u"Commission des affaires sociales": "SenComSoc",
+        "Défense",
+    u"Commission des affaires européennes": "Europe",
+    u"Commission des affaires sociales": "Social",
     (u"Commission des finances, du contrôle budgétaire et des comptes "
-        u"économiques de la nation"): "SenComFin",
+        u"économiques de la nation"): "Finances",
     (u"Commission des lois constitutionnelles, de législation, du suffrage "
-        u"universel, du Règlement et d'administration générale"): "SenComLois",
-    (u"Commission du développement durable, des infrastructures, de "
-        u"l'équipement et de l'aménagement du territoire"): "SenComDevD",
-    u"Commission sénatoriale pour le contrôle de l'application des lois":
-        "SenComAppL"
+        u"universel, du Règlement et d'administration générale"): "Lois",
 })
 
 _get_an_committees = DelegationHelper({}, {
-    (u"Commission chargée de l'application de l'article 26 de la "
-        u"constitution"): "AnComImmu",
-    u"Commission de la défense nationale et des forces armées": "AnComDef",
-    u"Commission des affaires culturelles et de l'éducation": "AnComCult",
-    u"Commission des affaires économiques": "AnComEco",
-    u"Commission des affaires étrangères": "AnComEtrg",
-    u"Commission des affaires européennes": "AnComEU",
-    u"Commission des affaires sociales": "AnComSoc",
+    u"Commission de la défense nationale et des forces armées": "Défense",
+    u"Commission des affaires culturelles et de l'éducation": "Culture",
+    u"Commission des affaires économiques": "Économie",
+    u"Commission des affaires étrangères": "Étranger",
+    u"Commission des affaires européennes": "Europe",
+    u"Commission des affaires sociales": "Social",
     (u"Commission des finances, de l'économie générale et du contrôle "
-        u"budgétaire"): "AnComFin",
+        u"budgétaire"): "Finances",
     (u"Commission des lois constitutionnelles, de la législation et de "
-        u"l'administration générale de la république"): "AnComLois",
-    u"Commission du développement durable et de l'aménagement du territoire":
-        "AnComDevD"
+        u"l'administration générale de la république"): "Lois"
 })
 
 _get_sen_delegations = DelegationHelper({}, {}, False)
