@@ -52,8 +52,10 @@ a.tag:hover {
 ***************************************************************/
 
 @font-face {
-    font-family: Propaganda, fixed;
-    src: url(../fonts/PROPAGAN.ttf);
+    font-family: Propaganda;
+    src: url('../fonts/propagan-webfont.woff') format('woff'),
+         url('../fonts/propagan-webfont.ttf')  format('truetype'),
+         url('../fonts/propagan-webfont.svg#propagandaregular') format('svg');
 }
 
 body, .panel-title {
