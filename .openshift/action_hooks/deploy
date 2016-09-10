@@ -8,29 +8,26 @@ set -xe
 source ${OPENSHIFT_HOMEDIR}app-root/runtime/dependencies/python/virtenv/bin/activate
 
 pip install -U pip
-
 pip install -Ue ${OPENSHIFT_REPO_DIR}
 
-pushd ${OPENSHIFT_REPO_DIR}
-if [ -f ${OPENSHIFT_DATA_DIR}sentry ]; then
-    pip install raven
-    ./manage.py raven test
-else
-    echo ${OPENSHIFT_DATA_DIR}sentry does not exist, not setting up raven.
-fi
-
-python ${OPENSHIFT_REPO_DIR}manage.py migrate --noinput
-
-PATH="${OPENSHIFT_DATA_DIR}node/bin:$PATH"
-HOME=$OPENSHIFT_DATA_DIR
-CI=true
-bin/install_client_deps.sh
-mkdir -p wsgi
-./manage.py collectstatic --noinput
-./manage.py compress
-popd
-
 mkdir -p ${OPENSHIFT_DATA_DIR}media
-mkdir -p ${OPENSHIFT_REPO_DIR}wsgi/static/media
-ln -sf ${OPENSHIFT_DATA_DIR}media ${OPENSHIFT_REPO_DIR}wsgi/static/media
-ln -sf ${OPENSHIFT_DATA_DIR}compress/CACHE ${OPENSHIFT_REPO_DIR}wsgi/static/collected/CACHE
+
+pushd ${OPENSHIFT_REPO_DIR}
+	if [ -f ${OPENSHIFT_DATA_DIR}sentry ]; then
+	    pip install raven
+	fi
+
+	bin/install_client_deps.sh
+
+	mkdir -p wsgi/static
+
+	[ -f memopol/local_settings.py ] && rm memopol/local_settings.py
+	cp .openshift/local_settings.py memopol/local_settings.py
+
+	./manage.py migrate --noinput
+	./manage.py collectstatic --noinput
+	./manage.py compress
+
+	ln -sf ${OPENSHIFT_DATA_DIR}media wsgi/static/media
+	ln -sf ${OPENSHIFT_DATA_DIR}compress/CACHE wsgi/static/collected/CACHE
+popd
