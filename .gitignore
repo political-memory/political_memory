@@ -5,7 +5,8 @@ core/static/libs/*
 # libs
 static/libs
 
-# settings 
+# settings
+memopol/local_settings.py
 memopol/config.json
 
 # Byte-compiled / optimized / DLL files
