@@ -26,7 +26,6 @@ pushd ${OPENSHIFT_REPO_DIR}
 
 	./manage.py migrate --noinput
 	./manage.py collectstatic --noinput
-	./manage.py compress
 
 	ln -sf ${OPENSHIFT_DATA_DIR}media wsgi/static/media
 	ln -sf ${OPENSHIFT_DATA_DIR}compress/CACHE wsgi/static/collected/CACHE
