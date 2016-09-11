@@ -9,6 +9,7 @@ Uses the following environment variables:
 """
 
 import os
+from socket import gethostname
 
 from django.conf import global_settings
 from django.utils.crypto import get_random_string
@@ -207,6 +208,42 @@ LOGGING = {
 ###############################################################################
 #
 # Local settings
+#
+
+#
+# Defaults
+#
+
+DATA_DIR = 'data'
+LOG_DIR = 'log'
+PUBLIC_DIR = 'wsgi/static'
+
+
+DATABASES = {
+    'default': {
+        'NAME': 'memopol',
+        'USER': 'memopol',
+        'PASSWORD': 'memopol',
+        'HOST': 'localhost',
+        'PORT': '5432',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    }
+}
+
+
+ALLOWED_HOSTS = [
+    gethostname(),
+]
+
+
+SITE_ID = 1
+SITE_NAME = 'Memopol'
+SITE_DOMAIN = gethostname()
+
+ORGANIZATION_NAME = 'Memopol'
+
+#
+# Import local overrides
 #
 
 try:
