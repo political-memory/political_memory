@@ -10,24 +10,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}" />
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width" />
-      <title>{% block title %}Home - Political Memory{% endblock %}</title>
+
+    <title>{% block title %}Home - Political Memory{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}" />
 
     {% fontawesome_stylesheet %}
 
-    {% load compress %}
-    {% compress css %}
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css" />
     <link rel="stylesheet" href="{% static 'libs/flag-icon-css/css/flag-icon.min.css' %}" type="text/css" />
+
+    {% load compress %}
+    {% compress css %}
     <link rel="stylesheet" href="{% static 'css/custom.css' %}" type="text/css" />
     {% endcompress %}
 
-    {% compress js %}
-    <script type="text/javascript" src="{% static 'libs/jquery/dist/jquery.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
-    {% endcompress %}
+    <script type="text/javascript" src="{% static 'libs/jquery/dist/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
 
     {{ position_form.media }}
 
