@@ -7,6 +7,7 @@ Prerequisites
 You will need the following:
 
 * A clone of the git repository at ``https://github.com/political-memory/political_memory.git``
+* A dedicated python virtualenv
 * a PostgreSQL>=9.2 database (not necessarily on the same machine)
 * a WSGI-capable web server
 
@@ -34,6 +35,10 @@ allowed hosts.  Setup your WSGI server to serve:
 Initial memopol setup
 =====================
 
+From the repository root, install python dependencies::
+
+    $ pip install -Ue .
+
 Install client libraries::
 
     $ bin/install_client_deps.sh
@@ -54,6 +59,7 @@ Updating
 To update simply pull the repository and run setup commands again::
 
     $ git pull
+    $ pip install -Ue .
     $ bin/install_client_deps.sh
     $ ./manage.py migrate --noinput
     $ ./manage.py collectstatic --noinput
