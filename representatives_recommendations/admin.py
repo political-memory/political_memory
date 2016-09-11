@@ -9,7 +9,8 @@ from .models import Recommendation
 
 class RecommendationsAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'proposal', 'recommendation', 'weight')
-    search_fields = ('title', 'recommendation', 'proposal')
+    search_fields = ('title', 'description', 'proposal__title',
+                     'proposal__dossier__title')
     form = RecommendationForm
 
 admin.site.register(Recommendation, RecommendationsAdmin)
