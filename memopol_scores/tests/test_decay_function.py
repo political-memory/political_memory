@@ -3,8 +3,6 @@ from datetime import date, timedelta
 from django import test
 from django.db import connection
 
-from memopol_settings.models import Setting
-
 
 class DecayFunctionTest(test.TestCase):
     def decay_score(self, score, date, num, denom, exponent, decimals):
