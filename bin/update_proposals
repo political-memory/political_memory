@@ -1,0 +1,8 @@
+#!/bin/bash
+set -ex
+
+source ${OPENSHIFT_REPO_DIR}bin/lib.sh
+
+# Nothing for parltrack - proposals imported with votes
+
+francedata_download_pipe scrutins.json.gz francedata_import_scrutins

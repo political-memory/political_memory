@@ -3,4 +3,8 @@ set -ex
 
 source ${OPENSHIFT_REPO_DIR}bin/lib.sh
 
-pipe_download_to_command ep_meps_current.json.xz parltrack_import_representatives
+parltrack_download_pipe ep_meps_current.json.xz parltrack_import_representatives
+
+sleep 10
+
+francedata_download_pipe parlementaires.json.gz francedata_import_representatives
