@@ -49,15 +49,12 @@ class ThemedAdminForm(forms.ModelForm):
 
     def save(self, commit=True):
         item = super(ThemedAdminForm, self).save(commit=False)
+        item.save()
 
-        if commit:
-            item.save()
+        item.themes = self.cleaned_data['themes']
+        self.save_m2m()
 
-        if item.pk:
-            item.themes = self.cleaned_data['themes']
-            self.save_m2m()
-
-            return item
+        return item
 
 
 class ThemedDossierAdminForm(ThemedAdminForm):
