@@ -18,7 +18,7 @@ before_script:
 - psql -c "CREATE DATABASE memopol WITH OWNER memopol;" -U postgres
 script:
 - flake8 . --exclude '*/migrations,docs,static' --ignore E128
-- py.test memopol representatives_positions representatives_recommendations
+- py.test memopol memopol_scores
 - django-admin migrate
 after_success:
 - codecov
