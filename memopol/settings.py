@@ -52,13 +52,16 @@ INSTALLED_APPS = (
     'bootstrap3',
     'datetimewidget',
     'django_filters',
+    'django_graphiql',
     'fontawesome',
+    'graphene.contrib.django',
     'rest_framework',
     'taggit',
 
     # memopol apps
     'core',
     'memopol',
+    'memopol_graphene_api',
     'memopol_scores',
     'memopol_settings',
     'memopol_themes',

@@ -2,6 +2,11 @@
 
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.views.decorators.csrf import csrf_exempt
+
+from graphene.contrib.django.views import GraphQLView
+
+from memopol_graphene_api.schema import schema
 
 from views.home import HomeView
 
@@ -46,6 +51,9 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^api/', include(api.router.urls)),
+
+    url(r'^graphql', csrf_exempt(GraphQLView.as_view(schema=schema))),
+    url(r'^graphiql', include('django_graphiql.urls')),
 
     # Homepage
 
