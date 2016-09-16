@@ -34,4 +34,3 @@ deploy:
   on:
     repo: political-memory/political_memory
     branch: master
-- provider: openshift
