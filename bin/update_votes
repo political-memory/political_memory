@@ -8,3 +8,8 @@ parltrack_download_pipe ep_votes.json.xz parltrack_import_votes
 sleep 10
 
 francedata_download_pipe votes.json.gz francedata_import_votes
+
+if [ "x$1" != "xnoscores" ]; then
+	sleep 10
+	refresh_scores
+fi

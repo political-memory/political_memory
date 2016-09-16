@@ -35,3 +35,12 @@ function francedata_download_pipe() {
     gunzip -c ${OPENSHIFT_DATA_DIR}$1 | $2
     [ -n "$CLEAN" ] && rm -rf $1
 }
+
+function refresh_scores() {
+    if [ -n "$OPENSHIFT_REPO_DIR" ]; then
+        cd $OPENSHIFT_REPO_DIR
+    fi
+
+    export DJANGO_SETTINGS_MODULE=memopol.settings
+    ./manage.py refresh_scores
+}
