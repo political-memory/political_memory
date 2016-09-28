@@ -1,1 +1,1 @@
-export OPENSHIFT_PYTHON_WSGI_APPLICATION=memopol/wsgi.py
+export OPENSHIFT_PYTHON_WSGI_APPLICATION=src/memopol/wsgi.py
