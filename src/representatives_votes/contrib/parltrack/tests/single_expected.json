@@ -1,0 +1,63 @@
+[
+{
+    "fields": {
+        "text": "",
+        "updated": "2016-07-08T05:20:11.662Z",
+        "title": "2016 general budget: all sections",
+        "reference": "2015/2132(BUD)",
+        "created": "2016-07-08T05:20:11.662Z"
+    },
+    "model": "representatives_votes.dossier",
+    "pk": 1
+},
+{
+    "fields": {
+        "updated": "2016-07-08T05:20:11.664Z",
+        "title": "",
+        "dossier": 1,
+        "created": "2016-07-08T05:20:11.664Z",
+        "kind": "procedure-file",
+        "chamber": 1,
+        "link": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2015/2132(BUD)"
+    },
+    "model": "representatives_votes.document",
+    "pk": 1
+},
+{
+    "fields": {
+        "updated": "2016-07-08T05:21:34.553Z",
+        "total_for": 1,
+        "description": "",
+        "reference": "A8-0298/2015",
+        "title": "A8-0298/2015 -  Jos\u00e9 Manuel Fernandes et  G\u00e9rard Deprez - Am 29",
+        "dossier": 1,
+        "created": "2016-07-08T05:20:11.696Z",
+        "kind": "Am 29",
+        "datetime": "2015-10-28T12:00:12Z",
+        "total_against": 1,
+        "total_abstain": 0
+    },
+    "model": "representatives_votes.proposal",
+    "pk": 1
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "for",
+        "proposal": 1,
+        "representative": 1
+    },
+    "model": "representatives_votes.vote",
+    "pk": 1
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "against",
+        "proposal": 1,
+        "representative": 2
+    },
+    "model": "representatives_votes.vote",
+    "pk": 2
+}
+]

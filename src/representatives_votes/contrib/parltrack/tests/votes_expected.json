@@ -1,0 +1,112 @@
+[
+{
+    "fields": {
+        "representative_name": "",
+        "position": "abstain",
+        "proposal": 1,
+        "representative": 2
+    },
+    "model": "representatives_votes.vote",
+    "pk": 1
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "abstain",
+        "proposal": 1,
+        "representative": 1
+    },
+    "model": "representatives_votes.vote",
+    "pk": 2
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "for",
+        "proposal": 2,
+        "representative": 2
+    },
+    "model": "representatives_votes.vote",
+    "pk": 3
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "for",
+        "proposal": 2,
+        "representative": 1
+    },
+    "model": "representatives_votes.vote",
+    "pk": 4
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "against",
+        "proposal": 3,
+        "representative": 2
+    },
+    "model": "representatives_votes.vote",
+    "pk": 5
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "against",
+        "proposal": 3,
+        "representative": 1
+    },
+    "model": "representatives_votes.vote",
+    "pk": 6
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "for",
+        "proposal": 4,
+        "representative": 1
+    },
+    "model": "representatives_votes.vote",
+    "pk": 7
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "against",
+        "proposal": 4,
+        "representative": 2
+    },
+    "model": "representatives_votes.vote",
+    "pk": 8
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "abstain",
+        "proposal": 5,
+        "representative": 1
+    },
+    "model": "representatives_votes.vote",
+    "pk": 9
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "against",
+        "proposal": 5,
+        "representative": 2
+    },
+    "model": "representatives_votes.vote",
+    "pk": 10
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "for",
+        "proposal": 6,
+        "representative": 1
+    },
+    "model": "representatives_votes.vote",
+    "pk": 11
+}
+]

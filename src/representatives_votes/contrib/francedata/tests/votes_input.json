@@ -1,0 +1,50 @@
+[
+    {
+        "chambre": "AN",
+        "groupe": "Whatever",
+        "division": "Pour",
+        "scrutin_url": "http://www.assemblee-nationale.fr/scrutins/detail/(legislature)/14/(num)/740",
+        "prenom": "Bernard",
+        "nom": "Roman"
+    },
+    {
+        "chambre": "AN",
+        "groupe": "Whatever",
+        "division": "Contre",
+        "scrutin_url": "http://www.assemblee-nationale.fr/scrutins/detail/(legislature)/14/(num)/740-2",
+        "prenom": "Bernard",
+        "nom": "Roman"
+    },
+    {
+        "chambre": "AN",
+        "groupe": "Whatever",
+        "division": "Abstention",
+        "scrutin_url": "http://www.assemblee-nationale.fr/scrutins/detail/(legislature)/14/(num)/748",
+        "prenom": "Bernard",
+        "nom": "Roman"
+    },
+    {
+        "chambre": "AN",
+        "groupe": "Whatever",
+        "division": "Invalide",
+        "scrutin_url": "http://www.assemblee-nationale.fr/scrutins/detail/(legislature)/14/(num)/747",
+        "prenom": "Bernard",
+        "nom": "Roman"
+    },
+    {
+        "chambre": "AN",
+        "groupe": "Whatever",
+        "division": "Pour",
+        "scrutin_url": "http://www.assemblee-nationale.fr/scrutins/detail/(legislature)/14/(num)/nonexisting",
+        "prenom": "Bernard",
+        "nom": "Roman"
+    },
+    {
+        "chambre": "AN",
+        "groupe": "Whatever",
+        "division": "Pour",
+        "scrutin_url": "http://www.assemblee-nationale.fr/scrutins/detail/(legislature)/14/(num)/747",
+        "prenom": "Non",
+        "nom": "Existing"
+    }
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "chambre": "AN",
+        "objet": "La motion de rejet pr\u00e9alable, pr\u00e9sent\u00e9e par m. le roux, de la proposition de loi permettant le libre choix des maires concernant les rythmes scolaires dans l'enseignement du premier degr\u00e9.",
+        "url": "http://www.assemblee-nationale.fr/scrutins/detail/(legislature)/14/(num)/740",
+        "numero": "740",
+        "dossier_url": "http://www.assemblee-nationale.fr/14/dossiers/liberte_maires_rythmes_scolaires_premier_degre.asp",
+        "date": "2013-12-05"
+    },
+    {
+        "chambre": "AN",
+        "objet": "La motion de rejet pr\u00e9alable, pr\u00e9sent\u00e9e par m. le roux, de la proposition de loi permettant le libre choix des maires concernant les rythmes scolaires dans l'enseignement du premier degr\u00e9.",
+        "url": "http://www.assemblee-nationale.fr/scrutins/detail/(legislature)/14/(num)/740-2",
+        "numero": "740-2",
+        "dossier_url": "http://www.assemblee-nationale.fr/14/dossiers/liberte_maires_rythmes_scolaires_premier_degre.asp",
+        "date": "2013-12-06"
+    },
+    {
+        "chambre": "AN",
+        "objet": "L'amendement n\u00b0 381 de m. dolez  \u00e0 l'article 2 du projet de loi de modernisation de l'action publique territoriale et d'affirmation des m\u00e9tropoles.",
+        "url": "http://www.assemblee-nationale.fr/scrutins/detail/(legislature)/14/(num)/748",
+        "numero": "748",
+        "dossier_url": "http://www.assemblee-nationale.fr/14/dossiers/action_publique_territoriale_metropoles.asp",
+        "date": "2013-12-11"
+    },
+    {
+        "chambre": "AN",
+        "objet": "L'amendement n\u00b0 379 de m. dolez  \u00e0 l'article 1er a du projet de loi de modernisation de l'action publique territoriale et d'affirmation des m\u00e9tropoles.",
+        "url": "http://www.assemblee-nationale.fr/scrutins/detail/(legislature)/14/(num)/747",
+        "numero": "747",
+        "dossier_url": "http://www.assemblee-nationale.fr/14/dossiers/action_publique_territoriale_metropoles.asp",
+        "date": "2013-12-11"
+    },
+    {
+        "chambre": "AN",
+        "objet": "Dossier inexistant.",
+        "url": "http://www.assemblee-nationale.fr/404",
+        "numero": "000",
+        "dossier_url": "http://www.assemblee-nationale.fr/14/dossiers/inexistant",
+        "date": "2099-12-11"
+    }
+]

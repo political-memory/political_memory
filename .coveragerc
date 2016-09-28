@@ -6,3 +6,5 @@ omit =
 	src/representatives/migrations/*
 	src/representatives/contrib/francedata/tests/*
 	src/representatives/contrib/parltrack/tests/*
+    src/representatives_votes/tests/*
+    src/representatives_votes/migrations/*

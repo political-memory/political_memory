@@ -1,0 +1,122 @@
+[
+{
+    "fields": {
+        "text": "",
+        "updated": "2016-07-08T05:17:40.580Z",
+        "title": "Agenda for change: the future of EU development policy",
+        "reference": "2012/2002(INI)",
+        "created": "2016-07-08T05:17:40.580Z"
+    },
+    "model": "representatives_votes.dossier",
+    "pk": 1
+},
+{
+    "fields": {
+        "text": "",
+        "updated": "2016-07-08T05:17:40.617Z",
+        "title": "2016 general budget: all sections",
+        "reference": "2015/2132(BUD)",
+        "created": "2016-07-08T05:17:40.616Z"
+    },
+    "model": "representatives_votes.dossier",
+    "pk": 2
+},
+{
+    "fields": {
+        "text": "",
+        "updated": "2016-07-08T05:17:40.644Z",
+        "title": "Scheme of control and enforcement applicable in the area covered by the Convention on future multilateral cooperation in the North-East Atlantic fisheries",
+        "reference": "2013/2857(DEA)",
+        "created": "2016-07-08T05:17:40.644Z"
+    },
+    "model": "representatives_votes.dossier",
+    "pk": 3
+},
+{
+    "fields": {
+        "text": "",
+        "updated": "2016-07-08T05:17:40.682Z",
+        "title": "Scheme of control and enforcement applicable in the area covered by the Convention on future multilateral cooperation in the North-East Atlantic fisheries",
+        "reference": "2015/2623(DEA)",
+        "created": "2016-07-08T05:17:40.682Z"
+    },
+    "model": "representatives_votes.dossier",
+    "pk": 4
+},
+{
+    "fields": {
+        "text": "",
+        "updated": "2016-07-08T05:17:40.719Z",
+        "title": "Scheme of control and enforcement applicable in the area covered by the Convention on future multilateral cooperation in the North-East Atlantic fisheries",
+        "reference": "2009/0051(COD)",
+        "created": "2016-07-08T05:17:40.719Z"
+    },
+    "model": "representatives_votes.dossier",
+    "pk": 5
+},
+{
+    "fields": {
+        "updated": "2016-07-08T05:17:40.582Z",
+        "title": "",
+        "dossier": 1,
+        "created": "2016-07-08T05:17:40.582Z",
+        "kind": "procedure-file",
+        "chamber": 1,
+        "link": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2012/2002(INI)"
+    },
+    "model": "representatives_votes.document",
+    "pk": 1
+},
+{
+    "fields": {
+        "updated": "2016-07-08T05:17:40.619Z",
+        "title": "",
+        "dossier": 2,
+        "created": "2016-07-08T05:17:40.619Z",
+        "kind": "procedure-file",
+        "chamber": 1,
+        "link": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2015/2132(BUD)"
+    },
+    "model": "representatives_votes.document",
+    "pk": 2
+},
+{
+    "fields": {
+        "updated": "2016-07-08T05:17:40.646Z",
+        "title": "",
+        "dossier": 3,
+        "created": "2016-07-08T05:17:40.646Z",
+        "kind": "procedure-file",
+        "chamber": 1,
+        "link": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2013/2857(DEA)"
+    },
+    "model": "representatives_votes.document",
+    "pk": 3
+},
+{
+    "fields": {
+        "updated": "2016-07-08T05:17:40.684Z",
+        "title": "",
+        "dossier": 4,
+        "created": "2016-07-08T05:17:40.684Z",
+        "kind": "procedure-file",
+        "chamber": 1,
+        "link": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2015/2623(DEA)"
+    },
+    "model": "representatives_votes.document",
+    "pk": 4
+},
+{
+    "fields": {
+        "updated": "2016-07-08T05:17:40.724Z",
+        "title": "",
+        "dossier": 5,
+        "created": "2016-07-08T05:17:40.724Z",
+        "kind": "procedure-file",
+        "chamber": 1,
+        "link": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2009/0051(COD)"
+    },
+    "model": "representatives_votes.document",
+    "pk": 5
+}
+]

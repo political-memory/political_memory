@@ -1,0 +1,13 @@
+[
+{
+    "fields": {
+        "updated": "2015-12-13T10:11:31.369Z",
+        "reference": "2012/2002(INI)",
+        "title": "initial title",
+        "text": "",
+        "created": "2015-12-13T10:11:31.369Z"
+    },
+    "model": "representatives_votes.dossier",
+    "pk": 1
+}
+]

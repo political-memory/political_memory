@@ -1,0 +1,285 @@
+[
+    {
+        "Abstain": {
+            "groups": [
+                {
+                    "group": "PPE",
+                    "votes": [
+                        {
+                            "ep_id": 96673,
+                            "name": "Ludvigsson",
+                            "userid": 5860
+                        },
+                        {
+                            "ep_id": 2307,
+                            "name": "Pirker",
+                            "userid": 4611
+                        }
+                    ]
+                }
+            ],
+            "total": "2"
+        },
+        "_id": "56617c15ecc52ed712fc7901",
+        "dossierid": "4f33d5ddb819f2756a000009",
+        "epref": "2012/2002(INI)",
+        "eptitle": "Agenda for change: the future of EU development policy",
+        "issue_type": "\u00a7 31",
+        "rapporteur": [
+            {
+                "name": "Charles Goerens",
+                "ref": 840
+            }
+        ],
+        "report": "A7-0234/2012",
+        "title": "A7-0234/2012 -  Charles Goerens - \u00a7 31",
+        "ts": "2012-10-23T18:31:10",
+        "url": "http://www.europarl.europa.eu/RegData/seance_pleniere/proces_verbal/2012/10-23/votes_nominaux/xml/P7_PV(2012)10-23(RCV)_XC.xml",
+        "voteid": "17393"
+    },
+    {
+        "For": {
+            "groups": [
+                {
+                    "group": "PPE",
+                    "votes": [
+                        {
+                            "ep_id": 96673,
+                            "name": "Ludvigsson",
+                            "userid": 5860
+                        }
+                    ]
+                },
+                {
+                    "group": "PPE",
+                    "votes": [
+                        {
+                            "ep_id": 2307,
+                            "name": "Pirker",
+                            "userid": 4611
+                        }
+                    ]
+                }
+            ],
+            "total": "2"
+        },
+        "_id": "56617c15ecc52ed712fc7902",
+        "dossierid": "4f33d5ddb819f2756a000009",
+        "epref": "2012/2002(INI)",
+        "eptitle": "Agenda for change: the future of EU development policy",
+        "issue_type": "R\u00e9solution",
+        "rapporteur": [
+            {
+                "name": "Charles Goerens",
+                "ref": 840
+            }
+        ],
+        "report": "A7-0234/2012",
+        "title": "A7-0234/2012 -  Charles Goerens - R\u00e9solution",
+        "ts": "2012-10-23T18:34:32",
+        "url": "http://www.europarl.europa.eu/RegData/seance_pleniere/proces_verbal/2012/10-23/votes_nominaux/xml/P7_PV(2012)10-23(RCV)_XC.xml",
+        "voteid": "17394"
+    },
+    {
+        "Against": {
+            "groups": [
+                {
+                    "group": "PPE",
+                    "votes": [
+                        {
+                            "ep_id": 96673,
+                            "name": "Ludvigsson",
+                            "userid": 5860
+                        }
+                    ]
+                },
+                {
+                    "group": "PPE",
+                    "votes": [
+                        {
+                            "ep_id": 2307,
+                            "name": "Pirker",
+                            "userid": 4611
+                        }
+                    ]
+                }
+            ],
+            "total": "2"
+        },
+        "_id": "56617a11ecc52ed712fc6b14",
+        "dossierid": "55a4580ed1d1c57c1e000002",
+        "epref": "2015/2132(BUD)",
+        "eptitle": "2016 general budget: all sections",
+        "issue_type": "Am 4",
+        "rapporteur": [
+            {
+                "name": "Jos\u00e9 Manuel Fernandes",
+                "ref": 96899
+            },
+            {
+                "name": " G\u00e9rard Deprez",
+                "ref": 1473
+            }
+        ],
+        "report": "A8-0298/2015",
+        "title": "A8-0298/2015 -  Jos\u00e9 Manuel Fernandes et  G\u00e9rard Deprez - Am 4",
+        "ts": "2015-10-28T12:59:35",
+        "url": "http://www.europarl.europa.eu/RegData/seance_pleniere/proces_verbal/2015/10-28/votes_nominaux/xml/P8_PV(2015)10-28(RCV)_XC.xml",
+        "voteid": "59145"
+    },
+    {
+        "For": {
+            "groups": [
+                {
+                    "group": "PPE",
+                    "votes": [
+                        {
+                            "ep_id": 2307,
+                            "name": "Pirker",
+                            "userid": 4611
+                        }
+                    ]
+                }
+            ],
+            "total": "1"
+        },
+        "Against": {
+            "groups": [
+                {
+                    "group": "PPE",
+                    "votes": [
+                        {
+                            "ep_id": 96673,
+                            "name": "Ludvigsson",
+                            "userid": 5860
+                        }
+                    ]
+                }
+            ],
+            "total": "1"
+        },
+        "_id": "56617a11ecc52ed712fc6b15",
+        "dossierid": "55a4580ed1d1c57c1e000002",
+        "epref": "2015/2132(BUD)",
+        "eptitle": "2016 general budget: all sections",
+        "issue_type": "Am 29",
+        "rapporteur": [
+            {
+                "name": "Jos\u00e9 Manuel Fernandes",
+                "ref": 96899
+            },
+            {
+                "name": " G\u00e9rard Deprez",
+                "ref": 1473
+            }
+        ],
+        "report": "A8-0298/2015",
+        "title": "A8-0298/2015 -  Jos\u00e9 Manuel Fernandes et  G\u00e9rard Deprez - Am 29",
+        "ts": "2015-10-28T13:00:12",
+        "url": "http://www.europarl.europa.eu/RegData/seance_pleniere/proces_verbal/2015/10-28/votes_nominaux/xml/P8_PV(2015)10-28(RCV)_XC.xml",
+        "voteid": "59146"
+    },
+    {
+        "Abstain": {
+            "groups": [
+                {
+                    "group": "PPE",
+                    "votes": [
+                        {
+                            "ep_id": 2307,
+                            "name": "Pirker",
+                            "userid": 4611
+                        }
+                    ]
+                }
+            ],
+            "total": "1"
+        },
+        "Against": {
+            "groups": [
+                {
+                    "group": "PPE",
+                    "votes": [
+                        {
+                            "ep_id": 96673,
+                            "name": "Ludvigsson",
+                            "userid": 5860
+                        }
+                    ]
+                }
+            ],
+            "total": "1"
+        },
+        "_id": "56617a11ecc52ed712fc6b16",
+        "dossierid": "55a4580ed1d1c57c1e000002",
+        "epref": "2015/2132(BUD)",
+        "eptitle": "2016 general budget: all sections",
+        "issue_type": "Am 31",
+        "rapporteur": [
+            {
+                "name": "Jos\u00e9 Manuel Fernandes",
+                "ref": 96899
+            },
+            {
+                "name": " G\u00e9rard Deprez",
+                "ref": 1473
+            }
+        ],
+        "report": "A8-0298/2015",
+        "title": "A8-0298/2015 -  Jos\u00e9 Manuel Fernandes et  G\u00e9rard Deprez - Am 31",
+        "ts": "2015-10-28T13:00:42",
+        "url": "http://www.europarl.europa.eu/RegData/seance_pleniere/proces_verbal/2015/10-28/votes_nominaux/xml/P8_PV(2015)10-28(RCV)_XC.xml",
+        "voteid": "59147"
+    },
+    {
+        "For": {
+            "groups": [
+                {
+                    "group": "PPED",
+                    "votes": [
+                        {
+                            "ep_id": 12323196673,
+                            "name": "FAILLLLL",
+                            "userid": 5860
+                        },
+                        {
+                            "name": "FAILLLLL",
+                            "userid": 5860
+                        }
+                    ]
+                },
+                {
+                    "group": "PPE",
+                    "votes": [
+                        {
+                            "ep_id": 2307,
+                            "name": "Pirker",
+                            "userid": 4611
+                        }
+                    ]
+                }
+            ],
+            "total": "2"
+        },
+        "_id": "56617a11ecc52ed712fc6b17",
+        "dossierid": "55a4580ed1d1c57c1e000002",
+        "epref": "2015/2132(BUD)",
+        "eptitle": "2016 general budget: all sections",
+        "issue_type": "Am 30",
+        "rapporteur": [
+            {
+                "name": "Jos\u00e9 Manuel Fernandes",
+                "ref": 96899
+            },
+            {
+                "name": " G\u00e9rard Deprez",
+                "ref": 1473
+            }
+        ],
+        "report": "A8-0298/2015",
+        "title": "A8-0298/2015 -  Jos\u00e9 Manuel Fernandes et  G\u00e9rard Deprez - Am 30",
+        "ts": "2015-10-28T13:01:09",
+        "url": "http://www.europarl.europa.eu/RegData/seance_pleniere/proces_verbal/2015/10-28/votes_nominaux/xml/P8_PV(2015)10-28(RCV)_XC.xml",
+        "voteid": "59151"
+    }
+]

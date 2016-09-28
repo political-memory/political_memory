@@ -1,0 +1,25 @@
+{
+    "id": 1,
+    "dossier": "http://testserver/api/dossiers/1/",
+    "title": "A7-0234/2012 -  Charles Goerens - § 31",
+    "description": "",
+    "reference": "A7-0234/2012",
+    "datetime": "2012-10-23T16:31:10Z",
+    "kind": "§ 31",
+    "total_abstain": 2,
+    "total_against": 0,
+    "total_for": 0,
+    "url": "http://testserver/api/proposals/1/",
+    "votes": [
+        {
+            "proposal": "http://testserver/api/proposals/1/",
+            "representative": "http://testserver/api/representatives/2/",
+            "position": "abstain"
+        },
+        {
+            "proposal": "http://testserver/api/proposals/1/",
+            "representative": "http://testserver/api/representatives/1/",
+            "position": "abstain"
+        }
+    ]
+}
