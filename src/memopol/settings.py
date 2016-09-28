@@ -20,7 +20,7 @@ from django.utils.crypto import get_random_string
 # Base memopol settings
 #
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DEBUG = os.environ.get('DJANGO_DEBUG', 'false').lower() == 'true'
 
 #

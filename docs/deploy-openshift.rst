@@ -38,8 +38,7 @@ To deploy the website, use a command like::
         cron-1.4 \
         postgresql-9.2 \
         -a yourappname \
-        -e OPENSHIFT_PYTHON_WSGI_APPLICATION=memopol/wsgi.py \
-        --from-code https://github.com/political-memory/political_memory.git \
+        -e OPENSHIFT_PYTHON_WSGI_APPLICATION=src/memopol/wsgi.py \
         --no-git
 
 This should create an app on openshift. Other commands would deploy it at once
@@ -87,7 +86,7 @@ Data provisionning
 To fill up the representatives database table, either wait for the cron script
 to be executed, either do it manually::
 
-    $ rhc ssh -a yourappname 'cd app-root/repo/ && bin/update_all'
+    $ rhc ssh -a yourappname 'cd app-root/repo && bin/update_all'
 
 OpenShift is fun, login with ssh and look around if you're curious, you'll be
 able to recreate your app without much effort if you break it anyway.

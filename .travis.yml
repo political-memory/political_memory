@@ -3,22 +3,24 @@ env:
   global:
   - DJANGO_DEBUG=True
   - DJANGO_SETTINGS_MODULE=memopol.settings
+  matrix:
+  - TOXENV=qa
+  - TOXENV=docs
+  - TOXENV=py27
 language: python
 python:
-- '2.7'
+- '3.4'
 services:
 - postgresql
 install:
-- pip install -U setuptools
-- pip install -e .[testing]
+- travis_retry pip install -U pip
+- travis_retry pip install tox
+- travis_retry pip freeze
 before_script:
-- bin/install_client_deps.sh
 - psql -c "CREATE USER memopol WITH CREATEDB PASSWORD 'memopol';" -U postgres
 - psql -c "CREATE DATABASE memopol WITH OWNER memopol;" -U postgres
 script:
-- flake8 . --exclude '*/migrations,docs,static' --ignore E128
-- py.test memopol memopol_scores
-- django-admin migrate
+- travis_retry tox
 after_success:
 - codecov
 deploy:

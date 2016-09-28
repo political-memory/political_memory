@@ -1,4 +1,4 @@
 [run]
 omit =
-	representatives_positions/contrib/*
-	representatives_recommendations/contrib/*
+	src/representatives_positions/contrib/*
+	src/representatives_recommendations/contrib/*

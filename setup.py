@@ -1,10 +1,12 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(name='political-memory',
     version='0.0.1',
-    description='OpenShift App',
-    packages=['political_memory'],
-    package_dir={'political_memory': '.'},
+    description='Political Memory Project Memopol',
+    packages=find_packages('src'),
+    package_dir={'': 'src'},
+    include_package_data=True,
+    zip_safe=False,
     author='James Pic, Laurent Peuch, Arnaud Fabre, Nicolas Joyard',
     author_email='cortex@worlddomination.be',
     url='http://github.com/political-memory/political_memory/',
@@ -49,6 +51,7 @@ setup(name='political-memory',
         'console_scripts': [
             'memopol_import_positions = representatives_positions.contrib.import_positions:main',  # noqa
             'memopol_import_recommendations = representatives_recommendations.contrib.import_recommendations:main',  # noqa
+            'memopol = memopol.manage:main',
         ]
     }
 )

@@ -10,7 +10,7 @@ Authentication in the admin backend
 If you haven't already, create a super-administrator
 account with command::
 
-    ./manage.py createsuperuser
+    memopol createsuperuser
 
 Then use this account to authenticate in the
 administration backend located in ``/admin``.

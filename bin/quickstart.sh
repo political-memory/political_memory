@@ -36,17 +36,17 @@ export DJANGO_DEBUG=True
 export DJANGO_SETTINGS_MODULE=memopol.settings
 
 # Run django migration to create database
-./manage.py migrate
+memopol migrate
 
 # Import sample data
-./manage.py loaddata memopol/fixtures/data_sample.json
+memopol loaddata data_sample.json
 
 echo
 echo "You're all set!"
 echo "To start the application run the following from the repository root ($REPOROOT):"
 echo "  source memopol_env/bin/activate"
 echo "  export DJANGO_DEBUG=True DJANGO_SETTINGS_MODULE=memopol.settings"
-echo "  ./manage.py runserver"
+echo "  memopol runserver"
 echo
 echo "If you make changes, don't forget to run tests using:"
 echo "  flake8 . --exclude '*/migrations,docs,static' --ignore E128"
