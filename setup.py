@@ -43,6 +43,7 @@ setup(name='political-memory',
             'pytest>=2,<3',
             'pytest-django>=2,<3',
             'pytest-cov>=2,<3',
+            'mock-2.0.0',
         ]
     },
     entry_points={
