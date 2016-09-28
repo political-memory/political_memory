@@ -7,14 +7,14 @@ set -xe
 
 source ${OPENSHIFT_HOMEDIR}app-root/runtime/dependencies/python/virtenv/bin/activate
 
-pip2 install -U pip
-pip2 install -Ue ${OPENSHIFT_REPO_DIR}
+pip2 install --no-cache-dir -U pip
+pip2 install --no-cache-dir -Ue ${OPENSHIFT_REPO_DIR}
 
 mkdir -p ${OPENSHIFT_DATA_DIR}media
 
 pushd ${OPENSHIFT_REPO_DIR}
 	if [ -f ${OPENSHIFT_DATA_DIR}sentry ]; then
-	    pip2 install raven
+	    pip2 --no-cache-dir install raven
 	fi
 
 	src/memopol/bin/install_client_deps.sh
