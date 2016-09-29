@@ -20,10 +20,6 @@ class PositionFormTest(BaseTest):
         'position-themes': '1'
     }
 
-    def test_position_form(self):
-        self.client.cookies['csrftoken'] = 'csrftoken'
-        self.selector_test('#add-position-form form')
-
     def test_select_representative(self):
         self.selector_test(
             '#add-position-form #id_position-representative option[selected]',
