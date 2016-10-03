@@ -1,0 +1,20 @@
+[
+{
+    "fields": {
+        "updated": "2016-02-14T14:01:37.343Z",
+        "last_name": "",
+        "photo": "http://www.nosdeputes.fr/depute/photo/bernard-roman",
+        "created": "2016-02-14T14:01:37.343Z",
+        "gender": 2,
+        "first_name": "",
+        "cv": "",
+        "active": true,
+        "birth_place": "Lille (Nord)",
+        "full_name": "Bernard Roman",
+        "birth_date": "1952-07-15",
+        "slug": "bernard-roman-1952-07-15"
+    },
+    "model": "representatives.representative",
+    "pk": 1
+}
+]

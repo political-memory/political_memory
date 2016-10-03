@@ -1,0 +1,100 @@
+[
+{
+    "fields": {
+        "updated": "2016-02-14T13:44:37.550Z",
+        "total_for": 1,
+        "description": "",
+        "reference": "http://www.assemblee-nationale.fr/scrutins/detail/(legislature)/14/(num)/740",
+        "title": "La motion de rejet pr\u00e9alable, pr\u00e9sent\u00e9e par m. le roux, de la proposition de loi permettant le libre choix des maires concernant les rythmes scolaires dans l'enseignement du premier degr\u00e9.",
+        "dossier": 1,
+        "created": "2016-02-14T13:44:37.550Z",
+        "kind": "dossier",
+        "datetime": "2013-12-04T23:00:00Z",
+        "total_against": 0,
+        "total_abstain": 0
+    },
+    "model": "representatives_votes.proposal",
+    "pk": 1
+},
+{
+    "fields": {
+        "updated": "2016-02-14T13:44:37.578Z",
+        "total_for": 0,
+        "description": "",
+        "reference": "http://www.assemblee-nationale.fr/scrutins/detail/(legislature)/14/(num)/740-2",
+        "title": "La motion de rejet pr\u00e9alable, pr\u00e9sent\u00e9e par m. le roux, de la proposition de loi permettant le libre choix des maires concernant les rythmes scolaires dans l'enseignement du premier degr\u00e9. (1)",
+        "dossier": 1,
+        "created": "2016-02-14T13:44:37.578Z",
+        "kind": "dossier",
+        "datetime": "2013-12-05T23:00:00Z",
+        "total_against": 1,
+        "total_abstain": 0
+    },
+    "model": "representatives_votes.proposal",
+    "pk": 2
+},
+{
+    "fields": {
+        "updated": "2016-02-14T13:44:37.587Z",
+        "total_for": 0,
+        "description": "",
+        "reference": "http://www.assemblee-nationale.fr/scrutins/detail/(legislature)/14/(num)/748",
+        "title": "L'amendement n\u00b0 381 de m. dolez  \u00e0 l'article 2 du projet de loi de modernisation de l'action publique territoriale et d'affirmation des m\u00e9tropoles.",
+        "dossier": 2,
+        "created": "2016-02-14T13:44:37.587Z",
+        "kind": "dossier",
+        "datetime": "2013-12-10T23:00:00Z",
+        "total_against": 0,
+        "total_abstain": 1
+    },
+    "model": "representatives_votes.proposal",
+    "pk": 3
+},
+{
+    "fields": {
+        "updated": "2016-02-14T13:44:37.596Z",
+        "total_for": 0,
+        "description": "",
+        "reference": "http://www.assemblee-nationale.fr/scrutins/detail/(legislature)/14/(num)/747",
+        "title": "L'amendement n\u00b0 379 de m. dolez  \u00e0 l'article 1er a du projet de loi de modernisation de l'action publique territoriale et d'affirmation des m\u00e9tropoles.",
+        "dossier": 2,
+        "created": "2016-02-14T13:44:37.596Z",
+        "kind": "dossier",
+        "datetime": "2013-12-10T23:00:00Z",
+        "total_against": 0,
+        "total_abstain": 0
+    },
+    "model": "representatives_votes.proposal",
+    "pk": 4
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "for",
+        "proposal": 1,
+        "representative": 1
+    },
+    "model": "representatives_votes.vote",
+    "pk": 1
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "against",
+        "proposal": 2,
+        "representative": 1
+    },
+    "model": "representatives_votes.vote",
+    "pk": 2
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "abstain",
+        "proposal": 3,
+        "representative": 1
+    },
+    "model": "representatives_votes.vote",
+    "pk": 3
+}
+]

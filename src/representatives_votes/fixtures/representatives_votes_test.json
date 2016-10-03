@@ -1,0 +1,834 @@
+[
+{
+    "fields": {
+        "updated": "2015-12-27T11:51:14.770Z",
+        "reference": "2012/2002(INI)",
+        "title": "Agenda for change: the future of EU development policy",
+        "text": "",
+        "created": "2015-12-27T11:51:14.770Z"
+    },
+    "model": "representatives_votes.dossier",
+    "pk": 1
+},
+{
+    "fields": {
+        "updated": "2015-12-27T11:51:14.781Z",
+        "reference": "2015/2132(BUD)",
+        "title": "2016 general budget: all sections",
+        "text": "",
+        "created": "2015-12-27T11:51:14.781Z"
+    },
+    "model": "representatives_votes.dossier",
+    "pk": 2
+},
+{
+    "fields": {
+        "updated": "2016-07-08T05:20:11.664Z",
+        "title": "",
+        "dossier": 1,
+        "created": "2016-07-08T05:20:11.664Z",
+        "kind": "procedure-file",
+        "chamber": 1,
+        "link": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2012/2002(INI)"
+    },
+    "model": "representatives_votes.document",
+    "pk": 1
+},
+{
+    "fields": {
+        "updated": "2016-07-08T05:20:11.664Z",
+        "title": "",
+        "dossier": 2,
+        "created": "2016-07-08T05:20:11.664Z",
+        "kind": "procedure-file",
+        "chamber": 1,
+        "link": "http://www.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2015/2132(BUD)"
+    },
+    "model": "representatives_votes.document",
+    "pk": 2
+},
+{
+    "fields": {
+        "updated": "2015-12-27T11:51:24.327Z",
+        "total_for": 0,
+        "description": "",
+        "reference": "A7-0234/2012",
+        "title": "A7-0234/2012 -  Charles Goerens - \u00a7 31",
+        "dossier": 1,
+        "created": "2015-12-27T11:51:24.327Z",
+        "kind": "\u00a7 31",
+        "datetime": "2012-10-23T16:31:10Z",
+        "total_against": 0,
+        "total_abstain": 2
+    },
+    "model": "representatives_votes.proposal",
+    "pk": 1
+},
+{
+    "fields": {
+        "updated": "2015-12-27T11:51:24.340Z",
+        "total_for": 2,
+        "description": "",
+        "reference": "A7-0234/2012",
+        "title": "A7-0234/2012 -  Charles Goerens - R\u00e9solution",
+        "dossier": 1,
+        "created": "2015-12-27T11:51:24.340Z",
+        "kind": "R\u00e9solution",
+        "datetime": "2012-10-23T16:34:32Z",
+        "total_against": 0,
+        "total_abstain": 0
+    },
+    "model": "representatives_votes.proposal",
+    "pk": 2
+},
+{
+    "fields": {
+        "updated": "2015-12-27T11:51:24.353Z",
+        "total_for": 0,
+        "description": "",
+        "reference": "A8-0298/2015",
+        "title": "A8-0298/2015 -  Jos\u00e9 Manuel Fernandes et  G\u00e9rard Deprez - Am 4",
+        "dossier": 2,
+        "created": "2015-12-27T11:51:24.353Z",
+        "kind": "Am 4",
+        "datetime": "2015-10-28T11:59:35Z",
+        "total_against": 2,
+        "total_abstain": 0
+    },
+    "model": "representatives_votes.proposal",
+    "pk": 3
+},
+{
+    "fields": {
+        "updated": "2015-12-27T11:51:24.367Z",
+        "total_for": 1,
+        "description": "",
+        "reference": "A8-0298/2015",
+        "title": "A8-0298/2015 -  Jos\u00e9 Manuel Fernandes et  G\u00e9rard Deprez - Am 29",
+        "dossier": 2,
+        "created": "2015-12-27T11:51:24.367Z",
+        "kind": "Am 29",
+        "datetime": "2015-10-28T12:00:12Z",
+        "total_against": 1,
+        "total_abstain": 0
+    },
+    "model": "representatives_votes.proposal",
+    "pk": 4
+},
+{
+    "fields": {
+        "updated": "2015-12-27T11:51:24.386Z",
+        "total_for": 0,
+        "description": "",
+        "reference": "A8-0298/2015",
+        "title": "A8-0298/2015 -  Jos\u00e9 Manuel Fernandes et  G\u00e9rard Deprez - Am 31",
+        "dossier": 2,
+        "created": "2015-12-27T11:51:24.386Z",
+        "kind": "Am 31",
+        "datetime": "2015-10-28T12:00:42Z",
+        "total_against": 1,
+        "total_abstain": 1
+    },
+    "model": "representatives_votes.proposal",
+    "pk": 5
+},
+{
+    "fields": {
+        "updated": "2015-12-27T11:51:24.411Z",
+        "total_for": 2,
+        "description": "",
+        "reference": "A8-0298/2015",
+        "title": "A8-0298/2015 -  Jos\u00e9 Manuel Fernandes et  G\u00e9rard Deprez - Am 30",
+        "dossier": 2,
+        "created": "2015-12-27T11:51:24.411Z",
+        "kind": "Am 30",
+        "datetime": "2015-10-28T12:01:09Z",
+        "total_against": 0,
+        "total_abstain": 0
+    },
+    "model": "representatives_votes.proposal",
+    "pk": 6
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "abstain",
+        "proposal": 1,
+        "representative": 2
+    },
+    "model": "representatives_votes.vote",
+    "pk": 1
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "abstain",
+        "proposal": 1,
+        "representative": 1
+    },
+    "model": "representatives_votes.vote",
+    "pk": 2
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "for",
+        "proposal": 2,
+        "representative": 2
+    },
+    "model": "representatives_votes.vote",
+    "pk": 3
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "for",
+        "proposal": 2,
+        "representative": 1
+    },
+    "model": "representatives_votes.vote",
+    "pk": 4
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "against",
+        "proposal": 3,
+        "representative": 2
+    },
+    "model": "representatives_votes.vote",
+    "pk": 5
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "against",
+        "proposal": 3,
+        "representative": 1
+    },
+    "model": "representatives_votes.vote",
+    "pk": 6
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "for",
+        "proposal": 4,
+        "representative": 1
+    },
+    "model": "representatives_votes.vote",
+    "pk": 7
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "against",
+        "proposal": 4,
+        "representative": 2
+    },
+    "model": "representatives_votes.vote",
+    "pk": 8
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "abstain",
+        "proposal": 5,
+        "representative": 1
+    },
+    "model": "representatives_votes.vote",
+    "pk": 9
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "against",
+        "proposal": 5,
+        "representative": 2
+    },
+    "model": "representatives_votes.vote",
+    "pk": 10
+},
+{
+    "fields": {
+        "representative_name": "",
+        "position": "for",
+        "proposal": 6,
+        "representative": 1
+    },
+    "model": "representatives_votes.vote",
+    "pk": 11
+},
+{
+    "fields": {
+        "code": "AT",
+        "name": "Austria"
+    },
+    "model": "representatives.country",
+    "pk": 1043
+},
+{
+    "fields": {
+        "code": "SE",
+        "name": "Sweden"
+    },
+    "model": "representatives.country",
+    "pk": 1202
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:23.995Z",
+        "last_name": "PIRKER",
+        "photo": "http://www.europarl.europa.eu/mepphoto/2307.jpg",
+        "created": "2015-12-13T02:07:23.995Z",
+        "gender": 2,
+        "first_name": "Hubert",
+        "cv": "Transport and security spokesman, \u00d6VP Delegation, European Parliament;\nsecurity spokesman, \u00d6VP Delegation, European Parliament (2006-2009); security spokesman (coordinator), EPP Group (1999-2004); Deputy Head of \u00d6VP Delegation, European Parliament (1996-2004);",
+        "active": false,
+        "birth_place": "Gries",
+        "full_name": "Hubert PIRKER",
+        "birth_date": "1948-10-03",
+        "slug": "hubert-pirker-1948-10-03"
+    },
+    "model": "representatives.representative",
+    "pk": 1
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.361Z",
+        "last_name": "LUDVIGSSON",
+        "photo": "http://www.europarl.europa.eu/mepphoto/96673.jpg",
+        "created": "2015-12-13T02:07:24.361Z",
+        "gender": 2,
+        "first_name": "Olle",
+        "cv": "",
+        "active": true,
+        "birth_place": "H\u00e4ls\u00f6",
+        "full_name": "Olle LUDVIGSSON",
+        "birth_date": "1948-10-28",
+        "slug": "olle-ludvigsson-1948-10-03"
+    },
+    "model": "representatives.representative",
+    "pk": 2
+},
+{
+    "fields": {
+        "email": "olle.ludvigsson@europarl.europa.eu",
+        "updated": "2015-12-13T02:07:24.404Z",
+        "representative": 2,
+        "kind": "official",
+        "created": "2015-12-13T02:07:24.404Z"
+    },
+    "model": "representatives.email",
+    "pk": 1
+},
+{
+    "fields": {
+        "url": "http://www.sap.se/olle",
+        "updated": "2015-12-13T02:07:24.406Z",
+        "representative": 2,
+        "kind": "",
+        "created": "2015-12-13T02:07:24.406Z"
+    },
+    "model": "representatives.website",
+    "pk": 1
+},
+{
+    "fields": {
+        "url": "http://twitter.com/olleludvigsson",
+        "updated": "2015-12-13T02:07:24.407Z",
+        "representative": 2,
+        "kind": "twitter",
+        "created": "2015-12-13T02:07:24.407Z"
+    },
+    "model": "representatives.website",
+    "pk": 2
+},
+{
+    "fields": {
+        "url": "https://www.facebook.com/olle.ludvigsson",
+        "updated": "2015-12-13T02:07:24.408Z",
+        "representative": 2,
+        "kind": "facebook",
+        "created": "2015-12-13T02:07:24.408Z"
+    },
+    "model": "representatives.website",
+    "pk": 3
+},
+{
+    "fields": {
+        "url": "http://www.europarl.europa.eu/meps/en/2307/_home.html",
+        "updated": "2015-12-13T02:07:24.406Z",
+        "representative": 1,
+        "kind": "EP",
+        "created": "2015-12-13T02:07:24.406Z"
+    },
+    "model": "representatives.website",
+    "pk": 4
+},
+{
+    "fields": {
+        "url": "http://www.europarl.europa.eu/meps/en/96673/_home.html",
+        "updated": "2015-12-13T02:07:24.406Z",
+        "representative": 2,
+        "kind": "EP",
+        "created": "2015-12-13T02:07:24.406Z"
+    },
+    "model": "representatives.website",
+    "pk": 5
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:23.997Z",
+        "name": "Committee on Employment and Social Affairs",
+        "created": "2015-12-13T02:07:23.996Z",
+        "kind": "committee",
+        "abbreviation": "EMPL"
+    },
+    "model": "representatives.group",
+    "pk": 1
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.002Z",
+        "name": "Delegation for relations with the countries of Southeast Asia and the Association of Southeast Asian Nations (ASEAN)",
+        "created": "2015-12-13T02:07:24.002Z",
+        "kind": "delegation",
+        "abbreviation": ""
+    },
+    "model": "representatives.group",
+    "pk": 2
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.006Z",
+        "name": "Delegation for relations with the Member States of ASEAN, South-east Asia and the Republic of Korea",
+        "created": "2015-12-13T02:07:24.005Z",
+        "kind": "delegation",
+        "abbreviation": ""
+    },
+    "model": "representatives.group",
+    "pk": 3
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.009Z",
+        "name": "Group of the European People's Party (Christian Democrats) and European Democrats",
+        "created": "2015-12-13T02:07:24.009Z",
+        "kind": "group",
+        "abbreviation": "PPE-DE"
+    },
+    "model": "representatives.group",
+    "pk": 4
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.013Z",
+        "name": "Group of the European People's Party (Christian-Democratic Group)",
+        "created": "2015-12-13T02:07:24.013Z",
+        "kind": "group",
+        "abbreviation": "EPP"
+    },
+    "model": "representatives.group",
+    "pk": 5
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.017Z",
+        "name": "Austria",
+        "created": "2015-12-13T02:07:24.017Z",
+        "kind": "country",
+        "abbreviation": "AT"
+    },
+    "model": "representatives.group",
+    "pk": 6
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.024Z",
+        "name": "Conference of Delegation Chairs",
+        "created": "2015-12-13T02:07:24.024Z",
+        "kind": "organization",
+        "abbreviation": ""
+    },
+    "model": "representatives.group",
+    "pk": 7
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.362Z",
+        "name": "Committee on Economic and Monetary Affairs",
+        "created": "2015-12-13T02:07:24.362Z",
+        "kind": "committee",
+        "abbreviation": "ECON"
+    },
+    "model": "representatives.group",
+    "pk": 8
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.366Z",
+        "name": "Committee on Industry, Research and Energy",
+        "created": "2015-12-13T02:07:24.366Z",
+        "kind": "committee",
+        "abbreviation": "ITRE"
+    },
+    "model": "representatives.group",
+    "pk": 9
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.372Z",
+        "name": "Delegation to the EU-Serbia Stabilisation and Association Parliamentary Committee",
+        "created": "2015-12-13T02:07:24.372Z",
+        "kind": "delegation",
+        "abbreviation": ""
+    },
+    "model": "representatives.group",
+    "pk": 10
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.375Z",
+        "name": "Delegation for relations with Bosnia and Herzegovina, and Kosovo",
+        "created": "2015-12-13T02:07:24.375Z",
+        "kind": "delegation",
+        "abbreviation": ""
+    },
+    "model": "representatives.group",
+    "pk": 11
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.379Z",
+        "name": "Delegation for relations with Australia and New Zealand",
+        "created": "2015-12-13T02:07:24.379Z",
+        "kind": "delegation",
+        "abbreviation": ""
+    },
+    "model": "representatives.group",
+    "pk": 12
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.383Z",
+        "name": "Group of the Progressive Alliance of Socialists and Democrats in the European Parliament",
+        "created": "2015-12-13T02:07:24.383Z",
+        "kind": "group",
+        "abbreviation": "SD"
+    },
+    "model": "representatives.group",
+    "pk": 13
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.389Z",
+        "name": "Sweden",
+        "created": "2015-12-13T02:07:24.389Z",
+        "kind": "country",
+        "abbreviation": "SE"
+    },
+    "model": "representatives.group",
+    "pk": 14
+},
+{
+    "fields": {
+        "country": null,
+        "updated": "2015-12-13T02:07:23.998Z",
+        "name": "European Parliament",
+        "created": "2015-12-13T02:07:23.998Z"
+    },
+    "model": "representatives.constituency",
+    "pk": 1
+},
+{
+    "fields": {
+        "country": 1043,
+        "updated": "2015-12-13T02:07:24.018Z",
+        "name": "\u00d6sterreichische Volkspartei",
+        "created": "2015-12-13T02:07:24.018Z"
+    },
+    "model": "representatives.constituency",
+    "pk": 2
+},
+{
+    "fields": {
+        "country": 1202,
+        "updated": "2015-12-13T02:07:24.390Z",
+        "name": "Arbetarepartiet- Socialdemokraterna",
+        "created": "2015-12-13T02:07:24.390Z"
+    },
+    "model": "representatives.constituency",
+    "pk": 3
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.001Z",
+        "group": 1,
+        "end_date": "1999-07-19",
+        "created": "2015-12-13T02:07:24.001Z",
+        "role": "Substitute",
+        "representative": 1,
+        "link": "",
+        "begin_date": "1997-01-16",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 1
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.005Z",
+        "group": 2,
+        "end_date": "2014-06-30",
+        "created": "2015-12-13T02:07:24.005Z",
+        "role": "Member",
+        "representative": 1,
+        "link": "",
+        "begin_date": "2013-10-09",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 2
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.008Z",
+        "group": 3,
+        "end_date": "1997-01-15",
+        "created": "2015-12-13T02:07:24.008Z",
+        "role": "Member",
+        "representative": 1,
+        "link": "",
+        "begin_date": "1996-11-14",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 3
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.011Z",
+        "group": 4,
+        "end_date": "2004-07-19",
+        "created": "2015-12-13T02:07:24.011Z",
+        "role": "Member",
+        "representative": 1,
+        "link": "",
+        "begin_date": "1999-07-20",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 4
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.015Z",
+        "group": 5,
+        "end_date": "1999-07-19",
+        "created": "2015-12-13T02:07:24.015Z",
+        "role": "Member",
+        "representative": 1,
+        "link": "",
+        "begin_date": "1996-11-11",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 5
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.020Z",
+        "group": 6,
+        "end_date": "2004-07-19",
+        "created": "2015-12-13T02:07:24.020Z",
+        "role": "",
+        "representative": 1,
+        "link": "",
+        "begin_date": "1999-07-20",
+        "constituency": 2
+    },
+    "model": "representatives.mandate",
+    "pk": 6
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.023Z",
+        "group": 6,
+        "end_date": "1999-07-19",
+        "created": "2015-12-13T02:07:24.023Z",
+        "role": "",
+        "representative": 1,
+        "link": "",
+        "begin_date": "1996-11-11",
+        "constituency": 2
+    },
+    "model": "representatives.mandate",
+    "pk": 7
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.026Z",
+        "group": 7,
+        "end_date": "2009-07-13",
+        "created": "2015-12-13T02:07:24.026Z",
+        "role": "Member",
+        "representative": 1,
+        "link": "",
+        "begin_date": "2006-03-21",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 8
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.364Z",
+        "group": 8,
+        "end_date": "9999-12-31",
+        "created": "2015-12-13T02:07:24.364Z",
+        "role": "Member",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2014-07-01",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 9
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.368Z",
+        "group": 9,
+        "end_date": "9999-12-31",
+        "created": "2015-12-13T02:07:24.368Z",
+        "role": "Substitute",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2014-07-08",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 10
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.371Z",
+        "group": 8,
+        "end_date": "2012-01-18",
+        "created": "2015-12-13T02:07:24.371Z",
+        "role": "Substitute",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2009-07-16",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 11
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.374Z",
+        "group": 10,
+        "end_date": "9999-12-31",
+        "created": "2015-12-13T02:07:24.374Z",
+        "role": "Member",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2014-07-14",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 12
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.378Z",
+        "group": 11,
+        "end_date": "9999-12-31",
+        "created": "2015-12-13T02:07:24.378Z",
+        "role": "Substitute",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2015-05-18",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 13
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.382Z",
+        "group": 12,
+        "end_date": "2013-01-10",
+        "created": "2015-12-13T02:07:24.382Z",
+        "role": "Substitute",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2009-09-17",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 14
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.385Z",
+        "group": 13,
+        "end_date": "9999-12-31",
+        "created": "2015-12-13T02:07:24.385Z",
+        "role": "Member",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2014-07-01",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 15
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.388Z",
+        "group": 13,
+        "end_date": "2014-06-30",
+        "created": "2015-12-13T02:07:24.388Z",
+        "role": "Member",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2009-07-14",
+        "constituency": 1
+    },
+    "model": "representatives.mandate",
+    "pk": 16
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.392Z",
+        "group": 14,
+        "end_date": "9999-12-31",
+        "created": "2015-12-13T02:07:24.392Z",
+        "role": "",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2014-07-01",
+        "constituency": 3
+    },
+    "model": "representatives.mandate",
+    "pk": 17
+},
+{
+    "fields": {
+        "updated": "2015-12-13T02:07:24.395Z",
+        "group": 14,
+        "end_date": "2014-06-30",
+        "created": "2015-12-13T02:07:24.395Z",
+        "role": "",
+        "representative": 2,
+        "link": "",
+        "begin_date": "2009-07-14",
+        "constituency": 3
+    },
+    "model": "representatives.mandate",
+    "pk": 18
+}
+]

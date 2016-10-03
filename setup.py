@@ -1,10 +1,12 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(name='political-memory',
     version='0.0.1',
-    description='OpenShift App',
-    packages=['political_memory'],
-    package_dir={'political_memory': '.'},
+    description='Political Memory Project Memopol',
+    packages=find_packages('src'),
+    package_dir={'': 'src'},
+    include_package_data=True,
+    zip_safe=False,
     author='James Pic, Laurent Peuch, Arnaud Fabre, Nicolas Joyard',
     author_email='cortex@worlddomination.be',
     url='http://github.com/political-memory/political_memory/',
@@ -17,8 +19,6 @@ setup(name='political-memory',
         'django-datetime-widget>=0.9,<1.0',
         'django-filter>=0.13,<0.14',
         'django-fontawesome>=0.2,<0.3',
-        'django-representatives-votes==0.0.24',
-        'django-representatives==0.0.35',
         'django-rql-filter>=0.1.3,<0.2',
         'django-taggit>=0.17,<0.18',
         'django>=1.8,<1.9',
@@ -43,12 +43,14 @@ setup(name='political-memory',
             'pytest>=2,<3',
             'pytest-django>=2,<3',
             'pytest-cov>=2,<3',
+            'mock-2.0.0',
         ]
     },
     entry_points={
         'console_scripts': [
             'memopol_import_positions = representatives_positions.contrib.import_positions:main',  # noqa
             'memopol_import_recommendations = representatives_recommendations.contrib.import_recommendations:main',  # noqa
+            'memopol = memopol.manage:main',
         ]
     }
 )

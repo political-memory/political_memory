@@ -1,0 +1,286 @@
+[
+  {
+    "twitter": "bernardroman59",
+    "profession": "Avocat, administrateur territorial",
+    "url_nosdeputes_api": "https://www.nosdeputes.fr/bernard-roman/json",
+    "nb_mandats": 2,
+    "chambre": "AN",
+    "id": 153,
+    "groupes_parlementaires": [
+      {
+        "responsabilite": {
+          "organisme": "Groupe d'amitié france-mexique",
+          "fonction": "vice-président"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Groupe d'amitié france-argentine",
+          "fonction": "vice-président"
+        }
+      }
+    ],
+    "sexe": "H",
+    "lieu_naissance": "Lille (Nord)",
+    "anciens_autres_mandats": [
+      {
+        "mandat": "Nord-Pas-de-Calais / Conseil régional / Membre / 17/03/1986 / 01/04/1989"
+      },
+      {
+        "mandat": "Nord / Conseil général / Membre / 03/10/1988 / 27/03/1994"
+      },
+      {
+        "mandat": "Lille (Nord) / Conseil municipal / Adjoint au Maire / 19/03/2001 / 17/04/2004"
+      },
+      {
+        "mandat": "Nord / Conseil général / Membre / 28/03/1994 / 31/07/1997"
+      },
+      {
+        "mandat": "Lille (Nord) / Conseil municipal / Adjoint au Maire / 14/03/1983 / 19/03/1989"
+      },
+      {
+        "mandat": "Lille (Nord) / Conseil municipal / Adjoint au Maire / 20/03/1989 / 18/06/1995"
+      },
+      {
+        "mandat": "Lille (Nord) / Conseil municipal / Adjoint au Maire / 19/06/1995 / 18/03/2001"
+      },
+      {
+        "mandat": "Nord-Pas-de-Calais / Conseil régional / Vice-président / 29/03/2004 / 14/03/2010"
+      }
+    ],
+    "mandat_debut": "2012-06-20",
+    "emails": [
+      {
+        "email": "contact@bernard-roman.org"
+      },
+      {
+        "email": "broman@assemblee-nationale.fr"
+      }
+    ],
+    "responsabilites_extra_parlementaires": [],
+    "anciens_mandats": [
+      {
+        "mandat": "20/06/2007 / 19/06/2012 / fin de législature"
+      },
+      {
+        "mandat": "20/06/2012 /  / "
+      },
+      {
+        "mandat": "01/06/1997 / 18/06/2002 / fin de législature"
+      },
+      {
+        "mandat": "19/06/2002 / 19/06/2007 / fin de législature"
+      }
+    ],
+    "groupe": {
+      "organisme": "Socialiste, républicain et citoyen",
+      "fonction": "membre"
+    },
+    "nom": "Bernard Roman",
+    "sites_web": [
+      {
+        "site": "http://www.bernard-roman.net"
+      },
+      {
+        "site": "https://twitter.com/bernardroman59"
+      }
+    ],
+    "groupe_sigle": "SRC",
+    "nom_circo": "Nord",
+    "parti_ratt_financier": "Parti socialiste",
+    "place_en_hemicycle": "424",
+    "autres_mandats": [
+      {
+        "mandat": "Nord-Pas-de-Calais / Conseil régional / vice-président"
+      }
+    ],
+    "url_nosdeputes": "https://www.nosdeputes.fr/bernard-roman",
+    "url_an": "http://www2.assemblee-nationale.fr/deputes/fiche/OMC_PA2611",
+    "adresses": [
+      {
+        "geo": {
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              3.06785,
+              50.623596
+            ]
+          },
+          "type": "Feature",
+          "properties": {
+            "city": "Lille",
+            "citycode": "59350",
+            "street": "Rue d'Arras",
+            "name": "20 Rue d'Arras",
+            "housenumber": "20",
+            "label": "20 Rue d'Arras 59000 Lille",
+            "score": 0.30006938349007306,
+            "postcode": "59000",
+            "context": "59, Nord, Nord-Pas-de-Calais",
+            "type": "housenumber",
+            "id": "ADRNIVX_0000000331894641"
+          }
+        },
+        "tel": "03 20 52 09 20",
+        "fax": "03 28 54 01 37",
+        "adresse": "Permanence, 165 Rue d'Arras, 59000 Lille Téléphone : 03 20 52 09 20 Télécopie : 03 28 54 01 37"
+      },
+      {
+        "geo": {
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              3.077254,
+              50.628633
+            ]
+          },
+          "type": "Feature",
+          "properties": {
+            "city": "Lille",
+            "citycode": "59350",
+            "name": "Avenue du Président Hoover",
+            "label": "Avenue du Président Hoover 59000 Lille",
+            "score": 0.4689764705882353,
+            "postcode": "59000",
+            "context": "59, Nord, Nord-Pas-de-Calais",
+            "type": "street",
+            "id": "59350_XXXX_32cc9a"
+          }
+        },
+        "adresse": "Conseil régional, 151 Avenue du Président Hoover 59555 Lille cedex"
+      },
+      {
+        "adresse": "Assemblée nationale, 126 Rue de l'Université, 75355 Paris 07 SP"
+      }
+    ],
+    "date_naissance": "1952-07-15",
+    "slug": "bernard-roman",
+    "id_an": "2611",
+    "photo_url": "http://www.nosdeputes.fr/depute/photo/bernard-roman",
+    "prenom": "Bernard",
+    "num_deptmt": "59",
+    "nom_de_famille": "Roman",
+    "num_circo": 1,
+    "responsabilites": [
+      {
+        "responsabilite": {
+          "organisme": "Bureau de l'assemblée nationale",
+          "fonction": "questeur"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Commission des lois constitutionnelles, de la législation et de l'administration générale de la république",
+          "fonction": "membre"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Délégation chargée de la communication et de la presse",
+          "fonction": "membre"
+        }
+      }
+    ]
+  },
+  {
+    "mandat_debut": "2004-09-26",
+    "mandat_fin": "2012-01-01",
+    "twitter": "dassouline",
+    "profession": "Professeur d'histoire-géographie",
+    "url_nossenateurs_api": "http://www.nossenateurs.fr/david-assouline/json",
+    "chambre": "SEN",
+    "nb_mandats": 3,
+    "id": 44,
+    "groupes_parlementaires": [
+      {
+        "responsabilite": {
+          "organisme": "Groupe France-Japon",
+          "fonction": "président"
+        }
+      }
+    ],
+    "sexe": "H",
+    "lieu_naissance": "non disponible",
+    "anciens_autres_mandats": [],
+    "url_nossenateurs": "http://www.nossenateurs.fr/david-assouline",
+    "emails": [
+      {
+        "email": "d.assouline@senat.fr"
+      }
+    ],
+    "responsabilites_extra_parlementaires": [
+      {
+        "responsabilite": {
+          "organisme": "Centre national du cinéma et de l'image animée",
+          "fonction": "membre"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Commission de modernisation de la diffusion audiovisuelle",
+          "fonction": "membre"
+        }
+      },
+      {
+        "responsabilite": {
+          "organisme": "Section française de l'Assemblée parlementaire de la francophonie (A.P.F)",
+          "fonction": "membre"
+        }
+      }
+    ],
+    "anciens_mandats": [
+      {
+        "mandat": "25/09/2011 /  / "
+      },
+      {
+        "mandat": "26/09/2004 / 25/09/2011 / "
+      }
+    ],
+    "url_institution": "http://www.senat.fr/senateur/assouline_david04059m.html",
+    "parti_ratt_financier": "Parti socialiste",
+    "groupe": {
+      "organisme": "Socialiste et républicain",
+      "fonction": "membre"
+    },
+    "nom": "David Assouline",
+    "sites_web": [
+      {
+        "site": "http://www.david-assouline.net"
+      },
+      {
+        "site": "https://twitter.com/dassouline"
+      },
+      {
+        "site": "https://www.facebook.com/DavAssouline"
+      },
+      {
+        "site": "http://david-assouline.net"
+      }
+    ],
+    "groupe_sigle": "SOC",
+    "nom_circo": "Paris",
+    "id_institution": "assouline_david04059m",
+    "place_en_hemicycle": "114",
+    "autres_mandats": [
+      {
+        "mandat": "Paris (20ème arrondissement) / conseiller"
+      }
+    ],
+    "adresses": [],
+    "date_naissance": "1959-06-16",
+    "slug": "david-assouline",
+    "photo_url": "http://www.nossenateurs.fr/senateur/photo/david-assouline",
+    "prenom": "David",
+    "num_deptmt": "75",
+    "nom_de_famille": "Assouline",
+    "num_circo": "non disponible",
+    "responsabilites": [
+      {
+        "responsabilite": {
+          "organisme": "Commission de la culture, de l'éducation et de la communication",
+          "fonction": "vice-président"
+        }
+      }
+    ]
+  }
+]

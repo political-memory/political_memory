@@ -24,6 +24,10 @@ function downloadFromGithub()
 	local repo=$2
 	local ref=$3
 
+	if [ -d $dest ]; then
+		echo "* $repo ($ref) already downloaded, skipping"
+		return
+	fi
 	echo "* Downloading $repo ($ref) from Github..."
 	wget -O temp.zip -q https://github.com/${repo}/archive/${ref}.zip
 	unzip -q temp.zip
@@ -33,7 +37,9 @@ function downloadFromGithub()
 
 set -e
 
-[ -d ${DEST} ] && rm -r ${DEST}
+if [ -z ${CI-} ]; then
+	[ -d ${DEST} ] && rm -r ${DEST}
+fi
 mkdir -p ${DEST}
 
 downloadFromGithub jquery jquery/jquery 2.1.4

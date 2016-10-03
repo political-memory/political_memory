@@ -7,25 +7,25 @@ set -xe
 
 source ${OPENSHIFT_HOMEDIR}app-root/runtime/dependencies/python/virtenv/bin/activate
 
-pip install -U pip
-pip install -Ue ${OPENSHIFT_REPO_DIR}
+pip2 install --no-cache-dir -U pip
+pip2 install --no-cache-dir -Ue ${OPENSHIFT_REPO_DIR}
 
 mkdir -p ${OPENSHIFT_DATA_DIR}media
 
 pushd ${OPENSHIFT_REPO_DIR}
 	if [ -f ${OPENSHIFT_DATA_DIR}sentry ]; then
-	    pip install raven
+	    pip2 --no-cache-dir install raven
 	fi
 
-	bin/install_client_deps.sh
+	src/memopol/bin/install_client_deps.sh
 
 	mkdir -p wsgi/static
 
-	[ -f memopol/local_settings.py ] && rm memopol/local_settings.py
-	cp .openshift/local_settings.py memopol/local_settings.py
+	[ -f src/memopol/local_settings.py ] && rm src/memopol/local_settings.py
+	cp .openshift/local_settings.py src/memopol/local_settings.py
 
-	./manage.py migrate --noinput
-	./manage.py collectstatic --noinput
+	memopol migrate --noinput
+	memopol collectstatic --noinput
 
 	ln -sf ${OPENSHIFT_DATA_DIR}media wsgi/static/media
 	ln -sf ${OPENSHIFT_DATA_DIR}compress/CACHE wsgi/static/collected/CACHE

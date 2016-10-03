@@ -1,0 +1,105 @@
+[
+{
+    "fields" : {
+        "abbreviation": "AN",
+        "country": 1095,
+        "name": "Assembl\u00e9e nationale"
+    },
+    "model": "representatives.chamber",
+    "pk": 2
+},
+{
+    "fields": {
+        "abbreviation": "SEN",
+        "country": 1095,
+        "name": "S\u00e9nat"
+    },
+    "model": "representatives.chamber",
+    "pk": 3
+},
+{
+    "fields": {
+        "text": "",
+        "updated": "2016-07-07T20:23:24.303Z",
+        "title": "Education : libre choix des maires concernant les rythmes scolaires dans le premier degr\u00e9",
+        "reference": "14/liberte_maires_rythmes_scolaires_premier_degre",
+        "created": "2016-07-07T20:23:24.302Z"
+    },
+    "model": "representatives_votes.dossier",
+    "pk": 1
+},
+{
+    "fields": {
+        "text": "",
+        "updated": "2016-07-07T20:23:24.365Z",
+        "title": "Collectivit\u00e9s territoriales : action publique territoriale et m\u00e9tropoles",
+        "reference": "14/action_publique_territoriale_metropoles",
+        "created": "2016-07-07T20:23:24.332Z"
+    },
+    "model": "representatives_votes.dossier",
+    "pk": 2
+},
+{
+    "fields": {
+        "text": "",
+        "updated": "2016-07-07T20:23:24.410Z",
+        "title": "Protection de l'enfant",
+        "reference": "ppl13-799",
+        "created": "2016-07-07T20:23:24.410Z"
+    },
+    "model": "representatives_votes.dossier",
+    "pk": 3
+},
+{
+    "fields": {
+        "updated": "2016-07-07T20:23:24.307Z",
+        "title": "",
+        "dossier": 1,
+        "created": "2016-07-07T20:23:24.307Z",
+        "kind": "procedure-file",
+        "chamber": 2,
+        "link": "http://www.assemblee-nationale.fr/14/dossiers/liberte_maires_rythmes_scolaires_premier_degre.asp"
+    },
+    "model": "representatives_votes.document",
+    "pk": 1
+},
+{
+    "fields": {
+        "updated": "2016-07-07T20:23:24.335Z",
+        "title": "",
+        "dossier": 2,
+        "created": "2016-07-07T20:23:24.335Z",
+        "kind": "procedure-file",
+        "chamber": 3,
+        "link": "http://www.senat.fr/dossier-legislatif/pjl12-495.html"
+    },
+    "model": "representatives_votes.document",
+    "pk": 2
+},
+{
+    "fields": {
+        "updated": "2016-07-07T20:23:24.371Z",
+        "title": "",
+        "dossier": 2,
+        "created": "2016-07-07T20:23:24.371Z",
+        "kind": "procedure-file",
+        "chamber": 2,
+        "link": "http://www.assemblee-nationale.fr/14/dossiers/action_publique_territoriale_metropoles.asp"
+    },
+    "model": "representatives_votes.document",
+    "pk": 3
+},
+{
+    "fields": {
+        "updated": "2016-07-07T20:23:24.415Z",
+        "title": "",
+        "dossier": 3,
+        "created": "2016-07-07T20:23:24.415Z",
+        "kind": "procedure-file",
+        "chamber": 3,
+        "link": "http://www.senat.fr/dossier-legislatif/ppl13-799.html"
+    },
+    "model": "representatives_votes.document",
+    "pk": 4
+}
+]

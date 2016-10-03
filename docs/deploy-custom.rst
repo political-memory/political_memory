@@ -23,14 +23,14 @@ Customize settings
 
 Create a copy of the example local settings file::
 
-    $ cp memopol/local_settings.py.example memopol/local_settings.py
+    $ cp src/memopol/local_settings.py.example src/memopol/local_settings.py
 
-Edit ``memopol/local_settings.py`` to set directories, database settings and
+Edit ``src/memopol/local_settings.py`` to set directories, database settings and
 allowed hosts.  Setup your WSGI server to serve:
 
 * Static files from the directory specified in the ``PUBLIC_DIR`` setting to the
   ``/static`` URL
-* The memopol/wsgi.py WSGI application
+* The ``src/memopol/wsgi.py`` WSGI application
 
 Initial memopol setup
 =====================
@@ -41,7 +41,7 @@ From the repository root, install python dependencies::
 
 Install client libraries::
 
-    $ bin/install_client_deps.sh
+    $ src/memopol/bin/install_client_deps.sh
 
 Setup the database schema::
 

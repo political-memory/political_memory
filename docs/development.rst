@@ -44,6 +44,11 @@ Create a python virtual environment and activate it::
 
     $ source memopol_env/bin/activate
 
+Alternatively, use the tox command::
+
+    $ tox -e py27
+    $ source .tox/py27/bin/activate
+
 Clone the repository
 ====================
 
@@ -132,7 +137,7 @@ Database migrations ensure the database schema is up to date with the project.
 If you're not sure, you can run them anyway, they won't do any harm.  Use the
 following command::
 
-    $ ./manage.py migrate
+    $ memopol migrate
     Operations to perform:
       Synchronize unmigrated apps: django_filters, staticfiles, datetimewidget, autocomplete_light, messages, adminplus, compressor, humanize, django_extensions, constance, bootstrap3
       Apply all migrations: legislature, votes, database, admin, positions, sessions, representatives, auth, contenttypes, representatives_votes, taggit
@@ -153,7 +158,7 @@ Provision with data
 
 You can load a small data sample for quick setup:
 
-    $ ./manage.py loaddata memopol/fixtures/small_sample.json
+    $ memopol loaddata small_sample.json
 
 Or actual data (takes a while)::
 
@@ -164,7 +169,7 @@ Run the development server
 
 Run the development server::
 
-    $ ./manage.py runserver
+    $ memopol runserver
 
     Performing system checks...
 

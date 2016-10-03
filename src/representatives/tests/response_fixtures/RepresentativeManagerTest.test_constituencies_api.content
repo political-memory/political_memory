@@ -1,0 +1,1 @@
+[{"id":1,"url":"http://testserver/api/constituencies/1/?format=json","name":"European Parliament"},{"id":2,"url":"http://testserver/api/constituencies/2/?format=json","name":"Österreichische Volkspartei"},{"id":3,"url":"http://testserver/api/constituencies/3/?format=json","name":"Arbetarepartiet- Socialdemokraterna"}]
