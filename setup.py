@@ -29,7 +29,6 @@ setup(name='political-memory',
         'unicodecsv>=0.14,<0.15',
         'pytz',  # Always use up-to-date TZ data
         'django-suit>=0.2,<0.3',
-        'sqlparse>=0.1,<0.2',
         'psycopg2>=2,<3',
     ],
     extras_require={
