@@ -48,6 +48,13 @@ setup(name='political-memory',
     },
     entry_points={
         'console_scripts': [
+            'parltrack_import_representatives = representatives.contrib.parltrack.import_representatives:main',  # noqa
+            'parltrack_import_dossiers = representatives_votes.contrib.parltrack.import_dossiers:main',  # noqa
+            'parltrack_import_votes = representatives_votes.contrib.parltrack.import_votes:main',  # noqa
+            'francedata_import_representatives = representatives.contrib.francedata.import_representatives:main',  # noqa
+            'francedata_import_dossiers = representatives_votes.contrib.francedata.import_dossiers:main',  # noqa
+            'francedata_import_scrutins = representatives_votes.contrib.francedata.import_scrutins:main',  # noqa
+            'francedata_import_votes = representatives_votes.contrib.francedata.import_votes:main',  # noqa
             'memopol_import_positions = representatives_positions.contrib.import_positions:main',  # noqa
             'memopol_import_recommendations = representatives_recommendations.contrib.import_recommendations:main',  # noqa
             'memopol = memopol.manage:main',
