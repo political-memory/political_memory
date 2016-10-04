@@ -17,10 +17,11 @@ virtualenv memopol_env
 source memopol_env/bin/activate
 
 # Install python dependencies
+pip install -U pip setuptools
 pip install -e .[testing]
 
 # Install client dependencies
-bin/install_client_deps.sh
+src/memopol/bin/install_client_deps.sh
 
 # Create pg user and database
 if [ $(psql -c "select 'CNT=' || count(1) from pg_catalog.pg_user where usename='memopol';" -U postgres | grep CNT=1 | wc -l) -lt 1 ]; then

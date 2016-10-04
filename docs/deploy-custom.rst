@@ -35,8 +35,10 @@ allowed hosts.  Setup your WSGI server to serve:
 Initial memopol setup
 =====================
 
-From the repository root, install python dependencies::
+From the repository root, install python dependencies (you may want to do that
+in a virtualenv)::
 
+    $ pip install -U pip setuptools
     $ pip install -Ue .
 
 Install client libraries::
@@ -45,11 +47,11 @@ Install client libraries::
 
 Setup the database schema::
 
-    $ ./manage.py migrate --noinput
+    $ memopol migrate --noinput
 
 Collect static files::
 
-    $ ./manage.py collectstatic --noinput
+    $ memopol collectstatic --noinput
 
 Memopol should be ready to go.
 
@@ -60,9 +62,9 @@ To update simply pull the repository and run setup commands again::
 
     $ git pull
     $ pip install -Ue .
-    $ bin/install_client_deps.sh
-    $ ./manage.py migrate --noinput
-    $ ./manage.py collectstatic --noinput
+    $ src/memopol/bin/install_client_deps.sh
+    $ memopol migrate --noinput
+    $ memopol collectstatic --noinput
 
 Data provisionning
 ==================
@@ -72,7 +74,7 @@ Set up two cron jobs:
 * One to update data from parliaments, that runs ``bin/update_all``.  This
   script takes quite some time to run, so you should schedule it once every
   night for example
-* One to refresh scores,  that runs ``./manage.py refresh_scores``.  This one
+* One to refresh scores,  that runs ``memopol refresh_scores``.  This one
   runs quite quickly (a few seconds), you may want to run it after the update
   job has completed (but you can run it more often).
 
