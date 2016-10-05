@@ -240,7 +240,11 @@
         "representative": [
             "bernard-roman-1952-07-15"
         ],
-        "address": 2,
+        "address": [
+            "Permanence",
+            "",
+            "bernard-roman-1952-07-15"
+        ],
         "kind": ""
     },
     "model": "representatives.phone",
