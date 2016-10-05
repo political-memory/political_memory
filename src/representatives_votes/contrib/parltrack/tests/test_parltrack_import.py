@@ -45,8 +45,11 @@ class ParltrackVotesTest(TestBase):
             representatives.__path__[0]), 'fixtures',
             'representatives_test.json'))
 
-        with self.assertNumQueries(22):
-            self._test_import('single', import_dossiers.import_single)
+        with mock.patch('representatives_votes.contrib.parltrack.import_votes'
+                        '.Command.should_skip') as should_skip:
+            should_skip.return_value = False
+            with self.assertNumQueries(35):
+                self._test_import('single', import_dossiers.import_single)
 
     def test_parltrack_sync_dossier(self):
         for model in (Representative, Dossier, Proposal, Vote):
