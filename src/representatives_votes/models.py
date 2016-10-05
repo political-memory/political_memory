@@ -45,9 +45,9 @@ class Document(TimeStampedModel):
 
 
 class ProposalManager(models.Manager):
-    def get_by_natural_key(self, reference, dossier_nk):
+    def get_by_natural_key(self, title, dossier_nk):
         dossier = Dossier.objects.get_by_natural_key(dossier_nk)
-        return self.get(reference=reference, dossier=dossier)
+        return self.get(title=title, dossier=dossier)
 
 
 class Proposal(TimeStampedModel):
@@ -84,7 +84,7 @@ class Proposal(TimeStampedModel):
         return unicode(self.title)
 
     def natural_key(self):
-        return (self.reference,) + self.dossier.natural_key()
+        return (self.title,) + self.dossier.natural_key()
 
 
 class Vote(models.Model):
