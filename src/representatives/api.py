@@ -24,10 +24,12 @@ from .models import (
     Chamber,
     Constituency,
     Country,
+    Email,
     Group,
     Mandate,
     Phone,
     Representative,
+    WebSite,
 )
 
 
@@ -73,17 +75,28 @@ class RepresentativeViewSet(viewsets.ReadOnlyModelViewSet):
     def get_queryset(self):
         qs = super(RepresentativeViewSet, self).get_queryset()
         qs = qs.prefetch_related(
-            'email_set',
-            'website_set',
+            models.Prefetch(
+                'email_set',
+                queryset=Email.objects.order_by('id')
+            ),
+            models.Prefetch(
+                'website_set',
+                queryset=WebSite.objects.order_by('id')
+            ),
             models.Prefetch(
                 'address_set',
                 queryset=Address.objects.select_related('country')
+                                        .order_by('id')
             ),
             models.Prefetch(
                 'phone_set',
                 queryset=Phone.objects.select_related('address__country')
+                                      .order_by('id')
             ),
-            'mandates',
+            models.Prefetch(
+                'mandates',
+                queryset=Mandate.objects.order_by('id')
+            )
         )
         return qs
 
