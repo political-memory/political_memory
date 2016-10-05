@@ -7,8 +7,11 @@ class RepresentativeManagerTest(test.TestCase):
     fixtures = ['representatives_votes_test.json']
 
     def functional_test(self, queries, url):
+        client = test.client.Client()
+        client.get(url)
+
         with self.assertNumQueries(queries):
-            result = test.client.Client().get(
+            result = client.get(
                 url,
                 HTTP_ACCEPT='application/json; indent=4',
             )
