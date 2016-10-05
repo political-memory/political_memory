@@ -23,9 +23,9 @@ class TestBase(test.TestCase):
                     if field in compare:
                         compare.pop(field)
 
-                for re in self._exclude_re:
+                for r in self._exclude_re:
                     for field in compare.keys():
-                        if re.match(field):
+                        if r.match(field):
                             compare.pop(field)
 
                 try:

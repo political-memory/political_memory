@@ -2,7 +2,6 @@ import mock
 import os
 
 from django.core.management import call_command
-from django.test import TestCase
 from representatives_votes.contrib.parltrack import import_dossiers
 from representatives_votes.contrib.parltrack import import_votes
 from representatives_votes.models import Dossier, Proposal, Vote

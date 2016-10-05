@@ -231,8 +231,6 @@ class MandateManager(models.Manager):
             'group',
             'constituency')
 
-
-class MandateManager(models.Manager):
     def get_by_natural_key(self, begin_date, end_date, representative_slug,
                            group_name, group_kind, group_chamber_nk):
         representative = Representative.objects.get_by_natural_key(
