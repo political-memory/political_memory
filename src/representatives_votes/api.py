@@ -1,4 +1,7 @@
+from django.db import models
+
 from .models import (
+    Document,
     Dossier,
     Proposal,
     Vote
@@ -49,8 +52,16 @@ class DossierViewSet(viewsets.ReadOnlyModelViewSet):
 
     def retrieve(self, request, pk=None):
         self.serializer_class = DossierDetailSerializer
-        self.queryset = self.queryset.prefetch_related('proposals',
-                                                       'documents')
+        self.queryset = self.queryset.prefetch_related(
+            models.Prefetch(
+                'proposals',
+                queryset=Proposal.objects.order_by('id')
+            ),
+            models.Prefetch(
+                'documents',
+                queryset=Document.objects.order_by('id')
+            )
+        )
         return super(DossierViewSet, self).retrieve(request, pk)
 
 
@@ -86,6 +97,12 @@ class ProposalViewSet(viewsets.ReadOnlyModelViewSet):
 
     def retrieve(self, request, pk=None):
         self.serializer_class = ProposalDetailSerializer
+        self.queryset = self.queryset.prefetch_related(
+            models.Prefetch(
+                'votes',
+                queryset=Vote.objects.order_by('representative_id')
+            )
+        )
         return super(ProposalViewSet, self).retrieve(request, pk)
 
 
