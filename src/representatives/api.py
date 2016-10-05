@@ -49,7 +49,7 @@ class RepresentativeViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows representatives to be viewed.
     """
-    queryset = Representative.objects.all()
+    queryset = Representative.objects.order_by('slug')
     filter_backends = (
         filters.DjangoFilterBackend,
         filters.SearchFilter,
@@ -68,7 +68,6 @@ class RepresentativeViewSet(viewsets.ReadOnlyModelViewSet):
         'birth_date': ['exact', 'gte', 'lte'],
     }
     search_fields = ('first_name', 'last_name', 'slug')
-    ordering_fields = ('id', 'birth_date', 'last_name', 'full_name')
     pagination_class = DefaultWebPagination
 
     def get_queryset(self):
@@ -102,7 +101,8 @@ class MandateViewSet(viewsets.ReadOnlyModelViewSet):
     API endpoint that allows mandates to be viewed.
     """
     pagination_class = DefaultWebPagination
-    queryset = Mandate.objects.select_related('representative')
+    queryset = Mandate.objects.select_related('representative') \
+                              .order_by('representative_id', 'id')
     serializer_class = MandateSerializer
 
     filter_backends = (
@@ -121,7 +121,7 @@ class MandateViewSet(viewsets.ReadOnlyModelViewSet):
 
 class ConstituencyViewSet(viewsets.ReadOnlyModelViewSet):
     pagination_class = DefaultWebPagination
-    queryset = Constituency.objects.all()
+    queryset = Constituency.objects.order_by('id')
     serializer_class = ConstituencySerializer
 
     filter_backends = (
@@ -131,7 +131,7 @@ class ConstituencyViewSet(viewsets.ReadOnlyModelViewSet):
 
 class GroupViewSet(viewsets.ReadOnlyModelViewSet):
     pagination_class = DefaultWebPagination
-    queryset = Group.objects.all()
+    queryset = Group.objects.order_by('id')
     serializer_class = GroupSerializer
 
     filter_backends = (
@@ -141,7 +141,7 @@ class GroupViewSet(viewsets.ReadOnlyModelViewSet):
 
 class ChamberViewSet(viewsets.ReadOnlyModelViewSet):
     pagination_class = DefaultWebPagination
-    queryset = Chamber.objects.all()
+    queryset = Chamber.objects.order_by('id')
     serializer_class = ChamberSerializer
 
     filter_backends = (
@@ -151,7 +151,7 @@ class ChamberViewSet(viewsets.ReadOnlyModelViewSet):
 
 class CountryViewSet(viewsets.ReadOnlyModelViewSet):
     pagination_class = DefaultWebPagination
-    queryset = Country.objects.all()
+    queryset = Country.objects.order_by('id')
     serializer_class = CountrySerializer
 
     filter_backends = (

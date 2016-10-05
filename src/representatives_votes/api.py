@@ -26,7 +26,7 @@ class DossierViewSet(viewsets.ReadOnlyModelViewSet):
     """
 
     pagination_class = DefaultWebPagination
-    queryset = Dossier.objects.all()
+    queryset = Dossier.objects.order_by('id')
     serializer_class = DossierSerializer
 
     filter_backends = (
@@ -47,8 +47,6 @@ class DossierViewSet(viewsets.ReadOnlyModelViewSet):
         'proposals__title'
     )
 
-    ordering_fields = ['reference']
-
     def retrieve(self, request, pk=None):
         self.serializer_class = DossierDetailSerializer
         self.queryset = self.queryset.prefetch_related('proposals',
@@ -62,7 +60,7 @@ class ProposalViewSet(viewsets.ReadOnlyModelViewSet):
     """
 
     pagination_class = DefaultWebPagination
-    queryset = Proposal.objects.all()
+    queryset = Proposal.objects.order_by('id')
     serializer_class = ProposalSerializer
 
     filter_backends = (
@@ -86,8 +84,6 @@ class ProposalViewSet(viewsets.ReadOnlyModelViewSet):
         'dossier__reference'
     )
 
-    ordering_fields = ['reference']
-
     def retrieve(self, request, pk=None):
         self.serializer_class = ProposalDetailSerializer
         return super(ProposalViewSet, self).retrieve(request, pk)
@@ -99,7 +95,8 @@ class VoteViewSet(viewsets.ReadOnlyModelViewSet):
     """
 
     pagination_class = DefaultWebPagination
-    queryset = Vote.objects.select_related('representative', 'proposal')
+    queryset = Vote.objects.select_related('representative', 'proposal') \
+                           .order_by('proposal_id', 'representative__slug')
     serializer_class = VoteSerializer
 
     filter_backends = (
