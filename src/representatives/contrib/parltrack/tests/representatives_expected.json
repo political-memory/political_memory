@@ -2,39 +2,39 @@
 {
     "fields": {
         "last_name": "PIRKER",
-        "photo": "http://www.europarl.europa.eu/mepphoto/2307.jpg",
         "gender": 2,
         "first_name": "Hubert",
         "cv": "Transport and security spokesman, \u00d6VP Delegation, European Parliament;\nsecurity spokesman, \u00d6VP Delegation, European Parliament (2006-2009); security spokesman (coordinator), EPP Group (1999-2004); Deputy Head of \u00d6VP Delegation, European Parliament (1996-2004);",
         "active": false,
         "birth_place": "Gries",
         "full_name": "Hubert PIRKER",
+        "photo": "http://www.europarl.europa.eu/mepphoto/2307.jpg",
         "birth_date": "1948-10-03",
         "slug": "hubert-pirker-1948-10-03"
     },
-    "model": "representatives.representative",
-    "pk": 1
+    "model": "representatives.representative"
 },
 {
     "fields": {
         "last_name": "LUDVIGSSON",
-        "photo": "http://www.europarl.europa.eu/mepphoto/96673.jpg",
         "gender": 2,
         "first_name": "Olle",
         "cv": "",
         "active": true,
         "birth_place": "H\u00e4ls\u00f6",
         "full_name": "Olle LUDVIGSSON",
+        "photo": "http://www.europarl.europa.eu/mepphoto/96673.jpg",
         "birth_date": "1948-10-28",
         "slug": "olle-ludvigsson-1948-10-28"
     },
-    "model": "representatives.representative",
-    "pk": 2
+    "model": "representatives.representative"
 },
 {
     "fields": {
         "email": "olle.ludvigsson@europarl.europa.eu",
-        "representative": 2,
+        "representative": [
+            "olle-ludvigsson-1948-10-28"
+        ],
         "kind": "official"
     },
     "model": "representatives.email",
@@ -43,7 +43,9 @@
 {
     "fields": {
         "url": "http://www.europarl.europa.eu/meps/en/2307/_home.html",
-        "representative": 1,
+        "representative": [
+            "hubert-pirker-1948-10-03"
+        ],
         "kind": "EP"
     },
     "model": "representatives.website",
@@ -52,7 +54,9 @@
 {
     "fields": {
         "url": "http://www.europarl.europa.eu/meps/en/96673/_home.html",
-        "representative": 2,
+        "representative": [
+            "olle-ludvigsson-1948-10-28"
+        ],
         "kind": "EP"
     },
     "model": "representatives.website",
@@ -61,7 +65,9 @@
 {
     "fields": {
         "url": "http://www.sap.se/olle",
-        "representative": 2,
+        "representative": [
+            "olle-ludvigsson-1948-10-28"
+        ],
         "kind": ""
     },
     "model": "representatives.website",
@@ -70,7 +76,9 @@
 {
     "fields": {
         "url": "http://twitter.com/olleludvigsson",
-        "representative": 2,
+        "representative": [
+            "olle-ludvigsson-1948-10-28"
+        ],
         "kind": "twitter"
     },
     "model": "representatives.website",
@@ -79,7 +87,9 @@
 {
     "fields": {
         "url": "https://www.facebook.com/olle.ludvigsson",
-        "representative": 2,
+        "representative": [
+            "olle-ludvigsson-1948-10-28"
+        ],
         "kind": "facebook"
     },
     "model": "representatives.website",
@@ -89,41 +99,53 @@
     "fields": {
         "city": "Brussels",
         "name": "Brussels European Parliament",
-        "country": 1050,
+        "country": [
+            "BE"
+        ],
         "floor": "14G",
         "number": "60",
         "street": "rue Wiertz / Wiertzstraat",
         "office_number": "257",
-        "representative": 2,
+        "representative": [
+            "olle-ludvigsson-1948-10-28"
+        ],
         "location": "",
         "kind": "official",
         "postcode": "1047"
     },
-    "model": "representatives.address",
-    "pk": 1
+    "model": "representatives.address"
 },
 {
     "fields": {
         "city": "Strasbourg",
         "name": "Strasbourg European Parliament",
-        "country": 1095,
+        "country": [
+            "FR"
+        ],
         "floor": "T07",
         "number": "1",
         "street": "Av. du Pr\u00e9sident Robert Schuman - CS 91024",
         "office_number": "070",
-        "representative": 2,
+        "representative": [
+            "olle-ludvigsson-1948-10-28"
+        ],
         "location": "",
         "kind": "official",
         "postcode": "67070"
     },
-    "model": "representatives.address",
-    "pk": 2
+    "model": "representatives.address"
 },
 {
     "fields": {
         "number": "+322 28 45442",
-        "representative": 2,
-        "address": 1,
+        "representative": [
+            "olle-ludvigsson-1948-10-28"
+        ],
+        "address": [
+            "Brussels European Parliament",
+            "official",
+            "olle-ludvigsson-1948-10-28"
+        ],
         "kind": "office phone"
     },
     "model": "representatives.phone",
@@ -132,8 +154,14 @@
 {
     "fields": {
         "number": "+333 88 1 75442",
-        "representative": 2,
-        "address": 2,
+        "representative": [
+            "olle-ludvigsson-1948-10-28"
+        ],
+        "address": [
+            "Strasbourg European Parliament",
+            "official",
+            "olle-ludvigsson-1948-10-28"
+        ],
         "kind": "office phone"
     },
     "model": "representatives.phone",
@@ -141,72 +169,77 @@
 },
 {
     "fields": {
+        "abbreviation": "EP",
         "country": null,
-        "name": "European Parliament",
-        "abbreviation": "EP"
+        "name": "European Parliament"
     },
-    "model": "representatives.chamber",
-    "pk": 1
+    "model": "representatives.chamber"
 },
 {
     "fields": {
         "name": "European Parliament",
         "kind": "chamber",
         "abbreviation": "EP",
-        "chamber": 1
+        "chamber": [
+            "EP"
+        ]
     },
-    "model": "representatives.group",
-    "pk": 1
+    "model": "representatives.group"
 },
 {
     "fields": {
         "name": "Committee on Employment and Social Affairs",
         "kind": "committee",
         "abbreviation": "EMPL",
-        "chamber": 1
+        "chamber": [
+            "EP"
+        ]
     },
-    "model": "representatives.group",
-    "pk": 2
+    "model": "representatives.group"
 },
 {
     "fields": {
         "name": "Delegation for relations with the countries of Southeast Asia and the Association of Southeast Asian Nations (ASEAN)",
         "kind": "delegation",
         "abbreviation": "",
-        "chamber": 1
+        "chamber": [
+            "EP"
+        ]
     },
-    "model": "representatives.group",
-    "pk": 3
+    "model": "representatives.group"
 },
 {
     "fields": {
         "name": "Delegation for relations with the Member States of ASEAN, South-east Asia and the Republic of Korea",
         "kind": "delegation",
         "abbreviation": "",
-        "chamber": 1
+        "chamber": [
+            "EP"
+        ]
     },
-    "model": "representatives.group",
-    "pk": 4
+    "model": "representatives.group"
 },
 {
     "fields": {
         "name": "Group of the European People's Party (Christian Democrats) and European Democrats",
         "kind": "group",
         "abbreviation": "PPE-DE",
-        "chamber": 1
+        "chamber": [
+            "EP"
+        ]
     },
-    "model": "representatives.group",
-    "pk": 5
+    "model": "representatives.group"
 },
 {
     "fields": {
         "name": "Group of the European People's Party (Christian-Democratic Group)",
         "kind": "group",
         "abbreviation": "EPP",
-        "chamber": 1
+        "chamber": [
+            "EP"
+        ]
     },
-    "model": "representatives.group",
-    "pk": 6
+    "model": "representatives.group"
 },
 {
     "fields": {
@@ -215,8 +248,7 @@
         "abbreviation": "AT",
         "chamber": null
     },
-    "model": "representatives.group",
-    "pk": 7
+    "model": "representatives.group"
 },
 {
     "fields": {
@@ -225,68 +257,73 @@
         "abbreviation": "",
         "chamber": null
     },
-    "model": "representatives.group",
-    "pk": 8
+    "model": "representatives.group"
 },
 {
     "fields": {
         "name": "Committee on Economic and Monetary Affairs",
         "kind": "committee",
         "abbreviation": "ECON",
-        "chamber": 1
+        "chamber": [
+            "EP"
+        ]
     },
-    "model": "representatives.group",
-    "pk": 9
+    "model": "representatives.group"
 },
 {
     "fields": {
         "name": "Committee on Industry, Research and Energy",
         "kind": "committee",
         "abbreviation": "ITRE",
-        "chamber": 1
+        "chamber": [
+            "EP"
+        ]
     },
-    "model": "representatives.group",
-    "pk": 10
+    "model": "representatives.group"
 },
 {
     "fields": {
         "name": "Delegation to the EU-Serbia Stabilisation and Association Parliamentary Committee",
         "kind": "delegation",
         "abbreviation": "",
-        "chamber": 1
+        "chamber": [
+            "EP"
+        ]
     },
-    "model": "representatives.group",
-    "pk": 11
+    "model": "representatives.group"
 },
 {
     "fields": {
         "name": "Delegation for relations with Bosnia and Herzegovina, and Kosovo",
         "kind": "delegation",
         "abbreviation": "",
-        "chamber": 1
+        "chamber": [
+            "EP"
+        ]
     },
-    "model": "representatives.group",
-    "pk": 12
+    "model": "representatives.group"
 },
 {
     "fields": {
         "name": "Delegation for relations with Australia and New Zealand",
         "kind": "delegation",
         "abbreviation": "",
-        "chamber": 1
+        "chamber": [
+            "EP"
+        ]
     },
-    "model": "representatives.group",
-    "pk": 13
+    "model": "representatives.group"
 },
 {
     "fields": {
         "name": "Group of the Progressive Alliance of Socialists and Democrats in the European Parliament",
         "kind": "group",
         "abbreviation": "SD",
-        "chamber": 1
+        "chamber": [
+            "EP"
+        ]
     },
-    "model": "representatives.group",
-    "pk": 14
+    "model": "representatives.group"
 },
 {
     "fields": {
@@ -295,317 +332,493 @@
         "abbreviation": "SE",
         "chamber": null
     },
-    "model": "representatives.group",
-    "pk": 15
+    "model": "representatives.group"
 },
 {
     "fields": {
         "country": null,
         "name": "European Parliament"
     },
-    "model": "representatives.constituency",
-    "pk": 1
+    "model": "representatives.constituency"
 },
 {
     "fields": {
-        "country": 1043,
+        "country": [
+            "AT"
+        ],
         "name": "\u00d6sterreichische Volkspartei"
     },
-    "model": "representatives.constituency",
-    "pk": 2
+    "model": "representatives.constituency"
 },
 {
     "fields": {
-        "country": 1202,
+        "country": [
+            "SE"
+        ],
         "name": "Arbetarepartiet- Socialdemokraterna"
     },
-    "model": "representatives.constituency",
-    "pk": 3
+    "model": "representatives.constituency"
 },
 {
     "fields": {
-        "group": 2,
+        "group": [
+            "Committee on Employment and Social Affairs",
+            "committee",
+            "EP"
+        ],
         "end_date": "1999-07-19",
         "role": "Substitute",
-        "representative": 1,
+        "representative": [
+            "hubert-pirker-1948-10-03"
+        ],
         "link": "",
         "begin_date": "1997-01-16",
-        "constituency": 1
+        "constituency": [
+            "European Parliament",
+            null
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 1
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 3,
+        "group": [
+            "Delegation for relations with the countries of Southeast Asia and the Association of Southeast Asian Nations (ASEAN)",
+            "delegation",
+            "EP"
+        ],
         "end_date": "2014-06-30",
         "role": "Member",
-        "representative": 1,
+        "representative": [
+            "hubert-pirker-1948-10-03"
+        ],
         "link": "",
         "begin_date": "2013-10-09",
-        "constituency": 1
+        "constituency": [
+            "European Parliament",
+            null
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 2
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 4,
+        "group": [
+            "Delegation for relations with the Member States of ASEAN, South-east Asia and the Republic of Korea",
+            "delegation",
+            "EP"
+        ],
         "end_date": "1997-01-15",
         "role": "Member",
-        "representative": 1,
+        "representative": [
+            "hubert-pirker-1948-10-03"
+        ],
         "link": "",
         "begin_date": "1996-11-14",
-        "constituency": 1
+        "constituency": [
+            "European Parliament",
+            null
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 3
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 5,
+        "group": [
+            "Group of the European People's Party (Christian Democrats) and European Democrats",
+            "group",
+            "EP"
+        ],
         "end_date": "2004-07-19",
         "role": "Member",
-        "representative": 1,
+        "representative": [
+            "hubert-pirker-1948-10-03"
+        ],
         "link": "",
         "begin_date": "1999-07-20",
-        "constituency": 1
+        "constituency": [
+            "European Parliament",
+            null
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 4
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 6,
+        "group": [
+            "Group of the European People's Party (Christian-Democratic Group)",
+            "group",
+            "EP"
+        ],
         "end_date": "1999-07-19",
         "role": "Member",
-        "representative": 1,
+        "representative": [
+            "hubert-pirker-1948-10-03"
+        ],
         "link": "",
         "begin_date": "1996-11-11",
-        "constituency": 1
+        "constituency": [
+            "European Parliament",
+            null
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 5
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 7,
+        "group": [
+            "Austria",
+            "country",
+            null
+        ],
         "end_date": "2004-07-19",
         "role": "",
-        "representative": 1,
+        "representative": [
+            "hubert-pirker-1948-10-03"
+        ],
         "link": "",
         "begin_date": "1999-07-20",
-        "constituency": 2
+        "constituency": [
+            "\u00d6sterreichische Volkspartei",
+            "AT"
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 6
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 1,
+        "group": [
+            "European Parliament",
+            "chamber",
+            "EP"
+        ],
         "end_date": "2004-07-19",
         "role": "",
-        "representative": 1,
+        "representative": [
+            "hubert-pirker-1948-10-03"
+        ],
         "link": "",
         "begin_date": "1999-07-20",
-        "constituency": 1
+        "constituency": [
+            "European Parliament",
+            null
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 7
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 7,
+        "group": [
+            "Austria",
+            "country",
+            null
+        ],
         "end_date": "1999-07-19",
         "role": "",
-        "representative": 1,
+        "representative": [
+            "hubert-pirker-1948-10-03"
+        ],
         "link": "",
         "begin_date": "1996-11-11",
-        "constituency": 2
+        "constituency": [
+            "\u00d6sterreichische Volkspartei",
+            "AT"
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 8
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 1,
+        "group": [
+            "European Parliament",
+            "chamber",
+            "EP"
+        ],
         "end_date": "1999-07-19",
         "role": "",
-        "representative": 1,
+        "representative": [
+            "hubert-pirker-1948-10-03"
+        ],
         "link": "",
         "begin_date": "1996-11-11",
-        "constituency": 1
+        "constituency": [
+            "European Parliament",
+            null
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 9
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 8,
+        "group": [
+            "Conference of Delegation Chairs",
+            "organization",
+            null
+        ],
         "end_date": "2009-07-13",
         "role": "Member",
-        "representative": 1,
+        "representative": [
+            "hubert-pirker-1948-10-03"
+        ],
         "link": "",
         "begin_date": "2006-03-21",
-        "constituency": 1
+        "constituency": [
+            "European Parliament",
+            null
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 10
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 9,
+        "group": [
+            "Committee on Economic and Monetary Affairs",
+            "committee",
+            "EP"
+        ],
         "end_date": "9999-12-31",
         "role": "Member",
-        "representative": 2,
+        "representative": [
+            "olle-ludvigsson-1948-10-28"
+        ],
         "link": "",
         "begin_date": "2014-07-01",
-        "constituency": 1
+        "constituency": [
+            "European Parliament",
+            null
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 11
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 10,
+        "group": [
+            "Committee on Industry, Research and Energy",
+            "committee",
+            "EP"
+        ],
         "end_date": "9999-12-31",
         "role": "Substitute",
-        "representative": 2,
+        "representative": [
+            "olle-ludvigsson-1948-10-28"
+        ],
         "link": "",
         "begin_date": "2014-07-08",
-        "constituency": 1
+        "constituency": [
+            "European Parliament",
+            null
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 12
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 9,
+        "group": [
+            "Committee on Economic and Monetary Affairs",
+            "committee",
+            "EP"
+        ],
         "end_date": "2012-01-18",
         "role": "Substitute",
-        "representative": 2,
+        "representative": [
+            "olle-ludvigsson-1948-10-28"
+        ],
         "link": "",
         "begin_date": "2009-07-16",
-        "constituency": 1
+        "constituency": [
+            "European Parliament",
+            null
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 13
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 11,
+        "group": [
+            "Delegation to the EU-Serbia Stabilisation and Association Parliamentary Committee",
+            "delegation",
+            "EP"
+        ],
         "end_date": "9999-12-31",
         "role": "Member",
-        "representative": 2,
+        "representative": [
+            "olle-ludvigsson-1948-10-28"
+        ],
         "link": "",
         "begin_date": "2014-07-14",
-        "constituency": 1
+        "constituency": [
+            "European Parliament",
+            null
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 14
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 12,
+        "group": [
+            "Delegation for relations with Bosnia and Herzegovina, and Kosovo",
+            "delegation",
+            "EP"
+        ],
         "end_date": "9999-12-31",
         "role": "Substitute",
-        "representative": 2,
+        "representative": [
+            "olle-ludvigsson-1948-10-28"
+        ],
         "link": "",
         "begin_date": "2015-05-18",
-        "constituency": 1
+        "constituency": [
+            "European Parliament",
+            null
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 15
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 13,
+        "group": [
+            "Delegation for relations with Australia and New Zealand",
+            "delegation",
+            "EP"
+        ],
         "end_date": "2013-01-10",
         "role": "Substitute",
-        "representative": 2,
+        "representative": [
+            "olle-ludvigsson-1948-10-28"
+        ],
         "link": "",
         "begin_date": "2009-09-17",
-        "constituency": 1
+        "constituency": [
+            "European Parliament",
+            null
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 16
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 14,
+        "group": [
+            "Group of the Progressive Alliance of Socialists and Democrats in the European Parliament",
+            "group",
+            "EP"
+        ],
         "end_date": "9999-12-31",
         "role": "Member",
-        "representative": 2,
+        "representative": [
+            "olle-ludvigsson-1948-10-28"
+        ],
         "link": "",
         "begin_date": "2014-07-01",
-        "constituency": 1
+        "constituency": [
+            "European Parliament",
+            null
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 17
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 14,
+        "group": [
+            "Group of the Progressive Alliance of Socialists and Democrats in the European Parliament",
+            "group",
+            "EP"
+        ],
         "end_date": "2014-06-30",
         "role": "Member",
-        "representative": 2,
+        "representative": [
+            "olle-ludvigsson-1948-10-28"
+        ],
         "link": "",
         "begin_date": "2009-07-14",
-        "constituency": 1
+        "constituency": [
+            "European Parliament",
+            null
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 18
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 15,
+        "group": [
+            "Sweden",
+            "country",
+            null
+        ],
         "end_date": "9999-12-31",
         "role": "",
-        "representative": 2,
+        "representative": [
+            "olle-ludvigsson-1948-10-28"
+        ],
         "link": "",
         "begin_date": "2014-07-01",
-        "constituency": 3
+        "constituency": [
+            "Arbetarepartiet- Socialdemokraterna",
+            "SE"
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 19
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 1,
+        "group": [
+            "European Parliament",
+            "chamber",
+            "EP"
+        ],
         "end_date": "9999-12-31",
         "role": "",
-        "representative": 2,
+        "representative": [
+            "olle-ludvigsson-1948-10-28"
+        ],
         "link": "",
         "begin_date": "2014-07-01",
-        "constituency": 1
+        "constituency": [
+            "European Parliament",
+            null
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 20
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 15,
+        "group": [
+            "Sweden",
+            "country",
+            null
+        ],
         "end_date": "2014-06-30",
         "role": "",
-        "representative": 2,
+        "representative": [
+            "olle-ludvigsson-1948-10-28"
+        ],
         "link": "",
         "begin_date": "2009-07-14",
-        "constituency": 3
+        "constituency": [
+            "Arbetarepartiet- Socialdemokraterna",
+            "SE"
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 21
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 1,
+        "group": [
+            "European Parliament",
+            "chamber",
+            "EP"
+        ],
         "end_date": "2014-06-30",
         "role": "",
-        "representative": 2,
+        "representative": [
+            "olle-ludvigsson-1948-10-28"
+        ],
         "link": "",
         "begin_date": "2009-07-14",
-        "constituency": 1
+        "constituency": [
+            "European Parliament",
+            null
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 22
+    "model": "representatives.mandate"
 }
 ]
