@@ -7,8 +7,13 @@ class RepresentativeManagerTest(test.TestCase):
     fixtures = ['representatives_test.json']
 
     def functional_test(self, queries, url):
+        client = test.client.Client()
+
+        # First query to setup session
+        client.get(url)
+
         with self.assertNumQueries(queries):
-            result = test.client.Client().get(url)
+            result = client.get(url)
         Response.for_test(self).assertNoDiff(result)
 
     def test_constituencies_api(self):
