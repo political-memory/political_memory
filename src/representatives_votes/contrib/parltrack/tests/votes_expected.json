@@ -3,8 +3,13 @@
     "fields": {
         "representative_name": "",
         "position": "abstain",
-        "proposal": 1,
-        "representative": 2
+        "proposal": [
+            "A7-0234/2012 -  Charles Goerens - \u00a7 31",
+            "2012/2002(INI)"
+        ],
+        "representative": [
+            "olle-ludvigsson-1948-10-28"
+        ]
     },
     "model": "representatives_votes.vote",
     "pk": 1
@@ -13,8 +18,13 @@
     "fields": {
         "representative_name": "",
         "position": "abstain",
-        "proposal": 1,
-        "representative": 1
+        "proposal": [
+            "A7-0234/2012 -  Charles Goerens - \u00a7 31",
+            "2012/2002(INI)"
+        ],
+        "representative": [
+            "hubert-pirker-1948-10-03"
+        ]
     },
     "model": "representatives_votes.vote",
     "pk": 2
@@ -23,8 +33,13 @@
     "fields": {
         "representative_name": "",
         "position": "for",
-        "proposal": 2,
-        "representative": 2
+        "proposal": [
+            "A7-0234/2012 -  Charles Goerens - R\u00e9solution",
+            "2012/2002(INI)"
+        ],
+        "representative": [
+            "olle-ludvigsson-1948-10-28"
+        ]
     },
     "model": "representatives_votes.vote",
     "pk": 3
@@ -33,8 +48,13 @@
     "fields": {
         "representative_name": "",
         "position": "for",
-        "proposal": 2,
-        "representative": 1
+        "proposal": [
+            "A7-0234/2012 -  Charles Goerens - R\u00e9solution",
+            "2012/2002(INI)"
+        ],
+        "representative": [
+            "hubert-pirker-1948-10-03"
+        ]
     },
     "model": "representatives_votes.vote",
     "pk": 4
@@ -43,8 +63,13 @@
     "fields": {
         "representative_name": "",
         "position": "against",
-        "proposal": 3,
-        "representative": 2
+        "proposal": [
+            "A8-0298/2015 -  Jos\u00e9 Manuel Fernandes et  G\u00e9rard Deprez - Am 4",
+            "2015/2132(BUD)"
+        ],
+        "representative": [
+            "olle-ludvigsson-1948-10-28"
+        ]
     },
     "model": "representatives_votes.vote",
     "pk": 5
@@ -53,8 +78,13 @@
     "fields": {
         "representative_name": "",
         "position": "against",
-        "proposal": 3,
-        "representative": 1
+        "proposal": [
+            "A8-0298/2015 -  Jos\u00e9 Manuel Fernandes et  G\u00e9rard Deprez - Am 4",
+            "2015/2132(BUD)"
+        ],
+        "representative": [
+            "hubert-pirker-1948-10-03"
+        ]
     },
     "model": "representatives_votes.vote",
     "pk": 6
@@ -63,8 +93,13 @@
     "fields": {
         "representative_name": "",
         "position": "for",
-        "proposal": 4,
-        "representative": 1
+        "proposal": [
+            "A8-0298/2015 -  Jos\u00e9 Manuel Fernandes et  G\u00e9rard Deprez - Am 29",
+            "2015/2132(BUD)"
+        ],
+        "representative": [
+            "hubert-pirker-1948-10-03"
+        ]
     },
     "model": "representatives_votes.vote",
     "pk": 7
@@ -73,8 +108,13 @@
     "fields": {
         "representative_name": "",
         "position": "against",
-        "proposal": 4,
-        "representative": 2
+        "proposal": [
+            "A8-0298/2015 -  Jos\u00e9 Manuel Fernandes et  G\u00e9rard Deprez - Am 29",
+            "2015/2132(BUD)"
+        ],
+        "representative": [
+            "olle-ludvigsson-1948-10-28"
+        ]
     },
     "model": "representatives_votes.vote",
     "pk": 8
@@ -83,8 +123,13 @@
     "fields": {
         "representative_name": "",
         "position": "abstain",
-        "proposal": 5,
-        "representative": 1
+        "proposal": [
+            "A8-0298/2015 -  Jos\u00e9 Manuel Fernandes et  G\u00e9rard Deprez - Am 31",
+            "2015/2132(BUD)"
+        ],
+        "representative": [
+            "hubert-pirker-1948-10-03"
+        ]
     },
     "model": "representatives_votes.vote",
     "pk": 9
@@ -93,8 +138,13 @@
     "fields": {
         "representative_name": "",
         "position": "against",
-        "proposal": 5,
-        "representative": 2
+        "proposal": [
+            "A8-0298/2015 -  Jos\u00e9 Manuel Fernandes et  G\u00e9rard Deprez - Am 31",
+            "2015/2132(BUD)"
+        ],
+        "representative": [
+            "olle-ludvigsson-1948-10-28"
+        ]
     },
     "model": "representatives_votes.vote",
     "pk": 10
@@ -103,8 +153,13 @@
     "fields": {
         "representative_name": "",
         "position": "for",
-        "proposal": 6,
-        "representative": 1
+        "proposal": [
+            "A8-0298/2015 -  Jos\u00e9 Manuel Fernandes et  G\u00e9rard Deprez - Am 30",
+            "2015/2132(BUD)"
+        ],
+        "representative": [
+            "hubert-pirker-1948-10-03"
+        ]
     },
     "model": "representatives_votes.vote",
     "pk": 11

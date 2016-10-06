@@ -37,7 +37,7 @@ class RepresentativeList(CSVDownloadMixin, GridListMixin, PaginationMixin,
             'fields': ['-representative_score__score']
         },
         'score-desc': {
-            'order': 2,
+            'order': 3,
             'label': 'Worst score',
             'fields': ['representative_score__score']
         }

@@ -30,7 +30,7 @@ class ThemeList(PaginationMixin, SortMixin, PositionFormMixin,
             'fields': ['name']
         },
         'name-desc': {
-            'order': 0,
+            'order': 1,
             'label': 'Name Z-A',
             'fields': ['-name']
         }

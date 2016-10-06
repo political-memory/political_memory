@@ -50,7 +50,8 @@ class PositionFormTest(BaseTest):
         fixture.pop('position-representative')
 
         response = self.client.post(self.create_url, fixture)
-        self.assertResponseDiffEmpty(response, '#add-position-form .has-error')
+        self.assertResponseDiffEmpty(response,
+            '#add-position-form .has-error .form-control')
         assert response.context['position_form'].is_valid() is False
 
     def test_create_position_without_datetime(self):
@@ -58,7 +59,8 @@ class PositionFormTest(BaseTest):
         fixture.pop('position-datetime')
 
         response = self.client.post(self.create_url, fixture)
-        self.assertResponseDiffEmpty(response, '#add-position-form .has-error')
+        self.assertResponseDiffEmpty(response,
+            '#add-position-form .has-error .form-control')
         assert response.context['position_form'].is_valid() is False
 
     def test_create_position_without_link(self):
@@ -66,5 +68,6 @@ class PositionFormTest(BaseTest):
         fixture.pop('position-link')
 
         response = self.client.post(self.create_url, fixture)
-        self.assertResponseDiffEmpty(response, '#add-position-form .has-error')
+        self.assertResponseDiffEmpty(response,
+            '#add-position-form .has-error .form-control')
         assert response.context['position_form'].is_valid() is False

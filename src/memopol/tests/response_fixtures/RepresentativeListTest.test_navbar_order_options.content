@@ -7,9 +7,9 @@
       </li>
 ---
 <li>
-        <a href="?&amp;sort=score-desc">Worst score</a>
+        <a href="?&amp;sort=score-asc">Best score</a>
       </li>
 ---
 <li>
-        <a href="?&amp;sort=score-asc">Best score</a>
+        <a href="?&amp;sort=score-desc">Worst score</a>
       </li>

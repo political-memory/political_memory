@@ -36,6 +36,15 @@ class Command(object):
         self.index_representatives()
         self.index_dossiers()
 
+    def should_skip(self, proposal_data):
+        responses = vote_pre_import.send(sender=self, vote_data=proposal_data)
+
+        for receiver, response in responses:
+            if response is False:
+                return True
+
+        return False
+
     def parse_vote_data(self, vote_data):
         """
         Parse data from parltrack votes db dumps (1 proposal)
@@ -100,14 +109,11 @@ class Command(object):
         if changed:
             proposal.save()
 
-        responses = vote_pre_import.send(sender=self, vote_data=proposal_data)
-
-        for receiver, response in responses:
-            if response is False:
-                logger.debug(
-                    'Skipping dossier %s', proposal_data.get(
-                        'epref', proposal_data['title']))
-                return
+        if self.should_skip(proposal_data):
+            logger.debug(
+                'Skipping dossier %s', proposal_data.get(
+                    'epref', proposal_data['title']))
+            return
 
         positions = ['For', 'Abstain', 'Against']
         logger.info(

@@ -1,73 +1,60 @@
-import copy
 import mock
 import os
-import pytest
 
-from django.core.serializers.json import Deserializer
 from django.core.management import call_command
-from django.test import TestCase
 from representatives_votes.contrib.parltrack import import_dossiers
 from representatives_votes.contrib.parltrack import import_votes
 from representatives_votes.models import Dossier, Proposal, Vote
 import representatives
 from representatives.models import Representative
+from representatives.tests.base import TestBase
 
 
-def _test_import(scenario, callback):
-    fixture = os.path.join(os.path.dirname(__file__),
-            '%s_fixture.json' % scenario)
-    expected = os.path.join(os.path.dirname(__file__),
-            '%s_expected.json' % scenario)
+class ParltrackVotesTest(TestBase):
+    def _test_import(self, scenario, callback):
+        fixture = os.path.join(os.path.dirname(__file__),
+                '%s_fixture.json' % scenario)
+        expected = os.path.join(os.path.dirname(__file__),
+                '%s_expected.json' % scenario)
 
-    # Disable django auto fields
-    exclude = ('id', '_state', 'created', 'updated')
+        with open(fixture, 'r') as f:
+            callback(f)
 
-    with open(fixture, 'r') as f:
-        callback(f)
+        self.assertObjectsFromFixture(expected)
 
-    with open(expected, 'r') as f:
-        for obj in Deserializer(f.read()):
-            compare = copy.copy(obj.object.__dict__)
+    def test_parltrack_import_dossiers(self):
+        self._test_import('dossiers', import_dossiers.main)
 
-            for f in exclude:
-                if f in compare:
-                    compare.pop(f)
-
-            type(obj.object).objects.get(**compare)
-
-
-@pytest.mark.django_db
-def test_parltrack_import_dossiers():
-    _test_import('dossiers', import_dossiers.main)
-
-
-@pytest.mark.django_db
-def test_parltrack_import_votes():
-    for model in (Representative, Dossier, Proposal, Vote):
-        model.objects.all().delete()
-
-    call_command('loaddata', os.path.join(os.path.abspath(
-        representatives.__path__[0]), 'fixtures', 'representatives_test.json'))
-    call_command('loaddata', os.path.join(os.path.dirname(__file__),
-        'dossiers_expected.json'))
-
-    _test_import('votes', import_votes.main)
-
-
-class DossierTest(TestCase):
-    def setUp(self):
+    def test_parltrack_import_votes(self):
         for model in (Representative, Dossier, Proposal, Vote):
             model.objects.all().delete()
+
+        call_command('loaddata', os.path.join(os.path.abspath(
+            representatives.__path__[0]), 'fixtures',
+            'representatives_test.json'))
+        call_command('loaddata', os.path.join(os.path.dirname(__file__),
+            'dossiers_expected.json'))
+
+        with mock.patch('representatives_votes.contrib.parltrack.import_votes'
+                        '.Command.should_skip') as should_skip:
+            should_skip.return_value = False
+            self._test_import('votes', import_votes.main)
 
     def test_parltrack_import_single_dossier(self):
         call_command('loaddata', os.path.join(os.path.abspath(
             representatives.__path__[0]), 'fixtures',
             'representatives_test.json'))
 
-        with self.assertNumQueries(22):
-            _test_import('single', import_dossiers.import_single)
+        with mock.patch('representatives_votes.contrib.parltrack.import_votes'
+                        '.Command.should_skip') as should_skip:
+            should_skip.return_value = False
+            with self.assertNumQueries(35):
+                self._test_import('single', import_dossiers.import_single)
 
     def test_parltrack_sync_dossier(self):
+        for model in (Representative, Dossier, Proposal, Vote):
+            model.objects.all().delete()
+
         call_command('loaddata', os.path.join(os.path.abspath(
             representatives.__path__[0]), 'fixtures',
             'representatives_test.json'))
@@ -88,6 +75,6 @@ class DossierTest(TestCase):
                 urlopen.return_value = mock_stream
 
                 with self.assertNumQueries(8):
-                    _test_import('sync', callback)
+                    self._test_import('sync', callback)
 
             urlopen.assert_called_with(expected_url)

@@ -4,7 +4,14 @@ from django.db import models
 from representatives.models import Chamber, Representative, TimeStampedModel
 
 
+class DossierManager(models.Manager):
+    def get_by_natural_key(self, reference):
+        return self.get(reference=reference)
+
+
 class Dossier(TimeStampedModel):
+    objects = DossierManager()
+
     title = models.CharField(max_length=1000)
     reference = models.CharField(max_length=200, unique=True)
     text = models.TextField(blank=True, default='')
@@ -25,6 +32,9 @@ class Dossier(TimeStampedModel):
         # what was prefetched
         return set(sorted([d.chamber for d in self.documents.all()]))
 
+    def natural_key(self):
+        return (self.reference,)
+
 
 class Document(TimeStampedModel):
     dossier = models.ForeignKey(Dossier, related_name='documents')
@@ -34,7 +44,15 @@ class Document(TimeStampedModel):
     link = models.URLField(max_length=1000)
 
 
+class ProposalManager(models.Manager):
+    def get_by_natural_key(self, title, dossier_nk):
+        dossier = Dossier.objects.get_by_natural_key(dossier_nk)
+        return self.get(title=title, dossier=dossier)
+
+
 class Proposal(TimeStampedModel):
+    objects = ProposalManager()
+
     dossier = models.ForeignKey(Dossier, related_name='proposals')
     title = models.CharField(max_length=1000, unique=True)
     description = models.TextField(blank=True, default='')
@@ -64,6 +82,9 @@ class Proposal(TimeStampedModel):
 
     def __unicode__(self):
         return unicode(self.title)
+
+    def natural_key(self):
+        return (self.title,) + self.dossier.natural_key()
 
 
 class Vote(models.Model):

@@ -29,7 +29,6 @@ setup(name='political-memory',
         'unicodecsv>=0.14,<0.15',
         'pytz',  # Always use up-to-date TZ data
         'django-suit>=0.2,<0.3',
-        'sqlparse>=0.1,<0.2',
         'psycopg2>=2,<3',
     ],
     extras_require={
@@ -43,11 +42,19 @@ setup(name='political-memory',
             'pytest>=2,<3',
             'pytest-django>=2,<3',
             'pytest-cov>=2,<3',
-            'mock-2.0.0',
+            'mock==2.0.0',
+            'tox>=2.3,<3',
         ]
     },
     entry_points={
         'console_scripts': [
+            'parltrack_import_representatives = representatives.contrib.parltrack.import_representatives:main',  # noqa
+            'parltrack_import_dossiers = representatives_votes.contrib.parltrack.import_dossiers:main',  # noqa
+            'parltrack_import_votes = representatives_votes.contrib.parltrack.import_votes:main',  # noqa
+            'francedata_import_representatives = representatives.contrib.francedata.import_representatives:main',  # noqa
+            'francedata_import_dossiers = representatives_votes.contrib.francedata.import_dossiers:main',  # noqa
+            'francedata_import_scrutins = representatives_votes.contrib.francedata.import_scrutins:main',  # noqa
+            'francedata_import_votes = representatives_votes.contrib.francedata.import_votes:main',  # noqa
             'memopol_import_positions = representatives_positions.contrib.import_positions:main',  # noqa
             'memopol_import_recommendations = representatives_recommendations.contrib.import_recommendations:main',  # noqa
             'memopol = memopol.manage:main',

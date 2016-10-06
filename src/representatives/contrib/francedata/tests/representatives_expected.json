@@ -12,8 +12,7 @@
         "birth_date": "1952-07-15",
         "slug": "bernard-roman-1952-07-15"
     },
-    "model": "representatives.representative",
-    "pk": 1
+    "model": "representatives.representative"
 },
 {
     "fields": {
@@ -28,13 +27,14 @@
         "birth_date": "1959-06-16",
         "slug": "david-assouline-1959-06-16"
     },
-    "model": "representatives.representative",
-    "pk": 2
+    "model": "representatives.representative"
 },
 {
     "fields": {
         "email": "contact@bernard-roman.org",
-        "representative": 1,
+        "representative": [
+            "bernard-roman-1952-07-15"
+        ],
         "kind": "other"
     },
     "model": "representatives.email",
@@ -43,7 +43,9 @@
 {
     "fields": {
         "email": "broman@assemblee-nationale.fr",
-        "representative": 1,
+        "representative": [
+            "bernard-roman-1952-07-15"
+        ],
         "kind": "official"
     },
     "model": "representatives.email",
@@ -52,7 +54,9 @@
 {
     "fields": {
         "email": "d.assouline@senat.fr",
-        "representative": 2,
+        "representative": [
+            "david-assouline-1959-06-16"
+        ],
         "kind": "official"
     },
     "model": "representatives.email",
@@ -61,7 +65,9 @@
 {
     "fields": {
         "url": "http://www2.assemblee-nationale.fr/deputes/fiche/OMC_PA2611",
-        "representative": 1,
+        "representative": [
+            "bernard-roman-1952-07-15"
+        ],
         "kind": "AN"
     },
     "model": "representatives.website",
@@ -70,7 +76,9 @@
 {
     "fields": {
         "url": "http://www.bernard-roman.net",
-        "representative": 1,
+        "representative": [
+            "bernard-roman-1952-07-15"
+        ],
         "kind": ""
     },
     "model": "representatives.website",
@@ -79,7 +87,9 @@
 {
     "fields": {
         "url": "http://twitter.com/bernardroman59",
-        "representative": 1,
+        "representative": [
+            "bernard-roman-1952-07-15"
+        ],
         "kind": "twitter"
     },
     "model": "representatives.website",
@@ -88,7 +98,9 @@
 {
     "fields": {
         "url": "http://www.senat.fr/senateur/assouline_david04059m.html",
-        "representative": 2,
+        "representative": [
+            "david-assouline-1959-06-16"
+        ],
         "kind": "SEN"
     },
     "model": "representatives.website",
@@ -97,7 +109,9 @@
 {
     "fields": {
         "url": "http://www.david-assouline.net",
-        "representative": 2,
+        "representative": [
+            "david-assouline-1959-06-16"
+        ],
         "kind": ""
     },
     "model": "representatives.website",
@@ -106,7 +120,9 @@
 {
     "fields": {
         "url": "https://www.facebook.com/DavAssouline",
-        "representative": 2,
+        "representative": [
+            "david-assouline-1959-06-16"
+        ],
         "kind": "facebook"
     },
     "model": "representatives.website",
@@ -115,7 +131,9 @@
 {
     "fields": {
         "url": "http://david-assouline.net",
-        "representative": 2,
+        "representative": [
+            "david-assouline-1959-06-16"
+        ],
         "kind": ""
     },
     "model": "representatives.website",
@@ -124,7 +142,9 @@
 {
     "fields": {
         "url": "http://twitter.com/dassouline",
-        "representative": 2,
+        "representative": [
+            "david-assouline-1959-06-16"
+        ],
         "kind": "twitter"
     },
     "model": "representatives.website",
@@ -134,12 +154,16 @@
     "fields": {
         "city": "Paris",
         "name": "Assembl\u00e9e nationale",
-        "country": 1095,
+        "country": [
+            "FR"
+        ],
         "floor": "",
         "number": "126",
         "street": "Rue de l'Universit\u00e9",
         "office_number": "",
-        "representative": 1,
+        "representative": [
+            "bernard-roman-1952-07-15"
+        ],
         "location": "",
         "kind": "official",
         "postcode": "75355"
@@ -151,12 +175,16 @@
     "fields": {
         "city": "Lille",
         "name": "Permanence",
-        "country": 1095,
+        "country": [
+            "FR"
+        ],
         "floor": "",
         "number": "20",
         "street": "Rue d'Arras",
         "office_number": "",
-        "representative": 1,
+        "representative": [
+            "bernard-roman-1952-07-15"
+        ],
         "location": "",
         "kind": "",
         "postcode": "59000"
@@ -168,12 +196,16 @@
     "fields": {
         "city": "Lille",
         "name": "",
-        "country": 1095,
+        "country": [
+            "FR"
+        ],
         "floor": "",
         "number": "",
         "street": "",
         "office_number": "",
-        "representative": 1,
+        "representative": [
+            "bernard-roman-1952-07-15"
+        ],
         "location": "",
         "kind": "",
         "postcode": "59000"
@@ -185,12 +217,16 @@
     "fields": {
         "city": "Paris",
         "name": "Palais du Luxembourg",
-        "country": 1095,
+        "country": [
+            "FR"
+        ],
         "floor": "",
         "number": "15",
         "street": "Rue de Vaugirard",
         "office_number": "",
-        "representative": 2,
+        "representative": [
+            "david-assouline-1959-06-16"
+        ],
         "location": "",
         "kind": "official",
         "postcode": "75291"
@@ -201,8 +237,14 @@
 {
     "fields": {
         "number": "03 20 52 09 20",
-        "representative": 1,
-        "address": 2,
+        "representative": [
+            "bernard-roman-1952-07-15"
+        ],
+        "address": [
+            "Permanence",
+            "",
+            "bernard-roman-1952-07-15"
+        ],
         "kind": ""
     },
     "model": "representatives.phone",
@@ -214,36 +256,38 @@
         "country": null,
         "name": "European Parliament"
     },
-    "model": "representatives.chamber",
-    "pk": 1
+    "model": "representatives.chamber"
 },
 {
     "fields": {
         "abbreviation": "AN",
-        "country": 1095,
+        "country": [
+            "FR"
+        ],
         "name": "Assembl\u00e9e nationale"
     },
-    "model": "representatives.chamber",
-    "pk": 2
+    "model": "representatives.chamber"
 },
 {
     "fields": {
         "abbreviation": "SEN",
-        "country": 1095,
+        "country": [
+            "FR"
+        ],
         "name": "S\u00e9nat"
     },
-    "model": "representatives.chamber",
-    "pk": 3
+    "model": "representatives.chamber"
 },
 {
     "fields": {
         "name": "European Parliament",
         "kind": "chamber",
         "abbreviation": "EP",
-        "chamber": 1
+        "chamber": [
+            "EP"
+        ]
     },
-    "model": "representatives.group",
-    "pk": 1
+    "model": "representatives.group"
 },
 {
     "fields": {
@@ -252,28 +296,29 @@
         "abbreviation": "FR",
         "chamber": null
     },
-    "model": "representatives.group",
-    "pk": 2
+    "model": "representatives.group"
 },
 {
     "fields": {
         "name": "Assembl\u00e9e nationale",
         "kind": "chamber",
         "abbreviation": "AN",
-        "chamber": 2
+        "chamber": [
+            "AN"
+        ]
     },
-    "model": "representatives.group",
-    "pk": 3
+    "model": "representatives.group"
 },
 {
     "fields": {
         "name": "Socialiste, r\u00e9publicain et citoyen",
         "kind": "group",
         "abbreviation": "SRC",
-        "chamber": 2
+        "chamber": [
+            "AN"
+        ]
     },
-    "model": "representatives.group",
-    "pk": 4
+    "model": "representatives.group"
 },
 {
     "fields": {
@@ -282,8 +327,7 @@
         "abbreviation": "59",
         "chamber": null
     },
-    "model": "representatives.group",
-    "pk": 5
+    "model": "representatives.group"
 },
 {
     "fields": {
@@ -292,78 +336,84 @@
         "abbreviation": "59-1",
         "chamber": null
     },
-    "model": "representatives.group",
-    "pk": 6
+    "model": "representatives.group"
 },
 {
     "fields": {
         "name": "Commission des lois constitutionnelles, de la l\u00e9gislation et de l'administration g\u00e9n\u00e9rale de la r\u00e9publique",
         "kind": "committee",
         "abbreviation": "Lois",
-        "chamber": 2
+        "chamber": [
+            "AN"
+        ]
     },
-    "model": "representatives.group",
-    "pk": 7
+    "model": "representatives.group"
 },
 {
     "fields": {
         "name": "Bureau de l'assembl\u00e9e nationale",
         "kind": "delegation",
         "abbreviation": "",
-        "chamber": 2
+        "chamber": [
+            "AN"
+        ]
     },
-    "model": "representatives.group",
-    "pk": 8
+    "model": "representatives.group"
 },
 {
     "fields": {
         "name": "D\u00e9l\u00e9gation charg\u00e9e de la communication et de la presse",
         "kind": "delegation",
         "abbreviation": "",
-        "chamber": 2
+        "chamber": [
+            "AN"
+        ]
     },
-    "model": "representatives.group",
-    "pk": 9
+    "model": "representatives.group"
 },
 {
     "fields": {
         "name": "Groupe d'amiti\u00e9 france-mexique",
         "kind": "delegation",
         "abbreviation": "",
-        "chamber": 2
+        "chamber": [
+            "AN"
+        ]
     },
-    "model": "representatives.group",
-    "pk": 10
+    "model": "representatives.group"
 },
 {
     "fields": {
         "name": "Groupe d'amiti\u00e9 france-argentine",
         "kind": "delegation",
         "abbreviation": "",
-        "chamber": 2
+        "chamber": [
+            "AN"
+        ]
     },
-    "model": "representatives.group",
-    "pk": 11
+    "model": "representatives.group"
 },
 {
     "fields": {
         "name": "S\u00e9nat",
         "kind": "chamber",
         "abbreviation": "SEN",
-        "chamber": 3
+        "chamber": [
+            "SEN"
+        ]
     },
-    "model": "representatives.group",
-    "pk": 12
+    "model": "representatives.group"
 },
 {
     "fields": {
         "name": "Socialiste et r\u00e9publicain",
         "kind": "group",
         "abbreviation": "SOC",
-        "chamber": 3
+        "chamber": [
+            "SEN"
+        ]
     },
-    "model": "representatives.group",
-    "pk": 13
+    "model": "representatives.group"
 },
 {
     "fields": {
@@ -372,8 +422,7 @@
         "abbreviation": "75",
         "chamber": null
     },
-    "model": "representatives.group",
-    "pk": 14
+    "model": "representatives.group"
 },
 {
     "fields": {
@@ -382,280 +431,419 @@
         "abbreviation": "75-nd",
         "chamber": null
     },
-    "model": "representatives.group",
-    "pk": 15
+    "model": "representatives.group"
 },
 {
     "fields": {
         "name": "Commission de la culture, de l'\u00e9ducation et de la communication",
         "kind": "committee",
         "abbreviation": "Culture",
-        "chamber": 3
+        "chamber": [
+            "SEN"
+        ]
     },
-    "model": "representatives.group",
-    "pk": 16
+    "model": "representatives.group"
 },
 {
     "fields": {
         "name": "Groupe France-Japon",
         "kind": "delegation",
         "abbreviation": "",
-        "chamber": 3
+        "chamber": [
+            "SEN"
+        ]
     },
-    "model": "representatives.group",
-    "pk": 17
+    "model": "representatives.group"
 },
 {
     "fields": {
         "country": null,
         "name": "European Parliament"
     },
-    "model": "representatives.constituency",
-    "pk": 1
+    "model": "representatives.constituency"
 },
 {
     "fields": {
-        "country": 1095,
+        "country": [
+            "FR"
+        ],
         "name": "Assembl\u00e9e nationale"
     },
-    "model": "representatives.constituency",
-    "pk": 2
+    "model": "representatives.constituency"
 },
 {
     "fields": {
-        "country": 1095,
+        "country": [
+            "FR"
+        ],
         "name": "S\u00e9nat"
     },
-    "model": "representatives.constituency",
-    "pk": 3
+    "model": "representatives.constituency"
 },
 {
     "fields": {
-        "country": 1095,
+        "country": [
+            "FR"
+        ],
         "name": "Parti socialiste"
     },
-    "model": "representatives.constituency",
-    "pk": 4
+    "model": "representatives.constituency"
 },
 {
     "fields": {
-        "group": 2,
+        "group": [
+            "France",
+            "country",
+            null
+        ],
         "end_date": null,
         "role": "membre",
-        "representative": 1,
+        "representative": [
+            "bernard-roman-1952-07-15"
+        ],
         "link": "",
         "begin_date": null,
-        "constituency": 4
+        "constituency": [
+            "Parti socialiste",
+            "FR"
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 1
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 3,
+        "group": [
+            "Assembl\u00e9e nationale",
+            "chamber",
+            "AN"
+        ],
         "end_date": null,
         "role": "D\u00e9put\u00e9",
-        "representative": 1,
+        "representative": [
+            "bernard-roman-1952-07-15"
+        ],
         "link": "",
         "begin_date": "2012-06-20",
-        "constituency": 2
+        "constituency": [
+            "Assembl\u00e9e nationale",
+            "FR"
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 2
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 4,
+        "group": [
+            "Socialiste, r\u00e9publicain et citoyen",
+            "group",
+            "AN"
+        ],
         "end_date": null,
         "role": "membre",
-        "representative": 1,
+        "representative": [
+            "bernard-roman-1952-07-15"
+        ],
         "link": "",
         "begin_date": "2012-06-20",
-        "constituency": 2
+        "constituency": [
+            "Assembl\u00e9e nationale",
+            "FR"
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 3
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 5,
+        "group": [
+            "Nord",
+            "department",
+            null
+        ],
         "end_date": null,
         "role": "membre",
-        "representative": 1,
+        "representative": [
+            "bernard-roman-1952-07-15"
+        ],
         "link": "",
         "begin_date": "2012-06-20",
-        "constituency": 2
+        "constituency": [
+            "Assembl\u00e9e nationale",
+            "FR"
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 4
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 6,
+        "group": [
+            "Nord (1\u00e8re circonscription)",
+            "district",
+            null
+        ],
         "end_date": null,
         "role": "membre",
-        "representative": 1,
+        "representative": [
+            "bernard-roman-1952-07-15"
+        ],
         "link": "",
         "begin_date": "2012-06-20",
-        "constituency": 2
+        "constituency": [
+            "Assembl\u00e9e nationale",
+            "FR"
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 5
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 7,
+        "group": [
+            "Commission des lois constitutionnelles, de la l\u00e9gislation et de l'administration g\u00e9n\u00e9rale de la r\u00e9publique",
+            "committee",
+            "AN"
+        ],
         "end_date": null,
         "role": "membre",
-        "representative": 1,
+        "representative": [
+            "bernard-roman-1952-07-15"
+        ],
         "link": "",
         "begin_date": "2012-06-20",
-        "constituency": 2
+        "constituency": [
+            "Assembl\u00e9e nationale",
+            "FR"
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 6
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 8,
+        "group": [
+            "Bureau de l'assembl\u00e9e nationale",
+            "delegation",
+            "AN"
+        ],
         "end_date": null,
         "role": "questeur",
-        "representative": 1,
+        "representative": [
+            "bernard-roman-1952-07-15"
+        ],
         "link": "",
         "begin_date": "2012-06-20",
-        "constituency": 2
+        "constituency": [
+            "Assembl\u00e9e nationale",
+            "FR"
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 7
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 9,
+        "group": [
+            "D\u00e9l\u00e9gation charg\u00e9e de la communication et de la presse",
+            "delegation",
+            "AN"
+        ],
         "end_date": null,
         "role": "membre",
-        "representative": 1,
+        "representative": [
+            "bernard-roman-1952-07-15"
+        ],
         "link": "",
         "begin_date": "2012-06-20",
-        "constituency": 2
+        "constituency": [
+            "Assembl\u00e9e nationale",
+            "FR"
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 8
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 10,
+        "group": [
+            "Groupe d'amiti\u00e9 france-mexique",
+            "delegation",
+            "AN"
+        ],
         "end_date": null,
         "role": "vice-pr\u00e9sident",
-        "representative": 1,
+        "representative": [
+            "bernard-roman-1952-07-15"
+        ],
         "link": "",
         "begin_date": "2012-06-20",
-        "constituency": 2
+        "constituency": [
+            "Assembl\u00e9e nationale",
+            "FR"
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 9
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 11,
+        "group": [
+            "Groupe d'amiti\u00e9 france-argentine",
+            "delegation",
+            "AN"
+        ],
         "end_date": null,
         "role": "vice-pr\u00e9sident",
-        "representative": 1,
+        "representative": [
+            "bernard-roman-1952-07-15"
+        ],
         "link": "",
         "begin_date": "2012-06-20",
-        "constituency": 2
+        "constituency": [
+            "Assembl\u00e9e nationale",
+            "FR"
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 10
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 2,
+        "group": [
+            "France",
+            "country",
+            null
+        ],
         "end_date": null,
         "role": "membre",
-        "representative": 2,
+        "representative": [
+            "david-assouline-1959-06-16"
+        ],
         "link": "",
         "begin_date": null,
-        "constituency": 4
+        "constituency": [
+            "Parti socialiste",
+            "FR"
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 11
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 12,
+        "group": [
+            "S\u00e9nat",
+            "chamber",
+            "SEN"
+        ],
         "end_date": "2012-01-01",
         "role": "S\u00e9nateur",
-        "representative": 2,
+        "representative": [
+            "david-assouline-1959-06-16"
+        ],
         "link": "",
         "begin_date": "2004-09-26",
-        "constituency": 3
+        "constituency": [
+            "S\u00e9nat",
+            "FR"
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 12
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 13,
+        "group": [
+            "Socialiste et r\u00e9publicain",
+            "group",
+            "SEN"
+        ],
         "end_date": "2012-01-01",
         "role": "membre",
-        "representative": 2,
+        "representative": [
+            "david-assouline-1959-06-16"
+        ],
         "link": "",
         "begin_date": "2004-09-26",
-        "constituency": 3
+        "constituency": [
+            "S\u00e9nat",
+            "FR"
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 13
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 14,
+        "group": [
+            "Paris",
+            "department",
+            null
+        ],
         "end_date": "2012-01-01",
         "role": "membre",
-        "representative": 2,
+        "representative": [
+            "david-assouline-1959-06-16"
+        ],
         "link": "",
         "begin_date": "2004-09-26",
-        "constituency": 3
+        "constituency": [
+            "S\u00e9nat",
+            "FR"
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 14
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 15,
+        "group": [
+            "Paris",
+            "district",
+            null
+        ],
         "end_date": "2012-01-01",
         "role": "membre",
-        "representative": 2,
+        "representative": [
+            "david-assouline-1959-06-16"
+        ],
         "link": "",
         "begin_date": "2004-09-26",
-        "constituency": 3
+        "constituency": [
+            "S\u00e9nat",
+            "FR"
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 15
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 16,
+        "group": [
+            "Commission de la culture, de l'\u00e9ducation et de la communication",
+            "committee",
+            "SEN"
+        ],
         "end_date": "2012-01-01",
         "role": "vice-pr\u00e9sident",
-        "representative": 2,
+        "representative": [
+            "david-assouline-1959-06-16"
+        ],
         "link": "",
         "begin_date": "2004-09-26",
-        "constituency": 3
+        "constituency": [
+            "S\u00e9nat",
+            "FR"
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 16
+    "model": "representatives.mandate"
 },
 {
     "fields": {
-        "group": 17,
+        "group": [
+            "Groupe France-Japon",
+            "delegation",
+            "SEN"
+        ],
         "end_date": "2012-01-01",
         "role": "pr\u00e9sident",
-        "representative": 2,
+        "representative": [
+            "david-assouline-1959-06-16"
+        ],
         "link": "",
         "begin_date": "2004-09-26",
-        "constituency": 3
+        "constituency": [
+            "S\u00e9nat",
+            "FR"
+        ]
     },
-    "model": "representatives.mandate",
-    "pk": 17
+    "model": "representatives.mandate"
 }
 ]

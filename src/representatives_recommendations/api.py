@@ -16,7 +16,8 @@ class RecommendationViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows recommendations to be viewed.
     """
-    queryset = Recommendation.objects.select_related('proposal')
+    queryset = Recommendation.objects.select_related('proposal') \
+                                     .order_by('proposal_id', 'id')
     filter_backends = (
         filters.DjangoFilterBackend,
         filters.SearchFilter,

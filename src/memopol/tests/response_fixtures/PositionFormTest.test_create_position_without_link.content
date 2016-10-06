@@ -1,2 +1,1 @@
-<div class="form-group has-error"><label class="col-md-3 control-label" for="id_position-link">Link</label><div class="col-md-9"><input class="form-control" id="id_position-link" maxlength="500" name="position-link" placeholder="Link" required="required" title="" type="url"/><span class="help-block">This field is required.
-</span></div></div>
+<input class="form-control" id="id_position-link" maxlength="500" name="position-link" placeholder="Link" required="required" title="" type="url"/>
