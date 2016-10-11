@@ -6,24 +6,4 @@
 Welcome to Memopol's documentation!
 ===================================
 
-Contents:
-
-.. toctree::
-   :maxdepth: 2
-
-   usage
-   deploy-openshift
-   deploy-custom
-   administration
-   scores
-   api
-   development
-   hacker
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
+Memopol documentation has moved: https://memopol.lqdn.fr/docs/

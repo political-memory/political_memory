@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/political-memory/political_memory.svg?branch=master)](https://travis-ci.org/political-memory/political_memory)
-[![codecov.io](https://codecov.io/github/political-memory/political_memory/coverage.svg?branch=master)](https://codecov.io/github/political-memory/political_memory?branch=master)
+Repository has moved to: https://git.laquadrature.net/political-memory/political_memory
 
-[Manual](http://memopol.readthedocs.io/en/master/index.html)
+Docs have moved to: https://memopol.lqdn.fr/docs/
+
+LQDN instance moved to: https://memopol.lqdn.fr/
