@@ -1,1 +1,0 @@
-<input class="form-control" id="id_position-link" maxlength="500" name="position-link" placeholder="Link" required="required" title="" type="url"/>
